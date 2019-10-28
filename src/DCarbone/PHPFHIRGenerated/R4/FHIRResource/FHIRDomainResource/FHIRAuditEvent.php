@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A record of an event made for purposes of maintaining a security log. Typical
  * uses include detection of intrusion attempts and monitoring for inappropriate
  * usage.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAuditEvent
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -92,7 +92,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_ACTION_EXT = '_action';
@@ -113,14 +113,15 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * Indicator for type of action performed during the event that generated the
      * event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAuditEventAction
      */
-    private $action = null;
+    protected $action = null;
+
     /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
@@ -130,7 +131,8 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
-    private $agent = [];
+    protected $agent = [];
+
     /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
@@ -140,60 +142,66 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
-    private $entity = [];
+    protected $entity = [];
+
     /**
      * Indicates whether the event succeeded or failed.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAuditEventOutcome
      */
-    private $outcome = null;
+    protected $outcome = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $outcomeDesc = null;
+    protected $outcomeDesc = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $purposeOfEvent = [];
+    protected $purposeOfEvent = [];
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $recorded = null;
+    protected $recorded = null;
+
     /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
@@ -203,21 +211,23 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
      */
-    private $source = null;
+    protected $source = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $subtype = [];
+    protected $subtype = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
@@ -225,7 +235,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRAuditEvent Constructor
@@ -392,7 +402,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -430,7 +440,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * Indicator for type of action performed during the event that generated the
      * event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
@@ -445,13 +455,13 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * Indicator for type of action performed during the event that generated the
      * event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAuditEventAction $action
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setAction(FHIRAuditEventAction $action = null)
     {
@@ -481,7 +491,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An actor taking an active role in the event or activity that is logged.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $agent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function addAgent(FHIRAuditEventAgent $agent = null)
     {
@@ -497,7 +507,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An actor taking an active role in the event or activity that is logged.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent[] $agent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setAgent(array $agent = [])
     {
@@ -537,7 +547,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Specific instances of data or objects that have been accessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity $entity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function addEntity(FHIRAuditEventEntity $entity = null)
     {
@@ -553,7 +563,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Specific instances of data or objects that have been accessed.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity[] $entity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setEntity(array $entity = [])
     {
@@ -573,7 +583,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Indicates whether the event succeeded or failed.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
      *
@@ -586,12 +596,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Indicates whether the event succeeded or failed.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAuditEventOutcome $outcome
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setOutcome(FHIRAuditEventOutcome $outcome = null)
     {
@@ -602,7 +612,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
      *
@@ -616,12 +626,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $outcomeDesc
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setOutcomeDesc($outcomeDesc = null)
     {
@@ -640,7 +650,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
      *
@@ -654,12 +664,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -671,7 +681,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
      *
@@ -686,12 +696,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $purposeOfEvent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function addPurposeOfEvent(FHIRCodeableConcept $purposeOfEvent = null)
     {
@@ -703,12 +713,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $purposeOfEvent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setPurposeOfEvent(array $purposeOfEvent = [])
     {
@@ -732,7 +742,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
      *
@@ -749,12 +759,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $recorded
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setRecorded($recorded = null)
     {
@@ -792,7 +802,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The system that is reporting the event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setSource(FHIRAuditEventSource $source = null)
     {
@@ -803,7 +813,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
      *
@@ -817,12 +827,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $subtype
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function addSubtype(FHIRCoding $subtype = null)
     {
@@ -833,12 +843,12 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $subtype
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setSubtype(array $subtype = [])
     {
@@ -859,7 +869,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
@@ -875,14 +885,14 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
      * function.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAuditEvent
+     * @return static
      */
     public function setType(FHIRCoding $type = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Todo.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSubstanceReferenceInformation
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -85,7 +85,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CLASSIFICATION = 'classification';
     const FIELD_COMMENT = 'comment';
@@ -101,17 +101,19 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[]
      */
-    private $classification = [];
+    protected $classification = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * Todo.
      *
@@ -119,7 +121,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[]
      */
-    private $gene = [];
+    protected $gene = [];
+
     /**
      * Todo.
      *
@@ -127,7 +130,8 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
      */
-    private $geneElement = [];
+    protected $geneElement = [];
+
     /**
      * Todo.
      *
@@ -135,7 +139,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[]
      */
-    private $target = [];
+    protected $target = [];
 
     /**
      * FHIRSubstanceReferenceInformation Constructor
@@ -245,7 +249,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -298,7 +302,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $classification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function addClassification(FHIRSubstanceReferenceInformationClassification $classification = null)
     {
@@ -312,7 +316,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[] $classification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function setClassification(array $classification = [])
     {
@@ -333,7 +337,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
@@ -347,12 +351,12 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -386,7 +390,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene $gene
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function addGene(FHIRSubstanceReferenceInformationGene $gene = null)
     {
@@ -400,7 +404,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[] $gene
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function setGene(array $gene = [])
     {
@@ -436,7 +440,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement $geneElement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function addGeneElement(FHIRSubstanceReferenceInformationGeneElement $geneElement = null)
     {
@@ -450,7 +454,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[] $geneElement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function setGeneElement(array $geneElement = [])
     {
@@ -486,7 +490,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function addTarget(FHIRSubstanceReferenceInformationTarget $target = null)
     {
@@ -500,7 +504,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[] $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return static
      */
     public function setTarget(array $target = [])
     {

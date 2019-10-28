@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPLICATION = 'application';
     const FIELD_DATE_DATE_TIME = 'dateDateTime';
@@ -99,52 +99,56 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
      */
-    private $application = [];
+    protected $application = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of procedure. (choose any one of date*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $dateDateTime = null;
+    protected $dateDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date of procedure. (choose any one of date*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $datePeriod = null;
+    protected $datePeriod = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRMedicinalProductAuthorizationProcedure Constructor
@@ -235,7 +239,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -280,7 +284,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * Applcations submitted to obtain a marketing authorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $application
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function addApplication(FHIRMedicinalProductAuthorizationProcedure $application = null)
     {
@@ -294,7 +298,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * Applcations submitted to obtain a marketing authorization.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[] $application
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function setApplication(array $application = [])
     {
@@ -318,7 +322,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of procedure. (choose any one of date*, but only one)
      *
@@ -335,12 +339,12 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of procedure. (choose any one of date*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $dateDateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function setDateDateTime($dateDateTime = null)
     {
@@ -359,7 +363,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date of procedure. (choose any one of date*, but only one)
      *
@@ -373,12 +377,12 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date of procedure. (choose any one of date*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $datePeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function setDatePeriod(FHIRPeriod $datePeriod = null)
     {
@@ -390,7 +394,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this procedure.
      *
@@ -405,12 +409,12 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -422,7 +426,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure.
      *
@@ -437,12 +441,12 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

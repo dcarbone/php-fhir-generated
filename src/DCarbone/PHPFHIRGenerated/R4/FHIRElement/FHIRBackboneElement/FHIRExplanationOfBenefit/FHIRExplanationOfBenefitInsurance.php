@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_INSURANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COVERAGE = 'coverage';
     const FIELD_FOCAL = 'focal';
@@ -94,7 +94,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
@@ -102,21 +102,23 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $coverage = null;
+    protected $coverage = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $focal = null;
+    protected $focal = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
@@ -124,7 +126,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $preAuthRef = [];
+    protected $preAuthRef = [];
 
     /**
      * FHIRExplanationOfBenefitInsurance Constructor
@@ -203,7 +205,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -233,7 +235,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
@@ -249,14 +251,14 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $coverage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
+     * @return static
      */
     public function setCoverage(FHIRReference $coverage = null)
     {
@@ -266,7 +268,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
@@ -280,13 +282,13 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $focal
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
+     * @return static
      */
     public function setFocal($focal = null)
     {
@@ -305,7 +307,7 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
@@ -321,14 +323,14 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $preAuthRef
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
+     * @return static
      */
     public function addPreAuthRef($preAuthRef = null)
     {
@@ -347,14 +349,14 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $preAuthRef
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance
+     * @return static
      */
     public function setPreAuthRef(array $preAuthRef = [])
     {

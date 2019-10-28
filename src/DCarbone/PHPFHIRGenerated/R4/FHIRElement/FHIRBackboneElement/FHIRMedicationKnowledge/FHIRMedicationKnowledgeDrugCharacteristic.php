@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_DRUG_CHARACTERISTIC;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_TYPE = 'type';
     const FIELD_VALUE_BASE_64BINARY = 'valueBase64Binary';
@@ -97,57 +97,61 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying which characteristic of the medicine is being described (for
      * example, colour, shape, imprint).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
-    private $valueBase64Binary = null;
+    protected $valueBase64Binary = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $valueCodeableConcept = null;
+    protected $valueCodeableConcept = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $valueQuantity = null;
+    protected $valueQuantity = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $valueString = null;
+    protected $valueString = null;
 
     /**
      * FHIRMedicationKnowledgeDrugCharacteristic Constructor
@@ -235,7 +239,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -266,7 +270,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying which characteristic of the medicine is being described (for
      * example, colour, shape, imprint).
@@ -282,13 +286,13 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying which characteristic of the medicine is being described (for
      * example, colour, shape, imprint).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -299,7 +303,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
@@ -313,12 +317,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic
+     * @return static
      */
     public function setValueBase64Binary($valueBase64Binary = null)
     {
@@ -338,7 +342,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
@@ -353,12 +357,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic
+     * @return static
      */
     public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
     {
@@ -371,7 +375,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
@@ -387,12 +391,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic
+     * @return static
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
@@ -403,7 +407,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
@@ -417,12 +421,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the characteristic. (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic
+     * @return static
      */
     public function setValueString($valueString = null)
     {

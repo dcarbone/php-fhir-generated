@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Indication for the Medicinal Product.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicinalProductIndication
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -85,7 +85,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMORBIDITY = 'comorbidity';
     const FIELD_DISEASE_STATUS = 'diseaseStatus';
@@ -102,58 +102,63 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $comorbidity = [];
+    protected $comorbidity = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $diseaseStatus = null;
+    protected $diseaseStatus = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $diseaseSymptomProcedure = null;
+    protected $diseaseSymptomProcedure = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $duration = null;
+    protected $duration = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $intendedEffect = null;
+    protected $intendedEffect = null;
+
     /**
      * Indication for the Medicinal Product.
      *
@@ -162,37 +167,40 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
      */
-    private $otherTherapy = [];
+    protected $otherTherapy = [];
+
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
      */
-    private $population = [];
+    protected $population = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $subject = [];
+    protected $subject = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $undesirableEffect = [];
+    protected $undesirableEffect = [];
 
     /**
      * FHIRMedicinalProductIndication Constructor
@@ -338,7 +346,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -377,7 +385,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
@@ -392,12 +400,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $comorbidity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function addComorbidity(FHIRCodeableConcept $comorbidity = null)
     {
@@ -409,12 +417,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $comorbidity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setComorbidity(array $comorbidity = [])
     {
@@ -436,7 +444,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
      *
@@ -451,12 +459,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setDiseaseStatus(FHIRCodeableConcept $diseaseStatus = null)
     {
@@ -468,7 +476,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
      *
@@ -483,12 +491,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseSymptomProcedure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setDiseaseSymptomProcedure(FHIRCodeableConcept $diseaseSymptomProcedure = null)
     {
@@ -501,7 +509,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
      *
@@ -517,12 +525,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $duration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setDuration(FHIRQuantity $duration = null)
     {
@@ -534,7 +542,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
      *
@@ -549,12 +557,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $intendedEffect
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setIntendedEffect(FHIRCodeableConcept $intendedEffect = null)
     {
@@ -582,7 +590,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * therapies described as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy $otherTherapy
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy $otherTherapy = null)
     {
@@ -597,7 +605,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * therapies described as part of the indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[] $otherTherapy
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setOtherTherapy(array $otherTherapy = [])
     {
@@ -618,7 +626,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
@@ -632,12 +640,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function addPopulation(FHIRPopulation $population = null)
     {
@@ -648,12 +656,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[] $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setPopulation(array $population = [])
     {
@@ -674,7 +682,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
@@ -688,12 +696,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function addSubject(FHIRReference $subject = null)
     {
@@ -704,12 +712,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setSubject(array $subject = [])
     {
@@ -730,7 +738,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
      *
@@ -744,12 +752,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $undesirableEffect
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function addUndesirableEffect(FHIRReference $undesirableEffect = null)
     {
@@ -760,12 +768,12 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $undesirableEffect
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return static
      */
     public function setUndesirableEffect(array $undesirableEffect = [])
     {

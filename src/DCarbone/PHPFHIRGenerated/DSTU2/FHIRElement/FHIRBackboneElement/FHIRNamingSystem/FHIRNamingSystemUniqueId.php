@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NAMING_SYSTEM_DOT_UNIQUE_ID;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_PERIOD = 'period';
     const FIELD_PREFERRED = 'preferred';
@@ -97,7 +97,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
@@ -105,36 +105,39 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $preferred = null;
+    protected $preferred = null;
+
     /**
      * Identifies the style of unique identifier used to identify a namespace.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNamingSystemIdentifierType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRNamingSystemUniqueId Constructor
@@ -219,7 +222,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -249,7 +252,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
@@ -265,14 +268,14 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
      * identifier might be non-deterministic.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -282,7 +285,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
      *
@@ -295,12 +298,12 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $preferred
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
+     * @return static
      */
     public function setPreferred($preferred = null)
     {
@@ -318,7 +321,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 
     /**
      * Identifies the style of unique identifier used to identify a namespace.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
      *
@@ -331,12 +334,12 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 
     /**
      * Identifies the style of unique identifier used to identify a namespace.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNamingSystemIdentifierType $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
+     * @return static
      */
     public function setType(FHIRNamingSystemIdentifierType $type = null)
     {
@@ -347,7 +350,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
@@ -362,13 +365,13 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
+     * @return static
      */
     public function setValue($value = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * A human-readable formatted text, including images.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRNarrative
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
@@ -81,7 +81,7 @@ class FHIRNarrative extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NARRATIVE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DIV = 'div';
     const FIELD_STATUS = 'status';
@@ -92,10 +92,11 @@ class FHIRNarrative extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive
      */
-    private $div = null;
+    protected $div = null;
+
     /**
      * The status of a resource narrative
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the narrative - whether it's entirely generated (from just the
      * defined data or the extensions too), or whether a human authored it and it may
@@ -103,7 +104,7 @@ class FHIRNarrative extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrativeStatus
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRNarrative Constructor
@@ -156,7 +157,7 @@ class FHIRNarrative extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -197,7 +198,7 @@ class FHIRNarrative extends FHIRElement
      * The actual narrative content, a stripped down version of XHTML.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive $div
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative
+     * @return static
      */
     public function setDiv($div = null)
     {
@@ -215,7 +216,7 @@ class FHIRNarrative extends FHIRElement
 
     /**
      * The status of a resource narrative
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the narrative - whether it's entirely generated (from just the
      * defined data or the extensions too), or whether a human authored it and it may
@@ -230,14 +231,14 @@ class FHIRNarrative extends FHIRElement
 
     /**
      * The status of a resource narrative
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the narrative - whether it's entirely generated (from just the
      * defined data or the extensions too), or whether a human authored it and it may
      * contain additional data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrativeStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative
+     * @return static
      */
     public function setStatus(FHIRNarrativeStatus $status = null)
     {

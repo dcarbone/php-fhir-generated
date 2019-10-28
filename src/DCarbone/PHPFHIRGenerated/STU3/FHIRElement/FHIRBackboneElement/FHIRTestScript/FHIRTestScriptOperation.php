@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_OPERATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCEPT = 'accept';
     const FIELD_ACCEPT_EXT = '_accept';
@@ -122,49 +122,53 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Accept'
      * header.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContentType
      */
-    private $accept = null;
+    protected $accept = null;
+
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContentType
      */
-    private $contentType = null;
+    protected $contentType = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The server where the request message is destined for. Must be one of the server
      * numbers listed in TestScript.destination section.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $destination = null;
+    protected $destination = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not to implicitly send the request url in encoded format. The default
      * is true to match the standard RESTful client behavior. Set to false when
@@ -172,39 +176,43 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $encodeRequestUrl = null;
+    protected $encodeRequestUrl = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $label = null;
+    protected $label = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The server where the request message originates from. Must be one of the server
      * numbers listed in TestScript.origin section.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $origin = null;
+    protected $origin = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Path plus parameters after [type]. Used to set parts of the request URL
      * explicitly.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $params = null;
+    protected $params = null;
+
     /**
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
@@ -213,87 +221,94 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
-    private $requestHeader = [];
+    protected $requestHeader = [];
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $requestId = null;
+    protected $requestId = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRDefinedType
      */
-    private $resource = null;
+    protected $resource = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the response.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $responseId = null;
+    protected $responseId = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The id of the fixture used as the body of a PUT or POST request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $sourceId = null;
+    protected $sourceId = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Id of fixture used for extracting the [id], [type], and [vid] for GET requests.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $targetId = null;
+    protected $targetId = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Server interaction or operation type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Complete request URL.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * FHIRTestScriptOperation Constructor
@@ -528,7 +543,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -557,7 +572,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Accept'
      * header.
@@ -571,13 +586,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Accept'
      * header.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContentType $accept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setAccept(FHIRContentType $accept = null)
     {
@@ -587,7 +602,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
@@ -601,13 +616,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContentType $contentType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setContentType(FHIRContentType $contentType = null)
     {
@@ -618,7 +633,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
@@ -633,13 +648,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -658,7 +673,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The server where the request message is destined for. Must be one of the server
      * numbers listed in TestScript.destination section.
@@ -673,13 +688,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The server where the request message is destined for. Must be one of the server
      * numbers listed in TestScript.destination section.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $destination
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setDestination($destination = null)
     {
@@ -697,7 +712,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not to implicitly send the request url in encoded format. The default
      * is true to match the standard RESTful client behavior. Set to false when
@@ -712,14 +727,14 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not to implicitly send the request url in encoded format. The default
      * is true to match the standard RESTful client behavior. Set to false when
      * communicating with a server that does not support encoded url paths.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $encodeRequestUrl
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setEncodeRequestUrl($encodeRequestUrl = null)
     {
@@ -738,7 +753,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
      *
@@ -752,12 +767,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $label
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setLabel($label = null)
     {
@@ -776,7 +791,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The server where the request message originates from. Must be one of the server
      * numbers listed in TestScript.origin section.
@@ -791,13 +806,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The server where the request message originates from. Must be one of the server
      * numbers listed in TestScript.origin section.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $origin
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setOrigin($origin = null)
     {
@@ -816,7 +831,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Path plus parameters after [type]. Used to set parts of the request URL
      * explicitly.
@@ -831,13 +846,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Path plus parameters after [type]. Used to set parts of the request URL
      * explicitly.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $params
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setParams($params = null)
     {
@@ -873,7 +888,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * Header elements would be used to set HTTP headers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader $requestHeader
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function addRequestHeader(FHIRTestScriptRequestHeader $requestHeader = null)
     {
@@ -888,7 +903,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * Header elements would be used to set HTTP headers.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader[] $requestHeader
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setRequestHeader(array $requestHeader = [])
     {
@@ -911,7 +926,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the request.
@@ -928,13 +943,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $requestId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setRequestId($requestId = null)
     {
@@ -951,7 +966,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
      *
@@ -963,12 +978,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRDefinedType $resource
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setResource(FHIRFHIRDefinedType $resource = null)
     {
@@ -981,7 +996,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the response.
@@ -998,13 +1013,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $responseId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setResponseId($responseId = null)
     {
@@ -1025,7 +1040,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The id of the fixture used as the body of a PUT or POST request.
@@ -1042,13 +1057,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The id of the fixture used as the body of a PUT or POST request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $sourceId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setSourceId($sourceId = null)
     {
@@ -1069,7 +1084,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Id of fixture used for extracting the [id], [type], and [vid] for GET requests.
@@ -1086,13 +1101,13 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Id of fixture used for extracting the [id], [type], and [vid] for GET requests.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $targetId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setTargetId($targetId = null)
     {
@@ -1111,7 +1126,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Server interaction or operation type.
      *
@@ -1125,12 +1140,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Server interaction or operation type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setType(FHIRCoding $type = null)
     {
@@ -1141,7 +1156,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Complete request URL.
      *
@@ -1155,12 +1170,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Complete request URL.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     * @return static
      */
     public function setUrl($url = null)
     {

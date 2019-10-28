@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiolo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_COLLECTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COLLECTED_DATE_TIME = 'collectedDateTime';
     const FIELD_COLLECTED_DATE_TIME_EXT = '_collectedDateTime';
@@ -96,44 +96,47 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time of product collection. (choose any one of collected*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $collectedDateTime = null;
+    protected $collectedDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time of product collection. (choose any one of collected*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $collectedPeriod = null;
+    protected $collectedPeriod = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who is performing the collection.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $collector = null;
+    protected $collector = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or entity, such as a hospital or vendor in the case of a
      * processed/manipulated/manufactured product, providing the product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $source = null;
+    protected $source = null;
 
     /**
      * FHIRBiologicallyDerivedProductCollection Constructor
@@ -204,7 +207,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -237,7 +240,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time of product collection. (choose any one of collected*, but only one)
      *
@@ -254,12 +257,12 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time of product collection. (choose any one of collected*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $collectedDateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @return static
      */
     public function setCollectedDateTime($collectedDateTime = null)
     {
@@ -278,7 +281,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time of product collection. (choose any one of collected*, but only one)
      *
@@ -292,12 +295,12 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time of product collection. (choose any one of collected*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $collectedPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @return static
      */
     public function setCollectedPeriod(FHIRPeriod $collectedPeriod = null)
     {
@@ -308,7 +311,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who is performing the collection.
      *
@@ -322,12 +325,12 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who is performing the collection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $collector
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @return static
      */
     public function setCollector(FHIRReference $collector = null)
     {
@@ -338,7 +341,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or entity, such as a hospital or vendor in the case of a
      * processed/manipulated/manufactured product, providing the product.
@@ -353,13 +356,13 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or entity, such as a hospital or vendor in the case of a
      * processed/manipulated/manufactured product, providing the product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @return static
      */
     public function setSource(FHIRReference $source = null)
     {

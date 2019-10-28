@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONCEPT_MAP_DOT_CONCEPT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -88,14 +88,15 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies concept being mapped.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concept systems.
@@ -106,7 +107,8 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    private $dependsOn = [];
+    protected $dependsOn = [];
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concept systems.
@@ -115,16 +117,17 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapMap[]
      */
-    private $map = [];
+    protected $map = [];
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System that defines the concept being mapped.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $system = null;
+    protected $system = null;
 
     /**
      * FHIRConceptMapConcept Constructor
@@ -216,7 +219,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -246,7 +249,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies concept being mapped.
@@ -261,13 +264,13 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies concept being mapped.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -307,7 +310,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function addDependsOn(FHIRConceptMapDependsOn $dependsOn = null)
     {
@@ -324,7 +327,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * value.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $dependsOn
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function setDependsOn(array $dependsOn = [])
     {
@@ -362,7 +365,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * A concept from the target value set that this concept maps to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapMap $map
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function addMap(FHIRConceptMapMap $map = null)
     {
@@ -377,7 +380,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * A concept from the target value set that this concept maps to.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapMap[] $map
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function setMap(array $map = [])
     {
@@ -397,7 +400,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System that defines the concept being mapped.
      *
@@ -410,12 +413,12 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System that defines the concept being mapped.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $system
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept
+     * @return static
      */
     public function setSystem($system = null)
     {

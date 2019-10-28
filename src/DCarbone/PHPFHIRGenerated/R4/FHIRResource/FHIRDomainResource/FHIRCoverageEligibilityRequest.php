@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * CoverageEligibilityResponse, with information regarding whether the stated
  * coverage is valid and in-force and optionally to provide the insurance details
  * of the policy.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCoverageEligibilityRequest
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -95,7 +95,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CREATED = 'created';
     const FIELD_CREATED_EXT = '_created';
@@ -124,44 +124,48 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $enterer = null;
+    protected $enterer = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services are intended to be provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $facility = null;
+    protected $facility = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * The CoverageEligibilityRequest provides patient and insurance coverage
      * information to an insurer for them to respond, in the form of an
@@ -174,18 +178,20 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
      */
-    private $insurance = [];
+    protected $insurance = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who issued the coverage in question and is the recipient of the
      * request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $insurer = null;
+    protected $insurer = null;
+
     /**
      * The CoverageEligibilityRequest provides patient and insurance coverage
      * information to an insurer for them to respond, in the form of an
@@ -198,42 +204,46 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
      */
-    private $item = [];
+    protected $item = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the requestor expects the processor to complete processing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $provider = null;
+    protected $provider = null;
+
     /**
      * A code specifying the types of information being requested.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code to specify whether requesting: prior authorization requirements for some
      * service categories or billing codes; benefits for coverages specified or
@@ -243,39 +253,43 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityRequestPurpose[]
      */
-    private $purpose = [];
+    protected $purpose = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $servicedDate = null;
+    protected $servicedDate = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed. (choose any one of serviced*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $servicedPeriod = null;
+    protected $servicedPeriod = null;
+
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * The CoverageEligibilityRequest provides patient and insurance coverage
      * information to an insurer for them to respond, in the form of an
@@ -288,7 +302,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[]
      */
-    private $supportingInfo = [];
+    protected $supportingInfo = [];
 
     /**
      * FHIRCoverageEligibilityRequest Constructor
@@ -500,7 +514,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -541,7 +555,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
      *
@@ -558,12 +572,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $created
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -582,7 +596,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the request.
      *
@@ -596,12 +610,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $enterer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setEnterer(FHIRReference $enterer = null)
     {
@@ -612,7 +626,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services are intended to be provided.
      *
@@ -626,12 +640,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services are intended to be provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $facility
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setFacility(FHIRReference $facility = null)
     {
@@ -643,7 +657,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
      *
@@ -658,12 +672,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -675,12 +689,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -726,7 +740,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance $insurance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function addInsurance(FHIRCoverageEligibilityRequestInsurance $insurance = null)
     {
@@ -745,7 +759,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * services.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[] $insurance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setInsurance(array $insurance = [])
     {
@@ -766,7 +780,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who issued the coverage in question and is the recipient of the
      * request.
@@ -781,13 +795,13 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who issued the coverage in question and is the recipient of the
      * request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $insurer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setInsurer(FHIRReference $insurer = null)
     {
@@ -823,7 +837,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * authorization prior to service delivery may be required by the payor.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function addItem(FHIRCoverageEligibilityRequestItem $item = null)
     {
@@ -842,7 +856,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * authorization prior to service delivery may be required by the payor.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setItem(array $item = [])
     {
@@ -863,7 +877,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
@@ -878,13 +892,13 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -896,7 +910,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the requestor expects the processor to complete processing.
      *
@@ -911,12 +925,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the requestor expects the processor to complete processing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $priority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setPriority(FHIRCodeableConcept $priority = null)
     {
@@ -927,7 +941,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
      *
@@ -941,12 +955,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $provider
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setProvider(FHIRReference $provider = null)
     {
@@ -956,7 +970,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
 
     /**
      * A code specifying the types of information being requested.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code to specify whether requesting: prior authorization requirements for some
      * service categories or billing codes; benefits for coverages specified or
@@ -973,7 +987,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
 
     /**
      * A code specifying the types of information being requested.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code to specify whether requesting: prior authorization requirements for some
      * service categories or billing codes; benefits for coverages specified or
@@ -982,7 +996,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * not specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityRequestPurpose $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function addPurpose(FHIREligibilityRequestPurpose $purpose = null)
     {
@@ -992,7 +1006,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
 
     /**
      * A code specifying the types of information being requested.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code to specify whether requesting: prior authorization requirements for some
      * service categories or billing codes; benefits for coverages specified or
@@ -1001,7 +1015,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * not specified.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityRequestPurpose[] $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setPurpose(array $purpose = [])
     {
@@ -1023,7 +1037,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed. (choose any one of serviced*, but only one)
@@ -1039,13 +1053,13 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $servicedDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setServicedDate($servicedDate = null)
     {
@@ -1064,7 +1078,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed. (choose any one of serviced*, but only one)
@@ -1079,13 +1093,13 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed. (choose any one of serviced*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $servicedPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setServicedPeriod(FHIRPeriod $servicedPeriod = null)
     {
@@ -1095,7 +1109,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
 
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
@@ -1108,12 +1122,12 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
 
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setStatus(FHIRFinancialResourceStatusCodes $status = null)
     {
@@ -1149,7 +1163,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * condition, situation, prior or concurrent issues.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo $supportingInfo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function addSupportingInfo(FHIRCoverageEligibilityRequestSupportingInfo $supportingInfo = null)
     {
@@ -1168,7 +1182,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * condition, situation, prior or concurrent issues.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[] $supportingInfo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return static
      */
     public function setSupportingInfo(array $supportingInfo = [])
     {

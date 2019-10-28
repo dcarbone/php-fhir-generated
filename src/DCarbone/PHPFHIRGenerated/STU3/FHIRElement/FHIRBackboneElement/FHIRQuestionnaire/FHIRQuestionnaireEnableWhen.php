@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ENABLE_WHEN;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ANSWER_ATTACHMENT = 'answerAttachment';
     const FIELD_ANSWER_BOOLEAN = 'answerBoolean';
@@ -123,161 +123,174 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
-    private $answerAttachment = null;
+    protected $answerAttachment = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $answerBoolean = null;
+    protected $answerBoolean = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $answerCoding = null;
+    protected $answerCoding = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $answerDate = null;
+    protected $answerDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $answerDateTime = null;
+    protected $answerDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $answerDecimal = null;
+    protected $answerDecimal = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $answerInteger = null;
+    protected $answerInteger = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $answerQuantity = null;
+    protected $answerQuantity = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $answerReference = null;
+    protected $answerReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $answerString = null;
+    protected $answerString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $answerTime = null;
+    protected $answerTime = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $answerUri = null;
+    protected $answerUri = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication that this item should be enabled only if the specified question is
      * answered (hasAnswer=true) or not answered (hasAnswer=false).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $hasAnswer = null;
+    protected $hasAnswer = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $question = null;
+    protected $question = null;
 
     /**
      * FHIRQuestionnaireEnableWhen Constructor
@@ -468,7 +481,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -498,7 +511,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -513,13 +526,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $answerAttachment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerAttachment(FHIRAttachment $answerAttachment = null)
     {
@@ -529,7 +542,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -543,13 +556,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $answerBoolean
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerBoolean($answerBoolean = null)
     {
@@ -568,7 +581,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -583,13 +596,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $answerCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerCoding(FHIRCoding $answerCoding = null)
     {
@@ -601,7 +614,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -617,13 +630,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $answerDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerDate($answerDate = null)
     {
@@ -645,7 +658,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -663,13 +676,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $answerDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerDateTime($answerDateTime = null)
     {
@@ -689,7 +702,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -705,13 +718,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $answerDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerDecimal($answerDecimal = null)
     {
@@ -730,7 +743,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -745,13 +758,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $answerInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerInteger($answerInteger = null)
     {
@@ -772,7 +785,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -789,13 +802,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $answerQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerQuantity(FHIRQuantity $answerQuantity = null)
     {
@@ -806,7 +819,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -821,13 +834,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $answerReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerReference(FHIRReference $answerReference = null)
     {
@@ -838,7 +851,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -853,13 +866,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $answerString
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerString($answerString = null)
     {
@@ -877,7 +890,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -891,13 +904,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $answerTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerTime($answerTime = null)
     {
@@ -916,7 +929,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
@@ -931,13 +944,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $answerUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setAnswerUri($answerUri = null)
     {
@@ -955,7 +968,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication that this item should be enabled only if the specified question is
      * answered (hasAnswer=true) or not answered (hasAnswer=false).
@@ -969,13 +982,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication that this item should be enabled only if the specified question is
      * answered (hasAnswer=true) or not answered (hasAnswer=false).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $hasAnswer
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setHasAnswer($hasAnswer = null)
     {
@@ -994,7 +1007,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
@@ -1009,13 +1022,13 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $question
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
+     * @return static
      */
     public function setQuestion($question = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_ORDER_DOT_SUBSTITUTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_REASON = 'reason';
     const FIELD_TYPE = 'type';
@@ -91,26 +91,27 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $reason = null;
+    protected $reason = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code signifying whether a different drug should be dispensed from what was
      * prescribed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRMedicationOrderSubstitution Constructor
@@ -162,7 +163,7 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderSubstitution
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -193,7 +194,7 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
@@ -209,13 +210,13 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderSubstitution
+     * @return static
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
@@ -227,7 +228,7 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code signifying whether a different drug should be dispensed from what was
      * prescribed.
@@ -243,13 +244,13 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code signifying whether a different drug should be dispensed from what was
      * prescribed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderSubstitution
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

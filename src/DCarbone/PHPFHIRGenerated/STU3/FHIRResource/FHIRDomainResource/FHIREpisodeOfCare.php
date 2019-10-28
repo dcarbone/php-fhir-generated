@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * An association between a patient and an organization / healthcare provider(s)
  * during which time encounters may occur. The managing organization assumes a
  * level of responsibility for the patient during this time.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIREpisodeOfCare
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EPISODE_OF_CARE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCOUNT = 'account';
     const FIELD_CARE_MANAGER = 'careManager';
@@ -109,23 +109,25 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $account = [];
+    protected $account = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that is the care manager/care co-ordinator for this patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $careManager = null;
+    protected $careManager = null;
+
     /**
      * An association between a patient and an organization / healthcare provider(s)
      * during which time encounters may occur. The managing organization assumes a
@@ -135,11 +137,12 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
      */
-    private $diagnosis = [];
+    protected $diagnosis = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
@@ -147,59 +150,65 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that has assumed the specific responsibilities for the
      * specified duration.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $managingOrganization = null;
+    protected $managingOrganization = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this episode of care.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the managing organization assumes the defined
      * responsibility.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $referralRequest = [];
+    protected $referralRequest = [];
+
     /**
      * The status of the episode of care.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | waitlist | active | onhold | finished | cancelled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREpisodeOfCareStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * An association between a patient and an organization / healthcare provider(s)
      * during which time encounters may occur. The managing organization assumes a
@@ -210,30 +219,32 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
      */
-    private $statusHistory = [];
+    protected $statusHistory = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $team = [];
+    protected $team = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $type = [];
+    protected $type = [];
 
     /**
      * FHIREpisodeOfCare Constructor
@@ -423,7 +434,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -461,7 +472,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
      *
@@ -475,12 +486,12 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $account
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addAccount(FHIRReference $account = null)
     {
@@ -491,12 +502,12 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $account
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setAccount(array $account = [])
     {
@@ -517,7 +528,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that is the care manager/care co-ordinator for this patient.
      *
@@ -531,12 +542,12 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that is the care manager/care co-ordinator for this patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $careManager
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setCareManager(FHIRReference $careManager = null)
     {
@@ -566,7 +577,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * The list of diagnosis relevant to this episode of care.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $diagnosis
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addDiagnosis(FHIREpisodeOfCareDiagnosis $diagnosis = null)
     {
@@ -582,7 +593,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * The list of diagnosis relevant to this episode of care.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[] $diagnosis
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setDiagnosis(array $diagnosis = [])
     {
@@ -603,7 +614,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
@@ -619,14 +630,14 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -637,14 +648,14 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -665,7 +676,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that has assumed the specific responsibilities for the
      * specified duration.
@@ -680,13 +691,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that has assumed the specific responsibilities for the
      * specified duration.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $managingOrganization
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setManagingOrganization(FHIRReference $managingOrganization = null)
     {
@@ -697,7 +708,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this episode of care.
      *
@@ -711,12 +722,12 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this episode of care.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -727,7 +738,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the managing organization assumes the defined
      * responsibility.
@@ -742,13 +753,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the managing organization assumes the defined
      * responsibility.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -759,7 +770,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
@@ -774,13 +785,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $referralRequest
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addReferralRequest(FHIRReference $referralRequest = null)
     {
@@ -791,13 +802,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $referralRequest
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setReferralRequest(array $referralRequest = [])
     {
@@ -817,7 +828,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * The status of the episode of care.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | waitlist | active | onhold | finished | cancelled.
      *
@@ -830,12 +841,12 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * The status of the episode of care.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | waitlist | active | onhold | finished | cancelled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREpisodeOfCareStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setStatus(FHIREpisodeOfCareStatus $status = null)
     {
@@ -867,7 +878,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * requiring processing the history of the resource).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory $statusHistory
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addStatusHistory(FHIREpisodeOfCareStatusHistory $statusHistory = null)
     {
@@ -884,7 +895,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * requiring processing the history of the resource).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[] $statusHistory
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setStatusHistory(array $statusHistory = [])
     {
@@ -905,7 +916,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
@@ -920,13 +931,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $team
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addTeam(FHIRReference $team = null)
     {
@@ -937,13 +948,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $team
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setTeam(array $team = [])
     {
@@ -965,7 +976,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
@@ -981,13 +992,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type = null)
     {
@@ -999,13 +1010,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
+     * @return static
      */
     public function setType(array $type = [])
     {

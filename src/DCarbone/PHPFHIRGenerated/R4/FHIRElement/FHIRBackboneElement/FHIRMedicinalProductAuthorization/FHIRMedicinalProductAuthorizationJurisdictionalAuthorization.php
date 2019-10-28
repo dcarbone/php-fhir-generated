@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_JURISDICTIONAL_AUTHORIZATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COUNTRY = 'country';
     const FIELD_IDENTIFIER = 'identifier';
@@ -94,56 +94,60 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $country = null;
+    protected $country = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $legalStatusOfSupply = null;
+    protected $legalStatusOfSupply = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $validityPeriod = null;
+    protected $validityPeriod = null;
 
     /**
      * FHIRMedicinalProductAuthorizationJurisdictionalAuthorization Constructor
@@ -239,7 +243,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -270,7 +274,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
      *
@@ -285,12 +289,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $country
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function setCountry(FHIRCodeableConcept $country = null)
     {
@@ -302,7 +306,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
      *
@@ -317,12 +321,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -334,12 +338,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -361,7 +365,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
      *
@@ -376,12 +380,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -393,12 +397,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -420,7 +424,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
      *
@@ -435,12 +439,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function setLegalStatusOfSupply(FHIRCodeableConcept $legalStatusOfSupply = null)
     {
@@ -451,7 +455,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
      *
@@ -465,12 +469,12 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $validityPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
+     * @return static
      */
     public function setValidityPeriod(FHIRPeriod $validityPeriod = null)
     {

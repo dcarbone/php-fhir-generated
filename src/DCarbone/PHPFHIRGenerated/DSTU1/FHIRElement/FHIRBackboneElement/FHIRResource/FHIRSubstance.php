@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * A homogeneous material with a definite composition.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSubstance
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -79,7 +79,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
@@ -89,14 +89,15 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A homogeneous material with a definite composition.
      *
@@ -104,7 +105,8 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient[]
      */
-    private $ingredient = [];
+    protected $ingredient = [];
+
     /**
      * A homogeneous material with a definite composition.
      *
@@ -113,18 +115,19 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance
      */
-    private $instance = null;
+    protected $instance = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRSubstance Constructor
@@ -203,7 +206,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -240,7 +243,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
@@ -254,13 +257,13 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -294,7 +297,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A substance can be composed of other substances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
+     * @return static
      */
     public function addIngredient(FHIRSubstanceIngredient $ingredient = null)
     {
@@ -308,7 +311,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A substance can be composed of other substances.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient[] $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
+     * @return static
      */
     public function setIngredient(array $ingredient = [])
     {
@@ -346,7 +349,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * package/container of the substance: an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance $instance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
+     * @return static
      */
     public function setInstance(FHIRSubstanceInstance $instance = null)
     {
@@ -358,7 +361,7 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
      *
@@ -373,12 +376,12 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

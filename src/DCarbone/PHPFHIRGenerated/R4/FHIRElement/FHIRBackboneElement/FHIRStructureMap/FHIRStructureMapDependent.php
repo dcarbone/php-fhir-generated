@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_DEPENDENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
@@ -92,24 +92,25 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of a rule or group to apply.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable to pass to the rule or group.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $variable = [];
+    protected $variable = [];
 
     /**
      * FHIRStructureMapDependent Constructor
@@ -181,7 +182,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -213,7 +214,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of a rule or group to apply.
@@ -230,13 +231,13 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of a rule or group to apply.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
+     * @return static
      */
     public function setName($name = null)
     {
@@ -255,7 +256,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable to pass to the rule or group.
      *
@@ -269,12 +270,12 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable to pass to the rule or group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $variable
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
+     * @return static
      */
     public function addVariable($variable = null)
     {
@@ -293,12 +294,12 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable to pass to the rule or group.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $variable
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent
+     * @return static
      */
     public function setVariable(array $variable = [])
     {

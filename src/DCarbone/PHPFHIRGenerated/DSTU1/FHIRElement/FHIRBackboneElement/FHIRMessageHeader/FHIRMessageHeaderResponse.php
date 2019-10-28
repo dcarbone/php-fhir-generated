@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER_DOT_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -89,36 +89,38 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 
     /**
      * The kind of response to a message
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code that identifies the type of response to the message - whether it was
      * successful or not, and whether it should be resent or not.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResponseType
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details of any issues found in the message.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $details = null;
+    protected $details = null;
+
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The id of the message that this message is a response to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    private $identifier = null;
+    protected $identifier = null;
 
     /**
      * FHIRMessageHeaderResponse Constructor
@@ -187,7 +189,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -216,7 +218,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 
     /**
      * The kind of response to a message
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code that identifies the type of response to the message - whether it was
      * successful or not, and whether it should be resent or not.
@@ -230,13 +232,13 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 
     /**
      * The kind of response to a message
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Code that identifies the type of response to the message - whether it was
      * successful or not, and whether it should be resent or not.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResponseType $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
+     * @return static
      */
     public function setCode(FHIRResponseType $code = null)
     {
@@ -247,7 +249,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details of any issues found in the message.
      *
@@ -261,12 +263,12 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details of any issues found in the message.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $details
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
+     * @return static
      */
     public function setDetails(FHIRResourceReference $details = null)
     {
@@ -278,7 +280,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The id of the message that this message is a response to.
@@ -294,13 +296,13 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The id of the message that this message is a response to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
+     * @return static
      */
     public function setIdentifier($identifier = null)
     {

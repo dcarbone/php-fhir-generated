@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSeque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REPOSITORY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DATASET_ID = 'datasetId';
     const FIELD_DATASET_ID_EXT = '_datasetId';
@@ -99,67 +99,72 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the variant in this external repository. The server will understand how to
      * use this id to call for more info about datasets in external repository.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $datasetId = null;
+    protected $datasetId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI of an external repository which contains further details about the genetics
      * data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the read in this external repository.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $readsetId = null;
+    protected $readsetId = null;
+
     /**
      * Type for access of external URI.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Click and see / RESTful API / Need login to see / RESTful API with
      * authentication / Other ways to see resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRepositoryType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI of an external repository which contains further details about the genetics
      * data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the variantset in this external repository. The server will understand how
      * to use this id to call for more info about variantsets in external repository.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $variantsetId = null;
+    protected $variantsetId = null;
 
     /**
      * FHIRSequenceRepository Constructor
@@ -269,7 +274,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -299,7 +304,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the variant in this external repository. The server will understand how to
      * use this id to call for more info about datasets in external repository.
@@ -314,13 +319,13 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the variant in this external repository. The server will understand how to
      * use this id to call for more info about datasets in external repository.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $datasetId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function setDatasetId($datasetId = null)
     {
@@ -339,7 +344,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI of an external repository which contains further details about the genetics
      * data.
@@ -354,13 +359,13 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI of an external repository which contains further details about the genetics
      * data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function setName($name = null)
     {
@@ -379,7 +384,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the read in this external repository.
      *
@@ -393,12 +398,12 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the read in this external repository.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $readsetId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function setReadsetId($readsetId = null)
     {
@@ -416,7 +421,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
 
     /**
      * Type for access of external URI.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Click and see / RESTful API / Need login to see / RESTful API with
      * authentication / Other ways to see resource.
@@ -430,13 +435,13 @@ class FHIRSequenceRepository extends FHIRBackboneElement
 
     /**
      * Type for access of external URI.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Click and see / RESTful API / Need login to see / RESTful API with
      * authentication / Other ways to see resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRepositoryType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function setType(FHIRRepositoryType $type = null)
     {
@@ -447,7 +452,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI of an external repository which contains further details about the genetics
      * data.
@@ -462,13 +467,13 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI of an external repository which contains further details about the genetics
      * data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -487,7 +492,7 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the variantset in this external repository. The server will understand how
      * to use this id to call for more info about variantsets in external repository.
@@ -502,13 +507,13 @@ class FHIRSequenceRepository extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the variantset in this external repository. The server will understand how
      * to use this id to call for more info about variantsets in external repository.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $variantsetId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository
+     * @return static
      */
     public function setVariantsetId($variantsetId = null)
     {

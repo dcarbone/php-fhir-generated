@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * etc. This includes durable (reusable) medical equipment as well as disposable
  * equipment used for diagnostic, treatment, and research for healthcare and public
  * health.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDevice
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -87,7 +87,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTACT = 'contact';
     const FIELD_CONTACT_EXT = '_contact';
@@ -116,29 +116,31 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of expiry of this device (if applicable).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    private $expiry = null;
+    protected $expiry = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this device by various organizations. The most likely
      * organizations to assign identifiers are the manufacturer and the owner, though
@@ -147,81 +149,89 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource may be found in a literal location (i.e. GPS coordinates), a
      * logical place (i.e. "in/with the patient"), or a coded location.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $location = null;
+    protected $location = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number assigned by the manufacturer.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $lotNumber = null;
+    protected $lotNumber = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $manufacturer = null;
+    protected $manufacturer = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The "model" - an identifier assigned by the manufacturer to identify the product
      * by its type. This number is shared by the all devices sold as the same type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $model = null;
+    protected $model = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $owner = null;
+    protected $owner = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient information, if the resource is affixed to a person.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A kind of this device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FDA Mandated Unique Device Identifier. Use the human readable information (the
      * content that the user sees, which is sometimes different to the exact syntax
@@ -230,26 +240,28 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $udi = null;
+    protected $udi = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the device, if the device has multiple releases under the same
      * model, or if the device is software or carries firmware.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRDevice Constructor
@@ -443,7 +455,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -482,7 +494,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
@@ -498,13 +510,13 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function addContact(FHIRContact $contact = null)
     {
@@ -516,13 +528,13 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -544,7 +556,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of expiry of this device (if applicable).
      *
@@ -559,12 +571,12 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of expiry of this device (if applicable).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $expiry
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setExpiry($expiry = null)
     {
@@ -583,7 +595,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this device by various organizations. The most likely
      * organizations to assign identifiers are the manufacturer and the owner, though
@@ -600,7 +612,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this device by various organizations. The most likely
      * organizations to assign identifiers are the manufacturer and the owner, though
@@ -608,7 +620,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * particular device, not the kind of device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -619,7 +631,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this device by various organizations. The most likely
      * organizations to assign identifiers are the manufacturer and the owner, though
@@ -627,7 +639,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * particular device, not the kind of device.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -648,7 +660,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource may be found in a literal location (i.e. GPS coordinates), a
      * logical place (i.e. "in/with the patient"), or a coded location.
@@ -663,13 +675,13 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource may be found in a literal location (i.e. GPS coordinates), a
      * logical place (i.e. "in/with the patient"), or a coded location.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setLocation(FHIRResourceReference $location = null)
     {
@@ -679,7 +691,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number assigned by the manufacturer.
      *
@@ -692,12 +704,12 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number assigned by the manufacturer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $lotNumber
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setLotNumber($lotNumber = null)
     {
@@ -715,7 +727,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer.
      *
@@ -728,12 +740,12 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setManufacturer($manufacturer = null)
     {
@@ -751,7 +763,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The "model" - an identifier assigned by the manufacturer to identify the product
      * by its type. This number is shared by the all devices sold as the same type.
@@ -765,13 +777,13 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The "model" - an identifier assigned by the manufacturer to identify the product
      * by its type. This number is shared by the all devices sold as the same type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $model
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setModel($model = null)
     {
@@ -790,7 +802,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
@@ -805,13 +817,13 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $owner
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setOwner(FHIRResourceReference $owner = null)
     {
@@ -822,7 +834,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient information, if the resource is affixed to a person.
      *
@@ -836,12 +848,12 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient information, if the resource is affixed to a person.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setPatient(FHIRResourceReference $patient = null)
     {
@@ -853,7 +865,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A kind of this device.
      *
@@ -868,12 +880,12 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A kind of this device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -883,7 +895,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FDA Mandated Unique Device Identifier. Use the human readable information (the
      * content that the user sees, which is sometimes different to the exact syntax
@@ -899,7 +911,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FDA Mandated Unique Device Identifier. Use the human readable information (the
      * content that the user sees, which is sometimes different to the exact syntax
@@ -907,7 +919,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
      * http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/default.htm.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $udi
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setUdi($udi = null)
     {
@@ -925,7 +937,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
      *
@@ -938,12 +950,12 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -961,7 +973,7 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the device, if the device has multiple releases under the same
      * model, or if the device is software or carries firmware.
@@ -975,13 +987,13 @@ class FHIRDevice extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the device, if the device has multiple releases under the same
      * model, or if the device is software or carries firmware.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
+     * @return static
      */
     public function setVersion($version = null)
     {

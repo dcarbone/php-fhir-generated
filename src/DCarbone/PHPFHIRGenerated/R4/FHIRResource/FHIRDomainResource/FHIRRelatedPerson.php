@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Information about a person that is involved in the care for a patient, but who
  * is not the target of healthcare, nor has a formal responsibility in the care
  * process.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRRelatedPerson
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -94,7 +94,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RELATED_PERSON;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -116,13 +116,14 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this related person record is in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
@@ -130,24 +131,26 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address where the related person can be contacted or visited.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress[]
      */
-    private $address = [];
+    protected $address = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the related person was born.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $birthDate = null;
+    protected $birthDate = null;
+
     /**
      * Information about a person that is involved in the care for a patient, but who
      * is not the target of healthcare, nor has a formal responsibility in the care
@@ -157,90 +160,98 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication[]
      */
-    private $communication = [];
+    protected $communication = [];
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAdministrativeGender
      */
-    private $gender = null;
+    protected $gender = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName[]
      */
-    private $name = [];
+    protected $name = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient this person is related to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time during which this relationship is or was active. If there are
      * no dates defined, then the interval is unknown.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
-    private $photo = [];
+    protected $photo = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between a patient and the related person.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $relationship = [];
+    protected $relationship = [];
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[]
      */
-    private $telecom = [];
+    protected $telecom = [];
 
     /**
      * FHIRRelatedPerson Constructor
@@ -447,7 +458,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -484,7 +495,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this related person record is in active use.
      *
@@ -497,12 +508,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this related person record is in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -525,7 +536,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address where the related person can be contacted or visited.
      *
@@ -543,12 +554,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address where the related person can be contacted or visited.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $address
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addAddress(FHIRAddress $address = null)
     {
@@ -563,12 +574,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address where the related person can be contacted or visited.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress[] $address
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setAddress(array $address = [])
     {
@@ -590,7 +601,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the related person was born.
      *
@@ -605,12 +616,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the related person was born.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $birthDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setBirthDate($birthDate = null)
     {
@@ -648,7 +659,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A language which may be used to communicate with about the patient's health.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication $communication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addCommunication(FHIRRelatedPersonCommunication $communication = null)
     {
@@ -664,7 +675,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A language which may be used to communicate with about the patient's health.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication[] $communication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setCommunication(array $communication = [])
     {
@@ -683,7 +694,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
@@ -696,13 +707,13 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAdministrativeGender $gender
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setGender(FHIRAdministrativeGender $gender = null)
     {
@@ -714,7 +725,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
      *
@@ -729,12 +740,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -746,12 +757,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -772,7 +783,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
      *
@@ -786,12 +797,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addName(FHIRHumanName $name = null)
     {
@@ -802,12 +813,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName[] $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setName(array $name = [])
     {
@@ -828,7 +839,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient this person is related to.
      *
@@ -842,12 +853,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient this person is related to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -858,7 +869,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time during which this relationship is or was active. If there are
      * no dates defined, then the interval is unknown.
@@ -873,13 +884,13 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time during which this relationship is or was active. If there are
      * no dates defined, then the interval is unknown.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -890,7 +901,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
      *
@@ -904,12 +915,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $photo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addPhoto(FHIRAttachment $photo = null)
     {
@@ -920,12 +931,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[] $photo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setPhoto(array $photo = [])
     {
@@ -947,7 +958,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between a patient and the related person.
      *
@@ -962,12 +973,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between a patient and the related person.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $relationship
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addRelationship(FHIRCodeableConcept $relationship = null)
     {
@@ -979,12 +990,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between a patient and the related person.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $relationship
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setRelationship(array $relationship = [])
     {
@@ -1006,7 +1017,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
      *
@@ -1021,12 +1032,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $telecom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom = null)
     {
@@ -1038,12 +1049,12 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[] $telecom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
+     * @return static
      */
     public function setTelecom(array $telecom = [])
     {

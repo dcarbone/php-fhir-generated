@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * A supply - a request for something, and provision of what is supplied.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSupply
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -80,7 +80,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUPPLY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DISPENSE = 'dispense';
     const FIELD_IDENTIFIER = 'identifier';
@@ -99,58 +99,63 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense[]
      */
-    private $dispense = [];
+    protected $dispense = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $orderedItem = null;
+    protected $orderedItem = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * Status of the supply
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSupplyStatus
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRSupply Constructor
@@ -248,7 +253,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -303,7 +308,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * of a supply dispensed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense $dispense
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function addDispense(FHIRSupplyDispense $dispense = null)
     {
@@ -318,7 +323,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * of a supply dispensed.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense[] $dispense
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function setDispense(array $dispense = [])
     {
@@ -339,7 +344,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
      *
@@ -353,12 +358,12 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -370,7 +375,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
@@ -386,13 +391,13 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $kind
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function setKind(FHIRCodeableConcept $kind = null)
     {
@@ -403,7 +408,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
      *
@@ -417,12 +422,12 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $orderedItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function setOrderedItem(FHIRResourceReference $orderedItem = null)
     {
@@ -433,7 +438,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
      *
@@ -447,12 +452,12 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function setPatient(FHIRResourceReference $patient = null)
     {
@@ -462,7 +467,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * Status of the supply
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
      *
@@ -475,12 +480,12 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * Status of the supply
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSupplyStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
+     * @return static
      */
     public function setStatus(FHIRSupplyStatus $status = null)
     {

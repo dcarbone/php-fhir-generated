@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_RESOURCE_1;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXAMPLE_BOOLEAN = 'exampleBoolean';
     const FIELD_EXAMPLE_BOOLEAN_EXT = '_exampleBoolean';
@@ -97,7 +97,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
@@ -105,11 +105,12 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $exampleBoolean = null;
+    protected $exampleBoolean = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If true or a reference, indicates the resource is an example instance. If a
@@ -118,27 +119,29 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $exampleCanonical = null;
+    protected $exampleCanonical = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $reference = null;
+    protected $reference = null;
+
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The relative path for primary page for this resource within the IG.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
-    private $relativePath = null;
+    protected $relativePath = null;
 
     /**
      * FHIRImplementationGuideResource1 Constructor
@@ -219,7 +222,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -248,7 +251,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
@@ -263,14 +266,14 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
      * profile. (choose any one of example*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exampleBoolean
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1
+     * @return static
      */
     public function setExampleBoolean($exampleBoolean = null)
     {
@@ -289,7 +292,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If true or a reference, indicates the resource is an example instance. If a
@@ -306,7 +309,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If true or a reference, indicates the resource is an example instance. If a
@@ -314,7 +317,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * profile. (choose any one of example*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $exampleCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1
+     * @return static
      */
     public function setExampleCanonical($exampleCanonical = null)
     {
@@ -333,7 +336,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
      *
@@ -347,12 +350,12 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $reference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1
+     * @return static
      */
     public function setReference(FHIRReference $reference = null)
     {
@@ -362,7 +365,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The relative path for primary page for this resource within the IG.
@@ -376,13 +379,13 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The relative path for primary page for this resource within the IG.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $relativePath
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1
+     * @return static
      */
     public function setRelativePath($relativePath = null)
     {

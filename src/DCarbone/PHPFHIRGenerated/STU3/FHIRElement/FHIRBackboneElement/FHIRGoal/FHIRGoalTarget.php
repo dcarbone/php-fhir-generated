@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DETAIL_CODEABLE_CONCEPT = 'detailCodeableConcept';
     const FIELD_DETAIL_QUANTITY = 'detailQuantity';
@@ -100,7 +100,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -111,13 +111,14 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $detailCodeableConcept = null;
+    protected $detailCodeableConcept = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -128,11 +129,12 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $detailQuantity = null;
+    protected $detailQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -143,42 +145,45 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $detailRange = null;
+    protected $detailRange = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $dueDate = null;
+    protected $dueDate = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $dueDuration = null;
+    protected $dueDuration = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $measure = null;
+    protected $measure = null;
 
     /**
      * FHIRGoalTarget Constructor
@@ -268,7 +273,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -299,7 +304,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -319,7 +324,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -329,7 +334,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * or above the low value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function setDetailCodeableConcept(FHIRCodeableConcept $detailCodeableConcept = null)
     {
@@ -342,7 +347,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -363,7 +368,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -373,7 +378,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * or above the low value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $detailQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function setDetailQuantity(FHIRQuantity $detailQuantity = null)
     {
@@ -384,7 +389,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -403,7 +408,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value of the focus to be achieved to signify the fulfillment of the
      * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
@@ -413,7 +418,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * or above the low value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $detailRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function setDetailRange(FHIRRange $detailRange = null)
     {
@@ -425,7 +430,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
@@ -441,13 +446,13 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $dueDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function setDueDate($dueDate = null)
     {
@@ -466,7 +471,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
@@ -481,13 +486,13 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function setDueDuration(FHIRDuration $dueDuration = null)
     {
@@ -499,7 +504,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
@@ -515,13 +520,13 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $measure
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
+     * @return static
      */
     public function setMeasure(FHIRCodeableConcept $measure = null)
     {

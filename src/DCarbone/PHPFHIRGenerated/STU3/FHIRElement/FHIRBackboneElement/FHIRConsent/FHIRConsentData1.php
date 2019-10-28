@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRConsentData1 extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_DATA_1;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_MEANING = 'meaning';
     const FIELD_MEANING_EXT = '_meaning';
@@ -90,24 +90,25 @@ class FHIRConsentData1 extends FHIRBackboneElement
 
     /**
      * How a resource reference is interpreted when testing consent restrictions
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the resource reference is interpreted when testing consent restrictions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConsentDataMeaning
      */
-    private $meaning = null;
+    protected $meaning = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a specific resource that defines which resources are covered by
      * this consent.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $reference = null;
+    protected $reference = null;
 
     /**
      * FHIRConsentData1 Constructor
@@ -164,7 +165,7 @@ class FHIRConsentData1 extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -193,7 +194,7 @@ class FHIRConsentData1 extends FHIRBackboneElement
 
     /**
      * How a resource reference is interpreted when testing consent restrictions
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the resource reference is interpreted when testing consent restrictions.
      *
@@ -206,12 +207,12 @@ class FHIRConsentData1 extends FHIRBackboneElement
 
     /**
      * How a resource reference is interpreted when testing consent restrictions
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the resource reference is interpreted when testing consent restrictions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConsentDataMeaning $meaning
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1
+     * @return static
      */
     public function setMeaning(FHIRConsentDataMeaning $meaning = null)
     {
@@ -222,7 +223,7 @@ class FHIRConsentData1 extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a specific resource that defines which resources are covered by
      * this consent.
@@ -237,13 +238,13 @@ class FHIRConsentData1 extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a specific resource that defines which resources are covered by
      * this consent.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $reference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1
+     * @return static
      */
     public function setReference(FHIRReference $reference = null)
     {

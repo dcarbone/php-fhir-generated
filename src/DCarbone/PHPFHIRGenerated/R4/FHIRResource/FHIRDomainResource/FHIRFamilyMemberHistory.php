@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Significant health conditions for a person related to the patient relevant in
  * the context of care for the patient.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRFamilyMemberHistory
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -96,7 +96,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGE_AGE = 'ageAge';
     const FIELD_AGE_RANGE = 'ageRange';
@@ -141,70 +141,76 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $ageAge = null;
+    protected $ageAge = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $ageRange = null;
+    protected $ageRange = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $ageString = null;
+    protected $ageString = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $bornDate = null;
+    protected $bornDate = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $bornPeriod = null;
+    protected $bornPeriod = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $bornString = null;
+    protected $bornString = null;
+
     /**
      * Significant health conditions for a person related to the patient relevant in
      * the context of care for the patient.
@@ -216,36 +222,39 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
      */
-    private $condition = [];
+    protected $condition = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member's history is not available.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $dataAbsentReason = null;
+    protected $dataAbsentReason = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the family member history was recorded or last
      * updated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -253,10 +262,11 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $deceasedAge = null;
+    protected $deceasedAge = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -264,12 +274,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $deceasedBoolean = null;
+    protected $deceasedBoolean = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -277,11 +288,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $deceasedDate = null;
+    protected $deceasedDate = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -289,11 +301,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $deceasedRange = null;
+    protected $deceasedRange = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -301,21 +314,23 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $deceasedString = null;
+    protected $deceasedString = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the age value specified is an estimated value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $estimatedAge = null;
+    protected $estimatedAge = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this family member history by the performer or
      * other systems which remain constant as the resource is updated and propagates
@@ -323,11 +338,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
@@ -335,11 +351,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $instantiatesCanonical = [];
+    protected $instantiatesCanonical = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this
@@ -347,23 +364,25 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
-    private $instantiatesUri = [];
+    protected $instantiatesUri = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
@@ -371,72 +390,78 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member history occurred in coded or textual form.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reasonCode = [];
+    protected $reasonCode = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse
      * that justifies this family member history event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $reasonReference = [];
+    protected $reasonReference = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $relationship = null;
+    protected $relationship = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The birth sex of the family member.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $sex = null;
+    protected $sex = null;
+
     /**
      * A code that identifies the status of the family history record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the status of the record of the family history of a specific
      * family member.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFamilyHistoryStatus
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRFamilyMemberHistory Constructor
@@ -783,7 +808,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -821,7 +846,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
@@ -836,13 +861,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $ageAge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setAgeAge(FHIRAge $ageAge = null)
     {
@@ -853,7 +878,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
@@ -868,13 +893,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $ageRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setAgeRange(FHIRRange $ageRange = null)
     {
@@ -885,7 +910,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
@@ -900,13 +925,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
      * (choose any one of age*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $ageString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setAgeString($ageString = null)
     {
@@ -926,7 +951,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
@@ -942,13 +967,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $bornDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setBornDate($bornDate = null)
     {
@@ -967,7 +992,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
@@ -982,13 +1007,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $bornPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setBornPeriod(FHIRPeriod $bornPeriod = null)
     {
@@ -999,7 +1024,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
@@ -1014,13 +1039,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative. (choose any one of
      * born*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $bornString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setBornString($bornString = null)
     {
@@ -1062,7 +1087,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * condition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $condition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addCondition(FHIRFamilyMemberHistoryCondition $condition = null)
     {
@@ -1080,7 +1105,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * condition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[] $condition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setCondition(array $condition = [])
     {
@@ -1102,7 +1127,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member's history is not available.
      *
@@ -1117,12 +1142,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member's history is not available.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $dataAbsentReason
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDataAbsentReason(FHIRCodeableConcept $dataAbsentReason = null)
     {
@@ -1136,7 +1161,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the family member history was recorded or last
      * updated.
@@ -1154,13 +1179,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the family member history was recorded or last
      * updated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1179,7 +1204,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -1195,14 +1220,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
      * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDeceasedAge(FHIRAge $deceasedAge = null)
     {
@@ -1212,7 +1237,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -1227,14 +1252,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
      * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDeceasedBoolean($deceasedBoolean = null)
     {
@@ -1254,7 +1279,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -1271,14 +1296,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
      * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $deceasedDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDeceasedDate($deceasedDate = null)
     {
@@ -1297,7 +1322,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -1313,14 +1338,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
      * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $deceasedRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDeceasedRange(FHIRRange $deceasedRange = null)
     {
@@ -1331,7 +1356,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
@@ -1347,14 +1372,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record. (choose any one of deceased*, but
      * only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $deceasedString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setDeceasedString($deceasedString = null)
     {
@@ -1372,7 +1397,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the age value specified is an estimated value.
      *
@@ -1385,12 +1410,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the age value specified is an estimated value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $estimatedAge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setEstimatedAge($estimatedAge = null)
     {
@@ -1410,7 +1435,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this family member history by the performer or
      * other systems which remain constant as the resource is updated and propagates
@@ -1427,14 +1452,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this family member history by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1446,14 +1471,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this family member history by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1474,7 +1499,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
@@ -1490,14 +1515,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this FamilyMemberHistory.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addInstantiatesCanonical($instantiatesCanonical = null)
     {
@@ -1516,14 +1541,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this FamilyMemberHistory.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $instantiatesCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setInstantiatesCanonical(array $instantiatesCanonical = [])
     {
@@ -1544,7 +1569,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this
@@ -1560,14 +1585,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this
      * FamilyMemberHistory.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $instantiatesUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addInstantiatesUri($instantiatesUri = null)
     {
@@ -1586,14 +1611,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this
      * FamilyMemberHistory.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[] $instantiatesUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setInstantiatesUri(array $instantiatesUri = [])
     {
@@ -1614,7 +1639,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
@@ -1629,13 +1654,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1655,7 +1680,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
@@ -1672,14 +1697,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1691,14 +1716,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1719,7 +1744,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
      *
@@ -1733,12 +1758,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -1750,7 +1775,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member history occurred in coded or textual form.
      *
@@ -1765,12 +1790,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member history occurred in coded or textual form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
@@ -1782,12 +1807,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member history occurred in coded or textual form.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setReasonCode(array $reasonCode = [])
     {
@@ -1808,7 +1833,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse
      * that justifies this family member history event.
@@ -1823,13 +1848,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse
      * that justifies this family member history event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference = null)
     {
@@ -1840,13 +1865,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse
      * that justifies this family member history event.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setReasonReference(array $reasonReference = [])
     {
@@ -1868,7 +1893,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
@@ -1884,13 +1909,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $relationship
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setRelationship(FHIRCodeableConcept $relationship = null)
     {
@@ -1902,7 +1927,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The birth sex of the family member.
      *
@@ -1917,12 +1942,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The birth sex of the family member.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sex
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setSex(FHIRCodeableConcept $sex = null)
     {
@@ -1932,7 +1957,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * A code that identifies the status of the family history record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the status of the record of the family history of a specific
      * family member.
@@ -1946,13 +1971,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * A code that identifies the status of the family history record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the status of the record of the family history of a specific
      * family member.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFamilyHistoryStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return static
      */
     public function setStatus(FHIRFamilyHistoryStatus $status = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
@@ -90,7 +90,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the conformance statement. For example, process for
@@ -98,16 +98,18 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An address to which messages and/or replies are to be sent.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $endpoint = null;
+    protected $endpoint = null;
+
     /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
@@ -117,17 +119,18 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent[]
      */
-    private $event = [];
+    protected $event = [];
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length if the receiver's reliable messaging cache (if a receiver) or how long
      * the cache length on the receiver should be (if a sender).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $reliableCache = null;
+    protected $reliableCache = null;
 
     /**
      * FHIRConformanceMessaging Constructor
@@ -216,7 +219,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -245,7 +248,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the conformance statement. For example, process for
@@ -260,14 +263,14 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the conformance statement. For example, process for
      * becoming an authorized messaging exchange partner.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -285,7 +288,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An address to which messages and/or replies are to be sent.
      *
@@ -298,12 +301,12 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An address to which messages and/or replies are to be sent.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
+     * @return static
      */
     public function setEndpoint($endpoint = null)
     {
@@ -341,7 +344,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * A description of the solution's support for an event at this end point.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
+     * @return static
      */
     public function addEvent(FHIRConformanceEvent $event = null)
     {
@@ -357,7 +360,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * A description of the solution's support for an event at this end point.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent[] $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
+     * @return static
      */
     public function setEvent(array $event = [])
     {
@@ -377,7 +380,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length if the receiver's reliable messaging cache (if a receiver) or how long
      * the cache length on the receiver should be (if a sender).
@@ -391,13 +394,13 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length if the receiver's reliable messaging cache (if a receiver) or how long
      * the cache length on the receiver should be (if a sender).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $reliableCache
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
+     * @return static
      */
     public function setReliableCache($reliableCache = null)
     {

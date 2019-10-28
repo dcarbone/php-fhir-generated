@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocum
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOCUMENT_REFERENCE_DOT_RELATES_TO;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -92,23 +92,24 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
 
     /**
      * The type of relationship between documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this document has with anther document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDocumentRelationshipType
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target document of this relationship.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $target = null;
+    protected $target = null;
 
     /**
      * FHIRDocumentReferenceRelatesTo Constructor
@@ -165,7 +166,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -194,7 +195,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
 
     /**
      * The type of relationship between documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this document has with anther document.
      *
@@ -207,12 +208,12 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
 
     /**
      * The type of relationship between documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this document has with anther document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDocumentRelationshipType $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo
+     * @return static
      */
     public function setCode(FHIRDocumentRelationshipType $code = null)
     {
@@ -223,7 +224,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target document of this relationship.
      *
@@ -237,12 +238,12 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target document of this relationship.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo
+     * @return static
      */
     public function setTarget(FHIRReference $target = null)
     {

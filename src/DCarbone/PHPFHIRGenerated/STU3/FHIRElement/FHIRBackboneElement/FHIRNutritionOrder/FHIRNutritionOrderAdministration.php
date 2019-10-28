@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_QUANTITY = 'quantity';
     const FIELD_QUANTITY_EXT = '_quantity';
@@ -96,39 +96,42 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $rateQuantity = null;
+    protected $rateQuantity = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
-    private $rateRatio = null;
+    protected $rateRatio = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -136,14 +139,14 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $schedule = null;
+    protected $schedule = null;
 
     /**
      * FHIRNutritionOrderAdministration Constructor
@@ -219,7 +222,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -251,7 +254,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
@@ -268,13 +271,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -287,7 +290,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
@@ -304,13 +307,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $rateQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
+     * @return static
      */
     public function setRateQuantity(FHIRQuantity $rateQuantity = null)
     {
@@ -322,7 +325,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
@@ -338,13 +341,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $rateRatio
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
+     * @return static
      */
     public function setRateRatio(FHIRRatio $rateRatio = null)
     {
@@ -359,7 +362,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
@@ -378,13 +381,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $schedule
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
+     * @return static
      */
     public function setSchedule(FHIRTiming $schedule = null)
     {

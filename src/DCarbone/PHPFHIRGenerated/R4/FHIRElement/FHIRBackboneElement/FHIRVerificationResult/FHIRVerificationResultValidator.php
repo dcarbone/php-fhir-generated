@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_VALIDATOR;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ATTESTATION_SIGNATURE = 'attestationSignature';
     const FIELD_IDENTITY_CERTIFICATE = 'identityCertificate';
@@ -96,33 +96,35 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the validator that they have validated the information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
-    private $attestationSignature = null;
+    protected $attestationSignature = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the validator.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $identityCertificate = null;
+    protected $identityCertificate = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the organization validating information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $organization = null;
+    protected $organization = null;
 
     /**
      * FHIRVerificationResultValidator Constructor
@@ -186,7 +188,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -220,7 +222,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the validator that they have validated the information.
      *
@@ -238,12 +240,12 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the validator that they have validated the information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $attestationSignature
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator
+     * @return static
      */
     public function setAttestationSignature(FHIRSignature $attestationSignature = null)
     {
@@ -254,7 +256,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the validator.
      *
@@ -268,12 +270,12 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the validator.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $identityCertificate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator
+     * @return static
      */
     public function setIdentityCertificate($identityCertificate = null)
     {
@@ -292,7 +294,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the organization validating information.
      *
@@ -306,12 +308,12 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the organization validating information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $organization
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator
+     * @return static
      */
     public function setOrganization(FHIRReference $organization = null)
     {

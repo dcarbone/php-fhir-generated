@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSeque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_STRUCTURE_VARIANT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXACT = 'exact';
     const FIELD_EXACT_EXT = '_exact';
@@ -93,13 +93,14 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $exact = null;
+    protected $exact = null;
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -107,17 +108,19 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner
      */
-    private $inner = null;
+    protected $inner = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $length = null;
+    protected $length = null;
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -125,18 +128,19 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter
      */
-    private $outer = null;
+    protected $outer = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $variantType = null;
+    protected $variantType = null;
 
     /**
      * FHIRSequenceStructureVariant Constructor
@@ -219,7 +223,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -248,7 +252,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
      *
@@ -261,12 +265,12 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant
+     * @return static
      */
     public function setExact($exact = null)
     {
@@ -300,7 +304,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
      * Structural variant inner.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner $inner
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant
+     * @return static
      */
     public function setInner(FHIRSequenceInner $inner = null)
     {
@@ -311,7 +315,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
      *
@@ -325,12 +329,12 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant
+     * @return static
      */
     public function setLength($length = null)
     {
@@ -364,7 +368,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
      * Structural variant outer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter $outer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant
+     * @return static
      */
     public function setOuter(FHIRSequenceOuter $outer = null)
     {
@@ -376,7 +380,7 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
      *
@@ -391,12 +395,12 @@ class FHIRSequenceStructureVariant extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $variantType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant
+     * @return static
      */
     public function setVariantType(FHIRCodeableConcept $variantType = null)
     {

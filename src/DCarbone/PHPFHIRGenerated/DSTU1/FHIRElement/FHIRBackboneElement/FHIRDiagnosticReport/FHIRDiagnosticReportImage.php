@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DIAGNOSTIC_REPORT_DOT_IMAGE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
@@ -87,7 +87,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A comment about the image. Typically, this is used to provide an explanation for
      * why the image is included, or to draw the viewer's attention to important
@@ -95,17 +95,18 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the image source.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $link = null;
+    protected $link = null;
 
     /**
      * FHIRDiagnosticReportImage Constructor
@@ -162,7 +163,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -191,7 +192,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A comment about the image. Typically, this is used to provide an explanation for
      * why the image is included, or to draw the viewer's attention to important
@@ -206,14 +207,14 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A comment about the image. Typically, this is used to provide an explanation for
      * why the image is included, or to draw the viewer's attention to important
      * features.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -232,7 +233,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the image source.
      *
@@ -246,12 +247,12 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the image source.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $link
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage
+     * @return static
      */
     public function setLink(FHIRResourceReference $link = null)
     {

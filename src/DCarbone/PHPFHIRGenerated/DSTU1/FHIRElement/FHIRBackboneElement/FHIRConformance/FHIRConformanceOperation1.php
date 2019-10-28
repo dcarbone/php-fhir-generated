@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_OPERATION_1;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -86,16 +86,17 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the system level
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulOperationSystem
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
@@ -103,7 +104,7 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
 
     /**
      * FHIRConformanceOperation1 Constructor
@@ -165,7 +166,7 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -194,7 +195,7 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the system level
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
      *
@@ -207,12 +208,12 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the system level
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulOperationSystem $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1
+     * @return static
      */
     public function setCode(FHIRRestfulOperationSystem $code = null)
     {
@@ -222,7 +223,7 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
@@ -237,14 +238,14 @@ class FHIRConformanceOperation1 extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
      * implemented.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {

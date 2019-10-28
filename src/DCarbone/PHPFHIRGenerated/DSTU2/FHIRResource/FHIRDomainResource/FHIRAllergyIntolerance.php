@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an
  * individual and associated with exposure to a substance.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAllergyIntolerance
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -91,7 +91,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CATEGORY = 'category';
     const FIELD_CATEGORY_EXT = '_category';
@@ -118,28 +118,30 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Category of an identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified Substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCategory
      */
-    private $category = null;
+    protected $category = null;
+
     /**
      * Estimate of the potential clinical harm, or seriousness, of a reaction to an
      * identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified Substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
-    private $criticality = null;
+    protected $criticality = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processes and/or used to refer to it when a direct URL
@@ -148,56 +150,61 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $lastOccurence = null;
+    protected $lastOccurence = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
-    private $note = null;
+    protected $note = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Allergy or Intolerance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $onset = null;
+    protected $onset = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * Risk of harmful or undesirable, physiological response which is unique to an
      * individual and associated with exposure to a substance.
@@ -207,72 +214,78 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
-    private $reaction = [];
+    protected $reaction = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $recordedDate = null;
+    protected $recordedDate = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its conten.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $recorder = null;
+    protected $recorder = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $reporter = null;
+    protected $reporter = null;
+
     /**
      * Assertion about certainty associated with a propensity, or potential risk, of a
      * reaction to the identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified Substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of a substance, or a class of substances, that is considered to
      * be responsible for the adverse reaction risk.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $substance = null;
+    protected $substance = null;
+
     /**
      * Identification of the underlying physiological mechanism for a Reaction Risk.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRAllergyIntolerance Constructor
@@ -466,7 +479,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -503,7 +516,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Category of an identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified Substance.
      *
@@ -516,12 +529,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Category of an identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified Substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCategory $category
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setCategory(FHIRAllergyIntoleranceCategory $category = null)
     {
@@ -532,7 +545,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Estimate of the potential clinical harm, or seriousness, of a reaction to an
      * identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified Substance.
@@ -547,13 +560,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Estimate of the potential clinical harm, or seriousness, of a reaction to an
      * identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified Substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCriticality $criticality
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setCriticality(FHIRAllergyIntoleranceCriticality $criticality = null)
     {
@@ -564,7 +577,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processes and/or used to refer to it when a direct URL
@@ -581,7 +594,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processes and/or used to refer to it when a direct URL
@@ -589,7 +602,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * in written / printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -600,7 +613,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processes and/or used to refer to it when a direct URL
@@ -608,7 +621,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * in written / printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -632,7 +645,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
@@ -650,13 +663,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $lastOccurence
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setLastOccurence($lastOccurence = null)
     {
@@ -676,7 +689,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
@@ -692,13 +705,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setNote(FHIRAnnotation $note = null)
     {
@@ -712,7 +725,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Allergy or Intolerance.
      *
@@ -729,12 +742,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Allergy or Intolerance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $onset
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setOnset($onset = null)
     {
@@ -753,7 +766,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
      *
@@ -767,12 +780,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -802,7 +815,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * Substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $reaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function addReaction(FHIRAllergyIntoleranceReaction $reaction = null)
     {
@@ -818,7 +831,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * Substance.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[] $reaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setReaction(array $reaction = [])
     {
@@ -842,7 +855,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
      *
@@ -859,12 +872,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $recordedDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setRecordedDate($recordedDate = null)
     {
@@ -883,7 +896,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its conten.
      *
@@ -897,12 +910,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its conten.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $recorder
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setRecorder(FHIRReference $recorder = null)
     {
@@ -913,7 +926,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
      *
@@ -927,12 +940,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $reporter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setReporter(FHIRReference $reporter = null)
     {
@@ -943,7 +956,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Assertion about certainty associated with a propensity, or potential risk, of a
      * reaction to the identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified Substance.
@@ -958,13 +971,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Assertion about certainty associated with a propensity, or potential risk, of a
      * reaction to the identified Substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified Substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setStatus(FHIRAllergyIntoleranceStatus $status = null)
     {
@@ -976,7 +989,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of a substance, or a class of substances, that is considered to
      * be responsible for the adverse reaction risk.
@@ -992,13 +1005,13 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of a substance, or a class of substances, that is considered to
      * be responsible for the adverse reaction risk.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $substance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setSubstance(FHIRCodeableConcept $substance = null)
     {
@@ -1008,7 +1021,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Identification of the underlying physiological mechanism for a Reaction Risk.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
      *
@@ -1021,12 +1034,12 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Identification of the underlying physiological mechanism for a Reaction Risk.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceType $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setType(FHIRAllergyIntoleranceType $type = null)
     {

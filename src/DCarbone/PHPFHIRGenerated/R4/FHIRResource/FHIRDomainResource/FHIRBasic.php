@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Basic is used for handling concepts not yet defined in FHIR, narrative-only
  * resources that don't map to an existing resource, and custom resources not
  * appropriate for inclusion in the FHIR specification.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRBasic
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -86,7 +86,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BASIC;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_CODE = 'code';
@@ -99,59 +99,63 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who was responsible for creating the resource instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the 'type' of resource - equivalent to the resource name for other
      * resources.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies when the resource was first created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient, practitioner, device or any other resource that is the
      * "focus" of this resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRBasic Constructor
@@ -244,7 +248,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -282,7 +286,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who was responsible for creating the resource instance.
      *
@@ -296,12 +300,12 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who was responsible for creating the resource instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -313,7 +317,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the 'type' of resource - equivalent to the resource name for other
      * resources.
@@ -329,13 +333,13 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the 'type' of resource - equivalent to the resource name for other
      * resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -347,7 +351,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies when the resource was first created.
      *
@@ -362,12 +366,12 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies when the resource was first created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $created
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -387,7 +391,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
@@ -403,13 +407,13 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -421,13 +425,13 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -448,7 +452,7 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient, practitioner, device or any other resource that is the
      * "focus" of this resource.
@@ -463,13 +467,13 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient, practitioner, device or any other resource that is the
      * "focus" of this resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBasic
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

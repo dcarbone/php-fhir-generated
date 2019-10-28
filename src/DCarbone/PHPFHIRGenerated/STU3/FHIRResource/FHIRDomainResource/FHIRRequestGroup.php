@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * A group of related requests that can be used to capture intended activities that
  * have inter-dependencies such as "give this medication after that one".
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRRequestGroup
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -90,7 +90,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REQUEST_GROUP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_AUTHOR = 'author';
@@ -123,65 +123,71 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
-    private $action = [];
+    protected $action = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request group.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request group was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $authoredOn = null;
+    protected $authoredOn = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $basedOn = [];
+    protected $basedOn = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request group, if any.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $context = null;
+    protected $context = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $definition = [];
+    protected $definition = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
@@ -189,53 +195,58 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $groupIdentifier = null;
+    protected $groupIdentifier = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * The kind of procedure or diagnostic request
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent
      */
-    private $intent = null;
+    protected $intent = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request group was created. This is typically provided
      * as a parameter to the evaluation and echoed by the service, although for some
@@ -244,11 +255,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $reasonCodeableConcept = null;
+    protected $reasonCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request group was created. This is typically provided
      * as a parameter to the evaluation and echoed by the service, although for some
@@ -257,37 +269,40 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $reasonReference = null;
+    protected $reasonReference = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $replaces = [];
+    protected $replaces = [];
+
     /**
      * The status of the communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the request. For request groups, the status reflects the
      * status of all the requests in the group.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request group was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRRequestGroup Constructor
@@ -517,7 +532,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -572,7 +587,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * The actions, if any, produced by the evaluation of the artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction $action
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function addAction(FHIRRequestGroupAction $action = null)
     {
@@ -587,7 +602,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * The actions, if any, produced by the evaluation of the artifact.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[] $action
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setAction(array $action = [])
     {
@@ -608,7 +623,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request group.
      *
@@ -622,12 +637,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -641,7 +656,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request group was created.
      *
@@ -658,12 +673,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request group was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $authoredOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setAuthoredOn($authoredOn = null)
     {
@@ -682,7 +697,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
      *
@@ -696,12 +711,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn = null)
     {
@@ -712,12 +727,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setBasedOn(array $basedOn = [])
     {
@@ -738,7 +753,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request group, if any.
      *
@@ -752,12 +767,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request group, if any.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $context
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setContext(FHIRReference $context = null)
     {
@@ -768,7 +783,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
@@ -783,13 +798,13 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function addDefinition(FHIRReference $definition = null)
     {
@@ -800,13 +815,13 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setDefinition(array $definition = [])
     {
@@ -827,7 +842,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
@@ -843,14 +858,14 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
      * requisition, prescription or similar form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $groupIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setGroupIdentifier(FHIRIdentifier $groupIdentifier = null)
     {
@@ -861,7 +876,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
      *
@@ -875,12 +890,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -891,12 +906,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -916,7 +931,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * The kind of procedure or diagnostic request
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
@@ -930,13 +945,13 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * The kind of procedure or diagnostic request
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent $intent
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setIntent(FHIRRequestIntent $intent = null)
     {
@@ -948,7 +963,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
@@ -963,12 +978,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -980,12 +995,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1005,7 +1020,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
@@ -1019,13 +1034,13 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority $priority
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setPriority(FHIRRequestPriority $priority = null)
     {
@@ -1037,7 +1052,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request group was created. This is typically provided
      * as a parameter to the evaluation and echoed by the service, although for some
@@ -1055,7 +1070,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request group was created. This is typically provided
      * as a parameter to the evaluation and echoed by the service, although for some
@@ -1063,7 +1078,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * indication of the cause for the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setReasonCodeableConcept(FHIRCodeableConcept $reasonCodeableConcept = null)
     {
@@ -1074,7 +1089,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request group was created. This is typically provided
      * as a parameter to the evaluation and echoed by the service, although for some
@@ -1091,7 +1106,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request group was created. This is typically provided
      * as a parameter to the evaluation and echoed by the service, although for some
@@ -1099,7 +1114,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * indication of the cause for the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setReasonReference(FHIRReference $reasonReference = null)
     {
@@ -1110,7 +1125,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
@@ -1124,12 +1139,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $replaces
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces = null)
     {
@@ -1140,12 +1155,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $replaces
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setReplaces(array $replaces = [])
     {
@@ -1165,7 +1180,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * The status of the communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the request. For request groups, the status reflects the
      * status of all the requests in the group.
@@ -1179,13 +1194,13 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * The status of the communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the request. For request groups, the status reflects the
      * status of all the requests in the group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setStatus(FHIRRequestStatus $status = null)
     {
@@ -1196,7 +1211,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request group was created.
      *
@@ -1210,12 +1225,12 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request group was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRRequestGroup
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

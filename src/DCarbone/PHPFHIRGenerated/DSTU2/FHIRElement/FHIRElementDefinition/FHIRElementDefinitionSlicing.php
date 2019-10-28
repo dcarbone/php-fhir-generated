@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElementDefinitionSlicing
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
@@ -83,7 +83,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_SLICING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
@@ -97,7 +97,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
@@ -105,11 +105,12 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Designates which child elements are used to discriminate between the slices when
      * processing an instance. If one or more discriminators are provided, the value of
@@ -119,27 +120,29 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
-    private $discriminator = [];
+    protected $discriminator = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $ordered = null;
+    protected $ordered = null;
+
     /**
      * How slices are interpreted when evaluating an instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSlicingRules
      */
-    private $rules = null;
+    protected $rules = null;
 
     /**
      * FHIRElementDefinitionSlicing Constructor
@@ -235,7 +238,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -265,7 +268,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
@@ -281,14 +284,14 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
      * possible about how the slices can be differentiated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -307,7 +310,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Designates which child elements are used to discriminate between the slices when
      * processing an instance. If one or more discriminators are provided, the value of
@@ -325,7 +328,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Designates which child elements are used to discriminate between the slices when
      * processing an instance. If one or more discriminators are provided, the value of
@@ -334,7 +337,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * elements in each of the slices.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $discriminator
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
+     * @return static
      */
     public function addDiscriminator($discriminator = null)
     {
@@ -353,7 +356,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Designates which child elements are used to discriminate between the slices when
      * processing an instance. If one or more discriminators are provided, the value of
@@ -362,7 +365,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * elements in each of the slices.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[] $discriminator
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
+     * @return static
      */
     public function setDiscriminator(array $discriminator = [])
     {
@@ -382,7 +385,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
@@ -396,13 +399,13 @@ class FHIRElementDefinitionSlicing extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $ordered
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
+     * @return static
      */
     public function setOrdered($ordered = null)
     {
@@ -420,7 +423,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement
 
     /**
      * How slices are interpreted when evaluating an instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
@@ -434,13 +437,13 @@ class FHIRElementDefinitionSlicing extends FHIRElement
 
     /**
      * How slices are interpreted when evaluating an instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSlicingRules $rules
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
+     * @return static
      */
     public function setRules(FHIRSlicingRules $rules = null)
     {

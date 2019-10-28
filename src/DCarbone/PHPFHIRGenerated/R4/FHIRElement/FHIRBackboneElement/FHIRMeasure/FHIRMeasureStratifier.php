@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_STRATIFIER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_COMPONENT = 'component';
@@ -93,7 +93,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a meaning for the stratifier. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
@@ -101,7 +101,8 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * The Measure resource provides the definition of a quality measure.
      *
@@ -111,13 +112,14 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureComponent[]
      */
-    private $component = [];
+    protected $component = [];
+
     /**
      * A expression that is evaluated in a specified context and returns a value. The
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression that specifies the criteria for the stratifier. This is typically
      * the name of an expression defined within a referenced library, but it may also
@@ -125,17 +127,18 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
-    private $criteria = null;
+    protected $criteria = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this stratifier criteria.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
 
     /**
      * FHIRMeasureStratifier Constructor
@@ -214,7 +217,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -245,7 +248,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a meaning for the stratifier. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
@@ -262,14 +265,14 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a meaning for the stratifier. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing stratifiers to be correlated across measures.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -299,7 +302,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * a valid FHIR Resource Path.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureComponent $component
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
+     * @return static
      */
     public function addComponent(FHIRMeasureComponent $component = null)
     {
@@ -315,7 +318,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * a valid FHIR Resource Path.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureComponent[] $component
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
+     * @return static
      */
     public function setComponent(array $component = [])
     {
@@ -338,7 +341,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression that specifies the criteria for the stratifier. This is typically
      * the name of an expression defined within a referenced library, but it may also
@@ -356,14 +359,14 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression that specifies the criteria for the stratifier. This is typically
      * the name of an expression defined within a referenced library, but it may also
      * be a path to a stratifier element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $criteria
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
+     * @return static
      */
     public function setCriteria(FHIRExpression $criteria = null)
     {
@@ -374,7 +377,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this stratifier criteria.
      *
@@ -388,12 +391,12 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this stratifier criteria.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
+     * @return static
      */
     public function setDescription($description = null)
     {

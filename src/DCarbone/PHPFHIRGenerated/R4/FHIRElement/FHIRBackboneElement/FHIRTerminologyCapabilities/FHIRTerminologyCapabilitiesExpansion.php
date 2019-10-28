@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_EXPANSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_HIERARCHICAL = 'hierarchical';
     const FIELD_HIERARCHICAL_EXT = '_hierarchical';
@@ -96,31 +96,34 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $hierarchical = null;
+    protected $hierarchical = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Allow request for incomplete expansions?
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $incomplete = null;
+    protected $incomplete = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $paging = null;
+    protected $paging = null;
+
     /**
      * A TerminologyCapabilities resource documents a set of capabilities (behaviors)
      * of a FHIR Terminology Server that may be used as a statement of actual server
@@ -130,21 +133,22 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[]
      */
-    private $parameter = [];
+    protected $parameter = [];
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $textFilter = null;
+    protected $textFilter = null;
 
     /**
      * FHIRTerminologyCapabilitiesExpansion Constructor
@@ -245,7 +249,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -274,7 +278,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
      *
@@ -287,12 +291,12 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $hierarchical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function setHierarchical($hierarchical = null)
     {
@@ -310,7 +314,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Allow request for incomplete expansions?
      *
@@ -323,12 +327,12 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Allow request for incomplete expansions?
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $incomplete
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function setIncomplete($incomplete = null)
     {
@@ -346,7 +350,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
      *
@@ -359,12 +363,12 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $paging
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function setPaging($paging = null)
     {
@@ -402,7 +406,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Supported expansion parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function addParameter(FHIRTerminologyCapabilitiesParameter $parameter = null)
     {
@@ -418,7 +422,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Supported expansion parameter.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[] $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function setParameter(array $parameter = [])
     {
@@ -442,7 +446,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
@@ -460,13 +464,13 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $textFilter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return static
      */
     public function setTextFilter($textFilter = null)
     {

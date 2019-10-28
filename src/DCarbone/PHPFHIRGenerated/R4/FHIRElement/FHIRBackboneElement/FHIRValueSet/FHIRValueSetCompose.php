@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXCLUDE = 'exclude';
     const FIELD_INACTIVE = 'inactive';
@@ -103,10 +103,11 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    private $exclude = [];
+    protected $exclude = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether inactive codes - codes that are not approved for current use - are in
      * the value set. If inactive = true, inactive codes are to be included in the
@@ -117,7 +118,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $inactive = null;
+    protected $inactive = null;
+
     /**
      * A ValueSet resource instance specifies a set of codes drawn from one or more
      * code systems, intended for use in a particular context. Value sets link between
@@ -128,12 +130,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    private $include = [];
+    protected $include = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
@@ -141,7 +144,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $lockedDate = null;
+    protected $lockedDate = null;
 
     /**
      * FHIRValueSetCompose Constructor
@@ -233,7 +236,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -286,7 +289,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * other value sets.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $exclude
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function addExclude(FHIRValueSetInclude $exclude = null)
     {
@@ -304,7 +307,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * other value sets.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[] $exclude
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setExclude(array $exclude = [])
     {
@@ -324,7 +327,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether inactive codes - codes that are not approved for current use - are in
      * the value set. If inactive = true, inactive codes are to be included in the
@@ -342,7 +345,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether inactive codes - codes that are not approved for current use - are in
      * the value set. If inactive = true, inactive codes are to be included in the
@@ -352,7 +355,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * expected to be included).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $inactive
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setInactive($inactive = null)
     {
@@ -392,7 +395,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Include one or more codes from a code system or other value set(s).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $include
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function addInclude(FHIRValueSetInclude $include = null)
     {
@@ -409,7 +412,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Include one or more codes from a code system or other value set(s).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[] $include
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setInclude(array $include = [])
     {
@@ -431,7 +434,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
@@ -448,14 +451,14 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
      * that are not already tied to a specific version.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $lockedDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setLockedDate($lockedDate = null)
     {

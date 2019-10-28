@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FROM = 'from';
     const FIELD_FROM_EXT = '_from';
@@ -96,46 +96,49 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lower bound of confidence interval.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $from = null;
+    protected $from = null;
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Use 95 for a 95% confidence interval.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $level = null;
+    protected $level = null;
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Upper bound of confidence interval.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $to = null;
+    protected $to = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include confidence interval and interquartile range.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRRiskEvidenceSynthesisPrecisionEstimate Constructor
@@ -216,7 +219,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -247,7 +250,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lower bound of confidence interval.
      *
@@ -262,12 +265,12 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lower bound of confidence interval.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $from
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate
+     * @return static
      */
     public function setFrom($from = null)
     {
@@ -287,7 +290,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Use 95 for a 95% confidence interval.
      *
@@ -302,12 +305,12 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Use 95 for a 95% confidence interval.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $level
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate
+     * @return static
      */
     public function setLevel($level = null)
     {
@@ -327,7 +330,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Upper bound of confidence interval.
      *
@@ -342,12 +345,12 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Upper bound of confidence interval.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $to
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate
+     * @return static
      */
     public function setTo($to = null)
     {
@@ -367,7 +370,7 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include confidence interval and interquartile range.
      *
@@ -382,12 +385,12 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include confidence interval and interquartile range.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

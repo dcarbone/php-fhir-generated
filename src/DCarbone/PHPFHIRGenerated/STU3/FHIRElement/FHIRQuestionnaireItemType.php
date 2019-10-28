@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * Distinguishes groups from questions and display text and indicates data type for
  * questions
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRQuestionnaireItemType
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -81,14 +81,14 @@ class FHIRQuestionnaireItemType extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_ITEM_TYPE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRQuestionnaireItemTypeList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRQuestionnaireItemType Constructor
@@ -133,7 +133,7 @@ class FHIRQuestionnaireItemType extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -170,7 +170,7 @@ class FHIRQuestionnaireItemType extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRQuestionnaireItemTypeList $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType
+     * @return static
      */
     public function setValue($value = null)
     {

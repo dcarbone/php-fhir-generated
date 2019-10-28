@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_MEDICATION_CODEABLE_CONCEPT = 'medicationCodeableConcept';
     const FIELD_MEDICATION_REFERENCE = 'medicationReference';
@@ -91,7 +91,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication. (choose any one of
@@ -99,11 +99,12 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $medicationCodeableConcept = null;
+    protected $medicationCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication. (choose any one of
@@ -111,19 +112,20 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $medicationReference = null;
+    protected $medicationReference = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship between the medicinal product indication or
      * contraindication and another therapy.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $therapyRelationshipType = null;
+    protected $therapyRelationshipType = null;
 
     /**
      * FHIRMedicinalProductContraindicationOtherTherapy Constructor
@@ -182,7 +184,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -213,7 +215,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication. (choose any one of
@@ -230,14 +232,14 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication. (choose any one of
      * medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
+     * @return static
      */
     public function setMedicationCodeableConcept(FHIRCodeableConcept $medicationCodeableConcept = null)
     {
@@ -248,7 +250,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication. (choose any one of
@@ -264,14 +266,14 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication. (choose any one of
      * medication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
+     * @return static
      */
     public function setMedicationReference(FHIRReference $medicationReference = null)
     {
@@ -283,7 +285,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship between the medicinal product indication or
      * contraindication and another therapy.
@@ -299,13 +301,13 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of relationship between the medicinal product indication or
      * contraindication and another therapy.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $therapyRelationshipType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
+     * @return static
      */
     public function setTherapyRelationshipType(FHIRCodeableConcept $therapyRelationshipType = null)
     {

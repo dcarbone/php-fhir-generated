@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_BENEFIT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALLOWED_MONEY = 'allowedMoney';
     const FIELD_ALLOWED_MONEY_EXT = '_allowedMoney';
@@ -102,28 +102,30 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    private $allowedMoney = null;
+    protected $allowedMoney = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $allowedString = null;
+    protected $allowedString = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
@@ -131,43 +133,47 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $allowedUnsignedInt = null;
+    protected $allowedUnsignedInt = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of benefit being provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    private $usedMoney = null;
+    protected $usedMoney = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $usedString = null;
+    protected $usedString = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
@@ -175,7 +181,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $usedUnsignedInt = null;
+    protected $usedUnsignedInt = null;
 
     /**
      * FHIRCoverageEligibilityResponseBenefit Constructor
@@ -292,7 +298,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -322,7 +328,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
@@ -337,13 +343,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $allowedMoney
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setAllowedMoney(FHIRMoney $allowedMoney = null)
     {
@@ -354,7 +360,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
@@ -369,13 +375,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $allowedString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setAllowedString($allowedString = null)
     {
@@ -393,7 +399,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
@@ -408,14 +414,14 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage. (choose any
      * one of allowed*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setAllowedUnsignedInt($allowedUnsignedInt = null)
     {
@@ -435,7 +441,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of benefit being provided.
      *
@@ -450,12 +456,12 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of benefit being provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -466,7 +472,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
@@ -481,13 +487,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $usedMoney
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setUsedMoney(FHIRMoney $usedMoney = null)
     {
@@ -498,7 +504,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
@@ -513,13 +519,13 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $usedString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setUsedString($usedString = null)
     {
@@ -537,7 +543,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
@@ -552,14 +558,14 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date. (choose any one of
      * used*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit
+     * @return static
      */
     public function setUsedUnsignedInt($usedUnsignedInt = null)
     {

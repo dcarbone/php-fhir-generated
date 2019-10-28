@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_REST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMPARTMENT = 'compartment';
     const FIELD_COMPARTMENT_EXT = '_compartment';
@@ -100,7 +100,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
@@ -108,18 +108,20 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[]
      */
-    private $compartment = [];
+    protected $compartment = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -129,17 +131,19 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
-    private $interaction = [];
+    protected $interaction = [];
+
     /**
      * The mode of a RESTful capability statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRestfulCapabilityMode
      */
-    private $mode = null;
+    protected $mode = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -150,7 +154,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
-    private $operation = [];
+    protected $operation = [];
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -161,7 +166,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
-    private $resource = [];
+    protected $resource = [];
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -174,7 +180,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
-    private $searchParam = [];
+    protected $searchParam = [];
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -185,7 +192,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
-    private $security = null;
+    protected $security = null;
 
     /**
      * FHIRCapabilityStatementRest Constructor
@@ -336,7 +343,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -366,7 +373,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
@@ -382,14 +389,14 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $compartment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function addCompartment($compartment = null)
     {
@@ -408,14 +415,14 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[] $compartment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setCompartment(array $compartment = [])
     {
@@ -436,7 +443,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
@@ -451,13 +458,13 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -495,7 +502,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * A specification of restful operations supported by the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $interaction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function addInteraction(FHIRCapabilityStatementInteraction1 $interaction = null)
     {
@@ -511,7 +518,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * A specification of restful operations supported by the system.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[] $interaction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setInteraction(array $interaction = [])
     {
@@ -531,7 +538,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
 
     /**
      * The mode of a RESTful capability statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
@@ -545,13 +552,13 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
 
     /**
      * The mode of a RESTful capability statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRestfulCapabilityMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setMode(FHIRRestfulCapabilityMode $mode = null)
     {
@@ -583,7 +590,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * their meaning and type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function addOperation(FHIRCapabilityStatementOperation $operation = null)
     {
@@ -600,7 +607,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * their meaning and type.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[] $operation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setOperation(array $operation = [])
     {
@@ -642,7 +649,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * resource type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource $resource
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function addResource(FHIRCapabilityStatementResource $resource = null)
     {
@@ -659,7 +666,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * resource type.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource[] $resource
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setResource(array $resource = [])
     {
@@ -705,7 +712,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * implementation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function addSearchParam(FHIRCapabilityStatementSearchParam $searchParam = null)
     {
@@ -724,7 +731,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * implementation.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[] $searchParam
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setSearchParam(array $searchParam = [])
     {
@@ -766,7 +773,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * client needs to know.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
+     * @return static
      */
     public function setSecurity(FHIRCapabilityStatementSecurity $security = null)
     {

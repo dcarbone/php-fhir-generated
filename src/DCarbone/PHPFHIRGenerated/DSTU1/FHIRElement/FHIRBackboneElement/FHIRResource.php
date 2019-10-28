@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRResource extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINED = 'contained';
     const FIELD_LANGUAGE = 'language';
@@ -92,11 +92,12 @@ class FHIRResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[]
      */
-    private $contained = [];
+    protected $contained = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The human language of the content. The value can be any valid value according to
@@ -104,17 +105,18 @@ class FHIRResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $language = null;
+    protected $language = null;
+
     /**
      * A human-readable formatted text, including images.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative
      */
-    private $text = null;
+    protected $text = null;
 
     /**
      * FHIRResource Constructor
@@ -189,7 +191,7 @@ class FHIRResource extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -234,7 +236,7 @@ class FHIRResource extends FHIRBackboneElement
      * independently, and nor can they have their own independent transaction scope
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface $contained
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
+     * @return static
      */
     public function addContained(PHPFHIRContainedTypeInterface $contained = null)
     {
@@ -248,7 +250,7 @@ class FHIRResource extends FHIRBackboneElement
      * independently, and nor can they have their own independent transaction scope
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[] $contained
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
+     * @return static
      */
     public function setContained(array $contained = [])
     {
@@ -291,7 +293,7 @@ class FHIRResource extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The human language of the content. The value can be any valid value according to
@@ -307,14 +309,14 @@ class FHIRResource extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The human language of the content. The value can be any valid value according to
      * BCP-47
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $language
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
+     * @return static
      */
     public function setLanguage($language = null)
     {
@@ -333,7 +335,7 @@ class FHIRResource extends FHIRBackboneElement
     /**
      * A human-readable formatted text, including images.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
      *
@@ -347,12 +349,12 @@ class FHIRResource extends FHIRBackboneElement
     /**
      * A human-readable formatted text, including images.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative $text
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
+     * @return static
      */
     public function setText(FHIRNarrative $text = null)
     {

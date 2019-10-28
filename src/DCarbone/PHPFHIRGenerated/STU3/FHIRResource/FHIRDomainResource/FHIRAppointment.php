@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * A booking of a healthcare event among patient(s), practitioner(s), related
  * person(s) and/or device(s) for a specific date/time. This may result in one or
  * more Encounter(s).
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAppointment
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -93,7 +93,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_APPOINTMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPOINTMENT_TYPE = 'appointmentType';
     const FIELD_COMMENT = 'comment';
@@ -129,31 +129,33 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The style of appointment or patient that has been booked in the slot (not
      * service type).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $appointmentType = null;
+    protected $appointmentType = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this appointment was initially created. This could be different to
      * the meta.lastModified value on the initial entry, as this could have been before
@@ -162,11 +164,12 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
@@ -174,23 +177,25 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $end = null;
+    protected $end = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment concern that are
      * defined by business processes and/or used to refer to it when a direct URL
@@ -199,22 +204,24 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The referral request this appointment is allocated to assess (incoming
      * referral).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $incomingReferral = [];
+    protected $incomingReferral = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the appointment has been scheduled to take place, as specified using
      * information from another resource. When the patient arrives and the encounter
@@ -224,10 +231,11 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $indication = [];
+    protected $indication = [];
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of minutes that the appointment is to take. This can be less than the
@@ -236,7 +244,8 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $minutesDuration = null;
+    protected $minutesDuration = null;
+
     /**
      * A booking of a healthcare event among patient(s), practitioner(s), related
      * person(s) and/or device(s) for a specific date/time. This may result in one or
@@ -246,10 +255,11 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The priority of the appointment. Can be used to make informed decisions if
@@ -258,23 +268,25 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reason = [];
+    protected $reason = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of date ranges (potentially including times) that the appointment is
      * preferred to be scheduled within. When using these values, the minutes duration
@@ -283,68 +295,74 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod[]
      */
-    private $requestedPeriod = [];
+    protected $requestedPeriod = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A broad categorisation of the service that is to be performed during this
      * appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $serviceCategory = null;
+    protected $serviceCategory = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $serviceType = [];
+    protected $serviceType = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $slot = [];
+    protected $slot = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $specialty = [];
+    protected $specialty = [];
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $start = null;
+    protected $start = null;
+
     /**
      * The free/busy status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
@@ -352,18 +370,19 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAppointmentStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information to support the appointment provided when making the
      * appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $supportingInformation = [];
+    protected $supportingInformation = [];
 
     /**
      * FHIRAppointment Constructor
@@ -668,7 +687,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -707,7 +726,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The style of appointment or patient that has been booked in the slot (not
      * service type).
@@ -723,13 +742,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The style of appointment or patient that has been booked in the slot (not
      * service type).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $appointmentType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setAppointmentType(FHIRCodeableConcept $appointmentType = null)
     {
@@ -740,7 +759,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
      *
@@ -754,12 +773,12 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -781,7 +800,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this appointment was initially created. This could be different to
      * the meta.lastModified value on the initial entry, as this could have been before
@@ -801,7 +820,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this appointment was initially created. This could be different to
      * the meta.lastModified value on the initial entry, as this could have been before
@@ -809,7 +828,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * the lifespan of the appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $created
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -828,7 +847,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
@@ -844,14 +863,14 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
      * be put in the comment field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -872,7 +891,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
      *
@@ -888,12 +907,12 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $end
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setEnd($end = null)
     {
@@ -912,7 +931,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment concern that are
      * defined by business processes and/or used to refer to it when a direct URL
@@ -929,7 +948,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment concern that are
      * defined by business processes and/or used to refer to it when a direct URL
@@ -937,7 +956,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * in written / printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -948,7 +967,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment concern that are
      * defined by business processes and/or used to refer to it when a direct URL
@@ -956,7 +975,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * in written / printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -977,7 +996,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The referral request this appointment is allocated to assess (incoming
      * referral).
@@ -992,13 +1011,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The referral request this appointment is allocated to assess (incoming
      * referral).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $incomingReferral
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addIncomingReferral(FHIRReference $incomingReferral = null)
     {
@@ -1009,13 +1028,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The referral request this appointment is allocated to assess (incoming
      * referral).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $incomingReferral
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setIncomingReferral(array $incomingReferral = [])
     {
@@ -1036,7 +1055,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the appointment has been scheduled to take place, as specified using
      * information from another resource. When the patient arrives and the encounter
@@ -1054,7 +1073,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the appointment has been scheduled to take place, as specified using
      * information from another resource. When the patient arrives and the encounter
@@ -1063,7 +1082,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $indication
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addIndication(FHIRReference $indication = null)
     {
@@ -1074,7 +1093,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the appointment has been scheduled to take place, as specified using
      * information from another resource. When the patient arrives and the encounter
@@ -1083,7 +1102,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Procedure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $indication
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setIndication(array $indication = [])
     {
@@ -1103,7 +1122,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of minutes that the appointment is to take. This can be less than the
@@ -1119,7 +1138,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of minutes that the appointment is to take. This can be less than the
@@ -1127,7 +1146,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * only an estimate or is a planned appointment request).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $minutesDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setMinutesDuration($minutesDuration = null)
     {
@@ -1165,7 +1184,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * List of participants involved in the appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addParticipant(FHIRAppointmentParticipant $participant = null)
     {
@@ -1181,7 +1200,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * List of participants involved in the appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -1201,7 +1220,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The priority of the appointment. Can be used to make informed decisions if
@@ -1217,7 +1236,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The priority of the appointment. Can be used to make informed decisions if
@@ -1225,7 +1244,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * undefined, 1 as highest, 9 as lowest priority).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $priority
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setPriority($priority = null)
     {
@@ -1245,7 +1264,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
@@ -1261,13 +1280,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason = null)
     {
@@ -1279,13 +1298,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setReason(array $reason = [])
     {
@@ -1306,7 +1325,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of date ranges (potentially including times) that the appointment is
      * preferred to be scheduled within. When using these values, the minutes duration
@@ -1323,7 +1342,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of date ranges (potentially including times) that the appointment is
      * preferred to be scheduled within. When using these values, the minutes duration
@@ -1331,7 +1350,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * populate the start/end times for the actual allocated time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $requestedPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addRequestedPeriod(FHIRPeriod $requestedPeriod = null)
     {
@@ -1342,7 +1361,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of date ranges (potentially including times) that the appointment is
      * preferred to be scheduled within. When using these values, the minutes duration
@@ -1350,7 +1369,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * populate the start/end times for the actual allocated time.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod[] $requestedPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setRequestedPeriod(array $requestedPeriod = [])
     {
@@ -1372,7 +1391,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A broad categorisation of the service that is to be performed during this
      * appointment.
@@ -1388,13 +1407,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A broad categorisation of the service that is to be performed during this
      * appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $serviceCategory
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setServiceCategory(FHIRCodeableConcept $serviceCategory = null)
     {
@@ -1406,7 +1425,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
      *
@@ -1421,12 +1440,12 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $serviceType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addServiceType(FHIRCodeableConcept $serviceType = null)
     {
@@ -1438,12 +1457,12 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $serviceType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setServiceType(array $serviceType = [])
     {
@@ -1464,7 +1483,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
@@ -1479,13 +1498,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $slot
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addSlot(FHIRReference $slot = null)
     {
@@ -1496,13 +1515,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $slot
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setSlot(array $slot = [])
     {
@@ -1524,7 +1543,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
@@ -1540,13 +1559,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $specialty
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty = null)
     {
@@ -1558,13 +1577,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $specialty
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setSpecialty(array $specialty = [])
     {
@@ -1587,7 +1606,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
      *
@@ -1603,12 +1622,12 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $start
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setStart($start = null)
     {
@@ -1626,7 +1645,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * The free/busy status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
@@ -1641,14 +1660,14 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * The free/busy status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAppointmentStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setStatus(FHIRAppointmentStatus $status = null)
     {
@@ -1659,7 +1678,7 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information to support the appointment provided when making the
      * appointment.
@@ -1674,13 +1693,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information to support the appointment provided when making the
      * appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation = null)
     {
@@ -1691,13 +1710,13 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information to support the appointment provided when making the
      * appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAppointment
+     * @return static
      */
     public function setSupportingInformation(array $supportingInformation = [])
     {

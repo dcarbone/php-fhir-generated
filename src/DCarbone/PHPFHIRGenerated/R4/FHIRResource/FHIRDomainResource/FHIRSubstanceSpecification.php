@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * The detailed description of a substance, typically at a level beyond what is
  * used for prescribing.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSubstanceSpecification
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -92,7 +92,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_COMMENT = 'comment';
@@ -125,49 +125,54 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual comment about this record of a substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to only human or veterinary use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $domain = null;
+    protected $domain = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
@@ -176,7 +181,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[]
      */
-    private $moiety = [];
+    protected $moiety = [];
+
     /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
@@ -185,7 +191,8 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[]
      */
-    private $molecularWeight = [];
+    protected $molecularWeight = [];
+
     /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
@@ -194,27 +201,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
-    private $name = [];
+    protected $name = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $nucleicAcid = null;
+    protected $nucleicAcid = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $polymer = null;
+    protected $polymer = null;
+
     /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
@@ -224,27 +234,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[]
      */
-    private $property = [];
+    protected $property = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $protein = null;
+    protected $protein = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $referenceInformation = null;
+    protected $referenceInformation = null;
+
     /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
@@ -253,38 +266,42 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
      */
-    private $relationship = [];
+    protected $relationship = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $source = [];
+    protected $source = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material or taxonomic/anatomical source for the substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $sourceMaterial = null;
+    protected $sourceMaterial = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. approved.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
@@ -293,18 +310,19 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
      */
-    private $structure = null;
+    protected $structure = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level categorization, e.g. polymer or nucleic acid.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRSubstanceSpecification Constructor
@@ -546,7 +564,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -601,7 +619,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Codes associated with the substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addCode(FHIRSubstanceSpecificationCode $code = null)
     {
@@ -616,7 +634,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Codes associated with the substance.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[] $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -637,7 +655,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual comment about this record of a substance.
      *
@@ -651,12 +669,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual comment about this record of a substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -675,7 +693,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the substance.
      *
@@ -689,12 +707,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -714,7 +732,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to only human or veterinary use.
      *
@@ -729,12 +747,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to only human or veterinary use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $domain
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setDomain(FHIRCodeableConcept $domain = null)
     {
@@ -746,7 +764,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
      *
@@ -761,12 +779,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -794,7 +812,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Moiety, for structural modifications.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety $moiety
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addMoiety(FHIRSubstanceSpecificationMoiety $moiety = null)
     {
@@ -809,7 +827,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Moiety, for structural modifications.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[] $moiety
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setMoiety(array $moiety = [])
     {
@@ -847,7 +865,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addMolecularWeight(FHIRSubstanceSpecificationMolecularWeight $molecularWeight = null)
     {
@@ -862,7 +880,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[] $molecularWeight
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setMolecularWeight(array $molecularWeight = [])
     {
@@ -900,7 +918,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Names applicable to this substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addName(FHIRSubstanceSpecificationName $name = null)
     {
@@ -915,7 +933,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Names applicable to this substance.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[] $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setName(array $name = [])
     {
@@ -936,7 +954,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
      *
@@ -950,12 +968,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $nucleicAcid
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setNucleicAcid(FHIRReference $nucleicAcid = null)
     {
@@ -966,7 +984,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
      *
@@ -980,12 +998,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $polymer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setPolymer(FHIRReference $polymer = null)
     {
@@ -1015,7 +1033,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * substances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addProperty(FHIRSubstanceSpecificationProperty $property = null)
     {
@@ -1031,7 +1049,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * substances.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[] $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setProperty(array $property = [])
     {
@@ -1052,7 +1070,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
      *
@@ -1066,12 +1084,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $protein
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setProtein(FHIRReference $protein = null)
     {
@@ -1082,7 +1100,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
      *
@@ -1096,12 +1114,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $referenceInformation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setReferenceInformation(FHIRReference $referenceInformation = null)
     {
@@ -1129,7 +1147,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A link between this substance and another, with details of the relationship.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship $relationship
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addRelationship(FHIRSubstanceSpecificationRelationship $relationship = null)
     {
@@ -1144,7 +1162,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A link between this substance and another, with details of the relationship.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[] $relationship
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setRelationship(array $relationship = [])
     {
@@ -1165,7 +1183,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
      *
@@ -1179,12 +1197,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function addSource(FHIRReference $source = null)
     {
@@ -1195,12 +1213,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setSource(array $source = [])
     {
@@ -1221,7 +1239,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material or taxonomic/anatomical source for the substance.
      *
@@ -1235,12 +1253,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material or taxonomic/anatomical source for the substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $sourceMaterial
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setSourceMaterial(FHIRReference $sourceMaterial = null)
     {
@@ -1252,7 +1270,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. approved.
      *
@@ -1267,12 +1285,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. approved.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setStatus(FHIRCodeableConcept $status = null)
     {
@@ -1300,7 +1318,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Structural information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure $structure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setStructure(FHIRSubstanceSpecificationStructure $structure = null)
     {
@@ -1312,7 +1330,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level categorization, e.g. polymer or nucleic acid.
      *
@@ -1327,12 +1345,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level categorization, e.g. polymer or nucleic acid.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

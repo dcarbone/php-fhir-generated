@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * A set of rules or how FHIR is used to solve a particular problem. This resource
  * is used to gather all the parts of an implementation guide into a logical whole,
  * and to publish a computable definition of all the parts.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRImplementationGuide
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -94,7 +94,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BINARY = 'binary';
     const FIELD_BINARY_EXT = '_binary';
@@ -128,13 +128,14 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A binary file that is included in the implementation guide when it is published.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
-    private $binary = [];
+    protected $binary = [];
+
     /**
      * A set of rules or how FHIR is used to solve a particular problem. This resource
      * is used to gather all the parts of an implementation guide into a logical whole,
@@ -144,11 +145,12 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
@@ -156,14 +158,15 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the implementation guide was published. The date must
      * change when the business version changes, if it does, and it must change if the
@@ -172,7 +175,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A set of rules or how FHIR is used to solve a particular problem. This resource
      * is used to gather all the parts of an implementation guide into a logical whole,
@@ -184,21 +188,23 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency[]
      */
-    private $dependency = [];
+    protected $dependency = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the Implementation Guide and its
      * use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This Implementation Guide was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
@@ -206,13 +212,14 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this ImplementationGuide is based
@@ -221,7 +228,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
-    private $fhirVersion = null;
+    protected $fhirVersion = null;
+
     /**
      * A set of rules or how FHIR is used to solve a particular problem. This resource
      * is used to gather all the parts of an implementation guide into a logical whole,
@@ -232,17 +240,19 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
      */
-    private $global = [];
+    protected $global = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Implementation Guide.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A set of rules or how FHIR is used to solve a particular problem. This resource
      * is used to gather all the parts of an implementation guide into a logical whole,
@@ -252,7 +262,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage[]
      */
-    private $package = [];
+    protected $package = [];
+
     /**
      * A set of rules or how FHIR is used to solve a particular problem. This resource
      * is used to gather all the parts of an implementation guide into a logical whole,
@@ -263,33 +274,36 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
-    private $page = null;
+    protected $page = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the implementation
      * guide.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the Implementation Guide.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this implementation guide when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -298,12 +312,13 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -312,11 +327,12 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the Implementation Guide
      * when it is referenced in a specification, model, design or instance. This is an
@@ -324,7 +340,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRImplementationGuide Constructor
@@ -586,7 +602,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -624,7 +640,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A binary file that is included in the implementation guide when it is published.
      *
@@ -638,12 +654,12 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A binary file that is included in the implementation guide when it is published.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $binary
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function addBinary($binary = null)
     {
@@ -662,12 +678,12 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A binary file that is included in the implementation guide when it is published.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[] $binary
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setBinary(array $binary = [])
     {
@@ -707,7 +723,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function addContact(FHIRImplementationGuideContact $contact = null)
     {
@@ -723,7 +739,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -744,7 +760,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
@@ -760,14 +776,14 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the constraints and mappings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $copyright
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -789,7 +805,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the implementation guide was published. The date must
      * change when the business version changes, if it does, and it must change if the
@@ -809,7 +825,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the implementation guide was published. The date must
      * change when the business version changes, if it does, and it must change if the
@@ -817,7 +833,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * of the implementation guide changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -859,7 +875,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * implementation guides.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency $dependency
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function addDependency(FHIRImplementationGuideDependency $dependency = null)
     {
@@ -877,7 +893,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * implementation guides.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency[] $dependency
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setDependency(array $dependency = [])
     {
@@ -898,7 +914,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the Implementation Guide and its
      * use.
@@ -913,13 +929,13 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the Implementation Guide and its
      * use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -937,7 +953,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This Implementation Guide was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
@@ -952,14 +968,14 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This Implementation Guide was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -980,7 +996,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this ImplementationGuide is based
@@ -999,7 +1015,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this ImplementationGuide is based
@@ -1007,7 +1023,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * e.g. [publication].[major].[minor], which is 1.0.2 for this version.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId $fhirVersion
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setFhirVersion($fhirVersion = null)
     {
@@ -1047,7 +1063,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * conform to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function addGlobal(FHIRImplementationGuideGlobal $global = null)
     {
@@ -1064,7 +1080,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * conform to.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal[] $global
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setGlobal(array $global = [])
     {
@@ -1085,7 +1101,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Implementation Guide.
      *
@@ -1099,12 +1115,12 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Implementation Guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1142,7 +1158,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A logical group of resources. Logical groups can be used when building pages.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage $package
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function addPackage(FHIRImplementationGuidePackage $package = null)
     {
@@ -1158,7 +1174,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A logical group of resources. Logical groups can be used when building pages.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage[] $package
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setPackage(array $package = [])
     {
@@ -1200,7 +1216,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * implementation guide home page.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setPage(FHIRImplementationGuidePage $page = null)
     {
@@ -1211,7 +1227,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the implementation
      * guide.
@@ -1226,13 +1242,13 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the implementation
      * guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1251,7 +1267,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the Implementation Guide.
@@ -1266,13 +1282,13 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the Implementation Guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setStatus($status = null)
     {
@@ -1291,7 +1307,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this implementation guide when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1308,7 +1324,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this implementation guide when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1316,7 +1332,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * implementation guide is (or will be) published.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1336,7 +1352,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1354,7 +1370,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1362,7 +1378,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * the country / jurisdiction for which this implementation guide was defined.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $useContext
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function addUseContext(FHIRCodeableConcept $useContext = null)
     {
@@ -1374,7 +1390,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1382,7 +1398,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * the country / jurisdiction for which this implementation guide was defined.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -1403,7 +1419,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the Implementation Guide
      * when it is referenced in a specification, model, design or instance. This is an
@@ -1419,14 +1435,14 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the Implementation Guide
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the Implementation Guide author manually.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
+     * @return static
      */
     public function setVersion($version = null)
     {

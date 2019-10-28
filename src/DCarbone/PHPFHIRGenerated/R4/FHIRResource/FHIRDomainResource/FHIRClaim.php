@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A provider issued list of professional services and products which have been
  * provided, or are to be provided, to a patient which is sent to an insurer for
  * reimbursement.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRClaim
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -99,7 +99,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCIDENT = 'accident';
     const FIELD_BILLABLE_PERIOD = 'billablePeriod';
@@ -144,17 +144,19 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident
      */
-    private $accident = null;
+    protected $accident = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period for which charges are being submitted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $billablePeriod = null;
+    protected $billablePeriod = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -164,20 +166,22 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam[]
      */
-    private $careTeam = [];
+    protected $careTeam = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -187,50 +191,55 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis[]
      */
-    private $diagnosis = [];
+    protected $diagnosis = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who created the claim, predetermination or preauthorization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $enterer = null;
+    protected $enterer = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $facility = null;
+    protected $facility = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to indicate whether and for whom funds are to be reserved for future
      * claims.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $fundsReserve = null;
+    protected $fundsReserve = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this claim.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -241,17 +250,19 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance[]
      */
-    private $insurance = [];
+    protected $insurance = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who is target of the request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $insurer = null;
+    protected $insurer = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -262,29 +273,32 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem[]
      */
-    private $item = [];
+    protected $item = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original prescription which has been superseded by this prescription to support
      * the dispensing of pharmacy services, medications or products.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $originalPrescription = null;
+    protected $originalPrescription = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party to whom the professional services and/or products have been supplied
      * or are being considered and for whom actual or forecast reimbursement is sought.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -295,29 +309,32 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee
      */
-    private $payee = null;
+    protected $payee = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of pharmacy, device or vision products.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $prescription = null;
+    protected $prescription = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider-required urgency of processing the request. Typical values include:
      * stat, routine deferred.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -328,28 +345,31 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProcedure[]
      */
-    private $procedure = [];
+    protected $procedure = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the claim, predetermination or
      * preauthorization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $provider = null;
+    protected $provider = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a referral resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $referral = null;
+    protected $referral = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -360,28 +380,31 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimRelated[]
      */
-    private $related = [];
+    protected $related = [];
+
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A finer grained suite of claim type codes which may convey additional
      * information such as Inpatient vs Outpatient and/or a specialty service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $subType = null;
+    protected $subType = null;
+
     /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
@@ -392,31 +415,34 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSupportingInfo[]
      */
-    private $supportingInfo = [];
+    protected $supportingInfo = [];
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The total value of the all the items in the claim.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    private $total = null;
+    protected $total = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * The purpose of the Claim: predetermination, preauthorization, claim.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate whether the nature of the request is: to request adjudication
      * of products and services previously rendered; or requesting authorization and
@@ -426,7 +452,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
      */
-    private $use = null;
+    protected $use = null;
 
     /**
      * FHIRClaim Constructor
@@ -744,7 +770,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -803,7 +829,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * and services listed in the claim.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident $accident
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setAccident(FHIRClaimAccident $accident = null)
     {
@@ -814,7 +840,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period for which charges are being submitted.
      *
@@ -828,12 +854,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period for which charges are being submitted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $billablePeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setBillablePeriod(FHIRPeriod $billablePeriod = null)
     {
@@ -863,7 +889,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * The members of the team who provided the products and services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam $careTeam
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addCareTeam(FHIRClaimCareTeam $careTeam = null)
     {
@@ -879,7 +905,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * The members of the team who provided the products and services.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam[] $careTeam
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setCareTeam(array $careTeam = [])
     {
@@ -903,7 +929,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
      *
@@ -920,12 +946,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $created
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -963,7 +989,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Information about diagnoses relevant to the claim items.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis $diagnosis
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addDiagnosis(FHIRClaimDiagnosis $diagnosis = null)
     {
@@ -979,7 +1005,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Information about diagnoses relevant to the claim items.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis[] $diagnosis
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setDiagnosis(array $diagnosis = [])
     {
@@ -1000,7 +1026,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who created the claim, predetermination or preauthorization.
      *
@@ -1014,12 +1040,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who created the claim, predetermination or preauthorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $enterer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setEnterer(FHIRReference $enterer = null)
     {
@@ -1030,7 +1056,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
      *
@@ -1044,12 +1070,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $facility
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setFacility(FHIRReference $facility = null)
     {
@@ -1061,7 +1087,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to indicate whether and for whom funds are to be reserved for future
      * claims.
@@ -1077,13 +1103,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to indicate whether and for whom funds are to be reserved for future
      * claims.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $fundsReserve
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setFundsReserve(FHIRCodeableConcept $fundsReserve = null)
     {
@@ -1095,7 +1121,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this claim.
      *
@@ -1110,12 +1136,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this claim.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1127,12 +1153,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this claim.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1174,7 +1200,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * services specified on the claim.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance $insurance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addInsurance(FHIRClaimInsurance $insurance = null)
     {
@@ -1191,7 +1217,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * services specified on the claim.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance[] $insurance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setInsurance(array $insurance = [])
     {
@@ -1212,7 +1238,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who is target of the request.
      *
@@ -1226,12 +1252,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who is target of the request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $insurer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setInsurer(FHIRReference $insurer = null)
     {
@@ -1263,7 +1289,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * can each be a simple items or groups of sub-details.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addItem(FHIRClaimItem $item = null)
     {
@@ -1280,7 +1306,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * can each be a simple items or groups of sub-details.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setItem(array $item = [])
     {
@@ -1301,7 +1327,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original prescription which has been superseded by this prescription to support
      * the dispensing of pharmacy services, medications or products.
@@ -1316,13 +1342,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original prescription which has been superseded by this prescription to support
      * the dispensing of pharmacy services, medications or products.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $originalPrescription
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setOriginalPrescription(FHIRReference $originalPrescription = null)
     {
@@ -1333,7 +1359,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party to whom the professional services and/or products have been supplied
      * or are being considered and for whom actual or forecast reimbursement is sought.
@@ -1348,13 +1374,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party to whom the professional services and/or products have been supplied
      * or are being considered and for whom actual or forecast reimbursement is sought.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -1386,7 +1412,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the terms of the policy.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee $payee
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setPayee(FHIRClaimPayee $payee = null)
     {
@@ -1397,7 +1423,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of pharmacy, device or vision products.
      *
@@ -1411,12 +1437,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of pharmacy, device or vision products.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $prescription
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setPrescription(FHIRReference $prescription = null)
     {
@@ -1428,7 +1454,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider-required urgency of processing the request. Typical values include:
      * stat, routine deferred.
@@ -1444,13 +1470,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider-required urgency of processing the request. Typical values include:
      * stat, routine deferred.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $priority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setPriority(FHIRCodeableConcept $priority = null)
     {
@@ -1482,7 +1508,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * claim.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProcedure $procedure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addProcedure(FHIRClaimProcedure $procedure = null)
     {
@@ -1499,7 +1525,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * claim.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProcedure[] $procedure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setProcedure(array $procedure = [])
     {
@@ -1520,7 +1546,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the claim, predetermination or
      * preauthorization.
@@ -1535,13 +1561,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the claim, predetermination or
      * preauthorization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $provider
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setProvider(FHIRReference $provider = null)
     {
@@ -1552,7 +1578,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a referral resource.
      *
@@ -1566,12 +1592,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a referral resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $referral
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setReferral(FHIRReference $referral = null)
     {
@@ -1603,7 +1629,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * for related services or for the same event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimRelated $related
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addRelated(FHIRClaimRelated $related = null)
     {
@@ -1620,7 +1646,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * for related services or for the same event.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimRelated[] $related
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setRelated(array $related = [])
     {
@@ -1640,7 +1666,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
@@ -1653,12 +1679,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setStatus(FHIRFinancialResourceStatusCodes $status = null)
     {
@@ -1670,7 +1696,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A finer grained suite of claim type codes which may convey additional
      * information such as Inpatient vs Outpatient and/or a specialty service.
@@ -1686,13 +1712,13 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A finer grained suite of claim type codes which may convey additional
      * information such as Inpatient vs Outpatient and/or a specialty service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setSubType(FHIRCodeableConcept $subType = null)
     {
@@ -1724,7 +1750,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * condition, situation, prior or concurrent issues.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSupportingInfo $supportingInfo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function addSupportingInfo(FHIRClaimSupportingInfo $supportingInfo = null)
     {
@@ -1741,7 +1767,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * condition, situation, prior or concurrent issues.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSupportingInfo[] $supportingInfo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setSupportingInfo(array $supportingInfo = [])
     {
@@ -1762,7 +1788,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The total value of the all the items in the claim.
      *
@@ -1776,12 +1802,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The total value of the all the items in the claim.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $total
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setTotal(FHIRMoney $total = null)
     {
@@ -1793,7 +1819,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
      *
@@ -1808,12 +1834,12 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -1823,7 +1849,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * The purpose of the Claim: predetermination, preauthorization, claim.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate whether the nature of the request is: to request adjudication
      * of products and services previously rendered; or requesting authorization and
@@ -1840,7 +1866,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * The purpose of the Claim: predetermination, preauthorization, claim.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate whether the nature of the request is: to request adjudication
      * of products and services previously rendered; or requesting authorization and
@@ -1849,7 +1875,7 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * future.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse $use
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaim
+     * @return static
      */
     public function setUse(FHIRUse $use = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConce
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONCEPT_MAP_DOT_UNMAPPED;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -98,7 +98,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
@@ -106,21 +106,23 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * Defines which action to take if there is no match in the group.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines which action to take if there is no match for the source concept in the
      * target system designated for the group. One of 3 actions are possible: use the
@@ -130,11 +132,12 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
-    private $mode = null;
+    protected $mode = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The canonical reference to an additional ConceptMap resource instance to use for
@@ -143,7 +146,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * FHIRConceptMapUnmapped Constructor
@@ -229,7 +232,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -259,7 +262,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
@@ -275,14 +278,14 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -301,7 +304,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
@@ -316,13 +319,13 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -340,7 +343,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
 
     /**
      * Defines which action to take if there is no match in the group.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines which action to take if there is no match for the source concept in the
      * target system designated for the group. One of 3 actions are possible: use the
@@ -357,7 +360,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
 
     /**
      * Defines which action to take if there is no match in the group.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines which action to take if there is no match for the source concept in the
      * target system designated for the group. One of 3 actions are possible: use the
@@ -366,7 +369,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * reference to a different concept map can be provided (by canonical URL).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @return static
      */
     public function setMode(FHIRConceptMapGroupUnmappedMode $mode = null)
     {
@@ -377,7 +380,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The canonical reference to an additional ConceptMap resource instance to use for
@@ -394,7 +397,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The canonical reference to an additional ConceptMap resource instance to use for
@@ -402,7 +405,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * concept.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @return static
      */
     public function setUrl($url = null)
     {

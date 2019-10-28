@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRDomainResource extends FHIRResource
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINED = 'contained';
     const FIELD_EXTENSION = 'extension';
@@ -98,11 +98,12 @@ class FHIRDomainResource extends FHIRResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface[]
      */
-    private $contained = [];
+    protected $contained = [];
+
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource. To make the use of extensions safe and manageable,
@@ -112,11 +113,12 @@ class FHIRDomainResource extends FHIRResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension[]
      */
-    private $extension = [];
+    protected $extension = [];
+
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource and that modifies the understanding of the element
@@ -133,12 +135,13 @@ class FHIRDomainResource extends FHIRResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension[]
      */
-    private $modifierExtension = [];
+    protected $modifierExtension = [];
+
     /**
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable narrative that contains a summary of the resource and can be
      * used to represent the content of the resource to a human. The narrative need not
@@ -149,7 +152,7 @@ class FHIRDomainResource extends FHIRResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative
      */
-    private $text = null;
+    protected $text = null;
 
     /**
      * FHIRDomainResource Constructor
@@ -242,7 +245,7 @@ class FHIRDomainResource extends FHIRResource
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -291,7 +294,7 @@ class FHIRDomainResource extends FHIRResource
      * have their own independent transaction scope.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface $contained
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function addContained(PHPFHIRContainedTypeInterface $contained = null)
     {
@@ -307,7 +310,7 @@ class FHIRDomainResource extends FHIRResource
      * have their own independent transaction scope.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface[] $contained
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function setContained(array $contained = [])
     {
@@ -350,7 +353,7 @@ class FHIRDomainResource extends FHIRResource
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource. To make the use of extensions safe and manageable,
@@ -368,7 +371,7 @@ class FHIRDomainResource extends FHIRResource
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource. To make the use of extensions safe and manageable,
@@ -377,7 +380,7 @@ class FHIRDomainResource extends FHIRResource
      * requirements that SHALL be met as part of the definition of the extension.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension $extension
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function addExtension(FHIRExtension $extension = null)
     {
@@ -388,7 +391,7 @@ class FHIRDomainResource extends FHIRResource
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource. To make the use of extensions safe and manageable,
@@ -397,7 +400,7 @@ class FHIRDomainResource extends FHIRResource
      * requirements that SHALL be met as part of the definition of the extension.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension[] $extension
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function setExtension(array $extension = [])
     {
@@ -418,7 +421,7 @@ class FHIRDomainResource extends FHIRResource
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource and that modifies the understanding of the element
@@ -443,7 +446,7 @@ class FHIRDomainResource extends FHIRResource
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource and that modifies the understanding of the element
@@ -459,7 +462,7 @@ class FHIRDomainResource extends FHIRResource
      * itself).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension $modifierExtension
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension = null)
     {
@@ -470,7 +473,7 @@ class FHIRDomainResource extends FHIRResource
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the resource and that modifies the understanding of the element
@@ -486,7 +489,7 @@ class FHIRDomainResource extends FHIRResource
      * itself).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension[] $modifierExtension
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function setModifierExtension(array $modifierExtension = [])
     {
@@ -508,7 +511,7 @@ class FHIRDomainResource extends FHIRResource
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable narrative that contains a summary of the resource and can be
      * used to represent the content of the resource to a human. The narrative need not
@@ -528,7 +531,7 @@ class FHIRDomainResource extends FHIRResource
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable narrative that contains a summary of the resource and can be
      * used to represent the content of the resource to a human. The narrative need not
@@ -538,7 +541,7 @@ class FHIRDomainResource extends FHIRResource
      * ensure clinical safety.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative $text
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
+     * @return static
      */
     public function setText(FHIRNarrative $text = null)
     {

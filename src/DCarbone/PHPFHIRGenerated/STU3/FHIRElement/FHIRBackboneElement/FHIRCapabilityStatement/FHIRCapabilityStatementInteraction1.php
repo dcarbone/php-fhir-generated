@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_INTERACTION_1;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -91,17 +91,18 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the system level.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSystemRestfulInteraction
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
@@ -109,7 +110,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
 
     /**
      * FHIRCapabilityStatementInteraction1 Constructor
@@ -171,7 +172,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -200,7 +201,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the system level.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
      *
@@ -213,12 +214,12 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the system level.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSystemRestfulInteraction $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
+     * @return static
      */
     public function setCode(FHIRSystemRestfulInteraction $code = null)
     {
@@ -229,7 +230,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
@@ -245,14 +246,14 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
      * implemented.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {

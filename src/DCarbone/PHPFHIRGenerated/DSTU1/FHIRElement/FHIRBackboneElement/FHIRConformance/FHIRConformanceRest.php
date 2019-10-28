@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOCUMENT_MAILBOX = 'documentMailbox';
     const FIELD_DOCUMENT_MAILBOX_EXT = '_documentMailbox';
@@ -93,7 +93,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles that this server implements for accepting documents in the
      * mailbox. If this list is empty, then documents are not accepted. The base
@@ -103,27 +103,30 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
      */
-    private $documentMailbox = [];
+    protected $documentMailbox = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * The mode of a RESTful conformance statement
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode
      */
-    private $mode = null;
+    protected $mode = null;
+
     /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
@@ -133,7 +136,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1[]
      */
-    private $operation = [];
+    protected $operation = [];
+
     /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
@@ -143,7 +147,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery[]
      */
-    private $query = [];
+    protected $query = [];
+
     /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
@@ -154,7 +159,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
      */
-    private $resource = [];
+    protected $resource = [];
+
     /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
@@ -164,7 +170,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
-    private $security = null;
+    protected $security = null;
 
     /**
      * FHIRConformanceRest Constructor
@@ -300,7 +306,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -329,7 +335,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles that this server implements for accepting documents in the
      * mailbox. If this list is empty, then documents are not accepted. The base
@@ -346,7 +352,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles that this server implements for accepting documents in the
      * mailbox. If this list is empty, then documents are not accepted. The base
@@ -355,7 +361,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * own identifier for this purpose.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $documentMailbox
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function addDocumentMailbox($documentMailbox = null)
     {
@@ -373,7 +379,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles that this server implements for accepting documents in the
      * mailbox. If this list is empty, then documents are not accepted. The base
@@ -382,7 +388,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * own identifier for this purpose.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[] $documentMailbox
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setDocumentMailbox(array $documentMailbox = [])
     {
@@ -402,7 +408,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
@@ -416,13 +422,13 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -440,7 +446,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * The mode of a RESTful conformance statement
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
@@ -454,13 +460,13 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /**
      * The mode of a RESTful conformance statement
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setMode(FHIRRestfulConformanceMode $mode = null)
     {
@@ -490,7 +496,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * A specification of restful operations supported by the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1 $operation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function addOperation(FHIRConformanceOperation1 $operation = null)
     {
@@ -506,7 +512,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * A specification of restful operations supported by the system.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1[] $operation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setOperation(array $operation = [])
     {
@@ -546,7 +552,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Definition of a named query and its parameters and their meaning.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery $query
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function addQuery(FHIRConformanceQuery $query = null)
     {
@@ -562,7 +568,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Definition of a named query and its parameters and their meaning.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery[] $query
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setQuery(array $query = [])
     {
@@ -604,7 +610,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * resource type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $resource
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function addResource(FHIRConformanceResource $resource = null)
     {
@@ -621,7 +627,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * resource type.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] $resource
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setResource(array $resource = [])
     {
@@ -661,7 +667,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Information about security of implementation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
+     * @return static
      */
     public function setSecurity(FHIRConformanceSecurity $security = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_REPORT_DOT_ASSERT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DETAIL = 'detail';
     const FIELD_DETAIL_EXT = '_detail';
@@ -93,36 +93,38 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A link to further details on the result.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $detail = null;
+    protected $detail = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An explanatory message associated with the result.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $message = null;
+    protected $message = null;
+
     /**
      * The results of executing an action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The result of this assertion.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTestReportActionResult
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * FHIRTestReportAssert Constructor
@@ -196,7 +198,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -226,7 +228,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A link to further details on the result.
      *
@@ -240,12 +242,12 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A link to further details on the result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $detail
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
+     * @return static
      */
     public function setDetail($detail = null)
     {
@@ -267,7 +269,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An explanatory message associated with the result.
@@ -285,13 +287,13 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An explanatory message associated with the result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $message
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
+     * @return static
      */
     public function setMessage($message = null)
     {
@@ -309,7 +311,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
 
     /**
      * The results of executing an action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The result of this assertion.
      *
@@ -322,12 +324,12 @@ class FHIRTestReportAssert extends FHIRBackboneElement
 
     /**
      * The results of executing an action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The result of this assertion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTestReportActionResult $result
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
+     * @return static
      */
     public function setResult(FHIRTestReportActionResult $result = null)
     {

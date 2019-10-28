@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A date or partial date (e.g. just year or year + month). There is no time zone.
  * The format is a union of the schema types gYear, gYearMonth and date. Dates
  * SHALL be valid dates.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDate
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -82,14 +82,15 @@ class FHIRDate extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATE;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRDatePrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRDate Constructor
@@ -137,7 +138,7 @@ class FHIRDate extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -173,7 +174,7 @@ class FHIRDate extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRDatePrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
+     * @return static
      */
     public function setValue($value = null)
     {

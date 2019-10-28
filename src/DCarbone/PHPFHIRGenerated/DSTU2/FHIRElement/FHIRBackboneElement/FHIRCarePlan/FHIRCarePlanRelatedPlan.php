@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CARE_PLAN_DOT_RELATED_PLAN;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -90,23 +90,24 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
 
     /**
      * Codes identifying the types of relationships between two plans.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of relationship this plan has to the target plan.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanRelationship
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the plan to which a relationship is asserted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $plan = null;
+    protected $plan = null;
 
     /**
      * FHIRCarePlanRelatedPlan Constructor
@@ -163,7 +164,7 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanRelatedPlan
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -192,7 +193,7 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
 
     /**
      * Codes identifying the types of relationships between two plans.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of relationship this plan has to the target plan.
      *
@@ -205,12 +206,12 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
 
     /**
      * Codes identifying the types of relationships between two plans.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of relationship this plan has to the target plan.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanRelationship $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanRelatedPlan
+     * @return static
      */
     public function setCode(FHIRCarePlanRelationship $code = null)
     {
@@ -221,7 +222,7 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the plan to which a relationship is asserted.
      *
@@ -235,12 +236,12 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the plan to which a relationship is asserted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $plan
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanRelatedPlan
+     * @return static
      */
     public function setPlan(FHIRReference $plan = null)
     {

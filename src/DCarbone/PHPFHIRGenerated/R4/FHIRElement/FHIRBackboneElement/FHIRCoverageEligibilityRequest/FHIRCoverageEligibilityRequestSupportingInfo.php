@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPLIES_TO_ALL = 'appliesToAll';
     const FIELD_APPLIES_TO_ALL_EXT = '_appliesToAll';
@@ -95,35 +95,37 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The supporting materials are applicable for all detail items, product/servce
      * categories and specific billing codes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $appliesToAll = null;
+    protected $appliesToAll = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $information = null;
+    protected $information = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A number to uniquely identify supporting information entries.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    private $sequence = null;
+    protected $sequence = null;
 
     /**
      * FHIRCoverageEligibilityRequestSupportingInfo Constructor
@@ -192,7 +194,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -221,7 +223,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The supporting materials are applicable for all detail items, product/servce
      * categories and specific billing codes.
@@ -235,13 +237,13 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The supporting materials are applicable for all detail items, product/servce
      * categories and specific billing codes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $appliesToAll
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo
+     * @return static
      */
     public function setAppliesToAll($appliesToAll = null)
     {
@@ -260,7 +262,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
@@ -275,13 +277,13 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $information
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo
+     * @return static
      */
     public function setInformation(FHIRReference $information = null)
     {
@@ -291,7 +293,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A number to uniquely identify supporting information entries.
@@ -305,13 +307,13 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A number to uniquely identify supporting information entries.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $sequence
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo
+     * @return static
      */
     public function setSequence($sequence = null)
     {

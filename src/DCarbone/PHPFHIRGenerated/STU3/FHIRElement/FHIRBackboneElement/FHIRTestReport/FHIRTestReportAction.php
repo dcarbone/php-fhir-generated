@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRTestReportAction extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_REPORT_DOT_ACTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ASSERT = 'assert';
     const FIELD_OPERATION = 'operation';
@@ -90,7 +90,8 @@ class FHIRTestReportAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
      */
-    private $assert = null;
+    protected $assert = null;
+
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -98,7 +99,7 @@ class FHIRTestReportAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation
      */
-    private $operation = null;
+    protected $operation = null;
 
     /**
      * FHIRTestReportAction Constructor
@@ -150,7 +151,7 @@ class FHIRTestReportAction extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -195,7 +196,7 @@ class FHIRTestReportAction extends FHIRBackboneElement
      * The results of the assertion performed on the previous operations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert $assert
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction
+     * @return static
      */
     public function setAssert(FHIRTestReportAssert $assert = null)
     {
@@ -221,7 +222,7 @@ class FHIRTestReportAction extends FHIRBackboneElement
      * The operation performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation $operation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction
+     * @return static
      */
     public function setOperation(FHIRTestReportOperation $operation = null)
     {

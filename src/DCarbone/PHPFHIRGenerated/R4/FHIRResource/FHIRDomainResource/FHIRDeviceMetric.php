@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Describes a measurement, calculation or setting capability of a medical device.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDeviceMetric
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -88,7 +88,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CALIBRATION = 'calibration';
     const FIELD_CATEGORY = 'category';
@@ -113,20 +113,22 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration[]
      */
-    private $calibration = [];
+    protected $calibration = [];
+
     /**
      * Describes the category of the metric.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricCategory
      */
-    private $category = null;
+    protected $category = null;
+
     /**
      * Describes the typical color of representation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the color representation for the metric. This is often used to aid
      * clinicians to track and identify parameter types by color. In practice, consider
@@ -136,19 +138,21 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricColor
      */
-    private $color = null;
+    protected $color = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -156,7 +160,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the measurement repetition time. This is not necessarily the same as
      * the update period. The measurement repetition time can range from milliseconds
@@ -169,21 +173,23 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
-    private $measurementPeriod = null;
+    protected $measurementPeriod = null;
+
     /**
      * Describes the operational status of the DeviceMetric.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
      */
-    private $operationalStatus = null;
+    protected $operationalStatus = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * provide information about the location of this DeviceMetric in the containment
@@ -194,11 +200,12 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $parent = null;
+    protected $parent = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * contains administrative device information such as manufacturer, serial number,
@@ -206,30 +213,32 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $source = null;
+    protected $source = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $unit = null;
+    protected $unit = null;
 
     /**
      * FHIRDeviceMetric Constructor
@@ -375,7 +384,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -430,7 +439,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration $calibration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function addCalibration(FHIRDeviceMetricCalibration $calibration = null)
     {
@@ -445,7 +454,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * performed.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration[] $calibration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setCalibration(array $calibration = [])
     {
@@ -465,7 +474,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Describes the category of the metric.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
@@ -479,13 +488,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Describes the category of the metric.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricCategory $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setCategory(FHIRDeviceMetricCategory $category = null)
     {
@@ -495,7 +504,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Describes the typical color of representation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the color representation for the metric. This is often used to aid
      * clinicians to track and identify parameter types by color. In practice, consider
@@ -512,7 +521,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Describes the typical color of representation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the color representation for the metric. This is often used to aid
      * clinicians to track and identify parameter types by color. In practice, consider
@@ -521,7 +530,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * and SpO2- magenta.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricColor $color
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setColor(FHIRDeviceMetricColor $color = null)
     {
@@ -533,7 +542,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
@@ -549,13 +558,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -567,13 +576,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -598,7 +607,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the measurement repetition time. This is not necessarily the same as
      * the update period. The measurement repetition time can range from milliseconds
@@ -623,7 +632,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the measurement repetition time. This is not necessarily the same as
      * the update period. The measurement repetition time can range from milliseconds
@@ -635,7 +644,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * frequency as it was measured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $measurementPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setMeasurementPeriod(FHIRTiming $measurementPeriod = null)
     {
@@ -645,7 +654,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Describes the operational status of the DeviceMetric.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
@@ -659,13 +668,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Describes the operational status of the DeviceMetric.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setOperationalStatus(FHIRDeviceMetricOperationalStatus $operationalStatus = null)
     {
@@ -676,7 +685,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * provide information about the location of this DeviceMetric in the containment
@@ -695,7 +704,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * provide information about the location of this DeviceMetric in the containment
@@ -705,7 +714,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * containment location.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $parent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setParent(FHIRReference $parent = null)
     {
@@ -716,7 +725,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * contains administrative device information such as manufacturer, serial number,
@@ -732,14 +741,14 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * contains administrative device information such as manufacturer, serial number,
      * etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setSource(FHIRReference $source = null)
     {
@@ -751,7 +760,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
      *
@@ -766,12 +775,12 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -783,7 +792,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
@@ -799,13 +808,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $unit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
+     * @return static
      */
     public function setUnit(FHIRCodeableConcept $unit = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * This resource allows for the definition of some activity to be performed,
  * independent of a particular patient, practitioner, or other performance context.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRActivityDefinition
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -107,7 +107,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ACTIVITY_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPROVAL_DATE = 'approvalDate';
     const FIELD_APPROVAL_DATE_EXT = '_approvalDate';
@@ -192,67 +192,72 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $approvalDate = null;
+    protected $approvalDate = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $author = [];
+    protected $author = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $bodySite = [];
+    protected $bodySite = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the activity definition and/or its contents.
@@ -261,14 +266,15 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the activity definition was published. The
      * date must change when the business version changes and it must change if the
@@ -277,14 +283,15 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the activity definition from a
@@ -292,10 +299,11 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the definition is to indicate that a particular activity
      * should NOT be performed. If true, this element should be interpreted to
@@ -304,18 +312,20 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $doNotPerform = null;
+    protected $doNotPerform = null;
+
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage[]
      */
-    private $dosage = [];
+    protected $dosage = [];
+
     /**
      * This resource allows for the definition of some activity to be performed,
      * independent of a particular patient, practitioner, or other performance context.
@@ -328,43 +338,47 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
      */
-    private $dynamicValue = [];
+    protected $dynamicValue = [];
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $editor = [];
+    protected $editor = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $endorser = [];
+    protected $endorser = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
@@ -372,12 +386,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -385,33 +400,36 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestIntent
      */
-    private $intent = null;
+    protected $intent = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * The kind of activity the definition is describing.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
@@ -419,23 +437,25 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestResourceType
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $lastReviewDate = null;
+    protected $lastReviewDate = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the
@@ -443,22 +463,24 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $library = [];
+    protected $library = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $location = null;
+    protected $location = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -466,28 +488,31 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $observationRequirement = [];
+    protected $observationRequirement = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $observationResultRequirement = [];
+    protected $observationResultRequirement = [];
+
     /**
      * This resource allows for the definition of some activity to be performed,
      * independent of a particular patient, practitioner, or other performance context.
@@ -496,69 +521,75 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * Identifies the level of importance to be assigned to actioning the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestPriority
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $productCodeableConcept = null;
+    protected $productCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity. (choose any one of product*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $productReference = null;
+    protected $productReference = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $profile = null;
+    protected $profile = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the activity
      * definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this activity definition is needed and why it has been
@@ -566,155 +597,169 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
-    private $relatedArtifact = [];
+    protected $relatedArtifact = [];
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $reviewer = [];
+    protected $reviewer = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $specimenRequirement = [];
+    protected $specimenRequirement = [];
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
      * being defined. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $subjectCodeableConcept = null;
+    protected $subjectCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
      * being defined. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subjectReference = null;
+    protected $subjectReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $subtitle = null;
+    protected $subtitle = null;
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $timingAge = null;
+    protected $timingAge = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $timingDateTime = null;
+    protected $timingDateTime = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $timingDuration = null;
+    protected $timingDuration = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $timingPeriod = null;
+    protected $timingPeriod = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $timingRange = null;
+    protected $timingRange = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -722,29 +767,31 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
-    private $timingTiming = null;
+    protected $timingTiming = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
@@ -752,11 +799,12 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $topic = [];
+    protected $topic = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a StructureMap resource that defines a transform that can be
@@ -765,11 +813,12 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $transform = null;
+    protected $transform = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this activity definition when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -781,25 +830,27 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $usage = null;
+    protected $usage = null;
+
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -809,11 +860,12 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the activity definition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -828,7 +880,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRActivityDefinition Constructor
@@ -1510,7 +1562,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1549,7 +1601,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
@@ -1565,13 +1617,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $approvalDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setApprovalDate($approvalDate = null)
     {
@@ -1590,7 +1642,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
@@ -1605,13 +1657,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author = null)
     {
@@ -1622,13 +1674,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setAuthor(array $author = [])
     {
@@ -1650,7 +1702,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
@@ -1666,13 +1718,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite = null)
     {
@@ -1684,13 +1736,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setBodySite(array $bodySite = [])
     {
@@ -1712,7 +1764,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
@@ -1728,13 +1780,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -1745,7 +1797,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -1760,13 +1812,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -1777,13 +1829,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -1807,7 +1859,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the activity definition and/or its contents.
@@ -1827,7 +1879,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the activity definition and/or its contents.
@@ -1835,7 +1887,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * of the activity definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1857,7 +1909,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the activity definition was published. The
      * date must change when the business version changes and it must change if the
@@ -1877,7 +1929,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the activity definition was published. The
      * date must change when the business version changes and it must change if the
@@ -1885,7 +1937,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * of the activity definition changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1907,7 +1959,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the activity definition from a
@@ -1926,14 +1978,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1951,7 +2003,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the definition is to indicate that a particular activity
      * should NOT be performed. If true, this element should be interpreted to
@@ -1967,7 +2019,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the definition is to indicate that a particular activity
      * should NOT be performed. If true, this element should be interpreted to
@@ -1975,7 +2027,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * true would still indicate to NOT perform the action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $doNotPerform
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setDoNotPerform($doNotPerform = null)
     {
@@ -1994,7 +2046,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
@@ -2009,13 +2061,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage $dosage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addDosage(FHIRDosage $dosage = null)
     {
@@ -2026,13 +2078,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Indicates how the medication is/was taken or should be taken by the patient.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage[] $dosage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setDosage(array $dosage = [])
     {
@@ -2078,7 +2130,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * would contain the result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue $dynamicValue
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addDynamicValue(FHIRActivityDefinitionDynamicValue $dynamicValue = null)
     {
@@ -2097,7 +2149,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * would contain the result.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[] $dynamicValue
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setDynamicValue(array $dynamicValue = [])
     {
@@ -2118,7 +2170,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
@@ -2133,13 +2185,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $editor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor = null)
     {
@@ -2150,13 +2202,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $editor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setEditor(array $editor = [])
     {
@@ -2177,7 +2229,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
@@ -2192,13 +2244,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -2209,7 +2261,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
@@ -2224,13 +2276,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $endorser
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser = null)
     {
@@ -2241,13 +2293,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $endorser
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setEndorser(array $endorser = [])
     {
@@ -2267,7 +2319,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
@@ -2282,14 +2334,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -2309,7 +2361,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -2326,14 +2378,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -2345,14 +2397,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -2373,7 +2425,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
@@ -2388,13 +2440,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestIntent $intent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setIntent(FHIRRequestIntent $intent = null)
     {
@@ -2406,7 +2458,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
@@ -2422,13 +2474,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -2440,13 +2492,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -2466,7 +2518,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * The kind of activity the definition is describing.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
@@ -2481,14 +2533,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * The kind of activity the definition is describing.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
      * Typically, but not always, this is a Request resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestResourceType $kind
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setKind(FHIRRequestResourceType $kind = null)
     {
@@ -2500,7 +2552,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
@@ -2516,13 +2568,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $lastReviewDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setLastReviewDate($lastReviewDate = null)
     {
@@ -2541,7 +2593,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the
@@ -2557,14 +2609,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the
      * activity definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $library
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addLibrary($library = null)
     {
@@ -2583,14 +2635,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the
      * activity definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $library
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setLibrary(array $library = [])
     {
@@ -2611,7 +2663,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
@@ -2626,13 +2678,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $location
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setLocation(FHIRReference $location = null)
     {
@@ -2643,7 +2695,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -2659,14 +2711,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setName($name = null)
     {
@@ -2685,7 +2737,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
@@ -2700,13 +2752,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $observationRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addObservationRequirement(FHIRReference $observationRequirement = null)
     {
@@ -2717,13 +2769,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $observationRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setObservationRequirement(array $observationRequirement = [])
     {
@@ -2744,7 +2796,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
      *
@@ -2758,12 +2810,12 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $observationResultRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addObservationResultRequirement(FHIRReference $observationResultRequirement = null)
     {
@@ -2774,12 +2826,12 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $observationResultRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setObservationResultRequirement(array $observationResultRequirement = [])
     {
@@ -2817,7 +2869,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Indicates who should participate in performing the action described.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addParticipant(FHIRActivityDefinitionParticipant $participant = null)
     {
@@ -2832,7 +2884,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Indicates who should participate in performing the action described.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -2852,7 +2904,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Identifies the level of importance to be assigned to actioning the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
@@ -2866,13 +2918,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * Identifies the level of importance to be assigned to actioning the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestPriority $priority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setPriority(FHIRRequestPriority $priority = null)
     {
@@ -2884,7 +2936,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity. (choose any one of product*, but only one)
@@ -2900,13 +2952,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setProductCodeableConcept(FHIRCodeableConcept $productCodeableConcept = null)
     {
@@ -2917,7 +2969,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity. (choose any one of product*, but only one)
@@ -2932,13 +2984,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity. (choose any one of product*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $productReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setProductReference(FHIRReference $productReference = null)
     {
@@ -2949,7 +3001,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
@@ -2964,13 +3016,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $profile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setProfile($profile = null)
     {
@@ -2989,7 +3041,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the activity
      * definition.
@@ -3004,13 +3056,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the activity
      * definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -3032,7 +3084,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this activity definition is needed and why it has been
@@ -3051,14 +3103,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this activity definition is needed and why it has been
      * designed as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -3079,7 +3131,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
@@ -3096,13 +3148,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -3114,7 +3166,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -3130,13 +3182,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
@@ -3148,13 +3200,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[] $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setRelatedArtifact(array $relatedArtifact = [])
     {
@@ -3175,7 +3227,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
@@ -3190,13 +3242,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $reviewer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer = null)
     {
@@ -3207,13 +3259,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $reviewer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setReviewer(array $reviewer = [])
     {
@@ -3234,7 +3286,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
@@ -3249,13 +3301,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $specimenRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addSpecimenRequirement(FHIRReference $specimenRequirement = null)
     {
@@ -3266,13 +3318,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $specimenRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setSpecimenRequirement(array $specimenRequirement = [])
     {
@@ -3291,7 +3343,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
@@ -3304,13 +3356,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -3322,7 +3374,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
      * being defined. (choose any one of subject*, but only one)
@@ -3338,13 +3390,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
      * being defined. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setSubjectCodeableConcept(FHIRCodeableConcept $subjectCodeableConcept = null)
     {
@@ -3355,7 +3407,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
      * being defined. (choose any one of subject*, but only one)
@@ -3370,13 +3422,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or group definition that describes the intended subject of the activity
      * being defined. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setSubjectReference(FHIRReference $subjectReference = null)
     {
@@ -3387,7 +3439,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
@@ -3402,13 +3454,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $subtitle
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setSubtitle($subtitle = null)
     {
@@ -3427,7 +3479,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
@@ -3442,13 +3494,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTimingAge(FHIRAge $timingAge = null)
     {
@@ -3462,7 +3514,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
@@ -3480,13 +3532,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timingDateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTimingDateTime($timingDateTime = null)
     {
@@ -3505,7 +3557,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
@@ -3520,13 +3572,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTimingDuration(FHIRDuration $timingDuration = null)
     {
@@ -3537,7 +3589,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
@@ -3552,13 +3604,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $timingPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTimingPeriod(FHIRPeriod $timingPeriod = null)
     {
@@ -3569,7 +3621,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
@@ -3584,13 +3636,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $timingRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTimingRange(FHIRRange $timingRange = null)
     {
@@ -3605,7 +3657,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
@@ -3624,13 +3676,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
      * (choose any one of timing*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTimingTiming(FHIRTiming $timingTiming = null)
     {
@@ -3641,7 +3693,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
      *
@@ -3655,12 +3707,12 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -3680,7 +3732,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
@@ -3697,14 +3749,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $topic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic = null)
     {
@@ -3716,14 +3768,14 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $topic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTopic(array $topic = [])
     {
@@ -3744,7 +3796,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a StructureMap resource that defines a transform that can be
@@ -3761,7 +3813,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a StructureMap resource that defines a transform that can be
@@ -3769,7 +3821,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * the input.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $transform
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setTransform($transform = null)
     {
@@ -3788,7 +3840,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this activity definition when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -3808,7 +3860,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this activity definition when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -3819,7 +3871,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * servers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -3838,7 +3890,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
@@ -3853,13 +3905,13 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $usage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setUsage($usage = null)
     {
@@ -3881,7 +3933,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -3902,7 +3954,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -3911,7 +3963,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * definition instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -3925,7 +3977,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -3934,7 +3986,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * definition instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -3955,7 +4007,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the activity definition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -3978,7 +4030,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the activity definition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -3992,7 +4044,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * non-experimental active assets.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
+     * @return static
      */
     public function setVersion($version = null)
     {

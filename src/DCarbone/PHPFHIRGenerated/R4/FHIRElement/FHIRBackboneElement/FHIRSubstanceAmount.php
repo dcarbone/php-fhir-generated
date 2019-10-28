@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * physical form or particle size are not taken into account in the definition of a
  * chemical substance or in the assignment of a Substance ID.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRSubstanceAmount
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement
@@ -90,7 +90,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
     const FIELD_AMOUNT_QUANTITY_EXT = '_amountQuantity';
@@ -107,7 +107,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -116,11 +116,12 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $amountQuantity = null;
+    protected $amountQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -129,11 +130,12 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $amountRange = null;
+    protected $amountRange = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -142,22 +144,24 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $amountString = null;
+    protected $amountString = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A textual comment on a numeric value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $amountText = null;
+    protected $amountText = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Most elements that require a quantitative value will also have a field called
      * amount type. Amount type should always be specified because the actual value of
@@ -169,7 +173,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $amountType = null;
+    protected $amountType = null;
+
     /**
      * Chemical substances are a single substance type whose primary defining element
      * is the molecular structure. Chemical substances shall be defined on the basis of
@@ -178,13 +183,13 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * physical form or particle size are not taken into account in the definition of a
      * chemical substance or in the assignment of a Substance ID.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference range of possible or expected values.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
      */
-    private $referenceRange = null;
+    protected $referenceRange = null;
 
     /**
      * FHIRSubstanceAmount Constructor
@@ -279,7 +284,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -311,7 +316,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -330,7 +335,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -338,7 +343,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $amountQuantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function setAmountQuantity(FHIRQuantity $amountQuantity = null)
     {
@@ -349,7 +354,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -366,7 +371,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -374,7 +379,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $amountRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function setAmountRange(FHIRRange $amountRange = null)
     {
@@ -385,7 +390,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -402,7 +407,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
@@ -410,7 +415,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * any one of amount*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function setAmountString($amountString = null)
     {
@@ -429,7 +434,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A textual comment on a numeric value.
      *
@@ -443,12 +448,12 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A textual comment on a numeric value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountText
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function setAmountText($amountText = null)
     {
@@ -468,7 +473,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Most elements that require a quantitative value will also have a field called
      * amount type. Amount type should always be specified because the actual value of
@@ -489,7 +494,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Most elements that require a quantitative value will also have a field called
      * amount type. Amount type should always be specified because the actual value of
@@ -500,7 +505,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * elements.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $amountType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function setAmountType(FHIRCodeableConcept $amountType = null)
     {
@@ -516,7 +521,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * physical form or particle size are not taken into account in the definition of a
      * chemical substance or in the assignment of a Substance ID.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference range of possible or expected values.
      *
@@ -535,12 +540,12 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * physical form or particle size are not taken into account in the definition of a
      * chemical substance or in the assignment of a Substance ID.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference range of possible or expected values.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange $referenceRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @return static
      */
     public function setReferenceRange(FHIRSubstanceAmountReferenceRange $referenceRange = null)
     {

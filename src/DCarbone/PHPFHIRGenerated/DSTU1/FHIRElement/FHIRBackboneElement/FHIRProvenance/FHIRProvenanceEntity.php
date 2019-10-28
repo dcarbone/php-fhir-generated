@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGENT = 'agent';
     const FIELD_DISPLAY = 'display';
@@ -106,46 +106,50 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
      */
-    private $agent = null;
+    protected $agent = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the entity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identity of participant. May be a logical or physical uri and maybe absolute or
      * relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $reference = null;
+    protected $reference = null;
+
     /**
      * How an entity was used in an activity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRProvenanceEntityRole
      */
-    private $role = null;
+    protected $role = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the entity. If the entity is a resource, then this is a resource
      * type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRProvenanceEntity Constructor
@@ -233,7 +237,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -292,7 +296,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * activity which generated the entity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $agent
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setAgent(FHIRProvenanceAgent $agent = null)
     {
@@ -302,7 +306,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the entity.
      *
@@ -315,12 +319,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the entity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -338,7 +342,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identity of participant. May be a logical or physical uri and maybe absolute or
      * relative.
@@ -352,13 +356,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identity of participant. May be a logical or physical uri and maybe absolute or
      * relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $reference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setReference($reference = null)
     {
@@ -376,7 +380,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * How an entity was used in an activity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
      *
@@ -389,12 +393,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * How an entity was used in an activity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRProvenanceEntityRole $role
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setRole(FHIRProvenanceEntityRole $role = null)
     {
@@ -405,7 +409,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the entity. If the entity is a resource, then this is a resource
      * type.
@@ -420,13 +424,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the entity. If the entity is a resource, then this is a resource
      * type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setType(FHIRCoding $type = null)
     {

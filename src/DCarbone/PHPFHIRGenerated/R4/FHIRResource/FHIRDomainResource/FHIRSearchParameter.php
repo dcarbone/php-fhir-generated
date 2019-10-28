@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A search parameter that defines a named search item that can be used to
  * search/filter on a resource.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSearchParameter
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEARCH_PARAMETER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BASE = 'base';
     const FIELD_BASE_EXT = '_base';
@@ -151,18 +151,19 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
-    private $base = [];
+    protected $base = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the names of any search parameters which may be chained to the
      * containing search parameter. Chained parameters may be added to search
@@ -173,11 +174,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $chain = [];
+    protected $chain = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The code used in the URL or the parameter name in a parameters resource for this
@@ -185,16 +187,18 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * What Search Comparator Codes are supported in search.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchComparator[]
      */
-    private $comparator = [];
+    protected $comparator = [];
+
     /**
      * A search parameter that defines a named search item that can be used to
      * search/filter on a resource.
@@ -203,25 +207,27 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
-    private $component = [];
+    protected $component = [];
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the search parameter was published. The date
      * must change when the business version changes and it must change if the status
@@ -230,11 +236,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Where this search parameter is originally defined. If a derivedFrom is provided,
@@ -245,24 +252,26 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $derivedFrom = null;
+    protected $derivedFrom = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * And how it used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
@@ -270,62 +279,68 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $expression = null;
+    protected $expression = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A supported modifier for a search parameter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchModifierCode[]
      */
-    private $modifier = [];
+    protected $modifier = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $multipleAnd = null;
+    protected $multipleAnd = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $multipleOr = null;
+    protected $multipleOr = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -333,24 +348,26 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the search parameter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this search parameter is needed and why it has been designed
@@ -358,40 +375,44 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
-    private $target = [];
+    protected $target = [];
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchParamType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this search parameter when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -402,14 +423,15 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -419,11 +441,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the search parameter
      * when it is referenced in a specification, model, design or instance. This is an
@@ -434,28 +457,30 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $xpath = null;
+    protected $xpath = null;
+
     /**
      * How a search parameter relates to the set of elements returned by evaluating its
      * xpath query.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRXPathUsageType
      */
-    private $xpathUsage = null;
+    protected $xpathUsage = null;
 
     /**
      * FHIRSearchParameter Constructor
@@ -867,7 +892,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -905,7 +930,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
@@ -920,13 +945,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $base
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addBase($base = null)
     {
@@ -945,13 +970,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $base
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setBase(array $base = [])
     {
@@ -972,7 +997,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the names of any search parameters which may be chained to the
      * containing search parameter. Chained parameters may be added to search
@@ -991,7 +1016,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the names of any search parameters which may be chained to the
      * containing search parameter. Chained parameters may be added to search
@@ -1001,7 +1026,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * parameter on the target resource type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $chain
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addChain($chain = null)
     {
@@ -1020,7 +1045,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the names of any search parameters which may be chained to the
      * containing search parameter. Chained parameters may be added to search
@@ -1030,7 +1055,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * parameter on the target resource type.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $chain
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setChain(array $chain = [])
     {
@@ -1051,7 +1076,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The code used in the URL or the parameter name in a parameters resource for this
@@ -1067,14 +1092,14 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The code used in the URL or the parameter name in a parameters resource for this
      * search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -1092,7 +1117,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * What Search Comparator Codes are supported in search.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
      *
@@ -1105,12 +1130,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * What Search Comparator Codes are supported in search.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchComparator $comparator
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addComparator(FHIRSearchComparator $comparator = null)
     {
@@ -1120,12 +1145,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * What Search Comparator Codes are supported in search.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchComparator[] $comparator
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setComparator(array $comparator = [])
     {
@@ -1163,7 +1188,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * Used to define the parts of a composite search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent $component
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addComponent(FHIRSearchParameterComponent $component = null)
     {
@@ -1178,7 +1203,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * Used to define the parts of a composite search parameter.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent[] $component
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setComponent(array $component = [])
     {
@@ -1199,7 +1224,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -1214,13 +1239,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -1231,13 +1256,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -1261,7 +1286,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the search parameter was published. The date
      * must change when the business version changes and it must change if the status
@@ -1281,7 +1306,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the search parameter was published. The date
      * must change when the business version changes and it must change if the status
@@ -1289,7 +1314,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * search parameter changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1308,7 +1333,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Where this search parameter is originally defined. If a derivedFrom is provided,
@@ -1327,7 +1352,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Where this search parameter is originally defined. If a derivedFrom is provided,
@@ -1337,7 +1362,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $derivedFrom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setDerivedFrom($derivedFrom = null)
     {
@@ -1359,7 +1384,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * And how it used.
@@ -1377,13 +1402,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * And how it used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1401,7 +1426,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
@@ -1416,14 +1441,14 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1442,7 +1467,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
      *
@@ -1456,12 +1481,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $expression
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setExpression($expression = null)
     {
@@ -1481,7 +1506,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
@@ -1497,13 +1522,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -1515,13 +1540,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -1541,7 +1566,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * A supported modifier for a search parameter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
      *
@@ -1554,12 +1579,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * A supported modifier for a search parameter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchModifierCode $modifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addModifier(FHIRSearchModifierCode $modifier = null)
     {
@@ -1569,12 +1594,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * A supported modifier for a search parameter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchModifierCode[] $modifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setModifier(array $modifier = [])
     {
@@ -1594,7 +1619,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
@@ -1608,13 +1633,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $multipleAnd
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setMultipleAnd($multipleAnd = null)
     {
@@ -1632,7 +1657,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
@@ -1646,13 +1671,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $multipleOr
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setMultipleOr($multipleOr = null)
     {
@@ -1671,7 +1696,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -1687,14 +1712,14 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1713,7 +1738,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the search parameter.
      *
@@ -1727,12 +1752,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1754,7 +1779,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this search parameter is needed and why it has been designed
@@ -1773,14 +1798,14 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this search parameter is needed and why it has been designed
      * as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -1797,7 +1822,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
@@ -1810,13 +1835,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -1827,7 +1852,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
@@ -1842,13 +1867,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addTarget($target = null)
     {
@@ -1867,13 +1892,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setTarget(array $target = [])
     {
@@ -1892,7 +1917,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
@@ -1905,13 +1930,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchParamType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setType(FHIRSearchParamType $type = null)
     {
@@ -1922,7 +1947,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this search parameter when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -1941,7 +1966,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this search parameter when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -1951,7 +1976,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * SHALL remain the same when the search parameter is stored on different servers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1973,7 +1998,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -1994,7 +2019,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2003,7 +2028,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -2017,7 +2042,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2026,7 +2051,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -2047,7 +2072,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the search parameter
      * when it is referenced in a specification, model, design or instance. This is an
@@ -2066,7 +2091,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the search parameter
      * when it is referenced in a specification, model, design or instance. This is an
@@ -2076,7 +2101,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * be placed in a lexicographical sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setVersion($version = null)
     {
@@ -2095,7 +2120,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
      *
@@ -2109,12 +2134,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $xpath
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setXpath($xpath = null)
     {
@@ -2133,7 +2158,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * How a search parameter relates to the set of elements returned by evaluating its
      * xpath query.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
@@ -2148,13 +2173,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     /**
      * How a search parameter relates to the set of elements returned by evaluating its
      * xpath query.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRXPathUsageType $xpathUsage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter
+     * @return static
      */
     public function setXpathUsage(FHIRXPathUsageType $xpathUsage = null)
     {

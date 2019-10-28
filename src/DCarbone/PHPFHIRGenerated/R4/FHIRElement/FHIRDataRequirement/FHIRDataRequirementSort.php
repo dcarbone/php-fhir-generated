@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Describes a required data item for evaluation in terms of the type of data, and
  * optional code or date-based filters of the data.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRDataRequirementSort
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
@@ -83,7 +83,7 @@ class FHIRDataRequirementSort extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_SORT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DIRECTION = 'direction';
     const FIELD_DIRECTION_EXT = '_direction';
@@ -92,17 +92,18 @@ class FHIRDataRequirementSort extends FHIRElement
 
     /**
      * The possible sort directions, ascending or descending.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSortDirection
      */
-    private $direction = null;
+    protected $direction = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The attribute of the sort. The specified path must be resolvable from the type
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
@@ -111,7 +112,7 @@ class FHIRDataRequirementSort extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
 
     /**
      * FHIRDataRequirementSort Constructor
@@ -173,7 +174,7 @@ class FHIRDataRequirementSort extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -202,7 +203,7 @@ class FHIRDataRequirementSort extends FHIRElement
 
     /**
      * The possible sort directions, ascending or descending.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
      *
@@ -215,12 +216,12 @@ class FHIRDataRequirementSort extends FHIRElement
 
     /**
      * The possible sort directions, ascending or descending.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSortDirection $direction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
+     * @return static
      */
     public function setDirection(FHIRSortDirection $direction = null)
     {
@@ -231,7 +232,7 @@ class FHIRDataRequirementSort extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The attribute of the sort. The specified path must be resolvable from the type
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
@@ -248,7 +249,7 @@ class FHIRDataRequirementSort extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The attribute of the sort. The specified path must be resolvable from the type
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
@@ -256,7 +257,7 @@ class FHIRDataRequirementSort extends FHIRElement
      * sub-elements. Note that the index must be an integer constant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
+     * @return static
      */
     public function setPath($path = null)
     {

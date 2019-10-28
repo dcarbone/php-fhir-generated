@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Instances (SOP Instances - images or other data) acquired or produced in a
  * common context. A series is of only one modality (e.g. X-ray, CT, MR,
  * ultrasound), but a study may have multiple series of different modalities.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRImagingStudy
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -94,7 +94,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_STUDY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BASED_ON = 'basedOn';
     const FIELD_DESCRIPTION = 'description';
@@ -126,40 +126,43 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $basedOn = [];
+    protected $basedOn = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -168,55 +171,60 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $endpoint = [];
+    protected $endpoint = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession
      * Number.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read the study and interpreted the images or other content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $interpreter = [];
+    protected $interpreter = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $location = null;
+    protected $location = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of all the series.modality values that are actual acquisition modalities,
      * i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $modality = [];
+    protected $modality = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Per the recommended DICOM mapping, this element is derived from the Study
      * Description attribute (0008,1030). Observations or findings about the imaging
@@ -225,10 +233,11 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of SOP Instances in Study. This value given may be larger than the number
@@ -238,10 +247,11 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $numberOfInstances = null;
+    protected $numberOfInstances = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of Series in the Study. This value given may be larger than the number of
@@ -251,59 +261,65 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $numberOfSeries = null;
+    protected $numberOfSeries = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the performed procedure type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $procedureCode = [];
+    protected $procedureCode = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure which this ImagingStudy was part of.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $procedureReference = null;
+    protected $procedureReference = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why the ImagingStudy was requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reasonCode = [];
+    protected $reasonCode = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this Study.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $reasonReference = [];
+    protected $reasonReference = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $referrer = null;
+    protected $referrer = null;
+
     /**
      * Representation of the content produced in a DICOM imaging study. A study
      * comprises a set of series, each of which includes a set of Service-Object Pair
@@ -315,39 +331,42 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
-    private $series = [];
+    protected $series = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $started = null;
+    protected $started = null;
+
     /**
      * The status of the ImagingStudy.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ImagingStudy.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRImagingStudyStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRImagingStudy Constructor
@@ -637,7 +656,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -675,7 +694,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
@@ -690,13 +709,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn = null)
     {
@@ -707,13 +726,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setBasedOn(array $basedOn = [])
     {
@@ -734,7 +753,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
@@ -749,13 +768,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -774,7 +793,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
@@ -789,13 +808,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -806,7 +825,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -823,7 +842,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -831,7 +850,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * series-level endpoint with the same Endpoint.connectionType.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint = null)
     {
@@ -842,7 +861,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -850,7 +869,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * series-level endpoint with the same Endpoint.connectionType.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setEndpoint(array $endpoint = [])
     {
@@ -872,7 +891,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession
      * Number.
@@ -888,13 +907,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession
      * Number.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -906,13 +925,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession
      * Number.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -933,7 +952,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read the study and interpreted the images or other content.
      *
@@ -947,12 +966,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read the study and interpreted the images or other content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $interpreter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addInterpreter(FHIRReference $interpreter = null)
     {
@@ -963,12 +982,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read the study and interpreted the images or other content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $interpreter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setInterpreter(array $interpreter = [])
     {
@@ -989,7 +1008,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
      *
@@ -1003,12 +1022,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $location
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setLocation(FHIRReference $location = null)
     {
@@ -1019,7 +1038,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of all the series.modality values that are actual acquisition modalities,
      * i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
@@ -1034,13 +1053,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of all the series.modality values that are actual acquisition modalities,
      * i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $modality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addModality(FHIRCoding $modality = null)
     {
@@ -1051,13 +1070,13 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of all the series.modality values that are actual acquisition modalities,
      * i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $modality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setModality(array $modality = [])
     {
@@ -1079,7 +1098,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Per the recommended DICOM mapping, this element is derived from the Study
      * Description attribute (0008,1030). Observations or findings about the imaging
@@ -1097,7 +1116,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Per the recommended DICOM mapping, this element is derived from the Study
      * Description attribute (0008,1030). Observations or findings about the imaging
@@ -1105,7 +1124,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1117,7 +1136,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Per the recommended DICOM mapping, this element is derived from the Study
      * Description attribute (0008,1030). Observations or findings about the imaging
@@ -1125,7 +1144,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * element.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1145,7 +1164,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of SOP Instances in Study. This value given may be larger than the number
@@ -1162,7 +1181,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of SOP Instances in Study. This value given may be larger than the number
@@ -1171,7 +1190,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements are present.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $numberOfInstances
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setNumberOfInstances($numberOfInstances = null)
     {
@@ -1189,7 +1208,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of Series in the Study. This value given may be larger than the number of
@@ -1206,7 +1225,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of Series in the Study. This value given may be larger than the number of
@@ -1215,7 +1234,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * present.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $numberOfSeries
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setNumberOfSeries($numberOfSeries = null)
     {
@@ -1235,7 +1254,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the performed procedure type.
      *
@@ -1250,12 +1269,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the performed procedure type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $procedureCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addProcedureCode(FHIRCodeableConcept $procedureCode = null)
     {
@@ -1267,12 +1286,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code for the performed procedure type.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $procedureCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setProcedureCode(array $procedureCode = [])
     {
@@ -1293,7 +1312,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure which this ImagingStudy was part of.
      *
@@ -1307,12 +1326,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure which this ImagingStudy was part of.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $procedureReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setProcedureReference(FHIRReference $procedureReference = null)
     {
@@ -1324,7 +1343,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why the ImagingStudy was requested.
      *
@@ -1339,12 +1358,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why the ImagingStudy was requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
@@ -1356,12 +1375,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why the ImagingStudy was requested.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setReasonCode(array $reasonCode = [])
     {
@@ -1382,7 +1401,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this Study.
      *
@@ -1396,12 +1415,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this Study.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference = null)
     {
@@ -1412,12 +1431,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this Study.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setReasonReference(array $reasonReference = [])
     {
@@ -1438,7 +1457,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
      *
@@ -1452,12 +1471,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $referrer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setReferrer(FHIRReference $referrer = null)
     {
@@ -1491,7 +1510,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Each study has one or more series of images or other content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries $series
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function addSeries(FHIRImagingStudySeries $series = null)
     {
@@ -1509,7 +1528,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Each study has one or more series of images or other content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries[] $series
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setSeries(array $series = [])
     {
@@ -1533,7 +1552,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
      *
@@ -1550,12 +1569,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $started
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setStarted($started = null)
     {
@@ -1573,7 +1592,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * The status of the ImagingStudy.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ImagingStudy.
      *
@@ -1586,12 +1605,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * The status of the ImagingStudy.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ImagingStudy.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRImagingStudyStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setStatus(FHIRImagingStudyStatus $status = null)
     {
@@ -1602,7 +1621,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
      *
@@ -1616,12 +1635,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImagingStudy
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

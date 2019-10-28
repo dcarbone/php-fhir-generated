@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAud
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_DOT_DETAIL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
@@ -92,23 +92,24 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of extra detail provided in the value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The details, base64 encoded. Used to carry bulk information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRAuditEventDetail Constructor
@@ -174,7 +175,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -204,7 +205,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of extra detail provided in the value.
      *
@@ -218,12 +219,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of extra detail provided in the value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
+     * @return static
      */
     public function setType($type = null)
     {
@@ -242,7 +243,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The details, base64 encoded. Used to carry bulk information.
      *
@@ -256,12 +257,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The details, base64 encoded. Used to carry bulk information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail
+     * @return static
      */
     public function setValue($value = null)
     {

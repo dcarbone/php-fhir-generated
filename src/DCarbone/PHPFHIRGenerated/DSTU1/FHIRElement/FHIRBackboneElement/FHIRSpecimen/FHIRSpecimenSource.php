@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_SOURCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_RELATIONSHIP = 'relationship';
     const FIELD_RELATIONSHIP_EXT = '_relationship';
@@ -83,23 +83,24 @@ class FHIRSpecimenSource extends FHIRBackboneElement
 
     /**
      * Type indicating if this is a parent or child relationship
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this relationship is to a parent or to a child.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType
      */
-    private $relationship = null;
+    protected $relationship = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen resource that is the target of this relationship.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $target = [];
+    protected $target = [];
 
     /**
      * FHIRSpecimenSource Constructor
@@ -164,7 +165,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -193,7 +194,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
 
     /**
      * Type indicating if this is a parent or child relationship
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this relationship is to a parent or to a child.
      *
@@ -206,12 +207,12 @@ class FHIRSpecimenSource extends FHIRBackboneElement
 
     /**
      * Type indicating if this is a parent or child relationship
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this relationship is to a parent or to a child.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType $relationship
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource
+     * @return static
      */
     public function setRelationship(FHIRHierarchicalRelationshipType $relationship = null)
     {
@@ -222,7 +223,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen resource that is the target of this relationship.
      *
@@ -236,12 +237,12 @@ class FHIRSpecimenSource extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen resource that is the target of this relationship.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $target
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource
+     * @return static
      */
     public function addTarget(FHIRResourceReference $target = null)
     {
@@ -252,12 +253,12 @@ class FHIRSpecimenSource extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen resource that is the target of this relationship.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $target
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource
+     * @return static
      */
     public function setTarget(array $target = [])
     {

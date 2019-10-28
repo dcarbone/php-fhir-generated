@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * A collection of error, warning or information messages that result from a system
  * action.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIROperationOutcome
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -77,7 +77,7 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OPERATION_OUTCOME;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ISSUE = 'issue';
 
@@ -89,7 +89,7 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue[]
      */
-    private $issue = [];
+    protected $issue = [];
 
     /**
      * FHIROperationOutcome Constructor
@@ -142,7 +142,7 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROperationOutcome
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -197,7 +197,7 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
      * An error, warning or information message that results from a system action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $issue
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROperationOutcome
+     * @return static
      */
     public function addIssue(FHIROperationOutcomeIssue $issue = null)
     {
@@ -212,7 +212,7 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
      * An error, warning or information message that results from a system action.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue[] $issue
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROperationOutcome
+     * @return static
      */
     public function setIssue(array $issue = [])
     {

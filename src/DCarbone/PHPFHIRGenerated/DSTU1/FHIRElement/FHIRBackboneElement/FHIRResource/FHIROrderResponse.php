@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * A response to an order.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIROrderResponse
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -81,7 +81,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ORDER_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORITY_CODEABLE_CONCEPT = 'authorityCodeableConcept';
     const FIELD_AUTHORITY_RESOURCE = 'authorityResource';
@@ -101,60 +101,65 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $authorityCodeableConcept = null;
+    protected $authorityCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $authorityResource = null;
+    protected $authorityResource = null;
+
     /**
      * The status of the response to an order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROrderOutcomeStatus
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
@@ -162,11 +167,12 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $fulfillment = [];
+    protected $fulfillment = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
@@ -174,27 +180,29 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $request = null;
+    protected $request = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $who = null;
+    protected $who = null;
 
     /**
      * FHIROrderResponse Constructor
@@ -333,7 +341,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -372,7 +380,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
@@ -388,13 +396,13 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $authorityCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setAuthorityCodeableConcept(FHIRCodeableConcept $authorityCodeableConcept = null)
     {
@@ -405,7 +413,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
@@ -420,13 +428,13 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $authorityResource
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setAuthorityResource(FHIRResourceReference $authorityResource = null)
     {
@@ -436,7 +444,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
 
     /**
      * The status of the response to an order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
      *
@@ -449,12 +457,12 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
 
     /**
      * The status of the response to an order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROrderOutcomeStatus $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setCode(FHIROrderOutcomeStatus $code = null)
     {
@@ -467,7 +475,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
      *
@@ -483,12 +491,12 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -506,7 +514,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
@@ -520,13 +528,13 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -545,7 +553,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
@@ -561,14 +569,14 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $fulfillment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function addFulfillment(FHIRResourceReference $fulfillment = null)
     {
@@ -579,14 +587,14 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $fulfillment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setFulfillment(array $fulfillment = [])
     {
@@ -607,7 +615,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
@@ -623,14 +631,14 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -641,14 +649,14 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -669,7 +677,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
      *
@@ -683,12 +691,12 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $request
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setRequest(FHIRResourceReference $request = null)
     {
@@ -699,7 +707,7 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
      *
@@ -713,12 +721,12 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $who
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
+     * @return static
      */
     public function setWho(FHIRResourceReference $who = null)
     {

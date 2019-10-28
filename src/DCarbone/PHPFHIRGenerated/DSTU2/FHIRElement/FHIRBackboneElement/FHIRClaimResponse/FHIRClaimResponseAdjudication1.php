@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ADJUDICATION_1;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT = 'amount';
     const FIELD_CODE = 'code';
@@ -94,29 +94,31 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $amount = null;
+    protected $amount = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRClaimResponseAdjudication1 Constructor
@@ -184,7 +186,7 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication1
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -225,7 +227,7 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
      * Monetary amount associated with the code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney $amount
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication1
+     * @return static
      */
     public function setAmount(FHIRMoney $amount = null)
     {
@@ -236,7 +238,7 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
      *
@@ -250,12 +252,12 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication1
+     * @return static
      */
     public function setCode(FHIRCoding $code = null)
     {
@@ -267,7 +269,7 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
@@ -283,13 +285,13 @@ class FHIRClaimResponseAdjudication1 extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication1
+     * @return static
      */
     public function setValue($value = null)
     {

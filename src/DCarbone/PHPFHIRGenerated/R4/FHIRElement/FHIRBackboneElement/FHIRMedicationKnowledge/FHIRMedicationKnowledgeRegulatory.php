@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_MAX_DISPENSE = 'maxDispense';
     const FIELD_REGULATORY_AUTHORITY = 'regulatoryAuthority';
@@ -93,17 +93,19 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
-    private $maxDispense = null;
+    protected $maxDispense = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $regulatoryAuthority = null;
+    protected $regulatoryAuthority = null;
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -111,7 +113,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
      */
-    private $schedule = [];
+    protected $schedule = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -120,7 +123,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
      */
-    private $substitution = [];
+    protected $substitution = [];
 
     /**
      * FHIRMedicationKnowledgeRegulatory Constructor
@@ -202,7 +205,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -247,7 +250,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * The maximum number of units of the medication that can be dispensed in a period.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function setMaxDispense(FHIRMedicationKnowledgeMaxDispense $maxDispense = null)
     {
@@ -258,7 +261,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
      *
@@ -272,12 +275,12 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $regulatoryAuthority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function setRegulatoryAuthority(FHIRReference $regulatoryAuthority = null)
     {
@@ -303,7 +306,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Specifies the schedule of a medication in jurisdiction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule $schedule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function addSchedule(FHIRMedicationKnowledgeSchedule $schedule = null)
     {
@@ -317,7 +320,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Specifies the schedule of a medication in jurisdiction.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[] $schedule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function setSchedule(array $schedule = [])
     {
@@ -355,7 +358,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution $substitution
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function addSubstitution(FHIRMedicationKnowledgeSubstitution $substitution = null)
     {
@@ -370,7 +373,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * perspective.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[] $substitution
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
+     * @return static
      */
     public function setSubstitution(array $substitution = [])
     {

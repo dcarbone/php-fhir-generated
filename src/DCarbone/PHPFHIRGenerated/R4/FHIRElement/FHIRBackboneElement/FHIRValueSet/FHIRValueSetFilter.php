@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_FILTER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_OP = 'op';
     const FIELD_OP_EXT = '_op';
@@ -95,28 +95,30 @@ class FHIRValueSetFilter extends FHIRBackboneElement
 
     /**
      * The kind of operation to perform as a part of a property based filter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFilterOperator
      */
-    private $op = null;
+    protected $op = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code that identifies a property or a filter defined in the code system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $property = null;
+    protected $property = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The match value may be either a code defined by the system, or a string value,
      * which is a regex match on the literal string of the property value (if the
@@ -127,7 +129,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRValueSetFilter Constructor
@@ -205,7 +207,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -234,7 +236,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
 
     /**
      * The kind of operation to perform as a part of a property based filter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
      *
@@ -247,12 +249,12 @@ class FHIRValueSetFilter extends FHIRBackboneElement
 
     /**
      * The kind of operation to perform as a part of a property based filter.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFilterOperator $op
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     * @return static
      */
     public function setOp(FHIRFilterOperator $op = null)
     {
@@ -263,7 +265,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code that identifies a property or a filter defined in the code system.
@@ -278,13 +280,13 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code that identifies a property or a filter defined in the code system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     * @return static
      */
     public function setProperty($property = null)
     {
@@ -303,7 +305,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The match value may be either a code defined by the system, or a string value,
      * which is a regex match on the literal string of the property value (if the
@@ -322,7 +324,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The match value may be either a code defined by the system, or a string value,
      * which is a regex match on the literal string of the property value (if the
@@ -332,7 +334,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * is 'exists'.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
+     * @return static
      */
     public function setValue($value = null)
     {

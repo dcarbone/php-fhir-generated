@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * planning care of various kinds, and may be used for reporting the schedule to
  * which past regular activities were carried out.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRTimingRepeat
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
@@ -94,7 +94,7 @@ class FHIRTimingRepeat extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BOUNDS_DURATION = 'boundsDuration';
     const FIELD_BOUNDS_PERIOD = 'boundsPeriod';
@@ -131,61 +131,66 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $boundsDuration = null;
+    protected $boundsDuration = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $boundsPeriod = null;
+    protected $boundsPeriod = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $boundsRange = null;
+    protected $boundsRange = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $count = null;
+    protected $count = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A maximum value for the count of the desired repetitions (e.g. do something 6-8
      * times).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $countMax = null;
+    protected $countMax = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If one or more days of week is provided, then the action happens only on the
@@ -193,63 +198,69 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode[]
      */
-    private $dayOfWeek = [];
+    protected $dayOfWeek = [];
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long this thing happens for when it happens.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $duration = null;
+    protected $duration = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of how long this thing happens for when it happens.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $durationMax = null;
+    protected $durationMax = null;
+
     /**
      * A unit of time (units from UCUM).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnitsOfTime
      */
-    private $durationUnit = null;
+    protected $durationUnit = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of times to repeat the action within the specified period / period
      * range (i.e. both period and periodMax provided).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $frequency = null;
+    protected $frequency = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $frequencyMax = null;
+    protected $frequencyMax = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of minutes from the event. If the event code does not indicate
@@ -258,12 +269,13 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $offset = null;
+    protected $offset = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the duration of time over which repetitions are to occur; e.g. to
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
@@ -271,46 +283,50 @@ class FHIRTimingRepeat extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $periodMax = null;
+    protected $periodMax = null;
+
     /**
      * A unit of time (units from UCUM).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnitsOfTime
      */
-    private $periodUnit = null;
+    protected $periodUnit = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime[]
      */
-    private $timeOfDay = [];
+    protected $timeOfDay = [];
+
     /**
      * Real world event relating to the schedule.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Real world events that the occurrence of the event should be tied to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREventTiming[]
      */
-    private $when = [];
+    protected $when = [];
 
     /**
      * FHIRTimingRepeat Constructor
@@ -567,7 +583,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -597,7 +613,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -612,13 +628,13 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setBoundsDuration(FHIRDuration $boundsDuration = null)
     {
@@ -629,7 +645,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -644,13 +660,13 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $boundsPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setBoundsPeriod(FHIRPeriod $boundsPeriod = null)
     {
@@ -661,7 +677,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
@@ -676,13 +692,13 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $boundsRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setBoundsRange(FHIRRange $boundsRange = null)
     {
@@ -693,7 +709,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
      *
@@ -707,12 +723,12 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $count
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setCount($count = null)
     {
@@ -731,7 +747,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A maximum value for the count of the desired repetitions (e.g. do something 6-8
      * times).
@@ -746,13 +762,13 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A maximum value for the count of the desired repetitions (e.g. do something 6-8
      * times).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $countMax
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setCountMax($countMax = null)
     {
@@ -771,7 +787,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If one or more days of week is provided, then the action happens only on the
@@ -787,14 +803,14 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $dayOfWeek
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function addDayOfWeek($dayOfWeek = null)
     {
@@ -813,14 +829,14 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode[] $dayOfWeek
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setDayOfWeek(array $dayOfWeek = [])
     {
@@ -842,7 +858,7 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long this thing happens for when it happens.
      *
@@ -857,12 +873,12 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long this thing happens for when it happens.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $duration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setDuration($duration = null)
     {
@@ -882,7 +898,7 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of how long this thing happens for when it happens.
      *
@@ -897,12 +913,12 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of how long this thing happens for when it happens.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $durationMax
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setDurationMax($durationMax = null)
     {
@@ -920,7 +936,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A unit of time (units from UCUM).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
      *
@@ -933,12 +949,12 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A unit of time (units from UCUM).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnitsOfTime $durationUnit
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setDurationUnit(FHIRUnitsOfTime $durationUnit = null)
     {
@@ -949,7 +965,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of times to repeat the action within the specified period / period
      * range (i.e. both period and periodMax provided).
@@ -964,13 +980,13 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of times to repeat the action within the specified period / period
      * range (i.e. both period and periodMax provided).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $frequency
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setFrequency($frequency = null)
     {
@@ -989,7 +1005,7 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
@@ -1004,13 +1020,13 @@ class FHIRTimingRepeat extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $frequencyMax
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setFrequencyMax($frequencyMax = null)
     {
@@ -1028,7 +1044,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of minutes from the event. If the event code does not indicate
@@ -1044,7 +1060,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of minutes from the event. If the event code does not indicate
@@ -1052,7 +1068,7 @@ class FHIRTimingRepeat extends FHIRElement
      * be after the event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $offset
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setOffset($offset = null)
     {
@@ -1072,7 +1088,7 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the duration of time over which repetitions are to occur; e.g. to
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
@@ -1089,14 +1105,14 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the duration of time over which repetitions are to occur; e.g. to
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
      * period.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $period
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setPeriod($period = null)
     {
@@ -1116,7 +1132,7 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
@@ -1132,13 +1148,13 @@ class FHIRTimingRepeat extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $periodMax
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setPeriodMax($periodMax = null)
     {
@@ -1156,7 +1172,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A unit of time (units from UCUM).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
      *
@@ -1169,12 +1185,12 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A unit of time (units from UCUM).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnitsOfTime $periodUnit
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setPeriodUnit(FHIRUnitsOfTime $periodUnit = null)
     {
@@ -1184,7 +1200,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
      *
@@ -1197,12 +1213,12 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $timeOfDay
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function addTimeOfDay($timeOfDay = null)
     {
@@ -1220,12 +1236,12 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime[] $timeOfDay
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setTimeOfDay(array $timeOfDay = [])
     {
@@ -1245,7 +1261,7 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * Real world event relating to the schedule.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Real world events that the occurrence of the event should be tied to.
      *
@@ -1258,12 +1274,12 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * Real world event relating to the schedule.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Real world events that the occurrence of the event should be tied to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREventTiming $when
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function addWhen(FHIREventTiming $when = null)
     {
@@ -1273,12 +1289,12 @@ class FHIRTimingRepeat extends FHIRElement
 
     /**
      * Real world event relating to the schedule.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Real world events that the occurrence of the event should be tied to.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREventTiming[] $when
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat
+     * @return static
      */
     public function setWhen(array $when = [])
     {

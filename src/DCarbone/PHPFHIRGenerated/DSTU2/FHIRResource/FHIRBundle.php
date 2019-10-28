@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
 /**
  * A container for a collection of resources.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRBundle
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource
@@ -85,7 +85,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ENTRY = 'entry';
     const FIELD_LINK = 'link';
@@ -103,7 +103,8 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[]
      */
-    private $entry = [];
+    protected $entry = [];
+
     /**
      * A container for a collection of resources.
      *
@@ -111,23 +112,25 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
-    private $link = [];
+    protected $link = [];
+
     /**
      * A digital signature along with supporting context. The signature may be
      * electronic/cryptographic in nature, or a graphical image representing a
      * hand-written signature, or a signature process. Different Signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML DigSIg or a JWT.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature
      */
-    private $signature = null;
+    protected $signature = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If a set of search matches, this is the total number of matches for the search
@@ -135,16 +138,17 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
-    private $total = null;
+    protected $total = null;
+
     /**
      * Indicates the purpose of a bundle - how it was intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle- how it was intended to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBundleType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRBundle Constructor
@@ -243,7 +247,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -298,7 +302,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * about a resource (transactions and history only).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $entry
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function addEntry(FHIRBundleEntry $entry = null)
     {
@@ -313,7 +317,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * about a resource (transactions and history only).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[] $entry
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setEntry(array $entry = [])
     {
@@ -349,7 +353,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A series of links that provide context to this bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function addLink(FHIRBundleLink $link = null)
     {
@@ -363,7 +367,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A series of links that provide context to this bundle.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setLink(array $link = [])
     {
@@ -387,7 +391,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * hand-written signature, or a signature process. Different Signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML DigSIg or a JWT.
      *
@@ -404,12 +408,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * hand-written signature, or a signature process. Different Signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML DigSIg or a JWT.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature $signature
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setSignature(FHIRSignature $signature = null)
     {
@@ -419,7 +423,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If a set of search matches, this is the total number of matches for the search
@@ -434,14 +438,14 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If a set of search matches, this is the total number of matches for the search
      * (as opposed to the number of results in this bundle).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt $total
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setTotal($total = null)
     {
@@ -459,7 +463,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * Indicates the purpose of a bundle - how it was intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle- how it was intended to be used.
      *
@@ -472,12 +476,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * Indicates the purpose of a bundle - how it was intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle- how it was intended to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBundleType $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setType(FHIRBundleType $type = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ class FHIRXmlIdRef extends FHIRIdPrimitive
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_XML_ID_REF;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRXmlIdRef Constructor
@@ -109,7 +109,7 @@ class FHIRXmlIdRef extends FHIRIdPrimitive
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive\FHIRXmlIdRef
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {

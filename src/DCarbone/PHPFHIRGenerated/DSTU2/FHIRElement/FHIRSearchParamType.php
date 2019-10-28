@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
 /**
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSearchParamType
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
@@ -79,14 +79,14 @@ class FHIRSearchParamType extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEARCH_PARAM_TYPE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSearchParamTypeList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRSearchParamType Constructor
@@ -131,7 +131,7 @@ class FHIRSearchParamType extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSearchParamType
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -168,7 +168,7 @@ class FHIRSearchParamType extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSearchParamTypeList $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSearchParamType
+     * @return static
      */
     public function setValue($value = null)
     {

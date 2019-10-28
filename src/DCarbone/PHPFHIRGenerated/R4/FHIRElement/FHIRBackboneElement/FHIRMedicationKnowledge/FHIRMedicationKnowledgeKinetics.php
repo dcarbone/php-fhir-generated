@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_KINETICS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AREA_UNDER_CURVE = 'areaUnderCurve';
     const FIELD_AREA_UNDER_CURVE_EXT = '_areaUnderCurve';
@@ -93,36 +93,38 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The drug concentration measured at certain discrete points in time.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[]
      */
-    private $areaUnderCurve = [];
+    protected $areaUnderCurve = [];
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time required for any specified property (e.g., the concentration of a
      * substance in the body) to decrease by half.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $halfLifePeriod = null;
+    protected $halfLifePeriod = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The median lethal dose of a drug.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[]
      */
-    private $lethalDose50 = [];
+    protected $lethalDose50 = [];
 
     /**
      * FHIRMedicationKnowledgeKinetics Constructor
@@ -211,7 +213,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -243,7 +245,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The drug concentration measured at certain discrete points in time.
      *
@@ -259,12 +261,12 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The drug concentration measured at certain discrete points in time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $areaUnderCurve
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
+     * @return static
      */
     public function addAreaUnderCurve(FHIRQuantity $areaUnderCurve = null)
     {
@@ -277,12 +279,12 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The drug concentration measured at certain discrete points in time.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[] $areaUnderCurve
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
+     * @return static
      */
     public function setAreaUnderCurve(array $areaUnderCurve = [])
     {
@@ -303,7 +305,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time required for any specified property (e.g., the concentration of a
      * substance in the body) to decrease by half.
@@ -318,13 +320,13 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time required for any specified property (e.g., the concentration of a
      * substance in the body) to decrease by half.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
+     * @return static
      */
     public function setHalfLifePeriod(FHIRDuration $halfLifePeriod = null)
     {
@@ -337,7 +339,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The median lethal dose of a drug.
      *
@@ -353,12 +355,12 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The median lethal dose of a drug.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $lethalDose50
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
+     * @return static
      */
     public function addLethalDose50(FHIRQuantity $lethalDose50 = null)
     {
@@ -371,12 +373,12 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The median lethal dose of a drug.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[] $lethalDose50
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics
+     * @return static
      */
     public function setLethalDose50(array $lethalDose50 = [])
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_STUDY_DOT_INSTANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_NUMBER = 'number';
     const FIELD_NUMBER_EXT = '_number';
@@ -98,46 +98,49 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of instance in the series.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $number = null;
+    protected $number = null;
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * DICOM instance type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $sopClass = null;
+    protected $sopClass = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description of the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Formal identifier for this image or other content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $uid = null;
+    protected $uid = null;
 
     /**
      * FHIRImagingStudyInstance Constructor
@@ -223,7 +226,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -252,7 +255,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of instance in the series.
@@ -266,13 +269,13 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of instance in the series.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $number
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @return static
      */
     public function setNumber($number = null)
     {
@@ -291,7 +294,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * DICOM instance type.
@@ -306,13 +309,13 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * DICOM instance type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $sopClass
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @return static
      */
     public function setSopClass($sopClass = null)
     {
@@ -331,7 +334,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description of the instance.
      *
@@ -345,12 +348,12 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description of the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -369,7 +372,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Formal identifier for this image or other content.
@@ -384,13 +387,13 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Formal identifier for this image or other content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $uid
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
+     * @return static
      */
     public function setUid($uid = null)
     {

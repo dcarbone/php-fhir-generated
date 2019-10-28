@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * A technical identifier - identifies some entity uniquely and unambiguously.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRIdentifier
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -75,7 +75,7 @@ class FHIRIdentifier extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IDENTIFIER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ASSIGNER = 'assigner';
     const FIELD_LABEL = 'label';
@@ -91,61 +91,66 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $assigner = null;
+    protected $assigner = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $label = null;
+    protected $label = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $system = null;
+    protected $system = null;
+
     /**
      * Identifies the purpose for this identifier, if known
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifierUse
      */
-    private $use = null;
+    protected $use = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRIdentifier Constructor
@@ -249,7 +254,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -279,7 +284,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
      *
@@ -293,12 +298,12 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $assigner
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setAssigner(FHIRResourceReference $assigner = null)
     {
@@ -308,7 +313,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
@@ -322,13 +327,13 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $label
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setLabel($label = null)
     {
@@ -347,7 +352,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
      *
@@ -361,12 +366,12 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -376,7 +381,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
      *
@@ -389,12 +394,12 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $system
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setSystem($system = null)
     {
@@ -412,7 +417,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * Identifies the purpose for this identifier, if known
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
      *
@@ -425,12 +430,12 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * Identifies the purpose for this identifier, if known
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifierUse $use
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setUse(FHIRIdentifierUse $use = null)
     {
@@ -440,7 +445,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
@@ -454,13 +459,13 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setValue($value = null)
     {

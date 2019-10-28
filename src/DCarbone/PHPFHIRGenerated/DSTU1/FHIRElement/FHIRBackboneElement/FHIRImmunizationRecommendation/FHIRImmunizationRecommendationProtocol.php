@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_PROTOCOL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORITY = 'authority';
     const FIELD_DESCRIPTION = 'description';
@@ -90,43 +90,46 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol? E.g. ACIP.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $authority = null;
+    protected $authority = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the nominal position in a series of the next dose. This is the
      * recommended dose number as per a specified protocol.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $doseSequence = null;
+    protected $doseSequence = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $series = null;
+    protected $series = null;
 
     /**
      * FHIRImmunizationRecommendationProtocol Constructor
@@ -207,7 +210,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -237,7 +240,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol? E.g. ACIP.
      *
@@ -251,12 +254,12 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol? E.g. ACIP.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $authority
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * @return static
      */
     public function setAuthority(FHIRResourceReference $authority = null)
     {
@@ -266,7 +269,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
@@ -280,13 +283,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -304,7 +307,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the nominal position in a series of the next dose. This is the
      * recommended dose number as per a specified protocol.
@@ -318,13 +321,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the nominal position in a series of the next dose. This is the
      * recommended dose number as per a specified protocol.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $doseSequence
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * @return static
      */
     public function setDoseSequence($doseSequence = null)
     {
@@ -342,7 +345,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
@@ -356,13 +359,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $series
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * @return static
      */
     public function setSeries($series = null)
     {

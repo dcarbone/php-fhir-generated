@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_RESPONSE_DOT_ANSWER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ITEM = 'item';
     const FIELD_VALUE_ATTACHMENT = 'valueAttachment';
@@ -126,144 +126,156 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    private $item = [];
+    protected $item = [];
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    private $valueAttachment = null;
+    protected $valueAttachment = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $valueBoolean = null;
+    protected $valueBoolean = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
-    private $valueCoding = null;
+    protected $valueCoding = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $valueDate = null;
+    protected $valueDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $valueDateTime = null;
+    protected $valueDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $valueDecimal = null;
+    protected $valueDecimal = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $valueInteger = null;
+    protected $valueInteger = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $valueQuantity = null;
+    protected $valueQuantity = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $valueReference = null;
+    protected $valueReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $valueString = null;
+    protected $valueString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
-    private $valueTime = null;
+    protected $valueTime = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $valueUri = null;
+    protected $valueUri = null;
 
     /**
      * FHIRQuestionnaireResponseAnswer Constructor
@@ -445,7 +457,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -494,7 +506,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * Nested groups and/or questions found within this particular answer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function addItem(FHIRQuestionnaireResponseItem $item = null)
     {
@@ -510,7 +522,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * Nested groups and/or questions found within this particular answer.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setItem(array $item = [])
     {
@@ -531,7 +543,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -546,13 +558,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $valueAttachment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueAttachment(FHIRAttachment $valueAttachment = null)
     {
@@ -562,7 +574,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -576,13 +588,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueBoolean($valueBoolean = null)
     {
@@ -601,7 +613,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -616,13 +628,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $valueCoding
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueCoding(FHIRCoding $valueCoding = null)
     {
@@ -634,7 +646,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -650,13 +662,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $valueDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueDate($valueDate = null)
     {
@@ -678,7 +690,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -696,13 +708,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueDateTime($valueDateTime = null)
     {
@@ -722,7 +734,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -738,13 +750,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $valueDecimal
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueDecimal($valueDecimal = null)
     {
@@ -763,7 +775,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -778,13 +790,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $valueInteger
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueInteger($valueInteger = null)
     {
@@ -805,7 +817,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -822,13 +834,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
@@ -839,7 +851,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -854,13 +866,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueReference(FHIRReference $valueReference = null)
     {
@@ -871,7 +883,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -886,13 +898,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $valueString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueString($valueString = null)
     {
@@ -910,7 +922,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -924,13 +936,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $valueTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueTime($valueTime = null)
     {
@@ -949,7 +961,7 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
@@ -964,13 +976,13 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The answer (or one of the answers) provided by the respondent to the question.
      * (choose any one of value*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $valueUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer
+     * @return static
      */
     public function setValueUri($valueUri = null)
     {

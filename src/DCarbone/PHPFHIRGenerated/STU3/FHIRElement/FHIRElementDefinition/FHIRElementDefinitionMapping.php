@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElementDefinitionMapping
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
@@ -83,7 +83,7 @@ class FHIRElementDefinitionMapping extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_MAPPING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
@@ -97,47 +97,50 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that provide information about the mapping or its use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An internal reference to the definition of a mapping.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $identity = null;
+    protected $identity = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies the computable language in which mapping.map is expressed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $language = null;
+    protected $language = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Expresses what part of the target specification corresponds to this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $map = null;
+    protected $map = null;
 
     /**
      * FHIRElementDefinitionMapping Constructor
@@ -223,7 +226,7 @@ class FHIRElementDefinitionMapping extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -253,7 +256,7 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that provide information about the mapping or its use.
      *
@@ -267,12 +270,12 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that provide information about the mapping or its use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -293,7 +296,7 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An internal reference to the definition of a mapping.
@@ -310,13 +313,13 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An internal reference to the definition of a mapping.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $identity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping
+     * @return static
      */
     public function setIdentity($identity = null)
     {
@@ -335,7 +338,7 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies the computable language in which mapping.map is expressed.
@@ -350,13 +353,13 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies the computable language in which mapping.map is expressed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $language
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping
+     * @return static
      */
     public function setLanguage($language = null)
     {
@@ -375,7 +378,7 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Expresses what part of the target specification corresponds to this element.
      *
@@ -389,12 +392,12 @@ class FHIRElementDefinitionMapping extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Expresses what part of the target specification corresponds to this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $map
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping
+     * @return static
      */
     public function setMap($map = null)
     {

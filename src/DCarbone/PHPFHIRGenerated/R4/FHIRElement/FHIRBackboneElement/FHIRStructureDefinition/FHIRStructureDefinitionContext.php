@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_DEFINITION_DOT_CONTEXT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXPRESSION = 'expression';
     const FIELD_EXPRESSION_EXT = '_expression';
@@ -92,23 +92,24 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression that defines where an extension can be used in resources.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $expression = null;
+    protected $expression = null;
+
     /**
      * How an extension context is interpreted.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines how to interpret the expression that defines what the context of the
      * extension is.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtensionContextType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRStructureDefinitionContext Constructor
@@ -170,7 +171,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -200,7 +201,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression that defines where an extension can be used in resources.
      *
@@ -214,12 +215,12 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression that defines where an extension can be used in resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $expression
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext
+     * @return static
      */
     public function setExpression($expression = null)
     {
@@ -237,7 +238,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
 
     /**
      * How an extension context is interpreted.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines how to interpret the expression that defines what the context of the
      * extension is.
@@ -251,13 +252,13 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement
 
     /**
      * How an extension context is interpreted.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines how to interpret the expression that defines what the context of the
      * extension is.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtensionContextType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext
+     * @return static
      */
     public function setType(FHIRExtensionContextType $type = null)
     {

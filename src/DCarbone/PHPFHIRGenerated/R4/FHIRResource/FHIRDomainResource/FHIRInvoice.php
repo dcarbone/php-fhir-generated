@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Invoice containing collected ChargeItems from an Account with calculated
  * individual and total price for Billing purpose.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRInvoice
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -93,7 +93,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INVOICE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCOUNT = 'account';
     const FIELD_CANCELLED_REASON = 'cancelledReason';
@@ -122,59 +122,64 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $account = null;
+    protected $account = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $cancelledReason = null;
+    protected $cancelledReason = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $issuer = null;
+    protected $issuer = null;
+
     /**
      * Invoice containing collected ChargeItems from an Account with calculated
      * individual and total price for Billing purpose.
@@ -184,18 +189,20 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem[]
      */
-    private $lineItem = [];
+    protected $lineItem = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * Invoice containing collected ChargeItems from an Account with calculated
      * individual and total price for Billing purpose.
@@ -204,14 +211,15 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Payment details such as banking details, period of payment, deductibles, methods
@@ -219,57 +227,63 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $paymentTerms = null;
+    protected $paymentTerms = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $recipient = null;
+    protected $recipient = null;
+
     /**
      * Codes identifying the lifecycle stage of an Invoice.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInvoiceStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    private $totalGross = null;
+    protected $totalGross = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    private $totalNet = null;
+    protected $totalNet = null;
+
     /**
      * Invoice containing collected ChargeItems from an Account with calculated
      * individual and total price for Billing purpose.
@@ -281,19 +295,20 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
-    private $totalPriceComponent = [];
+    protected $totalPriceComponent = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRInvoice Constructor
@@ -520,7 +535,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -558,7 +573,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
      *
@@ -572,12 +587,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $account
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setAccount(FHIRReference $account = null)
     {
@@ -588,7 +603,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
@@ -603,13 +618,13 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $cancelledReason
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setCancelledReason($cancelledReason = null)
     {
@@ -631,7 +646,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
      *
@@ -648,12 +663,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -673,7 +688,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
@@ -689,13 +704,13 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -707,13 +722,13 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -734,7 +749,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
      *
@@ -748,12 +763,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $issuer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setIssuer(FHIRReference $issuer = null)
     {
@@ -783,7 +798,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * such as date, code and amount are found in the referenced ChargeItem resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem $lineItem
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function addLineItem(FHIRInvoiceLineItem $lineItem = null)
     {
@@ -799,7 +814,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * such as date, code and amount are found in the referenced ChargeItem resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem[] $lineItem
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setLineItem(array $lineItem = [])
     {
@@ -821,7 +836,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
      *
@@ -836,12 +851,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -853,12 +868,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -896,7 +911,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Indicates who or what performed or participated in the charged service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function addParticipant(FHIRInvoiceParticipant $participant = null)
     {
@@ -911,7 +926,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Indicates who or what performed or participated in the charged service.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -935,7 +950,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Payment details such as banking details, period of payment, deductibles, methods
@@ -954,14 +969,14 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Payment details such as banking details, period of payment, deductibles, methods
      * of payment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $paymentTerms
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setPaymentTerms($paymentTerms = null)
     {
@@ -980,7 +995,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
      *
@@ -994,12 +1009,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $recipient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setRecipient(FHIRReference $recipient = null)
     {
@@ -1009,7 +1024,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Codes identifying the lifecycle stage of an Invoice.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
      *
@@ -1022,12 +1037,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Codes identifying the lifecycle stage of an Invoice.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInvoiceStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setStatus(FHIRInvoiceStatus $status = null)
     {
@@ -1038,7 +1053,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
@@ -1053,13 +1068,13 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1070,7 +1085,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
      *
@@ -1084,12 +1099,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $totalGross
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setTotalGross(FHIRMoney $totalGross = null)
     {
@@ -1100,7 +1115,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
      *
@@ -1114,12 +1129,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $totalNet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setTotalNet(FHIRMoney $totalNet = null)
     {
@@ -1153,7 +1168,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the total price was calculated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent $totalPriceComponent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function addTotalPriceComponent(FHIRInvoicePriceComponent $totalPriceComponent = null)
     {
@@ -1171,7 +1186,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the total price was calculated.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent[] $totalPriceComponent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setTotalPriceComponent(array $totalPriceComponent = [])
     {
@@ -1193,7 +1208,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
@@ -1209,13 +1224,13 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

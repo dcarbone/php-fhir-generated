@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * treating physician); a multi-frame ultrasound instance ("cine" video clip) and a
  * set of measurements taken from that instance (for inclusion in a teaching file);
  * and so on.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRImagingObjectSelection
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -95,7 +95,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_AUTHORING_TIME = 'authoringTime';
@@ -111,7 +111,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Author of ImagingObjectSelection. It can be a human author or a device which
      * made the decision of the SOP instances selected. For example, a radiologist
@@ -121,14 +121,15 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time when the selection of the referenced instances were made. It is
      * (typically) different from the creation date of the selection resource, and from
@@ -137,11 +138,12 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $authoringTime = null;
+    protected $authoringTime = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text description of the DICOM SOP instances selected in the
      * ImagingObjectSelection. This should be aligned with the content of the title
@@ -150,18 +152,20 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingObjectSelection.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The
      * referenced SOP Instances (images or other content) are for a single patient, and
@@ -179,30 +183,32 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy[]
      */
-    private $study = [];
+    protected $study = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for, or significance of, the selection of objects referenced in the
      * resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
-    private $uid = null;
+    protected $uid = null;
 
     /**
      * FHIRImagingObjectSelection Constructor
@@ -312,7 +318,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -350,7 +356,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Author of ImagingObjectSelection. It can be a human author or a device which
      * made the decision of the SOP instances selected. For example, a radiologist
@@ -368,7 +374,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Author of ImagingObjectSelection. It can be a human author or a device which
      * made the decision of the SOP instances selected. For example, a radiologist
@@ -377,7 +383,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * generate a detection conclusion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -391,7 +397,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time when the selection of the referenced instances were made. It is
      * (typically) different from the creation date of the selection resource, and from
@@ -411,7 +417,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time when the selection of the referenced instances were made. It is
      * (typically) different from the creation date of the selection resource, and from
@@ -419,7 +425,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * referenced image).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $authoringTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setAuthoringTime($authoringTime = null)
     {
@@ -438,7 +444,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text description of the DICOM SOP instances selected in the
      * ImagingObjectSelection. This should be aligned with the content of the title
@@ -455,7 +461,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text description of the DICOM SOP instances selected in the
      * ImagingObjectSelection. This should be aligned with the content of the title
@@ -463,7 +469,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * selection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -482,7 +488,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingObjectSelection.
@@ -497,13 +503,13 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingObjectSelection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -549,7 +555,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * selection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy $study
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function addStudy(FHIRImagingObjectSelectionStudy $study = null)
     {
@@ -573,7 +579,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * selection.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy[] $study
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setStudy(array $study = [])
     {
@@ -595,7 +601,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for, or significance of, the selection of objects referenced in the
      * resource.
@@ -611,13 +617,13 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for, or significance of, the selection of objects referenced in the
      * resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $title
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setTitle(FHIRCodeableConcept $title = null)
     {
@@ -628,7 +634,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
@@ -643,13 +649,13 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $uid
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRImagingObjectSelection
+     * @return static
      */
     public function setUid($uid = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
  * Indicates whether the account is available to be used.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAccountStatus
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -80,14 +80,14 @@ class FHIRAccountStatus extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ACCOUNT_STATUS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRAccountStatusList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRAccountStatus Constructor
@@ -132,7 +132,7 @@ class FHIRAccountStatus extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAccountStatus
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -169,7 +169,7 @@ class FHIRAccountStatus extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRAccountStatusList $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAccountStatus
+     * @return static
      */
     public function setValue($value = null)
     {

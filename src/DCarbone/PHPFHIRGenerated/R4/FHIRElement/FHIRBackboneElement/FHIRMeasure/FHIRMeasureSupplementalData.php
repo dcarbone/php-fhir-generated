@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_SUPPLEMENTAL_DATA;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CRITERIA = 'criteria';
@@ -93,7 +93,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
@@ -101,13 +101,14 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A expression that is evaluated in a specified context and returns a value. The
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The criteria for the supplemental data. This is typically the name of a valid
      * expression defined within a referenced library, but it may also be a path to a
@@ -116,22 +117,24 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
-    private $criteria = null;
+    protected $criteria = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this supplemental data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indicator of the intended usage for the supplemental data element.
      * Supplemental data indicates the data is additional information requested to
@@ -141,7 +144,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $usage = [];
+    protected $usage = [];
 
     /**
      * FHIRMeasureSupplementalData Constructor
@@ -220,7 +223,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -251,7 +254,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
@@ -268,14 +271,14 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing supplemental data to be correlated across measures.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -288,7 +291,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The criteria for the supplemental data. This is typically the name of a valid
      * expression defined within a referenced library, but it may also be a path to a
@@ -307,7 +310,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The criteria for the supplemental data. This is typically the name of a valid
      * expression defined within a referenced library, but it may also be a path to a
@@ -315,7 +318,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $criteria
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
+     * @return static
      */
     public function setCriteria(FHIRExpression $criteria = null)
     {
@@ -326,7 +329,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this supplemental data.
      *
@@ -340,12 +343,12 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this supplemental data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -365,7 +368,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indicator of the intended usage for the supplemental data element.
      * Supplemental data indicates the data is additional information requested to
@@ -384,7 +387,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indicator of the intended usage for the supplemental data element.
      * Supplemental data indicates the data is additional information requested to
@@ -393,7 +396,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * risk model to the measure calculation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $usage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
+     * @return static
      */
     public function addUsage(FHIRCodeableConcept $usage = null)
     {
@@ -405,7 +408,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indicator of the intended usage for the supplemental data element.
      * Supplemental data indicates the data is additional information requested to
@@ -414,7 +417,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * risk model to the measure calculation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $usage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
+     * @return static
      */
     public function setUsage(array $usage = [])
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATUM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_MEASURE_SCORE = 'measureScore';
     const FIELD_MEASURE_SCORE_EXT = '_measureScore';
@@ -92,14 +92,15 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $measureScore = null;
+    protected $measureScore = null;
+
     /**
      * The MeasureReport resource contains the results of evaluating a measure.
      *
@@ -108,11 +109,12 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
      */
-    private $population = [];
+    protected $population = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value for this stratum, expressed as a string. When defining stratifiers on
      * complex values, the value must be rendered such that the value for each stratum
@@ -120,7 +122,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRMeasureReportStratum Constructor
@@ -201,7 +203,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -232,7 +234,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
@@ -248,13 +250,13 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $measureScore
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @return static
      */
     public function setMeasureScore($measureScore = null)
     {
@@ -290,7 +292,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * appropriate to the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1 $population
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation1 $population = null)
     {
@@ -305,7 +307,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * appropriate to the measure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1[] $population
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @return static
      */
     public function setPopulation(array $population = [])
     {
@@ -326,7 +328,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value for this stratum, expressed as a string. When defining stratifiers on
      * complex values, the value must be rendered such that the value for each stratum
@@ -342,14 +344,14 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value for this stratum, expressed as a string. When defining stratifiers on
      * complex values, the value must be rendered such that the value for each stratum
      * within the stratifier is unique.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
+     * @return static
      */
     public function setValue($value = null)
     {

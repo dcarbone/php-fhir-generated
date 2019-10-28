@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DEFINITION_DOT_UDI_DEVICE_IDENTIFIER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DEVICE_IDENTIFIER = 'deviceIdentifier';
     const FIELD_DEVICE_IDENTIFIER_EXT = '_deviceIdentifier';
@@ -93,7 +93,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdication porvided in the
@@ -101,27 +101,29 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $deviceIdentifier = null;
+    protected $deviceIdentifier = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $issuer = null;
+    protected $issuer = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $jurisdiction = null;
+    protected $jurisdiction = null;
 
     /**
      * FHIRDeviceDefinitionUdiDeviceIdentifier Constructor
@@ -195,7 +197,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -225,7 +227,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdication porvided in the
@@ -241,14 +243,14 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdication porvided in the
      * DeviceDefinition.udiDeviceIdentifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $deviceIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
+     * @return static
      */
     public function setDeviceIdentifier($deviceIdentifier = null)
     {
@@ -267,7 +269,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
      *
@@ -281,12 +283,12 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $issuer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
+     * @return static
      */
     public function setIssuer($issuer = null)
     {
@@ -305,7 +307,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
      *
@@ -319,12 +321,12 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
+     * @return static
      */
     public function setJurisdiction($jurisdiction = null)
     {

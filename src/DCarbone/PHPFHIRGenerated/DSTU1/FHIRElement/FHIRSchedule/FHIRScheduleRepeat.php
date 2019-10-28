@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * Specifies an event that may occur multiple times. Schedules are used for to
  * reord when things are expected or requested to occur.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRScheduleRepeat
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
@@ -81,7 +81,7 @@ class FHIRScheduleRepeat extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SCHEDULE_DOT_REPEAT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COUNT = 'count';
     const FIELD_COUNT_EXT = '_count';
@@ -98,61 +98,66 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $count = null;
+    protected $count = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $duration = null;
+    protected $duration = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $end = null;
+    protected $end = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $frequency = null;
+    protected $frequency = null;
+
     /**
      * A unit of time (units from UCUM)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUnitsOfTime
      */
-    private $units = null;
+    protected $units = null;
+
     /**
      * Real world event that the schedule relates to
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREventTiming
      */
-    private $when = null;
+    protected $when = null;
 
     /**
      * FHIRScheduleRepeat Constructor
@@ -262,7 +267,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -291,7 +296,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
      *
@@ -304,12 +309,12 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $count
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function setCount($count = null)
     {
@@ -327,7 +332,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
      *
@@ -340,12 +345,12 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $duration
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function setDuration($duration = null)
     {
@@ -366,7 +371,7 @@ class FHIRScheduleRepeat extends FHIRElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
      *
@@ -382,12 +387,12 @@ class FHIRScheduleRepeat extends FHIRElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $end
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function setEnd($end = null)
     {
@@ -405,7 +410,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
      *
@@ -418,12 +423,12 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $frequency
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function setFrequency($frequency = null)
     {
@@ -441,7 +446,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A unit of time (units from UCUM)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
      *
@@ -454,12 +459,12 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * A unit of time (units from UCUM)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUnitsOfTime $units
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function setUnits(FHIRUnitsOfTime $units = null)
     {
@@ -469,7 +474,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * Real world event that the schedule relates to
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
      *
@@ -482,12 +487,12 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /**
      * Real world event that the schedule relates to
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREventTiming $when
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
+     * @return static
      */
     public function setWhen(FHIREventTiming $when = null)
     {

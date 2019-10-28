@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * for the purpose of achieving some form of collective action. Includes companies,
  * institutions, corporations, departments, community groups, healthcare practice
  * groups, etc.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIROrganization
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -86,7 +86,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ORGANIZATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -104,24 +104,26 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress[]
      */
-    private $address = [];
+    protected $address = [];
+
     /**
      * A formally or informally recognized grouping of people or organizations formed
      * for the purpose of achieving some form of collective action. Includes companies,
@@ -132,69 +134,75 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $location = [];
+    protected $location = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $partOf = null;
+    protected $partOf = null;
+
     /**
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
      */
-    private $telecom = [];
+    protected $telecom = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of organization that this is.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIROrganization Constructor
@@ -359,7 +367,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -396,7 +404,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
      *
@@ -409,12 +417,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -434,7 +442,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
      *
@@ -449,12 +457,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress $address
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function addAddress(FHIRAddress $address = null)
     {
@@ -466,12 +474,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress[] $address
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setAddress(array $address = [])
     {
@@ -513,7 +521,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * Contact for the organization for a certain purpose.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function addContact(FHIROrganizationContact $contact = null)
     {
@@ -530,7 +538,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * Contact for the organization for a certain purpose.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -551,7 +559,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
@@ -566,13 +574,13 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -583,13 +591,13 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -610,7 +618,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
      *
@@ -624,12 +632,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function addLocation(FHIRResourceReference $location = null)
     {
@@ -640,12 +648,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setLocation(array $location = [])
     {
@@ -665,7 +673,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
      *
@@ -678,12 +686,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setName($name = null)
     {
@@ -702,7 +710,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
      *
@@ -716,12 +724,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $partOf
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setPartOf(FHIRResourceReference $partOf = null)
     {
@@ -733,7 +741,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
      *
@@ -748,12 +756,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact $telecom
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function addTelecom(FHIRContact $telecom = null)
     {
@@ -765,12 +773,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[] $telecom
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setTelecom(array $telecom = [])
     {
@@ -792,7 +800,7 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of organization that this is.
      *
@@ -807,12 +815,12 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of organization that this is.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

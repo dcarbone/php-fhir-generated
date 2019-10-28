@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * A sample to be used for analysis.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSpecimen
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCESSION_IDENTIFIER = 'accessionIdentifier';
     const FIELD_ACCESSION_IDENTIFIER_EXT = '_accessionIdentifier';
@@ -113,7 +113,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
@@ -121,7 +121,8 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $accessionIdentifier = null;
+    protected $accessionIdentifier = null;
+
     /**
      * A sample to be used for analysis.
      *
@@ -129,18 +130,20 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
-    private $collection = null;
+    protected $collection = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A mode or state of being that describes the nature of the specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $condition = [];
+    protected $condition = [];
+
     /**
      * A sample to be used for analysis.
      *
@@ -149,41 +152,45 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
      */
-    private $container = [];
+    protected $container = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * To communicate any details or issues about the specimen or during the specimen
      * collection. (for example: broken vial, sent with patient, frozen).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $parent = [];
+    protected $parent = [];
+
     /**
      * A sample to be used for analysis.
      *
@@ -191,43 +198,47 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
-    private $processing = [];
+    protected $processing = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was received for processing or testing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $receivedTime = null;
+    protected $receivedTime = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a service request that required a specimen to be collected.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $request = [];
+    protected $request = [];
+
     /**
      * Codes providing the status/availability of a specimen.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSpecimenStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the specimen came from. This may be from patient(s), from a location
      * (e.g., the source of an environmental sample), or a sampling of a substance or a
@@ -235,18 +246,19 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRSpecimen Constructor
@@ -453,7 +465,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -492,7 +504,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
@@ -509,14 +521,14 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $accessionIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setAccessionIdentifier(FHIRIdentifier $accessionIdentifier = null)
     {
@@ -542,7 +554,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Details concerning the specimen collection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $collection
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setCollection(FHIRSpecimenCollection $collection = null)
     {
@@ -554,7 +566,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A mode or state of being that describes the nature of the specimen.
      *
@@ -569,12 +581,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A mode or state of being that describes the nature of the specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $condition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addCondition(FHIRCodeableConcept $condition = null)
     {
@@ -586,12 +598,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A mode or state of being that describes the nature of the specimen.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $condition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setCondition(array $condition = [])
     {
@@ -629,7 +641,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * blood in tube in tray in rack is not addressed here.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer $container
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addContainer(FHIRSpecimenContainer $container = null)
     {
@@ -644,7 +656,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * blood in tube in tray in rack is not addressed here.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[] $container
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setContainer(array $container = [])
     {
@@ -666,7 +678,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
      *
@@ -681,12 +693,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -698,12 +710,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -725,7 +737,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * To communicate any details or issues about the specimen or during the specimen
      * collection. (for example: broken vial, sent with patient, frozen).
@@ -741,13 +753,13 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * To communicate any details or issues about the specimen or during the specimen
      * collection. (for example: broken vial, sent with patient, frozen).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -759,13 +771,13 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * To communicate any details or issues about the specimen or during the specimen
      * collection. (for example: broken vial, sent with patient, frozen).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -786,7 +798,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
@@ -801,13 +813,13 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $parent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addParent(FHIRReference $parent = null)
     {
@@ -818,13 +830,13 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $parent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setParent(array $parent = [])
     {
@@ -860,7 +872,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Details concerning processing and processing steps for the specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing $processing
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addProcessing(FHIRSpecimenProcessing $processing = null)
     {
@@ -874,7 +886,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Details concerning processing and processing steps for the specimen.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing[] $processing
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setProcessing(array $processing = [])
     {
@@ -898,7 +910,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was received for processing or testing.
      *
@@ -915,12 +927,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was received for processing or testing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $receivedTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setReceivedTime($receivedTime = null)
     {
@@ -939,7 +951,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a service request that required a specimen to be collected.
      *
@@ -953,12 +965,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a service request that required a specimen to be collected.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $request
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function addRequest(FHIRReference $request = null)
     {
@@ -969,12 +981,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a service request that required a specimen to be collected.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $request
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setRequest(array $request = [])
     {
@@ -994,7 +1006,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * Codes providing the status/availability of a specimen.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
      *
@@ -1007,12 +1019,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * Codes providing the status/availability of a specimen.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSpecimenStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setStatus(FHIRSpecimenStatus $status = null)
     {
@@ -1023,7 +1035,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the specimen came from. This may be from patient(s), from a location
      * (e.g., the source of an environmental sample), or a sampling of a substance or a
@@ -1039,14 +1051,14 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the specimen came from. This may be from patient(s), from a location
      * (e.g., the source of an environmental sample), or a sampling of a substance or a
      * device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1058,7 +1070,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
      *
@@ -1073,12 +1085,12 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

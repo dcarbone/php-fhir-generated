@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT_UNIT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT = 'amount';
     const FIELD_DEGREE_OF_POLYMERISATION = 'degreeOfPolymerisation';
@@ -98,13 +98,14 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * physical form or particle size are not taken into account in the definition of a
      * chemical substance or in the assignment of a Substance ID.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      */
-    private $amount = null;
+    protected $amount = null;
+
     /**
      * Todo.
      *
@@ -112,28 +113,31 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation[]
      */
-    private $degreeOfPolymerisation = [];
+    protected $degreeOfPolymerisation = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $orientationOfPolymerisation = null;
+    protected $orientationOfPolymerisation = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $repeatUnit = null;
+    protected $repeatUnit = null;
+
     /**
      * Todo.
      *
@@ -141,7 +145,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[]
      */
-    private $structuralRepresentation = [];
+    protected $structuralRepresentation = [];
 
     /**
      * FHIRSubstancePolymerRepeatUnit Constructor
@@ -235,7 +239,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -270,7 +274,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * physical form or particle size are not taken into account in the definition of a
      * chemical substance or in the assignment of a Substance ID.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
      *
@@ -289,12 +293,12 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * physical form or particle size are not taken into account in the definition of a
      * chemical substance or in the assignment of a Substance ID.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $amount
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function setAmount(FHIRSubstanceAmount $amount = null)
     {
@@ -320,7 +324,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation $degreeOfPolymerisation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function addDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation $degreeOfPolymerisation = null)
     {
@@ -334,7 +338,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation[] $degreeOfPolymerisation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function setDegreeOfPolymerisation(array $degreeOfPolymerisation = [])
     {
@@ -356,7 +360,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
      *
@@ -371,12 +375,12 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $orientationOfPolymerisation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function setOrientationOfPolymerisation(FHIRCodeableConcept $orientationOfPolymerisation = null)
     {
@@ -387,7 +391,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
@@ -401,12 +405,12 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $repeatUnit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function setRepeatUnit($repeatUnit = null)
     {
@@ -440,7 +444,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation $structuralRepresentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function addStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation $structuralRepresentation = null)
     {
@@ -454,7 +458,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[] $structuralRepresentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
+     * @return static
      */
     public function setStructuralRepresentation(array $structuralRepresentation = [])
     {

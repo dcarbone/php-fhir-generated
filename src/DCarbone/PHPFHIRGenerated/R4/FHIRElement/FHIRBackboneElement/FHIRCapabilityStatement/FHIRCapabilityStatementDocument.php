@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_DOCUMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
@@ -99,7 +99,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A description of how the application supports or uses the specified document
@@ -108,21 +108,23 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * Whether the application produces or consumes documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDocumentMode
      */
-    private $mode = null;
+    protected $mode = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A profile on the document Bundle that constrains which resources are present,
@@ -130,7 +132,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $profile = null;
+    protected $profile = null;
 
     /**
      * FHIRCapabilityStatementDocument Constructor
@@ -204,7 +206,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -237,7 +239,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A description of how the application supports or uses the specified document
@@ -257,7 +259,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A description of how the application supports or uses the specified document
@@ -265,7 +267,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * consumed documents, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $documentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -283,7 +285,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
 
     /**
      * Whether the application produces or consumes documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
@@ -297,13 +299,13 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
 
     /**
      * Whether the application produces or consumes documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDocumentMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
+     * @return static
      */
     public function setMode(FHIRDocumentMode $mode = null)
     {
@@ -314,7 +316,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A profile on the document Bundle that constrains which resources are present,
@@ -330,14 +332,14 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A profile on the document Bundle that constrains which resources are present,
      * and their contents.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $profile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
+     * @return static
      */
     public function setProfile($profile = null)
     {

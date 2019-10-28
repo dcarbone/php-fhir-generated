@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A guidance response is the formal response to a guidance request, including any
  * output parameters returned by the evaluation, as well as the description of any
  * proposed actions to be taken.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRGuidanceResponse
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -91,7 +91,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DATA_REQUIREMENT = 'dataRequirement';
     const FIELD_ENCOUNTER = 'encounter';
@@ -121,7 +121,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the evaluation could not be completed due to lack of information, or
      * additional information would potentially result in a more accurate response,
@@ -130,22 +130,24 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
      */
-    private $dataRequirement = [];
+    protected $dataRequirement = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which this response was created or to which the creation of
      * this record is tightly associated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
@@ -153,22 +155,24 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $evaluationMessage = [];
+    protected $evaluationMessage = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
@@ -176,58 +180,63 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $moduleCanonical = null;
+    protected $moduleCanonical = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $moduleCodeableConcept = null;
+    protected $moduleCodeableConcept = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $moduleUri = null;
+    protected $moduleUri = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $occurrenceDateTime = null;
+    protected $occurrenceDateTime = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The output parameters of the evaluation, if any. Many modules will result in the
      * return of specific resources such as procedure or communication requests that
@@ -237,32 +246,35 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $outputParameters = null;
+    protected $outputParameters = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $performer = null;
+    protected $performer = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reasonCode = [];
+    protected $reasonCode = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request was initiated. This is typically provided as a
      * parameter to the evaluation and echoed by the service, although for some use
@@ -271,12 +283,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $reasonReference = [];
+    protected $reasonReference = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of the request associated with this response. If an identifier
      * was given as part of the request, it will be reproduced here to enable the
@@ -284,20 +297,22 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $requestIdentifier = null;
+    protected $requestIdentifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $result = null;
+    protected $result = null;
+
     /**
      * The status of a guidance response.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the response. If the evaluation is completed successfully, the
      * status will indicate success. However, in order to complete the evaluation, the
@@ -310,17 +325,18 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRGuidanceResponse Constructor
@@ -557,7 +573,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -596,7 +612,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the evaluation could not be completed due to lack of information, or
      * additional information would potentially result in a more accurate response,
@@ -614,7 +630,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the evaluation could not be completed due to lack of information, or
      * additional information would potentially result in a more accurate response,
@@ -622,7 +638,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the evaluation. A subsequent request to the service should include this data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $dataRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function addDataRequirement(FHIRDataRequirement $dataRequirement = null)
     {
@@ -634,7 +650,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the evaluation could not be completed due to lack of information, or
      * additional information would potentially result in a more accurate response,
@@ -642,7 +658,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the evaluation. A subsequent request to the service should include this data.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[] $dataRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setDataRequirement(array $dataRequirement = [])
     {
@@ -663,7 +679,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which this response was created or to which the creation of
      * this record is tightly associated.
@@ -678,13 +694,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which this response was created or to which the creation of
      * this record is tightly associated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -695,7 +711,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
@@ -711,14 +727,14 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $evaluationMessage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function addEvaluationMessage(FHIRReference $evaluationMessage = null)
     {
@@ -729,14 +745,14 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $evaluationMessage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setEvaluationMessage(array $evaluationMessage = [])
     {
@@ -758,7 +774,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
      *
@@ -773,12 +789,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -790,12 +806,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -816,7 +832,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
@@ -832,14 +848,14 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $moduleCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setModuleCanonical($moduleCanonical = null)
     {
@@ -859,7 +875,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
@@ -875,13 +891,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $moduleCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setModuleCodeableConcept(FHIRCodeableConcept $moduleCodeableConcept = null)
     {
@@ -892,7 +908,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
@@ -907,13 +923,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested. (choose any one of module*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $moduleUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setModuleUri($moduleUri = null)
     {
@@ -933,7 +949,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
@@ -948,12 +964,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -965,12 +981,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -994,7 +1010,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
      *
@@ -1011,12 +1027,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setOccurrenceDateTime($occurrenceDateTime = null)
     {
@@ -1035,7 +1051,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The output parameters of the evaluation, if any. Many modules will result in the
      * return of specific resources such as procedure or communication requests that
@@ -1053,7 +1069,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The output parameters of the evaluation, if any. Many modules will result in the
      * return of specific resources such as procedure or communication requests that
@@ -1062,7 +1078,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * these would be returned in this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $outputParameters
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setOutputParameters(FHIRReference $outputParameters = null)
     {
@@ -1073,7 +1089,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
      *
@@ -1087,12 +1103,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $performer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setPerformer(FHIRReference $performer = null)
     {
@@ -1104,7 +1120,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
      *
@@ -1119,12 +1135,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
@@ -1136,12 +1152,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setReasonCode(array $reasonCode = [])
     {
@@ -1162,7 +1178,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request was initiated. This is typically provided as a
      * parameter to the evaluation and echoed by the service, although for some use
@@ -1179,7 +1195,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request was initiated. This is typically provided as a
      * parameter to the evaluation and echoed by the service, although for some use
@@ -1187,7 +1203,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * indication of the cause for the response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference = null)
     {
@@ -1198,7 +1214,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason the request was initiated. This is typically provided as a
      * parameter to the evaluation and echoed by the service, although for some use
@@ -1206,7 +1222,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * indication of the cause for the response.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setReasonReference(array $reasonReference = [])
     {
@@ -1228,7 +1244,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of the request associated with this response. If an identifier
      * was given as part of the request, it will be reproduced here to enable the
@@ -1245,14 +1261,14 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of the request associated with this response. If an identifier
      * was given as part of the request, it will be reproduced here to enable the
      * requester to more easily identify the response in a multi-request scenario.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $requestIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setRequestIdentifier(FHIRIdentifier $requestIdentifier = null)
     {
@@ -1263,7 +1279,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
      *
@@ -1277,12 +1293,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $result
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setResult(FHIRReference $result = null)
     {
@@ -1292,7 +1308,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * The status of a guidance response.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the response. If the evaluation is completed successfully, the
      * status will indicate success. However, in order to complete the evaluation, the
@@ -1312,7 +1328,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * The status of a guidance response.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the response. If the evaluation is completed successfully, the
      * status will indicate success. However, in order to complete the evaluation, the
@@ -1324,7 +1340,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * contain a description of the additional requested information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setStatus(FHIRGuidanceResponseStatus $status = null)
     {
@@ -1335,7 +1351,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
      *
@@ -1349,12 +1365,12 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

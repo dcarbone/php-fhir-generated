@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * Prospective warnings of potential issues when providing care to the patient.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAlert
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -80,7 +80,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ALERT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_CATEGORY = 'category';
@@ -95,65 +95,70 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that created the alert.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows an alert to be divided into different categories like clinical,
      * administrative etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $category = null;
+    protected $category = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The textual component of the alert to display to the user.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $note = null;
+    protected $note = null;
+
     /**
      * Indicates whether this alert is active and needs to be displayed to a user, or
      * whether it is no longer needed or entered in error
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAlertStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this alert concerns.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRAlert Constructor
@@ -258,7 +263,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -296,7 +301,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that created the alert.
      *
@@ -310,12 +315,12 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that created the alert.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function setAuthor(FHIRResourceReference $author = null)
     {
@@ -327,7 +332,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows an alert to be divided into different categories like clinical,
      * administrative etc.
@@ -343,13 +348,13 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows an alert to be divided into different categories like clinical,
      * administrative etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
@@ -360,7 +365,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
@@ -375,13 +380,13 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -392,13 +397,13 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -418,7 +423,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The textual component of the alert to display to the user.
      *
@@ -431,12 +436,12 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The textual component of the alert to display to the user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $note
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function setNote($note = null)
     {
@@ -455,7 +460,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Indicates whether this alert is active and needs to be displayed to a user, or
      * whether it is no longer needed or entered in error
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
      *
@@ -469,12 +474,12 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Indicates whether this alert is active and needs to be displayed to a user, or
      * whether it is no longer needed or entered in error
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAlertStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function setStatus(FHIRAlertStatus $status = null)
     {
@@ -485,7 +490,7 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this alert concerns.
      *
@@ -499,12 +504,12 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this alert concerns.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {

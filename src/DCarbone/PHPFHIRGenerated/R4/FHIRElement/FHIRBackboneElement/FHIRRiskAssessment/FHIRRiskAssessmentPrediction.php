@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskA
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_OUTCOME = 'outcome';
     const FIELD_PROBABILITY_DECIMAL = 'probabilityDecimal';
@@ -102,64 +102,69 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $outcome = null;
+    protected $outcome = null;
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe). (choose any
      * one of probability*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $probabilityDecimal = null;
+    protected $probabilityDecimal = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe). (choose any
      * one of probability*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $probabilityRange = null;
+    protected $probabilityRange = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, or high).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $qualitativeRisk = null;
+    protected $qualitativeRisk = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $rationale = null;
+    protected $rationale = null;
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the risk for this particular subject (with their specific
      * characteristics) divided by the risk of the population in general. (Numbers
@@ -168,29 +173,31 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $relativeRisk = null;
+    protected $relativeRisk = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies. (choose any one of when*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $whenPeriod = null;
+    protected $whenPeriod = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies. (choose any one of when*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $whenRange = null;
+    protected $whenRange = null;
 
     /**
      * FHIRRiskAssessmentPrediction Constructor
@@ -299,7 +306,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -330,7 +337,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
@@ -346,13 +353,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $outcome
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setOutcome(FHIRCodeableConcept $outcome = null)
     {
@@ -364,7 +371,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe). (choose any
      * one of probability*, but only one)
@@ -380,13 +387,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe). (choose any
      * one of probability*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $probabilityDecimal
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setProbabilityDecimal($probabilityDecimal = null)
     {
@@ -405,7 +412,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe). (choose any
      * one of probability*, but only one)
@@ -420,13 +427,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe). (choose any
      * one of probability*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $probabilityRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setProbabilityRange(FHIRRange $probabilityRange = null)
     {
@@ -438,7 +445,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, or high).
@@ -454,13 +461,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, or high).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $qualitativeRisk
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setQualitativeRisk(FHIRCodeableConcept $qualitativeRisk = null)
     {
@@ -471,7 +478,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
      *
@@ -485,12 +492,12 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $rationale
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setRationale($rationale = null)
     {
@@ -510,7 +517,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the risk for this particular subject (with their specific
      * characteristics) divided by the risk of the population in general. (Numbers
@@ -528,7 +535,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the risk for this particular subject (with their specific
      * characteristics) divided by the risk of the population in general. (Numbers
@@ -536,7 +543,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * risk.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $relativeRisk
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setRelativeRisk($relativeRisk = null)
     {
@@ -555,7 +562,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies. (choose any one of when*, but only one)
@@ -570,13 +577,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies. (choose any one of when*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $whenPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setWhenPeriod(FHIRPeriod $whenPeriod = null)
     {
@@ -587,7 +594,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies. (choose any one of when*, but only one)
@@ -602,13 +609,13 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies. (choose any one of when*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $whenRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
+     * @return static
      */
     public function setWhenRange(FHIRRange $whenRange = null)
     {

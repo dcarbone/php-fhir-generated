@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Raw data describing a biological sequence.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSequence
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -90,7 +90,7 @@ class FHIRSequence extends FHIRDomainResource
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEQUENCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COORDINATE_SYSTEM = 'coordinateSystem';
     const FIELD_COORDINATE_SYSTEM_EXT = '_coordinateSystem';
@@ -118,7 +118,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
@@ -126,33 +126,36 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $coordinateSystem = null;
+    protected $coordinateSystem = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $device = null;
+    protected $device = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall start from referenceSeq.windowStart
@@ -160,37 +163,41 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $observedSeq = null;
+    protected $observedSeq = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $performer = null;
+    protected $performer = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $pointer = [];
+    protected $pointer = [];
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -200,30 +207,33 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality[]
      */
-    private $quality = [];
+    protected $quality = [];
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the sequence of interest. (RNASeq).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $readCoverage = null;
+    protected $readCoverage = null;
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -232,7 +242,8 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
      */
-    private $referenceSeq = null;
+    protected $referenceSeq = null;
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -241,17 +252,19 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository[]
      */
-    private $repository = [];
+    protected $repository = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $specimen = null;
+    protected $specimen = null;
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -259,16 +272,18 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant[]
      */
-    private $structureVariant = [];
+    protected $structureVariant = [];
+
     /**
      * Type if a sequence -- DNA, RNA, or amino acid sequence.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSequenceType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * Raw data describing a biological sequence.
      *
@@ -280,7 +295,7 @@ class FHIRSequence extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant[]
      */
-    private $variant = [];
+    protected $variant = [];
 
     /**
      * FHIRSequence Constructor
@@ -510,7 +525,7 @@ class FHIRSequence extends FHIRDomainResource
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -540,7 +555,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
@@ -556,14 +571,14 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $coordinateSystem
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setCoordinateSystem($coordinateSystem = null)
     {
@@ -582,7 +597,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
      *
@@ -596,12 +611,12 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $device
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setDevice(FHIRReference $device = null)
     {
@@ -613,7 +628,7 @@ class FHIRSequence extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
@@ -629,13 +644,13 @@ class FHIRSequence extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -647,13 +662,13 @@ class FHIRSequence extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -674,7 +689,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall start from referenceSeq.windowStart
@@ -690,14 +705,14 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall start from referenceSeq.windowStart
      * and end by referenceSeq.windowEnd.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $observedSeq
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setObservedSeq($observedSeq = null)
     {
@@ -716,7 +731,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
      *
@@ -730,12 +745,12 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -746,7 +761,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
      *
@@ -760,12 +775,12 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $performer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setPerformer(FHIRReference $performer = null)
     {
@@ -776,7 +791,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
      *
@@ -790,12 +805,12 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $pointer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function addPointer(FHIRReference $pointer = null)
     {
@@ -806,12 +821,12 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $pointer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setPointer(array $pointer = [])
     {
@@ -851,7 +866,7 @@ class FHIRSequence extends FHIRDomainResource
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality $quality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function addQuality(FHIRSequenceQuality $quality = null)
     {
@@ -867,7 +882,7 @@ class FHIRSequence extends FHIRDomainResource
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality[] $quality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setQuality(array $quality = [])
     {
@@ -890,7 +905,7 @@ class FHIRSequence extends FHIRDomainResource
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the sequence of interest. (RNASeq).
      *
@@ -906,12 +921,12 @@ class FHIRSequence extends FHIRDomainResource
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the sequence of interest. (RNASeq).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -922,7 +937,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
@@ -937,13 +952,13 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $readCoverage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setReadCoverage($readCoverage = null)
     {
@@ -979,7 +994,7 @@ class FHIRSequence extends FHIRDomainResource
      * a sequence analyzed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq $referenceSeq
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setReferenceSeq(FHIRSequenceReferenceSeq $referenceSeq = null)
     {
@@ -1007,7 +1022,7 @@ class FHIRSequence extends FHIRDomainResource
      * observedSeq or records related with target's observedSeq.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository $repository
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function addRepository(FHIRSequenceRepository $repository = null)
     {
@@ -1022,7 +1037,7 @@ class FHIRSequence extends FHIRDomainResource
      * observedSeq or records related with target's observedSeq.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository[] $repository
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setRepository(array $repository = [])
     {
@@ -1043,7 +1058,7 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
      *
@@ -1057,12 +1072,12 @@ class FHIRSequence extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $specimen
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setSpecimen(FHIRReference $specimen = null)
     {
@@ -1088,7 +1103,7 @@ class FHIRSequence extends FHIRDomainResource
      * Information about chromosome structure variation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant $structureVariant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function addStructureVariant(FHIRSequenceStructureVariant $structureVariant = null)
     {
@@ -1102,7 +1117,7 @@ class FHIRSequence extends FHIRDomainResource
      * Information about chromosome structure variation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant[] $structureVariant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setStructureVariant(array $structureVariant = [])
     {
@@ -1122,7 +1137,7 @@ class FHIRSequence extends FHIRDomainResource
 
     /**
      * Type if a sequence -- DNA, RNA, or amino acid sequence.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      *
@@ -1135,12 +1150,12 @@ class FHIRSequence extends FHIRDomainResource
 
     /**
      * Type if a sequence -- DNA, RNA, or amino acid sequence.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSequenceType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setType(FHIRSequenceType $type = null)
     {
@@ -1174,7 +1189,7 @@ class FHIRSequence extends FHIRDomainResource
      * variation with the assist of CIGAR string.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant $variant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function addVariant(FHIRSequenceVariant $variant = null)
     {
@@ -1192,7 +1207,7 @@ class FHIRSequence extends FHIRDomainResource
      * variation with the assist of CIGAR string.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant[] $variant
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence
+     * @return static
      */
     public function setVariant(array $variant = [])
     {

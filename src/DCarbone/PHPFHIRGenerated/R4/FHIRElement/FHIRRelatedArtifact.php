@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Related artifacts such as additional documentation, justification, or
  * bibliographic references.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRRelatedArtifact
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -81,7 +81,7 @@ class FHIRRelatedArtifact extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RELATED_ARTIFACT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CITATION = 'citation';
     const FIELD_CITATION_EXT = '_citation';
@@ -103,7 +103,7 @@ class FHIRRelatedArtifact extends FHIRElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
@@ -111,44 +111,48 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $citation = null;
+    protected $citation = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The document being referenced, represented as an attachment. This is exclusive
      * with the resource element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    private $document = null;
+    protected $document = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short label that can be used to reference the citation from elsewhere in the
      * containing artifact, such as a footnote index.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $label = null;
+    protected $label = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The related resource, such as a library, value set, profile, or other knowledge
@@ -156,26 +160,28 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $resource = null;
+    protected $resource = null;
+
     /**
      * The type of relationship to the related artifact.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifactType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A url for the artifact that can be followed to access the actual content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * FHIRRelatedArtifact Constructor
@@ -292,7 +298,7 @@ class FHIRRelatedArtifact extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -325,7 +331,7 @@ class FHIRRelatedArtifact extends FHIRElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
@@ -344,14 +350,14 @@ class FHIRRelatedArtifact extends FHIRElement
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $citation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setCitation($citation = null)
     {
@@ -370,7 +376,7 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
@@ -385,13 +391,13 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -410,7 +416,7 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The document being referenced, represented as an attachment. This is exclusive
      * with the resource element.
@@ -425,13 +431,13 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The document being referenced, represented as an attachment. This is exclusive
      * with the resource element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $document
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setDocument(FHIRAttachment $document = null)
     {
@@ -442,7 +448,7 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short label that can be used to reference the citation from elsewhere in the
      * containing artifact, such as a footnote index.
@@ -457,13 +463,13 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short label that can be used to reference the citation from elsewhere in the
      * containing artifact, such as a footnote index.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $label
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setLabel($label = null)
     {
@@ -482,7 +488,7 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The related resource, such as a library, value set, profile, or other knowledge
@@ -498,14 +504,14 @@ class FHIRRelatedArtifact extends FHIRElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The related resource, such as a library, value set, profile, or other knowledge
      * resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $resource
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setResource($resource = null)
     {
@@ -523,7 +529,7 @@ class FHIRRelatedArtifact extends FHIRElement
 
     /**
      * The type of relationship to the related artifact.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
      *
@@ -536,12 +542,12 @@ class FHIRRelatedArtifact extends FHIRElement
 
     /**
      * The type of relationship to the related artifact.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifactType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setType(FHIRRelatedArtifactType $type = null)
     {
@@ -551,7 +557,7 @@ class FHIRRelatedArtifact extends FHIRElement
 
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A url for the artifact that can be followed to access the actual content.
@@ -565,13 +571,13 @@ class FHIRRelatedArtifact extends FHIRElement
 
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A url for the artifact that can be followed to access the actual content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
+     * @return static
      */
     public function setUrl($url = null)
     {

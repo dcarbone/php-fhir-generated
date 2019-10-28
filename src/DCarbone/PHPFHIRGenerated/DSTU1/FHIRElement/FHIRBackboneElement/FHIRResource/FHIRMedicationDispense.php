@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * Dispensing a medication to a named patient. This includes a description of the
  * supply provided and the instructions for administering the medication.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicationDispense
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -81,7 +81,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORIZING_PRESCRIPTION = 'authorizingPrescription';
     const FIELD_DISPENSE = 'dispense';
@@ -96,13 +96,14 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $authorizingPrescription = [];
+    protected $authorizingPrescription = [];
+
     /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
@@ -112,48 +113,53 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[]
      */
-    private $dispense = [];
+    protected $dispense = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $dispenser = null;
+    protected $dispenser = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A code specifying the state of the dispense event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
@@ -165,7 +171,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
-    private $substitution = null;
+    protected $substitution = null;
 
     /**
      * FHIRMedicationDispense Constructor
@@ -278,7 +284,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -316,7 +322,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
      *
@@ -330,12 +336,12 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $authorizingPrescription
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function addAuthorizingPrescription(FHIRResourceReference $authorizingPrescription = null)
     {
@@ -346,12 +352,12 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $authorizingPrescription
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setAuthorizingPrescription(array $authorizingPrescription = [])
     {
@@ -391,7 +397,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * of medication dispensed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense $dispense
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function addDispense(FHIRMedicationDispenseDispense $dispense = null)
     {
@@ -407,7 +413,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * of medication dispensed.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[] $dispense
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setDispense(array $dispense = [])
     {
@@ -428,7 +434,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
      *
@@ -442,12 +448,12 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $dispenser
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setDispenser(FHIRResourceReference $dispenser = null)
     {
@@ -458,7 +464,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
@@ -473,13 +479,13 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -490,7 +496,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
@@ -505,13 +511,13 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setPatient(FHIRResourceReference $patient = null)
     {
@@ -521,7 +527,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * A code specifying the state of the dispense event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
      *
@@ -534,12 +540,12 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * A code specifying the state of the dispense event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setStatus(FHIRMedicationDispenseStatus $status = null)
     {
@@ -573,7 +579,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * substitition did or did not happen and why.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
+     * @return static
      */
     public function setSubstitution(FHIRMedicationDispenseSubstitution $substitution = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * A description of a query with a set of parameters.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRQuery
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -78,7 +78,7 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUERY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
@@ -87,23 +87,25 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links query and its response(s).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Set of query parameters with values.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
-    private $parameter = [];
+    protected $parameter = [];
+
     /**
      * A description of a query with a set of parameters.
      *
@@ -111,7 +113,7 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse
      */
-    private $response = null;
+    protected $response = null;
 
     /**
      * FHIRQuery Constructor
@@ -183,7 +185,7 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -220,7 +222,7 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links query and its response(s).
      *
@@ -233,12 +235,12 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links query and its response(s).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
+     * @return static
      */
     public function setIdentifier($identifier = null)
     {
@@ -257,7 +259,7 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Set of query parameters with values.
      *
@@ -271,12 +273,12 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Set of query parameters with values.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $parameter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
+     * @return static
      */
     public function addParameter(FHIRExtension $parameter = null)
     {
@@ -287,12 +289,12 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Set of query parameters with values.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $parameter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
+     * @return static
      */
     public function setParameter(array $parameter = [])
     {
@@ -328,7 +330,7 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If this is a response to a query.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse $response
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
+     * @return static
      */
     public function setResponse(FHIRQueryResponse $response = null)
     {

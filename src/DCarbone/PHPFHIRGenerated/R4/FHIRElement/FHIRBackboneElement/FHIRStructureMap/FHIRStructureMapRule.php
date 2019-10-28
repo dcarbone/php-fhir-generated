@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DEPENDENT = 'dependent';
     const FIELD_DOCUMENTATION = 'documentation';
@@ -98,30 +98,33 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
      */
-    private $dependent = [];
+    protected $dependent = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation for this instance of data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of the rule for internal references.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -129,7 +132,8 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
-    private $rule = [];
+    protected $rule = [];
+
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -137,7 +141,8 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[]
      */
-    private $source = [];
+    protected $source = [];
+
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -145,7 +150,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
      */
-    private $target = [];
+    protected $target = [];
 
     /**
      * FHIRStructureMapRule Constructor
@@ -267,7 +272,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -312,7 +317,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Which other rules to apply in the context of this rule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent $dependent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function addDependent(FHIRStructureMapDependent $dependent = null)
     {
@@ -326,7 +331,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Which other rules to apply in the context of this rule.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[] $dependent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function setDependent(array $dependent = [])
     {
@@ -347,7 +352,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation for this instance of data.
      *
@@ -361,12 +366,12 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation for this instance of data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -387,7 +392,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of the rule for internal references.
@@ -404,13 +409,13 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of the rule for internal references.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function setName($name = null)
     {
@@ -444,7 +449,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Rules contained in this rule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule $rule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function addRule(FHIRStructureMapRule $rule = null)
     {
@@ -458,7 +463,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Rules contained in this rule.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[] $rule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function setRule(array $rule = [])
     {
@@ -494,7 +499,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Source inputs to the mapping.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function addSource(FHIRStructureMapSource $source = null)
     {
@@ -508,7 +513,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Source inputs to the mapping.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[] $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function setSource(array $source = [])
     {
@@ -544,7 +549,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Content to create because of this mapping rule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function addTarget(FHIRStructureMapTarget $target = null)
     {
@@ -558,7 +563,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * Content to create because of this mapping rule.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[] $target
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
+     * @return static
      */
     public function setTarget(array $target = [])
     {

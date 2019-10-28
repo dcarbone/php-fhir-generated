@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_DETAIL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADJUDICATION = 'adjudication';
     const FIELD_ADJUDICATION_EXT = '_adjudication';
@@ -98,20 +98,22 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
-    private $adjudication = [];
+    protected $adjudication = [];
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim detail entry.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    private $detailSequence = null;
+    protected $detailSequence = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numbers associated with notes below which apply to the adjudication of this
@@ -119,7 +121,8 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
-    private $noteNumber = [];
+    protected $noteNumber = [];
+
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
@@ -128,7 +131,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail[]
      */
-    private $subDetail = [];
+    protected $subDetail = [];
 
     /**
      * FHIRClaimResponseDetail Constructor
@@ -237,7 +240,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -284,7 +287,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * The adjudication results.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function addAdjudication(FHIRClaimResponseAdjudication $adjudication = null)
     {
@@ -299,7 +302,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * The adjudication results.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[] $adjudication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function setAdjudication(array $adjudication = [])
     {
@@ -319,7 +322,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim detail entry.
@@ -333,13 +336,13 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim detail entry.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $detailSequence
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function setDetailSequence($detailSequence = null)
     {
@@ -357,7 +360,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numbers associated with notes below which apply to the adjudication of this
@@ -372,14 +375,14 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $noteNumber
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function addNoteNumber($noteNumber = null)
     {
@@ -397,14 +400,14 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[] $noteNumber
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function setNoteNumber(array $noteNumber = [])
     {
@@ -442,7 +445,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * A sub-detail adjudication of a simple product or service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail $subDetail
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function addSubDetail(FHIRClaimResponseSubDetail $subDetail = null)
     {
@@ -457,7 +460,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * A sub-detail adjudication of a simple product or service.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail[] $subDetail
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail
+     * @return static
      */
     public function setSubDetail(array $subDetail = [])
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * Indicates the patient has a susceptibility to an adverse reaction upon exposure
  * to a specified substance.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAllergyIntolerance
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -82,7 +82,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CRITICALITY = 'criticality';
     const FIELD_CRITICALITY_EXT = '_criticality';
@@ -102,17 +102,18 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The criticality of an adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Criticality of the sensitivity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCriticality
      */
-    private $criticality = null;
+    protected $criticality = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processed and/ or used to refer to it when a direct URL
@@ -121,87 +122,95 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reactions associated with the sensitivity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $reaction = [];
+    protected $reaction = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $recordedDate = null;
+    protected $recordedDate = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who has responsibility for the record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $recorder = null;
+    protected $recorder = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Observations that confirm or refute the sensitivity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $sensitivityTest = [];
+    protected $sensitivityTest = [];
+
     /**
      * The type of an adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of the sensitivity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSensitivityType
      */
-    private $sensitivityType = null;
+    protected $sensitivityType = null;
+
     /**
      * The status of the adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the sensitivity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSensitivityStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The substance that causes the sensitivity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $substance = null;
+    protected $substance = null;
 
     /**
      * FHIRAllergyIntolerance Constructor
@@ -360,7 +369,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -397,7 +406,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The criticality of an adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Criticality of the sensitivity.
      *
@@ -410,12 +419,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The criticality of an adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Criticality of the sensitivity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCriticality $criticality
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setCriticality(FHIRCriticality $criticality = null)
     {
@@ -426,7 +435,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processed and/ or used to refer to it when a direct URL
@@ -443,7 +452,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processed and/ or used to refer to it when a direct URL
@@ -451,7 +460,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
      * in written / printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -462,7 +471,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this allergy/intolerance concern that
      * are defined by business processed and/ or used to refer to it when a direct URL
@@ -470,7 +479,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
      * in written / printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -491,7 +500,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reactions associated with the sensitivity.
      *
@@ -505,12 +514,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reactions associated with the sensitivity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $reaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function addReaction(FHIRResourceReference $reaction = null)
     {
@@ -521,12 +530,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reactions associated with the sensitivity.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $reaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setReaction(array $reaction = [])
     {
@@ -549,7 +558,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
      *
@@ -565,12 +574,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $recordedDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setRecordedDate($recordedDate = null)
     {
@@ -589,7 +598,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who has responsibility for the record.
      *
@@ -603,12 +612,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who has responsibility for the record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $recorder
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setRecorder(FHIRResourceReference $recorder = null)
     {
@@ -619,7 +628,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Observations that confirm or refute the sensitivity.
      *
@@ -633,12 +642,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Observations that confirm or refute the sensitivity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $sensitivityTest
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function addSensitivityTest(FHIRResourceReference $sensitivityTest = null)
     {
@@ -649,12 +658,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Observations that confirm or refute the sensitivity.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $sensitivityTest
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setSensitivityTest(array $sensitivityTest = [])
     {
@@ -674,7 +683,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The type of an adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of the sensitivity.
      *
@@ -687,12 +696,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The type of an adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of the sensitivity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSensitivityType $sensitivityType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setSensitivityType(FHIRSensitivityType $sensitivityType = null)
     {
@@ -702,7 +711,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The status of the adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the sensitivity.
      *
@@ -715,12 +724,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
 
     /**
      * The status of the adverse sensitivity
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the sensitivity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSensitivityStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setStatus(FHIRSensitivityStatus $status = null)
     {
@@ -731,7 +740,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
      *
@@ -745,12 +754,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {
@@ -761,7 +770,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The substance that causes the sensitivity.
      *
@@ -775,12 +784,12 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The substance that causes the sensitivity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $substance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
+     * @return static
      */
     public function setSubstance(FHIRResourceReference $substance = null)
     {

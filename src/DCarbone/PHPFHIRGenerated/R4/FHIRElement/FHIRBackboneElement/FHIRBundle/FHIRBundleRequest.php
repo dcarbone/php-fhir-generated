@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_REQUEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IF_MATCH = 'ifMatch';
     const FIELD_IF_MATCH_EXT = '_ifMatch';
@@ -100,32 +100,34 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $ifMatch = null;
+    protected $ifMatch = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $ifModifiedSince = null;
+    protected $ifModifiedSince = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instruct the server not to perform the create if a specified resource already
      * exists. For further information, see the API documentation for ["Conditional
@@ -134,40 +136,43 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $ifNoneExist = null;
+    protected $ifNoneExist = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ETag values match, return a 304 Not Modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $ifNoneMatch = null;
+    protected $ifNoneMatch = null;
+
     /**
      * HTTP verbs (in the HTTP command line). See [HTTP
      * rfc](https://tools.ietf.org/html/rfc7231) for details.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * In a transaction or batch, this is the HTTP action to be executed for this
      * entry. In a history bundle, this indicates the HTTP action that occurred.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHTTPVerb
      */
-    private $method = null;
+    protected $method = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * FHIRBundleRequest Constructor
@@ -277,7 +282,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -307,7 +312,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
@@ -322,13 +327,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $ifMatch
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function setIfMatch($ifMatch = null)
     {
@@ -350,7 +355,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
@@ -368,13 +373,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $ifModifiedSince
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function setIfModifiedSince($ifModifiedSince = null)
     {
@@ -393,7 +398,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instruct the server not to perform the create if a specified resource already
      * exists. For further information, see the API documentation for ["Conditional
@@ -410,7 +415,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instruct the server not to perform the create if a specified resource already
      * exists. For further information, see the API documentation for ["Conditional
@@ -418,7 +423,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * follows the "?" (not including the "?").
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $ifNoneExist
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function setIfNoneExist($ifNoneExist = null)
     {
@@ -437,7 +442,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ETag values match, return a 304 Not Modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
@@ -452,13 +457,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ETag values match, return a 304 Not Modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $ifNoneMatch
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function setIfNoneMatch($ifNoneMatch = null)
     {
@@ -477,7 +482,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * HTTP verbs (in the HTTP command line). See [HTTP
      * rfc](https://tools.ietf.org/html/rfc7231) for details.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * In a transaction or batch, this is the HTTP action to be executed for this
      * entry. In a history bundle, this indicates the HTTP action that occurred.
@@ -492,13 +497,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * HTTP verbs (in the HTTP command line). See [HTTP
      * rfc](https://tools.ietf.org/html/rfc7231) for details.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * In a transaction or batch, this is the HTTP action to be executed for this
      * entry. In a history bundle, this indicates the HTTP action that occurred.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHTTPVerb $method
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function setMethod(FHIRHTTPVerb $method = null)
     {
@@ -509,7 +514,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
@@ -524,13 +529,13 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
+     * @return static
      */
     public function setUrl($url = null)
     {

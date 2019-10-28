@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
  * policy or agreement.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRContract
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -96,7 +96,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALIAS = 'alias';
     const FIELD_ALIAS_EXT = '_alias';
@@ -147,7 +147,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Alternative representation of the title for this Contract definition,
      * derivative, or instance in any legal state., e.g., a domain specific contract
@@ -155,32 +155,35 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $alias = [];
+    protected $alias = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $applies = null;
+    protected $applies = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that authored the Contract definition,
      * derivative, or instance in any legal state.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formally or informally recognized grouping of people, principals,
      * organizations, or jurisdictions formed for the purpose of achieving some form of
@@ -189,7 +192,8 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $authority = [];
+    protected $authority = [];
+
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
@@ -200,23 +204,25 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      */
-    private $contentDefinition = null;
+    protected $contentDefinition = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimal content derived from the basal information source at a specific
      * stage in its lifecycle.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $contentDerivative = null;
+    protected $contentDerivative = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Recognized governance framework or system operating with a circumscribed scope
      * in accordance with specified principles, policies, processes or procedures for
@@ -225,19 +231,21 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $domain = [];
+    protected $domain = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event resulting in discontinuation or termination of this Contract instance by
      * one or more parties to the contract.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $expirationType = null;
+    protected $expirationType = null;
+
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
@@ -251,54 +259,59 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly[]
      */
-    private $friendly = [];
+    protected $friendly = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this Contract or a derivative that references a Source
      * Contract.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in
      * whole or part by this Contract.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $instantiatesCanonical = null;
+    protected $instantiatesCanonical = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained definition that is adhered to in
      * whole or in part by this Contract.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $instantiatesUri = null;
+    protected $instantiatesUri = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $issued = null;
+    protected $issued = null;
+
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
@@ -307,12 +320,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal[]
      */
-    private $legal = [];
+    protected $legal = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legal states of the formation of a legal instrument, which is a formally
      * executed written document that can be formally attributed to its author, records
@@ -321,11 +335,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $legalState = null;
+    protected $legalState = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
@@ -334,11 +349,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    private $legallyBindingAttachment = null;
+    protected $legallyBindingAttachment = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
@@ -347,11 +363,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $legallyBindingReference = null;
+    protected $legallyBindingReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying this Contract definition, derivative, or
      * instance in any legal state. Provides additional information about its content.
@@ -360,11 +377,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Contract definition,
      * derivative, or instance, which identify key state transitions or updates that
@@ -374,7 +392,8 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $relevantHistory = [];
+    protected $relevantHistory = [];
+
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
@@ -383,19 +402,21 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule[]
      */
-    private $rule = [];
+    protected $rule = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A selector of legal concerns for this Contract definition, derivative, or
      * instance in any legal state.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $scope = null;
+    protected $scope = null;
+
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
@@ -407,52 +428,57 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner[]
      */
-    private $signer = [];
+    protected $signer = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sites in which the contract is complied with, exercised, or in force.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $site = [];
+    protected $site = [];
+
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourceStatusCodes
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sub-category for the Contract that distinguishes the kinds of systems that would
      * be interested in the Contract within the context of the Contract's scope.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $subType = [];
+    protected $subType = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target entity impacted by or of interest to parties to the agreement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $subject = [];
+    protected $subject = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanatory or alternate user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.t giving additional information about
@@ -460,18 +486,20 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $subtitle = null;
+    protected $subtitle = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information that may be needed by/relevant to the performer in their execution
      * of this term action.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $supportingInfo = [];
+    protected $supportingInfo = [];
+
     /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
@@ -481,11 +509,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
      */
-    private $term = [];
+    protected $term = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.t giving additional information about
@@ -493,35 +522,38 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
      * contractual objectives. (choose any one of topic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $topicCodeableConcept = null;
+    protected $topicCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
      * contractual objectives. (choose any one of topic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $topicReference = null;
+    protected $topicReference = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A high-level category for the legal instrument, whether constructed as a
      * Contract definition, derivative, or instance in any legal state. Provides
@@ -531,28 +563,30 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical identifier for this contract, represented as a URI (globally unique).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An edition identifier used for business purposes to label business significant
      * variants.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRContract Constructor
@@ -1001,7 +1035,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1039,7 +1073,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Alternative representation of the title for this Contract definition,
      * derivative, or instance in any legal state., e.g., a domain specific contract
@@ -1055,14 +1089,14 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Alternative representation of the title for this Contract definition,
      * derivative, or instance in any legal state., e.g., a domain specific contract
      * number related to legislation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $alias
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addAlias($alias = null)
     {
@@ -1081,14 +1115,14 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Alternative representation of the title for this Contract definition,
      * derivative, or instance in any legal state., e.g., a domain specific contract
      * number related to legislation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $alias
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setAlias(array $alias = [])
     {
@@ -1109,7 +1143,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
      *
@@ -1123,12 +1157,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $applies
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setApplies(FHIRPeriod $applies = null)
     {
@@ -1139,7 +1173,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that authored the Contract definition,
      * derivative, or instance in any legal state.
@@ -1154,13 +1188,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that authored the Contract definition,
      * derivative, or instance in any legal state.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -1171,7 +1205,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formally or informally recognized grouping of people, principals,
      * organizations, or jurisdictions formed for the purpose of achieving some form of
@@ -1188,7 +1222,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formally or informally recognized grouping of people, principals,
      * organizations, or jurisdictions formed for the purpose of achieving some form of
@@ -1196,7 +1230,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * contracts and policies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $authority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addAuthority(FHIRReference $authority = null)
     {
@@ -1207,7 +1241,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formally or informally recognized grouping of people, principals,
      * organizations, or jurisdictions formed for the purpose of achieving some form of
@@ -1215,7 +1249,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * contracts and policies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $authority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setAuthority(array $authority = [])
     {
@@ -1257,7 +1291,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $contentDefinition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setContentDefinition(FHIRContractContentDefinition $contentDefinition = null)
     {
@@ -1269,7 +1303,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimal content derived from the basal information source at a specific
      * stage in its lifecycle.
@@ -1285,13 +1319,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimal content derived from the basal information source at a specific
      * stage in its lifecycle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $contentDerivative
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setContentDerivative(FHIRCodeableConcept $contentDerivative = null)
     {
@@ -1302,7 +1336,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Recognized governance framework or system operating with a circumscribed scope
      * in accordance with specified principles, policies, processes or procedures for
@@ -1319,7 +1353,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Recognized governance framework or system operating with a circumscribed scope
      * in accordance with specified principles, policies, processes or procedures for
@@ -1327,7 +1361,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $domain
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addDomain(FHIRReference $domain = null)
     {
@@ -1338,7 +1372,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Recognized governance framework or system operating with a circumscribed scope
      * in accordance with specified principles, policies, processes or procedures for
@@ -1346,7 +1380,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * resources.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $domain
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setDomain(array $domain = [])
     {
@@ -1368,7 +1402,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event resulting in discontinuation or termination of this Contract instance by
      * one or more parties to the contract.
@@ -1384,13 +1418,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event resulting in discontinuation or termination of this Contract instance by
      * one or more parties to the contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $expirationType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setExpirationType(FHIRCodeableConcept $expirationType = null)
     {
@@ -1428,7 +1462,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * actions, obligations, responsibilities, and implication of the agreement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly $friendly
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addFriendly(FHIRContractFriendly $friendly = null)
     {
@@ -1448,7 +1482,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * actions, obligations, responsibilities, and implication of the agreement.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly[] $friendly
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setFriendly(array $friendly = [])
     {
@@ -1470,7 +1504,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this Contract or a derivative that references a Source
      * Contract.
@@ -1486,13 +1520,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this Contract or a derivative that references a Source
      * Contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1504,13 +1538,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this Contract or a derivative that references a Source
      * Contract.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1531,7 +1565,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in
      * whole or part by this Contract.
@@ -1546,13 +1580,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in
      * whole or part by this Contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $instantiatesCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setInstantiatesCanonical(FHIRReference $instantiatesCanonical = null)
     {
@@ -1563,7 +1597,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained definition that is adhered to in
      * whole or in part by this Contract.
@@ -1578,13 +1612,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained definition that is adhered to in
      * whole or in part by this Contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $instantiatesUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setInstantiatesUri($instantiatesUri = null)
     {
@@ -1606,7 +1640,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
      *
@@ -1623,12 +1657,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $issued
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setIssued($issued = null)
     {
@@ -1664,7 +1698,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * List of Legal expressions or representations of this Contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal $legal
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addLegal(FHIRContractLegal $legal = null)
     {
@@ -1679,7 +1713,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * List of Legal expressions or representations of this Contract.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal[] $legal
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setLegal(array $legal = [])
     {
@@ -1701,7 +1735,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legal states of the formation of a legal instrument, which is a formally
      * executed written document that can be formally attributed to its author, records
@@ -1719,7 +1753,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legal states of the formation of a legal instrument, which is a formally
      * executed written document that can be formally attributed to its author, records
@@ -1727,7 +1761,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * obligation, or right, and therefore evidences that act, process, or agreement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $legalState
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setLegalState(FHIRCodeableConcept $legalState = null)
     {
@@ -1738,7 +1772,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
@@ -1755,7 +1789,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
@@ -1763,7 +1797,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $legallyBindingAttachment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setLegallyBindingAttachment(FHIRAttachment $legallyBindingAttachment = null)
     {
@@ -1774,7 +1808,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
@@ -1791,7 +1825,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
@@ -1799,7 +1833,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Contract. (choose any one of legallyBinding*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $legallyBindingReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setLegallyBindingReference(FHIRReference $legallyBindingReference = null)
     {
@@ -1810,7 +1844,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying this Contract definition, derivative, or
      * instance in any legal state. Provides additional information about its content.
@@ -1827,7 +1861,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying this Contract definition, derivative, or
      * instance in any legal state. Provides additional information about its content.
@@ -1835,7 +1869,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * applications such as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1854,7 +1888,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Contract definition,
      * derivative, or instance, which identify key state transitions or updates that
@@ -1872,7 +1906,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Contract definition,
      * derivative, or instance, which identify key state transitions or updates that
@@ -1881,7 +1915,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $relevantHistory
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory = null)
     {
@@ -1892,7 +1926,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Contract definition,
      * derivative, or instance, which identify key state transitions or updates that
@@ -1901,7 +1935,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $relevantHistory
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setRelevantHistory(array $relevantHistory = [])
     {
@@ -1939,7 +1973,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * List of Computable Policy Rule Language Representations of this Contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule $rule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addRule(FHIRContractRule $rule = null)
     {
@@ -1954,7 +1988,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * List of Computable Policy Rule Language Representations of this Contract.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule[] $rule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setRule(array $rule = [])
     {
@@ -1976,7 +2010,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A selector of legal concerns for this Contract definition, derivative, or
      * instance in any legal state.
@@ -1992,13 +2026,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A selector of legal concerns for this Contract definition, derivative, or
      * instance in any legal state.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $scope
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setScope(FHIRCodeableConcept $scope = null)
     {
@@ -2032,7 +2066,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * contract such as a notary or witness.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner $signer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addSigner(FHIRContractSigner $signer = null)
     {
@@ -2050,7 +2084,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * contract such as a notary or witness.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner[] $signer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setSigner(array $signer = [])
     {
@@ -2071,7 +2105,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sites in which the contract is complied with, exercised, or in force.
      *
@@ -2085,12 +2119,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sites in which the contract is complied with, exercised, or in force.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $site
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addSite(FHIRReference $site = null)
     {
@@ -2101,12 +2135,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sites in which the contract is complied with, exercised, or in force.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $site
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setSite(array $site = [])
     {
@@ -2126,7 +2160,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
@@ -2139,12 +2173,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 
     /**
      * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourceStatusCodes $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setStatus(FHIRContractResourceStatusCodes $status = null)
     {
@@ -2156,7 +2190,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sub-category for the Contract that distinguishes the kinds of systems that would
      * be interested in the Contract within the context of the Contract's scope.
@@ -2172,13 +2206,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sub-category for the Contract that distinguishes the kinds of systems that would
      * be interested in the Contract within the context of the Contract's scope.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addSubType(FHIRCodeableConcept $subType = null)
     {
@@ -2190,13 +2224,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sub-category for the Contract that distinguishes the kinds of systems that would
      * be interested in the Contract within the context of the Contract's scope.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $subType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setSubType(array $subType = [])
     {
@@ -2217,7 +2251,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target entity impacted by or of interest to parties to the agreement.
      *
@@ -2231,12 +2265,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target entity impacted by or of interest to parties to the agreement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addSubject(FHIRReference $subject = null)
     {
@@ -2247,12 +2281,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target entity impacted by or of interest to parties to the agreement.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setSubject(array $subject = [])
     {
@@ -2273,7 +2307,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanatory or alternate user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.t giving additional information about
@@ -2289,14 +2323,14 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanatory or alternate user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.t giving additional information about
      * its content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $subtitle
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setSubtitle($subtitle = null)
     {
@@ -2315,7 +2349,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information that may be needed by/relevant to the performer in their execution
      * of this term action.
@@ -2330,13 +2364,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information that may be needed by/relevant to the performer in their execution
      * of this term action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $supportingInfo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo = null)
     {
@@ -2347,13 +2381,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information that may be needed by/relevant to the performer in their execution
      * of this term action.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $supportingInfo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setSupportingInfo(array $supportingInfo = [])
     {
@@ -2393,7 +2427,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * and may contain nested groups.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $term
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function addTerm(FHIRContractTerm $term = null)
     {
@@ -2409,7 +2443,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * and may contain nested groups.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[] $term
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setTerm(array $term = [])
     {
@@ -2430,7 +2464,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.t giving additional information about
@@ -2446,14 +2480,14 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.t giving additional information about
      * its content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -2473,7 +2507,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
      * contractual objectives. (choose any one of topic*, but only one)
@@ -2489,13 +2523,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
      * contractual objectives. (choose any one of topic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setTopicCodeableConcept(FHIRCodeableConcept $topicCodeableConcept = null)
     {
@@ -2506,7 +2540,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
      * contractual objectives. (choose any one of topic*, but only one)
@@ -2521,13 +2555,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
      * contractual objectives. (choose any one of topic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $topicReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setTopicReference(FHIRReference $topicReference = null)
     {
@@ -2539,7 +2573,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A high-level category for the legal instrument, whether constructed as a
      * Contract definition, derivative, or instance in any legal state. Provides
@@ -2558,7 +2592,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A high-level category for the legal instrument, whether constructed as a
      * Contract definition, derivative, or instance in any legal state. Provides
@@ -2567,7 +2601,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * contract.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -2578,7 +2612,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical identifier for this contract, represented as a URI (globally unique).
      *
@@ -2592,12 +2626,12 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical identifier for this contract, represented as a URI (globally unique).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -2616,7 +2650,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An edition identifier used for business purposes to label business significant
      * variants.
@@ -2631,13 +2665,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An edition identifier used for business purposes to label business significant
      * variants.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRContract
+     * @return static
      */
     public function setVersion($version = null)
     {

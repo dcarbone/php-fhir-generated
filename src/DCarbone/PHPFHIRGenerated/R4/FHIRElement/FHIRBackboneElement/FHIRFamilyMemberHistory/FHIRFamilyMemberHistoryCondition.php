@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamil
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY_DOT_CONDITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CONTRIBUTED_TO_DEATH = 'contributedToDeath';
@@ -103,7 +103,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual condition specified. Could be a coded condition (like MI or Diabetes)
      * or a less specific string like 'cancer' depending on how much is known about the
@@ -111,32 +111,35 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This condition contributed to the cause of death of the related person. If
      * contributedToDeath is not populated, then it is unknown.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $contributedToDeath = null;
+    protected $contributedToDeath = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -144,11 +147,12 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $onsetAge = null;
+    protected $onsetAge = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -156,11 +160,12 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $onsetPeriod = null;
+    protected $onsetPeriod = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -168,11 +173,12 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $onsetRange = null;
+    protected $onsetRange = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -180,19 +186,20 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $onsetString = null;
+    protected $onsetString = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what happened following the condition. If the condition resulted in
      * death, deceased date is captured on the relation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $outcome = null;
+    protected $outcome = null;
 
     /**
      * FHIRFamilyMemberHistoryCondition Constructor
@@ -304,7 +311,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -335,7 +342,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual condition specified. Could be a coded condition (like MI or Diabetes)
      * or a less specific string like 'cancer' depending on how much is known about the
@@ -352,14 +359,14 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual condition specified. Could be a coded condition (like MI or Diabetes)
      * or a less specific string like 'cancer' depending on how much is known about the
      * condition and the capabilities of the creating system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -369,7 +376,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This condition contributed to the cause of death of the related person. If
      * contributedToDeath is not populated, then it is unknown.
@@ -383,13 +390,13 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This condition contributed to the cause of death of the related person. If
      * contributedToDeath is not populated, then it is unknown.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $contributedToDeath
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setContributedToDeath($contributedToDeath = null)
     {
@@ -409,7 +416,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
      *
@@ -424,12 +431,12 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -441,12 +448,12 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -467,7 +474,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -483,14 +490,14 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setOnsetAge(FHIRAge $onsetAge = null)
     {
@@ -501,7 +508,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -517,14 +524,14 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $onsetPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setOnsetPeriod(FHIRPeriod $onsetPeriod = null)
     {
@@ -535,7 +542,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -551,14 +558,14 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $onsetRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setOnsetRange(FHIRRange $onsetRange = null)
     {
@@ -569,7 +576,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
@@ -585,14 +592,14 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence. (choose any one of onset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $onsetString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setOnsetString($onsetString = null)
     {
@@ -612,7 +619,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what happened following the condition. If the condition resulted in
      * death, deceased date is captured on the relation.
@@ -628,13 +635,13 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what happened following the condition. If the condition resulted in
      * death, deceased date is captured on the relation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $outcome
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition
+     * @return static
      */
     public function setOutcome(FHIRCodeableConcept $outcome = null)
     {

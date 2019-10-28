@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_DOT_INLINE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADVERSE_REACTION = 'AdverseReaction';
     const FIELD_ALERT = 'Alert';
@@ -173,76 +173,85 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Records an unexpected reaction suspected to be related to the exposure of the
      * reaction subject to a substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAdverseReaction
      */
-    private $AdverseReaction = null;
+    protected $AdverseReaction = null;
+
     /**
      * Prospective warnings of potential issues when providing care to the patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
      */
-    private $Alert = null;
+    protected $Alert = null;
+
     /**
      * Indicates the patient has a susceptibility to an adverse reaction upon exposure
      * to a specified substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
      */
-    private $AllergyIntolerance = null;
+    protected $AllergyIntolerance = null;
+
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
      */
-    private $Binary = null;
+    protected $Binary = null;
+
     /**
      * Describes the intention of how one or more practitioners intend to deliver care
      * for a particular patient for a period of time, possibly limited to care for a
      * specific condition or set of conditions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
      */
-    private $CarePlan = null;
+    protected $CarePlan = null;
+
     /**
      * A set of healthcare-related information that is assembled together into a single
      * logical document that provides a single coherent statement of meaning,
      * establishes its own context and that has clinical attestation with regard to who
      * is making the statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
      */
-    private $Composition = null;
+    protected $Composition = null;
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concept systems.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRConceptMap
      */
-    private $ConceptMap = null;
+    protected $ConceptMap = null;
+
     /**
      * Use to record detailed information about conditions, problems or diagnoses
      * recognized by a clinician. There are many uses including: recording a Diagnosis
      * during an Encounter; populating a problem List or a Summary Statement, such as a
      * Discharge Summary.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
      */
-    private $Condition = null;
+    protected $Condition = null;
+
     /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
      * particular implementation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRConformance
      */
-    private $Conformance = null;
+    protected $Conformance = null;
+
     /**
      * This resource identifies an instance of a manufactured thing that is used in the
      * provision of healthcare without being substantially changed through that
@@ -250,331 +259,370 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * etc. This includes durable (reusable) medical equipment as well as disposable
      * equipment used for diagnostic, treatment, and research for healthcare and public
      * health.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
      */
-    private $Device = null;
+    protected $Device = null;
+
     /**
      * Describes the data produced by a device at a point in time.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
      */
-    private $DeviceObservationReport = null;
+    protected $DeviceObservationReport = null;
+
     /**
      * A request for a diagnostic investigation service to be performed.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
      */
-    private $DiagnosticOrder = null;
+    protected $DiagnosticOrder = null;
+
     /**
      * The findings and interpretation of diagnostic tests performed on patients,
      * groups of patients, devices, and locations, and/or specimens derived from these.
      * The report includes clinical context such as requesting and provider
      * information, and some mix of atomic results, images, textual and coded
      * interpretation, and formatted representation of diagnostic reports.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticReport
      */
-    private $DiagnosticReport = null;
+    protected $DiagnosticReport = null;
+
     /**
      * A manifest that defines a set of documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
      */
-    private $DocumentManifest = null;
+    protected $DocumentManifest = null;
+
     /**
      * A reference to a document.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentReference
      */
-    private $DocumentReference = null;
+    protected $DocumentReference = null;
+
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
      */
-    private $Encounter = null;
+    protected $Encounter = null;
+
     /**
      * Significant health events and conditions for people related to the subject
      * relevant in the context of care for the subject.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRFamilyHistory
      */
-    private $FamilyHistory = null;
+    protected $FamilyHistory = null;
+
     /**
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively and are not formally
      * or legally recognized. I.e. A collection of entities that isn't an Organization.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRGroup
      */
-    private $Group = null;
+    protected $Group = null;
+
     /**
      * Manifest of a set of images produced in study. The set of images may include
      * every image in the study, or it may be an incomplete sample, such as a list of
      * key images.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImagingStudy
      */
-    private $ImagingStudy = null;
+    protected $ImagingStudy = null;
+
     /**
      * Immunization event information.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImmunization
      */
-    private $Immunization = null;
+    protected $Immunization = null;
+
     /**
      * A patient's point-of-time immunization status and recommendation with optional
      * supporting justification.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImmunizationRecommendation
      */
-    private $ImmunizationRecommendation = null;
+    protected $ImmunizationRecommendation = null;
+
     /**
      * A set of information summarized from a list of other resources.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRList
      */
-    private $List = null;
+    protected $List = null;
+
     /**
      * Details and position information for a physical place where services are
      * provided and resources and participants may be stored, found, contained or
      * accommodated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRLocation
      */
-    private $Location = null;
+    protected $Location = null;
+
     /**
      * A photo, video, or audio recording acquired or used in healthcare. The actual
      * content may be inline or provided by direct reference.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedia
      */
-    private $Media = null;
+    protected $Media = null;
+
     /**
      * Primarily used for identification and definition of Medication, but also covers
      * ingredients and packaging.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
      */
-    private $Medication = null;
+    protected $Medication = null;
+
     /**
      * Describes the event of a patient being given a dose of a medication. This may be
      * as simple as swallowing a tablet or it may be a long running infusion. Related
      * resources tie this event to the authorizing prescription, and the specific
      * encounter between patient and health care practitioner.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationAdministration
      */
-    private $MedicationAdministration = null;
+    protected $MedicationAdministration = null;
+
     /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
      */
-    private $MedicationDispense = null;
+    protected $MedicationDispense = null;
+
     /**
      * An order for both supply of the medication and the instructions for
      * administration of the medicine to a patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationPrescription
      */
-    private $MedicationPrescription = null;
+    protected $MedicationPrescription = null;
+
     /**
      * A record of medication being taken by a patient, or that the medication has been
      * given to a patient where the record is the result of a report from the patient
      * or another clinician.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationStatement
      */
-    private $MedicationStatement = null;
+    protected $MedicationStatement = null;
+
     /**
      * The header for a message exchange that is either requesting or responding to an
      * action. The resource(s) that are the subject of the action as well as other
      * Information related to the action are typically transmitted in a bundle in which
      * the MessageHeader resource instance is the first resource in the bundle.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMessageHeader
      */
-    private $MessageHeader = null;
+    protected $MessageHeader = null;
+
     /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRObservation
      */
-    private $Observation = null;
+    protected $Observation = null;
+
     /**
      * A collection of error, warning or information messages that result from a system
      * action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROperationOutcome
      */
-    private $OperationOutcome = null;
+    protected $OperationOutcome = null;
+
     /**
      * A request to perform an action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrder
      */
-    private $Order = null;
+    protected $Order = null;
+
     /**
      * A response to an order.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
      */
-    private $OrderResponse = null;
+    protected $OrderResponse = null;
+
     /**
      * A formally or informally recognized grouping of people or organizations formed
      * for the purpose of achieving some form of collective action. Includes companies,
      * institutions, corporations, departments, community groups, healthcare practice
      * groups, etc.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
      */
-    private $Organization = null;
+    protected $Organization = null;
+
     /**
      * Other is a conformant for handling resource concepts not yet defined for FHIR or
      * outside HL7's scope of interest.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROther
      */
-    private $Other = null;
+    protected $Other = null;
+
     /**
      * Demographics and other administrative information about a person or animal
      * receiving care or other health-related services.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPatient
      */
-    private $Patient = null;
+    protected $Patient = null;
+
     /**
      * A person who is directly or indirectly involved in the provisioning of
      * healthcare.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPractitioner
      */
-    private $Practitioner = null;
+    protected $Practitioner = null;
+
     /**
      * An action that is performed on a patient. This can be a physical 'thing' like an
      * operation, or less invasive like counseling or hypnotherapy.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
      */
-    private $Procedure = null;
+    protected $Procedure = null;
+
     /**
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProfile
      */
-    private $Profile = null;
+    protected $Profile = null;
+
     /**
      * Provenance information that describes the activity that led to the creation of a
      * set of resources. This information can be used to help determine their
      * reliability or trace where the information in them came from. The focus of the
      * provenance resource is record keeping, audit and traceability, and not explicit
      * statements of clinical significance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
      */
-    private $Provenance = null;
+    protected $Provenance = null;
+
     /**
      * A description of a query with a set of parameters.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
      */
-    private $Query = null;
+    protected $Query = null;
+
     /**
      * A structured set of questions and their answers. The Questionnaire may contain
      * questions, answers or both. The questions are ordered and grouped into coherent
      * subsets, corresponding to the structure of the grouping of the underlying
      * questions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuestionnaire
      */
-    private $Questionnaire = null;
+    protected $Questionnaire = null;
+
     /**
      * Information about a person that is involved in the care for a patient, but who
      * is not the target of healthcare, nor has a formal responsibility in the care
      * process.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRRelatedPerson
      */
-    private $RelatedPerson = null;
+    protected $RelatedPerson = null;
+
     /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
      * usage.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSecurityEvent
      */
-    private $SecurityEvent = null;
+    protected $SecurityEvent = null;
+
     /**
      * Sample for analysis.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSpecimen
      */
-    private $Specimen = null;
+    protected $Specimen = null;
+
     /**
      * A homogeneous material with a definite composition.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
      */
-    private $Substance = null;
+    protected $Substance = null;
+
     /**
      * A supply - a request for something, and provision of what is supplied.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
      */
-    private $Supply = null;
+    protected $Supply = null;
+
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRValueSet
      */
-    private $ValueSet = null;
+    protected $ValueSet = null;
 
     /**
      * FHIRResourceInline Constructor
@@ -1003,7 +1051,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1033,7 +1081,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Records an unexpected reaction suspected to be related to the exposure of the
      * reaction subject to a substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAdverseReaction
      */
@@ -1045,10 +1093,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Records an unexpected reaction suspected to be related to the exposure of the
      * reaction subject to a substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAdverseReaction $AdverseReaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setAdverseReaction(FHIRAdverseReaction $AdverseReaction = null)
     {
@@ -1058,7 +1106,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Prospective warnings of potential issues when providing care to the patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert
      */
@@ -1069,10 +1117,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Prospective warnings of potential issues when providing care to the patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAlert $Alert
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setAlert(FHIRAlert $Alert = null)
     {
@@ -1083,7 +1131,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Indicates the patient has a susceptibility to an adverse reaction upon exposure
      * to a specified substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance
      */
@@ -1095,10 +1143,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Indicates the patient has a susceptibility to an adverse reaction upon exposure
      * to a specified substance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRAllergyIntolerance $AllergyIntolerance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setAllergyIntolerance(FHIRAllergyIntolerance $AllergyIntolerance = null)
     {
@@ -1116,7 +1164,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary $Binary
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setBinary(FHIRBinary $Binary = null)
     {
@@ -1128,7 +1176,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Describes the intention of how one or more practitioners intend to deliver care
      * for a particular patient for a period of time, possibly limited to care for a
      * specific condition or set of conditions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
      */
@@ -1141,10 +1189,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Describes the intention of how one or more practitioners intend to deliver care
      * for a particular patient for a period of time, possibly limited to care for a
      * specific condition or set of conditions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan $CarePlan
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setCarePlan(FHIRCarePlan $CarePlan = null)
     {
@@ -1157,7 +1205,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * logical document that provides a single coherent statement of meaning,
      * establishes its own context and that has clinical attestation with regard to who
      * is making the statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
      */
@@ -1171,10 +1219,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * logical document that provides a single coherent statement of meaning,
      * establishes its own context and that has clinical attestation with regard to who
      * is making the statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition $Composition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setComposition(FHIRComposition $Composition = null)
     {
@@ -1185,7 +1233,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concept systems.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRConceptMap
      */
@@ -1197,10 +1245,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concept systems.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRConceptMap $ConceptMap
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setConceptMap(FHIRConceptMap $ConceptMap = null)
     {
@@ -1213,7 +1261,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * recognized by a clinician. There are many uses including: recording a Diagnosis
      * during an Encounter; populating a problem List or a Summary Statement, such as a
      * Discharge Summary.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
      */
@@ -1227,10 +1275,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * recognized by a clinician. There are many uses including: recording a Diagnosis
      * during an Encounter; populating a problem List or a Summary Statement, such as a
      * Discharge Summary.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition $Condition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setCondition(FHIRCondition $Condition = null)
     {
@@ -1242,7 +1290,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
      * particular implementation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRConformance
      */
@@ -1255,10 +1303,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
      * particular implementation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRConformance $Conformance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setConformance(FHIRConformance $Conformance = null)
     {
@@ -1273,7 +1321,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * etc. This includes durable (reusable) medical equipment as well as disposable
      * equipment used for diagnostic, treatment, and research for healthcare and public
      * health.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice
      */
@@ -1289,10 +1337,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * etc. This includes durable (reusable) medical equipment as well as disposable
      * equipment used for diagnostic, treatment, and research for healthcare and public
      * health.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDevice $Device
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setDevice(FHIRDevice $Device = null)
     {
@@ -1302,7 +1350,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Describes the data produced by a device at a point in time.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
      */
@@ -1313,10 +1361,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Describes the data produced by a device at a point in time.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport $DeviceObservationReport
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setDeviceObservationReport(FHIRDeviceObservationReport $DeviceObservationReport = null)
     {
@@ -1326,7 +1374,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A request for a diagnostic investigation service to be performed.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
      */
@@ -1337,10 +1385,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A request for a diagnostic investigation service to be performed.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder $DiagnosticOrder
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setDiagnosticOrder(FHIRDiagnosticOrder $DiagnosticOrder = null)
     {
@@ -1354,7 +1402,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * The report includes clinical context such as requesting and provider
      * information, and some mix of atomic results, images, textual and coded
      * interpretation, and formatted representation of diagnostic reports.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticReport
      */
@@ -1369,10 +1417,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * The report includes clinical context such as requesting and provider
      * information, and some mix of atomic results, images, textual and coded
      * interpretation, and formatted representation of diagnostic reports.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticReport $DiagnosticReport
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setDiagnosticReport(FHIRDiagnosticReport $DiagnosticReport = null)
     {
@@ -1382,7 +1430,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A manifest that defines a set of documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
      */
@@ -1393,10 +1441,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A manifest that defines a set of documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest $DocumentManifest
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setDocumentManifest(FHIRDocumentManifest $DocumentManifest = null)
     {
@@ -1406,7 +1454,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A reference to a document.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentReference
      */
@@ -1417,10 +1465,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A reference to a document.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentReference $DocumentReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setDocumentReference(FHIRDocumentReference $DocumentReference = null)
     {
@@ -1431,7 +1479,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
      */
@@ -1443,10 +1491,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter $Encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setEncounter(FHIREncounter $Encounter = null)
     {
@@ -1457,7 +1505,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Significant health events and conditions for people related to the subject
      * relevant in the context of care for the subject.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRFamilyHistory
      */
@@ -1469,10 +1517,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Significant health events and conditions for people related to the subject
      * relevant in the context of care for the subject.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRFamilyHistory $FamilyHistory
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setFamilyHistory(FHIRFamilyHistory $FamilyHistory = null)
     {
@@ -1484,7 +1532,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively and are not formally
      * or legally recognized. I.e. A collection of entities that isn't an Organization.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRGroup
      */
@@ -1497,10 +1545,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively and are not formally
      * or legally recognized. I.e. A collection of entities that isn't an Organization.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRGroup $Group
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setGroup(FHIRGroup $Group = null)
     {
@@ -1512,7 +1560,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Manifest of a set of images produced in study. The set of images may include
      * every image in the study, or it may be an incomplete sample, such as a list of
      * key images.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImagingStudy
      */
@@ -1525,10 +1573,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Manifest of a set of images produced in study. The set of images may include
      * every image in the study, or it may be an incomplete sample, such as a list of
      * key images.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImagingStudy $ImagingStudy
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setImagingStudy(FHIRImagingStudy $ImagingStudy = null)
     {
@@ -1538,7 +1586,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Immunization event information.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImmunization
      */
@@ -1549,10 +1597,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Immunization event information.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImmunization $Immunization
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setImmunization(FHIRImmunization $Immunization = null)
     {
@@ -1563,7 +1611,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A patient's point-of-time immunization status and recommendation with optional
      * supporting justification.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImmunizationRecommendation
      */
@@ -1575,10 +1623,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A patient's point-of-time immunization status and recommendation with optional
      * supporting justification.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRImmunizationRecommendation $ImmunizationRecommendation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setImmunizationRecommendation(FHIRImmunizationRecommendation $ImmunizationRecommendation = null)
     {
@@ -1588,7 +1636,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A set of information summarized from a list of other resources.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRList
      */
@@ -1599,10 +1647,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A set of information summarized from a list of other resources.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRList $List
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setList(FHIRList $List = null)
     {
@@ -1614,7 +1662,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Details and position information for a physical place where services are
      * provided and resources and participants may be stored, found, contained or
      * accommodated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRLocation
      */
@@ -1627,10 +1675,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Details and position information for a physical place where services are
      * provided and resources and participants may be stored, found, contained or
      * accommodated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRLocation $Location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setLocation(FHIRLocation $Location = null)
     {
@@ -1641,7 +1689,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A photo, video, or audio recording acquired or used in healthcare. The actual
      * content may be inline or provided by direct reference.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedia
      */
@@ -1653,10 +1701,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A photo, video, or audio recording acquired or used in healthcare. The actual
      * content may be inline or provided by direct reference.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedia $Media
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMedia(FHIRMedia $Media = null)
     {
@@ -1667,7 +1715,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Primarily used for identification and definition of Medication, but also covers
      * ingredients and packaging.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
      */
@@ -1679,10 +1727,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Primarily used for identification and definition of Medication, but also covers
      * ingredients and packaging.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication $Medication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMedication(FHIRMedication $Medication = null)
     {
@@ -1695,7 +1743,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * as simple as swallowing a tablet or it may be a long running infusion. Related
      * resources tie this event to the authorizing prescription, and the specific
      * encounter between patient and health care practitioner.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationAdministration
      */
@@ -1709,10 +1757,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * as simple as swallowing a tablet or it may be a long running infusion. Related
      * resources tie this event to the authorizing prescription, and the specific
      * encounter between patient and health care practitioner.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationAdministration $MedicationAdministration
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMedicationAdministration(FHIRMedicationAdministration $MedicationAdministration = null)
     {
@@ -1723,7 +1771,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
      */
@@ -1735,10 +1783,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense $MedicationDispense
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMedicationDispense(FHIRMedicationDispense $MedicationDispense = null)
     {
@@ -1749,7 +1797,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * An order for both supply of the medication and the instructions for
      * administration of the medicine to a patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationPrescription
      */
@@ -1761,10 +1809,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * An order for both supply of the medication and the instructions for
      * administration of the medicine to a patient.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationPrescription $MedicationPrescription
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMedicationPrescription(FHIRMedicationPrescription $MedicationPrescription = null)
     {
@@ -1776,7 +1824,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A record of medication being taken by a patient, or that the medication has been
      * given to a patient where the record is the result of a report from the patient
      * or another clinician.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationStatement
      */
@@ -1789,10 +1837,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A record of medication being taken by a patient, or that the medication has been
      * given to a patient where the record is the result of a report from the patient
      * or another clinician.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationStatement $MedicationStatement
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMedicationStatement(FHIRMedicationStatement $MedicationStatement = null)
     {
@@ -1805,7 +1853,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * action. The resource(s) that are the subject of the action as well as other
      * Information related to the action are typically transmitted in a bundle in which
      * the MessageHeader resource instance is the first resource in the bundle.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMessageHeader
      */
@@ -1819,10 +1867,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * action. The resource(s) that are the subject of the action as well as other
      * Information related to the action are typically transmitted in a bundle in which
      * the MessageHeader resource instance is the first resource in the bundle.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMessageHeader $MessageHeader
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setMessageHeader(FHIRMessageHeader $MessageHeader = null)
     {
@@ -1833,7 +1881,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRObservation
      */
@@ -1845,10 +1893,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRObservation $Observation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setObservation(FHIRObservation $Observation = null)
     {
@@ -1859,7 +1907,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A collection of error, warning or information messages that result from a system
      * action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROperationOutcome
      */
@@ -1871,10 +1919,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A collection of error, warning or information messages that result from a system
      * action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROperationOutcome $OperationOutcome
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setOperationOutcome(FHIROperationOutcome $OperationOutcome = null)
     {
@@ -1884,7 +1932,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A request to perform an action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrder
      */
@@ -1895,10 +1943,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A request to perform an action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrder $Order
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setOrder(FHIROrder $Order = null)
     {
@@ -1908,7 +1956,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A response to an order.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse
      */
@@ -1919,10 +1967,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A response to an order.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrderResponse $OrderResponse
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setOrderResponse(FHIROrderResponse $OrderResponse = null)
     {
@@ -1935,7 +1983,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * for the purpose of achieving some form of collective action. Includes companies,
      * institutions, corporations, departments, community groups, healthcare practice
      * groups, etc.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization
      */
@@ -1949,10 +1997,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * for the purpose of achieving some form of collective action. Includes companies,
      * institutions, corporations, departments, community groups, healthcare practice
      * groups, etc.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROrganization $Organization
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setOrganization(FHIROrganization $Organization = null)
     {
@@ -1963,7 +2011,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Other is a conformant for handling resource concepts not yet defined for FHIR or
      * outside HL7's scope of interest.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROther
      */
@@ -1975,10 +2023,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Other is a conformant for handling resource concepts not yet defined for FHIR or
      * outside HL7's scope of interest.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIROther $Other
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setOther(FHIROther $Other = null)
     {
@@ -1989,7 +2037,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Demographics and other administrative information about a person or animal
      * receiving care or other health-related services.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPatient
      */
@@ -2001,10 +2049,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * Demographics and other administrative information about a person or animal
      * receiving care or other health-related services.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPatient $Patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setPatient(FHIRPatient $Patient = null)
     {
@@ -2015,7 +2063,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A person who is directly or indirectly involved in the provisioning of
      * healthcare.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPractitioner
      */
@@ -2027,10 +2075,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * A person who is directly or indirectly involved in the provisioning of
      * healthcare.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPractitioner $Practitioner
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setPractitioner(FHIRPractitioner $Practitioner = null)
     {
@@ -2041,7 +2089,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * An action that is performed on a patient. This can be a physical 'thing' like an
      * operation, or less invasive like counseling or hypnotherapy.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
      */
@@ -2053,10 +2101,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     /**
      * An action that is performed on a patient. This can be a physical 'thing' like an
      * operation, or less invasive like counseling or hypnotherapy.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure $Procedure
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setProcedure(FHIRProcedure $Procedure = null)
     {
@@ -2068,7 +2116,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProfile
      */
@@ -2081,10 +2129,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProfile $Profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setProfile(FHIRProfile $Profile = null)
     {
@@ -2098,7 +2146,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * reliability or trace where the information in them came from. The focus of the
      * provenance resource is record keeping, audit and traceability, and not explicit
      * statements of clinical significance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
      */
@@ -2113,10 +2161,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * reliability or trace where the information in them came from. The focus of the
      * provenance resource is record keeping, audit and traceability, and not explicit
      * statements of clinical significance.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance $Provenance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setProvenance(FHIRProvenance $Provenance = null)
     {
@@ -2126,7 +2174,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A description of a query with a set of parameters.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery
      */
@@ -2137,10 +2185,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A description of a query with a set of parameters.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuery $Query
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setQuery(FHIRQuery $Query = null)
     {
@@ -2153,7 +2201,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * questions, answers or both. The questions are ordered and grouped into coherent
      * subsets, corresponding to the structure of the grouping of the underlying
      * questions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuestionnaire
      */
@@ -2167,10 +2215,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * questions, answers or both. The questions are ordered and grouped into coherent
      * subsets, corresponding to the structure of the grouping of the underlying
      * questions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRQuestionnaire $Questionnaire
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setQuestionnaire(FHIRQuestionnaire $Questionnaire = null)
     {
@@ -2182,7 +2230,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Information about a person that is involved in the care for a patient, but who
      * is not the target of healthcare, nor has a formal responsibility in the care
      * process.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRRelatedPerson
      */
@@ -2195,10 +2243,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Information about a person that is involved in the care for a patient, but who
      * is not the target of healthcare, nor has a formal responsibility in the care
      * process.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRRelatedPerson $RelatedPerson
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setRelatedPerson(FHIRRelatedPerson $RelatedPerson = null)
     {
@@ -2210,7 +2258,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
      * usage.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSecurityEvent
      */
@@ -2223,10 +2271,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
      * usage.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSecurityEvent $SecurityEvent
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setSecurityEvent(FHIRSecurityEvent $SecurityEvent = null)
     {
@@ -2236,7 +2284,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Sample for analysis.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSpecimen
      */
@@ -2247,10 +2295,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * Sample for analysis.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSpecimen $Specimen
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setSpecimen(FHIRSpecimen $Specimen = null)
     {
@@ -2260,7 +2308,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A homogeneous material with a definite composition.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance
      */
@@ -2271,10 +2319,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A homogeneous material with a definite composition.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSubstance $Substance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setSubstance(FHIRSubstance $Substance = null)
     {
@@ -2284,7 +2332,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A supply - a request for something, and provision of what is supplied.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply
      */
@@ -2295,10 +2343,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A supply - a request for something, and provision of what is supplied.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSupply $Supply
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setSupply(FHIRSupply $Supply = null)
     {
@@ -2308,7 +2356,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRValueSet
      */
@@ -2319,10 +2367,10 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRValueSet $ValueSet
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline
+     * @return static
      */
     public function setValueSet(FHIRValueSet $ValueSet = null)
     {

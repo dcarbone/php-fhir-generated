@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Describes a comparison of an immunization event against published
  * recommendations to determine if the administration is "valid" in relation to
  * those recommendations.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRImmunizationEvaluation
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_EVALUATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORITY = 'authority';
     const FIELD_DATE = 'date';
@@ -119,125 +119,136 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $authority = null;
+    protected $authority = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the evaluation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    private $doseNumberPositiveInt = null;
+    protected $doseNumberPositiveInt = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $doseNumberString = null;
+    protected $doseNumberString = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $doseStatus = null;
+    protected $doseStatus = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $doseStatusReason = [];
+    protected $doseStatusReason = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $immunizationEvent = null;
+    protected $immunizationEvent = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $series = null;
+    protected $series = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity. (choose any one of
@@ -245,39 +256,42 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    private $seriesDosesPositiveInt = null;
+    protected $seriesDosesPositiveInt = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended number of doses to achieve immunity. (choose any one of
      * seriesDoses*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $seriesDosesString = null;
+    protected $seriesDosesString = null;
+
     /**
      * The status of the evaluation being done.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $targetDisease = null;
+    protected $targetDisease = null;
 
     /**
      * FHIRImmunizationEvaluation Constructor
@@ -483,7 +497,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -521,7 +535,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
      *
@@ -535,12 +549,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $authority
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setAuthority(FHIRReference $authority = null)
     {
@@ -554,7 +568,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
      *
@@ -571,12 +585,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -595,7 +609,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the evaluation.
      *
@@ -609,12 +623,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the evaluation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -632,7 +646,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Nominal position in a series. (choose any one of doseNumber*, but only one)
@@ -646,13 +660,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setDoseNumberPositiveInt($doseNumberPositiveInt = null)
     {
@@ -671,7 +685,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
@@ -685,12 +699,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Nominal position in a series. (choose any one of doseNumber*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setDoseNumberString($doseNumberString = null)
     {
@@ -710,7 +724,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
@@ -726,13 +740,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $doseStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setDoseStatus(FHIRCodeableConcept $doseStatus = null)
     {
@@ -744,7 +758,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
@@ -760,13 +774,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $doseStatusReason
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function addDoseStatusReason(FHIRCodeableConcept $doseStatusReason = null)
     {
@@ -778,13 +792,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $doseStatusReason
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setDoseStatusReason(array $doseStatusReason = [])
     {
@@ -806,7 +820,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
      *
@@ -821,12 +835,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -838,12 +852,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -864,7 +878,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
      *
@@ -878,12 +892,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $immunizationEvent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setImmunizationEvent(FHIRReference $immunizationEvent = null)
     {
@@ -894,7 +908,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
      *
@@ -908,12 +922,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -924,7 +938,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
@@ -939,13 +953,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $series
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setSeries($series = null)
     {
@@ -963,7 +977,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity. (choose any one of
@@ -978,14 +992,14 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity. (choose any one of
      * seriesDoses*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setSeriesDosesPositiveInt($seriesDosesPositiveInt = null)
     {
@@ -1004,7 +1018,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended number of doses to achieve immunity. (choose any one of
      * seriesDoses*, but only one)
@@ -1019,13 +1033,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended number of doses to achieve immunity. (choose any one of
      * seriesDoses*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $seriesDosesString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setSeriesDosesString($seriesDosesString = null)
     {
@@ -1043,7 +1057,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * The status of the evaluation being done.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
@@ -1057,13 +1071,13 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
 
     /**
      * The status of the evaluation being done.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setStatus(FHIRImmunizationEvaluationStatusCodes $status = null)
     {
@@ -1075,7 +1089,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
      *
@@ -1090,12 +1104,12 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $targetDisease
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return static
      */
     public function setTargetDisease(FHIRCodeableConcept $targetDisease = null)
     {

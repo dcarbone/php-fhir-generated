@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_SPECIFIED_SUBSTANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CONFIDENTIALITY = 'confidentiality';
@@ -90,35 +90,38 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $confidentiality = null;
+    protected $confidentiality = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $group = null;
+    protected $group = null;
+
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
@@ -127,7 +130,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
-    private $strength = [];
+    protected $strength = [];
 
     /**
      * FHIRMedicinalProductIngredientSpecifiedSubstance Constructor
@@ -201,7 +204,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -232,7 +235,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
      *
@@ -247,12 +250,12 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -264,7 +267,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
      *
@@ -279,12 +282,12 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $confidentiality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
+     * @return static
      */
     public function setConfidentiality(FHIRCodeableConcept $confidentiality = null)
     {
@@ -296,7 +299,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
      *
@@ -311,12 +314,12 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $group
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
+     * @return static
      */
     public function setGroup(FHIRCodeableConcept $group = null)
     {
@@ -344,7 +347,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * item or pharmaceutical product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $strength
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
+     * @return static
      */
     public function addStrength(FHIRMedicinalProductIngredientStrength $strength = null)
     {
@@ -359,7 +362,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * item or pharmaceutical product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[] $strength
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
+     * @return static
      */
     public function setStrength(array $strength = [])
     {

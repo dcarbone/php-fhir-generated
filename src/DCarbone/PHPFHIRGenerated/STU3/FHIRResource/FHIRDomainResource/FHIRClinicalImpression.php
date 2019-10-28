@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * clinical workflow. This resource is called "ClinicalImpression" rather than
  * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
  * such as Apgar score.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRClinicalImpression
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_ASSESSOR = 'assessor';
@@ -130,91 +130,99 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action taken as part of assessment procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $action = [];
+    protected $action = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $assessor = null;
+    protected $assessor = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the type of clinical assessment performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care this impression was created as part of.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $context = null;
+    protected $context = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the documentation of the assessment was complete.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A summary of the context and/or cause of the assessment - why / where was it
      * performed, and what patient events/status prompted it.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time or period over which the subject was assessed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $effectiveDateTime = null;
+    protected $effectiveDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The point in time or period over which the subject was assessed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * A record of a clinical assessment performed to determine what problem(s) may
      * affect the patient and before planning the treatments or management strategies
@@ -229,18 +237,20 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
      */
-    private $finding = [];
+    protected $finding = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to the clinical impression that remains consistent
      * regardless of what server the impression is stored on.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A record of a clinical assessment performed to determine what problem(s) may
      * affect the patient and before planning the treatments or management strategies
@@ -258,23 +268,25 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
      */
-    private $investigation = [];
+    protected $investigation = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the last assesment that was conducted bon this patient.
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
@@ -283,78 +295,85 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $previous = null;
+    protected $previous = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This a list of the relevant problems/conditions for a patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $problem = [];
+    protected $problem = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Estimate of likely outcome.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $prognosisCodeableConcept = [];
+    protected $prognosisCodeableConcept = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * RiskAssessment expressing likely outcome.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $prognosisReference = [];
+    protected $prognosisReference = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[]
      */
-    private $protocol = [];
+    protected $protocol = [];
+
     /**
      * The workflow state of a clinical impression.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRClinicalImpressionStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group of individuals assessed as part of this record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $summary = null;
+    protected $summary = null;
 
     /**
      * FHIRClinicalImpression Constructor
@@ -643,7 +662,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -681,7 +700,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action taken as part of assessment procedure.
      *
@@ -695,12 +714,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action taken as part of assessment procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $action
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addAction(FHIRReference $action = null)
     {
@@ -711,12 +730,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action taken as part of assessment procedure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $action
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setAction(array $action = [])
     {
@@ -737,7 +756,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
      *
@@ -751,12 +770,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $assessor
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setAssessor(FHIRReference $assessor = null)
     {
@@ -768,7 +787,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the type of clinical assessment performed.
      *
@@ -783,12 +802,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the type of clinical assessment performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -799,7 +818,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care this impression was created as part of.
      *
@@ -813,12 +832,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care this impression was created as part of.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $context
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setContext(FHIRReference $context = null)
     {
@@ -832,7 +851,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the documentation of the assessment was complete.
      *
@@ -849,12 +868,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the documentation of the assessment was complete.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -873,7 +892,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A summary of the context and/or cause of the assessment - why / where was it
      * performed, and what patient events/status prompted it.
@@ -888,13 +907,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A summary of the context and/or cause of the assessment - why / where was it
      * performed, and what patient events/status prompted it.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -916,7 +935,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time or period over which the subject was assessed.
      *
@@ -933,12 +952,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time or period over which the subject was assessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $effectiveDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setEffectiveDateTime($effectiveDateTime = null)
     {
@@ -957,7 +976,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The point in time or period over which the subject was assessed.
      *
@@ -971,12 +990,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The point in time or period over which the subject was assessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -1016,7 +1035,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * treatment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $finding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addFinding(FHIRClinicalImpressionFinding $finding = null)
     {
@@ -1037,7 +1056,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * treatment.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[] $finding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setFinding(array $finding = [])
     {
@@ -1058,7 +1077,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to the clinical impression that remains consistent
      * regardless of what server the impression is stored on.
@@ -1073,13 +1092,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to the clinical impression that remains consistent
      * regardless of what server the impression is stored on.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1090,13 +1109,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to the clinical impression that remains consistent
      * regardless of what server the impression is stored on.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1152,7 +1171,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * to the outcomes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation $investigation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addInvestigation(FHIRClinicalImpressionInvestigation $investigation = null)
     {
@@ -1176,7 +1195,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * to the outcomes.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[] $investigation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setInvestigation(array $investigation = [])
     {
@@ -1198,7 +1217,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
@@ -1214,13 +1233,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1232,13 +1251,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1259,7 +1278,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the last assesment that was conducted bon this patient.
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
@@ -1276,7 +1295,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the last assesment that was conducted bon this patient.
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
@@ -1284,7 +1303,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * patient's conditions changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $previous
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setPrevious(FHIRReference $previous = null)
     {
@@ -1295,7 +1314,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This a list of the relevant problems/conditions for a patient.
      *
@@ -1309,12 +1328,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This a list of the relevant problems/conditions for a patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $problem
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addProblem(FHIRReference $problem = null)
     {
@@ -1325,12 +1344,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This a list of the relevant problems/conditions for a patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $problem
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setProblem(array $problem = [])
     {
@@ -1352,7 +1371,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Estimate of likely outcome.
      *
@@ -1367,12 +1386,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Estimate of likely outcome.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $prognosisCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addPrognosisCodeableConcept(FHIRCodeableConcept $prognosisCodeableConcept = null)
     {
@@ -1384,12 +1403,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Estimate of likely outcome.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $prognosisCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setPrognosisCodeableConcept(array $prognosisCodeableConcept = [])
     {
@@ -1410,7 +1429,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * RiskAssessment expressing likely outcome.
      *
@@ -1424,12 +1443,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * RiskAssessment expressing likely outcome.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $prognosisReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addPrognosisReference(FHIRReference $prognosisReference = null)
     {
@@ -1440,12 +1459,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * RiskAssessment expressing likely outcome.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $prognosisReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setPrognosisReference(array $prognosisReference = [])
     {
@@ -1466,7 +1485,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
@@ -1481,13 +1500,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $protocol
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function addProtocol($protocol = null)
     {
@@ -1506,13 +1525,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[] $protocol
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setProtocol(array $protocol = [])
     {
@@ -1532,7 +1551,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * The workflow state of a clinical impression.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
      *
@@ -1545,12 +1564,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
 
     /**
      * The workflow state of a clinical impression.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRClinicalImpressionStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setStatus(FHIRClinicalImpressionStatus $status = null)
     {
@@ -1561,7 +1580,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group of individuals assessed as part of this record.
      *
@@ -1575,12 +1594,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group of individuals assessed as part of this record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1591,7 +1610,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
      *
@@ -1605,12 +1624,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $summary
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
+     * @return static
      */
     public function setSummary($summary = null)
     {

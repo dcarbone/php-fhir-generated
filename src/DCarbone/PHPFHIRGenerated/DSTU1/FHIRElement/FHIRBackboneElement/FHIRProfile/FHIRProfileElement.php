@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRProfileElement extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_ELEMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DEFINITION = 'definition';
     const FIELD_NAME = 'name';
@@ -98,10 +98,11 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
      */
-    private $definition = null;
+    protected $definition = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this element definition (to refer to it from other element
      * definitions using Profile.structure.element.definition.nameReference). This is a
@@ -110,27 +111,30 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
+
     /**
      * How a property is represented on the wire
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation[]
      */
-    private $representation = [];
+    protected $representation = [];
+
     /**
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
@@ -144,7 +148,7 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
      */
-    private $slicing = null;
+    protected $slicing = null;
 
     /**
      * FHIRProfileElement Constructor
@@ -242,7 +246,7 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -293,7 +297,7 @@ class FHIRProfileElement extends FHIRBackboneElement
      * than that contained for the element in the base resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function setDefinition(FHIRProfileDefinition $definition = null)
     {
@@ -303,7 +307,7 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this element definition (to refer to it from other element
      * definitions using Profile.structure.element.definition.nameReference). This is a
@@ -319,7 +323,7 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this element definition (to refer to it from other element
      * definitions using Profile.structure.element.definition.nameReference). This is a
@@ -327,7 +331,7 @@ class FHIRProfileElement extends FHIRBackboneElement
      * One use of this is to provide a name to different slices of the same element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function setName($name = null)
     {
@@ -345,7 +349,7 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
@@ -359,13 +363,13 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function setPath($path = null)
     {
@@ -383,7 +387,7 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * How a property is represented on the wire
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
@@ -397,13 +401,13 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * How a property is represented on the wire
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation $representation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function addRepresentation(FHIRPropertyRepresentation $representation = null)
     {
@@ -413,13 +417,13 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /**
      * How a property is represented on the wire
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation[] $representation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function setRepresentation(array $representation = [])
     {
@@ -467,7 +471,7 @@ class FHIRProfileElement extends FHIRBackboneElement
      * set).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing $slicing
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
+     * @return static
      */
     public function setSlicing(FHIRProfileSlicing $slicing = null)
     {

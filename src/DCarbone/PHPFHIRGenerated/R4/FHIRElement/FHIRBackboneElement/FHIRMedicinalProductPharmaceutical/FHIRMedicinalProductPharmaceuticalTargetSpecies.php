@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PHARMACEUTICAL_DOT_TARGET_SPECIES;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_WITHDRAWAL_PERIOD = 'withdrawalPeriod';
@@ -89,13 +89,14 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the species.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A pharmaceutical product described in terms of its composition and dose form.
      *
@@ -104,7 +105,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[]
      */
-    private $withdrawalPeriod = [];
+    protected $withdrawalPeriod = [];
 
     /**
      * FHIRMedicinalProductPharmaceuticalTargetSpecies Constructor
@@ -171,7 +172,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -202,7 +203,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the species.
      *
@@ -217,12 +218,12 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the species.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -250,7 +251,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * appropriate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod $withdrawalPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies
+     * @return static
      */
     public function addWithdrawalPeriod(FHIRMedicinalProductPharmaceuticalWithdrawalPeriod $withdrawalPeriod = null)
     {
@@ -265,7 +266,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * appropriate.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[] $withdrawalPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies
+     * @return static
      */
     public function setWithdrawalPeriod(array $withdrawalPeriod = [])
     {

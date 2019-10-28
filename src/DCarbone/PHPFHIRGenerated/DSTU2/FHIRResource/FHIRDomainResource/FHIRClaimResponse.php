@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * This resource provides the adjudication details from the processing of a Claim
  * resource.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRClaimResponse
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -94,7 +94,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADD_ITEM = 'addItem';
     const FIELD_COVERAGE = 'coverage';
@@ -137,7 +137,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[]
      */
-    private $addItem = [];
+    protected $addItem = [];
+
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
@@ -146,30 +147,33 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage[]
      */
-    private $coverage = [];
+    protected $coverage = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $disposition = null;
+    protected $disposition = null;
+
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
@@ -178,27 +182,30 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
      */
-    private $error = [];
+    protected $error = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $form = null;
+    protected $form = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
@@ -207,7 +214,8 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
      */
-    private $item = [];
+    protected $item = [];
+
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
@@ -216,164 +224,181 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseNote[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $organization = null;
+    protected $organization = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $originalRuleset = null;
+    protected $originalRuleset = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $outcome = null;
+    protected $outcome = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $payeeType = null;
+    protected $payeeType = null;
+
     /**
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $paymentAdjustment = null;
+    protected $paymentAdjustment = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $paymentAdjustmentReason = null;
+    protected $paymentAdjustmentReason = null;
+
     /**
      * Payable less any payment adjustment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $paymentAmount = null;
+    protected $paymentAmount = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
-    private $paymentDate = null;
+    protected $paymentDate = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
-    private $paymentRef = null;
+    protected $paymentRef = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource referrence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $request = null;
+    protected $request = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $requestOrganization = null;
+    protected $requestOrganization = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $requestProvider = null;
+    protected $requestProvider = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of funds reservation (For provider, for Patient, None).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $reserved = null;
+    protected $reserved = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    private $ruleset = null;
+    protected $ruleset = null;
+
     /**
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all
      * detail lines and additions less the Unallocated Deductible).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $totalBenefit = null;
+    protected $totalBenefit = null;
+
     /**
      * The total cost of the services reported.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $totalCost = null;
+    protected $totalCost = null;
+
     /**
      * The amount of deductible applied which was not allocated to any particular
      * service line.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $unallocDeductable = null;
+    protected $unallocDeductable = null;
 
     /**
      * FHIRClaimResponse Constructor
@@ -673,7 +698,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -728,7 +753,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * The first tier service adjudications for payor added services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem $addItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function addAddItem(FHIRClaimResponseAddItem $addItem = null)
     {
@@ -743,7 +768,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * The first tier service adjudications for payor added services.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[] $addItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setAddItem(array $addItem = [])
     {
@@ -781,7 +806,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Financial instrument by which payment information for health care.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage $coverage
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function addCoverage(FHIRClaimResponseCoverage $coverage = null)
     {
@@ -796,7 +821,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Financial instrument by which payment information for health care.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage[] $coverage
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setCoverage(array $coverage = [])
     {
@@ -820,7 +845,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
      *
@@ -837,12 +862,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $created
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -861,7 +886,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
      *
@@ -875,12 +900,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $disposition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setDisposition($disposition = null)
     {
@@ -916,7 +941,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Mutually exclusive with Services Provided (Item).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $error
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function addError(FHIRClaimResponseError $error = null)
     {
@@ -931,7 +956,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Mutually exclusive with Services Provided (Item).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[] $error
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setError(array $error = [])
     {
@@ -952,7 +977,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
      *
@@ -966,12 +991,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $form
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setForm(FHIRCoding $form = null)
     {
@@ -982,7 +1007,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
      *
@@ -996,12 +1021,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1012,12 +1037,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1055,7 +1080,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * The first tier service adjudications for submitted services.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem $item
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function addItem(FHIRClaimResponseItem $item = null)
     {
@@ -1070,7 +1095,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * The first tier service adjudications for submitted services.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setItem(array $item = [])
     {
@@ -1108,7 +1133,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Note text.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseNote $note
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function addNote(FHIRClaimResponseNote $note = null)
     {
@@ -1123,7 +1148,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Note text.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseNote[] $note
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1144,7 +1169,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
      *
@@ -1158,12 +1183,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $organization
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setOrganization(FHIRReference $organization = null)
     {
@@ -1174,7 +1199,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
@@ -1189,13 +1214,13 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $originalRuleset
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setOriginalRuleset(FHIRCoding $originalRuleset = null)
     {
@@ -1206,7 +1231,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
@@ -1221,13 +1246,13 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $outcome
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setOutcome($outcome = null)
     {
@@ -1246,7 +1271,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
      *
@@ -1260,12 +1285,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $payeeType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setPayeeType(FHIRCoding $payeeType = null)
     {
@@ -1289,7 +1314,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * adjudication of this transaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setPaymentAdjustment(FHIRMoney $paymentAdjustment = null)
     {
@@ -1300,7 +1325,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
      *
@@ -1314,12 +1339,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $paymentAdjustmentReason
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setPaymentAdjustmentReason(FHIRCoding $paymentAdjustmentReason = null)
     {
@@ -1341,7 +1366,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Payable less any payment adjustment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setPaymentAmount(FHIRMoney $paymentAmount = null)
     {
@@ -1353,7 +1378,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
      *
@@ -1368,12 +1393,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate $paymentDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setPaymentDate($paymentDate = null)
     {
@@ -1392,7 +1417,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
      *
@@ -1406,12 +1431,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $paymentRef
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setPaymentRef(FHIRIdentifier $paymentRef = null)
     {
@@ -1422,7 +1447,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource referrence.
      *
@@ -1436,12 +1461,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource referrence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $request
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setRequest(FHIRReference $request = null)
     {
@@ -1452,7 +1477,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
      *
@@ -1466,12 +1491,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $requestOrganization
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setRequestOrganization(FHIRReference $requestOrganization = null)
     {
@@ -1482,7 +1507,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
      *
@@ -1496,12 +1521,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $requestProvider
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setRequestProvider(FHIRReference $requestProvider = null)
     {
@@ -1512,7 +1537,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of funds reservation (For provider, for Patient, None).
      *
@@ -1526,12 +1551,12 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of funds reservation (For provider, for Patient, None).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $reserved
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setReserved(FHIRCoding $reserved = null)
     {
@@ -1542,7 +1567,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
@@ -1557,13 +1582,13 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $ruleset
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setRuleset(FHIRCoding $ruleset = null)
     {
@@ -1587,7 +1612,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * detail lines and additions less the Unallocated Deductible).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setTotalBenefit(FHIRMoney $totalBenefit = null)
     {
@@ -1609,7 +1634,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * The total cost of the services reported.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setTotalCost(FHIRMoney $totalCost = null)
     {
@@ -1633,7 +1658,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * service line.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClaimResponse
+     * @return static
      */
     public function setUnallocDeductable(FHIRMoney $unallocDeductable = null)
     {

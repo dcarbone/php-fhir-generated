@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CHARGE_ITEM_DEFINITION_DOT_APPLICABILITY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
@@ -94,18 +94,19 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression that returns true or false, indicating whether the condition is
      * satisfied. When using FHIRPath expressions, the %context environment variable
@@ -114,18 +115,19 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $expression = null;
+    protected $expression = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $language = null;
+    protected $language = null;
 
     /**
      * FHIRChargeItemDefinitionApplicability Constructor
@@ -199,7 +201,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -229,7 +231,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
@@ -244,13 +246,13 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -269,7 +271,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression that returns true or false, indicating whether the condition is
      * satisfied. When using FHIRPath expressions, the %context environment variable
@@ -286,7 +288,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression that returns true or false, indicating whether the condition is
      * satisfied. When using FHIRPath expressions, the %context environment variable
@@ -294,7 +296,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * definition is applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $expression
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
+     * @return static
      */
     public function setExpression($expression = null)
     {
@@ -313,7 +315,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
@@ -328,13 +330,13 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $language
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
+     * @return static
      */
     public function setLanguage($language = null)
     {

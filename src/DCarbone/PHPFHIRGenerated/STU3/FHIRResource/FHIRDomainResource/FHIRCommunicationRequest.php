@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * A request to convey information; e.g. the CDS system proposes that an alert be
  * sent to a responsible provider, the CDS system proposes that the public health
  * agency be notified about a reportable condition.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCommunicationRequest
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -92,7 +92,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMMUNICATION_REQUEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORED_ON = 'authoredOn';
     const FIELD_AUTHORED_ON_EXT = '_authoredOn';
@@ -128,51 +128,55 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For draft requests, indicates the date of initial creation. For requests with
      * other statuses, indicates the date of activation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $authoredOn = null;
+    protected $authoredOn = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan or proposal that is fulfilled in whole or in part by this request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $basedOn = [];
+    protected $basedOn = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $category = [];
+    protected $category = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care within which the communication request was
      * created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $context = null;
+    protected $context = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
@@ -180,11 +184,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $groupIdentifier = null;
+    protected $groupIdentifier = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique ID of this request for reference purposes. It must be provided if user
      * wants it returned as part of any output, otherwise it will be autogenerated, if
@@ -192,53 +197,58 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $medium = [];
+    protected $medium = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the request by the requester, sender, recipient, subject or
      * other participants.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $occurrenceDateTime = null;
+    protected $occurrenceDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $occurrencePeriod = null;
+    protected $occurrencePeriod = null;
+
     /**
      * A request to convey information; e.g. the CDS system proposes that an alert be
      * sent to a responsible provider, the CDS system proposes that the public health
@@ -248,59 +258,65 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload[]
      */
-    private $payload = [];
+    protected $payload = [];
+
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the request is being made in coded or textual form.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reasonCode = [];
+    protected $reasonCode = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $reasonReference = [];
+    protected $reasonReference = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, device,
      * group, or care team) which is the intended target of the communication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $recipient = [];
+    protected $recipient = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $replaces = [];
+    protected $replaces = [];
+
     /**
      * A request to convey information; e.g. the CDS system proposes that an alert be
      * sent to a responsible provider, the CDS system proposes that the public health
@@ -311,47 +327,51 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestRequester
      */
-    private $requester = null;
+    protected $requester = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $sender = null;
+    protected $sender = null;
+
     /**
      * The status of the communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group that is the focus of this communication request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resources which were related to producing this communication request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $topic = [];
+    protected $topic = [];
 
     /**
      * FHIRCommunicationRequest Constructor
@@ -656,7 +676,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -697,7 +717,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For draft requests, indicates the date of initial creation. For requests with
      * other statuses, indicates the date of activation.
@@ -715,13 +735,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For draft requests, indicates the date of initial creation. For requests with
      * other statuses, indicates the date of activation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $authoredOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setAuthoredOn($authoredOn = null)
     {
@@ -740,7 +760,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan or proposal that is fulfilled in whole or in part by this request.
      *
@@ -754,12 +774,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan or proposal that is fulfilled in whole or in part by this request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn = null)
     {
@@ -770,12 +790,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan or proposal that is fulfilled in whole or in part by this request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setBasedOn(array $basedOn = [])
     {
@@ -797,7 +817,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
@@ -813,13 +833,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category = null)
     {
@@ -831,13 +851,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $category
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setCategory(array $category = [])
     {
@@ -858,7 +878,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care within which the communication request was
      * created.
@@ -873,13 +893,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care within which the communication request was
      * created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $context
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setContext(FHIRReference $context = null)
     {
@@ -890,7 +910,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
@@ -906,14 +926,14 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
      * requisition, prescription or similar form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $groupIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setGroupIdentifier(FHIRIdentifier $groupIdentifier = null)
     {
@@ -924,7 +944,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique ID of this request for reference purposes. It must be provided if user
      * wants it returned as part of any output, otherwise it will be autogenerated, if
@@ -940,14 +960,14 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique ID of this request for reference purposes. It must be provided if user
      * wants it returned as part of any output, otherwise it will be autogenerated, if
      * needed, by CDS system. Does not need to be the actual ID of the source system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -958,14 +978,14 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique ID of this request for reference purposes. It must be provided if user
      * wants it returned as part of any output, otherwise it will be autogenerated, if
      * needed, by CDS system. Does not need to be the actual ID of the source system.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -987,7 +1007,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
      *
@@ -1002,12 +1022,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $medium
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addMedium(FHIRCodeableConcept $medium = null)
     {
@@ -1019,12 +1039,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $medium
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setMedium(array $medium = [])
     {
@@ -1046,7 +1066,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the request by the requester, sender, recipient, subject or
      * other participants.
@@ -1062,13 +1082,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the request by the requester, sender, recipient, subject or
      * other participants.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1080,13 +1100,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the request by the requester, sender, recipient, subject or
      * other participants.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1110,7 +1130,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
      *
@@ -1127,12 +1147,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setOccurrenceDateTime($occurrenceDateTime = null)
     {
@@ -1151,7 +1171,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
      *
@@ -1165,12 +1185,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $occurrencePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setOccurrencePeriod(FHIRPeriod $occurrencePeriod = null)
     {
@@ -1200,7 +1220,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload $payload
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addPayload(FHIRCommunicationRequestPayload $payload = null)
     {
@@ -1216,7 +1236,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload[] $payload
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setPayload(array $payload = [])
     {
@@ -1236,7 +1256,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
 
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
@@ -1250,13 +1270,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
 
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority $priority
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setPriority(FHIRRequestPriority $priority = null)
     {
@@ -1268,7 +1288,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the request is being made in coded or textual form.
      *
@@ -1283,12 +1303,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the request is being made in coded or textual form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
@@ -1300,12 +1320,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the request is being made in coded or textual form.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $reasonCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setReasonCode(array $reasonCode = [])
     {
@@ -1326,7 +1346,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
      *
@@ -1340,12 +1360,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference = null)
     {
@@ -1356,12 +1376,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setReasonReference(array $reasonReference = [])
     {
@@ -1382,7 +1402,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, device,
      * group, or care team) which is the intended target of the communication.
@@ -1397,13 +1417,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, device,
      * group, or care team) which is the intended target of the communication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $recipient
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient = null)
     {
@@ -1414,13 +1434,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, device,
      * group, or care team) which is the intended target of the communication.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $recipient
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setRecipient(array $recipient = [])
     {
@@ -1441,7 +1461,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
@@ -1455,12 +1475,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $replaces
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addReplaces(FHIRReference $replaces = null)
     {
@@ -1471,12 +1491,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $replaces
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setReplaces(array $replaces = [])
     {
@@ -1518,7 +1538,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * activation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestRequester $requester
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setRequester(FHIRCommunicationRequestRequester $requester = null)
     {
@@ -1529,7 +1549,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
@@ -1544,13 +1564,13 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $sender
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setSender(FHIRReference $sender = null)
     {
@@ -1560,7 +1580,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
 
     /**
      * The status of the communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
      *
@@ -1573,12 +1593,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
 
     /**
      * The status of the communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setStatus(FHIRRequestStatus $status = null)
     {
@@ -1589,7 +1609,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group that is the focus of this communication request.
      *
@@ -1603,12 +1623,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group that is the focus of this communication request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1619,7 +1639,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resources which were related to producing this communication request.
      *
@@ -1633,12 +1653,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resources which were related to producing this communication request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $topic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function addTopic(FHIRReference $topic = null)
     {
@@ -1649,12 +1669,12 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resources which were related to producing this communication request.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $topic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
+     * @return static
      */
     public function setTopic(array $topic = [])
     {

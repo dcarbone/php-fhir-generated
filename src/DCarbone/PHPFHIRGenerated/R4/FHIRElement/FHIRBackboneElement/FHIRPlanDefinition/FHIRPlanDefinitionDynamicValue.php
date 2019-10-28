@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_DYNAMIC_VALUE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXPRESSION = 'expression';
     const FIELD_PATH = 'path';
@@ -94,17 +94,18 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression specifying the value of the customized element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
-    private $expression = null;
+    protected $expression = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression. The specified
@@ -117,7 +118,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
 
     /**
      * FHIRPlanDefinitionDynamicValue Constructor
@@ -174,7 +175,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -206,7 +207,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression specifying the value of the customized element.
      *
@@ -222,12 +223,12 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An expression specifying the value of the customized element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $expression
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue
+     * @return static
      */
     public function setExpression(FHIRExpression $expression = null)
     {
@@ -238,7 +239,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression. The specified
@@ -259,7 +260,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression. The specified
@@ -271,7 +272,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      * Profile](fhirpath.html#simple) for full details).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue
+     * @return static
      */
     public function setPath($path = null)
     {

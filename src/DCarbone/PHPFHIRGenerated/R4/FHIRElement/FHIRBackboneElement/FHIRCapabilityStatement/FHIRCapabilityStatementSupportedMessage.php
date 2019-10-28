@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_SUPPORTED_MESSAGE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DEFINITION = 'definition';
     const FIELD_DEFINITION_EXT = '_definition';
@@ -93,7 +93,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Points to a message definition that identifies the messaging event, message
@@ -101,16 +101,17 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $definition = null;
+    protected $definition = null;
+
     /**
      * The mode of a message capability statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREventCapabilityMode
      */
-    private $mode = null;
+    protected $mode = null;
 
     /**
      * FHIRCapabilityStatementSupportedMessage Constructor
@@ -172,7 +173,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -202,7 +203,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Points to a message definition that identifies the messaging event, message
@@ -218,14 +219,14 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Points to a message definition that identifies the messaging event, message
      * structure, allowed responses, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $definition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage
+     * @return static
      */
     public function setDefinition($definition = null)
     {
@@ -243,7 +244,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
 
     /**
      * The mode of a message capability statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
      *
@@ -256,12 +257,12 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement
 
     /**
      * The mode of a message capability statement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREventCapabilityMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage
+     * @return static
      */
     public function setMode(FHIREventCapabilityMode $mode = null)
     {

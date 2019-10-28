@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_MAPPING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMMENTS = 'comments';
     const FIELD_COMMENTS_EXT = '_comments';
@@ -91,19 +91,20 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments about this mapping, including version notes, issues, scope limitations,
      * and other important notes for usage.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $comments = null;
+    protected $comments = null;
+
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An Internal id that is used to identify this mapping set when specific mappings
@@ -111,25 +112,27 @@ class FHIRProfileMapping extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    private $identity = null;
+    protected $identity = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name for the specification that is being mapped to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that identifies the specification that this mapping is expressed to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $uri = null;
+    protected $uri = null;
 
     /**
      * FHIRProfileMapping Constructor
@@ -215,7 +218,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -244,7 +247,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments about this mapping, including version notes, issues, scope limitations,
      * and other important notes for usage.
@@ -258,13 +261,13 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments about this mapping, including version notes, issues, scope limitations,
      * and other important notes for usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $comments
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping
+     * @return static
      */
     public function setComments($comments = null)
     {
@@ -284,7 +287,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An Internal id that is used to identify this mapping set when specific mappings
@@ -301,14 +304,14 @@ class FHIRProfileMapping extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An Internal id that is used to identify this mapping set when specific mappings
      * are made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $identity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping
+     * @return static
      */
     public function setIdentity($identity = null)
     {
@@ -326,7 +329,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name for the specification that is being mapped to.
      *
@@ -339,12 +342,12 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name for the specification that is being mapped to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping
+     * @return static
      */
     public function setName($name = null)
     {
@@ -362,7 +365,7 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that identifies the specification that this mapping is expressed to.
      *
@@ -375,12 +378,12 @@ class FHIRProfileMapping extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that identifies the specification that this mapping is expressed to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $uri
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping
+     * @return static
      */
     public function setUri($uri = null)
     {

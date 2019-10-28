@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * The shelf-life and storage information for a medicinal product item or container
  * can be described using this class.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRProductShelfLife
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement
@@ -84,7 +84,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PRODUCT_SHELF_LIFE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
@@ -97,19 +97,20 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
@@ -118,12 +119,13 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
@@ -131,12 +133,13 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $specialPrecautionsForStorage = [];
+    protected $specialPrecautionsForStorage = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This describes the shelf life, taking into account various scenarios such as
      * shelf life of the packaged Medicinal Product itself, shelf life after
@@ -147,7 +150,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRProductShelfLife Constructor
@@ -231,7 +234,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -262,7 +265,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
      *
@@ -277,12 +280,12 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -295,7 +298,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
@@ -314,7 +317,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The shelf life time period can be specified using a numerical value for the
      * period of time and its unit of time measurement The unit of measurement shall be
@@ -322,7 +325,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * and the symbol identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
+     * @return static
      */
     public function setPeriod(FHIRQuantity $period = null)
     {
@@ -334,7 +337,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
@@ -351,14 +354,14 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $specialPrecautionsForStorage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
+     * @return static
      */
     public function addSpecialPrecautionsForStorage(FHIRCodeableConcept $specialPrecautionsForStorage = null)
     {
@@ -370,14 +373,14 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $specialPrecautionsForStorage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
+     * @return static
      */
     public function setSpecialPrecautionsForStorage(array $specialPrecautionsForStorage = [])
     {
@@ -399,7 +402,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This describes the shelf life, taking into account various scenarios such as
      * shelf life of the packaged Medicinal Product itself, shelf life after
@@ -419,7 +422,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This describes the shelf life, taking into account various scenarios such as
      * shelf life of the packaged Medicinal Product itself, shelf life after
@@ -429,7 +432,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * shall be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPayme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION_DOT_PROCESS_NOTE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
@@ -91,21 +91,22 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $text = null;
+    protected $text = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNoteType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRPaymentReconciliationProcessNote Constructor
@@ -167,7 +168,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -197,7 +198,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
      *
@@ -211,12 +212,12 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote
+     * @return static
      */
     public function setText($text = null)
     {
@@ -233,7 +234,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
      *
@@ -245,12 +246,12 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNoteType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote
+     * @return static
      */
     public function setType(FHIRNoteType $type = null)
     {

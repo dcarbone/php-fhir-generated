@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATIFIER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_STRATUM = 'stratum';
@@ -90,13 +90,14 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of this stratifier, as defined in the measure definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
      * and optionally a reference to the resources involved in that calculation.
@@ -107,7 +108,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
-    private $stratum = [];
+    protected $stratum = [];
 
     /**
      * FHIRMeasureReportStratifier Constructor
@@ -182,7 +183,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -213,7 +214,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of this stratifier, as defined in the measure definition.
      *
@@ -228,12 +229,12 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of this stratifier, as defined in the measure definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code = null)
     {
@@ -245,12 +246,12 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of this stratifier, as defined in the measure definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -292,7 +293,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * strata, one for each possible gender value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier
+     * @return static
      */
     public function addStratum(FHIRMeasureReportStratum $stratum = null)
     {
@@ -309,7 +310,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * strata, one for each possible gender value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[] $stratum
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier
+     * @return static
      */
     public function setStratum(array $stratum = [])
     {

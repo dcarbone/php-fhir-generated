@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * The clinical particulars - indications, contraindications etc. of a medicinal
  * product, including for regulatory purposes.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicinalProductClinicals
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -84,7 +84,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTRAINDICATION = 'contraindication';
     const FIELD_INTERACTIONS = 'interactions';
@@ -99,7 +99,8 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication[]
      */
-    private $contraindication = [];
+    protected $contraindication = [];
+
     /**
      * The clinical particulars - indications, contraindications etc. of a medicinal
      * product, including for regulatory purposes.
@@ -109,7 +110,8 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions[]
      */
-    private $interactions = [];
+    protected $interactions = [];
+
     /**
      * The clinical particulars - indications, contraindications etc. of a medicinal
      * product, including for regulatory purposes.
@@ -118,7 +120,8 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication[]
      */
-    private $therapeuticIndication = [];
+    protected $therapeuticIndication = [];
+
     /**
      * The clinical particulars - indications, contraindications etc. of a medicinal
      * product, including for regulatory purposes.
@@ -127,7 +130,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects[]
      */
-    private $undesirableEffects = [];
+    protected $undesirableEffects = [];
 
     /**
      * FHIRMedicinalProductClinicals Constructor
@@ -225,7 +228,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -272,7 +275,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * Contraindication for the medicinal product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication $contraindication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function addContraindication(FHIRMedicinalProductClinicalsContraindication $contraindication = null)
     {
@@ -287,7 +290,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * Contraindication for the medicinal product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication[] $contraindication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function setContraindication(array $contraindication = [])
     {
@@ -327,7 +330,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * other forms of interactions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions $interactions
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function addInteractions(FHIRMedicinalProductClinicalsInteractions $interactions = null)
     {
@@ -343,7 +346,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * other forms of interactions.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions[] $interactions
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function setInteractions(array $interactions = [])
     {
@@ -381,7 +384,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * Indication for the Medicinal Product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication $therapeuticIndication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function addTherapeuticIndication(FHIRMedicinalProductClinicalsTherapeuticIndication $therapeuticIndication = null)
     {
@@ -396,7 +399,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * Indication for the Medicinal Product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication[] $therapeuticIndication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function setTherapeuticIndication(array $therapeuticIndication = [])
     {
@@ -434,7 +437,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * Describe the undesirable effects of the medicinal product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects $undesirableEffects
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function addUndesirableEffects(FHIRMedicinalProductClinicalsUndesirableEffects $undesirableEffects = null)
     {
@@ -449,7 +452,7 @@ class FHIRMedicinalProductClinicals extends FHIRDomainResource
      * Describe the undesirable effects of the medicinal product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects[] $undesirableEffects
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals
+     * @return static
      */
     public function setUndesirableEffects(array $undesirableEffects = [])
     {

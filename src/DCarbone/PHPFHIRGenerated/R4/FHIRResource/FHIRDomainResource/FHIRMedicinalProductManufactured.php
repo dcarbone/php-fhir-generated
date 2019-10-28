@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * The manufactured item as contained in the packaged medicinal product.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicinalProductManufactured
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -84,7 +84,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_INGREDIENT = 'ingredient';
     const FIELD_MANUFACTURED_DOSE_FORM = 'manufacturedDoseForm';
@@ -98,82 +98,88 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $ingredient = [];
+    protected $ingredient = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $manufacturedDoseForm = null;
+    protected $manufacturedDoseForm = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $manufacturer = [];
+    protected $manufacturer = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $otherCharacteristics = [];
+    protected $otherCharacteristics = [];
+
     /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
-    private $physicalCharacteristics = null;
+    protected $physicalCharacteristics = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $unitOfPresentation = null;
+    protected $unitOfPresentation = null;
 
     /**
      * FHIRMedicinalProductManufactured Constructor
@@ -289,7 +295,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -327,7 +333,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
      *
@@ -341,12 +347,12 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function addIngredient(FHIRReference $ingredient = null)
     {
@@ -357,12 +363,12 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setIngredient(array $ingredient = [])
     {
@@ -384,7 +390,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
@@ -400,13 +406,13 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $manufacturedDoseForm
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setManufacturedDoseForm(FHIRCodeableConcept $manufacturedDoseForm = null)
     {
@@ -417,7 +423,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
@@ -432,13 +438,13 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer = null)
     {
@@ -449,13 +455,13 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setManufacturer(array $manufacturer = [])
     {
@@ -477,7 +483,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
@@ -492,12 +498,12 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics = null)
     {
@@ -509,12 +515,12 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $otherCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setOtherCharacteristics(array $otherCharacteristics = [])
     {
@@ -536,7 +542,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
@@ -551,12 +557,12 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setPhysicalCharacteristics(FHIRProdCharacteristic $physicalCharacteristics = null)
     {
@@ -569,7 +575,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
      *
@@ -585,12 +591,12 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -602,7 +608,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
@@ -618,13 +624,13 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $unitOfPresentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return static
      */
     public function setUnitOfPresentation(FHIRCodeableConcept $unitOfPresentation = null)
     {

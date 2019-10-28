@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * A reference from one resource to another.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRReference
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -80,7 +80,7 @@ class FHIRReference extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REFERENCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DISPLAY = 'display';
     const FIELD_DISPLAY_EXT = '_display';
@@ -92,18 +92,19 @@ class FHIRReference extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the other resource. This is used when there is no way to
      * reference the other resource directly, either because the entity is not
@@ -116,11 +117,12 @@ class FHIRReference extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a location at which the other resource is found. The reference
      * may be a relative reference, in which case it is relative to the service base
@@ -131,7 +133,7 @@ class FHIRReference extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $reference = null;
+    protected $reference = null;
 
     /**
      * FHIRReference Constructor
@@ -205,7 +207,7 @@ class FHIRReference extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -235,7 +237,7 @@ class FHIRReference extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
@@ -250,13 +252,13 @@ class FHIRReference extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -275,7 +277,7 @@ class FHIRReference extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the other resource. This is used when there is no way to
      * reference the other resource directly, either because the entity is not
@@ -296,7 +298,7 @@ class FHIRReference extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the other resource. This is used when there is no way to
      * reference the other resource directly, either because the entity is not
@@ -308,7 +310,7 @@ class FHIRReference extends FHIRElement
      * of a FHIR resource type allowed by the reference.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -319,7 +321,7 @@ class FHIRReference extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a location at which the other resource is found. The reference
      * may be a relative reference, in which case it is relative to the service base
@@ -338,7 +340,7 @@ class FHIRReference extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a location at which the other resource is found. The reference
      * may be a relative reference, in which case it is relative to the service base
@@ -348,7 +350,7 @@ class FHIRReference extends FHIRElement
      * Internal fragment references (start with '#') refer to contained resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $reference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @return static
      */
     public function setReference($reference = null)
     {

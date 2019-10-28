@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINS = 'contains';
     const FIELD_IDENTIFIER = 'identifier';
@@ -90,11 +90,12 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
-    private $contains = [];
+    protected $contains = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that uniquely identifies this expansion of the valueset. Systems
      * may re-use the same identifier as long as the expansion and the definition
@@ -102,16 +103,17 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time valueset expansion happened.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
-    private $timestamp = null;
+    protected $timestamp = null;
 
     /**
      * FHIRValueSetExpansion Constructor
@@ -188,7 +190,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -233,7 +235,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * Codes in the value set.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function addContains(FHIRValueSetContains $contains = null)
     {
@@ -247,7 +249,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * Codes in the value set.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[] $contains
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setContains(array $contains = [])
     {
@@ -268,7 +270,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that uniquely identifies this expansion of the valueset. Systems
      * may re-use the same identifier as long as the expansion and the definition
@@ -284,14 +286,14 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that uniquely identifies this expansion of the valueset. Systems
      * may re-use the same identifier as long as the expansion and the definition
      * remain the same, but are not required to do so.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -301,7 +303,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time valueset expansion happened.
      *
@@ -314,12 +316,12 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time valueset expansion happened.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $timestamp
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setTimestamp($timestamp = null)
     {

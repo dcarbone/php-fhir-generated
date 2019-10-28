@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,10 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     /** @var null|integer */
-    private $value = null;
+    protected $value = null;
 
     const INT_MAX = 2147483648;
     const INT_MIN = -2147483648;
@@ -92,7 +92,7 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
     }
     /**
      * @param null|integer|string $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive
+     * @return static
      */
     public function setValue($value)
     {
@@ -158,7 +158,7 @@ class FHIRPositiveIntPrimitive implements PHPFHIRTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {

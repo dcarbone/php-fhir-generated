@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_CARDINALITY_BEHAVIOR = 'cardinalityBehavior';
@@ -155,29 +155,32 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
-    private $action = [];
+    protected $action = [];
+
     /**
      * Defines behavior for an action or a group for how many times that item may be
      * repeated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
      */
-    private $cardinalityBehavior = null;
+    protected $cardinalityBehavior = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a the section of a documentation template.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * This resource allows for the definition of various types of plans as a sharable,
      * consumable, and executable artifact. The resource is general enough to support
@@ -189,34 +192,37 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
      */
-    private $condition = [];
+    protected $condition = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $definition = null;
+    protected $definition = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description of the action used to provide a summary to display to the
      * user.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
@@ -224,7 +230,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
-    private $documentation = [];
+    protected $documentation = [];
+
     /**
      * This resource allows for the definition of various types of plans as a sharable,
      * consumable, and executable artifact. The resource is general enough to support
@@ -238,13 +245,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
      */
-    private $dynamicValue = [];
+    protected $dynamicValue = [];
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies goals that this action supports. The reference must be to a goal
@@ -252,48 +260,53 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId[]
      */
-    private $goalId = [];
+    protected $goalId = [];
+
     /**
      * Defines organization behavior of a group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
      */
-    private $groupingBehavior = null;
+    protected $groupingBehavior = null;
+
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines input data requirements for the action.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[]
      */
-    private $input = [];
+    protected $input = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A user-visible label for the action.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $label = null;
+    protected $label = null;
+
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the outputs of the action, if any.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[]
      */
-    private $output = [];
+    protected $output = [];
+
     /**
      * This resource allows for the definition of various types of plans as a sharable,
      * consumable, and executable artifact. The resource is general enough to support
@@ -304,27 +317,30 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * Defines selection frequency behavior for an action or group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
      */
-    private $precheckBehavior = null;
+    protected $precheckBehavior = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of why this action is necessary or appropriate.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reason = [];
+    protected $reason = [];
+
     /**
      * This resource allows for the definition of various types of plans as a sharable,
      * consumable, and executable artifact. The resource is general enough to support
@@ -336,29 +352,32 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[]
      */
-    private $relatedAction = [];
+    protected $relatedAction = [];
+
     /**
      * Defines requiredness behavior for selecting an action or an action group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the requiredness behavior for the action.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
      */
-    private $requiredBehavior = null;
+    protected $requiredBehavior = null;
+
     /**
      * Defines selection behavior of a group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
      */
-    private $selectionBehavior = null;
+    protected $selectionBehavior = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
@@ -366,50 +385,55 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $textEquivalent = null;
+    protected $textEquivalent = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $timingDateTime = null;
+    protected $timingDateTime = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $timingDuration = null;
+    protected $timingDuration = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $timingPeriod = null;
+    protected $timingPeriod = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $timingRange = null;
+    protected $timingRange = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -417,27 +441,29 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $timingTiming = null;
+    protected $timingTiming = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
@@ -445,27 +471,29 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $transform = null;
+    protected $transform = null;
+
     /**
      * A description of a triggering event.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of when the action should be triggered.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[]
      */
-    private $triggerDefinition = [];
+    protected $triggerDefinition = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRPlanDefinitionAction Constructor
@@ -859,7 +887,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -916,7 +944,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * chosen as part of realizing the action definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addAction(FHIRPlanDefinitionAction $action = null)
     {
@@ -936,7 +964,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * chosen as part of realizing the action definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[] $action
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setAction(array $action = [])
     {
@@ -957,7 +985,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * Defines behavior for an action or a group for how many times that item may be
      * repeated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
      *
@@ -971,12 +999,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * Defines behavior for an action or a group for how many times that item may be
      * repeated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setCardinalityBehavior(FHIRActionCardinalityBehavior $cardinalityBehavior = null)
     {
@@ -988,7 +1016,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a the section of a documentation template.
@@ -1004,13 +1032,13 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a the section of a documentation template.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code = null)
     {
@@ -1022,13 +1050,13 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a the section of a documentation template.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -1072,7 +1100,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * for the action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition $condition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addCondition(FHIRPlanDefinitionCondition $condition = null)
     {
@@ -1090,7 +1118,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * for the action.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[] $condition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setCondition(array $condition = [])
     {
@@ -1111,7 +1139,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
@@ -1126,13 +1154,13 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an ActivityDefinition that describes the action to be taken in
      * detail, or a PlanDefinition that describes a series of actions to be taken.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setDefinition(FHIRReference $definition = null)
     {
@@ -1143,7 +1171,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description of the action used to provide a summary to display to the
      * user.
@@ -1158,13 +1186,13 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description of the action used to provide a summary to display to the
      * user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1184,7 +1212,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
@@ -1201,14 +1229,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact $documentation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation = null)
     {
@@ -1220,14 +1248,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[] $documentation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setDocumentation(array $documentation = [])
     {
@@ -1275,7 +1303,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * the weight, and the path on the resource that would contain the result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue $dynamicValue
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addDynamicValue(FHIRPlanDefinitionDynamicValue $dynamicValue = null)
     {
@@ -1295,7 +1323,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * the weight, and the path on the resource that would contain the result.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[] $dynamicValue
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setDynamicValue(array $dynamicValue = [])
     {
@@ -1318,7 +1346,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies goals that this action supports. The reference must be to a goal
@@ -1336,14 +1364,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies goals that this action supports. The reference must be to a goal
      * element defined within this plan definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $goalId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addGoalId($goalId = null)
     {
@@ -1364,14 +1392,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies goals that this action supports. The reference must be to a goal
      * element defined within this plan definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId[] $goalId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setGoalId(array $goalId = [])
     {
@@ -1391,7 +1419,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines organization behavior of a group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
      *
@@ -1404,12 +1432,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines organization behavior of a group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setGroupingBehavior(FHIRActionGroupingBehavior $groupingBehavior = null)
     {
@@ -1421,7 +1449,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines input data requirements for the action.
      *
@@ -1436,12 +1464,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines input data requirements for the action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement $input
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addInput(FHIRDataRequirement $input = null)
     {
@@ -1453,12 +1481,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines input data requirements for the action.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[] $input
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setInput(array $input = [])
     {
@@ -1479,7 +1507,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A user-visible label for the action.
      *
@@ -1493,12 +1521,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A user-visible label for the action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $label
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setLabel($label = null)
     {
@@ -1518,7 +1546,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the outputs of the action, if any.
      *
@@ -1533,12 +1561,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the outputs of the action, if any.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement $output
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addOutput(FHIRDataRequirement $output = null)
     {
@@ -1550,12 +1578,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the outputs of the action, if any.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[] $output
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setOutput(array $output = [])
     {
@@ -1597,7 +1625,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Indicates who should participate in performing the action described.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addParticipant(FHIRPlanDefinitionParticipant $participant = null)
     {
@@ -1614,7 +1642,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Indicates who should participate in performing the action described.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -1634,7 +1662,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines selection frequency behavior for an action or group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
      *
@@ -1647,12 +1675,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines selection frequency behavior for an action or group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setPrecheckBehavior(FHIRActionPrecheckBehavior $precheckBehavior = null)
     {
@@ -1664,7 +1692,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of why this action is necessary or appropriate.
      *
@@ -1679,12 +1707,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of why this action is necessary or appropriate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason = null)
     {
@@ -1696,12 +1724,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of why this action is necessary or appropriate.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setReason(array $reason = [])
     {
@@ -1745,7 +1773,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * of".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $relatedAction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addRelatedAction(FHIRPlanDefinitionRelatedAction $relatedAction = null)
     {
@@ -1763,7 +1791,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * of".
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[] $relatedAction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setRelatedAction(array $relatedAction = [])
     {
@@ -1783,7 +1811,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines requiredness behavior for selecting an action or an action group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the requiredness behavior for the action.
      *
@@ -1796,12 +1824,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines requiredness behavior for selecting an action or an action group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the requiredness behavior for the action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setRequiredBehavior(FHIRActionRequiredBehavior $requiredBehavior = null)
     {
@@ -1811,7 +1839,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines selection behavior of a group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
      *
@@ -1824,12 +1852,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /**
      * Defines selection behavior of a group
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setSelectionBehavior(FHIRActionSelectionBehavior $selectionBehavior = null)
     {
@@ -1840,7 +1868,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
@@ -1856,14 +1884,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that may not be capable of interpreting it dynamically.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $textEquivalent
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTextEquivalent($textEquivalent = null)
     {
@@ -1885,7 +1913,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An optional value describing when the action should be performed.
      *
@@ -1902,12 +1930,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $timingDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTimingDateTime($timingDateTime = null)
     {
@@ -1926,7 +1954,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
@@ -1940,12 +1968,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTimingDuration(FHIRDuration $timingDuration = null)
     {
@@ -1956,7 +1984,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
@@ -1970,12 +1998,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $timingPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTimingPeriod(FHIRPeriod $timingPeriod = null)
     {
@@ -1986,7 +2014,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
@@ -2000,12 +2028,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $timingRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTimingRange(FHIRRange $timingRange = null)
     {
@@ -2020,7 +2048,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
@@ -2038,12 +2066,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $timingTiming
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTimingTiming(FHIRTiming $timingTiming = null)
     {
@@ -2054,7 +2082,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
      *
@@ -2068,12 +2096,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -2092,7 +2120,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
@@ -2108,14 +2136,14 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $transform
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTransform(FHIRReference $transform = null)
     {
@@ -2126,7 +2154,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A description of a triggering event.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of when the action should be triggered.
      *
@@ -2140,12 +2168,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A description of a triggering event.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of when the action should be triggered.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition $triggerDefinition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function addTriggerDefinition(FHIRTriggerDefinition $triggerDefinition = null)
     {
@@ -2156,12 +2184,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A description of a triggering event.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of when the action should be triggered.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[] $triggerDefinition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setTriggerDefinition(array $triggerDefinition = [])
     {
@@ -2182,7 +2210,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
      *
@@ -2196,12 +2224,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
+     * @return static
      */
     public function setType(FHIRCoding $type = null)
     {

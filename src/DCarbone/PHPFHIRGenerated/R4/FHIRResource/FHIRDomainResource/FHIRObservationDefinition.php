@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Set of definitional characteristics for a kind of observation or measurement
  * produced or consumed by an orderable health care service.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRObservationDefinition
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ABNORMAL_CODED_VALUE_SET = 'abnormalCodedValueSet';
     const FIELD_CATEGORY = 'category';
@@ -112,112 +112,122 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of abnormal coded results for the observation conforming to this
      * ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $abnormalCodedValueSet = null;
+    protected $abnormalCodedValueSet = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $category = [];
+    protected $category = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of critical coded results for the observation conforming to this
      * ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $criticalCodedValueSet = null;
+    protected $criticalCodedValueSet = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $method = null;
+    protected $method = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $multipleResultsAllowed = null;
+    protected $multipleResultsAllowed = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of normal coded results for the observations conforming to this
      * ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $normalCodedValueSet = null;
+    protected $normalCodedValueSet = null;
+
     /**
      * Permitted data type for observation value.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType[]
      */
-    private $permittedDataType = [];
+    protected $permittedDataType = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $preferredReportName = null;
+    protected $preferredReportName = null;
+
     /**
      * Set of definitional characteristics for a kind of observation or measurement
      * produced or consumed by an orderable health care service.
@@ -227,7 +237,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[]
      */
-    private $qualifiedInterval = [];
+    protected $qualifiedInterval = [];
+
     /**
      * Set of definitional characteristics for a kind of observation or measurement
      * produced or consumed by an orderable health care service.
@@ -236,18 +247,19 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      */
-    private $quantitativeDetails = null;
+    protected $quantitativeDetails = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of valid coded results for the observations conforming to this
      * ObservationDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $validCodedValueSet = null;
+    protected $validCodedValueSet = null;
 
     /**
      * FHIRObservationDefinition Constructor
@@ -432,7 +444,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -470,7 +482,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of abnormal coded results for the observation conforming to this
      * ObservationDefinition.
@@ -485,13 +497,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of abnormal coded results for the observation conforming to this
      * ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $abnormalCodedValueSet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setAbnormalCodedValueSet(FHIRReference $abnormalCodedValueSet = null)
     {
@@ -503,7 +515,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
      *
@@ -518,12 +530,12 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category = null)
     {
@@ -535,12 +547,12 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setCategory(array $category = [])
     {
@@ -562,7 +574,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
@@ -578,13 +590,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -595,7 +607,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of critical coded results for the observation conforming to this
      * ObservationDefinition.
@@ -610,13 +622,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of critical coded results for the observation conforming to this
      * ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $criticalCodedValueSet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setCriticalCodedValueSet(FHIRReference $criticalCodedValueSet = null)
     {
@@ -628,7 +640,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
@@ -643,12 +655,12 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -660,12 +672,12 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -687,7 +699,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
      *
@@ -702,12 +714,12 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $method
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setMethod(FHIRCodeableConcept $method = null)
     {
@@ -717,7 +729,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
@@ -731,13 +743,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $multipleResultsAllowed
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setMultipleResultsAllowed($multipleResultsAllowed = null)
     {
@@ -756,7 +768,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of normal coded results for the observations conforming to this
      * ObservationDefinition.
@@ -771,13 +783,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of normal coded results for the observations conforming to this
      * ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $normalCodedValueSet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setNormalCodedValueSet(FHIRReference $normalCodedValueSet = null)
     {
@@ -787,7 +799,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Permitted data type for observation value.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
@@ -801,13 +813,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Permitted data type for observation value.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType $permittedDataType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function addPermittedDataType(FHIRObservationDataType $permittedDataType = null)
     {
@@ -817,13 +829,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Permitted data type for observation value.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType[] $permittedDataType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setPermittedDataType(array $permittedDataType = [])
     {
@@ -844,7 +856,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
@@ -859,13 +871,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $preferredReportName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setPreferredReportName($preferredReportName = null)
     {
@@ -903,7 +915,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * continuous observations conforming to this ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval $qualifiedInterval
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function addQualifiedInterval(FHIRObservationDefinitionQualifiedInterval $qualifiedInterval = null)
     {
@@ -919,7 +931,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * continuous observations conforming to this ObservationDefinition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[] $qualifiedInterval
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setQualifiedInterval(array $qualifiedInterval = [])
     {
@@ -957,7 +969,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * Characteristics for quantitative results of this observation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setQuantitativeDetails(FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails = null)
     {
@@ -968,7 +980,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of valid coded results for the observations conforming to this
      * ObservationDefinition.
@@ -983,13 +995,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of valid coded results for the observations conforming to this
      * ObservationDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $validCodedValueSet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
+     * @return static
      */
     public function setValidCodedValueSet(FHIRReference $validCodedValueSet = null)
     {

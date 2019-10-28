@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * The marketing status describes the date when a medicinal product is actually put
  * on the market or the date as of which it is no longer available.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRMarketingStatus
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement
@@ -84,7 +84,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MARKETING_STATUS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COUNTRY = 'country';
     const FIELD_DATE_RANGE = 'dateRange';
@@ -97,18 +97,19 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country in which the marketing authorisation has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $country = null;
+    protected $country = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when the Medicinal Product is placed on the market by the Marketing
      * Authorisation Holder (or where applicable, the manufacturer/distributor) in a
@@ -119,12 +120,13 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $dateRange = null;
+    protected $dateRange = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where a Medicines Regulatory Agency has granted a marketing authorisation for
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
@@ -133,14 +135,15 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $jurisdiction = null;
+    protected $jurisdiction = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the Medicinal Product is placed on the market by the Marketing
      * Authorisation Holder (or where applicable, the manufacturer/distributor) in a
@@ -151,19 +154,20 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $restoreDate = null;
+    protected $restoreDate = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRMarketingStatus Constructor
@@ -241,7 +245,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -272,7 +276,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country in which the marketing authorisation has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
@@ -288,13 +292,13 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country in which the marketing authorisation has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $country
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
+     * @return static
      */
     public function setCountry(FHIRCodeableConcept $country = null)
     {
@@ -305,7 +309,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when the Medicinal Product is placed on the market by the Marketing
      * Authorisation Holder (or where applicable, the manufacturer/distributor) in a
@@ -324,7 +328,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when the Medicinal Product is placed on the market by the Marketing
      * Authorisation Holder (or where applicable, the manufacturer/distributor) in a
@@ -334,7 +338,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * distribution chain.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $dateRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
+     * @return static
      */
     public function setDateRange(FHIRPeriod $dateRange = null)
     {
@@ -346,7 +350,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where a Medicines Regulatory Agency has granted a marketing authorisation for
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
@@ -364,7 +368,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where a Medicines Regulatory Agency has granted a marketing authorisation for
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
@@ -372,7 +376,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * the controlled term identifier shall be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
+     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -386,7 +390,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the Medicinal Product is placed on the market by the Marketing
      * Authorisation Holder (or where applicable, the manufacturer/distributor) in a
@@ -408,7 +412,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the Medicinal Product is placed on the market by the Marketing
      * Authorisation Holder (or where applicable, the manufacturer/distributor) in a
@@ -418,7 +422,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * distribution chain.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $restoreDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
+     * @return static
      */
     public function setRestoreDate($restoreDate = null)
     {
@@ -438,7 +442,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
@@ -454,13 +458,13 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
+     * @return static
      */
     public function setStatus(FHIRCodeableConcept $status = null)
     {

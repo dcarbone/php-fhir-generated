@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMMUNICATION_DOT_PAYLOAD;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTENT_ATTACHMENT = 'contentAttachment';
     const FIELD_CONTENT_REFERENCE = 'contentReference';
@@ -93,36 +93,38 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    private $contentAttachment = null;
+    protected $contentAttachment = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $contentReference = null;
+    protected $contentReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $contentString = null;
+    protected $contentString = null;
 
     /**
      * FHIRCommunicationPayload Constructor
@@ -186,7 +188,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -216,7 +218,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
@@ -231,13 +233,13 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $contentAttachment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
+     * @return static
      */
     public function setContentAttachment(FHIRAttachment $contentAttachment = null)
     {
@@ -248,7 +250,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
@@ -263,13 +265,13 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $contentReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
+     * @return static
      */
     public function setContentReference(FHIRReference $contentReference = null)
     {
@@ -280,7 +282,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
@@ -295,13 +297,13 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A communicated content (or for multi-part communications, one portion of the
      * communication). (choose any one of content*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $contentString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload
+     * @return static
      */
     public function setContentString($contentString = null)
     {

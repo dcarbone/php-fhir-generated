@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCar
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CARE_PLAN_DOT_ACTIVITY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DETAIL = 'detail';
     const FIELD_OUTCOME_CODEABLE_CONCEPT = 'outcomeCodeableConcept';
@@ -102,12 +102,13 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
      */
-    private $detail = null;
+    protected $detail = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the outcome at the point when the status of the activity is assessed.
      * For example, the outcome of an education activity could be patient understands
@@ -115,11 +116,12 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $outcomeCodeableConcept = [];
+    protected $outcomeCodeableConcept = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the outcome or action resulting from the activity. The reference to
      * an "event" resource, such as Procedure or Encounter or Observation, is the
@@ -129,28 +131,30 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $outcomeReference = [];
+    protected $outcomeReference = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
-    private $progress = [];
+    protected $progress = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $reference = null;
+    protected $reference = null;
 
     /**
      * FHIRCarePlanActivity Constructor
@@ -247,7 +251,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -300,7 +304,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail $detail
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function setDetail(FHIRCarePlanDetail $detail = null)
     {
@@ -312,7 +316,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the outcome at the point when the status of the activity is assessed.
      * For example, the outcome of an education activity could be patient understands
@@ -329,14 +333,14 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the outcome at the point when the status of the activity is assessed.
      * For example, the outcome of an education activity could be patient understands
      * (or not).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $outcomeCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function addOutcomeCodeableConcept(FHIRCodeableConcept $outcomeCodeableConcept = null)
     {
@@ -348,14 +352,14 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the outcome at the point when the status of the activity is assessed.
      * For example, the outcome of an education activity could be patient understands
      * (or not).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $outcomeCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function setOutcomeCodeableConcept(array $outcomeCodeableConcept = [])
     {
@@ -376,7 +380,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the outcome or action resulting from the activity. The reference to
      * an "event" resource, such as Procedure or Encounter or Observation, is the
@@ -394,7 +398,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the outcome or action resulting from the activity. The reference to
      * an "event" resource, such as Procedure or Encounter or Observation, is the
@@ -403,7 +407,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * to a “request” resource).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $outcomeReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function addOutcomeReference(FHIRReference $outcomeReference = null)
     {
@@ -414,7 +418,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the outcome or action resulting from the activity. The reference to
      * an "event" resource, such as Procedure or Encounter or Observation, is the
@@ -423,7 +427,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * to a “request” resource).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $outcomeReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function setOutcomeReference(array $outcomeReference = [])
     {
@@ -445,7 +449,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
      *
@@ -460,12 +464,12 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $progress
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function addProgress(FHIRAnnotation $progress = null)
     {
@@ -477,12 +481,12 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $progress
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function setProgress(array $progress = [])
     {
@@ -503,7 +507,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
      *
@@ -517,12 +521,12 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $reference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
+     * @return static
      */
     public function setReference(FHIRReference $reference = null)
     {

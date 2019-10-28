@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_SLICING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DISCRIMINATOR = 'discriminator';
     const FIELD_DISCRIMINATOR_EXT = '_discriminator';
@@ -91,7 +91,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Designates which child element is used to discriminate between the slices when
@@ -101,27 +101,29 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    private $discriminator = null;
+    protected $discriminator = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $ordered = null;
+    protected $ordered = null;
+
     /**
      * How slices are interpreted when evaluating an instance
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSlicingRules
      */
-    private $rules = null;
+    protected $rules = null;
 
     /**
      * FHIRProfileSlicing Constructor
@@ -195,7 +197,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -226,7 +228,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Designates which child element is used to discriminate between the slices when
@@ -245,7 +247,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Designates which child element is used to discriminate between the slices when
@@ -254,7 +256,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      * the allowed values for that element in each of the slices.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $discriminator
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
+     * @return static
      */
     public function setDiscriminator($discriminator = null)
     {
@@ -272,7 +274,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
@@ -286,13 +288,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $ordered
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
+     * @return static
      */
     public function setOrdered($ordered = null)
     {
@@ -310,7 +312,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
 
     /**
      * How slices are interpreted when evaluating an instance
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
@@ -324,13 +326,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
 
     /**
      * How slices are interpreted when evaluating an instance
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSlicingRules $rules
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
+     * @return static
      */
     public function setRules(FHIRSlicingRules $rules = null)
     {

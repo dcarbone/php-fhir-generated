@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRPatientLink extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PATIENT_DOT_LINK;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_OTHER = 'other';
     const FIELD_TYPE = 'type';
@@ -90,22 +90,23 @@ class FHIRPatientLink extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The other patient resource that the link refers to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $other = null;
+    protected $other = null;
+
     /**
      * The type of link between this patient resource and another patient resource.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of link between this patient resource and another patient resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRLinkType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRPatientLink Constructor
@@ -162,7 +163,7 @@ class FHIRPatientLink extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -192,7 +193,7 @@ class FHIRPatientLink extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The other patient resource that the link refers to.
      *
@@ -206,12 +207,12 @@ class FHIRPatientLink extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The other patient resource that the link refers to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $other
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink
+     * @return static
      */
     public function setOther(FHIRReference $other = null)
     {
@@ -221,7 +222,7 @@ class FHIRPatientLink extends FHIRBackboneElement
 
     /**
      * The type of link between this patient resource and another patient resource.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of link between this patient resource and another patient resource.
      *
@@ -234,12 +235,12 @@ class FHIRPatientLink extends FHIRBackboneElement
 
     /**
      * The type of link between this patient resource and another patient resource.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of link between this patient resource and another patient resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRLinkType $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink
+     * @return static
      */
     public function setType(FHIRLinkType $type = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElementDefinitionType
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
@@ -83,7 +83,7 @@ class FHIRElementDefinitionType extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_TYPE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGGREGATION = 'aggregation';
     const FIELD_AGGREGATION_EXT = '_aggregation';
@@ -94,7 +94,7 @@ class FHIRElementDefinitionType extends FHIRElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
@@ -102,22 +102,24 @@ class FHIRElementDefinitionType extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[]
      */
-    private $aggregation = [];
+    protected $aggregation = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of Data type or Resource that is a(or the) type used for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile structure or implementation Guide that SHALL hold for
      * resources or datatypes referenced as the type of this element. Can be a local
@@ -128,7 +130,7 @@ class FHIRElementDefinitionType extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
-    private $profile = [];
+    protected $profile = [];
 
     /**
      * FHIRElementDefinitionType Constructor
@@ -222,7 +224,7 @@ class FHIRElementDefinitionType extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -251,7 +253,7 @@ class FHIRElementDefinitionType extends FHIRElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
@@ -266,14 +268,14 @@ class FHIRElementDefinitionType extends FHIRElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode $aggregation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function addAggregation(FHIRAggregationMode $aggregation = null)
     {
@@ -283,14 +285,14 @@ class FHIRElementDefinitionType extends FHIRElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[] $aggregation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setAggregation(array $aggregation = [])
     {
@@ -311,7 +313,7 @@ class FHIRElementDefinitionType extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of Data type or Resource that is a(or the) type used for this element.
@@ -326,13 +328,13 @@ class FHIRElementDefinitionType extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of Data type or Resource that is a(or the) type used for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -351,7 +353,7 @@ class FHIRElementDefinitionType extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile structure or implementation Guide that SHALL hold for
      * resources or datatypes referenced as the type of this element. Can be a local
@@ -370,7 +372,7 @@ class FHIRElementDefinitionType extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile structure or implementation Guide that SHALL hold for
      * resources or datatypes referenced as the type of this element. Can be a local
@@ -380,7 +382,7 @@ class FHIRElementDefinitionType extends FHIRElement
      * SHALL conform to at least one profile defined in the implementation guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function addProfile($profile = null)
     {
@@ -399,7 +401,7 @@ class FHIRElementDefinitionType extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile structure or implementation Guide that SHALL hold for
      * resources or datatypes referenced as the type of this element. Can be a local
@@ -409,7 +411,7 @@ class FHIRElementDefinitionType extends FHIRElement
      * SHALL conform to at least one profile defined in the implementation guide.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[] $profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setProfile(array $profile = [])
     {

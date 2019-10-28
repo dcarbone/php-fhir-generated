@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINS = 'contains';
     const FIELD_IDENTIFIER = 'identifier';
@@ -107,11 +107,12 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
-    private $contains = [];
+    protected $contains = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier that uniquely identifies this expansion of the valueset, based on
      * a unique combination of the provided parameters, the system default parameters,
@@ -121,11 +122,12 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
@@ -133,7 +135,8 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $offset = null;
+    protected $offset = null;
+
     /**
      * A ValueSet resource instance specifies a set of codes drawn from one or more
      * code systems, intended for use in a particular context. Value sets link between
@@ -146,24 +149,26 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
      */
-    private $parameter = [];
+    protected $parameter = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $timestamp = null;
+    protected $timestamp = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
@@ -171,7 +176,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $total = null;
+    protected $total = null;
 
     /**
      * FHIRValueSetExpansion Constructor
@@ -287,7 +292,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -338,7 +343,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The codes that are contained in the value set expansion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function addContains(FHIRValueSetContains $contains = null)
     {
@@ -355,7 +360,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The codes that are contained in the value set expansion.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[] $contains
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setContains(array $contains = [])
     {
@@ -376,7 +381,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier that uniquely identifies this expansion of the valueset, based on
      * a unique combination of the provided parameters, the system default parameters,
@@ -394,7 +399,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier that uniquely identifies this expansion of the valueset, based on
      * a unique combination of the provided parameters, the system default parameters,
@@ -403,7 +408,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * same, but are not required to do so. This is a business identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setIdentifier($identifier = null)
     {
@@ -422,7 +427,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
@@ -438,14 +443,14 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
      * element SHALL NOT be present.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $offset
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setOffset($offset = null)
     {
@@ -489,7 +494,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * particular purpose, or to pick the correct expansion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function addParameter(FHIRValueSetParameter $parameter = null)
     {
@@ -508,7 +513,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * particular purpose, or to pick the correct expansion.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[] $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setParameter(array $parameter = [])
     {
@@ -532,7 +537,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
      *
@@ -549,12 +554,12 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timestamp
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setTimestamp($timestamp = null)
     {
@@ -573,7 +578,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
@@ -589,14 +594,14 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
      * using the offset parameter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $total
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
+     * @return static
      */
     public function setTotal($total = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A detailed description of a device, typically as part of a regulated medicinal
  * product. It is not intended to replace the Device resource, which covers use of
  * device instances.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicinalProductDeviceSpec
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_DEVICE_SPEC;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BATCH_IDENTIFIER = 'batchIdentifier';
     const FIELD_BATCH_IDENTIFIER_EXT = '_batchIdentifier';
@@ -118,44 +118,48 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Batch number or expiry date of a device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $batchIdentifier = [];
+    protected $batchIdentifier = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Device listing number.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $listingNumber = null;
+    protected $listingNumber = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $manufacturer = [];
+    protected $manufacturer = [];
+
     /**
      * A detailed description of a device, typically as part of a regulated medicinal
      * product. It is not intended to replace the Device resource, which covers use of
@@ -165,127 +169,138 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial[]
      */
-    private $material = [];
+    protected $material = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Device model or reference number.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $modelNumber = null;
+    protected $modelNumber = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A nomenclature term for the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $nomenclature = [];
+    protected $nomenclature = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $otherCharacteristics = [];
+    protected $otherCharacteristics = [];
+
     /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
-    private $physicalCharacteristics = null;
+    protected $physicalCharacteristics = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the device present in the packaging of a medicinal product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife[]
      */
-    private $shelfLifeStorage = [];
+    protected $shelfLifeStorage = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the device must be sterilised before use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $sterilisationRequirement = null;
+    protected $sterilisationRequirement = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the device is supplied as sterile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $sterilityIndicator = null;
+    protected $sterilityIndicator = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Trade name of the device, where applicable.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $tradeName = null;
+    protected $tradeName = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Usage pattern including the number of times that the device may be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $usage = null;
+    protected $usage = null;
 
     /**
      * FHIRMedicinalProductDeviceSpec Constructor
@@ -515,7 +530,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -546,7 +561,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Batch number or expiry date of a device.
      *
@@ -561,12 +576,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Batch number or expiry date of a device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $batchIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function addBatchIdentifier(FHIRIdentifier $batchIdentifier = null)
     {
@@ -578,12 +593,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Batch number or expiry date of a device.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $batchIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setBatchIdentifier(array $batchIdentifier = [])
     {
@@ -605,7 +620,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier.
      *
@@ -620,12 +635,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -636,7 +651,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Device listing number.
      *
@@ -650,12 +665,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Device listing number.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $listingNumber
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setListingNumber($listingNumber = null)
     {
@@ -674,7 +689,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Device.
      *
@@ -688,12 +703,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer = null)
     {
@@ -704,12 +719,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Device.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setManufacturer(array $manufacturer = [])
     {
@@ -749,7 +764,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A substance used to create the material(s) of which the device is made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial $material
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function addMaterial(FHIRMedicinalProductDeviceSpecMaterial $material = null)
     {
@@ -765,7 +780,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A substance used to create the material(s) of which the device is made.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial[] $material
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setMaterial(array $material = [])
     {
@@ -786,7 +801,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Device model or reference number.
      *
@@ -800,12 +815,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Device model or reference number.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $modelNumber
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setModelNumber($modelNumber = null)
     {
@@ -825,7 +840,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A nomenclature term for the device.
      *
@@ -840,12 +855,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A nomenclature term for the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $nomenclature
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function addNomenclature(FHIRCodeableConcept $nomenclature = null)
     {
@@ -857,12 +872,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A nomenclature term for the device.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $nomenclature
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setNomenclature(array $nomenclature = [])
     {
@@ -884,7 +899,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
@@ -899,12 +914,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics = null)
     {
@@ -916,12 +931,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $otherCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setOtherCharacteristics(array $otherCharacteristics = [])
     {
@@ -943,7 +958,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
@@ -958,12 +973,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setPhysicalCharacteristics(FHIRProdCharacteristic $physicalCharacteristics = null)
     {
@@ -976,7 +991,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the device present in the packaging of a medicinal product.
      *
@@ -992,12 +1007,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the device present in the packaging of a medicinal product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -1009,7 +1024,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
@@ -1024,12 +1039,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife $shelfLifeStorage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function addShelfLifeStorage(FHIRProductShelfLife $shelfLifeStorage = null)
     {
@@ -1041,12 +1056,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife[] $shelfLifeStorage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setShelfLifeStorage(array $shelfLifeStorage = [])
     {
@@ -1068,7 +1083,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the device must be sterilised before use.
      *
@@ -1083,12 +1098,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the device must be sterilised before use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sterilisationRequirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setSterilisationRequirement(FHIRCodeableConcept $sterilisationRequirement = null)
     {
@@ -1100,7 +1115,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the device is supplied as sterile.
      *
@@ -1115,12 +1130,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the device is supplied as sterile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sterilityIndicator
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setSterilityIndicator(FHIRCodeableConcept $sterilityIndicator = null)
     {
@@ -1131,7 +1146,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Trade name of the device, where applicable.
      *
@@ -1145,12 +1160,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Trade name of the device, where applicable.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $tradeName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setTradeName($tradeName = null)
     {
@@ -1170,7 +1185,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of device.
      *
@@ -1185,12 +1200,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -1202,7 +1217,7 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Usage pattern including the number of times that the device may be used.
      *
@@ -1217,12 +1232,12 @@ class FHIRMedicinalProductDeviceSpec extends FHIRDomainResource
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Usage pattern including the number of times that the device may be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $usage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec
+     * @return static
      */
     public function setUsage(FHIRCodeableConcept $usage = null)
     {

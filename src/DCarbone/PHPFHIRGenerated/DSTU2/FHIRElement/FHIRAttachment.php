@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * For referring to data content defined in other formats.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRAttachment
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
@@ -80,7 +80,7 @@ class FHIRAttachment extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ATTACHMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTENT_TYPE = 'contentType';
     const FIELD_CONTENT_TYPE_EXT = '_contentType';
@@ -102,7 +102,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies the type of the data in the attachment and allows a method to be
@@ -111,45 +111,49 @@ class FHIRAttachment extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $contentType = null;
+    protected $contentType = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $creation = null;
+    protected $creation = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
-    private $data = null;
+    protected $data = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
-    private $hash = null;
+    protected $hash = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The human language of the content. The value can be any valid value according to
@@ -157,37 +161,40 @@ class FHIRAttachment extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $language = null;
+    protected $language = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of bytes of data that make up this attachment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
-    private $size = null;
+    protected $size = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * FHIRAttachment Constructor
@@ -321,7 +328,7 @@ class FHIRAttachment extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -351,7 +358,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies the type of the data in the attachment and allows a method to be
@@ -368,7 +375,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies the type of the data in the attachment and allows a method to be
@@ -376,7 +383,7 @@ class FHIRAttachment extends FHIRElement
      * charset where appropriate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $contentType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setContentType($contentType = null)
     {
@@ -398,7 +405,7 @@ class FHIRAttachment extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
      *
@@ -415,12 +422,12 @@ class FHIRAttachment extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $creation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setCreation($creation = null)
     {
@@ -439,7 +446,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
@@ -454,13 +461,13 @@ class FHIRAttachment extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary $data
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setData($data = null)
     {
@@ -479,7 +486,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
      *
@@ -493,12 +500,12 @@ class FHIRAttachment extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary $hash
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setHash($hash = null)
     {
@@ -517,7 +524,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The human language of the content. The value can be any valid value according to
@@ -533,14 +540,14 @@ class FHIRAttachment extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $language
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setLanguage($language = null)
     {
@@ -558,7 +565,7 @@ class FHIRAttachment extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of bytes of data that make up this attachment.
@@ -572,13 +579,13 @@ class FHIRAttachment extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of bytes of data that make up this attachment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt $size
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setSize($size = null)
     {
@@ -597,7 +604,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
      *
@@ -611,12 +618,12 @@ class FHIRAttachment extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -635,7 +642,7 @@ class FHIRAttachment extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
      *
@@ -649,12 +656,12 @@ class FHIRAttachment extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @return static
      */
     public function setUrl($url = null)
     {

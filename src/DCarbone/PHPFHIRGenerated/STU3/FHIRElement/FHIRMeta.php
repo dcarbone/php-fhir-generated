@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * maintained by the infrastructure. Changes to the content may not always be
  * associated with version changes to the resource.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRMeta
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -82,7 +82,7 @@ class FHIRMeta extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_META;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_LAST_UPDATED = 'lastUpdated';
     const FIELD_LAST_UPDATED_EXT = '_lastUpdated';
@@ -98,17 +98,18 @@ class FHIRMeta extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $lastUpdated = null;
+    protected $lastUpdated = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
@@ -116,22 +117,24 @@ class FHIRMeta extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[]
      */
-    private $profile = [];
+    protected $profile = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    private $security = [];
+    protected $security = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
@@ -139,13 +142,14 @@ class FHIRMeta extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    private $tag = [];
+    protected $tag = [];
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version specific identifier, as it appears in the version portion of the
@@ -153,7 +157,7 @@ class FHIRMeta extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $versionId = null;
+    protected $versionId = null;
 
     /**
      * FHIRMeta Constructor
@@ -267,7 +271,7 @@ class FHIRMeta extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -299,7 +303,7 @@ class FHIRMeta extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
      *
@@ -315,12 +319,12 @@ class FHIRMeta extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $lastUpdated
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function setLastUpdated($lastUpdated = null)
     {
@@ -339,7 +343,7 @@ class FHIRMeta extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
@@ -355,14 +359,14 @@ class FHIRMeta extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
      * [[[StructureDefinition.url]]].
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $profile
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function addProfile($profile = null)
     {
@@ -381,14 +385,14 @@ class FHIRMeta extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
      * [[[StructureDefinition.url]]].
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[] $profile
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function setProfile(array $profile = [])
     {
@@ -409,7 +413,7 @@ class FHIRMeta extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
@@ -424,13 +428,13 @@ class FHIRMeta extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $security
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function addSecurity(FHIRCoding $security = null)
     {
@@ -441,13 +445,13 @@ class FHIRMeta extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $security
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function setSecurity(array $security = [])
     {
@@ -468,7 +472,7 @@ class FHIRMeta extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
@@ -484,14 +488,14 @@ class FHIRMeta extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $tag
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function addTag(FHIRCoding $tag = null)
     {
@@ -502,14 +506,14 @@ class FHIRMeta extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $tag
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function setTag(array $tag = [])
     {
@@ -532,7 +536,7 @@ class FHIRMeta extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version specific identifier, as it appears in the version portion of the
@@ -550,14 +554,14 @@ class FHIRMeta extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version specific identifier, as it appears in the version portion of the
      * URL. This values changes when the resource is created, updated, or deleted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $versionId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
+     * @return static
      */
     public function setVersionId($versionId = null)
     {

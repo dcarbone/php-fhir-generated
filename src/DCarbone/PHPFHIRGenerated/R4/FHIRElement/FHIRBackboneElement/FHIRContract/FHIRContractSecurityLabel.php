@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_SECURITY_LABEL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CATEGORY = 'category';
     const FIELD_CLASSIFICATION = 'classification';
@@ -92,46 +92,49 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $category = [];
+    protected $category = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
-    private $classification = null;
+    protected $classification = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $control = [];
+    protected $control = [];
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
      */
-    private $number = [];
+    protected $number = [];
 
     /**
      * FHIRContractSecurityLabel Constructor
@@ -228,7 +231,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -258,7 +261,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
@@ -273,13 +276,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function addCategory(FHIRCoding $category = null)
     {
@@ -290,13 +293,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function setCategory(array $category = [])
     {
@@ -317,7 +320,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
@@ -332,13 +335,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $classification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function setClassification(FHIRCoding $classification = null)
     {
@@ -349,7 +352,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
@@ -364,13 +367,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $control
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function addControl(FHIRCoding $control = null)
     {
@@ -381,13 +384,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $control
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function setControl(array $control = [])
     {
@@ -407,7 +410,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
@@ -421,13 +424,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $number
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function addNumber($number = null)
     {
@@ -445,13 +448,13 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[] $number
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
+     * @return static
      */
     public function setNumber(array $number = [])
     {

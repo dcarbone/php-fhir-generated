@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A time period defined by a start and end date and optionally time.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRPeriod
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -80,7 +80,7 @@ class FHIRPeriod extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PERIOD;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_END = 'end';
     const FIELD_END_EXT = '_end';
@@ -93,7 +93,7 @@ class FHIRPeriod extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The end of the period. If the end of the period is missing, it means no end was
      * known or planned at the time the instance was created. The start may be in the
@@ -102,20 +102,21 @@ class FHIRPeriod extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $end = null;
+    protected $end = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $start = null;
+    protected $start = null;
 
     /**
      * FHIRPeriod Constructor
@@ -177,7 +178,7 @@ class FHIRPeriod extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -210,7 +211,7 @@ class FHIRPeriod extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The end of the period. If the end of the period is missing, it means no end was
      * known or planned at the time the instance was created. The start may be in the
@@ -230,7 +231,7 @@ class FHIRPeriod extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The end of the period. If the end of the period is missing, it means no end was
      * known or planned at the time the instance was created. The start may be in the
@@ -238,7 +239,7 @@ class FHIRPeriod extends FHIRElement
      * expected/planned to end at that time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $end
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     * @return static
      */
     public function setEnd($end = null)
     {
@@ -260,7 +261,7 @@ class FHIRPeriod extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
      *
@@ -277,12 +278,12 @@ class FHIRPeriod extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $start
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     * @return static
      */
     public function setStart($start = null)
     {

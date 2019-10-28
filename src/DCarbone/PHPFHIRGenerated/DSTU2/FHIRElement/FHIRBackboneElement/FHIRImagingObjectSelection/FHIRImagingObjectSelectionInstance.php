@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION_DOT_INSTANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FRAMES = 'frames';
     const FIELD_SOP_CLASS = 'sopClass';
@@ -115,39 +115,42 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionFrames[]
      */
-    private $frames = [];
+    protected $frames = [];
+
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * SOP class UID of the selected instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
-    private $sopClass = null;
+    protected $sopClass = null;
+
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * SOP Instance UID of the selected instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
-    private $uid = null;
+    protected $uid = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS URL to retrieve the DICOM SOP Instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * FHIRImagingObjectSelectionInstance Constructor
@@ -236,7 +239,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -299,7 +302,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
      * Identity and location information of the frames in the selected instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionFrames $frames
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
+     * @return static
      */
     public function addFrames(FHIRImagingObjectSelectionFrames $frames = null)
     {
@@ -322,7 +325,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
      * Identity and location information of the frames in the selected instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionFrames[] $frames
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
+     * @return static
      */
     public function setFrames(array $frames = [])
     {
@@ -343,7 +346,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * SOP class UID of the selected instance.
@@ -358,13 +361,13 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * SOP class UID of the selected instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $sopClass
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
+     * @return static
      */
     public function setSopClass($sopClass = null)
     {
@@ -383,7 +386,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * SOP Instance UID of the selected instance.
@@ -398,13 +401,13 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /**
      * An oid represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * SOP Instance UID of the selected instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $uid
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
+     * @return static
      */
     public function setUid($uid = null)
     {
@@ -423,7 +426,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS URL to retrieve the DICOM SOP Instance.
      *
@@ -437,12 +440,12 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS URL to retrieve the DICOM SOP Instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance
+     * @return static
      */
     public function setUrl($url = null)
     {

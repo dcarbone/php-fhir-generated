@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CLINICALS_DOT_THERAPEUTIC_INDICATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMORBIDITY = 'comorbidity';
     const FIELD_DISEASE_STATUS = 'diseaseStatus';
@@ -97,58 +97,63 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $comorbidity = [];
+    protected $comorbidity = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $diseaseStatus = null;
+    protected $diseaseStatus = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $diseaseSymptomProcedure = null;
+    protected $diseaseSymptomProcedure = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $duration = null;
+    protected $duration = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $intendedEffect = null;
+    protected $intendedEffect = null;
+
     /**
      * The clinical particulars - indications, contraindications etc. of a medicinal
      * product, including for regulatory purposes.
@@ -158,7 +163,8 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy[]
      */
-    private $otherTherapy = [];
+    protected $otherTherapy = [];
+
     /**
      * The clinical particulars - indications, contraindications etc. of a medicinal
      * product, including for regulatory purposes.
@@ -167,7 +173,8 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation[]
      */
-    private $population = [];
+    protected $population = [];
+
     /**
      * The clinical particulars - indications, contraindications etc. of a medicinal
      * product, including for regulatory purposes.
@@ -177,7 +184,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects[]
      */
-    private $undesirableEffects = [];
+    protected $undesirableEffects = [];
 
     /**
      * FHIRMedicinalProductClinicalsTherapeuticIndication Constructor
@@ -308,7 +315,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -339,7 +346,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
@@ -354,12 +361,12 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $comorbidity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function addComorbidity(FHIRCodeableConcept $comorbidity = null)
     {
@@ -371,12 +378,12 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $comorbidity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setComorbidity(array $comorbidity = [])
     {
@@ -398,7 +405,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
      *
@@ -413,12 +420,12 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setDiseaseStatus(FHIRCodeableConcept $diseaseStatus = null)
     {
@@ -430,7 +437,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
      *
@@ -445,12 +452,12 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseSymptomProcedure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setDiseaseSymptomProcedure(FHIRCodeableConcept $diseaseSymptomProcedure = null)
     {
@@ -463,7 +470,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
      *
@@ -479,12 +486,12 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $duration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setDuration(FHIRQuantity $duration = null)
     {
@@ -496,7 +503,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
      *
@@ -511,12 +518,12 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $intendedEffect
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setIntendedEffect(FHIRCodeableConcept $intendedEffect = null)
     {
@@ -546,7 +553,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * therapies described as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy $otherTherapy
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function addOtherTherapy(FHIRMedicinalProductClinicalsOtherTherapy $otherTherapy = null)
     {
@@ -562,7 +569,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * therapies described as part of the indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy[] $otherTherapy
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setOtherTherapy(array $otherTherapy = [])
     {
@@ -600,7 +607,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * The population group to which this applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function addPopulation(FHIRMedicinalProductClinicalsPopulation $population = null)
     {
@@ -615,7 +622,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * The population group to which this applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation[] $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setPopulation(array $population = [])
     {
@@ -655,7 +662,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * therapies as part of the indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects $undesirableEffects
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function addUndesirableEffects(FHIRMedicinalProductClinicalsUndesirableEffects $undesirableEffects = null)
     {
@@ -671,7 +678,7 @@ class FHIRMedicinalProductClinicalsTherapeuticIndication extends FHIRBackboneEle
      * therapies as part of the indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects[] $undesirableEffects
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication
+     * @return static
      */
     public function setUndesirableEffects(array $undesirableEffects = [])
     {

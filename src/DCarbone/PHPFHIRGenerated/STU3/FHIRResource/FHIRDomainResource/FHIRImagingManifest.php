@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * A text description of the DICOM SOP instances selected in the ImagingManifest;
  * or the reason for, or significance of, the selection.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRImagingManifest
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -86,7 +86,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_MANIFEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_AUTHORING_TIME = 'authoringTime';
@@ -101,7 +101,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Author of ImagingManifest. It can be a human author or a device which made the
      * decision of the SOP instances selected. For example, a radiologist selected a
@@ -111,14 +111,15 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time when the selection of the referenced instances were made. It is
      * (typically) different from the creation date of the selection resource, and from
@@ -127,11 +128,12 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $authoringTime = null;
+    protected $authoringTime = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text narrative description of the ImagingManifest. The value may be derived
      * from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set,
@@ -142,29 +144,32 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A text description of the DICOM SOP instances selected in the ImagingManifest;
      * or the reason for, or significance of, the selection.
@@ -174,7 +179,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy[]
      */
-    private $study = [];
+    protected $study = [];
 
     /**
      * FHIRImagingManifest Constructor
@@ -277,7 +282,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -315,7 +320,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Author of ImagingManifest. It can be a human author or a device which made the
      * decision of the SOP instances selected. For example, a radiologist selected a
@@ -333,7 +338,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Author of ImagingManifest. It can be a human author or a device which made the
      * decision of the SOP instances selected. For example, a radiologist selected a
@@ -342,7 +347,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * a detection conclusion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -356,7 +361,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time when the selection of the referenced instances were made. It is
      * (typically) different from the creation date of the selection resource, and from
@@ -376,7 +381,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time when the selection of the referenced instances were made. It is
      * (typically) different from the creation date of the selection resource, and from
@@ -384,7 +389,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * referenced image).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $authoringTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function setAuthoringTime($authoringTime = null)
     {
@@ -403,7 +408,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text narrative description of the ImagingManifest. The value may be derived
      * from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set,
@@ -422,7 +427,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text narrative description of the ImagingManifest. The value may be derived
      * from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set,
@@ -432,7 +437,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * descriptions that suggest referenced images be removed or not used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -451,7 +456,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
@@ -466,13 +471,13 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -483,7 +488,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
@@ -498,13 +503,13 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -534,7 +539,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * selection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy $study
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function addStudy(FHIRImagingManifestStudy $study = null)
     {
@@ -550,7 +555,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * selection.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy[] $study
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRImagingManifest
+     * @return static
      */
     public function setStudy(array $study = [])
     {

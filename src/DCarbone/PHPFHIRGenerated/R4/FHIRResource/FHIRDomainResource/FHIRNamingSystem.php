@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A curated namespace that issues unique symbols within that namespace for the
  * identification of concepts, people, devices, etc. Represents a "System" used
  * within the Identifier and Coding data types.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRNamingSystem
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -91,7 +91,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NAMING_SYSTEM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTACT = 'contact';
     const FIELD_DATE = 'date';
@@ -119,21 +119,22 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the naming system was published. The date
      * must change when the business version changes and it must change if the status
@@ -142,14 +143,15 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the naming system from a consumer's
@@ -158,32 +160,35 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the naming system is intended to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * Identifies the purpose of the naming system.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose for the naming system - what kinds of things does it make
      * unique?
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNamingSystemType
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the naming system. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -191,49 +196,54 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the naming system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization that is responsible for issuing identifiers or
      * codes for this namespace and ensuring their non-collision.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $responsible = null;
+    protected $responsible = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this naming system. Enables tracking the life-cycle of the
      * content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes a naming system for easier search by grouping related naming
      * systems.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A curated namespace that issues unique symbols within that namespace for the
      * identification of concepts, people, devices, etc. Represents a "System" used
@@ -244,25 +254,27 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
-    private $uniqueId = [];
+    protected $uniqueId = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Provides guidance on the use of the namespace, including the handling of
      * formatting characters, use of upper vs. lower case, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $usage = null;
+    protected $usage = null;
+
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -272,7 +284,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
 
     /**
      * FHIRNamingSystem Constructor
@@ -480,7 +492,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -518,7 +530,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -533,13 +545,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -550,13 +562,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -580,7 +592,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the naming system was published. The date
      * must change when the business version changes and it must change if the status
@@ -600,7 +612,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the naming system was published. The date
      * must change when the business version changes and it must change if the status
@@ -608,7 +620,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * naming system changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -630,7 +642,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the naming system from a consumer's
@@ -650,7 +662,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the naming system from a consumer's
@@ -658,7 +670,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * granularity, version labeling, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -678,7 +690,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the naming system is intended to be used.
      *
@@ -693,12 +705,12 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the naming system is intended to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -710,12 +722,12 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the naming system is intended to be used.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -735,7 +747,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Identifies the purpose of the naming system.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose for the naming system - what kinds of things does it make
      * unique?
@@ -749,13 +761,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
 
     /**
      * Identifies the purpose of the naming system.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose for the naming system - what kinds of things does it make
      * unique?
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNamingSystemType $kind
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setKind(FHIRNamingSystemType $kind = null)
     {
@@ -766,7 +778,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the naming system. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -782,14 +794,14 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the naming system. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setName($name = null)
     {
@@ -808,7 +820,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the naming system.
      *
@@ -822,12 +834,12 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the naming system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -846,7 +858,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization that is responsible for issuing identifiers or
      * codes for this namespace and ensuring their non-collision.
@@ -861,13 +873,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization that is responsible for issuing identifiers or
      * codes for this namespace and ensuring their non-collision.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $responsible
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setResponsible($responsible = null)
     {
@@ -884,7 +896,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this naming system. Enables tracking the life-cycle of the
      * content.
@@ -897,13 +909,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this naming system. Enables tracking the life-cycle of the
      * content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -915,7 +927,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes a naming system for easier search by grouping related naming
      * systems.
@@ -931,13 +943,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes a naming system for easier search by grouping related naming
      * systems.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -969,7 +981,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * exchange.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId $uniqueId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function addUniqueId(FHIRNamingSystemUniqueId $uniqueId = null)
     {
@@ -986,7 +998,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * exchange.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId[] $uniqueId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setUniqueId(array $uniqueId = [])
     {
@@ -1007,7 +1019,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Provides guidance on the use of the namespace, including the handling of
      * formatting characters, use of upper vs. lower case, etc.
@@ -1022,13 +1034,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Provides guidance on the use of the namespace, including the handling of
      * formatting characters, use of upper vs. lower case, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $usage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setUsage($usage = null)
     {
@@ -1050,7 +1062,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -1071,7 +1083,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -1080,7 +1092,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -1094,7 +1106,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -1103,7 +1115,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
      * instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNamingSystem
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {

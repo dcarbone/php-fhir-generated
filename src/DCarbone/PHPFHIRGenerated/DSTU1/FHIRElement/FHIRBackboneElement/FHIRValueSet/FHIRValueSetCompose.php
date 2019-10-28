@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXCLUDE = 'exclude';
     const FIELD_IMPORT = 'import';
@@ -88,17 +88,19 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    private $exclude = [];
+    protected $exclude = [];
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
      */
-    private $import = [];
+    protected $import = [];
+
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
      *
@@ -106,7 +108,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    private $include = [];
+    protected $include = [];
 
     /**
      * FHIRValueSetCompose Constructor
@@ -196,7 +198,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -241,7 +243,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Exclude one or more codes from the value set.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $exclude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function addExclude(FHIRValueSetInclude $exclude = null)
     {
@@ -255,7 +257,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Exclude one or more codes from the value set.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[] $exclude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setExclude(array $exclude = [])
     {
@@ -275,7 +277,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set.
@@ -289,13 +291,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $import
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function addImport($import = null)
     {
@@ -313,13 +315,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[] $import
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setImport(array $import = [])
     {
@@ -355,7 +357,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Include one or more codes from a code system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $include
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function addInclude(FHIRValueSetInclude $include = null)
     {
@@ -369,7 +371,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Include one or more codes from a code system.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[] $include
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
+     * @return static
      */
     public function setInclude(array $include = [])
     {

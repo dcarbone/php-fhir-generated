@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Describe the undesirable effects of the medicinal product.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicinalProductUndesirableEffect
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -83,7 +83,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_UNDESIRABLE_EFFECT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CLASSIFICATION = 'classification';
     const FIELD_FREQUENCY_OF_OCCURRENCE = 'frequencyOfOccurrence';
@@ -95,55 +95,59 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the effect.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $classification = null;
+    protected $classification = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency of occurrence of the effect.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $frequencyOfOccurrence = null;
+    protected $frequencyOfOccurrence = null;
+
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
      */
-    private $population = [];
+    protected $population = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $subject = [];
+    protected $subject = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The symptom, condition or undesirable effect.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $symptomConditionEffect = null;
+    protected $symptomConditionEffect = null;
 
     /**
      * FHIRMedicinalProductUndesirableEffect Constructor
@@ -232,7 +236,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -271,7 +275,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the effect.
      *
@@ -286,12 +290,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the effect.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $classification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function setClassification(FHIRCodeableConcept $classification = null)
     {
@@ -303,7 +307,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency of occurrence of the effect.
      *
@@ -318,12 +322,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency of occurrence of the effect.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $frequencyOfOccurrence
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function setFrequencyOfOccurrence(FHIRCodeableConcept $frequencyOfOccurrence = null)
     {
@@ -334,7 +338,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
@@ -348,12 +352,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function addPopulation(FHIRPopulation $population = null)
     {
@@ -364,12 +368,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     /**
      * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[] $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function setPopulation(array $population = [])
     {
@@ -390,7 +394,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
@@ -404,12 +408,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function addSubject(FHIRReference $subject = null)
     {
@@ -420,12 +424,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function setSubject(array $subject = [])
     {
@@ -447,7 +451,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The symptom, condition or undesirable effect.
      *
@@ -462,12 +466,12 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The symptom, condition or undesirable effect.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $symptomConditionEffect
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return static
      */
     public function setSymptomConditionEffect(FHIRCodeableConcept $symptomConditionEffect = null)
     {

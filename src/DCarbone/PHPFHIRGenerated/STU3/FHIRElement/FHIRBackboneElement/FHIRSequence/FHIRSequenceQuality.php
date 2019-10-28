@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_QUALITY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_END = 'end';
     const FIELD_END_EXT = '_end';
@@ -115,7 +115,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * End position of the sequence.If the coordinate system is 0-based then end is is
      * exclusive and does not include the last position. If the coordinate system is
@@ -123,24 +123,26 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $end = null;
+    protected $end = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall /
      * (precision + recall).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $fScore = null;
+    protected $fScore = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives where the non-REF alleles in the Truth and Query
      * Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or
@@ -148,34 +150,37 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $gtFP = null;
+    protected $gtFP = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which method is used to get sequence quality.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $method = null;
+    protected $method = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * QUERY.TP / (QUERY.TP + QUERY.FP).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $precision = null;
+    protected $precision = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * False positives, i.e. the number of sites in the Query Call Set for which there
      * is no path through the Truth Call Set that is consistent with this site. Sites
@@ -183,12 +188,13 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $queryFP = null;
+    protected $queryFP = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True positives, from the perspective of the query data, i.e. the number of sites
      * in the Query Call Set for which there are paths through the Truth Call Set that
@@ -197,58 +203,63 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $queryTP = null;
+    protected $queryTP = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $recall = null;
+    protected $recall = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $score = null;
+    protected $score = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Gold standard sequence used for comparing against.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $standardSequence = null;
+    protected $standardSequence = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Start position of the sequence. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $start = null;
+    protected $start = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * False negatives, i.e. the number of sites in the Truth Call Set for which there
      * is no path through the Query Call Set that is consistent with all of the alleles
@@ -257,12 +268,13 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $truthFN = null;
+    protected $truthFN = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True positives, from the perspective of the truth data, i.e. the number of sites
      * in the Truth Call Set for which there are paths through the Query Call Set that
@@ -271,16 +283,17 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $truthTP = null;
+    protected $truthTP = null;
+
     /**
      * Type for quality report
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * INDEL / SNP / Undefined variant.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQualityType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRSequenceQuality Constructor
@@ -476,7 +489,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -506,7 +519,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * End position of the sequence.If the coordinate system is 0-based then end is is
      * exclusive and does not include the last position. If the coordinate system is
@@ -522,14 +535,14 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * End position of the sequence.If the coordinate system is 0-based then end is is
      * exclusive and does not include the last position. If the coordinate system is
      * 1-base, then end is inclusive and includes the last position.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $end
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setEnd($end = null)
     {
@@ -549,7 +562,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall /
      * (precision + recall).
@@ -565,13 +578,13 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall /
      * (precision + recall).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $fScore
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setFScore($fScore = null)
     {
@@ -591,7 +604,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives where the non-REF alleles in the Truth and Query
      * Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or
@@ -608,14 +621,14 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives where the non-REF alleles in the Truth and Query
      * Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or
      * similar).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $gtFP
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setGtFP($gtFP = null)
     {
@@ -635,7 +648,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which method is used to get sequence quality.
      *
@@ -650,12 +663,12 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which method is used to get sequence quality.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $method
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setMethod(FHIRCodeableConcept $method = null)
     {
@@ -667,7 +680,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * QUERY.TP / (QUERY.TP + QUERY.FP).
      *
@@ -682,12 +695,12 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * QUERY.TP / (QUERY.TP + QUERY.FP).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $precision
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setPrecision($precision = null)
     {
@@ -707,7 +720,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * False positives, i.e. the number of sites in the Query Call Set for which there
      * is no path through the Truth Call Set that is consistent with this site. Sites
@@ -724,14 +737,14 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * False positives, i.e. the number of sites in the Query Call Set for which there
      * is no path through the Truth Call Set that is consistent with this site. Sites
      * with correct variant but incorrect genotype are counted here.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $queryFP
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setQueryFP($queryFP = null)
     {
@@ -751,7 +764,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True positives, from the perspective of the query data, i.e. the number of sites
      * in the Query Call Set for which there are paths through the Truth Call Set that
@@ -769,7 +782,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True positives, from the perspective of the query data, i.e. the number of sites
      * in the Query Call Set for which there are paths through the Truth Call Set that
@@ -777,7 +790,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * accurate genotype call for the event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $queryTP
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setQueryTP($queryTP = null)
     {
@@ -797,7 +810,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
      *
@@ -812,12 +825,12 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $recall
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setRecall($recall = null)
     {
@@ -838,7 +851,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
@@ -855,13 +868,13 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $score
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setScore(FHIRQuantity $score = null)
     {
@@ -873,7 +886,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Gold standard sequence used for comparing against.
      *
@@ -888,12 +901,12 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Gold standard sequence used for comparing against.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $standardSequence
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setStandardSequence(FHIRCodeableConcept $standardSequence = null)
     {
@@ -904,7 +917,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Start position of the sequence. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
@@ -919,13 +932,13 @@ class FHIRSequenceQuality extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Start position of the sequence. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $start
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setStart($start = null)
     {
@@ -945,7 +958,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * False negatives, i.e. the number of sites in the Truth Call Set for which there
      * is no path through the Query Call Set that is consistent with all of the alleles
@@ -963,7 +976,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * False negatives, i.e. the number of sites in the Truth Call Set for which there
      * is no path through the Query Call Set that is consistent with all of the alleles
@@ -971,7 +984,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * event. Sites with correct variant but incorrect genotype are counted here.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $truthFN
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setTruthFN($truthFN = null)
     {
@@ -991,7 +1004,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True positives, from the perspective of the truth data, i.e. the number of sites
      * in the Truth Call Set for which there are paths through the Query Call Set that
@@ -1009,7 +1022,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True positives, from the perspective of the truth data, i.e. the number of sites
      * in the Truth Call Set for which there are paths through the Query Call Set that
@@ -1017,7 +1030,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
      * accurate genotype call for the event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $truthTP
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setTruthTP($truthTP = null)
     {
@@ -1035,7 +1048,7 @@ class FHIRSequenceQuality extends FHIRBackboneElement
 
     /**
      * Type for quality report
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * INDEL / SNP / Undefined variant.
      *
@@ -1048,12 +1061,12 @@ class FHIRSequenceQuality extends FHIRBackboneElement
 
     /**
      * Type for quality report
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * INDEL / SNP / Undefined variant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQualityType $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality
+     * @return static
      */
     public function setType(FHIRQualityType $type = null)
     {

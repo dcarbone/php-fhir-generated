@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * A photo, video, or audio recording acquired or used in healthcare. The actual
  * content may be inline or provided by direct reference.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedia
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDIA;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTENT = 'content';
     const FIELD_DEVICE_NAME = 'deviceName';
@@ -114,38 +114,41 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
-    private $content = null;
+    protected $content = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $deviceName = null;
+    protected $deviceName = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
-    private $duration = null;
+    protected $duration = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of frames in a photo. This is used with a multi-page fax, or an
@@ -156,21 +159,23 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    private $frames = null;
+    protected $frames = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    private $height = null;
+    protected $height = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
@@ -178,32 +183,35 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $operator = null;
+    protected $operator = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
@@ -211,38 +219,41 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $subtype = null;
+    protected $subtype = null;
+
     /**
      * Whether the Media is a photo, video, or audio
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDigitalMediaType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $view = null;
+    protected $view = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    private $width = null;
+    protected $width = null;
 
     /**
      * FHIRMedia Constructor
@@ -409,7 +420,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -447,7 +458,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
@@ -462,13 +473,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment $content
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setContent(FHIRAttachment $content = null)
     {
@@ -479,7 +490,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
@@ -494,13 +505,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $deviceName
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setDeviceName($deviceName = null)
     {
@@ -518,7 +529,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
@@ -532,13 +543,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt $duration
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setDuration($duration = null)
     {
@@ -556,7 +567,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of frames in a photo. This is used with a multi-page fax, or an
@@ -574,7 +585,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The number of frames in a photo. This is used with a multi-page fax, or an
@@ -584,7 +595,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * required.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $frames
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setFrames($frames = null)
     {
@@ -602,7 +613,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
@@ -616,13 +627,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $height
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setHeight($height = null)
     {
@@ -641,7 +652,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
@@ -657,14 +668,14 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -675,14 +686,14 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -703,7 +714,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
      *
@@ -717,12 +728,12 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $operator
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setOperator(FHIRReference $operator = null)
     {
@@ -733,7 +744,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
      *
@@ -747,12 +758,12 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -764,7 +775,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
@@ -781,14 +792,14 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $subtype
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setSubtype(FHIRCodeableConcept $subtype = null)
     {
@@ -798,7 +809,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Whether the Media is a photo, video, or audio
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
@@ -812,13 +823,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Whether the Media is a photo, video, or audio
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDigitalMediaType $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setType(FHIRDigitalMediaType $type = null)
     {
@@ -830,7 +841,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
      *
@@ -845,12 +856,12 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $view
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setView(FHIRCodeableConcept $view = null)
     {
@@ -860,7 +871,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
@@ -874,13 +885,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $width
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedia
+     * @return static
      */
     public function setWidth($width = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
  * The Measure resource provides the definition of a quality measure.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMeasure
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPROVAL_DATE = 'approvalDate';
     const FIELD_APPROVAL_DATE_EXT = '_approvalDate';
@@ -165,14 +165,15 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $approvalDate = null;
+    protected $approvalDate = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -181,7 +182,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a summary of relevant clinical guidelines or other clinical
@@ -189,42 +190,46 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $clinicalRecommendationStatement = null;
+    protected $clinicalRecommendationStatement = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $compositeScoring = null;
+    protected $compositeScoring = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[]
      */
-    private $contributor = [];
+    protected $contributor = [];
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -233,7 +238,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the measure and/or its contents. Copyright
@@ -242,14 +247,15 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the measure was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -258,7 +264,8 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -267,14 +274,15 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown[]
      */
-    private $definition = [];
+    protected $definition = [];
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -283,7 +291,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the measure from a consumer's
@@ -291,7 +299,8 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -300,7 +309,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Notices and disclaimers regarding the use of the measure, or related to
@@ -308,21 +317,23 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $disclaimer = null;
+    protected $disclaimer = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the measure content was or is planned to be in active
      * use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
@@ -330,7 +341,8 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * The Measure resource provides the definition of a quality measure.
      *
@@ -338,7 +350,8 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup[]
      */
-    private $group = [];
+    protected $group = [];
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -347,7 +360,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Additional guidance for the measure including how it can be used in a clinical
@@ -355,11 +368,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $guidance = null;
+    protected $guidance = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
@@ -367,11 +381,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
@@ -379,45 +394,49 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $improvementNotation = null;
+    protected $improvementNotation = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $lastReviewDate = null;
+    protected $lastReviewDate = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $library = [];
+    protected $library = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
@@ -425,17 +444,19 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the measure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -444,7 +465,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this measure is needed and why it has been designed as it
@@ -452,18 +473,20 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $rateAggregation = null;
+    protected $rateAggregation = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -472,7 +495,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a succint statement of the need for the measure. Usually includes
@@ -481,23 +504,25 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $rationale = null;
+    protected $rationale = null;
+
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
-    private $relatedArtifact = [];
+    protected $relatedArtifact = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
@@ -505,12 +530,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $riskAdjustment = null;
+    protected $riskAdjustment = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
@@ -518,25 +544,28 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $scoring = null;
+    protected $scoring = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure set, e.g. Preventive Care and Screening.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $set = null;
+    protected $set = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * The Measure resource provides the definition of a quality measure.
      *
@@ -546,22 +575,24 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData[]
      */
-    private $supplementalData = [];
+    protected $supplementalData = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization of the type of the measure that can be useful for
@@ -569,23 +600,25 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $topic = [];
+    protected $topic = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $type = [];
+    protected $type = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this measure when it is referenced in a
      * specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -595,24 +628,26 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the measure is used from a clinical perspective.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $usage = null;
+    protected $usage = null;
+
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -620,11 +655,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the measure when it is
      * referenced in a specification, model, design or instance. This is an arbitrary
@@ -639,7 +675,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRMeasure Constructor
@@ -1156,7 +1192,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1195,7 +1231,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
@@ -1211,13 +1247,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $approvalDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setApprovalDate($approvalDate = null)
     {
@@ -1241,7 +1277,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a summary of relevant clinical guidelines or other clinical
@@ -1262,14 +1298,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a summary of relevant clinical guidelines or other clinical
      * recommendations supporting the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $clinicalRecommendationStatement
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setClinicalRecommendationStatement($clinicalRecommendationStatement = null)
     {
@@ -1289,7 +1325,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
@@ -1305,13 +1341,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $compositeScoring
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setCompositeScoring(FHIRCodeableConcept $compositeScoring = null)
     {
@@ -1322,7 +1358,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -1337,13 +1373,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -1354,13 +1390,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -1382,7 +1418,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
@@ -1398,13 +1434,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor $contributor
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addContributor(FHIRContributor $contributor = null)
     {
@@ -1416,13 +1452,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[] $contributor
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setContributor(array $contributor = [])
     {
@@ -1448,7 +1484,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the measure and/or its contents. Copyright
@@ -1470,7 +1506,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the measure and/or its contents. Copyright
@@ -1478,7 +1514,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $copyright
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1500,7 +1536,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the measure was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -1520,7 +1556,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the measure was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -1528,7 +1564,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * measure changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1552,7 +1588,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
@@ -1572,13 +1608,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addDefinition($definition = null)
     {
@@ -1602,13 +1638,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown[] $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setDefinition(array $definition = [])
     {
@@ -1634,7 +1670,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the measure from a consumer's
@@ -1655,14 +1691,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the measure from a consumer's
      * perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1686,7 +1722,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Notices and disclaimers regarding the use of the measure, or related to
@@ -1707,14 +1743,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Notices and disclaimers regarding the use of the measure, or related to
      * intellectual property (such as code systems) referenced by the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $disclaimer
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setDisclaimer($disclaimer = null)
     {
@@ -1733,7 +1769,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the measure content was or is planned to be in active
      * use.
@@ -1748,13 +1784,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the measure content was or is planned to be in active
      * use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -1764,7 +1800,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
@@ -1779,14 +1815,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1820,7 +1856,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A group of population criteria for the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup $group
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addGroup(FHIRMeasureGroup $group = null)
     {
@@ -1834,7 +1870,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A group of population criteria for the measure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup[] $group
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setGroup(array $group = [])
     {
@@ -1860,7 +1896,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Additional guidance for the measure including how it can be used in a clinical
@@ -1881,14 +1917,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Additional guidance for the measure including how it can be used in a clinical
      * context, and the intent of the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $guidance
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setGuidance($guidance = null)
     {
@@ -1907,7 +1943,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
@@ -1923,14 +1959,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1941,14 +1977,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1969,7 +2005,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
@@ -1985,14 +2021,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is whthin a range).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $improvementNotation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setImprovementNotation($improvementNotation = null)
     {
@@ -2012,7 +2048,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
      *
@@ -2027,12 +2063,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -2044,12 +2080,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -2071,7 +2107,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
@@ -2087,13 +2123,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $lastReviewDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setLastReviewDate($lastReviewDate = null)
     {
@@ -2112,7 +2148,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
@@ -2127,13 +2163,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $library
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addLibrary(FHIRReference $library = null)
     {
@@ -2144,13 +2180,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $library
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setLibrary(array $library = [])
     {
@@ -2171,7 +2207,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
@@ -2187,14 +2223,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setName($name = null)
     {
@@ -2213,7 +2249,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the measure.
      *
@@ -2227,12 +2263,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -2256,7 +2292,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this measure is needed and why it has been designed as it
@@ -2277,14 +2313,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this measure is needed and why it has been designed as it
      * has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -2303,7 +2339,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
@@ -2318,13 +2354,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $rateAggregation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setRateAggregation($rateAggregation = null)
     {
@@ -2348,7 +2384,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a succint statement of the need for the measure. Usually includes
@@ -2370,7 +2406,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a succint statement of the need for the measure. Usually includes
@@ -2378,7 +2414,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * evidence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $rationale
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setRationale($rationale = null)
     {
@@ -2398,7 +2434,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -2414,13 +2450,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
@@ -2432,13 +2468,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[] $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setRelatedArtifact(array $relatedArtifact = [])
     {
@@ -2459,7 +2495,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
@@ -2475,14 +2511,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
      * measure results.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $riskAdjustment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setRiskAdjustment($riskAdjustment = null)
     {
@@ -2502,7 +2538,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
@@ -2519,14 +2555,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $scoring
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setScoring(FHIRCodeableConcept $scoring = null)
     {
@@ -2537,7 +2573,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure set, e.g. Preventive Care and Screening.
      *
@@ -2551,12 +2587,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure set, e.g. Preventive Care and Screening.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $set
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setSet($set = null)
     {
@@ -2573,7 +2609,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
      *
@@ -2585,12 +2621,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -2620,7 +2656,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Resource Path.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData $supplementalData
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addSupplementalData(FHIRMeasureSupplementalData $supplementalData = null)
     {
@@ -2636,7 +2672,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Resource Path.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData[] $supplementalData
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setSupplementalData(array $supplementalData = [])
     {
@@ -2657,7 +2693,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
      *
@@ -2671,12 +2707,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -2696,7 +2732,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization of the type of the measure that can be useful for
@@ -2713,14 +2749,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization of the type of the measure that can be useful for
      * filtering and searching.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $topic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic = null)
     {
@@ -2732,14 +2768,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization of the type of the measure that can be useful for
      * filtering and searching.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $topic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setTopic(array $topic = [])
     {
@@ -2761,7 +2797,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
@@ -2777,13 +2813,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type = null)
     {
@@ -2795,13 +2831,13 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setType(array $type = [])
     {
@@ -2822,7 +2858,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this measure when it is referenced in a
      * specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -2840,7 +2876,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this measure when it is referenced in a
      * specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -2849,7 +2885,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * information see [Technical and Business Versions](resource.html#versions).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -2868,7 +2904,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the measure is used from a clinical perspective.
      *
@@ -2882,12 +2918,12 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the measure is used from a clinical perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $usage
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setUsage($usage = null)
     {
@@ -2909,7 +2945,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -2928,14 +2964,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate measure instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -2949,14 +2985,14 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate measure instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -2977,7 +3013,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the measure when it is
      * referenced in a specification, model, design or instance. This is an arbitrary
@@ -3000,7 +3036,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the measure when it is
      * referenced in a specification, model, design or instance. This is an arbitrary
@@ -3014,7 +3050,7 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * non-experimental active artifacts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMeasure
+     * @return static
      */
     public function setVersion($version = null)
     {

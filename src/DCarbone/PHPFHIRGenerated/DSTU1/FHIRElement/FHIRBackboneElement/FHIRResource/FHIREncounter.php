@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of
  * providing healthcare service(s) or assessing the health status of a patient.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIREncounter
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -86,7 +86,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ENCOUNTER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CLASS = 'class';
     const FIELD_CLASS_EXT = '_class';
@@ -109,13 +109,14 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Classification of the encounter
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREncounterClass
      */
-    private $class = null;
+    protected $class = null;
+
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -124,35 +125,39 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      */
-    private $hospitalization = null;
+    protected $hospitalization = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, as specified using information from another
      * resource. For admissions, this is the admission diagnosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $indication = null;
+    protected $indication = null;
+
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of
      * absence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $length = null;
+    protected $length = null;
+
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -161,18 +166,20 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation[]
      */
-    private $location = [];
+    protected $location = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $partOf = null;
+    protected $partOf = null;
+
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
@@ -181,81 +188,88 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and end time of the encounter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $reason = null;
+    protected $reason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Department or team providing care.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $serviceProvider = null;
+    protected $serviceProvider = null;
+
     /**
      * Current state of the encounter
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | in progress | onleave | finished | cancelled.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREncounterState
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient present at the encounter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
-    private $type = [];
+    protected $type = [];
 
     /**
      * FHIREncounter Constructor
@@ -447,7 +461,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -484,7 +498,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Classification of the encounter
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
      *
@@ -497,12 +511,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Classification of the encounter
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREncounterClass $class
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setClass(FHIREncounterClass $class = null)
     {
@@ -530,7 +544,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Details about an admission to a clinic.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $hospitalization
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setHospitalization(FHIREncounterHospitalization $hospitalization = null)
     {
@@ -541,7 +555,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
      *
@@ -555,12 +569,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -571,12 +585,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -597,7 +611,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, as specified using information from another
      * resource. For admissions, this is the admission diagnosis.
@@ -612,13 +626,13 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, as specified using information from another
      * resource. For admissions, this is the admission diagnosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $indication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setIndication(FHIRResourceReference $indication = null)
     {
@@ -642,7 +656,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * absence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRDuration $length
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setLength(FHIRDuration $length = null)
     {
@@ -670,7 +684,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * List of locations at which the patient has been.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function addLocation(FHIREncounterLocation $location = null)
     {
@@ -685,7 +699,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * List of locations at which the patient has been.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation[] $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setLocation(array $location = [])
     {
@@ -706,7 +720,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
@@ -721,13 +735,13 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $partOf
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setPartOf(FHIRResourceReference $partOf = null)
     {
@@ -755,7 +769,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * The main practitioner responsible for providing the service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function addParticipant(FHIREncounterParticipant $participant = null)
     {
@@ -770,7 +784,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * The main practitioner responsible for providing the service.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -791,7 +805,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and end time of the encounter.
      *
@@ -805,12 +819,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and end time of the encounter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -822,7 +836,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
      *
@@ -837,12 +851,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $priority
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setPriority(FHIRCodeableConcept $priority = null)
     {
@@ -854,7 +868,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
@@ -870,13 +884,13 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
@@ -887,7 +901,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Department or team providing care.
      *
@@ -901,12 +915,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Department or team providing care.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $serviceProvider
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setServiceProvider(FHIRResourceReference $serviceProvider = null)
     {
@@ -916,7 +930,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Current state of the encounter
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | in progress | onleave | finished | cancelled.
      *
@@ -929,12 +943,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Current state of the encounter
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | in progress | onleave | finished | cancelled.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREncounterState $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setStatus(FHIREncounterState $status = null)
     {
@@ -945,7 +959,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient present at the encounter.
      *
@@ -959,12 +973,12 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient present at the encounter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {
@@ -976,7 +990,7 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
@@ -992,13 +1006,13 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type = null)
     {
@@ -1010,13 +1024,13 @@ class FHIREncounter extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIREncounter
+     * @return static
      */
     public function setType(array $type = [])
     {

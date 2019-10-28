@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * Defines behavior for an action or a group for how many times that item may be
  * repeated
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRActionCardinalityBehavior
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -81,14 +81,14 @@ class FHIRActionCardinalityBehavior extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ACTION_CARDINALITY_BEHAVIOR;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRActionCardinalityBehaviorList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRActionCardinalityBehavior Constructor
@@ -133,7 +133,7 @@ class FHIRActionCardinalityBehavior extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -170,7 +170,7 @@ class FHIRActionCardinalityBehavior extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRActionCardinalityBehaviorList $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
+     * @return static
      */
     public function setValue($value = null)
     {

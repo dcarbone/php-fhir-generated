@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * The EffectEvidenceSynthesis resource describes the difference in an outcome
  * between exposures states in a population where the effect estimate is derived
  * from a combination of research studies.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIREffectEvidenceSynthesis
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -100,7 +100,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPROVAL_DATE = 'approvalDate';
     const FIELD_APPROVAL_DATE_EXT = '_approvalDate';
@@ -153,25 +153,27 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $approvalDate = null;
+    protected $approvalDate = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $author = [];
+    protected $author = [];
+
     /**
      * The EffectEvidenceSynthesis resource describes the difference in an outcome
      * between exposures states in a population where the effect estimate is derived
@@ -181,25 +183,27 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty[]
      */
-    private $certainty = [];
+    protected $certainty = [];
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the effect evidence synthesis and/or its
@@ -208,14 +212,15 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the effect evidence synthesis was published.
      * The date must change when the business version changes and it must change if the
@@ -224,14 +229,15 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the effect evidence synthesis from a
@@ -239,18 +245,20 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $editor = [];
+    protected $editor = [];
+
     /**
      * The EffectEvidenceSynthesis resource describes the difference in an outcome
      * between exposures states in a population where the effect estimate is derived
@@ -260,56 +268,61 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate[]
      */
-    private $effectEstimate = [];
+    protected $effectEstimate = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the effect evidence synthesis content was or is planned
      * to be in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $endorser = [];
+    protected $endorser = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $exposure = null;
+    protected $exposure = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the comparison exposure
      * for the research.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $exposureAlternative = null;
+    protected $exposureAlternative = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this effect evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
@@ -317,35 +330,38 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the effect evidence synthesis is intended
      * to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $lastReviewDate = null;
+    protected $lastReviewDate = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the effect evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
@@ -353,63 +369,69 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $outcome = null;
+    protected $outcome = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $population = null;
+    protected $population = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the effect evidence
      * synthesis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
-    private $relatedArtifact = [];
+    protected $relatedArtifact = [];
+
     /**
      * The EffectEvidenceSynthesis resource describes the difference in an outcome
      * between exposures states in a population where the effect estimate is derived
@@ -420,18 +442,20 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure[]
      */
-    private $resultsByExposure = [];
+    protected $resultsByExposure = [];
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $reviewer = [];
+    protected $reviewer = [];
+
     /**
      * The EffectEvidenceSynthesis resource describes the difference in an outcome
      * between exposures states in a population where the effect estimate is derived
@@ -441,53 +465,58 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize
      */
-    private $sampleSize = null;
+    protected $sampleSize = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this effect evidence synthesis. Enables tracking the life-cycle of
      * the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $studyType = null;
+    protected $studyType = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $synthesisType = null;
+    protected $synthesisType = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the effect evidence synthesis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
@@ -495,11 +524,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $topic = [];
+    protected $topic = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this effect evidence synthesis when it
      * is referenced in a specification, model, design or an instance; also called its
@@ -511,14 +541,15 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -528,11 +559,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the effect evidence
      * synthesis when it is referenced in a specification, model, design or instance.
@@ -543,7 +575,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIREffectEvidenceSynthesis Constructor
@@ -993,7 +1025,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1032,7 +1064,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
@@ -1048,13 +1080,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $approvalDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setApprovalDate($approvalDate = null)
     {
@@ -1073,7 +1105,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
@@ -1088,13 +1120,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addAuthor(FHIRContactDetail $author = null)
     {
@@ -1105,13 +1137,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setAuthor(array $author = [])
     {
@@ -1151,7 +1183,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A description of the certainty of the effect estimate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty $certainty
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addCertainty(FHIREffectEvidenceSynthesisCertainty $certainty = null)
     {
@@ -1167,7 +1199,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A description of the certainty of the effect estimate.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty[] $certainty
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setCertainty(array $certainty = [])
     {
@@ -1188,7 +1220,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -1203,13 +1235,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -1220,13 +1252,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -1250,7 +1282,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the effect evidence synthesis and/or its
@@ -1270,7 +1302,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the effect evidence synthesis and/or its
@@ -1278,7 +1310,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * publishing of the effect evidence synthesis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1300,7 +1332,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the effect evidence synthesis was published.
      * The date must change when the business version changes and it must change if the
@@ -1320,7 +1352,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the effect evidence synthesis was published.
      * The date must change when the business version changes and it must change if the
@@ -1328,7 +1360,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * of the effect evidence synthesis changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1350,7 +1382,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the effect evidence synthesis from a
@@ -1369,14 +1401,14 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the effect evidence synthesis from a
      * consumer's perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1395,7 +1427,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
@@ -1410,13 +1442,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $editor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addEditor(FHIRContactDetail $editor = null)
     {
@@ -1427,13 +1459,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $editor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setEditor(array $editor = [])
     {
@@ -1473,7 +1505,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * The estimated effect of the exposure variant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate $effectEstimate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addEffectEstimate(FHIREffectEvidenceSynthesisEffectEstimate $effectEstimate = null)
     {
@@ -1489,7 +1521,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * The estimated effect of the exposure variant.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate[] $effectEstimate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setEffectEstimate(array $effectEstimate = [])
     {
@@ -1510,7 +1542,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the effect evidence synthesis content was or is planned
      * to be in active use.
@@ -1525,13 +1557,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the effect evidence synthesis content was or is planned
      * to be in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -1542,7 +1574,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
@@ -1557,13 +1589,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $endorser
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser = null)
     {
@@ -1574,13 +1606,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $endorser
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setEndorser(array $endorser = [])
     {
@@ -1601,7 +1633,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
@@ -1616,13 +1648,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $exposure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setExposure(FHIRReference $exposure = null)
     {
@@ -1633,7 +1665,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the comparison exposure
      * for the research.
@@ -1648,13 +1680,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the comparison exposure
      * for the research.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $exposureAlternative
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setExposureAlternative(FHIRReference $exposureAlternative = null)
     {
@@ -1666,7 +1698,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this effect evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
@@ -1683,14 +1715,14 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this effect evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1702,14 +1734,14 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this effect evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1731,7 +1763,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the effect evidence synthesis is intended
      * to be used.
@@ -1747,13 +1779,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the effect evidence synthesis is intended
      * to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -1765,13 +1797,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the effect evidence synthesis is intended
      * to be used.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -1793,7 +1825,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
@@ -1809,13 +1841,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $lastReviewDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setLastReviewDate($lastReviewDate = null)
     {
@@ -1834,7 +1866,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the effect evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
@@ -1850,14 +1882,14 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the effect evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1877,7 +1909,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
      *
@@ -1892,12 +1924,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1909,12 +1941,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1935,7 +1967,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
@@ -1950,13 +1982,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $outcome
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setOutcome(FHIRReference $outcome = null)
     {
@@ -1967,7 +1999,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
@@ -1982,13 +2014,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setPopulation(FHIRReference $population = null)
     {
@@ -1999,7 +2031,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the effect evidence
      * synthesis.
@@ -2014,13 +2046,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the effect evidence
      * synthesis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -2040,7 +2072,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -2056,13 +2088,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
@@ -2074,13 +2106,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[] $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setRelatedArtifact(array $relatedArtifact = [])
     {
@@ -2122,7 +2154,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * estimate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure $resultsByExposure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addResultsByExposure(FHIREffectEvidenceSynthesisResultsByExposure $resultsByExposure = null)
     {
@@ -2139,7 +2171,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * estimate.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure[] $resultsByExposure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setResultsByExposure(array $resultsByExposure = [])
     {
@@ -2160,7 +2192,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
@@ -2175,13 +2207,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $reviewer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer = null)
     {
@@ -2192,13 +2224,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $reviewer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setReviewer(array $reviewer = [])
     {
@@ -2238,7 +2270,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A description of the size of the sample involved in the synthesis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize $sampleSize
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setSampleSize(FHIREffectEvidenceSynthesisSampleSize $sampleSize = null)
     {
@@ -2247,7 +2279,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this effect evidence synthesis. Enables tracking the life-cycle of
      * the content.
@@ -2260,13 +2292,13 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this effect evidence synthesis. Enables tracking the life-cycle of
      * the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -2278,7 +2310,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
      *
@@ -2293,12 +2325,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $studyType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setStudyType(FHIRCodeableConcept $studyType = null)
     {
@@ -2310,7 +2342,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
      *
@@ -2325,12 +2357,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $synthesisType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setSynthesisType(FHIRCodeableConcept $synthesisType = null)
     {
@@ -2341,7 +2373,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the effect evidence synthesis.
      *
@@ -2355,12 +2387,12 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the effect evidence synthesis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -2380,7 +2412,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
@@ -2397,14 +2429,14 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $topic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic = null)
     {
@@ -2416,14 +2448,14 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $topic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setTopic(array $topic = [])
     {
@@ -2444,7 +2476,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this effect evidence synthesis when it
      * is referenced in a specification, model, design or an instance; also called its
@@ -2464,7 +2496,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this effect evidence synthesis when it
      * is referenced in a specification, model, design or an instance; also called its
@@ -2475,7 +2507,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * on different servers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -2497,7 +2529,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2518,7 +2550,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2527,7 +2559,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * synthesis instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -2541,7 +2573,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2550,7 +2582,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * synthesis instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -2571,7 +2603,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the effect evidence
      * synthesis when it is referenced in a specification, model, design or instance.
@@ -2590,7 +2622,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the effect evidence
      * synthesis when it is referenced in a specification, model, design or instance.
@@ -2600,7 +2632,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRC
      * expectation that versions can be placed in a lexicographical sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return static
      */
     public function setVersion($version = null)
     {

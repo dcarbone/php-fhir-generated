@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_PRESCRIPTION_DOT_DISPENSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
     const FIELD_MEDICATION = 'medication';
@@ -101,11 +101,12 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $expectedSupplyDuration = null;
+    protected $expectedSupplyDuration = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication that is to be dispensed. This may be a more
      * specifically defined than the medicationPrescription.medication . This is either
@@ -115,10 +116,11 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $medication = null;
+    protected $medication = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An integer indicating the number of repeats of the Dispense. UsageNotes: For
      * example, the number of times the prescribed quantity is to be supplied including
@@ -126,23 +128,25 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $numberOfRepeatsAllowed = null;
+    protected $numberOfRepeatsAllowed = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Design Comments: This indicates the validity period of a prescription (stale
      * dating the Prescription) It reflects the prescriber perspective for the validity
@@ -155,7 +159,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $validityPeriod = null;
+    protected $validityPeriod = null;
 
     /**
      * FHIRMedicationPrescriptionDispense Constructor
@@ -238,7 +242,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -293,7 +297,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * influenced by external factors.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
+     * @return static
      */
     public function setExpectedSupplyDuration(FHIRDuration $expectedSupplyDuration = null)
     {
@@ -304,7 +308,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication that is to be dispensed. This may be a more
      * specifically defined than the medicationPrescription.medication . This is either
@@ -322,7 +326,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication that is to be dispensed. This may be a more
      * specifically defined than the medicationPrescription.medication . This is either
@@ -331,7 +335,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * medications.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $medication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
+     * @return static
      */
     public function setMedication(FHIRResourceReference $medication = null)
     {
@@ -341,7 +345,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An integer indicating the number of repeats of the Dispense. UsageNotes: For
      * example, the number of times the prescribed quantity is to be supplied including
@@ -356,14 +360,14 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An integer indicating the number of repeats of the Dispense. UsageNotes: For
      * example, the number of times the prescribed quantity is to be supplied including
      * the initial standard fill.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $numberOfRepeatsAllowed
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
+     * @return static
      */
     public function setNumberOfRepeatsAllowed($numberOfRepeatsAllowed = null)
     {
@@ -384,7 +388,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed.
      *
@@ -400,12 +404,12 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -416,7 +420,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Design Comments: This indicates the validity period of a prescription (stale
      * dating the Prescription) It reflects the prescriber perspective for the validity
@@ -437,7 +441,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Design Comments: This indicates the validity period of a prescription (stale
      * dating the Prescription) It reflects the prescriber perspective for the validity
@@ -449,7 +453,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * becomes valid, and when it ceases to be a dispensable Prescription.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $validityPeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
+     * @return static
      */
     public function setValidityPeriod(FHIRPeriod $validityPeriod = null)
     {

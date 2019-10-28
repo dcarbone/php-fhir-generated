@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * A list is a curated collection of resources.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRList
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_LIST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_DATE = 'date';
@@ -114,47 +114,51 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $emptyReason = null;
+    protected $emptyReason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A list is a curated collection of resources.
      *
@@ -162,22 +166,24 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry[]
      */
-    private $entry = [];
+    protected $entry = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * The processing mode that applies to this section.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How this list was prepared - whether it is a working list that is suitable for
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
@@ -186,70 +192,76 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRListMode
      */
-    private $mode = null;
+    protected $mode = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments that apply to the overall list.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $orderedBy = null;
+    protected $orderedBy = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $source = null;
+    protected $source = null;
+
     /**
      * The current state of the list.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRListStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The common subject (or patient) of the resources that are in the list if there
      * is one.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
 
     /**
      * FHIRList Constructor
@@ -429,7 +441,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -468,7 +480,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
      *
@@ -483,12 +495,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -502,7 +514,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
      *
@@ -519,12 +531,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -544,7 +556,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
      *
@@ -559,12 +571,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $emptyReason
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setEmptyReason(FHIRCodeableConcept $emptyReason = null)
     {
@@ -575,7 +587,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
      *
@@ -589,12 +601,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -620,7 +632,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Entries in this list.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry $entry
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function addEntry(FHIRListEntry $entry = null)
     {
@@ -634,7 +646,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Entries in this list.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry[] $entry
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setEntry(array $entry = [])
     {
@@ -656,7 +668,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
@@ -672,13 +684,13 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -690,13 +702,13 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -716,7 +728,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The processing mode that applies to this section.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How this list was prepared - whether it is a working list that is suitable for
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
@@ -732,7 +744,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The processing mode that applies to this section.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How this list was prepared - whether it is a working list that is suitable for
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
@@ -740,7 +752,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * be marked as added, modified or deleted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRListMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setMode(FHIRListMode $mode = null)
     {
@@ -752,7 +764,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments that apply to the overall list.
      *
@@ -767,12 +779,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments that apply to the overall list.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -784,12 +796,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments that apply to the overall list.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -811,7 +823,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
      *
@@ -826,12 +838,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $orderedBy
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setOrderedBy(FHIRCodeableConcept $orderedBy = null)
     {
@@ -842,7 +854,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
@@ -857,13 +869,13 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setSource(FHIRReference $source = null)
     {
@@ -873,7 +885,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The current state of the list.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
      *
@@ -886,12 +898,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The current state of the list.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRListStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setStatus(FHIRListStatus $status = null)
     {
@@ -902,7 +914,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The common subject (or patient) of the resources that are in the list if there
      * is one.
@@ -917,13 +929,13 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The common subject (or patient) of the resources that are in the list if there
      * is one.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -934,7 +946,7 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
      *
@@ -948,12 +960,12 @@ class FHIRList extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList
+     * @return static
      */
     public function setTitle($title = null)
     {

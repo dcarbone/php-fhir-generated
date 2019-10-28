@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Demographics and other administrative information about an individual or animal
  * receiving care or other health-related services.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRPatient
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -96,7 +96,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PATIENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -128,7 +128,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this patient record is in active use. Many systems use this property to
      * mark as non-current patients, such as those that have not been seen for a period
@@ -138,7 +138,8 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
@@ -146,24 +147,26 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the individual.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress[]
      */
-    private $address = [];
+    protected $address = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $birthDate = null;
+    protected $birthDate = null;
+
     /**
      * Demographics and other administrative information about an individual or animal
      * receiving care or other health-related services.
@@ -173,7 +176,8 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication[]
      */
-    private $communication = [];
+    protected $communication = [];
+
     /**
      * Demographics and other administrative information about an individual or animal
      * receiving care or other health-related services.
@@ -182,61 +186,67 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not. (choose any one of deceased*,
      * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $deceasedBoolean = null;
+    protected $deceasedBoolean = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not. (choose any one of deceased*,
      * but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $deceasedDateTime = null;
+    protected $deceasedDateTime = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAdministrativeGender
      */
-    private $gender = null;
+    protected $gender = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $generalPractitioner = [];
+    protected $generalPractitioner = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * Demographics and other administrative information about an individual or animal
      * receiving care or other health-related services.
@@ -245,81 +255,88 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink[]
      */
-    private $link = [];
+    protected $link = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $managingOrganization = null;
+    protected $managingOrganization = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $maritalStatus = null;
+    protected $maritalStatus = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer). (choose any one of multipleBirth*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $multipleBirthBoolean = null;
+    protected $multipleBirthBoolean = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer). (choose any one of multipleBirth*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $multipleBirthInteger = null;
+    protected $multipleBirthInteger = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName[]
      */
-    private $name = [];
+    protected $name = [];
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
-    private $photo = [];
+    protected $photo = [];
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[]
      */
-    private $telecom = [];
+    protected $telecom = [];
 
     /**
      * FHIRPatient Constructor
@@ -604,7 +621,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -641,7 +658,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this patient record is in active use. Many systems use this property to
      * mark as non-current patients, such as those that have not been seen for a period
@@ -658,7 +675,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this patient record is in active use. Many systems use this property to
      * mark as non-current patients, such as those that have not been seen for a period
@@ -667,7 +684,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * as inactive for the same reasons, but may be active for some time after death.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -690,7 +707,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the individual.
      *
@@ -708,12 +725,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the individual.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress $address
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addAddress(FHIRAddress $address = null)
     {
@@ -728,12 +745,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the individual.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress[] $address
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setAddress(array $address = [])
     {
@@ -755,7 +772,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
      *
@@ -770,12 +787,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $birthDate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setBirthDate($birthDate = null)
     {
@@ -813,7 +830,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * health.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication $communication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addCommunication(FHIRPatientCommunication $communication = null)
     {
@@ -829,7 +846,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * health.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication[] $communication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setCommunication(array $communication = [])
     {
@@ -867,7 +884,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contact party (e.g. guardian, partner, friend) for the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addContact(FHIRPatientContact $contact = null)
     {
@@ -882,7 +899,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contact party (e.g. guardian, partner, friend) for the patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -902,7 +919,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not. (choose any one of deceased*,
      * but only one)
@@ -916,13 +933,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not. (choose any one of deceased*,
      * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setDeceasedBoolean($deceasedBoolean = null)
     {
@@ -944,7 +961,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not. (choose any one of deceased*,
      * but only one)
@@ -962,13 +979,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not. (choose any one of deceased*,
      * but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $deceasedDateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setDeceasedDateTime($deceasedDateTime = null)
     {
@@ -985,7 +1002,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
@@ -998,13 +1015,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAdministrativeGender $gender
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setGender(FHIRAdministrativeGender $gender = null)
     {
@@ -1015,7 +1032,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
      *
@@ -1029,12 +1046,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $generalPractitioner
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addGeneralPractitioner(FHIRReference $generalPractitioner = null)
     {
@@ -1045,12 +1062,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $generalPractitioner
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setGeneralPractitioner(array $generalPractitioner = [])
     {
@@ -1072,7 +1089,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
      *
@@ -1087,12 +1104,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1104,12 +1121,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1147,7 +1164,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Link to another patient resource that concerns the same actual patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink $link
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addLink(FHIRPatientLink $link = null)
     {
@@ -1162,7 +1179,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Link to another patient resource that concerns the same actual patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink[] $link
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setLink(array $link = [])
     {
@@ -1183,7 +1200,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
      *
@@ -1197,12 +1214,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $managingOrganization
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setManagingOrganization(FHIRReference $managingOrganization = null)
     {
@@ -1214,7 +1231,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
      *
@@ -1229,12 +1246,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $maritalStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setMaritalStatus(FHIRCodeableConcept $maritalStatus = null)
     {
@@ -1244,7 +1261,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer). (choose any one of multipleBirth*, but only one)
@@ -1258,13 +1275,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer). (choose any one of multipleBirth*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $multipleBirthBoolean
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setMultipleBirthBoolean($multipleBirthBoolean = null)
     {
@@ -1283,7 +1300,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer). (choose any one of multipleBirth*, but only one)
@@ -1298,13 +1315,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer). (choose any one of multipleBirth*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $multipleBirthInteger
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setMultipleBirthInteger($multipleBirthInteger = null)
     {
@@ -1323,7 +1340,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
      *
@@ -1337,12 +1354,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addName(FHIRHumanName $name = null)
     {
@@ -1353,12 +1370,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName[] $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setName(array $name = [])
     {
@@ -1379,7 +1396,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
      *
@@ -1393,12 +1410,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $photo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addPhoto(FHIRAttachment $photo = null)
     {
@@ -1409,12 +1426,12 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[] $photo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setPhoto(array $photo = [])
     {
@@ -1436,7 +1453,7 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
@@ -1452,13 +1469,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $telecom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom = null)
     {
@@ -1470,13 +1487,13 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[] $telecom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPatient
+     * @return static
      */
     public function setTelecom(array $telecom = [])
     {

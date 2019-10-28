@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * definitions. It can be used to describe and expose existing knowledge assets
  * such as logic libraries and information model descriptions, as well as to
  * describe a collection of knowledge assets.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRLibrary
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -100,7 +100,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_LIBRARY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPROVAL_DATE = 'approvalDate';
     const FIELD_APPROVAL_DATE_EXT = '_approvalDate';
@@ -148,29 +148,31 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $approvalDate = null;
+    protected $approvalDate = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content of the library as an Attachment. The content may be a reference to a
      * url, or may be directly embedded as a base-64 string. Either way, the
@@ -178,19 +180,21 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment[]
      */
-    private $content = [];
+    protected $content = [];
+
     /**
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the library, including authors, editors,
      * reviewers, and endorsers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[]
      */
-    private $contributor = [];
+    protected $contributor = [];
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -199,7 +203,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the library and/or its contents. Copyright
@@ -208,26 +212,28 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes a set of data that must be provided in order to be able to
      * successfully perform the computations defined by the library.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[]
      */
-    private $dataRequirement = [];
+    protected $dataRequirement = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the library was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -236,7 +242,8 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -245,7 +252,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the library from a consumer's
@@ -253,21 +260,23 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the library content was or is planned to be in active
      * use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this library is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
@@ -275,11 +284,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this library when it is represented
      * in other formats, or referenced in a specification, model, design or an
@@ -288,34 +298,37 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the library is intended to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $lastReviewDate = null;
+    protected $lastReviewDate = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the library. This name should be usable as
      * an identifier for the module by machine processing applications such as code
@@ -323,29 +336,32 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * The parameters to the module. This collection specifies both the input and
      * output parameters. Input parameters are provided by the caller as part of the
      * $evaluate operation. Output parameters are included in the GuidanceResponse.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter element defines parameters used by the library.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRParameterDefinition[]
      */
-    private $parameter = [];
+    protected $parameter = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the library.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -354,7 +370,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this library is needed and why it has been designed as it
@@ -362,42 +378,46 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
-    private $relatedArtifact = [];
+    protected $relatedArtifact = [];
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this library. Enables tracking the life-cycle of the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the library.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the library. Topics provide a
      * high-level categorization of the library that can be useful for filtering and
@@ -405,23 +425,25 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $topic = [];
+    protected $topic = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the type of library such as a Logic Library, Model Definition, Asset
      * Collection, or Module Definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this library when it is referenced in a
      * specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -431,24 +453,26 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the library is used from a clinical perspective.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $usage = null;
+    protected $usage = null;
+
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -456,11 +480,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the library when it is
      * referenced in a specification, model, design or instance. This is an arbitrary
@@ -475,7 +500,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRLibrary Constructor
@@ -852,7 +877,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -891,7 +916,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
@@ -907,13 +932,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $approvalDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setApprovalDate($approvalDate = null)
     {
@@ -932,7 +957,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -947,13 +972,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -964,13 +989,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -991,7 +1016,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content of the library as an Attachment. The content may be a reference to a
      * url, or may be directly embedded as a base-64 string. Either way, the
@@ -1007,14 +1032,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content of the library as an Attachment. The content may be a reference to a
      * url, or may be directly embedded as a base-64 string. Either way, the
      * contentType of the attachment determines how to interpret the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $content
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addContent(FHIRAttachment $content = null)
     {
@@ -1025,14 +1050,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content of the library as an Attachment. The content may be a reference to a
      * url, or may be directly embedded as a base-64 string. Either way, the
      * contentType of the attachment determines how to interpret the content.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment[] $content
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setContent(array $content = [])
     {
@@ -1054,7 +1079,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the library, including authors, editors,
      * reviewers, and endorsers.
@@ -1070,13 +1095,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the library, including authors, editors,
      * reviewers, and endorsers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor $contributor
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addContributor(FHIRContributor $contributor = null)
     {
@@ -1088,13 +1113,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contributor to the content of the library, including authors, editors,
      * reviewers, and endorsers.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[] $contributor
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setContributor(array $contributor = [])
     {
@@ -1120,7 +1145,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the library and/or its contents. Copyright
@@ -1142,7 +1167,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the library and/or its contents. Copyright
@@ -1150,7 +1175,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * library.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $copyright
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1170,7 +1195,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes a set of data that must be provided in order to be able to
      * successfully perform the computations defined by the library.
@@ -1186,13 +1211,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes a set of data that must be provided in order to be able to
      * successfully perform the computations defined by the library.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement $dataRequirement
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addDataRequirement(FHIRDataRequirement $dataRequirement = null)
     {
@@ -1204,13 +1229,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes a set of data that must be provided in order to be able to
      * successfully perform the computations defined by the library.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[] $dataRequirement
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setDataRequirement(array $dataRequirement = [])
     {
@@ -1234,7 +1259,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the library was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -1254,7 +1279,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the library was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -1262,7 +1287,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * library changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1286,7 +1311,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the library from a consumer's
@@ -1307,14 +1332,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the library from a consumer's
      * perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1333,7 +1358,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the library content was or is planned to be in active
      * use.
@@ -1348,13 +1373,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the library content was or is planned to be in active
      * use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -1364,7 +1389,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this library is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
@@ -1379,14 +1404,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this library is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1405,7 +1430,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this library when it is represented
      * in other formats, or referenced in a specification, model, design or an
@@ -1422,7 +1447,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this library when it is represented
      * in other formats, or referenced in a specification, model, design or an
@@ -1430,7 +1455,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * one identifier is required for non-experimental active artifacts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1441,7 +1466,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this library when it is represented
      * in other formats, or referenced in a specification, model, design or an
@@ -1449,7 +1474,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * one identifier is required for non-experimental active artifacts.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1471,7 +1496,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the library is intended to be used.
      *
@@ -1486,12 +1511,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the library is intended to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -1503,12 +1528,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the library is intended to be used.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -1530,7 +1555,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
@@ -1546,13 +1571,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $lastReviewDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setLastReviewDate($lastReviewDate = null)
     {
@@ -1571,7 +1596,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the library. This name should be usable as
      * an identifier for the module by machine processing applications such as code
@@ -1587,14 +1612,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the library. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1615,7 +1640,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * output parameters. Input parameters are provided by the caller as part of the
      * $evaluate operation. Output parameters are included in the GuidanceResponse.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter element defines parameters used by the library.
      *
@@ -1631,12 +1656,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * output parameters. Input parameters are provided by the caller as part of the
      * $evaluate operation. Output parameters are included in the GuidanceResponse.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter element defines parameters used by the library.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRParameterDefinition $parameter
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addParameter(FHIRParameterDefinition $parameter = null)
     {
@@ -1649,12 +1674,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * output parameters. Input parameters are provided by the caller as part of the
      * $evaluate operation. Output parameters are included in the GuidanceResponse.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter element defines parameters used by the library.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRParameterDefinition[] $parameter
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setParameter(array $parameter = [])
     {
@@ -1675,7 +1700,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the library.
      *
@@ -1689,12 +1714,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the library.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1718,7 +1743,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this library is needed and why it has been designed as it
@@ -1739,14 +1764,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this library is needed and why it has been designed as it
      * has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -1766,7 +1791,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
@@ -1782,13 +1807,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact = null)
     {
@@ -1800,13 +1825,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[] $relatedArtifact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setRelatedArtifact(array $relatedArtifact = [])
     {
@@ -1825,7 +1850,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this library. Enables tracking the life-cycle of the content.
      *
@@ -1837,12 +1862,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this library. Enables tracking the life-cycle of the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -1853,7 +1878,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the library.
      *
@@ -1867,12 +1892,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the library.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -1892,7 +1917,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the library. Topics provide a
      * high-level categorization of the library that can be useful for filtering and
@@ -1909,14 +1934,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the library. Topics provide a
      * high-level categorization of the library that can be useful for filtering and
      * searching.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $topic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic = null)
     {
@@ -1928,14 +1953,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive topics related to the content of the library. Topics provide a
      * high-level categorization of the library that can be useful for filtering and
      * searching.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $topic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setTopic(array $topic = [])
     {
@@ -1957,7 +1982,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the type of library such as a Logic Library, Model Definition, Asset
      * Collection, or Module Definition.
@@ -1973,13 +1998,13 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the type of library such as a Logic Library, Model Definition, Asset
      * Collection, or Module Definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -1990,7 +2015,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this library when it is referenced in a
      * specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -2008,7 +2033,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this library when it is referenced in a
      * specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -2017,7 +2042,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * information see [Technical and Business Versions](resource.html#versions).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -2036,7 +2061,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the library is used from a clinical perspective.
      *
@@ -2050,12 +2075,12 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the library is used from a clinical perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $usage
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setUsage($usage = null)
     {
@@ -2077,7 +2102,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -2096,14 +2121,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate library instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -2117,14 +2142,14 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate library instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -2145,7 +2170,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the library when it is
      * referenced in a specification, model, design or instance. This is an arbitrary
@@ -2168,7 +2193,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the library when it is
      * referenced in a specification, model, design or instance. This is an arbitrary
@@ -2182,7 +2207,7 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * non-experimental active artifacts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLibrary
+     * @return static
      */
     public function setVersion($version = null)
     {

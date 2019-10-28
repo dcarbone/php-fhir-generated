@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSeque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_ROC;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_F_MEASURE = 'fMeasure';
     const FIELD_F_MEASURE_EXT = '_fMeasure';
@@ -101,78 +101,84 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
-    private $fMeasure = [];
+    protected $fMeasure = [];
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    private $numFN = [];
+    protected $numFN = [];
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    private $numFP = [];
+    protected $numFP = [];
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    private $numTP = [];
+    protected $numTP = [];
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
-    private $precision = [];
+    protected $precision = [];
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    private $score = [];
+    protected $score = [];
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
-    private $sensitivity = [];
+    protected $sensitivity = [];
 
     /**
      * FHIRSequenceRoc Constructor
@@ -364,7 +370,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -395,7 +401,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      *
@@ -410,12 +416,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $fMeasure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addFMeasure($fMeasure = null)
     {
@@ -435,12 +441,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $fMeasure
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setFMeasure(array $fMeasure = [])
     {
@@ -461,7 +467,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
@@ -476,13 +482,13 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numFN
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addNumFN($numFN = null)
     {
@@ -501,13 +507,13 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numFN
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setNumFN(array $numFN = [])
     {
@@ -528,7 +534,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
@@ -543,13 +549,13 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numFP
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addNumFP($numFP = null)
     {
@@ -568,13 +574,13 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numFP
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setNumFP(array $numFP = [])
     {
@@ -595,7 +601,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
@@ -610,13 +616,13 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numTP
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addNumTP($numTP = null)
     {
@@ -635,13 +641,13 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numTP
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setNumTP(array $numTP = [])
     {
@@ -663,7 +669,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
      *
@@ -678,12 +684,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $precision
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addPrecision($precision = null)
     {
@@ -703,12 +709,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $precision
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setPrecision(array $precision = [])
     {
@@ -729,7 +735,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
      *
@@ -743,12 +749,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $score
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addScore($score = null)
     {
@@ -767,12 +773,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $score
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setScore(array $score = [])
     {
@@ -794,7 +800,7 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      *
@@ -809,12 +815,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $sensitivity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function addSensitivity($sensitivity = null)
     {
@@ -834,12 +840,12 @@ class FHIRSequenceRoc extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $sensitivity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc
+     * @return static
      */
     public function setSensitivity(array $sensitivity = [])
     {

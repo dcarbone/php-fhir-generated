@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
  * A code that indicates how the server supports conditional read.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRConditionalReadStatus
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -80,14 +80,14 @@ class FHIRConditionalReadStatus extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONDITIONAL_READ_STATUS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRConditionalReadStatusList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRConditionalReadStatus Constructor
@@ -132,7 +132,7 @@ class FHIRConditionalReadStatus extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConditionalReadStatus
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -169,7 +169,7 @@ class FHIRConditionalReadStatus extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRConditionalReadStatusList $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConditionalReadStatus
+     * @return static
      */
     public function setValue($value = null)
     {

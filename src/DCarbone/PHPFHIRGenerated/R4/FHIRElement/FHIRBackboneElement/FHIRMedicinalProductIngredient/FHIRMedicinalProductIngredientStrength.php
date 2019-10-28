@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONCENTRATION = 'concentration';
     const FIELD_CONCENTRATION_LOW_LIMIT = 'concentrationLowLimit';
@@ -96,63 +96,68 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $concentration = null;
+    protected $concentration = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A lower limit for the strength per unitary volume (or mass), for when there is a
      * range. The concentration attribute then becomes the upper limit.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $concentrationLowLimit = null;
+    protected $concentrationLowLimit = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $country = [];
+    protected $country = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $measurementPoint = null;
+    protected $measurementPoint = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of substance in the unit of presentation, or in the volume (or
      * mass) of the single pharmaceutical product or manufactured item.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $presentation = null;
+    protected $presentation = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A lower limit for the quantity of substance in the unit of presentation. For use
      * when there is a range of strengths, this is the lower limit, with the
@@ -160,7 +165,8 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $presentationLowLimit = null;
+    protected $presentationLowLimit = null;
+
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
@@ -168,7 +174,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[]
      */
-    private $referenceStrength = [];
+    protected $referenceStrength = [];
 
     /**
      * FHIRMedicinalProductIngredientStrength Constructor
@@ -276,7 +282,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -307,7 +313,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
      *
@@ -322,12 +328,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $concentration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setConcentration(FHIRRatio $concentration = null)
     {
@@ -339,7 +345,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A lower limit for the strength per unitary volume (or mass), for when there is a
      * range. The concentration attribute then becomes the upper limit.
@@ -355,13 +361,13 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A lower limit for the strength per unitary volume (or mass), for when there is a
      * range. The concentration attribute then becomes the upper limit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $concentrationLowLimit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setConcentrationLowLimit(FHIRRatio $concentrationLowLimit = null)
     {
@@ -373,7 +379,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
      *
@@ -388,12 +394,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $country
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function addCountry(FHIRCodeableConcept $country = null)
     {
@@ -405,12 +411,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $country
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setCountry(array $country = [])
     {
@@ -431,7 +437,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
      *
@@ -445,12 +451,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $measurementPoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setMeasurementPoint($measurementPoint = null)
     {
@@ -470,7 +476,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of substance in the unit of presentation, or in the volume (or
      * mass) of the single pharmaceutical product or manufactured item.
@@ -486,13 +492,13 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of substance in the unit of presentation, or in the volume (or
      * mass) of the single pharmaceutical product or manufactured item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $presentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setPresentation(FHIRRatio $presentation = null)
     {
@@ -504,7 +510,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A lower limit for the quantity of substance in the unit of presentation. For use
      * when there is a range of strengths, this is the lower limit, with the
@@ -521,14 +527,14 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A lower limit for the quantity of substance in the unit of presentation. For use
      * when there is a range of strengths, this is the lower limit, with the
      * presentation attribute becoming the upper limit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $presentationLowLimit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setPresentationLowLimit(FHIRRatio $presentationLowLimit = null)
     {
@@ -554,7 +560,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * Strength expressed in terms of a reference substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength $referenceStrength
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function addReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength $referenceStrength = null)
     {
@@ -568,7 +574,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * Strength expressed in terms of a reference substance.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[] $referenceStrength
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength
+     * @return static
      */
     public function setReferenceStrength(array $referenceStrength = [])
     {

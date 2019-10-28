@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPARTMENT_DEFINITION_DOT_RESOURCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_DOCUMENTATION = 'documentation';
@@ -90,27 +90,29 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a resource supported by the server.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional documentation about the resource and compartment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
@@ -118,7 +120,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
-    private $param = [];
+    protected $param = [];
 
     /**
      * FHIRCompartmentDefinitionResource Constructor
@@ -193,7 +195,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -222,7 +224,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a resource supported by the server.
      *
@@ -235,12 +237,12 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a resource supported by the server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -259,7 +261,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional documentation about the resource and compartment.
      *
@@ -273,12 +275,12 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional documentation about the resource and compartment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -297,7 +299,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
@@ -313,14 +315,14 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $param
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource
+     * @return static
      */
     public function addParam($param = null)
     {
@@ -339,14 +341,14 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[] $param
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource
+     * @return static
      */
     public function setParam(array $param = [])
     {

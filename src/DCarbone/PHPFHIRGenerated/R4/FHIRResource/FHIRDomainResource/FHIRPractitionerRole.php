@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A specific set of Roles/Locations/specialties/services that a practitioner may
  * perform at an organization for a period of time.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRPractitionerRole
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -90,7 +90,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PRACTITIONER_ROLE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -113,17 +113,18 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner role record is in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
@@ -131,7 +132,8 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $availabilityExceptions = null;
+    protected $availabilityExceptions = null;
+
     /**
      * A specific set of Roles/Locations/specialties/services that a practitioner may
      * perform at an organization for a period of time.
@@ -141,61 +143,67 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
      */
-    private $availableTime = [];
+    protected $availableTime = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the practitioner
      * with this role.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $endpoint = [];
+    protected $endpoint = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $healthcareService = [];
+    protected $healthcareService = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $location = [];
+    protected $location = [];
+
     /**
      * A specific set of Roles/Locations/specialties/services that a practitioner may
      * perform at an organization for a period of time.
@@ -205,60 +213,65 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
      */
-    private $notAvailable = [];
+    protected $notAvailable = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $organization = null;
+    protected $organization = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Practitioner that is able to provide the defined services for the organization.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $practitioner = null;
+    protected $practitioner = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $specialty = [];
+    protected $specialty = [];
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details that are specific to the role/location/service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[]
      */
-    private $telecom = [];
+    protected $telecom = [];
 
     /**
      * FHIRPractitionerRole Constructor
@@ -490,7 +503,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -527,7 +540,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner role record is in active use.
      *
@@ -540,12 +553,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner role record is in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -564,7 +577,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
@@ -580,14 +593,14 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $availabilityExceptions
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setAvailabilityExceptions($availabilityExceptions = null)
     {
@@ -625,7 +638,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * the location and/or healthcareservice.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime $availableTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addAvailableTime(FHIRPractitionerRoleAvailableTime $availableTime = null)
     {
@@ -641,7 +654,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * the location and/or healthcareservice.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[] $availableTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setAvailableTime(array $availableTime = [])
     {
@@ -663,7 +676,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
      *
@@ -678,12 +691,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code = null)
     {
@@ -695,12 +708,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -721,7 +734,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the practitioner
      * with this role.
@@ -736,13 +749,13 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the practitioner
      * with this role.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint = null)
     {
@@ -753,13 +766,13 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the practitioner
      * with this role.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setEndpoint(array $endpoint = [])
     {
@@ -780,7 +793,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
@@ -795,13 +808,13 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $healthcareService
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addHealthcareService(FHIRReference $healthcareService = null)
     {
@@ -812,13 +825,13 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $healthcareService
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setHealthcareService(array $healthcareService = [])
     {
@@ -840,7 +853,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
      *
@@ -855,12 +868,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -872,12 +885,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -898,7 +911,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
      *
@@ -912,12 +925,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $location
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addLocation(FHIRReference $location = null)
     {
@@ -928,12 +941,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $location
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setLocation(array $location = [])
     {
@@ -973,7 +986,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * time due to the provided reason.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable $notAvailable
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addNotAvailable(FHIRPractitionerRoleNotAvailable $notAvailable = null)
     {
@@ -989,7 +1002,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * time due to the provided reason.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[] $notAvailable
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setNotAvailable(array $notAvailable = [])
     {
@@ -1010,7 +1023,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
      *
@@ -1024,12 +1037,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $organization
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setOrganization(FHIRReference $organization = null)
     {
@@ -1040,7 +1053,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
@@ -1055,13 +1068,13 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -1072,7 +1085,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Practitioner that is able to provide the defined services for the organization.
      *
@@ -1086,12 +1099,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Practitioner that is able to provide the defined services for the organization.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $practitioner
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setPractitioner(FHIRReference $practitioner = null)
     {
@@ -1103,7 +1116,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
      *
@@ -1118,12 +1131,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $specialty
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty = null)
     {
@@ -1135,12 +1148,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $specialty
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setSpecialty(array $specialty = [])
     {
@@ -1162,7 +1175,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details that are specific to the role/location/service.
      *
@@ -1177,12 +1190,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details that are specific to the role/location/service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $telecom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom = null)
     {
@@ -1194,12 +1207,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details that are specific to the role/location/service.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[] $telecom
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
+     * @return static
      */
     public function setTelecom(array $telecom = [])
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_SPECIFIC_COST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BENEFIT = 'benefit';
     const FIELD_CATEGORY = 'category';
@@ -91,19 +91,20 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit1[]
      */
-    private $benefit = [];
+    protected $benefit = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General category of benefit (Medical; Dental; Vision; Drug; Mental Health;
      * Substance Abuse; Hospice, Home Health).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $category = null;
+    protected $category = null;
 
     /**
      * FHIRInsurancePlanSpecificCost Constructor
@@ -163,7 +164,7 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -208,7 +209,7 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      * List of the specific benefits under this category of benefit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit1 $benefit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost
+     * @return static
      */
     public function addBenefit(FHIRInsurancePlanBenefit1 $benefit = null)
     {
@@ -222,7 +223,7 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      * List of the specific benefits under this category of benefit.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit1[] $benefit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost
+     * @return static
      */
     public function setBenefit(array $benefit = [])
     {
@@ -244,7 +245,7 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General category of benefit (Medical; Dental; Vision; Drug; Mental Health;
      * Substance Abuse; Hospice, Home Health).
@@ -260,13 +261,13 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General category of benefit (Medical; Dental; Vision; Drug; Mental Health;
      * Substance Abuse; Hospice, Home Health).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {

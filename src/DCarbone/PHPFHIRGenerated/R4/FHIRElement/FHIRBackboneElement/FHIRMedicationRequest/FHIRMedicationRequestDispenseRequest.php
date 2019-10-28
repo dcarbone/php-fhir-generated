@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DISPENSE_INTERVAL = 'dispenseInterval';
     const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
@@ -102,24 +102,26 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum period of time that must occur between dispenses of the medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $dispenseInterval = null;
+    protected $dispenseInterval = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $expectedSupplyDuration = null;
+    protected $expectedSupplyDuration = null;
+
     /**
      * An order or request for both supply of the medication and the instructions for
      * administration of the medication to a patient. The resource is called
@@ -131,10 +133,11 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
      */
-    private $initialFill = null;
+    protected $initialFill = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An integer indicating the number of times, in addition to the original dispense,
@@ -147,40 +150,43 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $numberOfRepeatsAllowed = null;
+    protected $numberOfRepeatsAllowed = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the intended dispensing Organization specified by the prescriber.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $performer = null;
+    protected $performer = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed for one fill.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $validityPeriod = null;
+    protected $validityPeriod = null;
 
     /**
      * FHIRMedicationRequestDispenseRequest Constructor
@@ -277,7 +283,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -307,7 +313,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum period of time that must occur between dispenses of the medication.
      *
@@ -321,12 +327,12 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum period of time that must occur between dispenses of the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setDispenseInterval(FHIRDuration $dispenseInterval = null)
     {
@@ -337,7 +343,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
@@ -352,13 +358,13 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setExpectedSupplyDuration(FHIRDuration $expectedSupplyDuration = null)
     {
@@ -392,7 +398,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * Indicates the quantity or duration for the first dispense of the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill $initialFill
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setInitialFill(FHIRMedicationRequestInitialFill $initialFill = null)
     {
@@ -402,7 +408,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An integer indicating the number of times, in addition to the original dispense,
@@ -422,7 +428,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An integer indicating the number of times, in addition to the original dispense,
@@ -434,7 +440,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * after the initial dispense.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $numberOfRepeatsAllowed
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setNumberOfRepeatsAllowed($numberOfRepeatsAllowed = null)
     {
@@ -453,7 +459,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the intended dispensing Organization specified by the prescriber.
      *
@@ -467,12 +473,12 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the intended dispensing Organization specified by the prescriber.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $performer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setPerformer(FHIRReference $performer = null)
     {
@@ -485,7 +491,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed for one fill.
      *
@@ -501,12 +507,12 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed for one fill.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -517,7 +523,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
@@ -532,13 +538,13 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $validityPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
+     * @return static
      */
     public function setValidityPeriod(FHIRPeriod $validityPeriod = null)
     {

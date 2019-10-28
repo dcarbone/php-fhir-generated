@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * A series of measurements taken by a device, with upper and lower limits. There
  * may be more than one dimension in the data.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRSampledData
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -76,7 +76,7 @@ class FHIRSampledData extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DATA = 'data';
     const FIELD_DATA_EXT = '_data';
@@ -100,10 +100,11 @@ class FHIRSampledData extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledDataDataType
      */
-    private $data = null;
+    protected $data = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
@@ -111,59 +112,64 @@ class FHIRSampledData extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $dimensions = null;
+    protected $dimensions = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $factor = null;
+    protected $factor = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $lowerLimit = null;
+    protected $lowerLimit = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    private $origin = null;
+    protected $origin = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $upperLimit = null;
+    protected $upperLimit = null;
 
     /**
      * FHIRSampledData Constructor
@@ -285,7 +291,7 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -330,7 +336,7 @@ class FHIRSampledData extends FHIRElement
      * "U" (above detection limit) can also be used in place of a decimal value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledDataDataType $data
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setData($data = null)
     {
@@ -348,7 +354,7 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
@@ -363,14 +369,14 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $dimensions
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setDimensions($dimensions = null)
     {
@@ -388,7 +394,7 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
@@ -402,13 +408,13 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $factor
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setFactor($factor = null)
     {
@@ -426,7 +432,7 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
@@ -440,13 +446,13 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $lowerLimit
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setLowerLimit($lowerLimit = null)
     {
@@ -467,7 +473,7 @@ class FHIRSampledData extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
@@ -484,13 +490,13 @@ class FHIRSampledData extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity $origin
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setOrigin(FHIRQuantity $origin = null)
     {
@@ -500,7 +506,7 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
      *
@@ -513,12 +519,12 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setPeriod($period = null)
     {
@@ -536,7 +542,7 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
@@ -550,13 +556,13 @@ class FHIRSampledData extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $upperLimit
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
+     * @return static
      */
     public function setUpperLimit($upperLimit = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * The characteristics, operational status and capabilities of a medical-related
  * component of a medical device.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDeviceDefinition
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CAPABILITY = 'capability';
     const FIELD_CONTACT = 'contact';
@@ -139,19 +139,21 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionCapability[]
      */
-    private $capability = [];
+    protected $capability = [];
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
@@ -160,51 +162,56 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDeviceName[]
      */
-    private $deviceName = [];
+    protected $deviceName = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the software, manufacturers,
      * other organizations or owners. For example: handle ID.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for the human-readable text strings produced by the device (all
      * supported).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $languageCode = [];
+    protected $languageCode = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name of the manufacturer. (choose any one of manufacturer*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $manufacturerReference = null;
+    protected $manufacturerReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer. (choose any one of manufacturer*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $manufacturerString = null;
+    protected $manufacturerString = null;
+
     /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
@@ -213,71 +220,78 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMaterial[]
      */
-    private $material = [];
+    protected $material = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The model number for the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $modelNumber = null;
+    protected $modelNumber = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Access to on-line information about the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $onlineInformation = null;
+    protected $onlineInformation = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $owner = null;
+    protected $owner = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent device it can be part of.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $parentDevice = null;
+    protected $parentDevice = null;
+
     /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
-    private $physicalCharacteristics = null;
+    protected $physicalCharacteristics = null;
+
     /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
@@ -287,13 +301,14 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionProperty[]
      */
-    private $property = [];
+    protected $property = [];
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the device present in the packaging (e.g. the number of devices
      * present in a pack, or the number of devices in the same package of the medicinal
@@ -301,29 +316,32 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Safety characteristics of the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $safety = [];
+    protected $safety = [];
+
     /**
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife[]
      */
-    private $shelfLifeStorage = [];
+    protected $shelfLifeStorage = [];
+
     /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
@@ -333,18 +351,20 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionSpecialization[]
      */
-    private $specialization = [];
+    protected $specialization = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * What kind of device or device system this is.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
@@ -356,27 +376,29 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier[]
      */
-    private $udiDeviceIdentifier = [];
+    protected $udiDeviceIdentifier = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The available versions of the device, e.g., software versions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $version = [];
+    protected $version = [];
 
     /**
      * FHIRDeviceDefinition Constructor
@@ -725,7 +747,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -780,7 +802,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * Device capabilities.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionCapability $capability
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addCapability(FHIRDeviceDefinitionCapability $capability = null)
     {
@@ -795,7 +817,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * Device capabilities.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionCapability[] $capability
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setCapability(array $capability = [])
     {
@@ -817,7 +839,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
@@ -833,13 +855,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addContact(FHIRContactPoint $contact = null)
     {
@@ -851,13 +873,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -895,7 +917,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A name given to the device to identify it.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDeviceName $deviceName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addDeviceName(FHIRDeviceDefinitionDeviceName $deviceName = null)
     {
@@ -910,7 +932,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A name given to the device to identify it.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDeviceName[] $deviceName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setDeviceName(array $deviceName = [])
     {
@@ -932,7 +954,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the software, manufacturers,
      * other organizations or owners. For example: handle ID.
@@ -948,13 +970,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the software, manufacturers,
      * other organizations or owners. For example: handle ID.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -966,13 +988,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique instance identifiers assigned to a device by the software, manufacturers,
      * other organizations or owners. For example: handle ID.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -994,7 +1016,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for the human-readable text strings produced by the device (all
      * supported).
@@ -1010,13 +1032,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for the human-readable text strings produced by the device (all
      * supported).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $languageCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addLanguageCode(FHIRCodeableConcept $languageCode = null)
     {
@@ -1028,13 +1050,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for the human-readable text strings produced by the device (all
      * supported).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $languageCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setLanguageCode(array $languageCode = [])
     {
@@ -1055,7 +1077,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name of the manufacturer. (choose any one of manufacturer*, but only one)
      *
@@ -1069,12 +1091,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name of the manufacturer. (choose any one of manufacturer*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturerReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setManufacturerReference(FHIRReference $manufacturerReference = null)
     {
@@ -1085,7 +1107,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer. (choose any one of manufacturer*, but only one)
      *
@@ -1099,12 +1121,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer. (choose any one of manufacturer*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $manufacturerString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setManufacturerString($manufacturerString = null)
     {
@@ -1140,7 +1162,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A substance used to create the material(s) of which the device is made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMaterial $material
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addMaterial(FHIRDeviceDefinitionMaterial $material = null)
     {
@@ -1155,7 +1177,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A substance used to create the material(s) of which the device is made.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMaterial[] $material
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setMaterial(array $material = [])
     {
@@ -1176,7 +1198,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The model number for the device.
      *
@@ -1190,12 +1212,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The model number for the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $modelNumber
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setModelNumber($modelNumber = null)
     {
@@ -1215,7 +1237,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
@@ -1231,13 +1253,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1249,13 +1271,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1276,7 +1298,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Access to on-line information about the device.
      *
@@ -1290,12 +1312,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Access to on-line information about the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $onlineInformation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setOnlineInformation($onlineInformation = null)
     {
@@ -1314,7 +1336,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
@@ -1329,13 +1351,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $owner
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setOwner(FHIRReference $owner = null)
     {
@@ -1346,7 +1368,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent device it can be part of.
      *
@@ -1360,12 +1382,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent device it can be part of.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $parentDevice
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setParentDevice(FHIRReference $parentDevice = null)
     {
@@ -1377,7 +1399,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
@@ -1392,12 +1414,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setPhysicalCharacteristics(FHIRProdCharacteristic $physicalCharacteristics = null)
     {
@@ -1427,7 +1449,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * regulation status, time properties.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionProperty $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addProperty(FHIRDeviceDefinitionProperty $property = null)
     {
@@ -1443,7 +1465,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * regulation status, time properties.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionProperty[] $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setProperty(array $property = [])
     {
@@ -1466,7 +1488,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the device present in the packaging (e.g. the number of devices
      * present in a pack, or the number of devices in the same package of the medicinal
@@ -1484,14 +1506,14 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the device present in the packaging (e.g. the number of devices
      * present in a pack, or the number of devices in the same package of the medicinal
      * product).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -1503,7 +1525,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Safety characteristics of the device.
      *
@@ -1518,12 +1540,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Safety characteristics of the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $safety
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addSafety(FHIRCodeableConcept $safety = null)
     {
@@ -1535,12 +1557,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Safety characteristics of the device.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $safety
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setSafety(array $safety = [])
     {
@@ -1562,7 +1584,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
@@ -1577,12 +1599,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife $shelfLifeStorage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addShelfLifeStorage(FHIRProductShelfLife $shelfLifeStorage = null)
     {
@@ -1594,12 +1616,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife[] $shelfLifeStorage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setShelfLifeStorage(array $shelfLifeStorage = [])
     {
@@ -1639,7 +1661,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * conforms for a particular purpose, and used for the communication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionSpecialization $specialization
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addSpecialization(FHIRDeviceDefinitionSpecialization $specialization = null)
     {
@@ -1655,7 +1677,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * conforms for a particular purpose, and used for the communication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionSpecialization[] $specialization
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setSpecialization(array $specialization = [])
     {
@@ -1677,7 +1699,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * What kind of device or device system this is.
      *
@@ -1692,12 +1714,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * What kind of device or device system this is.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -1731,7 +1753,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * could have been sold.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier $udiDeviceIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier $udiDeviceIdentifier = null)
     {
@@ -1749,7 +1771,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * could have been sold.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier[] $udiDeviceIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setUdiDeviceIdentifier(array $udiDeviceIdentifier = [])
     {
@@ -1770,7 +1792,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
      *
@@ -1784,12 +1806,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1808,7 +1830,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The available versions of the device, e.g., software versions.
      *
@@ -1822,12 +1844,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The available versions of the device, e.g., software versions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function addVersion($version = null)
     {
@@ -1846,12 +1868,12 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The available versions of the device, e.g., software versions.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
+     * @return static
      */
     public function setVersion(array $version = [])
     {

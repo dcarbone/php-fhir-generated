@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * A definition of a FHIR structure. This resource is used to describe the
  * underlying resources, data types defined in FHIR, and also for describing
  * extensions, and constraints on resources and data types.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRStructureDefinition
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ABSTRACT = 'abstract';
     const FIELD_ABSTRACT_EXT = '_abstract';
@@ -146,40 +146,43 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether structure this definition describes is abstract or not - that is,
      * whether an actual exchanged item can ever be of this type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $abstract = null;
+    protected $abstract = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is the base structure from which this set of constraints is
      * derived.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $base = null;
+    protected $base = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The type of type that is being constrained - a data type, an extension, a
@@ -189,7 +192,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $constrainedType = null;
+    protected $constrainedType = null;
+
     /**
      * A definition of a FHIR structure. This resource is used to describe the
      * underlying resources, data types defined in FHIR, and also for describing
@@ -199,32 +203,35 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
-    private $context = [];
+    protected $context = [];
+
     /**
      * How an extension context is interpreted.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is an extension, Identifies the context within FHIR resources where the
      * extension can be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtensionContext
      */
-    private $contextType = null;
+    protected $contextType = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the structure definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
@@ -232,14 +239,15 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the structure definition was published. The date must
      * change when the business version changes, if it does, and it must change if the
@@ -248,17 +256,19 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the StructureDefinition and its use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A definition of a FHIR structure. This resource is used to describe the
      * underlying resources, data types defined in FHIR, and also for describing
@@ -269,21 +279,23 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
-    private $differential = null;
+    protected $differential = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This StructureDefinition was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
@@ -291,13 +303,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this StructureDefinition is based
@@ -306,11 +319,12 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
-    private $fhirVersion = null;
+    protected $fhirVersion = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this StructureDefinition when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -319,16 +333,18 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * Defines the type of structure that a definition is describing.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the kind of structure that this definition is describing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRStructureDefinitionKind
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A definition of a FHIR structure. This resource is used to describe the
      * underlying resources, data types defined in FHIR, and also for describing
@@ -338,39 +354,43 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
-    private $mapping = [];
+    protected $mapping = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the StructureDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the structure
      * definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this structure definition is needed and why it's been constrained
      * as it has.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $requirements = null;
+    protected $requirements = null;
+
     /**
      * A definition of a FHIR structure. This resource is used to describe the
      * underlying resources, data types defined in FHIR, and also for describing
@@ -381,22 +401,24 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
-    private $snapshot = null;
+    protected $snapshot = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the StructureDefinition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this structure definition when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -405,12 +427,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -418,11 +441,12 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the StructureDefinition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -430,7 +454,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRStructureDefinition Constructor
@@ -790,7 +814,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -827,7 +851,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether structure this definition describes is abstract or not - that is,
      * whether an actual exchanged item can ever be of this type.
@@ -841,13 +865,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether structure this definition describes is abstract or not - that is,
      * whether an actual exchanged item can ever be of this type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $abstract
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setAbstract($abstract = null)
     {
@@ -866,7 +890,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is the base structure from which this set of constraints is
      * derived.
@@ -881,13 +905,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is the base structure from which this set of constraints is
      * derived.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $base
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setBase($base = null)
     {
@@ -906,7 +930,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
@@ -921,13 +945,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function addCode(FHIRCoding $code = null)
     {
@@ -938,13 +962,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[] $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -965,7 +989,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The type of type that is being constrained - a data type, an extension, a
@@ -983,7 +1007,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The type of type that is being constrained - a data type, an extension, a
@@ -992,7 +1016,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * structure definition is the definition of a base structure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $constrainedType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setConstrainedType($constrainedType = null)
     {
@@ -1030,7 +1054,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function addContact(FHIRStructureDefinitionContact $contact = null)
     {
@@ -1046,7 +1070,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -1067,7 +1091,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
@@ -1082,13 +1106,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $context
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function addContext($context = null)
     {
@@ -1107,13 +1131,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[] $context
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setContext(array $context = [])
     {
@@ -1133,7 +1157,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * How an extension context is interpreted.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is an extension, Identifies the context within FHIR resources where the
      * extension can be used.
@@ -1147,13 +1171,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * How an extension context is interpreted.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is an extension, Identifies the context within FHIR resources where the
      * extension can be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtensionContext $contextType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setContextType(FHIRExtensionContext $contextType = null)
     {
@@ -1164,7 +1188,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the structure definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
@@ -1180,14 +1204,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the structure definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the constraints and mappings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $copyright
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1209,7 +1233,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the structure definition was published. The date must
      * change when the business version changes, if it does, and it must change if the
@@ -1229,7 +1253,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the structure definition was published. The date must
      * change when the business version changes, if it does, and it must change if the
@@ -1237,7 +1261,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * of the structure definition changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1256,7 +1280,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the StructureDefinition and its use.
      *
@@ -1270,12 +1294,12 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the StructureDefinition and its use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1315,7 +1339,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * statement of differences that it applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential $differential
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setDifferential(FHIRStructureDefinitionDifferential $differential = null)
     {
@@ -1326,7 +1350,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
@@ -1341,13 +1365,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -1365,7 +1389,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This StructureDefinition was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
@@ -1380,14 +1404,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This StructureDefinition was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1408,7 +1432,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this StructureDefinition is based
@@ -1427,7 +1451,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this StructureDefinition is based
@@ -1435,7 +1459,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * e.g. [publication].[major].[minor], which is 1.0.2 for this version.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId $fhirVersion
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setFhirVersion($fhirVersion = null)
     {
@@ -1454,7 +1478,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this StructureDefinition when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -1471,7 +1495,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this StructureDefinition when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -1479,7 +1503,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * to use the literal URI).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1490,7 +1514,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this StructureDefinition when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -1498,7 +1522,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * to use the literal URI).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1518,7 +1542,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Defines the type of structure that a definition is describing.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the kind of structure that this definition is describing.
      *
@@ -1531,12 +1555,12 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Defines the type of structure that a definition is describing.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the kind of structure that this definition is describing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRStructureDefinitionKind $kind
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setKind(FHIRStructureDefinitionKind $kind = null)
     {
@@ -1566,7 +1590,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * An external specification that the content is mapped to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping $mapping
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function addMapping(FHIRStructureDefinitionMapping $mapping = null)
     {
@@ -1582,7 +1606,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * An external specification that the content is mapped to.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping[] $mapping
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setMapping(array $mapping = [])
     {
@@ -1603,7 +1627,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the StructureDefinition.
      *
@@ -1617,12 +1641,12 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the StructureDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1641,7 +1665,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the structure
      * definition.
@@ -1656,13 +1680,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the structure
      * definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1681,7 +1705,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this structure definition is needed and why it's been constrained
      * as it has.
@@ -1696,13 +1720,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this structure definition is needed and why it's been constrained
      * as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $requirements
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setRequirements($requirements = null)
     {
@@ -1742,7 +1766,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * interpreted without considering the base StructureDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot $snapshot
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setSnapshot(FHIRStructureDefinitionSnapshot $snapshot = null)
     {
@@ -1753,7 +1777,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the StructureDefinition.
@@ -1768,13 +1792,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the StructureDefinition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setStatus($status = null)
     {
@@ -1793,7 +1817,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this structure definition when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1810,7 +1834,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this structure definition when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1818,7 +1842,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * definition is (or will be) published.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1838,7 +1862,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1855,14 +1879,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of structure definitions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $useContext
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function addUseContext(FHIRCodeableConcept $useContext = null)
     {
@@ -1874,14 +1898,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of structure definitions.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -1902,7 +1926,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the StructureDefinition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -1918,14 +1942,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the StructureDefinition
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the StructureDefinition author manually.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
+     * @return static
      */
     public function setVersion($version = null)
     {

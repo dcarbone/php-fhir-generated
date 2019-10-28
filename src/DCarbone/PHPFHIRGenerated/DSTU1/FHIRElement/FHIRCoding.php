@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * A reference to a code defined by a terminology system.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRCoding
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -75,7 +75,7 @@ class FHIRCoding extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CODING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -92,7 +92,7 @@ class FHIRCoding extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
@@ -100,50 +100,55 @@ class FHIRCoding extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that this code was chosen by a user directly - i.e. off a pick list of
      * available items (codes or displays).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $primary = null;
+    protected $primary = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $system = null;
+    protected $system = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of possible coded values this coding was chosen from or constrained by.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $valueSet = null;
+    protected $valueSet = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the code system which was used when choosing this code. Note that
      * a well-maintained code system does not need the version reported, because the
@@ -153,7 +158,7 @@ class FHIRCoding extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRCoding Constructor
@@ -258,7 +263,7 @@ class FHIRCoding extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -288,7 +293,7 @@ class FHIRCoding extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
@@ -304,14 +309,14 @@ class FHIRCoding extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
      * an expression in a syntax defined by the coding system (e.g. post-coordination).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -329,7 +334,7 @@ class FHIRCoding extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
@@ -343,13 +348,13 @@ class FHIRCoding extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -367,7 +372,7 @@ class FHIRCoding extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that this code was chosen by a user directly - i.e. off a pick list of
      * available items (codes or displays).
@@ -381,13 +386,13 @@ class FHIRCoding extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that this code was chosen by a user directly - i.e. off a pick list of
      * available items (codes or displays).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $primary
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function setPrimary($primary = null)
     {
@@ -405,7 +410,7 @@ class FHIRCoding extends FHIRElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
@@ -419,13 +424,13 @@ class FHIRCoding extends FHIRElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $system
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function setSystem($system = null)
     {
@@ -444,7 +449,7 @@ class FHIRCoding extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of possible coded values this coding was chosen from or constrained by.
      *
@@ -458,12 +463,12 @@ class FHIRCoding extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of possible coded values this coding was chosen from or constrained by.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $valueSet
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function setValueSet(FHIRResourceReference $valueSet = null)
     {
@@ -473,7 +478,7 @@ class FHIRCoding extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the code system which was used when choosing this code. Note that
      * a well-maintained code system does not need the version reported, because the
@@ -490,7 +495,7 @@ class FHIRCoding extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the code system which was used when choosing this code. Note that
      * a well-maintained code system does not need the version reported, because the
@@ -499,7 +504,7 @@ class FHIRCoding extends FHIRElement
      * SHOULD be exchanged.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
+     * @return static
      */
     public function setVersion($version = null)
     {

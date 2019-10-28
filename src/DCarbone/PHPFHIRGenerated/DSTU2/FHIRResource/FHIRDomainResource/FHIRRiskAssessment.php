@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as
  * the likelihood of each outcome.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRRiskAssessment
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -87,7 +87,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BASIS = 'basis';
     const FIELD_CONDITION = 'condition';
@@ -106,89 +106,97 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the source data considered as part of the assessment (FamilyHistory,
      * Observations, Procedures, Conditions, etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    private $basis = [];
+    protected $basis = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * For assessments or prognosis specific to a particular condition, indicates the
      * condition being assessed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $condition = null;
+    protected $condition = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter where the assessment was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier assigned to the risk assessment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The algorithm, process or mechanism used to evaluate the risk.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $method = null;
+    protected $method = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the steps that might be taken to reduce the identified risk(s).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $mitigation = null;
+    protected $mitigation = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider or software application that performed the assessment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $performer = null;
+    protected $performer = null;
+
     /**
      * An assessment of the likely outcome(s) for a patient or other subject as well as
      * the likelihood of each outcome.
@@ -197,17 +205,18 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
      */
-    private $prediction = [];
+    protected $prediction = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group the risk assessment applies to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRRiskAssessment Constructor
@@ -346,7 +355,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -384,7 +393,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the source data considered as part of the assessment (FamilyHistory,
      * Observations, Procedures, Conditions, etc.).
@@ -399,13 +408,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the source data considered as part of the assessment (FamilyHistory,
      * Observations, Procedures, Conditions, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $basis
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function addBasis(FHIRReference $basis = null)
     {
@@ -416,13 +425,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the source data considered as part of the assessment (FamilyHistory,
      * Observations, Procedures, Conditions, etc.).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $basis
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setBasis(array $basis = [])
     {
@@ -443,7 +452,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * For assessments or prognosis specific to a particular condition, indicates the
      * condition being assessed.
@@ -458,13 +467,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * For assessments or prognosis specific to a particular condition, indicates the
      * condition being assessed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $condition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setCondition(FHIRReference $condition = null)
     {
@@ -478,7 +487,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
      *
@@ -495,12 +504,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -519,7 +528,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter where the assessment was performed.
      *
@@ -533,12 +542,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter where the assessment was performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -549,7 +558,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier assigned to the risk assessment.
      *
@@ -563,12 +572,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier assigned to the risk assessment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -580,7 +589,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The algorithm, process or mechanism used to evaluate the risk.
      *
@@ -595,12 +604,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The algorithm, process or mechanism used to evaluate the risk.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $method
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setMethod(FHIRCodeableConcept $method = null)
     {
@@ -611,7 +620,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the steps that might be taken to reduce the identified risk(s).
      *
@@ -625,12 +634,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the steps that might be taken to reduce the identified risk(s).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $mitigation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setMitigation($mitigation = null)
     {
@@ -649,7 +658,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider or software application that performed the assessment.
      *
@@ -663,12 +672,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider or software application that performed the assessment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $performer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setPerformer(FHIRReference $performer = null)
     {
@@ -696,7 +705,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * Describes the expected outcome for the subject.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function addPrediction(FHIRRiskAssessmentPrediction $prediction = null)
     {
@@ -711,7 +720,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * Describes the expected outcome for the subject.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[] $prediction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setPrediction(array $prediction = [])
     {
@@ -732,7 +741,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group the risk assessment applies to.
      *
@@ -746,12 +755,12 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group the risk assessment applies to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

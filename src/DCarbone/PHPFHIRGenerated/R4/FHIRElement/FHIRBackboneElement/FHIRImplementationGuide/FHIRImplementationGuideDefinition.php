@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_GROUPING = 'grouping';
     const FIELD_PAGE = 'page';
@@ -100,7 +100,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping[]
      */
-    private $grouping = [];
+    protected $grouping = [];
+
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -112,7 +113,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
-    private $page = null;
+    protected $page = null;
+
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -123,7 +125,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter[]
      */
-    private $parameter = [];
+    protected $parameter = [];
+
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -137,7 +140,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource[]
      */
-    private $resource = [];
+    protected $resource = [];
+
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -148,7 +152,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
      */
-    private $template = [];
+    protected $template = [];
 
     /**
      * FHIRImplementationGuideDefinition Constructor
@@ -260,7 +264,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -311,7 +315,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * A logical group of resources. Logical groups can be used when building pages.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping $grouping
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function addGrouping(FHIRImplementationGuideGrouping $grouping = null)
     {
@@ -328,7 +332,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * A logical group of resources. Logical groups can be used when building pages.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping[] $grouping
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function setGrouping(array $grouping = [])
     {
@@ -372,7 +376,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * implementation guide home page.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function setPage(FHIRImplementationGuidePage $page = null)
     {
@@ -404,7 +408,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * Defines how IG is built by tools.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function addParameter(FHIRImplementationGuideParameter $parameter = null)
     {
@@ -421,7 +425,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * Defines how IG is built by tools.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter[] $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function setParameter(array $parameter = [])
     {
@@ -469,7 +473,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource $resource
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function addResource(FHIRImplementationGuideResource $resource = null)
     {
@@ -489,7 +493,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource[] $resource
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function setResource(array $resource = [])
     {
@@ -531,7 +535,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * A template for building resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate $template
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function addTemplate(FHIRImplementationGuideTemplate $template = null)
     {
@@ -548,7 +552,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * A template for building resources.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate[] $template
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return static
      */
     public function setTemplate(array $template = [])
     {

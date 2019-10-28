@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_GLOBAL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_PROFILE = 'profile';
     const FIELD_TYPE = 'type';
@@ -90,22 +90,23 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the profile that all instances must conform to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $profile = null;
+    protected $profile = null;
+
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of resource that all instances must conform to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRImplementationGuideGlobal Constructor
@@ -153,7 +154,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -183,7 +184,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the profile that all instances must conform to.
      *
@@ -197,12 +198,12 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the profile that all instances must conform to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $profile
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal
+     * @return static
      */
     public function setProfile(FHIRReference $profile = null)
     {
@@ -212,7 +213,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of resource that all instances must conform to.
      *
@@ -225,12 +226,12 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of resource that all instances must conform to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal
+     * @return static
      */
     public function setType($type = null)
     {

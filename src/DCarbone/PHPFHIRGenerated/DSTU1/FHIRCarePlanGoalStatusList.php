@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,10 +69,10 @@ class FHIRCarePlanGoalStatusList implements PHPFHIRTypeInterface
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     /** @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive */
-    private $value = null;
+    protected $value = null;
 
     /**
      * The list of values allowed by CarePlanGoalStatus-list
@@ -112,7 +112,7 @@ class FHIRCarePlanGoalStatusList implements PHPFHIRTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRCarePlanGoalStatusList
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -141,7 +141,7 @@ class FHIRCarePlanGoalStatusList implements PHPFHIRTypeInterface
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive $value;
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRCarePlanGoalStatusList
+     * @return static
      */
     public function setValue($value = null)
     {

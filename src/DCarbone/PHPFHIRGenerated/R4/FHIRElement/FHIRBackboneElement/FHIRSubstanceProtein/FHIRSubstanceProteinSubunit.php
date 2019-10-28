@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_C_TERMINAL_MODIFICATION = 'cTerminalModification';
     const FIELD_C_TERMINAL_MODIFICATION_EXT = '_cTerminalModification';
@@ -110,62 +110,67 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $cTerminalModification = null;
+    protected $cTerminalModification = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $cTerminalModificationId = null;
+    protected $cTerminalModificationId = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $length = null;
+    protected $length = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $nTerminalModification = null;
+    protected $nTerminalModification = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $nTerminalModificationId = null;
+    protected $nTerminalModificationId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequence information shall be provided enumerating the amino acids from N-
      * to C-terminal end using standard single-letter amino acid codes. Uppercase shall
@@ -177,11 +182,12 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $sequence = null;
+    protected $sequence = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The sequence information shall be provided enumerating the amino acids from N-
      * to C-terminal end using standard single-letter amino acid codes. Uppercase shall
@@ -193,11 +199,12 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    private $sequenceAttachment = null;
+    protected $sequenceAttachment = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Index of primary sequences of amino acids linked through peptide bonds in order
      * of decreasing length. Sequences of the same length will be ordered by molecular
@@ -206,7 +213,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $subunit = null;
+    protected $subunit = null;
 
     /**
      * FHIRSubstanceProteinSubunit Constructor
@@ -335,7 +342,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -365,7 +372,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
      *
@@ -379,12 +386,12 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $cTerminalModification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setCTerminalModification($cTerminalModification = null)
     {
@@ -404,7 +411,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
@@ -420,13 +427,13 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $cTerminalModificationId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setCTerminalModificationId(FHIRIdentifier $cTerminalModificationId = null)
     {
@@ -437,7 +444,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
      *
@@ -451,12 +458,12 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setLength($length = null)
     {
@@ -475,7 +482,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
@@ -490,13 +497,13 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $nTerminalModification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setNTerminalModification($nTerminalModification = null)
     {
@@ -516,7 +523,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
@@ -532,13 +539,13 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $nTerminalModificationId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setNTerminalModificationId(FHIRIdentifier $nTerminalModificationId = null)
     {
@@ -549,7 +556,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequence information shall be provided enumerating the amino acids from N-
      * to C-terminal end using standard single-letter amino acid codes. Uppercase shall
@@ -569,7 +576,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequence information shall be provided enumerating the amino acids from N-
      * to C-terminal end using standard single-letter amino acid codes. Uppercase shall
@@ -580,7 +587,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * will be distinguished by their position in the sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sequence
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setSequence($sequence = null)
     {
@@ -599,7 +606,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The sequence information shall be provided enumerating the amino acids from N-
      * to C-terminal end using standard single-letter amino acid codes. Uppercase shall
@@ -619,7 +626,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The sequence information shall be provided enumerating the amino acids from N-
      * to C-terminal end using standard single-letter amino acid codes. Uppercase shall
@@ -630,7 +637,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * will be distinguished by their position in the sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sequenceAttachment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setSequenceAttachment(FHIRAttachment $sequenceAttachment = null)
     {
@@ -641,7 +648,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Index of primary sequences of amino acids linked through peptide bonds in order
      * of decreasing length. Sequences of the same length will be ordered by molecular
@@ -658,7 +665,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Index of primary sequences of amino acids linked through peptide bonds in order
      * of decreasing length. Sequences of the same length will be ordered by molecular
@@ -666,7 +673,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * sequential subscripts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $subunit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
+     * @return static
      */
     public function setSubunit($subunit = null)
     {

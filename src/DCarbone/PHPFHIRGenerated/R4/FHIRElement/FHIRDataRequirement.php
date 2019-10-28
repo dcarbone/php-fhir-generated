@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Describes a required data item for evaluation in terms of the type of data, and
  * optional code or date-based filters of the data.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRDataRequirement
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -84,7 +84,7 @@ class FHIRDataRequirement extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE_FILTER = 'codeFilter';
     const FIELD_DATE_FILTER = 'dateFilter';
@@ -104,7 +104,7 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
@@ -112,12 +112,13 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
-    private $codeFilter = [];
+    protected $codeFilter = [];
+
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
@@ -125,10 +126,11 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
-    private $dateFilter = [];
+    protected $dateFilter = [];
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a maximum number of results that are required (uses the _count search
@@ -136,11 +138,12 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    private $limit = null;
+    protected $limit = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that specific elements of the type are referenced by the knowledge
      * module and must be supported by the consumer in order to obtain an effective
@@ -153,11 +156,12 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $mustSupport = [];
+    protected $mustSupport = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The profile of the required data, specified as the uri of the profile
@@ -165,45 +169,49 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $profile = [];
+    protected $profile = [];
+
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort[]
      */
-    private $sort = [];
+    protected $sort = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $subjectCodeableConcept = null;
+    protected $subjectCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subjectReference = null;
+    protected $subjectReference = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The type of the required data, specified as the type name of a resource. For
@@ -211,7 +219,7 @@ class FHIRDataRequirement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRDataRequirement Constructor
@@ -376,7 +384,7 @@ class FHIRDataRequirement extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -407,7 +415,7 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
@@ -424,14 +432,14 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $codeFilter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function addCodeFilter(FHIRDataRequirementCodeFilter $codeFilter = null)
     {
@@ -443,14 +451,14 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[] $codeFilter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setCodeFilter(array $codeFilter = [])
     {
@@ -472,7 +480,7 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
@@ -489,14 +497,14 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter $dateFilter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function addDateFilter(FHIRDataRequirementDateFilter $dateFilter = null)
     {
@@ -508,14 +516,14 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[] $dateFilter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setDateFilter(array $dateFilter = [])
     {
@@ -535,7 +543,7 @@ class FHIRDataRequirement extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a maximum number of results that are required (uses the _count search
@@ -550,14 +558,14 @@ class FHIRDataRequirement extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a maximum number of results that are required (uses the _count search
      * parameter).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $limit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setLimit($limit = null)
     {
@@ -576,7 +584,7 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that specific elements of the type are referenced by the knowledge
      * module and must be supported by the consumer in order to obtain an effective
@@ -597,7 +605,7 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that specific elements of the type are referenced by the knowledge
      * module and must be supported by the consumer in order to obtain an effective
@@ -609,7 +617,7 @@ class FHIRDataRequirement extends FHIRElement
      * Profile](fhirpath.html#simple) for full details).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $mustSupport
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function addMustSupport($mustSupport = null)
     {
@@ -628,7 +636,7 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that specific elements of the type are referenced by the knowledge
      * module and must be supported by the consumer in order to obtain an effective
@@ -640,7 +648,7 @@ class FHIRDataRequirement extends FHIRElement
      * Profile](fhirpath.html#simple) for full details).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $mustSupport
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setMustSupport(array $mustSupport = [])
     {
@@ -661,7 +669,7 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The profile of the required data, specified as the uri of the profile
@@ -677,14 +685,14 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $profile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function addProfile($profile = null)
     {
@@ -703,14 +711,14 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $profile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setProfile(array $profile = [])
     {
@@ -732,7 +740,7 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
      *
@@ -747,12 +755,12 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort $sort
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function addSort(FHIRDataRequirementSort $sort = null)
     {
@@ -764,12 +772,12 @@ class FHIRDataRequirement extends FHIRElement
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort[] $sort
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setSort(array $sort = [])
     {
@@ -791,7 +799,7 @@ class FHIRDataRequirement extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed. (choose any one of subject*, but only one)
@@ -807,13 +815,13 @@ class FHIRDataRequirement extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setSubjectCodeableConcept(FHIRCodeableConcept $subjectCodeableConcept = null)
     {
@@ -824,7 +832,7 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed. (choose any one of subject*, but only one)
@@ -839,13 +847,13 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed. (choose any one of subject*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subjectReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setSubjectReference(FHIRReference $subjectReference = null)
     {
@@ -856,7 +864,7 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The type of the required data, specified as the type name of a resource. For
@@ -872,14 +880,14 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     * @return static
      */
     public function setType($type = null)
     {

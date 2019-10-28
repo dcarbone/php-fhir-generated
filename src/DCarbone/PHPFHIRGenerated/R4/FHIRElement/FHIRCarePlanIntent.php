@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Codes indicating the degree of authority/intentionality associated with a care
  * plan.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCarePlanIntent
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -81,14 +81,14 @@ class FHIRCarePlanIntent extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CARE_PLAN_INTENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRCarePlanIntentList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRCarePlanIntent Constructor
@@ -133,7 +133,7 @@ class FHIRCarePlanIntent extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCarePlanIntent
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -170,7 +170,7 @@ class FHIRCarePlanIntent extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRCarePlanIntentList $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCarePlanIntent
+     * @return static
      */
     public function setValue($value = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A stream of bytes
  * A stream of bytes, base64 encoded
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRBase64Binary
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -81,14 +81,15 @@ class FHIRBase64Binary extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BASE_64BINARY;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRBase64BinaryPrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRBase64Binary Constructor
@@ -136,7 +137,7 @@ class FHIRBase64Binary extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -172,7 +173,7 @@ class FHIRBase64Binary extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRBase64BinaryPrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
+     * @return static
      */
     public function setValue($value = null)
     {

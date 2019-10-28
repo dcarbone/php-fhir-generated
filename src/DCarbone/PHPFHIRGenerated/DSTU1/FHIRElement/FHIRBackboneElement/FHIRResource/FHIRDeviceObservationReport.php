@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * Describes the data produced by a device at a point in time.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDeviceObservationReport
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -79,7 +79,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_OBSERVATION_REPORT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
@@ -92,43 +92,47 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier assigned to this observation bu the source device that made the
      * observation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time that the values are reported.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
-    private $instant = null;
+    protected $instant = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification information for the device that is the source of the data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $source = null;
+    protected $source = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the measurement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * Describes the data produced by a device at a point in time.
      *
@@ -136,7 +140,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice[]
      */
-    private $virtualDevice = [];
+    protected $virtualDevice = [];
 
     /**
      * FHIRDeviceObservationReport Constructor
@@ -227,7 +231,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -265,7 +269,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier assigned to this observation bu the source device that made the
      * observation.
@@ -280,13 +284,13 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier assigned to this observation bu the source device that made the
      * observation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -296,7 +300,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time that the values are reported.
      *
@@ -309,12 +313,12 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time that the values are reported.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $instant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function setInstant($instant = null)
     {
@@ -333,7 +337,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification information for the device that is the source of the data.
      *
@@ -347,12 +351,12 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification information for the device that is the source of the data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $source
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function setSource(FHIRResourceReference $source = null)
     {
@@ -363,7 +367,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the measurement.
      *
@@ -377,12 +381,12 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the measurement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {
@@ -408,7 +412,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * A medical-related subsystem of a medical device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice $virtualDevice
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function addVirtualDevice(FHIRDeviceObservationReportVirtualDevice $virtualDevice = null)
     {
@@ -422,7 +426,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * A medical-related subsystem of a medical device.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice[] $virtualDevice
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDeviceObservationReport
+     * @return static
      */
     public function setVirtualDevice(array $virtualDevice = [])
     {

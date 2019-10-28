@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ETAG = 'etag';
     const FIELD_ETAG_EXT = '_etag';
@@ -98,7 +98,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
@@ -106,31 +106,34 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $etag = null;
+    protected $etag = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $lastModified = null;
+    protected $lastModified = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $location = null;
+    protected $location = null;
+
     /**
      * (choose any one of the elements, but only one)
      *
@@ -139,11 +142,12 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface
      */
-    private $outcome = null;
+    protected $outcome = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
@@ -151,7 +155,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRBundleResponse Constructor
@@ -263,7 +267,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -293,7 +297,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
@@ -309,14 +313,14 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
      * [Managing Resource Contention](http.html#concurrency)).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $etag
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
+     * @return static
      */
     public function setEtag($etag = null)
     {
@@ -338,7 +342,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
      *
@@ -355,12 +359,12 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $lastModified
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
+     * @return static
      */
     public function setLastModified($lastModified = null)
     {
@@ -379,7 +383,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
@@ -394,13 +398,13 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $location
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
+     * @return static
      */
     public function setLocation($location = null)
     {
@@ -436,7 +440,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * this entry in a batch or transaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface $outcome
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
+     * @return static
      */
     public function setOutcome(PHPFHIRContainedTypeInterface $outcome = null)
     {
@@ -447,7 +451,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
@@ -463,14 +467,14 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
      * associated with the status code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
+     * @return static
      */
     public function setStatus($status = null)
     {

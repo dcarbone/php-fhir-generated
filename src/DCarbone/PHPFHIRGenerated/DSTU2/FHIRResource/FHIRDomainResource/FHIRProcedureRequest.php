@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
 /**
  * A request for a procedure to be performed. May be a proposal or an order.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRProcedureRequest
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -90,7 +90,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROCEDURE_REQUEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AS_NEEDED_BOOLEAN = 'asNeededBoolean';
     const FIELD_AS_NEEDED_BOOLEAN_EXT = '_asNeededBoolean';
@@ -119,154 +119,167 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $asNeededBoolean = null;
+    protected $asNeededBoolean = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $asNeededCodeableConcept = null;
+    protected $asNeededCodeableConcept = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $bodySite = [];
+    protected $bodySite = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation[]
      */
-    private $notes = [];
+    protected $notes = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $orderedOn = null;
+    protected $orderedOn = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $orderer = null;
+    protected $orderer = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $performer = null;
+    protected $performer = null;
+
     /**
      * The priority of the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestPriority
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $reasonCodeableConcept = null;
+    protected $reasonCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $reasonReference = null;
+    protected $reasonReference = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -275,11 +288,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $scheduledDateTime = null;
+    protected $scheduledDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -288,14 +302,15 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
-    private $scheduledPeriod = null;
+    protected $scheduledPeriod = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are expected or requested to occur. The most common usage is
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -304,26 +319,28 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
-    private $scheduledTiming = null;
+    protected $scheduledTiming = null;
+
     /**
      * The status of the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRProcedureRequest Constructor
@@ -543,7 +560,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -580,7 +597,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
@@ -594,13 +611,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setAsNeededBoolean($asNeededBoolean = null)
     {
@@ -620,7 +637,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
@@ -636,13 +653,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setAsNeededCodeableConcept(FHIRCodeableConcept $asNeededCodeableConcept = null)
     {
@@ -654,7 +671,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
@@ -670,13 +687,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite = null)
     {
@@ -688,13 +705,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setBodySite(array $bodySite = [])
     {
@@ -716,7 +733,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
@@ -732,13 +749,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -749,7 +766,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
      *
@@ -763,12 +780,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -779,7 +796,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
@@ -793,12 +810,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -809,12 +826,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -836,7 +853,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
@@ -852,13 +869,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation $notes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function addNotes(FHIRAnnotation $notes = null)
     {
@@ -870,13 +887,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation[] $notes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setNotes(array $notes = [])
     {
@@ -900,7 +917,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
      *
@@ -917,12 +934,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $orderedOn
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setOrderedOn($orderedOn = null)
     {
@@ -941,7 +958,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
      *
@@ -955,12 +972,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $orderer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setOrderer(FHIRReference $orderer = null)
     {
@@ -971,7 +988,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
      *
@@ -985,12 +1002,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $performer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setPerformer(FHIRReference $performer = null)
     {
@@ -1000,7 +1017,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * The priority of the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
      *
@@ -1013,12 +1030,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * The priority of the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestPriority $priority
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setPriority(FHIRProcedureRequestPriority $priority = null)
     {
@@ -1030,7 +1047,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
@@ -1046,13 +1063,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setReasonCodeableConcept(FHIRCodeableConcept $reasonCodeableConcept = null)
     {
@@ -1063,7 +1080,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
@@ -1078,13 +1095,13 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $reasonReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setReasonReference(FHIRReference $reasonReference = null)
     {
@@ -1098,7 +1115,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -1118,7 +1135,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -1126,7 +1143,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * 2013, 17 Oct 2013 and 1 Nov 2013".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $scheduledDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setScheduledDateTime($scheduledDateTime = null)
     {
@@ -1145,7 +1162,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -1162,7 +1179,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -1170,7 +1187,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * 2013, 17 Oct 2013 and 1 Nov 2013".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $scheduledPeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setScheduledPeriod(FHIRPeriod $scheduledPeriod = null)
     {
@@ -1184,7 +1201,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -1204,7 +1221,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for the proposed or ordered procedure. The Schedule data
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
@@ -1212,7 +1229,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * 2013, 17 Oct 2013 and 1 Nov 2013".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming $scheduledTiming
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setScheduledTiming(FHIRTiming $scheduledTiming = null)
     {
@@ -1222,7 +1239,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * The status of the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
      *
@@ -1235,12 +1252,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * The status of the request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setStatus(FHIRProcedureRequestStatus $status = null)
     {
@@ -1251,7 +1268,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
      *
@@ -1265,12 +1282,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

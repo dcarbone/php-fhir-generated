@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * information level and additional information for herbal extracts will be
  * captured at the Specified Substance Group 1 information level. See for further
  * explanation the Substance Class: Structurally Diverse and the herbal annex.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRSubstanceSourceMaterial
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -98,7 +98,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COUNTRY_OF_ORIGIN = 'countryOfOrigin';
     const FIELD_DEVELOPMENT_STAGE = 'developmentStage';
@@ -123,7 +123,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country where the plant material is harvested or the countries where the
      * plasma is sourced from as laid down in accordance with the Plasma Master File.
@@ -133,12 +133,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $countryOfOrigin = [];
+    protected $countryOfOrigin = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
@@ -146,7 +147,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $developmentStage = null;
+    protected $developmentStage = null;
+
     /**
      * Source material shall capture information on the taxonomic and anatomical
      * origins as well as the fraction of a material that can result in or can be
@@ -173,18 +175,20 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
      */
-    private $fractionDescription = [];
+    protected $fractionDescription = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $geographicalLocation = [];
+    protected $geographicalLocation = [];
+
     /**
      * Source material shall capture information on the taxonomic and anatomical
      * origins as well as the fraction of a material that can result in or can be
@@ -207,52 +211,57 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      */
-    private $organism = null;
+    protected $organism = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $organismId = null;
+    protected $organismId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $organismName = null;
+    protected $organismName = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $parentSubstanceId = [];
+    protected $parentSubstanceId = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $parentSubstanceName = [];
+    protected $parentSubstanceName = [];
+
     /**
      * Source material shall capture information on the taxonomic and anatomical
      * origins as well as the fraction of a material that can result in or can be
@@ -272,35 +281,38 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
      */
-    private $partDescription = [];
+    protected $partDescription = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General high level classification of the source material specific to the origin
      * of the material.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $sourceMaterialClass = null;
+    protected $sourceMaterialClass = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $sourceMaterialState = null;
+    protected $sourceMaterialState = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
@@ -308,7 +320,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $sourceMaterialType = null;
+    protected $sourceMaterialType = null;
 
     /**
      * FHIRSubstanceSourceMaterial Constructor
@@ -516,7 +528,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -555,7 +567,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country where the plant material is harvested or the countries where the
      * plasma is sourced from as laid down in accordance with the Plasma Master File.
@@ -574,7 +586,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country where the plant material is harvested or the countries where the
      * plasma is sourced from as laid down in accordance with the Plasma Master File.
@@ -583,7 +595,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * or Crioprecipitate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $countryOfOrigin
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function addCountryOfOrigin(FHIRCodeableConcept $countryOfOrigin = null)
     {
@@ -595,7 +607,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country where the plant material is harvested or the countries where the
      * plasma is sourced from as laid down in accordance with the Plasma Master File.
@@ -604,7 +616,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * or Crioprecipitate.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $countryOfOrigin
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setCountryOfOrigin(array $countryOfOrigin = [])
     {
@@ -626,7 +638,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
@@ -643,14 +655,14 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
      * stages (e.g. foetal bovine serum).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $developmentStage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setDevelopmentStage(FHIRCodeableConcept $developmentStage = null)
     {
@@ -714,7 +726,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * Substance and the Specified Substance Group 1 levels.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription $fractionDescription
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription $fractionDescription = null)
     {
@@ -747,7 +759,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * Substance and the Specified Substance Group 1 levels.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[] $fractionDescription
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setFractionDescription(array $fractionDescription = [])
     {
@@ -768,7 +780,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
@@ -783,13 +795,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $geographicalLocation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function addGeographicalLocation($geographicalLocation = null)
     {
@@ -808,13 +820,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $geographicalLocation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setGeographicalLocation(array $geographicalLocation = [])
     {
@@ -880,7 +892,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * ., Leaf.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $organism
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setOrganism(FHIRSubstanceSourceMaterialOrganism $organism = null)
     {
@@ -892,7 +904,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
@@ -908,13 +920,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $organismId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setOrganismId(FHIRIdentifier $organismId = null)
     {
@@ -925,7 +937,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
@@ -940,13 +952,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $organismName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setOrganismName($organismName = null)
     {
@@ -966,7 +978,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
@@ -982,13 +994,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $parentSubstanceId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function addParentSubstanceId(FHIRIdentifier $parentSubstanceId = null)
     {
@@ -1000,13 +1012,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $parentSubstanceId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setParentSubstanceId(array $parentSubstanceId = [])
     {
@@ -1027,7 +1039,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
      *
@@ -1041,12 +1053,12 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $parentSubstanceName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function addParentSubstanceName($parentSubstanceName = null)
     {
@@ -1065,12 +1077,12 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $parentSubstanceName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setParentSubstanceName(array $parentSubstanceName = [])
     {
@@ -1130,7 +1142,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * To do.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription $partDescription
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function addPartDescription(FHIRSubstanceSourceMaterialPartDescription $partDescription = null)
     {
@@ -1156,7 +1168,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * To do.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[] $partDescription
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setPartDescription(array $partDescription = [])
     {
@@ -1178,7 +1190,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General high level classification of the source material specific to the origin
      * of the material.
@@ -1194,13 +1206,13 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * General high level classification of the source material specific to the origin
      * of the material.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialClass
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setSourceMaterialClass(FHIRCodeableConcept $sourceMaterialClass = null)
     {
@@ -1212,7 +1224,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
      *
@@ -1227,12 +1239,12 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialState
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setSourceMaterialState(FHIRCodeableConcept $sourceMaterialState = null)
     {
@@ -1244,7 +1256,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
@@ -1261,14 +1273,14 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
      * agent.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return static
      */
     public function setSourceMaterialType(FHIRCodeableConcept $sourceMaterialType = null)
     {

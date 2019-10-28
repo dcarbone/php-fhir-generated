@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADDITIVE_PRODUCT_NAME = 'additiveProductName';
     const FIELD_ADDITIVE_PRODUCT_NAME_EXT = '_additiveProductName';
@@ -102,26 +102,28 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $additiveProductName = null;
+    protected $additiveProductName = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $additiveType = null;
+    protected $additiveType = null;
+
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
@@ -133,47 +135,51 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
      */
-    private $administration = [];
+    protected $administration = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text formula administration, feeding instructions or additional
      * instructions or information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $administrationInstruction = null;
+    protected $administrationInstruction = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The product or brand name of the enteral or infant formula product such as "ACME
      * Adult Standard Formula".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $baseFormulaProductName = null;
+    protected $baseFormulaProductName = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of enteral or infant formula such as an adult standard formula with
      * fiber or a soy-based infant formula.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $baseFormulaType = null;
+    protected $baseFormulaType = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of energy (calories) that the formula should provide per specified
      * volume, typically per mL or fluid oz. For example, an infant may require a
@@ -182,25 +188,27 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $caloricDensity = null;
+    protected $caloricDensity = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $maxVolumeToDeliver = null;
+    protected $maxVolumeToDeliver = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The route or physiological path of administration into the patient's
      * gastrointestinal tract for purposes of providing the formula feeding, e.g.
@@ -208,7 +216,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $routeofAdministration = null;
+    protected $routeofAdministration = null;
 
     /**
      * FHIRNutritionOrderEnteralFormula Constructor
@@ -342,7 +350,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -372,7 +380,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
@@ -387,13 +395,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $additiveProductName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setAdditiveProductName($additiveProductName = null)
     {
@@ -413,7 +421,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
@@ -429,13 +437,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $additiveType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setAdditiveType(FHIRCodeableConcept $additiveType = null)
     {
@@ -469,7 +477,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * the rate of continuous feeding every 2 hours.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $administration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function addAdministration(FHIRNutritionOrderAdministration $administration = null)
     {
@@ -487,7 +495,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * the rate of continuous feeding every 2 hours.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[] $administration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setAdministration(array $administration = [])
     {
@@ -508,7 +516,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text formula administration, feeding instructions or additional
      * instructions or information.
@@ -523,13 +531,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text formula administration, feeding instructions or additional
      * instructions or information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $administrationInstruction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setAdministrationInstruction($administrationInstruction = null)
     {
@@ -548,7 +556,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The product or brand name of the enteral or infant formula product such as "ACME
      * Adult Standard Formula".
@@ -563,13 +571,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The product or brand name of the enteral or infant formula product such as "ACME
      * Adult Standard Formula".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $baseFormulaProductName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setBaseFormulaProductName($baseFormulaProductName = null)
     {
@@ -589,7 +597,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of enteral or infant formula such as an adult standard formula with
      * fiber or a soy-based infant formula.
@@ -605,13 +613,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of enteral or infant formula such as an adult standard formula with
      * fiber or a soy-based infant formula.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $baseFormulaType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setBaseFormulaType(FHIRCodeableConcept $baseFormulaType = null)
     {
@@ -624,7 +632,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of energy (calories) that the formula should provide per specified
      * volume, typically per mL or fluid oz. For example, an infant may require a
@@ -643,7 +651,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of energy (calories) that the formula should provide per specified
      * volume, typically per mL or fluid oz. For example, an infant may require a
@@ -651,7 +659,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * enteral formula that provides 1.5 calorie/mL.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $caloricDensity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setCaloricDensity(FHIRQuantity $caloricDensity = null)
     {
@@ -664,7 +672,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
@@ -681,13 +689,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $maxVolumeToDeliver
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setMaxVolumeToDeliver(FHIRQuantity $maxVolumeToDeliver = null)
     {
@@ -699,7 +707,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The route or physiological path of administration into the patient's
      * gastrointestinal tract for purposes of providing the formula feeding, e.g.
@@ -716,14 +724,14 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The route or physiological path of administration into the patient's
      * gastrointestinal tract for purposes of providing the formula feeding, e.g.
      * nasogastric tube.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $routeofAdministration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return static
      */
     public function setRouteofAdministration(FHIRCodeableConcept $routeofAdministration = null)
     {

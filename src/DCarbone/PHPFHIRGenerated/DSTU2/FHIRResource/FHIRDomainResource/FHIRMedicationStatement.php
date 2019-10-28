@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * may come from the patient's memory, from a prescription bottle or from a list of
  * medications the patient, clinician or other party maintains. Medication
  * administration is more formal and is not missing detailed information.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicationStatement
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -108,7 +108,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_STATEMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DATE_ASSERTED = 'dateAsserted';
     const FIELD_DATE_ASSERTED_EXT = '_dateAsserted';
@@ -139,13 +139,14 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the medication statement was asserted by the information source.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $dateAsserted = null;
+    protected $dateAsserted = null;
+
     /**
      * A record of a medication that is being consumed by a patient. A
      * MedicationStatement may indicate that the patient may be taking the medication
@@ -172,36 +173,39 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementDosage[]
      */
-    private $dosage = [];
+    protected $dosage = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $effectiveDateTime = null;
+    protected $effectiveDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifier - FHIR will generate its own internal identifiers (probably
      * URLs) which do not need to be explicitly managed by the resource. The identifier
@@ -213,22 +217,24 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who provided the information about the taking of this medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $informationSource = null;
+    protected $informationSource = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
@@ -236,11 +242,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $medicationCodeableConcept = null;
+    protected $medicationCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
@@ -248,63 +255,69 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $medicationReference = null;
+    protected $medicationReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Provides extra information about the medication statement that is not conveyed
      * by the other attributes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $note = null;
+    protected $note = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal who is/was taking the medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $reasonForUseCodeableConcept = null;
+    protected $reasonForUseCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $reasonForUseReference = null;
+    protected $reasonForUseReference = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reasonNotTaken = [];
+    protected $reasonNotTaken = [];
+
     /**
      * A set of codes indicating the current status of a MedicationStatement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code representing the patient or other source's judgment about the state of
      * the medication used that this statement is about. Generally this will be active
@@ -312,27 +325,29 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationStatementStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
      * other information that supports the MedicationStatement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    private $supportingInformation = [];
+    protected $supportingInformation = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the record is saying that the medication was NOT taken.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $wasNotTaken = null;
+    protected $wasNotTaken = null;
 
     /**
      * FHIRMedicationStatement Constructor
@@ -546,7 +561,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -587,7 +602,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the medication statement was asserted by the information source.
      *
@@ -604,12 +619,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the medication statement was asserted by the information source.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $dateAsserted
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setDateAsserted($dateAsserted = null)
     {
@@ -681,7 +696,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Indicates how the medication is/was used by the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementDosage $dosage
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function addDosage(FHIRMedicationStatementDosage $dosage = null)
     {
@@ -714,7 +729,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Indicates how the medication is/was used by the patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementDosage[] $dosage
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setDosage(array $dosage = [])
     {
@@ -738,7 +753,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
@@ -756,13 +771,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $effectiveDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setEffectiveDateTime($effectiveDateTime = null)
     {
@@ -781,7 +796,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
@@ -796,13 +811,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -813,7 +828,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifier - FHIR will generate its own internal identifiers (probably
      * URLs) which do not need to be explicitly managed by the resource. The identifier
@@ -833,7 +848,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifier - FHIR will generate its own internal identifiers (probably
      * URLs) which do not need to be explicitly managed by the resource. The identifier
@@ -844,7 +859,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * to be updated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -855,7 +870,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifier - FHIR will generate its own internal identifiers (probably
      * URLs) which do not need to be explicitly managed by the resource. The identifier
@@ -866,7 +881,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * to be updated.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -887,7 +902,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who provided the information about the taking of this medication.
      *
@@ -901,12 +916,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who provided the information about the taking of this medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $informationSource
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setInformationSource(FHIRReference $informationSource = null)
     {
@@ -918,7 +933,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
@@ -935,14 +950,14 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setMedicationCodeableConcept(FHIRCodeableConcept $medicationCodeableConcept = null)
     {
@@ -953,7 +968,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
@@ -969,14 +984,14 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $medicationReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setMedicationReference(FHIRReference $medicationReference = null)
     {
@@ -987,7 +1002,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Provides extra information about the medication statement that is not conveyed
      * by the other attributes.
@@ -1002,13 +1017,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Provides extra information about the medication statement that is not conveyed
      * by the other attributes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $note
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setNote($note = null)
     {
@@ -1027,7 +1042,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal who is/was taking the medication.
      *
@@ -1041,12 +1056,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal who is/was taking the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -1058,7 +1073,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
      *
@@ -1073,12 +1088,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $reasonForUseCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setReasonForUseCodeableConcept(FHIRCodeableConcept $reasonForUseCodeableConcept = null)
     {
@@ -1089,7 +1104,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
      *
@@ -1103,12 +1118,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $reasonForUseReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setReasonForUseReference(FHIRReference $reasonForUseReference = null)
     {
@@ -1120,7 +1135,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
      *
@@ -1135,12 +1150,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $reasonNotTaken
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function addReasonNotTaken(FHIRCodeableConcept $reasonNotTaken = null)
     {
@@ -1152,12 +1167,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $reasonNotTaken
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setReasonNotTaken(array $reasonNotTaken = [])
     {
@@ -1177,7 +1192,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * A set of codes indicating the current status of a MedicationStatement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code representing the patient or other source's judgment about the state of
      * the medication used that this statement is about. Generally this will be active
@@ -1192,14 +1207,14 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * A set of codes indicating the current status of a MedicationStatement.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code representing the patient or other source's judgment about the state of
      * the medication used that this statement is about. Generally this will be active
      * or completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationStatementStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setStatus(FHIRMedicationStatementStatus $status = null)
     {
@@ -1210,7 +1225,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
      * other information that supports the MedicationStatement.
@@ -1225,13 +1240,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
      * other information that supports the MedicationStatement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation = null)
     {
@@ -1242,13 +1257,13 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
      * other information that supports the MedicationStatement.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setSupportingInformation(array $supportingInformation = [])
     {
@@ -1268,7 +1283,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the record is saying that the medication was NOT taken.
      *
@@ -1281,12 +1296,12 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set this to true if the record is saying that the medication was NOT taken.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $wasNotTaken
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
+     * @return static
      */
     public function setWasNotTaken($wasNotTaken = null)
     {

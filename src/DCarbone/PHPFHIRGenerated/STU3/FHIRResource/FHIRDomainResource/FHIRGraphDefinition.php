@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * A formal computable definition of a graph of resources - that is, a coherent set
  * of resources that form a graph by following references. The Graph Definition
  * resource defines a set and makes rules about the set.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRGraphDefinition
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -93,7 +93,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GRAPH_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTACT = 'contact';
     const FIELD_DATE = 'date';
@@ -124,21 +124,22 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the graph definition was published. The date
      * must change if and when the business version changes and it must change if the
@@ -147,7 +148,8 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -156,7 +158,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the graph definition from a
@@ -164,10 +166,11 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this graph definition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -175,19 +178,21 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A formal computable definition of a graph of resources - that is, a coherent set
      * of resources that form a graph by following references. The Graph Definition
@@ -197,11 +202,12 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
-    private $link = [];
+    protected $link = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the graph definition. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -209,27 +215,30 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The profile that describes the use of the base resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $profile = null;
+    protected $profile = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the graph definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -238,7 +247,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this graph definition is needed and why it has been designed
@@ -246,29 +255,32 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of FHIR resource at which instances of this graph start.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
      */
-    private $start = null;
+    protected $start = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this graph definition. Enables tracking the life-cycle of the
      * content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this graph definition when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -279,14 +291,15 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -294,11 +307,12 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the graph definition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -309,7 +323,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRGraphDefinition Constructor
@@ -530,7 +544,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -568,7 +582,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -583,13 +597,13 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -600,13 +614,13 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -630,7 +644,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the graph definition was published. The date
      * must change if and when the business version changes and it must change if the
@@ -650,7 +664,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the graph definition was published. The date
      * must change if and when the business version changes and it must change if the
@@ -658,7 +672,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * of the graph definition changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -682,7 +696,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the graph definition from a
@@ -703,14 +717,14 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the graph definition from a
      * consumer's perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -728,7 +742,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this graph definition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -743,14 +757,14 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this graph definition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -770,7 +784,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
@@ -786,13 +800,13 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -804,13 +818,13 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -850,7 +864,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * Links this graph makes rules about.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function addLink(FHIRGraphDefinitionLink $link = null)
     {
@@ -866,7 +880,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * Links this graph makes rules about.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[] $link
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setLink(array $link = [])
     {
@@ -887,7 +901,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the graph definition. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -903,14 +917,14 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the graph definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setName($name = null)
     {
@@ -929,7 +943,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The profile that describes the use of the base resource.
      *
@@ -943,12 +957,12 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The profile that describes the use of the base resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $profile
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setProfile($profile = null)
     {
@@ -967,7 +981,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the graph definition.
      *
@@ -981,12 +995,12 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the graph definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1010,7 +1024,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this graph definition is needed and why it has been designed
@@ -1031,14 +1045,14 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this graph definition is needed and why it has been designed
      * as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -1056,7 +1070,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of FHIR resource at which instances of this graph start.
      *
@@ -1069,12 +1083,12 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * The kind of activity the definition is describing
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of FHIR resource at which instances of this graph start.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $start
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setStart($start = null)
     {
@@ -1091,7 +1105,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this graph definition. Enables tracking the life-cycle of the
      * content.
@@ -1104,13 +1118,13 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this graph definition. Enables tracking the life-cycle of the
      * content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -1121,7 +1135,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this graph definition when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1140,7 +1154,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this graph definition when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1150,7 +1164,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * Versions](resource.html#versions).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1172,7 +1186,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1191,14 +1205,14 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate graph definition instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -1212,14 +1226,14 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate graph definition instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -1240,7 +1254,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the graph definition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -1259,7 +1273,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the graph definition
      * when it is referenced in a specification, model, design or instance. This is an
@@ -1269,7 +1283,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * be placed in a lexicographical sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
+     * @return static
      */
     public function setVersion($version = null)
     {

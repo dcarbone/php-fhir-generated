@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BINDING = 'binding';
     const FIELD_COMMENTS = 'comments';
@@ -228,22 +228,24 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding
      */
-    private $binding = null;
+    protected $binding = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments about the use of the element, including notes about how to use the data
      * properly, exceptions to proper use, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $comments = null;
+    protected $comments = null;
+
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
@@ -251,7 +253,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId[]
      */
-    private $condition = [];
+    protected $condition = [];
+
     /**
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
@@ -262,297 +265,326 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint[]
      */
-    private $constraint = [];
+    protected $constraint = [];
+
     /**
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress
      */
-    private $exampleAddress = null;
+    protected $exampleAddress = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment
      */
-    private $exampleAttachment = null;
+    protected $exampleAttachment = null;
+
     /**
      * A stream of bytes
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBase64Binary
      */
-    private $exampleBase64Binary = null;
+    protected $exampleBase64Binary = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $exampleBoolean = null;
+    protected $exampleBoolean = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $exampleCode = null;
+    protected $exampleCode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $exampleCodeableConcept = null;
+    protected $exampleCodeableConcept = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
-    private $exampleCoding = null;
+    protected $exampleCoding = null;
+
     /**
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
      */
-    private $exampleContact = null;
+    protected $exampleContact = null;
+
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    private $exampleDate = null;
+    protected $exampleDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $exampleDateTime = null;
+    protected $exampleDateTime = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $exampleDecimal = null;
+    protected $exampleDecimal = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
      */
-    private $exampleHumanName = null;
+    protected $exampleHumanName = null;
+
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    private $exampleId = null;
+    protected $exampleId = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $exampleIdentifier = null;
+    protected $exampleIdentifier = null;
+
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
-    private $exampleInstant = null;
+    protected $exampleInstant = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $exampleInteger = null;
+    protected $exampleInteger = null;
+
     /**
      * An oid represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROid
      */
-    private $exampleOid = null;
+    protected $exampleOid = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $examplePeriod = null;
+    protected $examplePeriod = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    private $exampleQuantity = null;
+    protected $exampleQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
      */
-    private $exampleRange = null;
+    protected $exampleRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio
      */
-    private $exampleRatio = null;
+    protected $exampleRatio = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $exampleResource = null;
+    protected $exampleResource = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
      */
-    private $exampleSampledData = null;
+    protected $exampleSampledData = null;
+
     /**
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
      */
-    private $exampleSchedule = null;
+    protected $exampleSchedule = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $exampleString = null;
+    protected $exampleString = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $exampleUri = null;
+    protected $exampleUri = null;
+
     /**
      * A UUID, represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUuid
      */
-    private $exampleUuid = null;
+    protected $exampleUuid = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The definition SHALL be consistent with the base definition, but convey the
      * meaning of the element in the particular context of use of the resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $formal = null;
+    protected $formal = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the value of this element affects the interpretation of the element or
      * resource that contains it, and the value of the element cannot be ignored.
@@ -563,7 +595,8 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $isModifier = null;
+    protected $isModifier = null;
+
     /**
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
@@ -574,38 +607,42 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping1[]
      */
-    private $mapping = [];
+    protected $mapping = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $max = null;
+    protected $max = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the shortest length that SHALL be supported by conformant instances
      * without truncation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $maxLength = null;
+    protected $maxLength = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $min = null;
+    protected $min = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, conformant resource authors SHALL be capable of providing a value for
      * the element and resource consumers SHALL be capable of extracting and doing
@@ -614,45 +651,50 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $mustSupport = null;
+    protected $mustSupport = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the name of a slice defined elsewhere in the profile whose
      * constraints should be applied to the current element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $nameReference = null;
+    protected $nameReference = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this element is needed and why it's been constrained as it has.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $requirements = null;
+    protected $requirements = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A concise definition that is shown in the generated XML format that summarizes
      * profiles (used throughout the specification).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $short = null;
+    protected $short = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
      */
-    private $synonym = [];
+    protected $synonym = [];
+
     /**
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
@@ -662,284 +704,311 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType[]
      */
-    private $type = [];
+    protected $type = [];
+
     /**
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress
      */
-    private $valueAddress = null;
+    protected $valueAddress = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment
      */
-    private $valueAttachment = null;
+    protected $valueAttachment = null;
+
     /**
      * A stream of bytes
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBase64Binary
      */
-    private $valueBase64Binary = null;
+    protected $valueBase64Binary = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $valueBoolean = null;
+    protected $valueBoolean = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $valueCode = null;
+    protected $valueCode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $valueCodeableConcept = null;
+    protected $valueCodeableConcept = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
-    private $valueCoding = null;
+    protected $valueCoding = null;
+
     /**
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
      */
-    private $valueContact = null;
+    protected $valueContact = null;
+
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    private $valueDate = null;
+    protected $valueDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $valueDateTime = null;
+    protected $valueDateTime = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $valueDecimal = null;
+    protected $valueDecimal = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
      */
-    private $valueHumanName = null;
+    protected $valueHumanName = null;
+
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    private $valueId = null;
+    protected $valueId = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $valueIdentifier = null;
+    protected $valueIdentifier = null;
+
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
-    private $valueInstant = null;
+    protected $valueInstant = null;
+
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
-    private $valueInteger = null;
+    protected $valueInteger = null;
+
     /**
      * An oid represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROid
      */
-    private $valueOid = null;
+    protected $valueOid = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $valuePeriod = null;
+    protected $valuePeriod = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    private $valueQuantity = null;
+    protected $valueQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
      */
-    private $valueRange = null;
+    protected $valueRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio
      */
-    private $valueRatio = null;
+    protected $valueRatio = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $valueResource = null;
+    protected $valueResource = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData
      */
-    private $valueSampledData = null;
+    protected $valueSampledData = null;
+
     /**
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
      */
-    private $valueSchedule = null;
+    protected $valueSchedule = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $valueString = null;
+    protected $valueString = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $valueUri = null;
+    protected $valueUri = null;
+
     /**
      * A UUID, represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUuid
      */
-    private $valueUuid = null;
+    protected $valueUuid = null;
 
     /**
      * FHIRProfileDefinition Constructor
@@ -1731,7 +1800,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1780,7 +1849,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding $binding
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setBinding(FHIRProfileBinding $binding = null)
     {
@@ -1790,7 +1859,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments about the use of the element, including notes about how to use the data
      * properly, exceptions to proper use, etc.
@@ -1804,13 +1873,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments about the use of the element, including notes about how to use the data
      * properly, exceptions to proper use, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $comments
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setComments($comments = null)
     {
@@ -1830,7 +1899,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
@@ -1847,14 +1916,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $condition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function addCondition($condition = null)
     {
@@ -1874,14 +1943,14 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId[] $condition
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setCondition(array $condition = [])
     {
@@ -1923,7 +1992,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * computationally evaluated within the context of the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint $constraint
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function addConstraint(FHIRProfileConstraint $constraint = null)
     {
@@ -1940,7 +2009,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * computationally evaluated within the context of the instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint[] $constraint
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setConstraint(array $constraint = [])
     {
@@ -1962,7 +2031,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -1977,12 +2046,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress $exampleAddress
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleAddress(FHIRAddress $exampleAddress = null)
     {
@@ -1993,7 +2062,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2007,12 +2076,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment $exampleAttachment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleAttachment(FHIRAttachment $exampleAttachment = null)
     {
@@ -2022,7 +2091,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A stream of bytes
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2035,12 +2104,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A stream of bytes
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBase64Binary $exampleBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleBase64Binary($exampleBase64Binary = null)
     {
@@ -2058,7 +2127,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2071,12 +2140,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $exampleBoolean
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleBoolean($exampleBoolean = null)
     {
@@ -2095,7 +2164,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
@@ -2110,13 +2179,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $exampleCode
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleCode($exampleCode = null)
     {
@@ -2136,7 +2205,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2151,12 +2220,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $exampleCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleCodeableConcept(FHIRCodeableConcept $exampleCodeableConcept = null)
     {
@@ -2167,7 +2236,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2181,12 +2250,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding $exampleCoding
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleCoding(FHIRCoding $exampleCoding = null)
     {
@@ -2198,7 +2267,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2213,12 +2282,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact $exampleContact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleContact(FHIRContact $exampleContact = null)
     {
@@ -2230,7 +2299,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2245,12 +2314,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $exampleDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleDate($exampleDate = null)
     {
@@ -2271,7 +2340,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2287,12 +2356,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $exampleDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleDateTime($exampleDateTime = null)
     {
@@ -2310,7 +2379,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2323,12 +2392,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $exampleDecimal
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleDecimal($exampleDecimal = null)
     {
@@ -2347,7 +2416,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2361,12 +2430,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName $exampleHumanName
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleHumanName(FHIRHumanName $exampleHumanName = null)
     {
@@ -2378,7 +2447,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
@@ -2394,13 +2463,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $exampleId
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleId($exampleId = null)
     {
@@ -2419,7 +2488,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2433,12 +2502,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $exampleIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleIdentifier(FHIRIdentifier $exampleIdentifier = null)
     {
@@ -2448,7 +2517,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2461,12 +2530,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $exampleInstant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleInstant($exampleInstant = null)
     {
@@ -2484,7 +2553,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2497,12 +2566,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $exampleInteger
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleInteger($exampleInteger = null)
     {
@@ -2520,7 +2589,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An oid represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
@@ -2534,13 +2603,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An oid represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROid $exampleOid
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleOid($exampleOid = null)
     {
@@ -2559,7 +2628,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2573,12 +2642,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $examplePeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExamplePeriod(FHIRPeriod $examplePeriod = null)
     {
@@ -2591,7 +2660,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2607,12 +2676,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity $exampleQuantity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleQuantity(FHIRQuantity $exampleQuantity = null)
     {
@@ -2623,7 +2692,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2637,12 +2706,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange $exampleRange
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleRange(FHIRRange $exampleRange = null)
     {
@@ -2654,7 +2723,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2669,12 +2738,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio $exampleRatio
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleRatio(FHIRRatio $exampleRatio = null)
     {
@@ -2685,7 +2754,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2699,12 +2768,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $exampleResource
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleResource(FHIRResourceReference $exampleResource = null)
     {
@@ -2716,7 +2785,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2731,12 +2800,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData $exampleSampledData
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleSampledData(FHIRSampledData $exampleSampledData = null)
     {
@@ -2748,7 +2817,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
@@ -2763,12 +2832,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule $exampleSchedule
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleSchedule(FHIRSchedule $exampleSchedule = null)
     {
@@ -2778,7 +2847,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2791,12 +2860,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $exampleString
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleString($exampleString = null)
     {
@@ -2814,7 +2883,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
@@ -2827,12 +2896,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $exampleUri
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleUri($exampleUri = null)
     {
@@ -2850,7 +2919,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A UUID, represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
@@ -2864,13 +2933,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A UUID, represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An example value for this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUuid $exampleUuid
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setExampleUuid($exampleUuid = null)
     {
@@ -2888,7 +2957,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The definition SHALL be consistent with the base definition, but convey the
      * meaning of the element in the particular context of use of the resource.
@@ -2902,13 +2971,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The definition SHALL be consistent with the base definition, but convey the
      * meaning of the element in the particular context of use of the resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $formal
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setFormal($formal = null)
     {
@@ -2926,7 +2995,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the value of this element affects the interpretation of the element or
      * resource that contains it, and the value of the element cannot be ignored.
@@ -2944,7 +3013,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the value of this element affects the interpretation of the element or
      * resource that contains it, and the value of the element cannot be ignored.
@@ -2954,7 +3023,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * that it is not relevant to their particular system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $isModifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setIsModifier($isModifier = null)
     {
@@ -2994,7 +3063,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping1 $mapping
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function addMapping(FHIRProfileMapping1 $mapping = null)
     {
@@ -3011,7 +3080,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * this element.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping1[] $mapping
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setMapping(array $mapping = [])
     {
@@ -3031,7 +3100,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
@@ -3044,12 +3113,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $max
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setMax($max = null)
     {
@@ -3067,7 +3136,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the shortest length that SHALL be supported by conformant instances
      * without truncation.
@@ -3081,13 +3150,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the shortest length that SHALL be supported by conformant instances
      * without truncation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $maxLength
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setMaxLength($maxLength = null)
     {
@@ -3105,7 +3174,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
      *
@@ -3118,12 +3187,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $min
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setMin($min = null)
     {
@@ -3141,7 +3210,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, conformant resource authors SHALL be capable of providing a value for
      * the element and resource consumers SHALL be capable of extracting and doing
@@ -3157,7 +3226,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, conformant resource authors SHALL be capable of providing a value for
      * the element and resource consumers SHALL be capable of extracting and doing
@@ -3165,7 +3234,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * not supported.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $mustSupport
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setMustSupport($mustSupport = null)
     {
@@ -3183,7 +3252,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the name of a slice defined elsewhere in the profile whose
      * constraints should be applied to the current element.
@@ -3197,13 +3266,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the name of a slice defined elsewhere in the profile whose
      * constraints should be applied to the current element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $nameReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setNameReference($nameReference = null)
     {
@@ -3221,7 +3290,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this element is needed and why it's been constrained as it has.
      *
@@ -3234,12 +3303,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this element is needed and why it's been constrained as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $requirements
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setRequirements($requirements = null)
     {
@@ -3257,7 +3326,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A concise definition that is shown in the generated XML format that summarizes
      * profiles (used throughout the specification).
@@ -3271,13 +3340,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A concise definition that is shown in the generated XML format that summarizes
      * profiles (used throughout the specification).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $short
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setShort($short = null)
     {
@@ -3295,7 +3364,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
@@ -3308,12 +3377,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $synonym
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function addSynonym($synonym = null)
     {
@@ -3331,12 +3400,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[] $synonym
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setSynonym(array $synonym = [])
     {
@@ -3376,7 +3445,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * The data type or resource that the value of this element is permitted to be.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function addType(FHIRProfileType $type = null)
     {
@@ -3392,7 +3461,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * The data type or resource that the value of this element is permitted to be.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType[] $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setType(array $type = [])
     {
@@ -3414,7 +3483,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3429,12 +3498,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress $valueAddress
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueAddress(FHIRAddress $valueAddress = null)
     {
@@ -3445,7 +3514,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3459,12 +3528,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment $valueAttachment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueAttachment(FHIRAttachment $valueAttachment = null)
     {
@@ -3474,7 +3543,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A stream of bytes
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3487,12 +3556,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A stream of bytes
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueBase64Binary($valueBase64Binary = null)
     {
@@ -3510,7 +3579,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3523,12 +3592,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $valueBoolean
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueBoolean($valueBoolean = null)
     {
@@ -3547,7 +3616,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
@@ -3562,13 +3631,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $valueCode
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueCode($valueCode = null)
     {
@@ -3588,7 +3657,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3603,12 +3672,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
     {
@@ -3619,7 +3688,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3633,12 +3702,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding $valueCoding
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueCoding(FHIRCoding $valueCoding = null)
     {
@@ -3650,7 +3719,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3665,12 +3734,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * All kinds of technology mediated contact details for a person or organization,
      * including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact $valueContact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueContact(FHIRContact $valueContact = null)
     {
@@ -3682,7 +3751,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3697,12 +3766,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $valueDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueDate($valueDate = null)
     {
@@ -3723,7 +3792,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3739,12 +3808,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $valueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueDateTime($valueDateTime = null)
     {
@@ -3762,7 +3831,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3775,12 +3844,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $valueDecimal
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueDecimal($valueDecimal = null)
     {
@@ -3799,7 +3868,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3813,12 +3882,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName $valueHumanName
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueHumanName(FHIRHumanName $valueHumanName = null)
     {
@@ -3830,7 +3899,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
@@ -3846,13 +3915,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
      * with a length limit of 36 characters
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $valueId
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueId($valueId = null)
     {
@@ -3871,7 +3940,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3885,12 +3954,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $valueIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueIdentifier(FHIRIdentifier $valueIdentifier = null)
     {
@@ -3900,7 +3969,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3913,12 +3982,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $valueInstant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueInstant($valueInstant = null)
     {
@@ -3936,7 +4005,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -3949,12 +4018,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A whole number
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $valueInteger
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueInteger($valueInteger = null)
     {
@@ -3972,7 +4041,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An oid represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
@@ -3986,13 +4055,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * An oid represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROid $valueOid
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueOid($valueOid = null)
     {
@@ -4011,7 +4080,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4025,12 +4094,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $valuePeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValuePeriod(FHIRPeriod $valuePeriod = null)
     {
@@ -4043,7 +4112,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4059,12 +4128,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity $valueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
@@ -4075,7 +4144,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4089,12 +4158,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange $valueRange
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueRange(FHIRRange $valueRange = null)
     {
@@ -4106,7 +4175,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4121,12 +4190,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio $valueRatio
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueRatio(FHIRRatio $valueRatio = null)
     {
@@ -4137,7 +4206,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4151,12 +4220,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $valueResource
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueResource(FHIRResourceReference $valueResource = null)
     {
@@ -4168,7 +4237,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4183,12 +4252,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSampledData $valueSampledData
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueSampledData(FHIRSampledData $valueSampledData = null)
     {
@@ -4200,7 +4269,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4215,12 +4284,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule $valueSchedule
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueSchedule(FHIRSchedule $valueSchedule = null)
     {
@@ -4230,7 +4299,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4243,12 +4312,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $valueString
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueString($valueString = null)
     {
@@ -4266,7 +4335,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
@@ -4279,12 +4348,12 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $valueUri
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueUri($valueUri = null)
     {
@@ -4302,7 +4371,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A UUID, represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
@@ -4316,13 +4385,13 @@ class FHIRProfileDefinition extends FHIRBackboneElement
 
     /**
      * A UUID, represented as a URI
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a primitive value that SHALL hold for this element in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUuid $valueUuid
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return static
      */
     public function setValueUuid($valueUuid = null)
     {

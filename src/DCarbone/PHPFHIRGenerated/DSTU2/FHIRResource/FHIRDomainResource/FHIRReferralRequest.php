@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * Used to record and send details about a request for referral service or transfer
  * of a patient to the care of another provider or provider organization.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRReferralRequest
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -88,7 +88,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REFERRAL_REQUEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
@@ -118,99 +118,107 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/DateTime the request for referral or transfer of care is sent by the
      * author.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $dateSent = null;
+    protected $dateSent = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
-    private $fulfillmentTime = null;
+    protected $fulfillmentTime = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
@@ -218,46 +226,50 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $reason = null;
+    protected $reason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    private $recipient = [];
+    protected $recipient = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider or provider organization who/which initiated the
      * referral/transfer of care request. Can also be Patient (a self referral).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $requester = null;
+    protected $requester = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $serviceRequested = [];
+    protected $serviceRequested = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
@@ -265,20 +277,22 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $specialty = null;
+    protected $specialty = null;
+
     /**
      * The status of the referral.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the referral or transfer of care request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReferralStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional (administrative, financial or clinical) information required to
      * support request for referral or transfer of care. For example: Presenting
@@ -288,19 +302,20 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    private $supportingInformation = [];
+    protected $supportingInformation = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRReferralRequest Constructor
@@ -509,7 +524,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -550,7 +565,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
@@ -568,13 +583,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -596,7 +611,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/DateTime the request for referral or transfer of care is sent by the
      * author.
@@ -614,13 +629,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/DateTime the request for referral or transfer of care is sent by the
      * author.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $dateSent
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setDateSent($dateSent = null)
     {
@@ -639,7 +654,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
@@ -654,13 +669,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -679,7 +694,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
@@ -694,13 +709,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -711,7 +726,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
@@ -726,13 +741,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $fulfillmentTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setFulfillmentTime(FHIRPeriod $fulfillmentTime = null)
     {
@@ -743,7 +758,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
@@ -758,13 +773,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -775,13 +790,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -802,7 +817,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
      *
@@ -816,12 +831,12 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -833,7 +848,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
@@ -849,13 +864,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $priority
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setPriority(FHIRCodeableConcept $priority = null)
     {
@@ -867,7 +882,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
@@ -884,14 +899,14 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
@@ -902,7 +917,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
@@ -917,13 +932,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $recipient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function addRecipient(FHIRReference $recipient = null)
     {
@@ -934,13 +949,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $recipient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setRecipient(array $recipient = [])
     {
@@ -961,7 +976,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider or provider organization who/which initiated the
      * referral/transfer of care request. Can also be Patient (a self referral).
@@ -976,13 +991,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare provider or provider organization who/which initiated the
      * referral/transfer of care request. Can also be Patient (a self referral).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $requester
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setRequester(FHIRReference $requester = null)
     {
@@ -994,7 +1009,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
@@ -1010,13 +1025,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $serviceRequested
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function addServiceRequested(FHIRCodeableConcept $serviceRequested = null)
     {
@@ -1028,13 +1043,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $serviceRequested
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setServiceRequested(array $serviceRequested = [])
     {
@@ -1056,7 +1071,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
@@ -1073,14 +1088,14 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
      * Diabetology.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $specialty
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept $specialty = null)
     {
@@ -1090,7 +1105,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * The status of the referral.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the referral or transfer of care request.
      *
@@ -1103,12 +1118,12 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
 
     /**
      * The status of the referral.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the referral or transfer of care request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReferralStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setStatus(FHIRReferralStatus $status = null)
     {
@@ -1119,7 +1134,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional (administrative, financial or clinical) information required to
      * support request for referral or transfer of care. For example: Presenting
@@ -1137,7 +1152,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional (administrative, financial or clinical) information required to
      * support request for referral or transfer of care. For example: Presenting
@@ -1146,7 +1161,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation = null)
     {
@@ -1157,7 +1172,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional (administrative, financial or clinical) information required to
      * support request for referral or transfer of care. For example: Presenting
@@ -1166,7 +1181,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setSupportingInformation(array $supportingInformation = [])
     {
@@ -1188,7 +1203,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
@@ -1204,13 +1219,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRReferralRequest
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

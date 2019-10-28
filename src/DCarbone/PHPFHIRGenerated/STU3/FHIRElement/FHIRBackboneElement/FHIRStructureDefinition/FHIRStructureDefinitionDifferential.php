@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,20 +81,20 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_DEFINITION_DOT_DIFFERENTIAL;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ELEMENT = 'element';
 
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures constraints on each element within the resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition[]
      */
-    private $element = [];
+    protected $element = [];
 
     /**
      * FHIRStructureDefinitionDifferential Constructor
@@ -147,7 +147,7 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -177,7 +177,7 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures constraints on each element within the resource.
      *
@@ -191,12 +191,12 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures constraints on each element within the resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition $element
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
+     * @return static
      */
     public function addElement(FHIRElementDefinition $element = null)
     {
@@ -207,12 +207,12 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures constraints on each element within the resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition[] $element
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
+     * @return static
      */
     public function setElement(array $element = [])
     {

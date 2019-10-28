@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
  * Resource to define constraints on the Expansion of a FHIR ValueSet.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRExpansionProfile
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -94,7 +94,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPANSION_PROFILE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE_ONLY = 'activeOnly';
     const FIELD_ACTIVE_ONLY_EXT = '_activeOnly';
@@ -139,32 +139,34 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether inactive concepts are included or excluded in value set
      * expansions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $activeOnly = null;
+    protected $activeOnly = null;
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the expansion profile was published. The
      * date must change if and when the business version changes and it must change if
@@ -173,7 +175,8 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -182,7 +185,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the expansion profile from a
@@ -190,7 +193,8 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
@@ -199,11 +203,12 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation
      */
-    private $designation = null;
+    protected $designation = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies the language to be used for description in the expansions i.e. the
@@ -211,36 +216,40 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $displayLanguage = null;
+    protected $displayLanguage = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion nests codes or not (i.e.
      * ValueSet.expansion.contains.contains).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $excludeNested = null;
+    protected $excludeNested = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion includes codes which cannot be
      * displayed in user interfaces.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $excludeNotForUI = null;
+    protected $excludeNotForUI = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion includes post coordinated codes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $excludePostCoordinated = null;
+    protected $excludePostCoordinated = null;
+
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
@@ -249,10 +258,11 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExcludedSystem
      */
-    private $excludedSystem = null;
+    protected $excludedSystem = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this expansion profile is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -260,7 +270,8 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
@@ -268,11 +279,12 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileFixedVersion[]
      */
-    private $fixedVersion = [];
+    protected $fixedVersion = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this expansion profile when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -280,42 +292,46 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether the value set definition is included or excluded in value set
      * expansions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $includeDefinition = null;
+    protected $includeDefinition = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether concept designations are to be included or excluded in value
      * set expansions.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $includeDesignations = null;
+    protected $includeDesignations = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the expansion profile is intended to be
      * used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the value set being expanded is incomplete (because it is too big to expand),
      * return a limited expansion (a subset) with an indicator that expansion is
@@ -324,11 +340,12 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $limitedExpansion = null;
+    protected $limitedExpansion = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the expansion profile. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -336,30 +353,33 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the expansion profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this expansion profile. Enables tracking the life-cycle of the
      * content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this expansion profile when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -370,14 +390,15 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -385,11 +406,12 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the expansion profile
      * when it is referenced in a specification, model, design or instance. This is an
@@ -400,7 +422,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRExpansionProfile Constructor
@@ -716,7 +738,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -753,7 +775,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether inactive concepts are included or excluded in value set
      * expansions.
@@ -767,13 +789,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether inactive concepts are included or excluded in value set
      * expansions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $activeOnly
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setActiveOnly($activeOnly = null)
     {
@@ -792,7 +814,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -807,13 +829,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -824,13 +846,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -854,7 +876,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the expansion profile was published. The
      * date must change if and when the business version changes and it must change if
@@ -874,7 +896,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the expansion profile was published. The
      * date must change if and when the business version changes and it must change if
@@ -882,7 +904,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * content of the expansion profile changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -906,7 +928,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the expansion profile from a
@@ -927,14 +949,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the expansion profile from a
      * consumer's perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -970,7 +992,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * expansion by including or excluding designations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation $designation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setDesignation(FHIRExpansionProfileDesignation $designation = null)
     {
@@ -981,7 +1003,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies the language to be used for description in the expansions i.e. the
@@ -997,14 +1019,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies the language to be used for description in the expansions i.e. the
      * language to be used for ValueSet.expansion.contains.display.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $displayLanguage
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setDisplayLanguage($displayLanguage = null)
     {
@@ -1022,7 +1044,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion nests codes or not (i.e.
      * ValueSet.expansion.contains.contains).
@@ -1036,13 +1058,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion nests codes or not (i.e.
      * ValueSet.expansion.contains.contains).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $excludeNested
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setExcludeNested($excludeNested = null)
     {
@@ -1060,7 +1082,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion includes codes which cannot be
      * displayed in user interfaces.
@@ -1074,13 +1096,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion includes codes which cannot be
      * displayed in user interfaces.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $excludeNotForUI
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setExcludeNotForUI($excludeNotForUI = null)
     {
@@ -1098,7 +1120,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion includes post coordinated codes.
      *
@@ -1111,12 +1133,12 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether or not the value set expansion includes post coordinated codes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $excludePostCoordinated
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setExcludePostCoordinated($excludePostCoordinated = null)
     {
@@ -1152,7 +1174,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * set expansions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExcludedSystem $excludedSystem
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setExcludedSystem(FHIRExpansionProfileExcludedSystem $excludedSystem = null)
     {
@@ -1162,7 +1184,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this expansion profile is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -1177,14 +1199,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this expansion profile is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1218,7 +1240,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * Fix use of a particular code system to a particular version.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileFixedVersion $fixedVersion
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function addFixedVersion(FHIRExpansionProfileFixedVersion $fixedVersion = null)
     {
@@ -1232,7 +1254,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * Fix use of a particular code system to a particular version.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileFixedVersion[] $fixedVersion
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setFixedVersion(array $fixedVersion = [])
     {
@@ -1253,7 +1275,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this expansion profile when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -1269,14 +1291,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this expansion profile when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1286,7 +1308,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether the value set definition is included or excluded in value set
      * expansions.
@@ -1300,13 +1322,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether the value set definition is included or excluded in value set
      * expansions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $includeDefinition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setIncludeDefinition($includeDefinition = null)
     {
@@ -1324,7 +1346,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether concept designations are to be included or excluded in value
      * set expansions.
@@ -1338,13 +1360,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls whether concept designations are to be included or excluded in value
      * set expansions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $includeDesignations
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setIncludeDesignations($includeDesignations = null)
     {
@@ -1364,7 +1386,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the expansion profile is intended to be
      * used.
@@ -1380,13 +1402,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the expansion profile is intended to be
      * used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -1398,13 +1420,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the expansion profile is intended to be
      * used.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -1424,7 +1446,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the value set being expanded is incomplete (because it is too big to expand),
      * return a limited expansion (a subset) with an indicator that expansion is
@@ -1440,7 +1462,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the value set being expanded is incomplete (because it is too big to expand),
      * return a limited expansion (a subset) with an indicator that expansion is
@@ -1448,7 +1470,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * [http://hl7.org/fhir/StructureDefinition/valueset-toocostly](extension-valueset-toocostly.html).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $limitedExpansion
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setLimitedExpansion($limitedExpansion = null)
     {
@@ -1467,7 +1489,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the expansion profile. This name should be
      * usable as an identifier for the module by machine processing applications such
@@ -1483,14 +1505,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the expansion profile. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1509,7 +1531,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the expansion profile.
      *
@@ -1523,12 +1545,12 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the expansion profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1545,7 +1567,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this expansion profile. Enables tracking the life-cycle of the
      * content.
@@ -1558,13 +1580,13 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this expansion profile. Enables tracking the life-cycle of the
      * content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -1575,7 +1597,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this expansion profile when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1594,7 +1616,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this expansion profile when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1604,7 +1626,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * Versions](resource.html#versions).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1626,7 +1648,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1645,14 +1667,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate expansion profile instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -1666,14 +1688,14 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate expansion profile instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -1694,7 +1716,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the expansion profile
      * when it is referenced in a specification, model, design or instance. This is an
@@ -1713,7 +1735,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the expansion profile
      * when it is referenced in a specification, model, design or instance. This is an
@@ -1723,7 +1745,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
      * be placed in a lexicographical sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRExpansionProfile
+     * @return static
      */
     public function setVersion($version = null)
     {

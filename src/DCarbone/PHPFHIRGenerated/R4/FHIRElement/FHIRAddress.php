@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * valid for mail delivery. There are a variety of postal address formats defined
  * around the world.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRAddress
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -84,7 +84,7 @@ class FHIRAddress extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADDRESS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CITY = 'city';
     const FIELD_CITY_EXT = '_city';
@@ -109,106 +109,115 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, suburb, village or other community or delivery
      * center.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $city = null;
+    protected $city = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $country = null;
+    protected $country = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the administrative area (county).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $district = null;
+    protected $district = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $line = [];
+    protected $line = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $postalCode = null;
+    protected $postalCode = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (e.g. US 2 letter state codes).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $state = null;
+    protected $state = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the entire address as it should be displayed e.g. on a postal label.
      * This may be provided instead of or as well as the specific parts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $text = null;
+    protected $text = null;
+
     /**
      * The type of an address (physical / postal).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Distinguishes between physical addresses (those you can visit) and mailing
      * addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddressType
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * The use of an address.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddressUse
      */
-    private $use = null;
+    protected $use = null;
 
     /**
      * FHIRAddress Constructor
@@ -371,7 +380,7 @@ class FHIRAddress extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -401,7 +410,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, suburb, village or other community or delivery
      * center.
@@ -416,13 +425,13 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, suburb, village or other community or delivery
      * center.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $city
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setCity($city = null)
     {
@@ -441,7 +450,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
      *
@@ -455,12 +464,12 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $country
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setCountry($country = null)
     {
@@ -479,7 +488,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the administrative area (county).
      *
@@ -493,12 +502,12 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the administrative area (county).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $district
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setDistrict($district = null)
     {
@@ -517,7 +526,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
@@ -532,13 +541,13 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $line
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function addLine($line = null)
     {
@@ -557,13 +566,13 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $line
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setLine(array $line = [])
     {
@@ -584,7 +593,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
      *
@@ -598,12 +607,12 @@ class FHIRAddress extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -614,7 +623,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
      *
@@ -628,12 +637,12 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $postalCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setPostalCode($postalCode = null)
     {
@@ -652,7 +661,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (e.g. US 2 letter state codes).
@@ -667,13 +676,13 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (e.g. US 2 letter state codes).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $state
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setState($state = null)
     {
@@ -692,7 +701,7 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the entire address as it should be displayed e.g. on a postal label.
      * This may be provided instead of or as well as the specific parts.
@@ -707,13 +716,13 @@ class FHIRAddress extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the entire address as it should be displayed e.g. on a postal label.
      * This may be provided instead of or as well as the specific parts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setText($text = null)
     {
@@ -731,7 +740,7 @@ class FHIRAddress extends FHIRElement
 
     /**
      * The type of an address (physical / postal).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Distinguishes between physical addresses (those you can visit) and mailing
      * addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
@@ -745,13 +754,13 @@ class FHIRAddress extends FHIRElement
 
     /**
      * The type of an address (physical / postal).
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Distinguishes between physical addresses (those you can visit) and mailing
      * addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddressType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setType(FHIRAddressType $type = null)
     {
@@ -761,7 +770,7 @@ class FHIRAddress extends FHIRElement
 
     /**
      * The use of an address.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
      *
@@ -774,12 +783,12 @@ class FHIRAddress extends FHIRElement
 
     /**
      * The use of an address.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddressUse $use
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
+     * @return static
      */
     public function setUse(FHIRAddressUse $use = null)
     {

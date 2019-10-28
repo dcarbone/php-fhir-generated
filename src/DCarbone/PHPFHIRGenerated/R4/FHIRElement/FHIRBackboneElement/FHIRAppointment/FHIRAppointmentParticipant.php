@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppoi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_APPOINTMENT_DOT_PARTICIPANT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTOR = 'actor';
     const FIELD_PERIOD = 'period';
@@ -98,27 +98,29 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $actor = null;
+    protected $actor = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Participation period of the actor.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * Is the Participant required to attend the appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this participant is required to be present at the meeting. This covers a
      * use-case where two doctors need to meet to discuss the results for a specific
@@ -126,27 +128,29 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipantRequired
      */
-    private $required = null;
+    protected $required = null;
+
     /**
      * The Participation status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $type = [];
+    protected $type = [];
 
     /**
      * FHIRAppointmentParticipant Constructor
@@ -237,7 +241,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -267,7 +271,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
@@ -282,13 +286,13 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $actor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function setActor(FHIRReference $actor = null)
     {
@@ -299,7 +303,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Participation period of the actor.
      *
@@ -313,12 +317,12 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Participation period of the actor.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -328,7 +332,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
 
     /**
      * Is the Participant required to attend the appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this participant is required to be present at the meeting. This covers a
      * use-case where two doctors need to meet to discuss the results for a specific
@@ -343,14 +347,14 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
 
     /**
      * Is the Participant required to attend the appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this participant is required to be present at the meeting. This covers a
      * use-case where two doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipantRequired $required
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function setRequired(FHIRParticipantRequired $required = null)
     {
@@ -360,7 +364,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
 
     /**
      * The Participation status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
      *
@@ -373,12 +377,12 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
 
     /**
      * The Participation status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function setStatus(FHIRParticipationStatus $status = null)
     {
@@ -390,7 +394,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
@@ -405,12 +409,12 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type = null)
     {
@@ -422,12 +426,12 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
+     * @return static
      */
     public function setType(array $type = [])
     {

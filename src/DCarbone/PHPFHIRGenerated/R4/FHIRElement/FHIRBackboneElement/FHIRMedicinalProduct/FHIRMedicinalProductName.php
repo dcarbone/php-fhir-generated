@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_DOT_NAME;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COUNTRY_LANGUAGE = 'countryLanguage';
     const FIELD_NAME_PART = 'namePart';
@@ -95,7 +95,8 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[]
      */
-    private $countryLanguage = [];
+    protected $countryLanguage = [];
+
     /**
      * Detailed definition of a medicinal product, typically for uses other than direct
      * patient care (e.g. regulatory use).
@@ -104,17 +105,18 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductNamePart[]
      */
-    private $namePart = [];
+    protected $namePart = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full product name.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $productName = null;
+    protected $productName = null;
 
     /**
      * FHIRMedicinalProductName Constructor
@@ -194,7 +196,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -241,7 +243,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      * Country where the name applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage $countryLanguage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName
+     * @return static
      */
     public function addCountryLanguage(FHIRMedicinalProductCountryLanguage $countryLanguage = null)
     {
@@ -256,7 +258,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      * Country where the name applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[] $countryLanguage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName
+     * @return static
      */
     public function setCountryLanguage(array $countryLanguage = [])
     {
@@ -294,7 +296,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      * Coding words or phrases of the name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductNamePart $namePart
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName
+     * @return static
      */
     public function addNamePart(FHIRMedicinalProductNamePart $namePart = null)
     {
@@ -309,7 +311,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      * Coding words or phrases of the name.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductNamePart[] $namePart
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName
+     * @return static
      */
     public function setNamePart(array $namePart = [])
     {
@@ -330,7 +332,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full product name.
      *
@@ -344,12 +346,12 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full product name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $productName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductName
+     * @return static
      */
     public function setProductName($productName = null)
     {

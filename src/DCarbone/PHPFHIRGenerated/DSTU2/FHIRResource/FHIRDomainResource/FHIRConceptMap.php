@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * A statement of relationships from one set of concepts to one or more other
  * concepts - either code systems or data elements, or classes in class models.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRConceptMap
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -91,7 +91,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONCEPT_MAP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTACT = 'contact';
     const FIELD_COPYRIGHT = 'copyright';
@@ -133,24 +133,26 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the concept map was published. The date must change
      * when the business version changes, if it does, and it must change if the status
@@ -159,18 +161,20 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concepts - either code systems or data elements, or classes in class models.
@@ -180,10 +184,11 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement[]
      */
-    private $element = [];
+    protected $element = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
@@ -191,11 +196,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this concept map when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -203,73 +209,80 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this concept map is needed and why it has been constrained as it
      * has.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $requirements = null;
+    protected $requirements = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $sourceReference = null;
+    protected $sourceReference = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $sourceUri = null;
+    protected $sourceUri = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the concept map.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
@@ -277,11 +290,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $targetReference = null;
+    protected $targetReference = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
@@ -289,11 +303,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $targetUri = null;
+    protected $targetUri = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -302,12 +317,13 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -315,11 +331,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the concept map when it
      * is referenced in a specification, model, design or instance. This is an
@@ -328,7 +345,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRConceptMap Constructor
@@ -581,7 +598,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -636,7 +653,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function addContact(FHIRConceptMapContact $contact = null)
     {
@@ -651,7 +668,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -672,7 +689,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
      *
@@ -686,12 +703,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $copyright
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -713,7 +730,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the concept map was published. The date must change
      * when the business version changes, if it does, and it must change if the status
@@ -733,7 +750,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this version of the concept map was published. The date must change
      * when the business version changes, if it does, and it must change if the status
@@ -741,7 +758,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * concept map changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -760,7 +777,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
@@ -775,13 +792,13 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -819,7 +836,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * target.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement $element
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function addElement(FHIRConceptMapElement $element = null)
     {
@@ -835,7 +852,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * target.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement[] $element
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setElement(array $element = [])
     {
@@ -855,7 +872,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
@@ -870,14 +887,14 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -896,7 +913,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this concept map when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -912,14 +929,14 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal identifier that is used to identify this concept map when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -930,7 +947,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
      *
@@ -944,12 +961,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setName($name = null)
     {
@@ -968,7 +985,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
      *
@@ -982,12 +999,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1006,7 +1023,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this concept map is needed and why it has been constrained as it
      * has.
@@ -1021,13 +1038,13 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this concept map is needed and why it has been constrained as it
      * has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $requirements
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setRequirements($requirements = null)
     {
@@ -1046,7 +1063,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
      *
@@ -1060,12 +1077,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $sourceReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setSourceReference(FHIRReference $sourceReference = null)
     {
@@ -1076,7 +1093,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
      *
@@ -1090,12 +1107,12 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $sourceUri
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setSourceUri($sourceUri = null)
     {
@@ -1114,7 +1131,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the concept map.
@@ -1129,13 +1146,13 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of the concept map.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setStatus($status = null)
     {
@@ -1154,7 +1171,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
@@ -1170,14 +1187,14 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $targetReference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setTargetReference(FHIRReference $targetReference = null)
     {
@@ -1188,7 +1205,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
@@ -1204,14 +1221,14 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $targetUri
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setTargetUri($targetUri = null)
     {
@@ -1230,7 +1247,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -1247,7 +1264,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -1255,7 +1272,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * be) published.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1275,7 +1292,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1292,14 +1309,14 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of concept map instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $useContext
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function addUseContext(FHIRCodeableConcept $useContext = null)
     {
@@ -1311,14 +1328,14 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of concept map instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -1339,7 +1356,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the concept map when it
      * is referenced in a specification, model, design or instance. This is an
@@ -1356,7 +1373,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the concept map when it
      * is referenced in a specification, model, design or instance. This is an
@@ -1364,7 +1381,7 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * timestamp.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConceptMap
+     * @return static
      */
     public function setVersion($version = null)
     {

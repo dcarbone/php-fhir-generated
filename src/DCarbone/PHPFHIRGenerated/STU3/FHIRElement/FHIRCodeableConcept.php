@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * A concept that may be defined by a formal reference to a terminology or ontology
  * or may be provided by text.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRCodeableConcept
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -81,7 +81,7 @@ class FHIRCodeableConcept extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CODEABLE_CONCEPT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODING = 'coding';
     const FIELD_TEXT = 'text';
@@ -90,17 +90,18 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a code defined by a terminology system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    private $coding = [];
+    protected $coding = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human language representation of the concept as seen/selected/uttered by the
      * user who entered the data and/or which represents the intended meaning of the
@@ -108,7 +109,7 @@ class FHIRCodeableConcept extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $text = null;
+    protected $text = null;
 
     /**
      * FHIRCodeableConcept Constructor
@@ -173,7 +174,7 @@ class FHIRCodeableConcept extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -203,7 +204,7 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a code defined by a terminology system.
      *
@@ -217,12 +218,12 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a code defined by a terminology system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $coding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @return static
      */
     public function addCoding(FHIRCoding $coding = null)
     {
@@ -233,12 +234,12 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a code defined by a terminology system.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $coding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @return static
      */
     public function setCoding(array $coding = [])
     {
@@ -259,7 +260,7 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human language representation of the concept as seen/selected/uttered by the
      * user who entered the data and/or which represents the intended meaning of the
@@ -275,14 +276,14 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human language representation of the concept as seen/selected/uttered by the
      * user who entered the data and/or which represents the intended meaning of the
      * user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $text
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @return static
      */
     public function setText($text = null)
     {

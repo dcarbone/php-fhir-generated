@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElementDefinition
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -92,7 +92,7 @@ class FHIRElementDefinition extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALIAS = 'alias';
     const FIELD_ALIAS_EXT = '_alias';
@@ -351,17 +351,18 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
-    private $alias = [];
+    protected $alias = [];
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the base definition of the element, provided to make it
      * unnecessary for tools to trace the deviation of the element through the derived
@@ -371,28 +372,31 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase
      */
-    private $base = null;
+    protected $base = null;
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept,
      * Quantity), or the data types (string, uri).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding
      */
-    private $binding = null;
+    protected $binding = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -401,7 +405,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanatory notes and implementation guidance about the data element, including
@@ -409,13 +413,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
@@ -423,29 +428,32 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId[]
      */
-    private $condition = [];
+    protected $condition = [];
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint[]
      */
-    private $constraint = [];
+    protected $constraint = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the identity of an element defined elsewhere in the profile whose
      * content rules should be applied to the current element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $contentReference = null;
+    protected $contentReference = null;
+
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
@@ -453,73 +461,79 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
-    private $defaultValueAddress = null;
+    protected $defaultValueAddress = null;
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $defaultValueAge = null;
+    protected $defaultValueAge = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation
      */
-    private $defaultValueAnnotation = null;
+    protected $defaultValueAnnotation = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
-    private $defaultValueAttachment = null;
+    protected $defaultValueAttachment = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
-    private $defaultValueBase64Binary = null;
+    protected $defaultValueBase64Binary = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $defaultValueBoolean = null;
+    protected $defaultValueBoolean = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -527,132 +541,143 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $defaultValueCode = null;
+    protected $defaultValueCode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $defaultValueCodeableConcept = null;
+    protected $defaultValueCodeableConcept = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $defaultValueCoding = null;
+    protected $defaultValueCoding = null;
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint
      */
-    private $defaultValueContactPoint = null;
+    protected $defaultValueContactPoint = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount
      */
-    private $defaultValueCount = null;
+    protected $defaultValueCount = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $defaultValueDate = null;
+    protected $defaultValueDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $defaultValueDateTime = null;
+    protected $defaultValueDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $defaultValueDecimal = null;
+    protected $defaultValueDecimal = null;
+
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    private $defaultValueDistance = null;
+    protected $defaultValueDistance = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $defaultValueDuration = null;
+    protected $defaultValueDuration = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
-    private $defaultValueHumanName = null;
+    protected $defaultValueHumanName = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -660,42 +685,46 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $defaultValueId = null;
+    protected $defaultValueId = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $defaultValueIdentifier = null;
+    protected $defaultValueIdentifier = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $defaultValueInstant = null;
+    protected $defaultValueInstant = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $defaultValueInteger = null;
+    protected $defaultValueInteger = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -704,7 +733,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -712,35 +741,38 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $defaultValueMarkdown = null;
+    protected $defaultValueMarkdown = null;
+
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
      */
-    private $defaultValueMeta = null;
+    protected $defaultValueMeta = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $defaultValueMoney = null;
+    protected $defaultValueMoney = null;
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -748,21 +780,23 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $defaultValueOid = null;
+    protected $defaultValueOid = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $defaultValuePeriod = null;
+    protected $defaultValuePeriod = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -770,101 +804,110 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $defaultValuePositiveInt = null;
+    protected $defaultValuePositiveInt = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $defaultValueQuantity = null;
+    protected $defaultValueQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $defaultValueRange = null;
+    protected $defaultValueRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
-    private $defaultValueRatio = null;
+    protected $defaultValueRatio = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $defaultValueReference = null;
+    protected $defaultValueReference = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData
      */
-    private $defaultValueSampledData = null;
+    protected $defaultValueSampledData = null;
+
     /**
      * A digital signature along with supporting context. The signature may be
      * electronic/cryptographic in nature, or a graphical image representing a
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
-    private $defaultValueSignature = null;
+    protected $defaultValueSignature = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $defaultValueString = null;
+    protected $defaultValueString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $defaultValueTime = null;
+    protected $defaultValueTime = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -872,17 +915,18 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $defaultValueTiming = null;
+    protected $defaultValueTiming = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -890,18 +934,20 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $defaultValueUnsignedInt = null;
+    protected $defaultValueUnsignedInt = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $defaultValueUri = null;
+    protected $defaultValueUri = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -910,7 +956,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a complete explanation of the meaning of the data element for human
@@ -921,18 +967,20 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $definition = null;
+    protected $definition = null;
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample[]
      */
-    private $example = [];
+    protected $example = [];
+
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
@@ -940,7 +988,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -949,11 +997,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
-    private $fixedAddress = null;
+    protected $fixedAddress = null;
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -962,12 +1011,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $fixedAge = null;
+    protected $fixedAge = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -976,11 +1026,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation
      */
-    private $fixedAnnotation = null;
+    protected $fixedAnnotation = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -989,11 +1040,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
-    private $fixedAttachment = null;
+    protected $fixedAttachment = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1002,10 +1054,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
-    private $fixedBase64Binary = null;
+    protected $fixedBase64Binary = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1014,11 +1067,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $fixedBoolean = null;
+    protected $fixedBoolean = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -1028,12 +1082,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $fixedCode = null;
+    protected $fixedCode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1042,11 +1097,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $fixedCodeableConcept = null;
+    protected $fixedCodeableConcept = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1055,12 +1111,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $fixedCoding = null;
+    protected $fixedCoding = null;
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1069,13 +1126,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint
      */
-    private $fixedContactPoint = null;
+    protected $fixedContactPoint = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1084,12 +1142,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount
      */
-    private $fixedCount = null;
+    protected $fixedCount = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1098,14 +1157,15 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $fixedDate = null;
+    protected $fixedDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1114,12 +1174,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $fixedDateTime = null;
+    protected $fixedDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1128,11 +1189,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $fixedDecimal = null;
+    protected $fixedDecimal = null;
+
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1141,11 +1203,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    private $fixedDistance = null;
+    protected $fixedDistance = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1154,11 +1217,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $fixedDuration = null;
+    protected $fixedDuration = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1167,13 +1231,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
-    private $fixedHumanName = null;
+    protected $fixedHumanName = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -1183,11 +1248,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $fixedId = null;
+    protected $fixedId = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1196,13 +1262,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $fixedIdentifier = null;
+    protected $fixedIdentifier = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1211,11 +1278,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $fixedInstant = null;
+    protected $fixedInstant = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1224,7 +1292,8 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $fixedInteger = null;
+    protected $fixedInteger = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -1233,7 +1302,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -1243,13 +1312,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $fixedMarkdown = null;
+    protected $fixedMarkdown = null;
+
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1258,11 +1328,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
      */
-    private $fixedMeta = null;
+    protected $fixedMeta = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1271,11 +1342,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $fixedMoney = null;
+    protected $fixedMoney = null;
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -1285,11 +1357,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $fixedOid = null;
+    protected $fixedOid = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1298,10 +1371,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $fixedPeriod = null;
+    protected $fixedPeriod = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -1311,13 +1385,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $fixedPositiveInt = null;
+    protected $fixedPositiveInt = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1326,11 +1401,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $fixedQuantity = null;
+    protected $fixedQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1339,12 +1415,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $fixedRange = null;
+    protected $fixedRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1353,11 +1430,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
-    private $fixedRatio = null;
+    protected $fixedRatio = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1366,12 +1444,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $fixedReference = null;
+    protected $fixedReference = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1380,14 +1459,15 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData
      */
-    private $fixedSampledData = null;
+    protected $fixedSampledData = null;
+
     /**
      * A digital signature along with supporting context. The signature may be
      * electronic/cryptographic in nature, or a graphical image representing a
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1396,11 +1476,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
-    private $fixedSignature = null;
+    protected $fixedSignature = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1409,10 +1490,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $fixedString = null;
+    protected $fixedString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1421,7 +1503,8 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $fixedTime = null;
+    protected $fixedTime = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -1429,7 +1512,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1438,10 +1521,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $fixedTiming = null;
+    protected $fixedTiming = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -1451,11 +1535,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $fixedUnsignedInt = null;
+    protected $fixedUnsignedInt = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -1464,10 +1549,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $fixedUri = null;
+    protected $fixedUri = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the value of this element affects the interpretation of the element or
      * resource that contains it, and the value of the element cannot be ignored.
@@ -1478,21 +1564,23 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $isModifier = null;
+    protected $isModifier = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the element should be included if a client requests a search with the
      * parameter _summary=true.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $isSummary = null;
+    protected $isSummary = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A single preferred label which is the text to display beside the element
      * indicating its meaning or to use to prompt for the element in a user display or
@@ -1500,32 +1588,35 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $label = null;
+    protected $label = null;
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping[]
      */
-    private $mapping = [];
+    protected $mapping = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $max = null;
+    protected $max = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the maximum length in characters that is permitted to be present in
      * conformant instances and which is expected to be supported by conformant
@@ -1533,12 +1624,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $maxLength = null;
+    protected $maxLength = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1546,14 +1638,15 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $maxValueDate = null;
+    protected $maxValueDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1561,12 +1654,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $maxValueDateTime = null;
+    protected $maxValueDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1574,13 +1668,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $maxValueDecimal = null;
+    protected $maxValueDecimal = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1588,11 +1683,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $maxValueInstant = null;
+    protected $maxValueInstant = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1600,10 +1696,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $maxValueInteger = null;
+    protected $maxValueInteger = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
@@ -1612,13 +1709,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $maxValuePositiveInt = null;
+    protected $maxValuePositiveInt = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1626,10 +1724,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $maxValueQuantity = null;
+    protected $maxValueQuantity = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1637,10 +1736,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $maxValueTime = null;
+    protected $maxValueTime = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
@@ -1649,7 +1749,8 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $maxValueUnsignedInt = null;
+    protected $maxValueUnsignedInt = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -1658,7 +1759,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The Implicit meaning that is to be understood when this element is missing (e.g.
@@ -1666,22 +1767,24 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $meaningWhenMissing = null;
+    protected $meaningWhenMissing = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $min = null;
+    protected $min = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1689,14 +1792,15 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $minValueDate = null;
+    protected $minValueDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1704,12 +1808,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $minValueDateTime = null;
+    protected $minValueDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1717,13 +1822,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $minValueDecimal = null;
+    protected $minValueDecimal = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1731,11 +1837,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $minValueInstant = null;
+    protected $minValueInstant = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1743,10 +1850,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $minValueInteger = null;
+    protected $minValueInteger = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
@@ -1755,13 +1863,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $minValuePositiveInt = null;
+    protected $minValuePositiveInt = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1769,10 +1878,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $minValueQuantity = null;
+    protected $minValueQuantity = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -1780,10 +1890,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $minValueTime = null;
+    protected $minValueTime = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
@@ -1792,10 +1903,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $minValueUnsignedInt = null;
+    protected $minValueUnsignedInt = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, implementations that produce or consume resources SHALL provide
      * "support" for the element in some meaningful way. If false, the element may be
@@ -1803,11 +1915,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $mustSupport = null;
+    protected $mustSupport = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the order of the repeating element has meaning and
      * describes what that meaning is. If absent, it means that the order of the
@@ -1815,18 +1928,20 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $orderMeaning = null;
+    protected $orderMeaning = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource or extension.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
+
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
@@ -1834,7 +1949,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1844,11 +1959,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
-    private $patternAddress = null;
+    protected $patternAddress = null;
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1858,12 +1974,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $patternAge = null;
+    protected $patternAge = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1873,11 +1990,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation
      */
-    private $patternAnnotation = null;
+    protected $patternAnnotation = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1887,11 +2005,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
-    private $patternAttachment = null;
+    protected $patternAttachment = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1901,10 +2020,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
-    private $patternBase64Binary = null;
+    protected $patternBase64Binary = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1914,11 +2034,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $patternBoolean = null;
+    protected $patternBoolean = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -1929,12 +2050,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $patternCode = null;
+    protected $patternCode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1944,11 +2066,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $patternCodeableConcept = null;
+    protected $patternCodeableConcept = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1958,12 +2081,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $patternCoding = null;
+    protected $patternCoding = null;
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1973,13 +2097,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint
      */
-    private $patternContactPoint = null;
+    protected $patternContactPoint = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -1989,12 +2114,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount
      */
-    private $patternCount = null;
+    protected $patternCount = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2004,14 +2130,15 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $patternDate = null;
+    protected $patternDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2021,12 +2148,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $patternDateTime = null;
+    protected $patternDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2036,11 +2164,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $patternDecimal = null;
+    protected $patternDecimal = null;
+
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2050,11 +2179,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    private $patternDistance = null;
+    protected $patternDistance = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2064,11 +2194,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $patternDuration = null;
+    protected $patternDuration = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2078,13 +2209,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
-    private $patternHumanName = null;
+    protected $patternHumanName = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -2095,11 +2227,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $patternId = null;
+    protected $patternId = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2109,13 +2242,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $patternIdentifier = null;
+    protected $patternIdentifier = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2125,11 +2259,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $patternInstant = null;
+    protected $patternInstant = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2139,7 +2274,8 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $patternInteger = null;
+    protected $patternInteger = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -2148,7 +2284,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -2159,13 +2295,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $patternMarkdown = null;
+    protected $patternMarkdown = null;
+
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2175,11 +2312,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
      */
-    private $patternMeta = null;
+    protected $patternMeta = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2189,11 +2327,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $patternMoney = null;
+    protected $patternMoney = null;
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -2204,11 +2343,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $patternOid = null;
+    protected $patternOid = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2218,10 +2358,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $patternPeriod = null;
+    protected $patternPeriod = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -2232,13 +2373,14 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $patternPositiveInt = null;
+    protected $patternPositiveInt = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2248,11 +2390,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $patternQuantity = null;
+    protected $patternQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2262,12 +2405,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $patternRange = null;
+    protected $patternRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2277,11 +2421,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
-    private $patternRatio = null;
+    protected $patternRatio = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2291,12 +2436,13 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $patternReference = null;
+    protected $patternReference = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2306,14 +2452,15 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData
      */
-    private $patternSampledData = null;
+    protected $patternSampledData = null;
+
     /**
      * A digital signature along with supporting context. The signature may be
      * electronic/cryptographic in nature, or a graphical image representing a
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2323,11 +2470,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
-    private $patternSignature = null;
+    protected $patternSignature = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2337,10 +2485,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $patternString = null;
+    protected $patternString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2350,7 +2499,8 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $patternTime = null;
+    protected $patternTime = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -2358,7 +2508,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2368,10 +2518,11 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $patternTiming = null;
+    protected $patternTiming = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -2382,11 +2533,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $patternUnsignedInt = null;
+    protected $patternUnsignedInt = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -2396,17 +2548,19 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $patternUri = null;
+    protected $patternUri = null;
+
     /**
      * How a property is represented when serialized.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPropertyRepresentation[]
      */
-    private $representation = [];
+    protected $representation = [];
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -2415,7 +2569,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * This element is for traceability of why the element was created and why the
@@ -2424,22 +2578,24 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $requirements = null;
+    protected $requirements = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A concise description of what this element means (e.g. for use in autogenerated
      * summaries).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $short = null;
+    protected $short = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this element definition slice, when slicing is working. The name
      * must be a token with no dots or spaces. This is a unique name referring to a
@@ -2448,11 +2604,12 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $sliceName = null;
+    protected $sliceName = null;
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates that the element is sliced into a set of alternative definitions (i.e.
      * in a structure definition, there are multiple different constraints on a single
@@ -2464,17 +2621,18 @@ class FHIRElementDefinition extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
      */
-    private $slicing = null;
+    protected $slicing = null;
+
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The data type or resource that the value of this element is permitted to be.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType[]
      */
-    private $type = [];
+    protected $type = [];
 
     /**
      * FHIRElementDefinition Constructor
@@ -4165,7 +4323,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -4195,7 +4353,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
@@ -4209,12 +4367,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $alias
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addAlias($alias = null)
     {
@@ -4233,12 +4391,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies additional names by which this element might also be known.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[] $alias
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setAlias(array $alias = [])
     {
@@ -4259,7 +4417,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the base definition of the element, provided to make it
      * unnecessary for tools to trace the deviation of the element through the derived
@@ -4277,7 +4435,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the base definition of the element, provided to make it
      * unnecessary for tools to trace the deviation of the element through the derived
@@ -4286,7 +4444,7 @@ class FHIRElementDefinition extends FHIRElement
      * another type, or for elements from a super type in a snap shot.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase $base
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setBase(FHIRElementDefinitionBase $base = null)
     {
@@ -4297,7 +4455,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept,
      * Quantity), or the data types (string, uri).
@@ -4312,13 +4470,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept,
      * Quantity), or the data types (string, uri).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding $binding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setBinding(FHIRElementDefinitionBinding $binding = null)
     {
@@ -4329,7 +4487,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
@@ -4343,12 +4501,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addCode(FHIRCoding $code = null)
     {
@@ -4359,12 +4517,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -4390,7 +4548,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanatory notes and implementation guidance about the data element, including
@@ -4411,14 +4569,14 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanatory notes and implementation guidance about the data element, including
      * notes about how to use the data properly, exceptions to proper use, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $comment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -4439,7 +4597,7 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
@@ -4457,14 +4615,14 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $condition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addCondition($condition = null)
     {
@@ -4485,14 +4643,14 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId[] $condition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setCondition(array $condition = [])
     {
@@ -4513,7 +4671,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
@@ -4528,13 +4686,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint $constraint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addConstraint(FHIRElementDefinitionConstraint $constraint = null)
     {
@@ -4545,13 +4703,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint[] $constraint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setConstraint(array $constraint = [])
     {
@@ -4572,7 +4730,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the identity of an element defined elsewhere in the profile whose
      * content rules should be applied to the current element.
@@ -4587,13 +4745,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the identity of an element defined elsewhere in the profile whose
      * content rules should be applied to the current element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $contentReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setContentReference($contentReference = null)
     {
@@ -4616,7 +4774,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4635,13 +4793,13 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress $defaultValueAddress
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueAddress(FHIRAddress $defaultValueAddress = null)
     {
@@ -4652,7 +4810,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4667,13 +4825,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueAge(FHIRAge $defaultValueAge = null)
     {
@@ -4685,7 +4843,7 @@ class FHIRElementDefinition extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4701,13 +4859,13 @@ class FHIRElementDefinition extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $defaultValueAnnotation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueAnnotation(FHIRAnnotation $defaultValueAnnotation = null)
     {
@@ -4718,7 +4876,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4733,13 +4891,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $defaultValueAttachment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueAttachment(FHIRAttachment $defaultValueAttachment = null)
     {
@@ -4750,7 +4908,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4765,13 +4923,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueBase64Binary($defaultValueBase64Binary = null)
     {
@@ -4789,7 +4947,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4803,13 +4961,13 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $defaultValueBoolean
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueBoolean($defaultValueBoolean = null)
     {
@@ -4828,7 +4986,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -4844,14 +5002,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $defaultValueCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueCode($defaultValueCode = null)
     {
@@ -4871,7 +5029,7 @@ class FHIRElementDefinition extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4887,13 +5045,13 @@ class FHIRElementDefinition extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueCodeableConcept(FHIRCodeableConcept $defaultValueCodeableConcept = null)
     {
@@ -4904,7 +5062,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4919,13 +5077,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $defaultValueCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueCoding(FHIRCoding $defaultValueCoding = null)
     {
@@ -4937,7 +5095,7 @@ class FHIRElementDefinition extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4953,13 +5111,13 @@ class FHIRElementDefinition extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueContactPoint(FHIRContactPoint $defaultValueContactPoint = null)
     {
@@ -4972,7 +5130,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -4989,13 +5147,13 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueCount(FHIRCount $defaultValueCount = null)
     {
@@ -5007,7 +5165,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5023,13 +5181,13 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $defaultValueDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueDate($defaultValueDate = null)
     {
@@ -5051,7 +5209,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5069,13 +5227,13 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $defaultValueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueDateTime($defaultValueDateTime = null)
     {
@@ -5095,7 +5253,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5111,13 +5269,13 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $defaultValueDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueDecimal($defaultValueDecimal = null)
     {
@@ -5136,7 +5294,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5151,13 +5309,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueDistance(FHIRDistance $defaultValueDistance = null)
     {
@@ -5168,7 +5326,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5183,13 +5341,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueDuration(FHIRDuration $defaultValueDuration = null)
     {
@@ -5200,7 +5358,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5215,13 +5373,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName $defaultValueHumanName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueHumanName(FHIRHumanName $defaultValueHumanName = null)
     {
@@ -5234,7 +5392,7 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -5252,14 +5410,14 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $defaultValueId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueId($defaultValueId = null)
     {
@@ -5278,7 +5436,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5293,13 +5451,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $defaultValueIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueIdentifier(FHIRIdentifier $defaultValueIdentifier = null)
     {
@@ -5312,7 +5470,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5329,13 +5487,13 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $defaultValueInstant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueInstant($defaultValueInstant = null)
     {
@@ -5354,7 +5512,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5369,13 +5527,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $defaultValueInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueInteger($defaultValueInteger = null)
     {
@@ -5399,7 +5557,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -5420,14 +5578,14 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $defaultValueMarkdown
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueMarkdown($defaultValueMarkdown = null)
     {
@@ -5448,7 +5606,7 @@ class FHIRElementDefinition extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5465,13 +5623,13 @@ class FHIRElementDefinition extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta $defaultValueMeta
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueMeta(FHIRMeta $defaultValueMeta = null)
     {
@@ -5482,7 +5640,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5497,13 +5655,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueMoney(FHIRMoney $defaultValueMoney = null)
     {
@@ -5514,7 +5672,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -5530,14 +5688,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $defaultValueOid
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueOid($defaultValueOid = null)
     {
@@ -5556,7 +5714,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5571,13 +5729,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $defaultValuePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValuePeriod(FHIRPeriod $defaultValuePeriod = null)
     {
@@ -5587,7 +5745,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -5602,14 +5760,14 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValuePositiveInt($defaultValuePositiveInt = null)
     {
@@ -5630,7 +5788,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5647,13 +5805,13 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $defaultValueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueQuantity(FHIRQuantity $defaultValueQuantity = null)
     {
@@ -5664,7 +5822,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5679,13 +5837,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $defaultValueRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueRange(FHIRRange $defaultValueRange = null)
     {
@@ -5697,7 +5855,7 @@ class FHIRElementDefinition extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5713,13 +5871,13 @@ class FHIRElementDefinition extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $defaultValueRatio
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueRatio(FHIRRatio $defaultValueRatio = null)
     {
@@ -5730,7 +5888,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5745,13 +5903,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $defaultValueReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueReference(FHIRReference $defaultValueReference = null)
     {
@@ -5763,7 +5921,7 @@ class FHIRElementDefinition extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5779,13 +5937,13 @@ class FHIRElementDefinition extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData $defaultValueSampledData
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueSampledData(FHIRSampledData $defaultValueSampledData = null)
     {
@@ -5799,7 +5957,7 @@ class FHIRElementDefinition extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5817,13 +5975,13 @@ class FHIRElementDefinition extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature $defaultValueSignature
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueSignature(FHIRSignature $defaultValueSignature = null)
     {
@@ -5834,7 +5992,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5849,13 +6007,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $defaultValueString
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueString($defaultValueString = null)
     {
@@ -5873,7 +6031,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5887,13 +6045,13 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $defaultValueTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueTime($defaultValueTime = null)
     {
@@ -5916,7 +6074,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -5935,13 +6093,13 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $defaultValueTiming
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueTiming(FHIRTiming $defaultValueTiming = null)
     {
@@ -5951,7 +6109,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
@@ -5966,14 +6124,14 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueUnsignedInt($defaultValueUnsignedInt = null)
     {
@@ -5992,7 +6150,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
@@ -6007,13 +6165,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be used if there is no value stated in the instance (e.g.
      * 'if not otherwise specified, the abstract is false').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $defaultValueUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefaultValueUri($defaultValueUri = null)
     {
@@ -6037,7 +6195,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a complete explanation of the meaning of the data element for human
@@ -6061,7 +6219,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Provides a complete explanation of the meaning of the data element for human
@@ -6071,7 +6229,7 @@ class FHIRElementDefinition extends FHIRElement
      * resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setDefinition($definition = null)
     {
@@ -6090,7 +6248,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
@@ -6105,13 +6263,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample $example
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addExample(FHIRElementDefinitionExample $example = null)
     {
@@ -6122,13 +6280,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionExample[] $example
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setExample(array $example = [])
     {
@@ -6153,7 +6311,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6174,7 +6332,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6182,7 +6340,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress $fixedAddress
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedAddress(FHIRAddress $fixedAddress = null)
     {
@@ -6193,7 +6351,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6210,7 +6368,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6218,7 +6376,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge $fixedAge
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedAge(FHIRAge $fixedAge = null)
     {
@@ -6230,7 +6388,7 @@ class FHIRElementDefinition extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6248,7 +6406,7 @@ class FHIRElementDefinition extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6256,7 +6414,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $fixedAnnotation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedAnnotation(FHIRAnnotation $fixedAnnotation = null)
     {
@@ -6267,7 +6425,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6284,7 +6442,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6292,7 +6450,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $fixedAttachment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedAttachment(FHIRAttachment $fixedAttachment = null)
     {
@@ -6303,7 +6461,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6320,7 +6478,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6328,7 +6486,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $fixedBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedBase64Binary($fixedBase64Binary = null)
     {
@@ -6346,7 +6504,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6362,7 +6520,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6370,7 +6528,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $fixedBoolean
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedBoolean($fixedBoolean = null)
     {
@@ -6389,7 +6547,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -6407,7 +6565,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -6416,7 +6574,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $fixedCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedCode($fixedCode = null)
     {
@@ -6436,7 +6594,7 @@ class FHIRElementDefinition extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6454,7 +6612,7 @@ class FHIRElementDefinition extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6462,7 +6620,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $fixedCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedCodeableConcept(FHIRCodeableConcept $fixedCodeableConcept = null)
     {
@@ -6473,7 +6631,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6490,7 +6648,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6498,7 +6656,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $fixedCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedCoding(FHIRCoding $fixedCoding = null)
     {
@@ -6510,7 +6668,7 @@ class FHIRElementDefinition extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6528,7 +6686,7 @@ class FHIRElementDefinition extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6536,7 +6694,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint $fixedContactPoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedContactPoint(FHIRContactPoint $fixedContactPoint = null)
     {
@@ -6549,7 +6707,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6568,7 +6726,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6576,7 +6734,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount $fixedCount
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedCount(FHIRCount $fixedCount = null)
     {
@@ -6588,7 +6746,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6606,7 +6764,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6614,7 +6772,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $fixedDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedDate($fixedDate = null)
     {
@@ -6636,7 +6794,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6656,7 +6814,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6664,7 +6822,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $fixedDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedDateTime($fixedDateTime = null)
     {
@@ -6684,7 +6842,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6702,7 +6860,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6710,7 +6868,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $fixedDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedDecimal($fixedDecimal = null)
     {
@@ -6729,7 +6887,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6746,7 +6904,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6754,7 +6912,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance $fixedDistance
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedDistance(FHIRDistance $fixedDistance = null)
     {
@@ -6765,7 +6923,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6782,7 +6940,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6790,7 +6948,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $fixedDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedDuration(FHIRDuration $fixedDuration = null)
     {
@@ -6801,7 +6959,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6818,7 +6976,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6826,7 +6984,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName $fixedHumanName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedHumanName(FHIRHumanName $fixedHumanName = null)
     {
@@ -6839,7 +6997,7 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -6859,7 +7017,7 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -6868,7 +7026,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $fixedId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedId($fixedId = null)
     {
@@ -6887,7 +7045,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6904,7 +7062,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6912,7 +7070,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $fixedIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedIdentifier(FHIRIdentifier $fixedIdentifier = null)
     {
@@ -6925,7 +7083,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6944,7 +7102,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6952,7 +7110,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $fixedInstant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedInstant($fixedInstant = null)
     {
@@ -6971,7 +7129,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6988,7 +7146,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -6996,7 +7154,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $fixedInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedInteger($fixedInteger = null)
     {
@@ -7020,7 +7178,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7043,7 +7201,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7052,7 +7210,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $fixedMarkdown
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedMarkdown($fixedMarkdown = null)
     {
@@ -7073,7 +7231,7 @@ class FHIRElementDefinition extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7092,7 +7250,7 @@ class FHIRElementDefinition extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7100,7 +7258,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta $fixedMeta
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedMeta(FHIRMeta $fixedMeta = null)
     {
@@ -7111,7 +7269,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7128,7 +7286,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7136,7 +7294,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $fixedMoney
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedMoney(FHIRMoney $fixedMoney = null)
     {
@@ -7147,7 +7305,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7165,7 +7323,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7174,7 +7332,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $fixedOid
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedOid($fixedOid = null)
     {
@@ -7193,7 +7351,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7210,7 +7368,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7218,7 +7376,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $fixedPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedPeriod(FHIRPeriod $fixedPeriod = null)
     {
@@ -7228,7 +7386,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7245,7 +7403,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7254,7 +7412,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $fixedPositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedPositiveInt($fixedPositiveInt = null)
     {
@@ -7275,7 +7433,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7294,7 +7452,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7302,7 +7460,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $fixedQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedQuantity(FHIRQuantity $fixedQuantity = null)
     {
@@ -7313,7 +7471,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7330,7 +7488,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7338,7 +7496,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $fixedRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedRange(FHIRRange $fixedRange = null)
     {
@@ -7350,7 +7508,7 @@ class FHIRElementDefinition extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7368,7 +7526,7 @@ class FHIRElementDefinition extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7376,7 +7534,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $fixedRatio
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedRatio(FHIRRatio $fixedRatio = null)
     {
@@ -7387,7 +7545,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7404,7 +7562,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7412,7 +7570,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $fixedReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedReference(FHIRReference $fixedReference = null)
     {
@@ -7424,7 +7582,7 @@ class FHIRElementDefinition extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7442,7 +7600,7 @@ class FHIRElementDefinition extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7450,7 +7608,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData $fixedSampledData
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedSampledData(FHIRSampledData $fixedSampledData = null)
     {
@@ -7464,7 +7622,7 @@ class FHIRElementDefinition extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7484,7 +7642,7 @@ class FHIRElementDefinition extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7492,7 +7650,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature $fixedSignature
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedSignature(FHIRSignature $fixedSignature = null)
     {
@@ -7503,7 +7661,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7520,7 +7678,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7528,7 +7686,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $fixedString
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedString($fixedString = null)
     {
@@ -7546,7 +7704,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7562,7 +7720,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7570,7 +7728,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $fixedTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedTime($fixedTime = null)
     {
@@ -7593,7 +7751,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7614,7 +7772,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7622,7 +7780,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $fixedTiming
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedTiming(FHIRTiming $fixedTiming = null)
     {
@@ -7632,7 +7790,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7649,7 +7807,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
@@ -7658,7 +7816,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $fixedUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedUnsignedInt($fixedUnsignedInt = null)
     {
@@ -7677,7 +7835,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7694,7 +7852,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that SHALL be exactly the value for this element in the
      * instance. For purposes of comparison, non-significant whitespace is ignored, and
@@ -7702,7 +7860,7 @@ class FHIRElementDefinition extends FHIRElement
      * elements/attributes must also be missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $fixedUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setFixedUri($fixedUri = null)
     {
@@ -7720,7 +7878,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the value of this element affects the interpretation of the element or
      * resource that contains it, and the value of the element cannot be ignored.
@@ -7738,7 +7896,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the value of this element affects the interpretation of the element or
      * resource that contains it, and the value of the element cannot be ignored.
@@ -7748,7 +7906,7 @@ class FHIRElementDefinition extends FHIRElement
      * that it is not relevant to their particular system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $isModifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setIsModifier($isModifier = null)
     {
@@ -7766,7 +7924,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the element should be included if a client requests a search with the
      * parameter _summary=true.
@@ -7780,13 +7938,13 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the element should be included if a client requests a search with the
      * parameter _summary=true.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $isSummary
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setIsSummary($isSummary = null)
     {
@@ -7805,7 +7963,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A single preferred label which is the text to display beside the element
      * indicating its meaning or to use to prompt for the element in a user display or
@@ -7821,14 +7979,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A single preferred label which is the text to display beside the element
      * indicating its meaning or to use to prompt for the element in a user display or
      * form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $label
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setLabel($label = null)
     {
@@ -7847,7 +8005,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
@@ -7862,13 +8020,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping $mapping
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addMapping(FHIRElementDefinitionMapping $mapping = null)
     {
@@ -7879,13 +8037,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping[] $mapping
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMapping(array $mapping = [])
     {
@@ -7906,7 +8064,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
@@ -7920,12 +8078,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $max
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMax($max = null)
     {
@@ -7944,7 +8102,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the maximum length in characters that is permitted to be present in
      * conformant instances and which is expected to be supported by conformant
@@ -7960,14 +8118,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the maximum length in characters that is permitted to be present in
      * conformant instances and which is expected to be supported by conformant
      * consumers that support the element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $maxLength
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxLength($maxLength = null)
     {
@@ -7987,7 +8145,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8004,14 +8162,14 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $maxValueDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueDate($maxValueDate = null)
     {
@@ -8033,7 +8191,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8052,14 +8210,14 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $maxValueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueDateTime($maxValueDateTime = null)
     {
@@ -8079,7 +8237,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8096,14 +8254,14 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $maxValueDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueDecimal($maxValueDecimal = null)
     {
@@ -8124,7 +8282,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8142,14 +8300,14 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $maxValueInstant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueInstant($maxValueInstant = null)
     {
@@ -8168,7 +8326,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8184,14 +8342,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $maxValueInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueInteger($maxValueInteger = null)
     {
@@ -8209,7 +8367,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
@@ -8225,7 +8383,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
@@ -8233,7 +8391,7 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $maxValuePositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValuePositiveInt($maxValuePositiveInt = null)
     {
@@ -8254,7 +8412,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8272,14 +8430,14 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $maxValueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueQuantity(FHIRQuantity $maxValueQuantity = null)
     {
@@ -8289,7 +8447,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8304,14 +8462,14 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $maxValueTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueTime($maxValueTime = null)
     {
@@ -8329,7 +8487,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
@@ -8345,7 +8503,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The maximum allowed value for the element. The value is inclusive. This is
@@ -8353,7 +8511,7 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $maxValueUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMaxValueUnsignedInt($maxValueUnsignedInt = null)
     {
@@ -8377,7 +8535,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The Implicit meaning that is to be understood when this element is missing (e.g.
@@ -8398,14 +8556,14 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The Implicit meaning that is to be understood when this element is missing (e.g.
      * 'when this element is missing, the period is ongoing'.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $meaningWhenMissing
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMeaningWhenMissing($meaningWhenMissing = null)
     {
@@ -8423,7 +8581,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
@@ -8437,13 +8595,13 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum number of times this element SHALL appear in the instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $min
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMin($min = null)
     {
@@ -8463,7 +8621,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8480,14 +8638,14 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $minValueDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueDate($minValueDate = null)
     {
@@ -8509,7 +8667,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8528,14 +8686,14 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $minValueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueDateTime($minValueDateTime = null)
     {
@@ -8555,7 +8713,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8572,14 +8730,14 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $minValueDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueDecimal($minValueDecimal = null)
     {
@@ -8600,7 +8758,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8618,14 +8776,14 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $minValueInstant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueInstant($minValueInstant = null)
     {
@@ -8644,7 +8802,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8660,14 +8818,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $minValueInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueInteger($minValueInteger = null)
     {
@@ -8685,7 +8843,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
@@ -8701,7 +8859,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
@@ -8709,7 +8867,7 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $minValuePositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValuePositiveInt($minValuePositiveInt = null)
     {
@@ -8730,7 +8888,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8748,14 +8906,14 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $minValueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueQuantity(FHIRQuantity $minValueQuantity = null)
     {
@@ -8765,7 +8923,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
@@ -8780,14 +8938,14 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $minValueTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueTime($minValueTime = null)
     {
@@ -8805,7 +8963,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
@@ -8821,7 +8979,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The minimum allowed value for the element. The value is inclusive. This is
@@ -8829,7 +8987,7 @@ class FHIRElementDefinition extends FHIRElement
      * Quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $minValueUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMinValueUnsignedInt($minValueUnsignedInt = null)
     {
@@ -8847,7 +9005,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, implementations that produce or consume resources SHALL provide
      * "support" for the element in some meaningful way. If false, the element may be
@@ -8862,14 +9020,14 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, implementations that produce or consume resources SHALL provide
      * "support" for the element in some meaningful way. If false, the element may be
      * ignored and not supported.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $mustSupport
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setMustSupport($mustSupport = null)
     {
@@ -8888,7 +9046,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the order of the repeating element has meaning and
      * describes what that meaning is. If absent, it means that the order of the
@@ -8904,14 +9062,14 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If present, indicates that the order of the repeating element has meaning and
      * describes what that meaning is. If absent, it means that the order of the
      * element has no meaning.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $orderMeaning
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setOrderMeaning($orderMeaning = null)
     {
@@ -8930,7 +9088,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource or extension.
@@ -8945,13 +9103,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource or extension.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPath($path = null)
     {
@@ -8974,7 +9132,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -8996,7 +9154,7 @@ class FHIRElementDefinition extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9005,7 +9163,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress $patternAddress
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternAddress(FHIRAddress $patternAddress = null)
     {
@@ -9016,7 +9174,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9034,7 +9192,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9043,7 +9201,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge $patternAge
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternAge(FHIRAge $patternAge = null)
     {
@@ -9055,7 +9213,7 @@ class FHIRElementDefinition extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9074,7 +9232,7 @@ class FHIRElementDefinition extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9083,7 +9241,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $patternAnnotation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternAnnotation(FHIRAnnotation $patternAnnotation = null)
     {
@@ -9094,7 +9252,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9112,7 +9270,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9121,7 +9279,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $patternAttachment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternAttachment(FHIRAttachment $patternAttachment = null)
     {
@@ -9132,7 +9290,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9150,7 +9308,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9159,7 +9317,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $patternBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternBase64Binary($patternBase64Binary = null)
     {
@@ -9177,7 +9335,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9194,7 +9352,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9203,7 +9361,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $patternBoolean
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternBoolean($patternBoolean = null)
     {
@@ -9222,7 +9380,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -9241,7 +9399,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -9251,7 +9409,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $patternCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternCode($patternCode = null)
     {
@@ -9271,7 +9429,7 @@ class FHIRElementDefinition extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9290,7 +9448,7 @@ class FHIRElementDefinition extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9299,7 +9457,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $patternCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternCodeableConcept(FHIRCodeableConcept $patternCodeableConcept = null)
     {
@@ -9310,7 +9468,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9328,7 +9486,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9337,7 +9495,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $patternCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternCoding(FHIRCoding $patternCoding = null)
     {
@@ -9349,7 +9507,7 @@ class FHIRElementDefinition extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9368,7 +9526,7 @@ class FHIRElementDefinition extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9377,7 +9535,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint $patternContactPoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternContactPoint(FHIRContactPoint $patternContactPoint = null)
     {
@@ -9390,7 +9548,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9410,7 +9568,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9419,7 +9577,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount $patternCount
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternCount(FHIRCount $patternCount = null)
     {
@@ -9431,7 +9589,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9450,7 +9608,7 @@ class FHIRElementDefinition extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9459,7 +9617,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $patternDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternDate($patternDate = null)
     {
@@ -9481,7 +9639,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9502,7 +9660,7 @@ class FHIRElementDefinition extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9511,7 +9669,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $patternDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternDateTime($patternDateTime = null)
     {
@@ -9531,7 +9689,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9550,7 +9708,7 @@ class FHIRElementDefinition extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9559,7 +9717,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $patternDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternDecimal($patternDecimal = null)
     {
@@ -9578,7 +9736,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9596,7 +9754,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9605,7 +9763,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance $patternDistance
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternDistance(FHIRDistance $patternDistance = null)
     {
@@ -9616,7 +9774,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9634,7 +9792,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9643,7 +9801,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $patternDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternDuration(FHIRDuration $patternDuration = null)
     {
@@ -9654,7 +9812,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9672,7 +9830,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9681,7 +9839,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName $patternHumanName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternHumanName(FHIRHumanName $patternHumanName = null)
     {
@@ -9694,7 +9852,7 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -9715,7 +9873,7 @@ class FHIRElementDefinition extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -9725,7 +9883,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $patternId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternId($patternId = null)
     {
@@ -9744,7 +9902,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9762,7 +9920,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9771,7 +9929,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $patternIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternIdentifier(FHIRIdentifier $patternIdentifier = null)
     {
@@ -9784,7 +9942,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9804,7 +9962,7 @@ class FHIRElementDefinition extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9813,7 +9971,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $patternInstant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternInstant($patternInstant = null)
     {
@@ -9832,7 +9990,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9850,7 +10008,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9859,7 +10017,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $patternInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternInteger($patternInteger = null)
     {
@@ -9883,7 +10041,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -9907,7 +10065,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -9917,7 +10075,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $patternMarkdown
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternMarkdown($patternMarkdown = null)
     {
@@ -9938,7 +10096,7 @@ class FHIRElementDefinition extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9958,7 +10116,7 @@ class FHIRElementDefinition extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9967,7 +10125,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta $patternMeta
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternMeta(FHIRMeta $patternMeta = null)
     {
@@ -9978,7 +10136,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -9996,7 +10154,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10005,7 +10163,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $patternMoney
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternMoney(FHIRMoney $patternMoney = null)
     {
@@ -10016,7 +10174,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -10035,7 +10193,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -10045,7 +10203,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $patternOid
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternOid($patternOid = null)
     {
@@ -10064,7 +10222,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10082,7 +10240,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10091,7 +10249,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $patternPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternPeriod(FHIRPeriod $patternPeriod = null)
     {
@@ -10101,7 +10259,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -10119,7 +10277,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -10129,7 +10287,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $patternPositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternPositiveInt($patternPositiveInt = null)
     {
@@ -10150,7 +10308,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10170,7 +10328,7 @@ class FHIRElementDefinition extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10179,7 +10337,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $patternQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternQuantity(FHIRQuantity $patternQuantity = null)
     {
@@ -10190,7 +10348,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10208,7 +10366,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10217,7 +10375,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $patternRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternRange(FHIRRange $patternRange = null)
     {
@@ -10229,7 +10387,7 @@ class FHIRElementDefinition extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10248,7 +10406,7 @@ class FHIRElementDefinition extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10257,7 +10415,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $patternRatio
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternRatio(FHIRRatio $patternRatio = null)
     {
@@ -10268,7 +10426,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10286,7 +10444,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10295,7 +10453,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $patternReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternReference(FHIRReference $patternReference = null)
     {
@@ -10307,7 +10465,7 @@ class FHIRElementDefinition extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10326,7 +10484,7 @@ class FHIRElementDefinition extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10335,7 +10493,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData $patternSampledData
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternSampledData(FHIRSampledData $patternSampledData = null)
     {
@@ -10349,7 +10507,7 @@ class FHIRElementDefinition extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10370,7 +10528,7 @@ class FHIRElementDefinition extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10379,7 +10537,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature $patternSignature
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternSignature(FHIRSignature $patternSignature = null)
     {
@@ -10390,7 +10548,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10408,7 +10566,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10417,7 +10575,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $patternString
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternString($patternString = null)
     {
@@ -10435,7 +10593,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10452,7 +10610,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10461,7 +10619,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $patternTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternTime($patternTime = null)
     {
@@ -10484,7 +10642,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10506,7 +10664,7 @@ class FHIRElementDefinition extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10515,7 +10673,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $patternTiming
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternTiming(FHIRTiming $patternTiming = null)
     {
@@ -10525,7 +10683,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -10543,7 +10701,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
@@ -10553,7 +10711,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $patternUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternUnsignedInt($patternUnsignedInt = null)
     {
@@ -10572,7 +10730,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10590,7 +10748,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies a value that the value in the instance SHALL follow - that is, any
      * value in the pattern must be found in the instance. Other additional values may
@@ -10599,7 +10757,7 @@ class FHIRElementDefinition extends FHIRElement
      * etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $patternUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setPatternUri($patternUri = null)
     {
@@ -10617,7 +10775,7 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * How a property is represented when serialized.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
@@ -10631,13 +10789,13 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * How a property is represented when serialized.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPropertyRepresentation $representation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addRepresentation(FHIRPropertyRepresentation $representation = null)
     {
@@ -10647,13 +10805,13 @@ class FHIRElementDefinition extends FHIRElement
 
     /**
      * How a property is represented when serialized.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPropertyRepresentation[] $representation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setRepresentation(array $representation = [])
     {
@@ -10679,7 +10837,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * This element is for traceability of why the element was created and why the
@@ -10701,7 +10859,7 @@ class FHIRElementDefinition extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * This element is for traceability of why the element was created and why the
@@ -10709,7 +10867,7 @@ class FHIRElementDefinition extends FHIRElement
      * specifications that drove the structure of this element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $requirements
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setRequirements($requirements = null)
     {
@@ -10728,7 +10886,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A concise description of what this element means (e.g. for use in autogenerated
      * summaries).
@@ -10743,13 +10901,13 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A concise description of what this element means (e.g. for use in autogenerated
      * summaries).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $short
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setShort($short = null)
     {
@@ -10768,7 +10926,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this element definition slice, when slicing is working. The name
      * must be a token with no dots or spaces. This is a unique name referring to a
@@ -10785,7 +10943,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this element definition slice, when slicing is working. The name
      * must be a token with no dots or spaces. This is a unique name referring to a
@@ -10793,7 +10951,7 @@ class FHIRElementDefinition extends FHIRElement
      * different slices of the same element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $sliceName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setSliceName($sliceName = null)
     {
@@ -10812,7 +10970,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates that the element is sliced into a set of alternative definitions (i.e.
      * in a structure definition, there are multiple different constraints on a single
@@ -10832,7 +10990,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates that the element is sliced into a set of alternative definitions (i.e.
      * in a structure definition, there are multiple different constraints on a single
@@ -10843,7 +11001,7 @@ class FHIRElementDefinition extends FHIRElement
      * terminates the set).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionSlicing $slicing
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setSlicing(FHIRElementDefinitionSlicing $slicing = null)
     {
@@ -10854,7 +11012,7 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The data type or resource that the value of this element is permitted to be.
      *
@@ -10868,12 +11026,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The data type or resource that the value of this element is permitted to be.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function addType(FHIRElementDefinitionType $type = null)
     {
@@ -10884,12 +11042,12 @@ class FHIRElementDefinition extends FHIRElement
     /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The data type or resource that the value of this element is permitted to be.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType[] $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition
+     * @return static
      */
     public function setType(array $type = [])
     {

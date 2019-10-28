@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONDITIONAL_CREATE = 'conditionalCreate';
     const FIELD_CONDITIONAL_CREATE_EXT = '_conditionalCreate';
@@ -112,31 +112,34 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $conditionalCreate = null;
+    protected $conditionalCreate = null;
+
     /**
      * A code that indicates how the server supports conditional delete.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConditionalDeleteStatus
      */
-    private $conditionalDelete = null;
+    protected $conditionalDelete = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $conditionalUpdate = null;
+    protected $conditionalUpdate = null;
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -146,11 +149,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction[]
      */
-    private $interaction = [];
+    protected $interaction = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specification of the profile that describes the solution's overall support for
      * the resource, including any constraints on cardinality, bindings, lengths or
@@ -159,27 +163,30 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $profile = null;
+    protected $profile = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $readHistory = null;
+    protected $readHistory = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
-    private $searchInclude = [];
+    protected $searchInclude = [];
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -191,31 +198,34 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
      */
-    private $searchParam = [];
+    protected $searchParam = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
-    private $searchRevInclude = [];
+    protected $searchRevInclude = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that the server allows or needs to allow the client to create
      * new identities on the server (e.g. that is, the client PUTs to a location where
@@ -224,10 +234,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $updateCreate = null;
+    protected $updateCreate = null;
+
     /**
      * How the system supports versioning for a resource.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This field is set to no-version to specify that the system does not support
      * (server) or use (client) versioning for this resource type. If this has some
@@ -238,7 +249,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRResourceVersionPolicy
      */
-    private $versioning = null;
+    protected $versioning = null;
 
     /**
      * FHIRConformanceResource Constructor
@@ -441,7 +452,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -470,7 +481,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
      *
@@ -483,12 +494,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $conditionalCreate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setConditionalCreate($conditionalCreate = null)
     {
@@ -506,7 +517,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * A code that indicates how the server supports conditional delete.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
      *
@@ -519,12 +530,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * A code that indicates how the server supports conditional delete.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setConditionalDelete(FHIRConditionalDeleteStatus $conditionalDelete = null)
     {
@@ -534,7 +545,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
      *
@@ -547,12 +558,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $conditionalUpdate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setConditionalUpdate($conditionalUpdate = null)
     {
@@ -590,7 +601,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * Identifies a restful operation supported by the solution.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction $interaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function addInteraction(FHIRConformanceInteraction $interaction = null)
     {
@@ -606,7 +617,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * Identifies a restful operation supported by the solution.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction[] $interaction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setInteraction(array $interaction = [])
     {
@@ -627,7 +638,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specification of the profile that describes the solution's overall support for
      * the resource, including any constraints on cardinality, bindings, lengths or
@@ -644,7 +655,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specification of the profile that describes the solution's overall support for
      * the resource, including any constraints on cardinality, bindings, lengths or
@@ -652,7 +663,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * Profiles]{profiling.html#profile-uses}.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setProfile(FHIRReference $profile = null)
     {
@@ -662,7 +673,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
@@ -676,13 +687,13 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $readHistory
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setReadHistory($readHistory = null)
     {
@@ -701,7 +712,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
      *
@@ -715,12 +726,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $searchInclude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function addSearchInclude($searchInclude = null)
     {
@@ -739,12 +750,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[] $searchInclude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setSearchInclude(array $searchInclude = [])
     {
@@ -788,7 +799,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * for/by the implementation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam $searchParam
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function addSearchParam(FHIRConformanceSearchParam $searchParam = null)
     {
@@ -806,7 +817,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * for/by the implementation.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[] $searchParam
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setSearchParam(array $searchParam = [])
     {
@@ -827,7 +838,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
      *
@@ -841,12 +852,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $searchRevInclude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function addSearchRevInclude($searchRevInclude = null)
     {
@@ -865,12 +876,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[] $searchRevInclude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setSearchRevInclude(array $searchRevInclude = [])
     {
@@ -891,7 +902,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
@@ -906,13 +917,13 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setType($type = null)
     {
@@ -930,7 +941,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that the server allows or needs to allow the client to create
      * new identities on the server (e.g. that is, the client PUTs to a location where
@@ -946,7 +957,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that the server allows or needs to allow the client to create
      * new identities on the server (e.g. that is, the client PUTs to a location where
@@ -954,7 +965,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * allows the client to create new identities on the server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $updateCreate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setUpdateCreate($updateCreate = null)
     {
@@ -972,7 +983,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * How the system supports versioning for a resource.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This field is set to no-version to specify that the system does not support
      * (server) or use (client) versioning for this resource type. If this has some
@@ -990,7 +1001,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /**
      * How the system supports versioning for a resource.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This field is set to no-version to specify that the system does not support
      * (server) or use (client) versioning for this resource type. If this has some
@@ -1000,7 +1011,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * integrity in the API.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRResourceVersionPolicy $versioning
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
+     * @return static
      */
     public function setVersioning(FHIRResourceVersionPolicy $versioning = null)
     {

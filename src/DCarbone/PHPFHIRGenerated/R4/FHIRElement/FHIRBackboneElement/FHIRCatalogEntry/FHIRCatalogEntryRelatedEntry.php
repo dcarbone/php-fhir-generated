@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatal
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CATALOG_ENTRY_DOT_RELATED_ENTRY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ITEM = 'item';
     const FIELD_RELATIONTYPE = 'relationtype';
@@ -89,23 +89,24 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the related item.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $item = null;
+    protected $item = null;
+
     /**
      * The type of relations between entries.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relation to the related item: child, parent, packageContent,
      * containerPackage, usedIn, uses, requires, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCatalogEntryRelationType
      */
-    private $relationtype = null;
+    protected $relationtype = null;
 
     /**
      * FHIRCatalogEntryRelatedEntry Constructor
@@ -162,7 +163,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -192,7 +193,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the related item.
      *
@@ -206,12 +207,12 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the related item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
+     * @return static
      */
     public function setItem(FHIRReference $item = null)
     {
@@ -221,7 +222,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
 
     /**
      * The type of relations between entries.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relation to the related item: child, parent, packageContent,
      * containerPackage, usedIn, uses, requires, etc.
@@ -235,13 +236,13 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
 
     /**
      * The type of relations between entries.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relation to the related item: child, parent, packageContent,
      * containerPackage, usedIn, uses, requires, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCatalogEntryRelationType $relationtype
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
+     * @return static
      */
     public function setRelationtype(FHIRCatalogEntryRelationType $relationtype = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREnc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_DIAGNOSIS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONDITION = 'condition';
     const FIELD_RANK = 'rank';
@@ -92,7 +92,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, as specified using information from another
      * resource. For admissions, this is the admission diagnosis. The indication will
@@ -101,29 +101,31 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $condition = null;
+    protected $condition = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $rank = null;
+    protected $rank = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $role = null;
+    protected $role = null;
 
     /**
      * FHIREncounterDiagnosis Constructor
@@ -187,7 +189,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -217,7 +219,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, as specified using information from another
      * resource. For admissions, this is the admission diagnosis. The indication will
@@ -234,7 +236,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason the encounter takes place, as specified using information from another
      * resource. For admissions, this is the admission diagnosis. The indication will
@@ -242,7 +244,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * evidence.detail), or a Procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $condition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis
+     * @return static
      */
     public function setCondition(FHIRReference $condition = null)
     {
@@ -252,7 +254,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
@@ -266,13 +268,13 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $rank
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis
+     * @return static
      */
     public function setRank($rank = null)
     {
@@ -292,7 +294,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
@@ -308,13 +310,13 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $role
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis
+     * @return static
      */
     public function setRole(FHIRCodeableConcept $role = null)
     {

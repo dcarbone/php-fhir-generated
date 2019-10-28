@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A reply to an appointment request for a patient and/or practitioner(s), such as
  * a confirmation or rejection.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRAppointmentResponse
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -87,7 +87,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_APPOINTMENT_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTOR = 'actor';
     const FIELD_APPOINTMENT = 'appointment';
@@ -106,41 +106,44 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $actor = null;
+    protected $actor = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $appointment = null;
+    protected $appointment = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
@@ -148,12 +151,13 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $end = null;
+    protected $end = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
@@ -161,10 +165,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * The Participation status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the participant. When the status is declined or
      * tentative if the start/end times are different to the appointment, then these
@@ -174,31 +179,33 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipationStatus
      */
-    private $participantStatus = null;
+    protected $participantStatus = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $participantType = [];
+    protected $participantType = [];
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $start = null;
+    protected $start = null;
 
     /**
      * FHIRAppointmentResponse Constructor
@@ -335,7 +342,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -373,7 +380,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
@@ -388,13 +395,13 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $actor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setActor(FHIRReference $actor = null)
     {
@@ -405,7 +412,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
      *
@@ -419,12 +426,12 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $appointment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setAppointment(FHIRReference $appointment = null)
     {
@@ -435,7 +442,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
      *
@@ -449,12 +456,12 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -476,7 +483,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
@@ -495,14 +502,14 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
      * end time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $end
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setEnd($end = null)
     {
@@ -522,7 +529,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
@@ -539,14 +546,14 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -558,14 +565,14 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -585,7 +592,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * The Participation status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the participant. When the status is declined or
      * tentative if the start/end times are different to the appointment, then these
@@ -602,7 +609,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * The Participation status of an appointment.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the participant. When the status is declined or
      * tentative if the start/end times are different to the appointment, then these
@@ -611,7 +618,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * of the time) or can be empty.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipationStatus $participantStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setParticipantStatus(FHIRParticipationStatus $participantStatus = null)
     {
@@ -623,7 +630,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
@@ -638,12 +645,12 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $participantType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function addParticipantType(FHIRCodeableConcept $participantType = null)
     {
@@ -655,12 +662,12 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $participantType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setParticipantType(array $participantType = [])
     {
@@ -684,7 +691,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
      *
@@ -701,12 +708,12 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $start
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
+     * @return static
      */
     public function setStart($start = null)
     {

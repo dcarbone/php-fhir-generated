@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * context of use of the expression must specify the context in which the
  * expression is evaluated, and how the result of the expression is used.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRExpression
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -82,7 +82,7 @@ class FHIRExpression extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPRESSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
@@ -98,39 +98,42 @@ class FHIRExpression extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $expression = null;
+    protected $expression = null;
+
     /**
      * The media type of the expression language.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpressionLanguage
      */
-    private $language = null;
+    protected $language = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A short name assigned to the expression to allow for multiple reuse of the
@@ -138,17 +141,18 @@ class FHIRExpression extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $reference = null;
+    protected $reference = null;
 
     /**
      * FHIRExpression Constructor
@@ -246,7 +250,7 @@ class FHIRExpression extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -276,7 +280,7 @@ class FHIRExpression extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
@@ -291,13 +295,13 @@ class FHIRExpression extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -316,7 +320,7 @@ class FHIRExpression extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
      *
@@ -330,12 +334,12 @@ class FHIRExpression extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $expression
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     * @return static
      */
     public function setExpression($expression = null)
     {
@@ -353,7 +357,7 @@ class FHIRExpression extends FHIRElement
 
     /**
      * The media type of the expression language.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
      *
@@ -366,12 +370,12 @@ class FHIRExpression extends FHIRElement
 
     /**
      * The media type of the expression language.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpressionLanguage $language
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     * @return static
      */
     public function setLanguage(FHIRExpressionLanguage $language = null)
     {
@@ -384,7 +388,7 @@ class FHIRExpression extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A short name assigned to the expression to allow for multiple reuse of the
@@ -402,14 +406,14 @@ class FHIRExpression extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A short name assigned to the expression to allow for multiple reuse of the
      * expression in the context where it is defined.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     * @return static
      */
     public function setName($name = null)
     {
@@ -428,7 +432,7 @@ class FHIRExpression extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
      *
@@ -442,12 +446,12 @@ class FHIRExpression extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $reference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     * @return static
      */
     public function setReference($reference = null)
     {

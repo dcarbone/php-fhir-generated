@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A UUID, represented as a URI
  * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
- * If the element is present, it must have either a @value, an @id referenced from
+ * If the element is present, it must have either a \@value, an \@id referenced from
  * the Narrative, or extensions
  *
  * Class FHIRUuid
@@ -82,14 +82,15 @@ class FHIRUuid extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_UUID;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRUuidPrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRUuid Constructor
@@ -137,7 +138,7 @@ class FHIRUuid extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -173,7 +174,7 @@ class FHIRUuid extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRUuidPrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
+     * @return static
      */
     public function setValue($value = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_MANIFEST_DOT_STUDY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ENDPOINT = 'endpoint';
     const FIELD_IMAGING_STUDY = 'imagingStudy';
@@ -92,7 +92,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -101,17 +101,19 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $endpoint = [];
+    protected $endpoint = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $imagingStudy = null;
+    protected $imagingStudy = null;
+
     /**
      * A text description of the DICOM SOP instances selected in the ImagingManifest;
      * or the reason for, or significance of, the selection.
@@ -121,18 +123,19 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries[]
      */
-    private $series = [];
+    protected $series = [];
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $uid = null;
+    protected $uid = null;
 
     /**
      * FHIRImagingManifestStudy Constructor
@@ -219,7 +222,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -249,7 +252,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -266,7 +269,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -274,7 +277,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * series-level endpoint with the same Endpoint.type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint = null)
     {
@@ -285,7 +288,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
@@ -293,7 +296,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * series-level endpoint with the same Endpoint.type.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function setEndpoint(array $endpoint = [])
     {
@@ -314,7 +317,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
      *
@@ -328,12 +331,12 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $imagingStudy
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function setImagingStudy(FHIRReference $imagingStudy = null)
     {
@@ -363,7 +366,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * selection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries $series
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function addSeries(FHIRImagingManifestSeries $series = null)
     {
@@ -379,7 +382,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      * selection.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries[] $series
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function setSeries(array $series = [])
     {
@@ -400,7 +403,7 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
@@ -415,13 +418,13 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $uid
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy
+     * @return static
      */
     public function setUid($uid = null)
     {

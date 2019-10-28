@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Information about a user's current session.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRUserSession
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -84,7 +84,7 @@ class FHIRUserSession extends FHIRDomainResource
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_USER_SESSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTEXT = 'context';
     const FIELD_CREATED = 'created';
@@ -106,56 +106,61 @@ class FHIRUserSession extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext[]
      */
-    private $context = [];
+    protected $context = [];
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the timestamp when the user session was first created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the timestamp when the user session will expire (i.e. no longer be
      * valid).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $expires = null;
+    protected $expires = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current focus of the user's session. Common values are a reference to a
      * Patient, Encounter, ImagingStudy, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $focus = [];
+    protected $focus = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the session.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * Information about a user's current session.
      *
@@ -163,22 +168,24 @@ class FHIRUserSession extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A practitioner, patient, device, or related person engaged in the session.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $user = null;
+    protected $user = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location that identifies the physical place at which the user's session is
      * occurring. For the purposes of context synchronization, this is intended to
@@ -186,7 +193,7 @@ class FHIRUserSession extends FHIRDomainResource
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $workstation = null;
+    protected $workstation = null;
 
     /**
      * FHIRUserSession Constructor
@@ -316,7 +323,7 @@ class FHIRUserSession extends FHIRDomainResource
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -361,7 +368,7 @@ class FHIRUserSession extends FHIRDomainResource
      * Provides additional information associated with the context.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext $context
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function addContext(FHIRUserSessionContext $context = null)
     {
@@ -375,7 +382,7 @@ class FHIRUserSession extends FHIRDomainResource
      * Provides additional information associated with the context.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext[] $context
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setContext(array $context = [])
     {
@@ -399,7 +406,7 @@ class FHIRUserSession extends FHIRDomainResource
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the timestamp when the user session was first created.
      *
@@ -416,12 +423,12 @@ class FHIRUserSession extends FHIRDomainResource
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the timestamp when the user session was first created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $created
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -443,7 +450,7 @@ class FHIRUserSession extends FHIRDomainResource
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the timestamp when the user session will expire (i.e. no longer be
      * valid).
@@ -461,13 +468,13 @@ class FHIRUserSession extends FHIRDomainResource
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the timestamp when the user session will expire (i.e. no longer be
      * valid).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $expires
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setExpires($expires = null)
     {
@@ -486,7 +493,7 @@ class FHIRUserSession extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current focus of the user's session. Common values are a reference to a
      * Patient, Encounter, ImagingStudy, etc.
@@ -501,13 +508,13 @@ class FHIRUserSession extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current focus of the user's session. Common values are a reference to a
      * Patient, Encounter, ImagingStudy, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $focus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function addFocus(FHIRReference $focus = null)
     {
@@ -518,13 +525,13 @@ class FHIRUserSession extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current focus of the user's session. Common values are a reference to a
      * Patient, Encounter, ImagingStudy, etc.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $focus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setFocus(array $focus = [])
     {
@@ -546,7 +553,7 @@ class FHIRUserSession extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the session.
      *
@@ -561,12 +568,12 @@ class FHIRUserSession extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the session.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -592,7 +599,7 @@ class FHIRUserSession extends FHIRDomainResource
      * Status of the session.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setStatus(FHIRUserSessionStatus $status = null)
     {
@@ -603,7 +610,7 @@ class FHIRUserSession extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A practitioner, patient, device, or related person engaged in the session.
      *
@@ -617,12 +624,12 @@ class FHIRUserSession extends FHIRDomainResource
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A practitioner, patient, device, or related person engaged in the session.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $user
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setUser(FHIRReference $user = null)
     {
@@ -634,7 +641,7 @@ class FHIRUserSession extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location that identifies the physical place at which the user's session is
      * occurring. For the purposes of context synchronization, this is intended to
@@ -651,14 +658,14 @@ class FHIRUserSession extends FHIRDomainResource
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location that identifies the physical place at which the user's session is
      * occurring. For the purposes of context synchronization, this is intended to
      * represent the user's workstation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $workstation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession
+     * @return static
      */
     public function setWorkstation(FHIRIdentifier $workstation = null)
     {

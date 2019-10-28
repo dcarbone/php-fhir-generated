@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * containing in addition details of the provision, like date, time, amounts and
  * participating organizations and persons. Main Usage of the ChargeItem is to
  * enable the billing process and internal cost allocation.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRChargeItem
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -98,7 +98,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CHARGE_ITEM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCOUNT = 'account';
     const FIELD_BODYSITE = 'bodysite';
@@ -137,134 +137,146 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account into which this ChargeItems belongs.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $account = [];
+    protected $account = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where the related service has been applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $bodysite = [];
+    protected $bodysite = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the charge, like a billing code.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care that establishes the context for this event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $context = null;
+    protected $context = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[]
      */
-    private $definition = [];
+    protected $definition = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the charge item was entered.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $enteredDate = null;
+    protected $enteredDate = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who entered the charge item.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $enterer = null;
+    protected $enterer = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor overriding the factor determined by the rules associated with the code.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $factorOverride = null;
+    protected $factorOverride = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this event performer or other systems.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the event by the performer, subject or other participants.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $occurrenceDateTime = null;
+    protected $occurrenceDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $occurrencePeriod = null;
+    protected $occurrencePeriod = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -272,17 +284,18 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $occurrenceTiming = null;
+    protected $occurrenceTiming = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the list price or the rule based factor associated with the code is
      * overridden, this attribute can capture a text to indicate the reason for this
@@ -290,17 +303,19 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $overrideReason = null;
+    protected $overrideReason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $partOf = [];
+    protected $partOf = [];
+
     /**
      * The resource ChargeItem describes the provision of healthcare provider products
      * for a certain patient, therefore referring not only to the product, but
@@ -312,99 +327,108 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRChargeItem\FHIRChargeItemParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization requesting the service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $performingOrganization = null;
+    protected $performingOrganization = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total price of the charge overriding the list price associated with the code.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $priceOverride = null;
+    protected $priceOverride = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity of which the charge item has been serviced.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $reason = [];
+    protected $reason = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization performing the service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $requestingOrganization = null;
+    protected $requestingOrganization = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicated the rendered service that caused this charge.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $service = [];
+    protected $service = [];
+
     /**
      * Codes identifying the stage lifecycle stage of a ChargeItem
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ChargeItem.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRChargeItemStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals the action is being or was performed on.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information supporting the this charge.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $supportingInformation = [];
+    protected $supportingInformation = [];
 
     /**
      * FHIRChargeItem Constructor
@@ -731,7 +755,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -769,7 +793,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account into which this ChargeItems belongs.
      *
@@ -783,12 +807,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account into which this ChargeItems belongs.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $account
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addAccount(FHIRReference $account = null)
     {
@@ -799,12 +823,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account into which this ChargeItems belongs.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $account
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setAccount(array $account = [])
     {
@@ -826,7 +850,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where the related service has been applied.
      *
@@ -841,12 +865,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where the related service has been applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $bodysite
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addBodysite(FHIRCodeableConcept $bodysite = null)
     {
@@ -858,12 +882,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where the related service has been applied.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $bodysite
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setBodysite(array $bodysite = [])
     {
@@ -885,7 +909,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the charge, like a billing code.
      *
@@ -900,12 +924,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the charge, like a billing code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -916,7 +940,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care that establishes the context for this event.
      *
@@ -930,12 +954,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care that establishes the context for this event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $context
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setContext(FHIRReference $context = null)
     {
@@ -946,7 +970,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
@@ -961,13 +985,13 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addDefinition($definition = null)
     {
@@ -986,13 +1010,13 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[] $definition
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setDefinition(array $definition = [])
     {
@@ -1016,7 +1040,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the charge item was entered.
      *
@@ -1033,12 +1057,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the charge item was entered.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $enteredDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setEnteredDate($enteredDate = null)
     {
@@ -1057,7 +1081,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who entered the charge item.
      *
@@ -1071,12 +1095,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who entered the charge item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $enterer
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setEnterer(FHIRReference $enterer = null)
     {
@@ -1088,7 +1112,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor overriding the factor determined by the rules associated with the code.
      *
@@ -1103,12 +1127,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor overriding the factor determined by the rules associated with the code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $factorOverride
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setFactorOverride($factorOverride = null)
     {
@@ -1127,7 +1151,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this event performer or other systems.
      *
@@ -1141,12 +1165,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this event performer or other systems.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1158,7 +1182,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the event by the performer, subject or other participants.
      *
@@ -1173,12 +1197,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the event by the performer, subject or other participants.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1190,12 +1214,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the event by the performer, subject or other participants.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1219,7 +1243,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
@@ -1236,12 +1260,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setOccurrenceDateTime($occurrenceDateTime = null)
     {
@@ -1260,7 +1284,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
@@ -1274,12 +1298,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $occurrencePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setOccurrencePeriod(FHIRPeriod $occurrencePeriod = null)
     {
@@ -1294,7 +1318,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
@@ -1312,12 +1336,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $occurrenceTiming
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setOccurrenceTiming(FHIRTiming $occurrenceTiming = null)
     {
@@ -1328,7 +1352,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the list price or the rule based factor associated with the code is
      * overridden, this attribute can capture a text to indicate the reason for this
@@ -1344,14 +1368,14 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the list price or the rule based factor associated with the code is
      * overridden, this attribute can capture a text to indicate the reason for this
      * action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $overrideReason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setOverrideReason($overrideReason = null)
     {
@@ -1370,7 +1394,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      *
@@ -1384,12 +1408,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $partOf
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf = null)
     {
@@ -1400,12 +1424,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $partOf
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setPartOf(array $partOf = [])
     {
@@ -1449,7 +1473,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Indicates who or what performed or participated in the charged service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRChargeItem\FHIRChargeItemParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addParticipant(FHIRChargeItemParticipant $participant = null)
     {
@@ -1467,7 +1491,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Indicates who or what performed or participated in the charged service.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRChargeItem\FHIRChargeItemParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -1488,7 +1512,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization requesting the service.
      *
@@ -1502,12 +1526,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization requesting the service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $performingOrganization
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setPerformingOrganization(FHIRReference $performingOrganization = null)
     {
@@ -1518,7 +1542,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total price of the charge overriding the list price associated with the code.
      *
@@ -1532,12 +1556,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total price of the charge overriding the list price associated with the code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $priceOverride
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setPriceOverride(FHIRMoney $priceOverride = null)
     {
@@ -1550,7 +1574,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity of which the charge item has been serviced.
      *
@@ -1566,12 +1590,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity of which the charge item has been serviced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -1583,7 +1607,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
      *
@@ -1598,12 +1622,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason = null)
     {
@@ -1615,12 +1639,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setReason(array $reason = [])
     {
@@ -1641,7 +1665,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization performing the service.
      *
@@ -1655,12 +1679,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization performing the service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $requestingOrganization
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setRequestingOrganization(FHIRReference $requestingOrganization = null)
     {
@@ -1671,7 +1695,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicated the rendered service that caused this charge.
      *
@@ -1685,12 +1709,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicated the rendered service that caused this charge.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $service
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addService(FHIRReference $service = null)
     {
@@ -1701,12 +1725,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicated the rendered service that caused this charge.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $service
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setService(array $service = [])
     {
@@ -1726,7 +1750,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Codes identifying the stage lifecycle stage of a ChargeItem
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ChargeItem.
      *
@@ -1739,12 +1763,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Codes identifying the stage lifecycle stage of a ChargeItem
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ChargeItem.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRChargeItemStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setStatus(FHIRChargeItemStatus $status = null)
     {
@@ -1755,7 +1779,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals the action is being or was performed on.
      *
@@ -1769,12 +1793,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or set of individuals the action is being or was performed on.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1785,7 +1809,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information supporting the this charge.
      *
@@ -1799,12 +1823,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information supporting the this charge.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation = null)
     {
@@ -1815,12 +1839,12 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Further information supporting the this charge.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $supportingInformation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRChargeItem
+     * @return static
      */
     public function setSupportingInformation(array $supportingInformation = [])
     {

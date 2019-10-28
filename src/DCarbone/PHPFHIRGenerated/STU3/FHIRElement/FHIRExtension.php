@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * Optional Extension Element - found in all resources.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRExtension
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -86,7 +86,7 @@ class FHIRExtension extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXTENSION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_URL = 'url';
     const FIELD_VALUE_ADDRESS = 'valueAddress';
@@ -150,7 +150,8 @@ class FHIRExtension extends FHIRElement
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
@@ -158,73 +159,79 @@ class FHIRExtension extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
-    private $valueAddress = null;
+    protected $valueAddress = null;
+
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $valueAge = null;
+    protected $valueAge = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation
      */
-    private $valueAnnotation = null;
+    protected $valueAnnotation = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
-    private $valueAttachment = null;
+    protected $valueAttachment = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
-    private $valueBase64Binary = null;
+    protected $valueBase64Binary = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $valueBoolean = null;
+    protected $valueBoolean = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -232,132 +239,143 @@ class FHIRExtension extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $valueCode = null;
+    protected $valueCode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $valueCodeableConcept = null;
+    protected $valueCodeableConcept = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $valueCoding = null;
+    protected $valueCoding = null;
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint
      */
-    private $valueContactPoint = null;
+    protected $valueContactPoint = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount
      */
-    private $valueCount = null;
+    protected $valueCount = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    private $valueDate = null;
+    protected $valueDate = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $valueDateTime = null;
+    protected $valueDateTime = null;
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    private $valueDecimal = null;
+    protected $valueDecimal = null;
+
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    private $valueDistance = null;
+    protected $valueDistance = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $valueDuration = null;
+    protected $valueDuration = null;
+
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
-    private $valueHumanName = null;
+    protected $valueHumanName = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -365,42 +383,46 @@ class FHIRExtension extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $valueId = null;
+    protected $valueId = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $valueIdentifier = null;
+    protected $valueIdentifier = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $valueInstant = null;
+    protected $valueInstant = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
-    private $valueInteger = null;
+    protected $valueInteger = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -409,7 +431,7 @@ class FHIRExtension extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -417,35 +439,38 @@ class FHIRExtension extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $valueMarkdown = null;
+    protected $valueMarkdown = null;
+
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
      */
-    private $valueMeta = null;
+    protected $valueMeta = null;
+
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    private $valueMoney = null;
+    protected $valueMoney = null;
+
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -453,21 +478,23 @@ class FHIRExtension extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
-    private $valueOid = null;
+    protected $valueOid = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $valuePeriod = null;
+    protected $valuePeriod = null;
+
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -475,101 +502,110 @@ class FHIRExtension extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
-    private $valuePositiveInt = null;
+    protected $valuePositiveInt = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    private $valueQuantity = null;
+    protected $valueQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
-    private $valueRange = null;
+    protected $valueRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
-    private $valueRatio = null;
+    protected $valueRatio = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $valueReference = null;
+    protected $valueReference = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData
      */
-    private $valueSampledData = null;
+    protected $valueSampledData = null;
+
     /**
      * A digital signature along with supporting context. The signature may be
      * electronic/cryptographic in nature, or a graphical image representing a
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
-    private $valueSignature = null;
+    protected $valueSignature = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $valueString = null;
+    protected $valueString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $valueTime = null;
+    protected $valueTime = null;
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
@@ -577,17 +613,18 @@ class FHIRExtension extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    private $valueTiming = null;
+    protected $valueTiming = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -595,18 +632,19 @@ class FHIRExtension extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $valueUnsignedInt = null;
+    protected $valueUnsignedInt = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $valueUri = null;
+    protected $valueUri = null;
 
     /**
      * FHIRExtension Constructor
@@ -1008,7 +1046,7 @@ class FHIRExtension extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -1045,7 +1083,7 @@ class FHIRExtension extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1068,7 +1106,7 @@ class FHIRExtension extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1087,13 +1125,13 @@ class FHIRExtension extends FHIRElement
      * valid for mail delivery. There are a variety of postal address formats defined
      * around the world.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress $valueAddress
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueAddress(FHIRAddress $valueAddress = null)
     {
@@ -1104,7 +1142,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1119,13 +1157,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A duration of time during which an organism (or a process) has existed.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge $valueAge
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueAge(FHIRAge $valueAge = null)
     {
@@ -1137,7 +1175,7 @@ class FHIRExtension extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1153,13 +1191,13 @@ class FHIRExtension extends FHIRElement
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $valueAnnotation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueAnnotation(FHIRAnnotation $valueAnnotation = null)
     {
@@ -1170,7 +1208,7 @@ class FHIRExtension extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1185,13 +1223,13 @@ class FHIRExtension extends FHIRElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $valueAttachment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueAttachment(FHIRAttachment $valueAttachment = null)
     {
@@ -1202,7 +1240,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1217,13 +1255,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueBase64Binary($valueBase64Binary = null)
     {
@@ -1241,7 +1279,7 @@ class FHIRExtension extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1255,13 +1293,13 @@ class FHIRExtension extends FHIRElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $valueBoolean
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueBoolean($valueBoolean = null)
     {
@@ -1280,7 +1318,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -1296,14 +1334,14 @@ class FHIRExtension extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $valueCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueCode($valueCode = null)
     {
@@ -1323,7 +1361,7 @@ class FHIRExtension extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1339,13 +1377,13 @@ class FHIRExtension extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
     {
@@ -1356,7 +1394,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1371,13 +1409,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $valueCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueCoding(FHIRCoding $valueCoding = null)
     {
@@ -1389,7 +1427,7 @@ class FHIRExtension extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1405,13 +1443,13 @@ class FHIRExtension extends FHIRElement
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint $valueContactPoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueContactPoint(FHIRContactPoint $valueContactPoint = null)
     {
@@ -1424,7 +1462,7 @@ class FHIRExtension extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1441,13 +1479,13 @@ class FHIRExtension extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount $valueCount
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueCount(FHIRCount $valueCount = null)
     {
@@ -1459,7 +1497,7 @@ class FHIRExtension extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1475,13 +1513,13 @@ class FHIRExtension extends FHIRElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $valueDate
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueDate($valueDate = null)
     {
@@ -1503,7 +1541,7 @@ class FHIRExtension extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1521,13 +1559,13 @@ class FHIRExtension extends FHIRElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $valueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueDateTime($valueDateTime = null)
     {
@@ -1547,7 +1585,7 @@ class FHIRExtension extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1563,13 +1601,13 @@ class FHIRExtension extends FHIRElement
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $valueDecimal
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueDecimal($valueDecimal = null)
     {
@@ -1588,7 +1626,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1603,13 +1641,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A length - a value with a unit that is a physical distance.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueDistance(FHIRDistance $valueDistance = null)
     {
@@ -1620,7 +1658,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1635,13 +1673,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueDuration(FHIRDuration $valueDuration = null)
     {
@@ -1652,7 +1690,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1667,13 +1705,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName $valueHumanName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueHumanName(FHIRHumanName $valueHumanName = null)
     {
@@ -1686,7 +1724,7 @@ class FHIRExtension extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -1704,14 +1742,14 @@ class FHIRExtension extends FHIRElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $valueId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueId($valueId = null)
     {
@@ -1730,7 +1768,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1745,13 +1783,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $valueIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueIdentifier(FHIRIdentifier $valueIdentifier = null)
     {
@@ -1764,7 +1802,7 @@ class FHIRExtension extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1781,13 +1819,13 @@ class FHIRExtension extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $valueInstant
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueInstant($valueInstant = null)
     {
@@ -1806,7 +1844,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1821,13 +1859,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $valueInteger
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueInteger($valueInteger = null)
     {
@@ -1851,7 +1889,7 @@ class FHIRExtension extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -1872,14 +1910,14 @@ class FHIRExtension extends FHIRElement
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueMarkdown($valueMarkdown = null)
     {
@@ -1900,7 +1938,7 @@ class FHIRExtension extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1917,13 +1955,13 @@ class FHIRExtension extends FHIRElement
      * maintained by the infrastructure. Changes to the content may not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta $valueMeta
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueMeta(FHIRMeta $valueMeta = null)
     {
@@ -1934,7 +1972,7 @@ class FHIRExtension extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -1949,13 +1987,13 @@ class FHIRExtension extends FHIRElement
     /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $valueMoney
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueMoney(FHIRMoney $valueMoney = null)
     {
@@ -1966,7 +2004,7 @@ class FHIRExtension extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -1982,14 +2020,14 @@ class FHIRExtension extends FHIRElement
     /**
      * An OID represented as a URI
      * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid $valueOid
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueOid($valueOid = null)
     {
@@ -2008,7 +2046,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2023,13 +2061,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $valuePeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValuePeriod(FHIRPeriod $valuePeriod = null)
     {
@@ -2039,7 +2077,7 @@ class FHIRExtension extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -2054,14 +2092,14 @@ class FHIRExtension extends FHIRElement
 
     /**
      * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValuePositiveInt($valuePositiveInt = null)
     {
@@ -2082,7 +2120,7 @@ class FHIRExtension extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2099,13 +2137,13 @@ class FHIRExtension extends FHIRElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $valueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
@@ -2116,7 +2154,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2131,13 +2169,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange $valueRange
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueRange(FHIRRange $valueRange = null)
     {
@@ -2149,7 +2187,7 @@ class FHIRExtension extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2165,13 +2203,13 @@ class FHIRExtension extends FHIRElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $valueRatio
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueRatio(FHIRRatio $valueRatio = null)
     {
@@ -2182,7 +2220,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2197,13 +2235,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $valueReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueReference(FHIRReference $valueReference = null)
     {
@@ -2215,7 +2253,7 @@ class FHIRExtension extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2231,13 +2269,13 @@ class FHIRExtension extends FHIRElement
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData $valueSampledData
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueSampledData(FHIRSampledData $valueSampledData = null)
     {
@@ -2251,7 +2289,7 @@ class FHIRExtension extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2269,13 +2307,13 @@ class FHIRExtension extends FHIRElement
      * hand-written signature, or a signature process. Different signature approaches
      * have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature $valueSignature
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueSignature(FHIRSignature $valueSignature = null)
     {
@@ -2286,7 +2324,7 @@ class FHIRExtension extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2301,13 +2339,13 @@ class FHIRExtension extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $valueString
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueString($valueString = null)
     {
@@ -2325,7 +2363,7 @@ class FHIRExtension extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2339,13 +2377,13 @@ class FHIRExtension extends FHIRElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $valueTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueTime($valueTime = null)
     {
@@ -2368,7 +2406,7 @@ class FHIRExtension extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2387,13 +2425,13 @@ class FHIRExtension extends FHIRElement
      * planning care of various kinds, and may be used for reporting the schedule to
      * which past regular activities were carried out.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $valueTiming
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueTiming(FHIRTiming $valueTiming = null)
     {
@@ -2403,7 +2441,7 @@ class FHIRExtension extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
@@ -2418,14 +2456,14 @@ class FHIRExtension extends FHIRElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueUnsignedInt($valueUnsignedInt = null)
     {
@@ -2444,7 +2482,7 @@ class FHIRExtension extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
@@ -2459,13 +2497,13 @@ class FHIRExtension extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $valueUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension
+     * @return static
      */
     public function setValueUri($valueUri = null)
     {

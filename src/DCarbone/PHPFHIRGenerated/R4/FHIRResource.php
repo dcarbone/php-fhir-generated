@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ID = 'id';
     const FIELD_ID_EXT = '_id';
@@ -96,7 +96,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The logical id of the resource, as used in the URL for the resource. Once
@@ -104,11 +104,12 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $id = null;
+    protected $id = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a set of rules that were followed when the resource was
      * constructed, and which must be understood when processing the content. Often,
@@ -117,24 +118,26 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $implicitRules = null;
+    protected $implicitRules = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $language = null;
+    protected $language = null;
+
     /**
      * The metadata about a resource. This is content in the resource that is
      * maintained by the infrastructure. Changes to the content might not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
@@ -142,7 +145,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
      */
-    private $meta = null;
+    protected $meta = null;
 
     /**
      * FHIRResource Constructor
@@ -222,7 +225,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -254,7 +257,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The logical id of the resource, as used in the URL for the resource. Once
@@ -272,14 +275,14 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $id
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource
+     * @return static
      */
     public function setId($id = null)
     {
@@ -298,7 +301,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a set of rules that were followed when the resource was
      * constructed, and which must be understood when processing the content. Often,
@@ -315,7 +318,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a set of rules that were followed when the resource was
      * constructed, and which must be understood when processing the content. Often,
@@ -323,7 +326,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * along with other profiles etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $implicitRules
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource
+     * @return static
      */
     public function setImplicitRules($implicitRules = null)
     {
@@ -342,7 +345,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
@@ -357,13 +360,13 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $language
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource
+     * @return static
      */
     public function setLanguage($language = null)
     {
@@ -384,7 +387,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * maintained by the infrastructure. Changes to the content might not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
@@ -402,14 +405,14 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * maintained by the infrastructure. Changes to the content might not always be
      * associated with version changes to the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
      * version changes to the resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $meta
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource
+     * @return static
      */
     public function setMeta(FHIRMeta $meta = null)
     {

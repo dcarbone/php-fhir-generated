@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
 /**
  * A time during the day, with no date specified
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRTime
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
@@ -80,14 +80,15 @@ class FHIRTime extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIME;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRTimePrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRTime Constructor
@@ -135,7 +136,7 @@ class FHIRTime extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -171,7 +172,7 @@ class FHIRTime extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRTimePrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
+     * @return static
      */
     public function setValue($value = null)
     {

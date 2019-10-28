@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRReque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REQUEST_GROUP_DOT_RELATED_ACTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION_ID = 'actionId';
     const FIELD_ACTION_ID_EXT = '_actionId';
@@ -97,45 +97,48 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $actionId = null;
+    protected $actionId = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before. (choose any one of offset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $offsetDuration = null;
+    protected $offsetDuration = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before. (choose any one of offset*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    private $offsetRange = null;
+    protected $offsetRange = null;
+
     /**
      * Defines the types of relationships between actions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionRelationshipType
      */
-    private $relationship = null;
+    protected $relationship = null;
 
     /**
      * FHIRRequestGroupRelatedAction Constructor
@@ -211,7 +214,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -243,7 +246,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
@@ -260,13 +263,13 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $actionId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @return static
      */
     public function setActionId($actionId = null)
     {
@@ -285,7 +288,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before. (choose any one of offset*, but only one)
@@ -300,13 +303,13 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before. (choose any one of offset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @return static
      */
     public function setOffsetDuration(FHIRDuration $offsetDuration = null)
     {
@@ -317,7 +320,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before. (choose any one of offset*, but only one)
@@ -332,13 +335,13 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before. (choose any one of offset*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $offsetRange
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @return static
      */
     public function setOffsetRange(FHIRRange $offsetRange = null)
     {
@@ -348,7 +351,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
 
     /**
      * Defines the types of relationships between actions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
      *
@@ -361,12 +364,12 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
 
     /**
      * Defines the types of relationships between actions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionRelationshipType $relationship
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
+     * @return static
      */
     public function setRelationship(FHIRActionRelationshipType $relationship = null)
     {

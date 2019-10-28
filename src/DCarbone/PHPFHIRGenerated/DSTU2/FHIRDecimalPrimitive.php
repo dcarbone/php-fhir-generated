@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,10 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     /** @var null|float */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRDecimalPrimitive Constructor
@@ -89,7 +89,7 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
     }
     /**
      * @param null|float|string $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRDecimalPrimitive
+     * @return static
      */
     public function setValue($value)
     {
@@ -138,7 +138,7 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRDecimalPrimitive
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {

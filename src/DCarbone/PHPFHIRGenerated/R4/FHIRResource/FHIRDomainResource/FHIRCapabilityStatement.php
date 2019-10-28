@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * Server for a particular version of FHIR that may be used as a statement of
  * actual server functionality or a statement of required or desired server
  * implementation.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCapabilityStatement
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -101,7 +101,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTACT = 'contact';
     const FIELD_COPYRIGHT = 'copyright';
@@ -151,21 +151,22 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the capability statement and/or its contents.
@@ -174,14 +175,15 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the capability statement was published. The
      * date must change when the business version changes and it must change if the
@@ -190,14 +192,15 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the capability statement from a
@@ -207,7 +210,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -218,10 +222,11 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
      */
-    private $document = [];
+    protected $document = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
@@ -229,9 +234,10 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
@@ -239,11 +245,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion
      */
-    private $fhirVersion = null;
+    protected $fhirVersion = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
@@ -251,7 +258,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
-    private $format = [];
+    protected $format = [];
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -264,11 +272,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
-    private $implementation = null;
+    protected $implementation = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of implementation guides that the server does (or should) support in
@@ -276,11 +285,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $implementationGuide = [];
+    protected $implementationGuide = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -290,11 +300,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $imports = [];
+    protected $imports = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -305,22 +316,24 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $instantiates = [];
+    protected $instantiates = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * How a capability statement is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
@@ -328,7 +341,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -339,11 +353,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
      */
-    private $messaging = [];
+    protected $messaging = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
@@ -351,11 +366,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the patch formats supported by this implementation using their content
@@ -363,25 +379,27 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
-    private $patchFormat = [];
+    protected $patchFormat = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the capability
      * statement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this capability statement is needed and why it has been
@@ -389,7 +407,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -400,7 +419,8 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
      */
-    private $rest = [];
+    protected $rest = [];
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server for a particular version of FHIR that may be used as a statement of
@@ -413,30 +433,33 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
-    private $software = null;
+    protected $software = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this capability statement when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -448,14 +471,15 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -465,11 +489,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the capability statement
      * when it is referenced in a specification, model, design or instance. This is an
@@ -480,7 +505,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRCapabilityStatement Constructor
@@ -888,7 +913,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -926,7 +951,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -941,13 +966,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -958,13 +983,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -988,7 +1013,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the capability statement and/or its contents.
@@ -1008,7 +1033,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the capability statement and/or its contents.
@@ -1016,7 +1041,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * of the capability statement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1038,7 +1063,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the capability statement was published. The
      * date must change when the business version changes and it must change if the
@@ -1058,7 +1083,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the capability statement was published. The
      * date must change when the business version changes and it must change if the
@@ -1066,7 +1091,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * of the capability statement changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1088,7 +1113,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the capability statement from a
@@ -1109,7 +1134,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the capability statement from a
@@ -1118,7 +1143,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * expression of requirements as part of an RFP.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1158,7 +1183,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A document definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $document
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addDocument(FHIRCapabilityStatementDocument $document = null)
     {
@@ -1175,7 +1200,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A document definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[] $document
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setDocument(array $document = [])
     {
@@ -1195,7 +1220,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
@@ -1210,14 +1235,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1234,7 +1259,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
@@ -1248,14 +1273,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
      * There is no default value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setFhirVersion(FHIRFHIRVersion $fhirVersion = null)
     {
@@ -1266,7 +1291,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
@@ -1282,14 +1307,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
      * types.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $format
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addFormat($format = null)
     {
@@ -1308,14 +1333,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
      * types.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $format
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setFormat(array $format = [])
     {
@@ -1361,7 +1386,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * capabilities of a software program.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setImplementation(FHIRCapabilityStatementImplementation $implementation = null)
     {
@@ -1372,7 +1397,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of implementation guides that the server does (or should) support in
@@ -1388,14 +1413,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $implementationGuide
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addImplementationGuide($implementationGuide = null)
     {
@@ -1414,14 +1439,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $implementationGuide
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setImplementationGuide(array $implementationGuide = [])
     {
@@ -1442,7 +1467,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -1460,7 +1485,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -1469,7 +1494,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * resources, interactions and operations to add additional details to them.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $imports
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addImports($imports = null)
     {
@@ -1488,7 +1513,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -1497,7 +1522,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * resources, interactions and operations to add additional details to them.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $imports
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setImports(array $imports = [])
     {
@@ -1518,7 +1543,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -1537,7 +1562,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -1547,7 +1572,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * must specify the full capability details.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $instantiates
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addInstantiates($instantiates = null)
     {
@@ -1566,7 +1591,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Reference to a canonical URL of another CapabilityStatement that this software
@@ -1576,7 +1601,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * must specify the full capability details.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $instantiates
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setInstantiates(array $instantiates = [])
     {
@@ -1598,7 +1623,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
@@ -1614,13 +1639,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -1632,13 +1657,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -1658,7 +1683,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * How a capability statement is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
@@ -1673,14 +1698,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * How a capability statement is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind $kind
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setKind(FHIRCapabilityStatementKind $kind = null)
     {
@@ -1712,7 +1737,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A description of the messaging capabilities of the solution.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $messaging
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addMessaging(FHIRCapabilityStatementMessaging $messaging = null)
     {
@@ -1729,7 +1754,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A description of the messaging capabilities of the solution.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[] $messaging
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setMessaging(array $messaging = [])
     {
@@ -1750,7 +1775,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
@@ -1766,14 +1791,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1792,7 +1817,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the patch formats supported by this implementation using their content
@@ -1808,14 +1833,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $patchFormat
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addPatchFormat($patchFormat = null)
     {
@@ -1834,14 +1859,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $patchFormat
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setPatchFormat(array $patchFormat = [])
     {
@@ -1862,7 +1887,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the capability
      * statement.
@@ -1877,13 +1902,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the capability
      * statement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1905,7 +1930,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this capability statement is needed and why it has been
@@ -1924,14 +1949,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explanation of why this capability statement is needed and why it has been
      * designed as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -1971,7 +1996,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A definition of the restful capabilities of the solution, if any.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest $rest
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addRest(FHIRCapabilityStatementRest $rest = null)
     {
@@ -1988,7 +2013,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * A definition of the restful capabilities of the solution, if any.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[] $rest
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setRest(array $rest = [])
     {
@@ -2034,7 +2059,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * version, independent of an installation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setSoftware(FHIRCapabilityStatementSoftware $software = null)
     {
@@ -2043,7 +2068,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
@@ -2056,13 +2081,13 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -2073,7 +2098,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
      *
@@ -2087,12 +2112,12 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -2111,7 +2136,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this capability statement when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -2131,7 +2156,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this capability statement when it is
      * referenced in a specification, model, design or an instance; also called its
@@ -2142,7 +2167,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * servers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -2164,7 +2189,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2185,7 +2210,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2194,7 +2219,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * statement instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -2208,7 +2233,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These contexts may be general categories (gender, age, ...) or
@@ -2217,7 +2242,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * statement instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -2238,7 +2263,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the capability statement
      * when it is referenced in a specification, model, design or instance. This is an
@@ -2257,7 +2282,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the capability statement
      * when it is referenced in a specification, model, design or instance. This is an
@@ -2267,7 +2292,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * be placed in a lexicographical sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
+     * @return static
      */
     public function setVersion($version = null)
     {

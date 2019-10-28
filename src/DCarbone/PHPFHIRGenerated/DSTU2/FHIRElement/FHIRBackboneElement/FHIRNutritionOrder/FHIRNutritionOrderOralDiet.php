@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ORAL_DIET;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FLUID_CONSISTENCY_TYPE = 'fluidConsistencyType';
     const FIELD_INSTRUCTION = 'instruction';
@@ -96,24 +96,26 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $fluidConsistencyType = [];
+    protected $fluidConsistencyType = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $instruction = null;
+    protected $instruction = null;
+
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
@@ -123,20 +125,22 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
      */
-    private $nutrient = [];
+    protected $nutrient = [];
+
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are expected or requested to occur. The most common usage is
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the diet should be given.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming[]
      */
-    private $schedule = [];
+    protected $schedule = [];
+
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
@@ -146,19 +150,20 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
      */
-    private $texture = [];
+    protected $texture = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    private $type = [];
+    protected $type = [];
 
     /**
      * FHIRNutritionOrderOralDiet Constructor
@@ -283,7 +288,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -314,7 +319,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
@@ -330,13 +335,13 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $fluidConsistencyType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function addFluidConsistencyType(FHIRCodeableConcept $fluidConsistencyType = null)
     {
@@ -348,13 +353,13 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $fluidConsistencyType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function setFluidConsistencyType(array $fluidConsistencyType = [])
     {
@@ -375,7 +380,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
      *
@@ -389,12 +394,12 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $instruction
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function setInstruction($instruction = null)
     {
@@ -432,7 +437,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * the oral diet.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient $nutrient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function addNutrient(FHIRNutritionOrderNutrient $nutrient = null)
     {
@@ -448,7 +453,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * the oral diet.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient[] $nutrient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function setNutrient(array $nutrient = [])
     {
@@ -472,7 +477,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the diet should be given.
      *
@@ -489,12 +494,12 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the diet should be given.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming $schedule
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function addSchedule(FHIRTiming $schedule = null)
     {
@@ -508,12 +513,12 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * in dosage instructions for medications. They are also used when planning care of
      * various kinds.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period and frequency at which the diet should be given.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming[] $schedule
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function setSchedule(array $schedule = [])
     {
@@ -553,7 +558,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * safely consume various types of solid foods.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture $texture
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function addTexture(FHIRNutritionOrderTexture $texture = null)
     {
@@ -569,7 +574,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * safely consume various types of solid foods.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture[] $texture
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function setTexture(array $texture = [])
     {
@@ -591,7 +596,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
@@ -607,13 +612,13 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type = null)
     {
@@ -625,13 +630,13 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return static
      */
     public function setType(array $type = [])
     {

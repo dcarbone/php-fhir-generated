@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI_CARRIER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CARRIER_AIDC = 'carrierAIDC';
     const FIELD_CARRIER_AIDC_EXT = '_carrierAIDC';
@@ -102,7 +102,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC)
      * technology representation of the barcode string as printed on the packaging of
@@ -112,42 +112,46 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
-    private $carrierAIDC = null;
+    protected $carrierAIDC = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $carrierHRF = null;
+    protected $carrierHRF = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $deviceIdentifier = null;
+    protected $deviceIdentifier = null;
+
     /**
      * Codes to identify how UDI data was entered.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUDIEntryType
      */
-    private $entryType = null;
+    protected $entryType = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Organization that is charged with issuing UDIs for devices. For example, the US
      * FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC:
@@ -157,11 +161,12 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $issuer = null;
+    protected $issuer = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identity of the authoritative source for UDI generation within a
      * jurisdiction. All UDIs are globally unique within a single namespace with the
@@ -170,7 +175,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $jurisdiction = null;
+    protected $jurisdiction = null;
 
     /**
      * FHIRDeviceUdiCarrier Constructor
@@ -280,7 +285,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -310,7 +315,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC)
      * technology representation of the barcode string as printed on the packaging of
@@ -328,7 +333,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC)
      * technology representation of the barcode string as printed on the packaging of
@@ -337,7 +342,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * base64 encoded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $carrierAIDC
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function setCarrierAIDC($carrierAIDC = null)
     {
@@ -356,7 +361,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
@@ -371,13 +376,13 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $carrierHRF
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function setCarrierHRF($carrierHRF = null)
     {
@@ -396,7 +401,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
@@ -411,13 +416,13 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $deviceIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function setDeviceIdentifier($deviceIdentifier = null)
     {
@@ -435,7 +440,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
 
     /**
      * Codes to identify how UDI data was entered.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
      *
@@ -448,12 +453,12 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
 
     /**
      * Codes to identify how UDI data was entered.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUDIEntryType $entryType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function setEntryType(FHIRUDIEntryType $entryType = null)
     {
@@ -464,7 +469,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Organization that is charged with issuing UDIs for devices. For example, the US
      * FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC:
@@ -482,7 +487,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Organization that is charged with issuing UDIs for devices. For example, the US
      * FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC:
@@ -491,7 +496,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $issuer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function setIssuer($issuer = null)
     {
@@ -510,7 +515,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identity of the authoritative source for UDI generation within a
      * jurisdiction. All UDIs are globally unique within a single namespace with the
@@ -527,7 +532,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identity of the authoritative source for UDI generation within a
      * jurisdiction. All UDIs are globally unique within a single namespace with the
@@ -535,7 +540,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
+     * @return static
      */
     public function setJurisdiction($jurisdiction = null)
     {

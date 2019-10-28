@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * This resource is primarily used for the identification and definition of a
  * medication for the purposes of prescribing, dispensing, and administering a
  * medication as well as for making statements about medication use.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedication
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT = 'amount';
     const FIELD_BATCH = 'batch';
@@ -106,7 +106,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific amount of the drug in the packaged product. For example, when
      * specifying a product that has the same strength (For example, Insulin glargine
@@ -115,7 +115,8 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $amount = null;
+    protected $amount = null;
+
     /**
      * This resource is primarily used for the identification and definition of a
      * medication for the purposes of prescribing, dispensing, and administering a
@@ -125,12 +126,13 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch
      */
-    private $batch = null;
+    protected $batch = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that specify this medication, or a textual description
      * if no code is available. Usage note: This could be a standard medication code
@@ -139,29 +141,32 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $form = null;
+    protected $form = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * This resource is primarily used for the identification and definition of a
      * medication for the purposes of prescribing, dispensing, and administering a
@@ -171,27 +176,29 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[]
      */
-    private $ingredient = [];
+    protected $ingredient = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $manufacturer = null;
+    protected $manufacturer = null;
+
     /**
      * A coded concept defining if the medication is in active use.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMedicationStatusCodes
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRMedication Constructor
@@ -313,7 +320,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -352,7 +359,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific amount of the drug in the packaged product. For example, when
      * specifying a product that has the same strength (For example, Insulin glargine
@@ -370,7 +377,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific amount of the drug in the packaged product. For example, when
      * specifying a product that has the same strength (For example, Insulin glargine
@@ -378,7 +385,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * clarification of the package amount (For example, 3 mL, 10mL, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $amount
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setAmount(FHIRRatio $amount = null)
     {
@@ -408,7 +415,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Information that only applies to packages (not products).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch $batch
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setBatch(FHIRMedicationBatch $batch = null)
     {
@@ -420,7 +427,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that specify this medication, or a textual description
      * if no code is available. Usage note: This could be a standard medication code
@@ -438,7 +445,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that specify this medication, or a textual description
      * if no code is available. Usage note: This could be a standard medication code
@@ -446,7 +453,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * local formulary code, optionally with translations to other code systems.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -458,7 +465,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
      *
@@ -473,12 +480,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $form
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setForm(FHIRCodeableConcept $form = null)
     {
@@ -490,7 +497,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
      *
@@ -505,12 +512,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -522,12 +529,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -567,7 +574,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Identifies a particular constituent of interest in the product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function addIngredient(FHIRMedicationIngredient $ingredient = null)
     {
@@ -583,7 +590,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Identifies a particular constituent of interest in the product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[] $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setIngredient(array $ingredient = [])
     {
@@ -604,7 +611,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
@@ -619,13 +626,13 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setManufacturer(FHIRReference $manufacturer = null)
     {
@@ -635,7 +642,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * A coded concept defining if the medication is in active use.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
      *
@@ -648,12 +655,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * A coded concept defining if the medication is in active use.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMedicationStatusCodes $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedication
+     * @return static
      */
     public function setStatus(FHIRMedicationStatusCodes $status = null)
     {

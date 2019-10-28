@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
  * The details of a healthcare service available at a location.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRHealthcareService
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -89,7 +89,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_HEALTHCARE_SERVICE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -128,16 +128,17 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
@@ -145,11 +146,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $appointmentRequired = null;
+    protected $appointmentRequired = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
@@ -157,7 +159,8 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $availabilityExceptions = null;
+    protected $availabilityExceptions = null;
+
     /**
      * The details of a healthcare service available at a location.
      *
@@ -165,33 +168,36 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
      */
-    private $availableTime = [];
+    protected $availableTime = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $category = null;
+    protected $category = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $characteristic = [];
+    protected $characteristic = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
@@ -199,92 +205,101 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $coverageArea = [];
+    protected $coverageArea = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $eligibility = null;
+    protected $eligibility = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $eligibilityNote = null;
+    protected $eligibilityNote = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $endpoint = [];
+    protected $endpoint = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $extraDetails = null;
+    protected $extraDetails = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $location = [];
+    protected $location = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * The details of a healthcare service available at a location.
      *
@@ -293,96 +308,104 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
      */
-    private $notAvailable = [];
+    protected $notAvailable = [];
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
-    private $photo = null;
+    protected $photo = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
-    private $programName = [];
+    protected $programName = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $providedBy = null;
+    protected $providedBy = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $referralMethod = [];
+    protected $referralMethod = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $serviceProvisionCode = [];
+    protected $serviceProvisionCode = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $specialty = [];
+    protected $specialty = [];
+
     /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
-    private $telecom = [];
+    protected $telecom = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $type = [];
+    protected $type = [];
 
     /**
      * FHIRHealthcareService Constructor
@@ -748,7 +771,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -785,7 +808,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
      *
@@ -798,12 +821,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -821,7 +844,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
@@ -836,14 +859,14 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
      * an appointment is required for access to this service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $appointmentRequired
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setAppointmentRequired($appointmentRequired = null)
     {
@@ -862,7 +885,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
@@ -878,14 +901,14 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $availabilityExceptions
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setAvailabilityExceptions($availabilityExceptions = null)
     {
@@ -919,7 +942,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A collection of times that the Service Site is available.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $availableTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addAvailableTime(FHIRHealthcareServiceAvailableTime $availableTime = null)
     {
@@ -933,7 +956,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A collection of times that the Service Site is available.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[] $availableTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setAvailableTime(array $availableTime = [])
     {
@@ -955,7 +978,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
      *
@@ -970,12 +993,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
@@ -987,7 +1010,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
      *
@@ -1002,12 +1025,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $characteristic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addCharacteristic(FHIRCodeableConcept $characteristic = null)
     {
@@ -1019,12 +1042,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $characteristic
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setCharacteristic(array $characteristic = [])
     {
@@ -1045,7 +1068,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
@@ -1061,14 +1084,14 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
      * serviceName.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -1087,7 +1110,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
@@ -1102,13 +1125,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $coverageArea
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addCoverageArea(FHIRReference $coverageArea = null)
     {
@@ -1119,13 +1142,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $coverageArea
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setCoverageArea(array $coverageArea = [])
     {
@@ -1147,7 +1170,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
@@ -1163,13 +1186,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $eligibility
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setEligibility(FHIRCodeableConcept $eligibility = null)
     {
@@ -1180,7 +1203,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
      *
@@ -1194,12 +1217,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $eligibilityNote
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setEligibilityNote($eligibilityNote = null)
     {
@@ -1218,7 +1241,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
@@ -1233,13 +1256,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint = null)
     {
@@ -1250,13 +1273,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setEndpoint(array $endpoint = [])
     {
@@ -1277,7 +1300,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
      *
@@ -1291,12 +1314,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $extraDetails
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setExtraDetails($extraDetails = null)
     {
@@ -1315,7 +1338,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
      *
@@ -1329,12 +1352,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1345,12 +1368,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1371,7 +1394,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
      *
@@ -1385,12 +1408,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $location
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addLocation(FHIRReference $location = null)
     {
@@ -1401,12 +1424,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $location
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setLocation(array $location = [])
     {
@@ -1427,7 +1450,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
@@ -1442,13 +1465,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1484,7 +1507,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * provided reason.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable $notAvailable
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addNotAvailable(FHIRHealthcareServiceNotAvailable $notAvailable = null)
     {
@@ -1499,7 +1522,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * provided reason.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[] $notAvailable
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setNotAvailable(array $notAvailable = [])
     {
@@ -1520,7 +1543,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
@@ -1535,13 +1558,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $photo
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setPhoto(FHIRAttachment $photo = null)
     {
@@ -1552,7 +1575,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
      *
@@ -1566,12 +1589,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $programName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addProgramName($programName = null)
     {
@@ -1590,12 +1613,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[] $programName
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setProgramName(array $programName = [])
     {
@@ -1616,7 +1639,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
      *
@@ -1630,12 +1653,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $providedBy
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setProvidedBy(FHIRReference $providedBy = null)
     {
@@ -1647,7 +1670,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
@@ -1663,13 +1686,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $referralMethod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addReferralMethod(FHIRCodeableConcept $referralMethod = null)
     {
@@ -1681,13 +1704,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $referralMethod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setReferralMethod(array $referralMethod = [])
     {
@@ -1709,7 +1732,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
@@ -1725,13 +1748,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $serviceProvisionCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addServiceProvisionCode(FHIRCodeableConcept $serviceProvisionCode = null)
     {
@@ -1743,13 +1766,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $serviceProvisionCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setServiceProvisionCode(array $serviceProvisionCode = [])
     {
@@ -1771,7 +1794,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
@@ -1787,13 +1810,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $specialty
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty = null)
     {
@@ -1805,13 +1828,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $specialty
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setSpecialty(array $specialty = [])
     {
@@ -1833,7 +1856,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
      *
@@ -1848,12 +1871,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint $telecom
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom = null)
     {
@@ -1865,12 +1888,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[] $telecom
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setTelecom(array $telecom = [])
     {
@@ -1892,7 +1915,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
      *
@@ -1907,12 +1930,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function addType(FHIRCodeableConcept $type = null)
     {
@@ -1924,12 +1947,12 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRHealthcareService
+     * @return static
      */
     public function setType(array $type = [])
     {

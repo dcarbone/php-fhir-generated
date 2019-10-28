@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_PRODUCT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FORM = 'form';
     const FIELD_INGREDIENT = 'ingredient';
@@ -84,13 +84,14 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tables; carton.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $form = null;
+    protected $form = null;
+
     /**
      * Primarily used for identification and definition of Medication, but also covers
      * ingredients and packaging.
@@ -99,7 +100,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[]
      */
-    private $ingredient = [];
+    protected $ingredient = [];
 
     /**
      * FHIRMedicationProduct Constructor
@@ -159,7 +160,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -190,7 +191,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tables; carton.
      *
@@ -205,12 +206,12 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tables; carton.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $form
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
+     * @return static
      */
     public function setForm(FHIRCodeableConcept $form = null)
     {
@@ -238,7 +239,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * Identifies a particular constituent of interest in the product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
+     * @return static
      */
     public function addIngredient(FHIRMedicationIngredient $ingredient = null)
     {
@@ -253,7 +254,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * Identifies a particular constituent of interest in the product.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[] $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
+     * @return static
      */
     public function setIngredient(array $ingredient = [])
     {

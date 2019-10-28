@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * recognized by a clinician. There are many uses including: recording a Diagnosis
  * during an Encounter; populating a problem List or a Summary Statement, such as a
  * Discharge Summary.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCondition
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -90,7 +90,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONDITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ABATEMENT_AGE = 'abatementAge';
     const FIELD_ABATEMENT_BOOLEAN = 'abatementBoolean';
@@ -128,10 +128,11 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $abatementAge = null;
+    protected $abatementAge = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
@@ -140,12 +141,13 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $abatementBoolean = null;
+    protected $abatementBoolean = null;
+
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
@@ -154,74 +156,81 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    private $abatementDate = null;
+    protected $abatementDate = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who takes responsibility for asserting the existence of the condition as
      * part of the electronic record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $asserter = null;
+    protected $asserter = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category assigned to the condition. E.g. complaint | symptom | finding |
      * diagnosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $category = null;
+    protected $category = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The degree of confidence that this condition is correct.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $certainty = null;
+    protected $certainty = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition/problem/diagnosis was first
      * detected/suspected.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    private $dateAsserted = null;
+    protected $dateAsserted = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which the condition was first asserted.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * Use to record detailed information about conditions, problems or diagnoses
      * recognized by a clinician. There are many uses including: recording a Diagnosis
@@ -233,11 +242,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence[]
      */
-    private $evidence = [];
+    protected $evidence = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this condition that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -246,7 +256,8 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * Use to record detailed information about conditions, problems or diagnoses
      * recognized by a clinician. There are many uses including: recording a Diagnosis
@@ -257,34 +268,38 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionLocation[]
      */
-    private $location = [];
+    protected $location = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $notes = null;
+    protected $notes = null;
+
     /**
      * Estimated or actual date the condition began, in the opinion of the clinician.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
      */
-    private $onsetAge = null;
+    protected $onsetAge = null;
+
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition began, in the opinion of the clinician.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    private $onsetDate = null;
+    protected $onsetDate = null;
+
     /**
      * Use to record detailed information about conditions, problems or diagnoses
      * recognized by a clinician. There are many uses including: recording a Diagnosis
@@ -297,19 +312,21 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionRelatedItem[]
      */
-    private $relatedItem = [];
+    protected $relatedItem = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $severity = null;
+    protected $severity = null;
+
     /**
      * Use to record detailed information about conditions, problems or diagnoses
      * recognized by a clinician. There are many uses including: recording a Diagnosis
@@ -320,26 +337,28 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage
      */
-    private $stage = null;
+    protected $stage = null;
+
     /**
      * The clinical status of the Condition or diagnosis
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the condition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRConditionStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient who the condition record is associated with.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRCondition Constructor
@@ -586,7 +605,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -641,7 +660,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * resolved, but they can abate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setAbatementAge(FHIRAge $abatementAge = null)
     {
@@ -651,7 +670,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
@@ -667,7 +686,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
@@ -675,7 +694,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * resolved, but they can abate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $abatementBoolean
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setAbatementBoolean($abatementBoolean = null)
     {
@@ -695,7 +714,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
@@ -713,7 +732,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or estimated date that the condition resolved or went into remission.
      * This is called "abatement" because of the many overloaded connotations
@@ -721,7 +740,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * resolved, but they can abate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $abatementDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setAbatementDate($abatementDate = null)
     {
@@ -740,7 +759,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who takes responsibility for asserting the existence of the condition as
      * part of the electronic record.
@@ -755,13 +774,13 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who takes responsibility for asserting the existence of the condition as
      * part of the electronic record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $asserter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setAsserter(FHIRResourceReference $asserter = null)
     {
@@ -773,7 +792,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category assigned to the condition. E.g. complaint | symptom | finding |
      * diagnosis.
@@ -789,13 +808,13 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category assigned to the condition. E.g. complaint | symptom | finding |
      * diagnosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
@@ -807,7 +826,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The degree of confidence that this condition is correct.
      *
@@ -822,12 +841,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The degree of confidence that this condition is correct.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $certainty
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setCertainty(FHIRCodeableConcept $certainty = null)
     {
@@ -839,7 +858,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
      *
@@ -854,12 +873,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -871,7 +890,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition/problem/diagnosis was first
      * detected/suspected.
@@ -887,13 +906,13 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition/problem/diagnosis was first
      * detected/suspected.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $dateAsserted
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setDateAsserted($dateAsserted = null)
     {
@@ -912,7 +931,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which the condition was first asserted.
      *
@@ -926,12 +945,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which the condition was first asserted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setEncounter(FHIRResourceReference $encounter = null)
     {
@@ -965,7 +984,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * is suspected or confirmed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence $evidence
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function addEvidence(FHIRConditionEvidence $evidence = null)
     {
@@ -983,7 +1002,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * is suspected or confirmed.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence[] $evidence
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setEvidence(array $evidence = [])
     {
@@ -1004,7 +1023,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this condition that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -1021,7 +1040,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this condition that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -1029,7 +1048,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1040,7 +1059,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this condition that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -1048,7 +1067,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1090,7 +1109,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * The anatomical location where this condition manifests itself.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionLocation $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function addLocation(FHIRConditionLocation $location = null)
     {
@@ -1107,7 +1126,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * The anatomical location where this condition manifests itself.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionLocation[] $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setLocation(array $location = [])
     {
@@ -1127,7 +1146,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
@@ -1141,13 +1160,13 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $notes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setNotes($notes = null)
     {
@@ -1177,7 +1196,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Estimated or actual date the condition began, in the opinion of the clinician.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setOnsetAge(FHIRAge $onsetAge = null)
     {
@@ -1189,7 +1208,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition began, in the opinion of the clinician.
      *
@@ -1204,12 +1223,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition began, in the opinion of the clinician.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $onsetDate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setOnsetDate($onsetDate = null)
     {
@@ -1253,7 +1272,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Condition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionRelatedItem $relatedItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function addRelatedItem(FHIRConditionRelatedItem $relatedItem = null)
     {
@@ -1272,7 +1291,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Condition.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionRelatedItem[] $relatedItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setRelatedItem(array $relatedItem = [])
     {
@@ -1294,7 +1313,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
@@ -1310,13 +1329,13 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $severity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setSeverity(FHIRCodeableConcept $severity = null)
     {
@@ -1348,7 +1367,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Clinical stage or grade of a condition. May include formal severity assessments.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage $stage
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setStage(FHIRConditionStage $stage = null)
     {
@@ -1358,7 +1377,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * The clinical status of the Condition or diagnosis
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the condition.
      *
@@ -1371,12 +1390,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * The clinical status of the Condition or diagnosis
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the condition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRConditionStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setStatus(FHIRConditionStatus $status = null)
     {
@@ -1387,7 +1406,7 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient who the condition record is associated with.
      *
@@ -1401,12 +1420,12 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient who the condition record is associated with.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCondition
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {

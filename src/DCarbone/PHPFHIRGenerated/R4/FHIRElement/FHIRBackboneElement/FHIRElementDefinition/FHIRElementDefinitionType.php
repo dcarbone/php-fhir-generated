@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElementDefinitionType
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -84,7 +84,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_TYPE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGGREGATION = 'aggregation';
     const FIELD_AGGREGATION_EXT = '_aggregation';
@@ -99,7 +99,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
@@ -107,11 +107,12 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAggregationMode[]
      */
-    private $aggregation = [];
+    protected $aggregation = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URL of Data type or Resource that is a(or the) type used for this element.
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
@@ -120,11 +121,12 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies a profile structure or implementation Guide that applies to the
@@ -137,11 +139,12 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $profile = [];
+    protected $profile = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Used when the type is "Reference" or "canonical", and identifies a profile
@@ -155,18 +158,19 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $targetProfile = [];
+    protected $targetProfile = [];
+
     /**
      * Whether a reference needs to be version specific or version independent, or
      * whether either can be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReferenceVersionRules
      */
-    private $versioning = null;
+    protected $versioning = null;
 
     /**
      * FHIRElementDefinitionType Constructor
@@ -294,7 +298,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -323,7 +327,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
@@ -338,14 +342,14 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAggregationMode $aggregation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function addAggregation(FHIRAggregationMode $aggregation = null)
     {
@@ -355,14 +359,14 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAggregationMode[] $aggregation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setAggregation(array $aggregation = [])
     {
@@ -383,7 +387,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URL of Data type or Resource that is a(or the) type used for this element.
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
@@ -400,7 +404,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URL of Data type or Resource that is a(or the) type used for this element.
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
@@ -408,7 +412,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Absolute URLs are only allowed in logical models.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -427,7 +431,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies a profile structure or implementation Guide that applies to the
@@ -448,7 +452,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies a profile structure or implementation Guide that applies to the
@@ -460,7 +464,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * implementation guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $profile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function addProfile($profile = null)
     {
@@ -479,7 +483,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identifies a profile structure or implementation Guide that applies to the
@@ -491,7 +495,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * implementation guide.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $profile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setProfile(array $profile = [])
     {
@@ -512,7 +516,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Used when the type is "Reference" or "canonical", and identifies a profile
@@ -534,7 +538,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Used when the type is "Reference" or "canonical", and identifies a profile
@@ -547,7 +551,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * the implementation guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $targetProfile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function addTargetProfile($targetProfile = null)
     {
@@ -566,7 +570,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Used when the type is "Reference" or "canonical", and identifies a profile
@@ -579,7 +583,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * the implementation guide.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $targetProfile
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setTargetProfile(array $targetProfile = [])
     {
@@ -600,7 +604,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * Whether a reference needs to be version specific or version independent, or
      * whether either can be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
@@ -615,13 +619,13 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * Whether a reference needs to be version specific or version independent, or
      * whether either can be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReferenceVersionRules $versioning
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
+     * @return static
      */
     public function setVersioning(FHIRReferenceVersionRules $versioning = null)
     {

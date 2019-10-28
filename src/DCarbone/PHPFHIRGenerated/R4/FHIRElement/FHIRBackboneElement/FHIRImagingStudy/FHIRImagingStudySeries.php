@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_STUDY_DOT_SERIES;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BODY_SITE = 'bodySite';
     const FIELD_DESCRIPTION = 'description';
@@ -111,7 +111,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomic structures examined. See DICOM Part 16 Annex L
      * (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html)
@@ -121,21 +121,23 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
-    private $bodySite = null;
+    protected $bodySite = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for this
      * series. See implementation notes for information about using DICOM endpoints. A
@@ -144,7 +146,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $endpoint = [];
+    protected $endpoint = [];
+
     /**
      * Representation of the content produced in a DICOM imaging study. A study
      * comprises a set of series, each of which includes a set of Service-Object Pair
@@ -156,11 +159,12 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
-    private $instance = [];
+    protected $instance = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the
      * left knee, both lungs, or unpaired abdomen. If present, shall be consistent with
@@ -168,30 +172,33 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
-    private $laterality = null;
+    protected $laterality = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The modality of this series sequence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
-    private $modality = null;
+    protected $modality = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numeric identifier of this series in the study.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $number = null;
+    protected $number = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of SOP Instances in the Study. The value given may be larger than the
@@ -201,7 +208,8 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $numberOfInstances = null;
+    protected $numberOfInstances = null;
+
     /**
      * Representation of the content produced in a DICOM imaging study. A study
      * comprises a set of series, each of which includes a set of Service-Object Pair
@@ -213,43 +221,46 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer[]
      */
-    private $performer = [];
+    protected $performer = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $specimen = [];
+    protected $specimen = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time the series was started.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $started = null;
+    protected $started = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The DICOM Series Instance UID for the series.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $uid = null;
+    protected $uid = null;
 
     /**
      * FHIRImagingStudySeries Constructor
@@ -428,7 +439,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -458,7 +469,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomic structures examined. See DICOM Part 16 Annex L
      * (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html)
@@ -476,7 +487,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomic structures examined. See DICOM Part 16 Annex L
      * (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html)
@@ -485,7 +496,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * ImagingStudy.series.laterality.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setBodySite(FHIRCoding $bodySite = null)
     {
@@ -496,7 +507,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
      *
@@ -510,12 +521,12 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -534,7 +545,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for this
      * series. See implementation notes for information about using DICOM endpoints. A
@@ -551,7 +562,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for this
      * series. See implementation notes for information about using DICOM endpoints. A
@@ -559,7 +570,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * with the same Endpoint.connectionType.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint = null)
     {
@@ -570,7 +581,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The network service providing access (e.g., query, view, or retrieval) for this
      * series. See implementation notes for information about using DICOM endpoints. A
@@ -578,7 +589,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * with the same Endpoint.connectionType.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setEndpoint(array $endpoint = [])
     {
@@ -622,7 +633,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * A single SOP instance within the series, e.g. an image, or presentation state.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance $instance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function addInstance(FHIRImagingStudyInstance $instance = null)
     {
@@ -640,7 +651,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * A single SOP instance within the series, e.g. an image, or presentation state.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance[] $instance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setInstance(array $instance = [])
     {
@@ -661,7 +672,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the
      * left knee, both lungs, or unpaired abdomen. If present, shall be consistent with
@@ -677,14 +688,14 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the
      * left knee, both lungs, or unpaired abdomen. If present, shall be consistent with
      * any laterality information indicated in ImagingStudy.series.bodySite.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $laterality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setLaterality(FHIRCoding $laterality = null)
     {
@@ -695,7 +706,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The modality of this series sequence.
      *
@@ -709,12 +720,12 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The modality of this series sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $modality
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setModality(FHIRCoding $modality = null)
     {
@@ -724,7 +735,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numeric identifier of this series in the study.
@@ -738,13 +749,13 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The numeric identifier of this series in the study.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $number
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setNumber($number = null)
     {
@@ -762,7 +773,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of SOP Instances in the Study. The value given may be larger than the
@@ -779,7 +790,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Number of SOP Instances in the Study. The value given may be larger than the
@@ -788,7 +799,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * elements are present.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $numberOfInstances
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setNumberOfInstances($numberOfInstances = null)
     {
@@ -830,7 +841,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * Indicates who or what performed the series and how they were involved.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer $performer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function addPerformer(FHIRImagingStudyPerformer $performer = null)
     {
@@ -848,7 +859,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * Indicates who or what performed the series and how they were involved.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer[] $performer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setPerformer(array $performer = [])
     {
@@ -869,7 +880,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
      *
@@ -883,12 +894,12 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $specimen
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function addSpecimen(FHIRReference $specimen = null)
     {
@@ -899,12 +910,12 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $specimen
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setSpecimen(array $specimen = [])
     {
@@ -928,7 +939,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time the series was started.
      *
@@ -945,12 +956,12 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time the series was started.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $started
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setStarted($started = null)
     {
@@ -971,7 +982,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The DICOM Series Instance UID for the series.
@@ -988,13 +999,13 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The DICOM Series Instance UID for the series.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $uid
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries
+     * @return static
      */
     public function setUid($uid = null)
     {

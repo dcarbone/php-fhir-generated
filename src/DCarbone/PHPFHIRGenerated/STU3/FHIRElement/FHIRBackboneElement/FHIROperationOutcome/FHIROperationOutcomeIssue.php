@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROpe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OPERATION_OUTCOME_DOT_ISSUE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -99,7 +99,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /**
      * A code that describes the type of issue.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
@@ -107,23 +107,25 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIssueType
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional details about the error. This may be a text description of the error,
      * or a system code that identifies the error.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $details = null;
+    protected $details = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue. Typically, this may be a
      * description of how a value is erroneous, or a stack dump to help trace the
@@ -131,11 +133,12 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $diagnostics = null;
+    protected $diagnostics = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A simple FHIRPath limited to element names, repetition indicators and the
      * default child access that identifies one of the elements in the resource that
@@ -143,11 +146,12 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
-    private $expression = [];
+    protected $expression = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For resource issues, this will be a simple XPath limited to element names,
      * repetition indicators and the default child access that identifies one of the
@@ -156,16 +160,17 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
-    private $location = [];
+    protected $location = [];
+
     /**
      * How the issue affects the success of the action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIssueSeverity
      */
-    private $severity = null;
+    protected $severity = null;
 
     /**
      * FHIROperationOutcomeIssue Constructor
@@ -290,7 +295,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -319,7 +324,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /**
      * A code that describes the type of issue.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
@@ -334,14 +339,14 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /**
      * A code that describes the type of issue.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
      * additional provide its own code for the error in the details element.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIssueType $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function setCode(FHIRIssueType $code = null)
     {
@@ -353,7 +358,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional details about the error. This may be a text description of the error,
      * or a system code that identifies the error.
@@ -369,13 +374,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional details about the error. This may be a text description of the error,
      * or a system code that identifies the error.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $details
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function setDetails(FHIRCodeableConcept $details = null)
     {
@@ -386,7 +391,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue. Typically, this may be a
      * description of how a value is erroneous, or a stack dump to help trace the
@@ -402,14 +407,14 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue. Typically, this may be a
      * description of how a value is erroneous, or a stack dump to help trace the
      * issue.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $diagnostics
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function setDiagnostics($diagnostics = null)
     {
@@ -428,7 +433,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A simple FHIRPath limited to element names, repetition indicators and the
      * default child access that identifies one of the elements in the resource that
@@ -444,14 +449,14 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A simple FHIRPath limited to element names, repetition indicators and the
      * default child access that identifies one of the elements in the resource that
      * caused this issue to be raised.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $expression
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function addExpression($expression = null)
     {
@@ -470,14 +475,14 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A simple FHIRPath limited to element names, repetition indicators and the
      * default child access that identifies one of the elements in the resource that
      * caused this issue to be raised.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[] $expression
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function setExpression(array $expression = [])
     {
@@ -498,7 +503,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For resource issues, this will be a simple XPath limited to element names,
      * repetition indicators and the default child access that identifies one of the
@@ -515,7 +520,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For resource issues, this will be a simple XPath limited to element names,
      * repetition indicators and the default child access that identifies one of the
@@ -523,7 +528,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * will be "http." + the parameter name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $location
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function addLocation($location = null)
     {
@@ -542,7 +547,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For resource issues, this will be a simple XPath limited to element names,
      * repetition indicators and the default child access that identifies one of the
@@ -550,7 +555,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * will be "http." + the parameter name.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[] $location
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function setLocation(array $location = [])
     {
@@ -570,7 +575,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /**
      * How the issue affects the success of the action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
      *
@@ -583,12 +588,12 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /**
      * How the issue affects the success of the action.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIssueSeverity $severity
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
+     * @return static
      */
     public function setSeverity(FHIRIssueSeverity $severity = null)
     {

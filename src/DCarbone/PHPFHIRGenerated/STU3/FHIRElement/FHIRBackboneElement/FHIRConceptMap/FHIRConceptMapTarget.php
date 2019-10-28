@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONCEPT_MAP_DOT_TARGET;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -98,25 +98,27 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $comment = null;
+    protected $comment = null;
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concepts - either code systems or data elements, or classes in class models.
@@ -127,20 +129,22 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    private $dependsOn = [];
+    protected $dependsOn = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
@@ -148,7 +152,8 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConceptMapEquivalence
      */
-    private $equivalence = null;
+    protected $equivalence = null;
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concepts - either code systems or data elements, or classes in class models.
@@ -160,7 +165,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    private $product = [];
+    protected $product = [];
 
     /**
      * FHIRConceptMapTarget Constructor
@@ -276,7 +281,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -306,7 +311,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
@@ -321,13 +326,13 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -346,7 +351,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
@@ -361,13 +366,13 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $comment
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function setComment($comment = null)
     {
@@ -407,7 +412,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function addDependsOn(FHIRConceptMapDependsOn $dependsOn = null)
     {
@@ -424,7 +429,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * value.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $dependsOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function setDependsOn(array $dependsOn = [])
     {
@@ -445,7 +450,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
@@ -460,13 +465,13 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -483,7 +488,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
@@ -497,14 +502,14 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConceptMapEquivalence $equivalence
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function setEquivalence(FHIRConceptMapEquivalence $equivalence = null)
     {
@@ -538,7 +543,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * for the additional data elements, but the equivalence cannot be relied on.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $product
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function addProduct(FHIRConceptMapDependsOn $product = null)
     {
@@ -556,7 +561,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * for the additional data elements, but the equivalence cannot be relied on.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $product
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
+     * @return static
      */
     public function setProduct(array $product = [])
     {

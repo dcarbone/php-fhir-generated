@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A human's name with the ability to identify parts and usage.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRHumanName
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -80,7 +80,7 @@ class FHIRHumanName extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_HUMAN_NAME;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FAMILY = 'family';
     const FIELD_FAMILY_EXT = '_family';
@@ -99,76 +99,82 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $family = null;
+    protected $family = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $given = [];
+    protected $given = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $prefix = [];
+    protected $prefix = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $suffix = [];
+    protected $suffix = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $text = null;
+    protected $text = null;
+
     /**
      * The use of a human name.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNameUse
      */
-    private $use = null;
+    protected $use = null;
 
     /**
      * FHIRHumanName Constructor
@@ -315,7 +321,7 @@ class FHIRHumanName extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -345,7 +351,7 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
@@ -360,13 +366,13 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $family
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setFamily($family = null)
     {
@@ -385,7 +391,7 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
      *
@@ -399,12 +405,12 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $given
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function addGiven($given = null)
     {
@@ -423,12 +429,12 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $given
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setGiven(array $given = [])
     {
@@ -449,7 +455,7 @@ class FHIRHumanName extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
      *
@@ -463,12 +469,12 @@ class FHIRHumanName extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -479,7 +485,7 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
@@ -494,13 +500,13 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $prefix
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function addPrefix($prefix = null)
     {
@@ -519,13 +525,13 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $prefix
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setPrefix(array $prefix = [])
     {
@@ -546,7 +552,7 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
@@ -561,13 +567,13 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $suffix
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function addSuffix($suffix = null)
     {
@@ -586,13 +592,13 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $suffix
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setSuffix(array $suffix = [])
     {
@@ -613,7 +619,7 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
@@ -628,13 +634,13 @@ class FHIRHumanName extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setText($text = null)
     {
@@ -652,7 +658,7 @@ class FHIRHumanName extends FHIRElement
 
     /**
      * The use of a human name.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
      *
@@ -665,12 +671,12 @@ class FHIRHumanName extends FHIRElement
 
     /**
      * The use of a human name.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNameUse $use
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
+     * @return static
      */
     public function setUse(FHIRNameUse $use = null)
     {

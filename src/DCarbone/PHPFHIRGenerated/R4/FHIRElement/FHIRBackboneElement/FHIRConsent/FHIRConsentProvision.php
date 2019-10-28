@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_PROVISION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_ACTOR = 'actor';
@@ -103,13 +103,14 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Rule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $action = [];
+    protected $action = [];
+
     /**
      * A record of a healthcare consumer’s choices, which permits or denies
      * identified recipient(s) or recipient role(s) to perform one or more actions
@@ -120,11 +121,12 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[]
      */
-    private $actor = [];
+    protected $actor = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of information covered by this rule. The type can be a FHIR resource
      * type, a profile on a type, or a CDA document, or some other type that indicates
@@ -132,18 +134,20 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $class = [];
+    protected $class = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the rule applies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * A record of a healthcare consumer’s choices, which permits or denies
      * identified recipient(s) or recipient role(s) to perform one or more actions
@@ -153,28 +157,31 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[]
      */
-    private $data = [];
+    protected $data = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $dataPeriod = null;
+    protected $dataPeriod = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this rule is valid.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * A record of a healthcare consumer’s choices, which permits or denies
      * identified recipient(s) or recipient role(s) to perform one or more actions
@@ -184,40 +191,43 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[]
      */
-    private $provision = [];
+    protected $provision = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $purpose = [];
+    protected $purpose = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $securityLabel = [];
+    protected $securityLabel = [];
+
     /**
      * How a rule statement is applied, such as adding additional consent or removing
      * consent.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the rule conditions are met. Not
      * permitted in root rule, required in all nested rules.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentProvisionType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRConsentProvision Constructor
@@ -401,7 +411,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -432,7 +442,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Rule.
      *
@@ -447,12 +457,12 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Rule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $action
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addAction(FHIRCodeableConcept $action = null)
     {
@@ -464,12 +474,12 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Rule.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $action
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setAction(array $action = [])
     {
@@ -511,7 +521,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * some property they share (e.g. 'admitting officers').
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor $actor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addActor(FHIRConsentActor $actor = null)
     {
@@ -528,7 +538,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * some property they share (e.g. 'admitting officers').
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[] $actor
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setActor(array $actor = [])
     {
@@ -549,7 +559,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of information covered by this rule. The type can be a FHIR resource
      * type, a profile on a type, or a CDA document, or some other type that indicates
@@ -565,14 +575,14 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of information covered by this rule. The type can be a FHIR resource
      * type, a profile on a type, or a CDA document, or some other type that indicates
      * what sort of information the consent relates to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $class
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addClass(FHIRCoding $class = null)
     {
@@ -583,14 +593,14 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of information covered by this rule. The type can be a FHIR resource
      * type, a profile on a type, or a CDA document, or some other type that indicates
      * what sort of information the consent relates to.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $class
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setClass(array $class = [])
     {
@@ -612,7 +622,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the rule applies.
      *
@@ -627,12 +637,12 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the rule applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addCode(FHIRCodeableConcept $code = null)
     {
@@ -644,12 +654,12 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the rule applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -689,7 +699,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The resources controlled by this rule if specific resources are referenced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData $data
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addData(FHIRConsentData $data = null)
     {
@@ -705,7 +715,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The resources controlled by this rule if specific resources are referenced.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[] $data
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setData(array $data = [])
     {
@@ -726,7 +736,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
@@ -741,13 +751,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $dataPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setDataPeriod(FHIRPeriod $dataPeriod = null)
     {
@@ -758,7 +768,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this rule is valid.
      *
@@ -772,12 +782,12 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this rule is valid.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -807,7 +817,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * Rules which provide exceptions to the base rule or subrules.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision $provision
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addProvision(FHIRConsentProvision $provision = null)
     {
@@ -823,7 +833,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * Rules which provide exceptions to the base rule or subrules.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[] $provision
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setProvision(array $provision = [])
     {
@@ -844,7 +854,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
@@ -859,13 +869,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addPurpose(FHIRCoding $purpose = null)
     {
@@ -876,13 +886,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $purpose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setPurpose(array $purpose = [])
     {
@@ -903,7 +913,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
@@ -918,13 +928,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $securityLabel
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function addSecurityLabel(FHIRCoding $securityLabel = null)
     {
@@ -935,13 +945,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $securityLabel
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setSecurityLabel(array $securityLabel = [])
     {
@@ -962,7 +972,7 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * How a rule statement is applied, such as adding additional consent or removing
      * consent.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the rule conditions are met. Not
      * permitted in root rule, required in all nested rules.
@@ -977,13 +987,13 @@ class FHIRConsentProvision extends FHIRBackboneElement
     /**
      * How a rule statement is applied, such as adding additional consent or removing
      * consent.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the rule conditions are met. Not
      * permitted in root rule, required in all nested rules.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentProvisionType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
+     * @return static
      */
     public function setType(FHIRConsentProvisionType $type = null)
     {

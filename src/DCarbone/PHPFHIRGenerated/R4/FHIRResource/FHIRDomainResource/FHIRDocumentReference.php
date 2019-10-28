@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * document is any seralized object with a mime-type, so includes formal patient
  * centric documents (CDA), cliical notes, scanned paper, and non-patient specific
  * documents like policy text.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDocumentReference
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -94,7 +94,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOCUMENT_REFERENCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHENTICATOR = 'authenticator';
     const FIELD_AUTHOR = 'author';
@@ -122,28 +122,30 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $authenticator = null;
+    protected $authenticator = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $author = [];
+    protected $author = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
@@ -151,7 +153,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $category = [];
+    protected $category = [];
+
     /**
      * A reference to a document of any kind for any purpose. Provides metadata about
      * the document so that the document can be discovered and managed. The scope of a
@@ -164,7 +167,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
-    private $content = [];
+    protected $content = [];
+
     /**
      * A reference to a document of any kind for any purpose. Provides metadata about
      * the document so that the document can be discovered and managed. The scope of a
@@ -176,67 +180,73 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
-    private $context = null;
+    protected $context = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $custodian = null;
+    protected $custodian = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * The workflow/clinical status of the composition.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the underlying document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCompositionStatus
      */
-    private $docStatus = null;
+    protected $docStatus = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent
      * identifiers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
@@ -244,7 +254,8 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $masterIdentifier = null;
+    protected $masterIdentifier = null;
+
     /**
      * A reference to a document of any kind for any purpose. Provides metadata about
      * the document so that the document can be discovered and managed. The scope of a
@@ -257,12 +268,13 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
-    private $relatesTo = [];
+    protected $relatesTo = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of Security-Tag codes specifying the level of privacy/security of the
      * Document. Note that DocumentReference.meta.security contains the security labels
@@ -272,19 +284,21 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $securityLabel = [];
+    protected $securityLabel = [];
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDocumentReferenceStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the document is about. The document can be about a person, (patient
      * or healthcare practitioner), a device (e.g. a machine) or even a group of
@@ -293,12 +307,13 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
@@ -306,7 +321,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRDocumentReference Constructor
@@ -536,7 +551,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -574,7 +589,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
      *
@@ -588,12 +603,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $authenticator
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setAuthenticator(FHIRReference $authenticator = null)
     {
@@ -604,7 +619,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
@@ -618,12 +633,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function addAuthor(FHIRReference $author = null)
     {
@@ -634,12 +649,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setAuthor(array $author = [])
     {
@@ -661,7 +676,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
@@ -678,14 +693,14 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category = null)
     {
@@ -697,14 +712,14 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setCategory(array $category = [])
     {
@@ -750,7 +765,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * repetitions, each with a different format.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent $content
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function addContent(FHIRDocumentReferenceContent $content = null)
     {
@@ -769,7 +784,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * repetitions, each with a different format.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent[] $content
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setContent(array $content = [])
     {
@@ -813,7 +828,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * The clinical context in which the document was prepared.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $context
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setContext(FHIRDocumentReferenceContext $context = null)
     {
@@ -824,7 +839,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
@@ -839,13 +854,13 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $custodian
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setCustodian(FHIRReference $custodian = null)
     {
@@ -859,7 +874,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
      *
@@ -876,12 +891,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -900,7 +915,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document.
      *
@@ -914,12 +929,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -937,7 +952,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * The workflow/clinical status of the composition.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the underlying document.
      *
@@ -950,12 +965,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
 
     /**
      * The workflow/clinical status of the composition.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the underlying document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCompositionStatus $docStatus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setDocStatus(FHIRCompositionStatus $docStatus = null)
     {
@@ -967,7 +982,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent
      * identifiers.
@@ -983,13 +998,13 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent
      * identifiers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1001,13 +1016,13 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent
      * identifiers.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1029,7 +1044,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
@@ -1046,14 +1061,14 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $masterIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setMasterIdentifier(FHIRIdentifier $masterIdentifier = null)
     {
@@ -1089,7 +1104,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * exist.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo $relatesTo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function addRelatesTo(FHIRDocumentReferenceRelatesTo $relatesTo = null)
     {
@@ -1108,7 +1123,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * exist.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[] $relatesTo
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setRelatesTo(array $relatesTo = [])
     {
@@ -1130,7 +1145,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of Security-Tag codes specifying the level of privacy/security of the
      * Document. Note that DocumentReference.meta.security contains the security labels
@@ -1149,7 +1164,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of Security-Tag codes specifying the level of privacy/security of the
      * Document. Note that DocumentReference.meta.security contains the security labels
@@ -1158,7 +1173,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $securityLabel
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function addSecurityLabel(FHIRCodeableConcept $securityLabel = null)
     {
@@ -1170,7 +1185,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of Security-Tag codes specifying the level of privacy/security of the
      * Document. Note that DocumentReference.meta.security contains the security labels
@@ -1179,7 +1194,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * to.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $securityLabel
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setSecurityLabel(array $securityLabel = [])
     {
@@ -1198,7 +1213,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
      *
@@ -1210,12 +1225,12 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setStatus(FHIRDocumentReferenceStatus $status = null)
     {
@@ -1226,7 +1241,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the document is about. The document can be about a person, (patient
      * or healthcare practitioner), a device (e.g. a machine) or even a group of
@@ -1243,7 +1258,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the document is about. The document can be about a person, (patient
      * or healthcare practitioner), a device (e.g. a machine) or even a group of
@@ -1251,7 +1266,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * that share a common exposure).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1263,7 +1278,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
@@ -1280,14 +1295,14 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the document referenced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDocumentReference
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

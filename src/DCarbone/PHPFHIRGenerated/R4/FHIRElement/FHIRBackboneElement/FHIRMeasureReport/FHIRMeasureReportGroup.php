@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_GROUP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_MEASURE_SCORE = 'measureScore';
@@ -93,19 +93,20 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of the population group as defined in the measure definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
@@ -113,7 +114,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $measureScore = null;
+    protected $measureScore = null;
+
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
      * and optionally a reference to the resources involved in that calculation.
@@ -123,7 +125,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[]
      */
-    private $population = [];
+    protected $population = [];
+
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
      * and optionally a reference to the resources involved in that calculation.
@@ -133,7 +136,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[]
      */
-    private $stratifier = [];
+    protected $stratifier = [];
 
     /**
      * FHIRMeasureReportGroup Constructor
@@ -220,7 +223,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -251,7 +254,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of the population group as defined in the measure definition.
      *
@@ -266,12 +269,12 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The meaning of the population group as defined in the measure definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -284,7 +287,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
@@ -302,14 +305,14 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $measureScore
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function setMeasureScore(FHIRQuantity $measureScore = null)
     {
@@ -339,7 +342,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * population appropriate for the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation $population = null)
     {
@@ -355,7 +358,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * population appropriate for the measure.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation[] $population
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function setPopulation(array $population = [])
     {
@@ -395,7 +398,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * for each stratifier defined by the measure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier $stratifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function addStratifier(FHIRMeasureReportStratifier $stratifier = null)
     {
@@ -411,7 +414,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * for each stratifier defined by the measure.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier[] $stratifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
+     * @return static
      */
     public function setStratifier(array $stratifier = [])
     {

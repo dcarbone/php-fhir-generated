@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * Measurements and simple assertions made about a patient, device or other
  * subject.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRObservation
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -98,7 +98,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BODY_SITE = 'bodySite';
     const FIELD_CATEGORY = 'category';
@@ -144,41 +144,44 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the site on the subject's body where the observation was made (i.e.
      * the target site).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $bodySite = null;
+    protected $bodySite = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation being made. This is used
      * for searching, sorting and display purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $category = null;
+    protected $category = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "name".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include statements about significant, unexpected or unreliable values, or
      * information about the source of the value where this may be relevant to the
@@ -186,7 +189,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $comments = null;
+    protected $comments = null;
+
     /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
@@ -199,36 +203,39 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent[]
      */
-    private $component = [];
+    protected $component = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $dataAbsentReason = null;
+    protected $dataAbsentReason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device used to generate the observation data.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $device = null;
+    protected $device = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time or time-period the observed value is asserted as being true. For
      * biological subjects - e.g. human patients - this is usually called the
@@ -238,11 +245,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $effectiveDateTime = null;
+    protected $effectiveDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time or time-period the observed value is asserted as being true. For
      * biological subjects - e.g. human patients - this is usually called the
@@ -252,33 +260,36 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
-    private $effectivePeriod = null;
+    protected $effectivePeriod = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this observation is made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for the simple observation instance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assessment made based on the result of the observation. Intended as a simple
      * compact code often placed adjacent to the result value in reports and flow
@@ -287,41 +298,45 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $interpretation = null;
+    protected $interpretation = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this observation was made available to providers, typically
      * after the results have been reviewed and verified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
-    private $issued = null;
+    protected $issued = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to perform the observation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $method = null;
+    protected $method = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    private $performer = [];
+    protected $performer = [];
+
     /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
@@ -331,7 +346,8 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange[]
      */
-    private $referenceRange = [];
+    protected $referenceRange = [];
+
     /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
@@ -342,30 +358,33 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationRelated[]
      */
-    private $related = [];
+    protected $related = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen that was used when this observation was made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $specimen = null;
+    protected $specimen = null;
+
     /**
      * Codes providing the status of an observation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the result value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRObservationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient, or group of patients, location, or device whose characteristics
      * (direct or indirect) are described by the observation and into whose record the
@@ -375,124 +394,134 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
-    private $valueAttachment = null;
+    protected $valueAttachment = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    private $valueCodeableConcept = null;
+    protected $valueCodeableConcept = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $valueDateTime = null;
+    protected $valueDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
-    private $valuePeriod = null;
+    protected $valuePeriod = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity
      */
-    private $valueQuantity = null;
+    protected $valueQuantity = null;
+
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
-    private $valueRange = null;
+    protected $valueRange = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
      */
-    private $valueRatio = null;
+    protected $valueRatio = null;
+
     /**
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSampledData
      */
-    private $valueSampledData = null;
+    protected $valueSampledData = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $valueString = null;
+    protected $valueString = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
      */
-    private $valueTime = null;
+    protected $valueTime = null;
 
     /**
      * FHIRObservation Constructor
@@ -827,7 +856,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -866,7 +895,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the site on the subject's body where the observation was made (i.e.
      * the target site).
@@ -882,13 +911,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the site on the subject's body where the observation was made (i.e.
      * the target site).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setBodySite(FHIRCodeableConcept $bodySite = null)
     {
@@ -900,7 +929,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation being made. This is used
      * for searching, sorting and display purposes.
@@ -916,13 +945,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation being made. This is used
      * for searching, sorting and display purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
@@ -934,7 +963,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "name".
      *
@@ -949,12 +978,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "name".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -965,7 +994,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include statements about significant, unexpected or unreliable values, or
      * information about the source of the value where this may be relevant to the
@@ -981,14 +1010,14 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include statements about significant, unexpected or unreliable values, or
      * information about the source of the value where this may be relevant to the
      * interpretation of the result.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $comments
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setComments($comments = null)
     {
@@ -1032,7 +1061,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * observations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent $component
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function addComponent(FHIRObservationComponent $component = null)
     {
@@ -1051,7 +1080,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * observations.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent[] $component
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setComponent(array $component = [])
     {
@@ -1073,7 +1102,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
@@ -1089,13 +1118,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $dataAbsentReason
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setDataAbsentReason(FHIRCodeableConcept $dataAbsentReason = null)
     {
@@ -1106,7 +1135,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device used to generate the observation data.
      *
@@ -1120,12 +1149,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device used to generate the observation data.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $device
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setDevice(FHIRReference $device = null)
     {
@@ -1139,7 +1168,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time or time-period the observed value is asserted as being true. For
      * biological subjects - e.g. human patients - this is usually called the
@@ -1160,7 +1189,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time or time-period the observed value is asserted as being true. For
      * biological subjects - e.g. human patients - this is usually called the
@@ -1169,7 +1198,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * is not known, only the date/time itself.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $effectiveDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setEffectiveDateTime($effectiveDateTime = null)
     {
@@ -1188,7 +1217,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time or time-period the observed value is asserted as being true. For
      * biological subjects - e.g. human patients - this is usually called the
@@ -1206,7 +1235,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time or time-period the observed value is asserted as being true. For
      * biological subjects - e.g. human patients - this is usually called the
@@ -1215,7 +1244,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * is not known, only the date/time itself.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setEffectivePeriod(FHIRPeriod $effectivePeriod = null)
     {
@@ -1226,7 +1255,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this observation is made.
@@ -1241,13 +1270,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this observation is made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -1258,7 +1287,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for the simple observation instance.
      *
@@ -1272,12 +1301,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for the simple observation instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1288,12 +1317,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for the simple observation instance.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1315,7 +1344,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assessment made based on the result of the observation. Intended as a simple
      * compact code often placed adjacent to the result value in reports and flow
@@ -1333,7 +1362,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assessment made based on the result of the observation. Intended as a simple
      * compact code often placed adjacent to the result value in reports and flow
@@ -1341,7 +1370,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * abnormal flag.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $interpretation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setInterpretation(FHIRCodeableConcept $interpretation = null)
     {
@@ -1354,7 +1383,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this observation was made available to providers, typically
      * after the results have been reviewed and verified.
@@ -1371,13 +1400,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this observation was made available to providers, typically
      * after the results have been reviewed and verified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant $issued
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setIssued($issued = null)
     {
@@ -1397,7 +1426,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to perform the observation.
      *
@@ -1412,12 +1441,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to perform the observation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $method
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setMethod(FHIRCodeableConcept $method = null)
     {
@@ -1428,7 +1457,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
      *
@@ -1442,12 +1471,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $performer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function addPerformer(FHIRReference $performer = null)
     {
@@ -1458,12 +1487,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $performer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setPerformer(array $performer = [])
     {
@@ -1503,7 +1532,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * range.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $referenceRange
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function addReferenceRange(FHIRObservationReferenceRange $referenceRange = null)
     {
@@ -1519,7 +1548,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * range.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange[] $referenceRange
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setReferenceRange(array $referenceRange = [])
     {
@@ -1561,7 +1590,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationRelated $related
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function addRelated(FHIRObservationRelated $related = null)
     {
@@ -1578,7 +1607,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * code.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationRelated[] $related
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setRelated(array $related = [])
     {
@@ -1599,7 +1628,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen that was used when this observation was made.
      *
@@ -1613,12 +1642,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen that was used when this observation was made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $specimen
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setSpecimen(FHIRReference $specimen = null)
     {
@@ -1628,7 +1657,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * Codes providing the status of an observation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the result value.
      *
@@ -1641,12 +1670,12 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * Codes providing the status of an observation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the result value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRObservationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setStatus(FHIRObservationStatus $status = null)
     {
@@ -1657,7 +1686,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient, or group of patients, location, or device whose characteristics
      * (direct or indirect) are described by the observation and into whose record the
@@ -1675,7 +1704,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient, or group of patients, location, or device whose characteristics
      * (direct or indirect) are described by the observation and into whose record the
@@ -1684,7 +1713,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * observation made about the subject.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {
@@ -1695,7 +1724,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1710,13 +1739,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment $valueAttachment
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueAttachment(FHIRAttachment $valueAttachment = null)
     {
@@ -1728,7 +1757,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1744,13 +1773,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
     {
@@ -1764,7 +1793,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1782,13 +1811,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $valueDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueDateTime($valueDateTime = null)
     {
@@ -1807,7 +1836,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1822,13 +1851,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $valuePeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValuePeriod(FHIRPeriod $valuePeriod = null)
     {
@@ -1841,7 +1870,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1858,13 +1887,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity $valueQuantity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
@@ -1875,7 +1904,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1890,13 +1919,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange $valueRange
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueRange(FHIRRange $valueRange = null)
     {
@@ -1908,7 +1937,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1924,13 +1953,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio $valueRatio
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueRatio(FHIRRatio $valueRatio = null)
     {
@@ -1942,7 +1971,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1958,13 +1987,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A series of measurements taken by a device, with upper and lower limits. There
      * may be more than one dimension in the data.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSampledData $valueSampledData
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueSampledData(FHIRSampledData $valueSampledData = null)
     {
@@ -1975,7 +2004,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -1990,13 +2019,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $valueString
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueString($valueString = null)
     {
@@ -2014,7 +2043,7 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
@@ -2028,13 +2057,13 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime $valueTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRObservation
+     * @return static
      */
     public function setValueTime($valueTime = null)
     {

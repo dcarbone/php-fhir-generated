@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGENT = 'agent';
     const FIELD_ROLE = 'role';
@@ -119,49 +119,53 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    private $agent = [];
+    protected $agent = [];
+
     /**
      * How an entity was used in an activity.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRProvenanceEntityRole
      */
-    private $role = null;
+    protected $role = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $whatIdentifier = null;
+    protected $whatIdentifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $whatReference = null;
+    protected $whatReference = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $whatUri = null;
+    protected $whatUri = null;
 
     /**
      * FHIRProvenanceEntity Constructor
@@ -257,7 +261,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -324,7 +328,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * activity which generated the entity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $agent
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function addAgent(FHIRProvenanceAgent $agent = null)
     {
@@ -349,7 +353,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * activity which generated the entity.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] $agent
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setAgent(array $agent = [])
     {
@@ -369,7 +373,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * How an entity was used in an activity.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
      *
@@ -382,12 +386,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /**
      * How an entity was used in an activity.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRProvenanceEntityRole $role
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setRole(FHIRProvenanceEntityRole $role = null)
     {
@@ -398,7 +402,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
@@ -413,13 +417,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $whatIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setWhatIdentifier(FHIRIdentifier $whatIdentifier = null)
     {
@@ -430,7 +434,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
@@ -445,13 +449,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $whatReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setWhatReference(FHIRReference $whatReference = null)
     {
@@ -462,7 +466,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
@@ -477,13 +481,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $whatUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
+     * @return static
      */
     public function setWhatUri($whatUri = null)
     {

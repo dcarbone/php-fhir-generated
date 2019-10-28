@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Describes the operational status of the DeviceMetric.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDeviceMetricOperationalStatus
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -80,14 +80,14 @@ class FHIRDeviceMetricOperationalStatus extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_OPERATIONAL_STATUS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRDeviceMetricOperationalStatusList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRDeviceMetricOperationalStatus Constructor
@@ -132,7 +132,7 @@ class FHIRDeviceMetricOperationalStatus extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -169,7 +169,7 @@ class FHIRDeviceMetricOperationalStatus extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRDeviceMetricOperationalStatusList $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
+     * @return static
      */
     public function setValue($value = null)
     {

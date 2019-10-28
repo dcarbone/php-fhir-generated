@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ANSWER_OPTION = 'answerOption';
     const FIELD_ANSWER_VALUE_SET = 'answerValueSet';
@@ -127,11 +127,12 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[]
      */
-    private $answerOption = [];
+    protected $answerOption = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a value set containing a list of codes representing permitted
@@ -139,22 +140,24 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    private $answerValueSet = null;
+    protected $answerValueSet = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
-    private $code = [];
+    protected $code = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This element is a URI that refers to an [[[ElementDefinition]]] that provides
      * information about this item, including information that might otherwise be
@@ -169,18 +172,20 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    private $definition = null;
+    protected $definition = null;
+
     /**
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREnableWhenBehavior
      */
-    private $enableBehavior = null;
+    protected $enableBehavior = null;
+
     /**
      * A structured set of questions intended to guide the collection of answers from
      * end-users. Questionnaires provide detailed control over order, presentation,
@@ -191,7 +196,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
-    private $enableWhen = [];
+    protected $enableWhen = [];
+
     /**
      * A structured set of questions intended to guide the collection of answers from
      * end-users. Questionnaires provide detailed control over order, presentation,
@@ -202,7 +208,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial[]
      */
-    private $initial = [];
+    protected $initial = [];
+
     /**
      * A structured set of questions intended to guide the collection of answers from
      * end-users. Questionnaires provide detailed control over order, presentation,
@@ -212,53 +219,58 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    private $item = [];
+    protected $item = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $linkId = null;
+    protected $linkId = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $maxLength = null;
+    protected $maxLength = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $prefix = null;
+    protected $prefix = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $readOnly = null;
+    protected $readOnly = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers for questions or multiple sets of answers for
@@ -266,10 +278,11 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $repeats = null;
+    protected $repeats = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
@@ -277,22 +290,24 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $required = null;
+    protected $required = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a section, the text of a question or text content for a display
      * item.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $text = null;
+    protected $text = null;
+
     /**
      * Distinguishes groups from questions and display text and indicates data type for
      * questions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
@@ -300,7 +315,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuestionnaireItemType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRQuestionnaireItem Constructor
@@ -545,7 +560,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -594,7 +609,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * One of the permitted answers for a "choice" or "open-choice" question.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption $answerOption
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function addAnswerOption(FHIRQuestionnaireAnswerOption $answerOption = null)
     {
@@ -610,7 +625,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * One of the permitted answers for a "choice" or "open-choice" question.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[] $answerOption
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setAnswerOption(array $answerOption = [])
     {
@@ -631,7 +646,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a value set containing a list of codes representing permitted
@@ -647,14 +662,14 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A reference to a value set containing a list of codes representing permitted
      * answers for a "choice" or "open-choice" question.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $answerValueSet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setAnswerValueSet($answerValueSet = null)
     {
@@ -673,7 +688,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
@@ -688,13 +703,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function addCode(FHIRCoding $code = null)
     {
@@ -705,13 +720,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setCode(array $code = [])
     {
@@ -732,7 +747,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This element is a URI that refers to an [[[ElementDefinition]]] that provides
      * information about this item, including information that might otherwise be
@@ -755,7 +770,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This element is a URI that refers to an [[[ElementDefinition]]] that provides
      * information about this item, including information that might otherwise be
@@ -769,7 +784,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * options (ElementDefinition.binding).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $definition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setDefinition($definition = null)
     {
@@ -788,7 +803,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
@@ -803,13 +818,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREnableWhenBehavior $enableBehavior
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setEnableBehavior(FHIREnableWhenBehavior $enableBehavior = null)
     {
@@ -841,7 +856,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * answers to be captured) when the specified condition is true.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function addEnableWhen(FHIRQuestionnaireEnableWhen $enableWhen = null)
     {
@@ -858,7 +873,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * answers to be captured) when the specified condition is true.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[] $enableWhen
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setEnableWhen(array $enableWhen = [])
     {
@@ -900,7 +915,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * rendering the questionnaire for user input.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial $initial
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function addInitial(FHIRQuestionnaireInitial $initial = null)
     {
@@ -917,7 +932,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * rendering the questionnaire for user input.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial[] $initial
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setInitial(array $initial = [])
     {
@@ -957,7 +972,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * Text, questions and other groups to be nested beneath a question or group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function addItem(FHIRQuestionnaireItem $item = null)
     {
@@ -973,7 +988,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * Text, questions and other groups to be nested beneath a question or group.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setItem(array $item = [])
     {
@@ -994,7 +1009,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
@@ -1009,13 +1024,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $linkId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setLinkId($linkId = null)
     {
@@ -1034,7 +1049,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
@@ -1049,13 +1064,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $maxLength
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setMaxLength($maxLength = null)
     {
@@ -1074,7 +1089,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
@@ -1089,13 +1104,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $prefix
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setPrefix($prefix = null)
     {
@@ -1113,7 +1128,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
@@ -1127,13 +1142,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $readOnly
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setReadOnly($readOnly = null)
     {
@@ -1151,7 +1166,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers for questions or multiple sets of answers for
@@ -1166,14 +1181,14 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers for questions or multiple sets of answers for
      * groups.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $repeats
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setRepeats($repeats = null)
     {
@@ -1191,7 +1206,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
@@ -1206,14 +1221,14 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
      * questionnaire.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $required
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setRequired($required = null)
     {
@@ -1232,7 +1247,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a section, the text of a question or text content for a display
      * item.
@@ -1247,13 +1262,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a section, the text of a question or text content for a display
      * item.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setText($text = null)
     {
@@ -1272,7 +1287,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * Distinguishes groups from questions and display text and indicates data type for
      * questions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
@@ -1288,14 +1303,14 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * Distinguishes groups from questions and display text and indicates data type for
      * questions.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
      * choice, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuestionnaireItemType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
+     * @return static
      */
     public function setType(FHIRQuestionnaireItemType $type = null)
     {

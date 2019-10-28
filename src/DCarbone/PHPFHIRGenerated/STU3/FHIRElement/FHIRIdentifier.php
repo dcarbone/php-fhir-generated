@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * A technical identifier - identifies some entity uniquely and unambiguously.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRIdentifier
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -80,7 +80,7 @@ class FHIRIdentifier extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IDENTIFIER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ASSIGNER = 'assigner';
     const FIELD_PERIOD = 'period';
@@ -95,66 +95,71 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $assigner = null;
+    protected $assigner = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace for the value - that is, a URL that describes a set
      * values that are unique.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $system = null;
+    protected $system = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded type for the identifier that can be used to determine which identifier
      * to use for a specific purpose.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
+
     /**
      * Identifies the purpose for this identifier, if known .
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifierUse
      */
-    private $use = null;
+    protected $use = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The portion of the identifier typically relevant to the user and which is unique
      * within the context of the system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRIdentifier Constructor
@@ -253,7 +258,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -283,7 +288,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
      *
@@ -297,12 +302,12 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $assigner
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setAssigner(FHIRReference $assigner = null)
     {
@@ -313,7 +318,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
      *
@@ -327,12 +332,12 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -343,7 +348,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace for the value - that is, a URL that describes a set
      * values that are unique.
@@ -358,13 +363,13 @@ class FHIRIdentifier extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace for the value - that is, a URL that describes a set
      * values that are unique.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $system
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setSystem($system = null)
     {
@@ -384,7 +389,7 @@ class FHIRIdentifier extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded type for the identifier that can be used to determine which identifier
      * to use for a specific purpose.
@@ -400,13 +405,13 @@ class FHIRIdentifier extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded type for the identifier that can be used to determine which identifier
      * to use for a specific purpose.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
@@ -416,7 +421,7 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * Identifies the purpose for this identifier, if known .
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
      *
@@ -429,12 +434,12 @@ class FHIRIdentifier extends FHIRElement
 
     /**
      * Identifies the purpose for this identifier, if known .
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifierUse $use
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setUse(FHIRIdentifierUse $use = null)
     {
@@ -445,7 +450,7 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The portion of the identifier typically relevant to the user and which is unique
      * within the context of the system.
@@ -460,13 +465,13 @@ class FHIRIdentifier extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The portion of the identifier typically relevant to the user and which is unique
      * within the context of the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @return static
      */
     public function setValue($value = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CODE_SYSTEM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CASE_SENSITIVE = 'caseSensitive';
     const FIELD_CASE_SENSITIVE_EXT = '_caseSensitive';
@@ -93,14 +93,15 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $caseSensitive = null;
+    protected $caseSensitive = null;
+
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
      *
@@ -110,22 +111,24 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
-    private $concept = [];
+    protected $concept = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $system = null;
+    protected $system = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of this code system that defines the codes. Note that the version is
      * optional because a well maintained code system does not suffer from versioning,
@@ -135,7 +138,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRValueSetCodeSystem Constructor
@@ -224,7 +227,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -253,7 +256,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
@@ -267,13 +270,13 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $caseSensitive
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
+     * @return static
      */
     public function setCaseSensitive($caseSensitive = null)
     {
@@ -311,7 +314,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * meaning of the hierarchical relationships are.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept $concept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
+     * @return static
      */
     public function addConcept(FHIRValueSetConcept $concept = null)
     {
@@ -327,7 +330,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * meaning of the hierarchical relationships are.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[] $concept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
+     * @return static
      */
     public function setConcept(array $concept = [])
     {
@@ -348,7 +351,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
@@ -363,13 +366,13 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $system
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
+     * @return static
      */
     public function setSystem($system = null)
     {
@@ -388,7 +391,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of this code system that defines the codes. Note that the version is
      * optional because a well maintained code system does not suffer from versioning,
@@ -406,7 +409,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The version of this code system that defines the codes. Note that the version is
      * optional because a well maintained code system does not suffer from versioning,
@@ -415,7 +418,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * tracked.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
+     * @return static
      */
     public function setVersion($version = null)
     {

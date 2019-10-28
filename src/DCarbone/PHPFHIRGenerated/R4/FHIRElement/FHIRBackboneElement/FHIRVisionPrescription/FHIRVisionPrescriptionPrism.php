@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_PRISM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AMOUNT = 'amount';
     const FIELD_AMOUNT_EXT = '_amount';
@@ -92,22 +92,23 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amount of prism to compensate for eye alignment in fractional units.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    private $amount = null;
+    protected $amount = null;
+
     /**
      * A coded concept listing the base codes.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relative base, or reference lens edge, for the prism.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVisionBase
      */
-    private $base = null;
+    protected $base = null;
 
     /**
      * FHIRVisionPrescriptionPrism Constructor
@@ -169,7 +170,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -200,7 +201,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amount of prism to compensate for eye alignment in fractional units.
      *
@@ -215,12 +216,12 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amount of prism to compensate for eye alignment in fractional units.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $amount
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
+     * @return static
      */
     public function setAmount($amount = null)
     {
@@ -238,7 +239,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
 
     /**
      * A coded concept listing the base codes.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relative base, or reference lens edge, for the prism.
      *
@@ -251,12 +252,12 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
 
     /**
      * A coded concept listing the base codes.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relative base, or reference lens edge, for the prism.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVisionBase $base
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism
+     * @return static
      */
     public function setBase(FHIRVisionBase $base = null)
     {

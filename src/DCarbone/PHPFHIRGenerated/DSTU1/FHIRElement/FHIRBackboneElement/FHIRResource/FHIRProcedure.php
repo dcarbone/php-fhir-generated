@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * An action that is performed on a patient. This can be a physical 'thing' like an
  * operation, or less invasive like counseling or hypnotherapy.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRProcedure
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -83,7 +83,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROCEDURE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BODY_SITE = 'bodySite';
     const FIELD_COMPLICATION = 'complication';
@@ -108,19 +108,20 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
-    private $bodySite = [];
+    protected $bodySite = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any complications that occurred during the procedure, or in the immediate
      * post-operative period. These are generally tracked separately from the notes,
@@ -129,11 +130,12 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
-    private $complication = [];
+    protected $complication = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
@@ -141,20 +143,22 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
@@ -162,11 +166,12 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $followUp = null;
+    protected $followUp = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this procedure that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -175,38 +180,42 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
-    private $indication = [];
+    protected $indication = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $notes = null;
+    protected $notes = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $outcome = null;
+    protected $outcome = null;
+
     /**
      * An action that is performed on a patient. This can be a physical 'thing' like an
      * operation, or less invasive like counseling or hypnotherapy.
@@ -215,7 +224,8 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[]
      */
-    private $performer = [];
+    protected $performer = [];
+
     /**
      * An action that is performed on a patient. This can be a physical 'thing' like an
      * operation, or less invasive like counseling or hypnotherapy.
@@ -225,40 +235,43 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem[]
      */
-    private $relatedItem = [];
+    protected $relatedItem = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $report = [];
+    protected $report = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRProcedure Constructor
@@ -472,7 +485,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -511,7 +524,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
@@ -527,13 +540,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite = null)
     {
@@ -545,13 +558,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $bodySite
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setBodySite(array $bodySite = [])
     {
@@ -573,7 +586,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any complications that occurred during the procedure, or in the immediate
      * post-operative period. These are generally tracked separately from the notes,
@@ -591,7 +604,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any complications that occurred during the procedure, or in the immediate
      * post-operative period. These are generally tracked separately from the notes,
@@ -599,7 +612,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * procedure' issues.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $complication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addComplication(FHIRCodeableConcept $complication = null)
     {
@@ -611,7 +624,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any complications that occurred during the procedure, or in the immediate
      * post-operative period. These are generally tracked separately from the notes,
@@ -619,7 +632,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * procedure' issues.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $complication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setComplication(array $complication = [])
     {
@@ -640,7 +653,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
@@ -656,14 +669,14 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
      * of the procedure to be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setDate(FHIRPeriod $date = null)
     {
@@ -674,7 +687,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
      *
@@ -688,12 +701,12 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setEncounter(FHIRResourceReference $encounter = null)
     {
@@ -703,7 +716,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
@@ -718,14 +731,14 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
      * complex in which case the CarePlan resource can be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $followUp
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setFollowUp($followUp = null)
     {
@@ -744,7 +757,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this procedure that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -761,7 +774,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this procedure that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -769,7 +782,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -780,7 +793,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this procedure that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -788,7 +801,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -810,7 +823,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
@@ -826,13 +839,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $indication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addIndication(FHIRCodeableConcept $indication = null)
     {
@@ -844,13 +857,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $indication
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setIndication(array $indication = [])
     {
@@ -870,7 +883,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
      *
@@ -883,12 +896,12 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $notes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setNotes($notes = null)
     {
@@ -906,7 +919,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
@@ -920,13 +933,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $outcome
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setOutcome($outcome = null)
     {
@@ -962,7 +975,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Limited to 'real' people rather than equipment.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer $performer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addPerformer(FHIRProcedurePerformer $performer = null)
     {
@@ -977,7 +990,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Limited to 'real' people rather than equipment.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[] $performer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setPerformer(array $performer = [])
     {
@@ -1017,7 +1030,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * example treating wound dehiscence following a previous procedure.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem $relatedItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addRelatedItem(FHIRProcedureRelatedItem $relatedItem = null)
     {
@@ -1033,7 +1046,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * example treating wound dehiscence following a previous procedure.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem[] $relatedItem
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setRelatedItem(array $relatedItem = [])
     {
@@ -1054,7 +1067,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
@@ -1069,13 +1082,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $report
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function addReport(FHIRResourceReference $report = null)
     {
@@ -1086,13 +1099,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $report
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setReport(array $report = [])
     {
@@ -1113,7 +1126,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
      *
@@ -1127,12 +1140,12 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {
@@ -1144,7 +1157,7 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
@@ -1160,13 +1173,13 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProcedure
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

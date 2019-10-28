@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * processing. The preferred markdown syntax is described here:
  * http://daringfireball.net/projects/markdown/syntax (and tests here:
  * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
- * If the element is present, it must have either a @value, an @id referenced from
+ * If the element is present, it must have either a \@value, an \@id referenced from
  * the Narrative, or extensions
  *
  * Class FHIRMarkdown
@@ -87,14 +87,15 @@ class FHIRMarkdown extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MARKDOWN;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMarkdownPrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRMarkdown Constructor
@@ -142,7 +143,7 @@ class FHIRMarkdown extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMarkdown
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -178,7 +179,7 @@ class FHIRMarkdown extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMarkdownPrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMarkdown
+     * @return static
      */
     public function setValue($value = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_OPERATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -86,16 +86,17 @@ class FHIRConformanceOperation extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the type or instance level
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coded identifier of the operation, supported by the system resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulOperationType
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as 'delete is a
      * logical delete' or 'updates are only allowed with version id' or 'creates
@@ -103,7 +104,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
 
     /**
      * FHIRConformanceOperation Constructor
@@ -165,7 +166,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -194,7 +195,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the type or instance level
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coded identifier of the operation, supported by the system resource.
      *
@@ -207,12 +208,12 @@ class FHIRConformanceOperation extends FHIRBackboneElement
 
     /**
      * Operations supported by REST at the type or instance level
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Coded identifier of the operation, supported by the system resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulOperationType $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation
+     * @return static
      */
     public function setCode(FHIRRestfulOperationType $code = null)
     {
@@ -222,7 +223,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as 'delete is a
      * logical delete' or 'updates are only allowed with version id' or 'creates
@@ -237,14 +238,14 @@ class FHIRConformanceOperation extends FHIRBackboneElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Guidance specific to the implementation of this operation, such as 'delete is a
      * logical delete' or 'updates are only allowed with version id' or 'creates
      * permitted from pre-authorized certificates only'.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {

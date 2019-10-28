@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 /**
  * Base definition for all elements in a resource.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElement
  * @package \DCarbone\PHPFHIRGenerated\R4
@@ -80,7 +80,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXTENSION = 'extension';
     const FIELD_ID = 'id';
@@ -88,7 +88,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element. To make the use of extensions safe and manageable,
@@ -98,11 +98,12 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension[]
      */
-    private $extension = [];
+    protected $extension = [];
+
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive
      */
-    private $id = null;
+    protected $id = null;
 
     /**
      * FHIRElement Constructor
@@ -157,7 +158,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -187,7 +188,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element. To make the use of extensions safe and manageable,
@@ -205,7 +206,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element. To make the use of extensions safe and manageable,
@@ -214,7 +215,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
      * requirements that SHALL be met as part of the definition of the extension.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension $extension
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement
+     * @return static
      */
     public function addExtension(FHIRExtension $extension = null)
     {
@@ -225,7 +226,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element. To make the use of extensions safe and manageable,
@@ -234,7 +235,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
      * requirements that SHALL be met as part of the definition of the extension.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension[] $extension
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement
+     * @return static
      */
     public function setExtension(array $extension = [])
     {
@@ -262,7 +263,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive $id
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement
+     * @return static
      */
     public function setId($id = null)
     {

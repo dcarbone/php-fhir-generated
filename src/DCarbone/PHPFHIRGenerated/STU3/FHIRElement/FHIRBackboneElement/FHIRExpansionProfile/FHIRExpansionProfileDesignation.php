@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPANSION_PROFILE_DOT_DESIGNATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EXCLUDE = 'exclude';
     const FIELD_INCLUDE = 'include';
@@ -90,7 +90,8 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude
      */
-    private $exclude = null;
+    protected $exclude = null;
+
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
@@ -98,7 +99,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude
      */
-    private $include = null;
+    protected $include = null;
 
     /**
      * FHIRExpansionProfileDesignation Constructor
@@ -150,7 +151,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -195,7 +196,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      * Designations to be excluded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude $exclude
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation
+     * @return static
      */
     public function setExclude(FHIRExpansionProfileExclude $exclude = null)
     {
@@ -221,7 +222,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      * Designations to be included.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude $include
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation
+     * @return static
      */
     public function setInclude(FHIRExpansionProfileInclude $include = null)
     {

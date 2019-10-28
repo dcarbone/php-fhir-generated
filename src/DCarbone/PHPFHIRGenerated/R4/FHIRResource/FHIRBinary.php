@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * A resource that represents the data of a single raw artifact as digital content
  * accessible in its native format. A Binary resource can contain any content,
  * whether text, image, pdf, zip archive, etc.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRBinary
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource
@@ -85,7 +85,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BINARY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTENT_TYPE = 'contentType';
     const FIELD_CONTENT_TYPE_EXT = '_contentType';
@@ -96,28 +96,30 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $contentType = null;
+    protected $contentType = null;
+
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content, base64 encoded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
-    private $data = null;
+    protected $data = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This element identifies another resource that can be used as a proxy of the
      * security sensitivity to use when deciding and enforcing access control rules for
@@ -131,7 +133,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $securityContext = null;
+    protected $securityContext = null;
 
     /**
      * FHIRBinary Constructor
@@ -200,7 +202,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -238,7 +240,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
@@ -253,13 +255,13 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $contentType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary
+     * @return static
      */
     public function setContentType($contentType = null)
     {
@@ -278,7 +280,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content, base64 encoded.
      *
@@ -292,12 +294,12 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content, base64 encoded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary $data
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary
+     * @return static
      */
     public function setData($data = null)
     {
@@ -316,7 +318,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This element identifies another resource that can be used as a proxy of the
      * security sensitivity to use when deciding and enforcing access control rules for
@@ -338,7 +340,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This element identifies another resource that can be used as a proxy of the
      * security sensitivity to use when deciding and enforcing access control rules for
@@ -351,7 +353,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * access should only be granted to applications that have access to the patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $securityContext
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary
+     * @return static
      */
     public function setSecurityContext(FHIRReference $securityContext = null)
     {

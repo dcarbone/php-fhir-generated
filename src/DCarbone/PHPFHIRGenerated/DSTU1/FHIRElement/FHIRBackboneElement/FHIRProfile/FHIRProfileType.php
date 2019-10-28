@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRProfileType extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_TYPE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGGREGATION = 'aggregation';
     const FIELD_AGGREGATION_EXT = '_aggregation';
@@ -89,7 +89,7 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
@@ -97,21 +97,23 @@ class FHIRProfileType extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAggregationMode[]
      */
-    private $aggregation = [];
+    protected $aggregation = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
@@ -119,7 +121,7 @@ class FHIRProfileType extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $profile = null;
+    protected $profile = null;
 
     /**
      * FHIRProfileType Constructor
@@ -203,7 +205,7 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -232,7 +234,7 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
@@ -247,14 +249,14 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAggregationMode $aggregation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
+     * @return static
      */
     public function addAggregation(FHIRAggregationMode $aggregation = null)
     {
@@ -264,14 +266,14 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * How resource references can be aggregated
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAggregationMode[] $aggregation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
+     * @return static
      */
     public function setAggregation(array $aggregation = [])
     {
@@ -292,7 +294,7 @@ class FHIRProfileType extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
@@ -307,13 +309,13 @@ class FHIRProfileType extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -331,7 +333,7 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
@@ -346,14 +348,14 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
      * this profile, or a reference to a structure in another profile.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
+     * @return static
      */
     public function setProfile($profile = null)
     {

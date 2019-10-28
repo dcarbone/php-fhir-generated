@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_REPORT_DOT_TEARDOWN;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
 
@@ -89,7 +89,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2[]
      */
-    private $action = [];
+    protected $action = [];
 
     /**
      * FHIRTestReportTeardown Constructor
@@ -142,7 +142,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -187,7 +187,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement
      * The teardown action will only contain an operation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2 $action
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
+     * @return static
      */
     public function addAction(FHIRTestReportAction2 $action = null)
     {
@@ -201,7 +201,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement
      * The teardown action will only contain an operation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction2[] $action
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
+     * @return static
      */
     public function setAction(array $action = [])
     {

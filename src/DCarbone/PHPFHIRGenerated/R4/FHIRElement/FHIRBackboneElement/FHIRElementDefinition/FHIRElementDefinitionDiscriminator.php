@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRElementDefinitionDiscriminator
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition
@@ -82,7 +82,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_DISCRIMINATOR;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
@@ -92,7 +92,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression, using [the simple subset of
      * FHIRPath](fhirpath.html#simple), that is used to identify the element on which
@@ -100,16 +100,17 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
+
     /**
      * How an element value is interpreted when discrimination is evaluated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the element value is interpreted when discrimination is evaluated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDiscriminatorType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRElementDefinitionDiscriminator Constructor
@@ -171,7 +172,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -201,7 +202,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression, using [the simple subset of
      * FHIRPath](fhirpath.html#simple), that is used to identify the element on which
@@ -217,14 +218,14 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression, using [the simple subset of
      * FHIRPath](fhirpath.html#simple), that is used to identify the element on which
      * discrimination is based.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator
+     * @return static
      */
     public function setPath($path = null)
     {
@@ -242,7 +243,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
 
     /**
      * How an element value is interpreted when discrimination is evaluated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the element value is interpreted when discrimination is evaluated.
      *
@@ -255,12 +256,12 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement
 
     /**
      * How an element value is interpreted when discrimination is evaluated.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the element value is interpreted when discrimination is evaluated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDiscriminatorType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator
+     * @return static
      */
     public function setType(FHIRDiscriminatorType $type = null)
     {

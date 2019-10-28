@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional
  * supplement to a patient/resident.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRNutritionOrder
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -93,7 +93,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALLERGY_INTOLERANCE = 'allergyIntolerance';
     const FIELD_DATE_TIME = 'dateTime';
@@ -123,38 +123,41 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $allergyIntolerance = [];
+    protected $allergyIntolerance = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    private $dateTime = null;
+    protected $dateTime = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
@@ -164,12 +167,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
-    private $enteralFormula = null;
+    protected $enteralFormula = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey Order-specific modifier about the type of oral
      * food or oral fluids that should not be given. These can be derived from patient
@@ -183,12 +187,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $excludeFoodModifier = [];
+    protected $excludeFoodModifier = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey order-specific modifiers about the type of food
      * that should be given. These can be derived from patient allergies, intolerances,
@@ -198,33 +203,36 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $foodPreferenceModifier = [];
+    protected $foodPreferenceModifier = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to a protocol, guideline, orderset or other definition that is
      * adhered to in whole or in part by this NutritionOrder.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
-    private $instantiates = [];
+    protected $instantiates = [];
+
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
@@ -232,41 +240,45 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    private $instantiatesCanonical = [];
+    protected $instantiatesCanonical = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this NutritionOrder.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
-    private $instantiatesUri = [];
+    protected $instantiatesUri = [];
+
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the NutrionOrder
      * and where the request fits into the workflow chain.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestIntent
      */
-    private $intent = null;
+    protected $intent = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the {{title}} by the requester, performer, subject or other
      * participants.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
@@ -275,39 +287,43 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      */
-    private $oralDiet = null;
+    protected $oralDiet = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $orderer = null;
+    protected $orderer = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
@@ -317,7 +333,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement[]
      */
-    private $supplement = [];
+    protected $supplement = [];
 
     /**
      * FHIRNutritionOrder Constructor
@@ -589,7 +605,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -627,7 +643,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
@@ -642,13 +658,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $allergyIntolerance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addAllergyIntolerance(FHIRReference $allergyIntolerance = null)
     {
@@ -659,13 +675,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $allergyIntolerance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setAllergyIntolerance(array $allergyIntolerance = [])
     {
@@ -689,7 +705,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
      *
@@ -706,12 +722,12 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $dateTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setDateTime($dateTime = null)
     {
@@ -730,7 +746,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
@@ -745,13 +761,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -781,7 +797,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * stoma that delivers nutrition distal to the oral cavity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $enteralFormula
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setEnteralFormula(FHIRNutritionOrderEnteralFormula $enteralFormula = null)
     {
@@ -793,7 +809,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey Order-specific modifier about the type of oral
      * food or oral fluids that should not be given. These can be derived from patient
@@ -816,7 +832,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey Order-specific modifier about the type of oral
      * food or oral fluids that should not be given. These can be derived from patient
@@ -829,7 +845,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * the oral diet, nutritional supplements and enteral formula feedings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $excludeFoodModifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addExcludeFoodModifier(FHIRCodeableConcept $excludeFoodModifier = null)
     {
@@ -841,7 +857,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey Order-specific modifier about the type of oral
      * food or oral fluids that should not be given. These can be derived from patient
@@ -854,7 +870,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * the oral diet, nutritional supplements and enteral formula feedings.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $excludeFoodModifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setExcludeFoodModifier(array $excludeFoodModifier = [])
     {
@@ -876,7 +892,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey order-specific modifiers about the type of food
      * that should be given. These can be derived from patient allergies, intolerances,
@@ -895,7 +911,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey order-specific modifiers about the type of food
      * that should be given. These can be derived from patient allergies, intolerances,
@@ -904,7 +920,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * enteral formula feedings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $foodPreferenceModifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addFoodPreferenceModifier(FHIRCodeableConcept $foodPreferenceModifier = null)
     {
@@ -916,7 +932,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This modifier is used to convey order-specific modifiers about the type of food
      * that should be given. These can be derived from patient allergies, intolerances,
@@ -925,7 +941,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * enteral formula feedings.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $foodPreferenceModifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setFoodPreferenceModifier(array $foodPreferenceModifier = [])
     {
@@ -947,7 +963,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
      *
@@ -962,12 +978,12 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -979,12 +995,12 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1005,7 +1021,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to a protocol, guideline, orderset or other definition that is
      * adhered to in whole or in part by this NutritionOrder.
@@ -1020,13 +1036,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to a protocol, guideline, orderset or other definition that is
      * adhered to in whole or in part by this NutritionOrder.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $instantiates
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addInstantiates($instantiates = null)
     {
@@ -1045,13 +1061,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to a protocol, guideline, orderset or other definition that is
      * adhered to in whole or in part by this NutritionOrder.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[] $instantiates
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setInstantiates(array $instantiates = [])
     {
@@ -1072,7 +1088,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
@@ -1088,14 +1104,14 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this NutritionOrder.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addInstantiatesCanonical($instantiatesCanonical = null)
     {
@@ -1114,14 +1130,14 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this NutritionOrder.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $instantiatesCanonical
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setInstantiatesCanonical(array $instantiatesCanonical = [])
     {
@@ -1142,7 +1158,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this NutritionOrder.
@@ -1157,13 +1173,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this NutritionOrder.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $instantiatesUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addInstantiatesUri($instantiatesUri = null)
     {
@@ -1182,13 +1198,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this NutritionOrder.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[] $instantiatesUri
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setInstantiatesUri(array $instantiatesUri = [])
     {
@@ -1209,7 +1225,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the NutrionOrder
      * and where the request fits into the workflow chain.
@@ -1224,13 +1240,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * Codes indicating the degree of authority/intentionality associated with a
      * request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the level of authority/intentionality associated with the NutrionOrder
      * and where the request fits into the workflow chain.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestIntent $intent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setIntent(FHIRRequestIntent $intent = null)
     {
@@ -1242,7 +1258,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the {{title}} by the requester, performer, subject or other
      * participants.
@@ -1258,13 +1274,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the {{title}} by the requester, performer, subject or other
      * participants.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1276,13 +1292,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the {{title}} by the requester, performer, subject or other
      * participants.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1320,7 +1336,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * Diet given orally in contrast to enteral (tube) feeding.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $oralDiet
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setOralDiet(FHIRNutritionOrderOralDiet $oralDiet = null)
     {
@@ -1331,7 +1347,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
@@ -1346,13 +1362,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $orderer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setOrderer(FHIRReference $orderer = null)
     {
@@ -1363,7 +1379,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
@@ -1378,13 +1394,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setPatient(FHIRReference $patient = null)
     {
@@ -1395,7 +1411,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
      *
@@ -1409,12 +1425,12 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setStatus(FHIRRequestStatus $status = null)
     {
@@ -1444,7 +1460,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * patient's diet.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement $supplement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function addSupplement(FHIRNutritionOrderSupplement $supplement = null)
     {
@@ -1460,7 +1476,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * patient's diet.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement[] $supplement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
+     * @return static
      */
     public function setSupplement(array $supplement = [])
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ASSERT = 'assert';
     const FIELD_ASSERT_EXT = '_assert';
@@ -94,7 +94,8 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
      */
-    private $assert = null;
+    protected $assert = null;
+
     /**
      * TestScript is a resource that specifies a suite of tests against a FHIR server
      * implementation to determine compliance against the FHIR specification.
@@ -103,7 +104,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
      */
-    private $operation = null;
+    protected $operation = null;
 
     /**
      * FHIRTestScriptAction Constructor
@@ -160,7 +161,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -209,7 +210,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      * test behaves appropriately.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert $assert
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
+     * @return static
      */
     public function setAssert(FHIRTestScriptAssert $assert = null)
     {
@@ -237,7 +238,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      * The operation to perform.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation $operation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
+     * @return static
      */
     public function setOperation(FHIRTestScriptOperation $operation = null)
     {

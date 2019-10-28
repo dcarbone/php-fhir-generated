@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAudit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_DOT_NETWORK;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADDRESS = 'address';
     const FIELD_ADDRESS_EXT = '_address';
@@ -92,24 +92,25 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier for the network access point of the user device for the audit
      * event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $address = null;
+    protected $address = null;
+
     /**
      * The type of network access point of this agent in the audit event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier for the type of network access point that originated the audit
      * event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAuditEventAgentNetworkType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRAuditEventNetwork Constructor
@@ -171,7 +172,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -201,7 +202,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier for the network access point of the user device for the audit
      * event.
@@ -216,13 +217,13 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier for the network access point of the user device for the audit
      * event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $address
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
+     * @return static
      */
     public function setAddress($address = null)
     {
@@ -240,7 +241,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
 
     /**
      * The type of network access point of this agent in the audit event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier for the type of network access point that originated the audit
      * event.
@@ -254,13 +255,13 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
 
     /**
      * The type of network access point of this agent in the audit event.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An identifier for the type of network access point that originated the audit
      * event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAuditEventAgentNetworkType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
+     * @return static
      */
     public function setType(FHIRAuditEventAgentNetworkType $type = null)
     {

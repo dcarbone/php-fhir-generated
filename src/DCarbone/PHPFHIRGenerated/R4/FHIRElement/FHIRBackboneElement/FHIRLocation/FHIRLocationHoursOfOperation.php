@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_HOURS_OF_OPERATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALL_DAY = 'allDay';
     const FIELD_ALL_DAY_EXT = '_allDay';
@@ -96,40 +96,43 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Location is open all day.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $allDay = null;
+    protected $allDay = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location closes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
-    private $closingTime = null;
+    protected $closingTime = null;
+
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDaysOfWeek[]
      */
-    private $daysOfWeek = [];
+    protected $daysOfWeek = [];
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location opens.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
-    private $openingTime = null;
+    protected $openingTime = null;
 
     /**
      * FHIRLocationHoursOfOperation Constructor
@@ -225,7 +228,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -254,7 +257,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Location is open all day.
      *
@@ -267,12 +270,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Location is open all day.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $allDay
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
+     * @return static
      */
     public function setAllDay($allDay = null)
     {
@@ -290,7 +293,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location closes.
      *
@@ -303,12 +306,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location closes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $closingTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
+     * @return static
      */
     public function setClosingTime($closingTime = null)
     {
@@ -326,7 +329,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
@@ -339,12 +342,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDaysOfWeek $daysOfWeek
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
+     * @return static
      */
     public function addDaysOfWeek(FHIRDaysOfWeek $daysOfWeek = null)
     {
@@ -354,12 +357,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDaysOfWeek[] $daysOfWeek
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
+     * @return static
      */
     public function setDaysOfWeek(array $daysOfWeek = [])
     {
@@ -379,7 +382,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location opens.
      *
@@ -392,12 +395,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time that the Location opens.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime $openingTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationHoursOfOperation
+     * @return static
      */
     public function setOpeningTime($openingTime = null)
     {

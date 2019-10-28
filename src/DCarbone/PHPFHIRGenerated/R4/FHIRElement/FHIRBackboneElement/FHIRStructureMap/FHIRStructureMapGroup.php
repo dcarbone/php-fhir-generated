@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_GROUP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
@@ -97,27 +97,29 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $extends = null;
+    protected $extends = null;
+
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -126,20 +128,22 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput[]
      */
-    private $input = [];
+    protected $input = [];
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -147,18 +151,19 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
-    private $rule = [];
+    protected $rule = [];
+
     /**
      * If this is the default rule set to apply for the source type, or this
      * combination of types.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStructureMapGroupTypeMode
      */
-    private $typeMode = null;
+    protected $typeMode = null;
 
     /**
      * FHIRStructureMapGroup Constructor
@@ -274,7 +279,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -304,7 +309,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
@@ -319,13 +324,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -346,7 +351,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
@@ -363,13 +368,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $extends
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function setExtends($extends = null)
     {
@@ -405,7 +410,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * mapping is invoked.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function addInput(FHIRStructureMapInput $input = null)
     {
@@ -420,7 +425,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * mapping is invoked.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput[] $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function setInput(array $input = [])
     {
@@ -443,7 +448,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
@@ -460,13 +465,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function setName($name = null)
     {
@@ -500,7 +505,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * Transform Rule from source to target.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule $rule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function addRule(FHIRStructureMapRule $rule = null)
     {
@@ -514,7 +519,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * Transform Rule from source to target.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[] $rule
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function setRule(array $rule = [])
     {
@@ -535,7 +540,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * If this is the default rule set to apply for the source type, or this
      * combination of types.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
@@ -550,13 +555,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * If this is the default rule set to apply for the source type, or this
      * combination of types.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
+     * @return static
      */
     public function setTypeMode(FHIRStructureMapGroupTypeMode $typeMode = null)
     {

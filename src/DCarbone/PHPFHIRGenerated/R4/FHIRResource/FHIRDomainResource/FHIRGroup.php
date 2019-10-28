@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * collectively but which are not expected to act collectively, and are not
  * formally or legally recognized; i.e. a collection of entities that isn't an
  * Organization.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRGroup
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -92,7 +92,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GROUP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -113,24 +113,26 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the resource refers to a specific group of real
      * individuals. If false, the group defines a set of intended individuals.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $actual = null;
+    protected $actual = null;
+
     /**
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively, and are not
@@ -141,41 +143,45 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic[]
      */
-    private $characteristic = [];
+    protected $characteristic = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique business identifier for this group.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Entity responsible for defining and maintaining Group characteristics and/or
      * registered members.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $managingEntity = null;
+    protected $managingEntity = null;
+
     /**
      * Represents a defined collection of entities that may be discussed or acted upon
      * collectively but which are not expected to act collectively, and are not
@@ -186,36 +192,39 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember[]
      */
-    private $member = [];
+    protected $member = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * Types of resources that are part of group.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRGroup Constructor
@@ -379,7 +388,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -416,7 +425,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
@@ -430,13 +439,13 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -454,7 +463,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the resource refers to a specific group of real
      * individuals. If false, the group defines a set of intended individuals.
@@ -468,13 +477,13 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the resource refers to a specific group of real
      * individuals. If false, the group defines a set of intended individuals.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $actual
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setActual($actual = null)
     {
@@ -514,7 +523,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Identifies traits whose presence r absence is shared by members of the group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic $characteristic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function addCharacteristic(FHIRGroupCharacteristic $characteristic = null)
     {
@@ -531,7 +540,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Identifies traits whose presence r absence is shared by members of the group.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic[] $characteristic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setCharacteristic(array $characteristic = [])
     {
@@ -553,7 +562,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
@@ -569,13 +578,13 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -587,7 +596,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique business identifier for this group.
      *
@@ -602,12 +611,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique business identifier for this group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -619,12 +628,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique business identifier for this group.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -645,7 +654,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Entity responsible for defining and maintaining Group characteristics and/or
      * registered members.
@@ -660,13 +669,13 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Entity responsible for defining and maintaining Group characteristics and/or
      * registered members.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $managingEntity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setManagingEntity(FHIRReference $managingEntity = null)
     {
@@ -698,7 +707,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Identifies the resource instances that are members of the group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember $member
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function addMember(FHIRGroupMember $member = null)
     {
@@ -715,7 +724,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Identifies the resource instances that are members of the group.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember[] $member
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setMember(array $member = [])
     {
@@ -736,7 +745,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
      *
@@ -750,12 +759,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setName($name = null)
     {
@@ -773,7 +782,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
@@ -787,13 +796,13 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setQuantity($quantity = null)
     {
@@ -811,7 +820,7 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Types of resources that are part of group.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
      *
@@ -824,12 +833,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 
     /**
      * Types of resources that are part of group.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGroup
+     * @return static
      */
     public function setType(FHIRGroupType $type = null)
     {

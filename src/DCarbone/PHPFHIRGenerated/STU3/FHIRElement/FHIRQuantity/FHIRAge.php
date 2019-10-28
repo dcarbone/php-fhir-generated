@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * A duration of time during which an organism (or a process) has existed.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRAge
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
@@ -80,7 +80,7 @@ class FHIRAge extends FHIRQuantity
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AGE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRAge Constructor
@@ -122,7 +122,7 @@ class FHIRAge extends FHIRQuantity
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {

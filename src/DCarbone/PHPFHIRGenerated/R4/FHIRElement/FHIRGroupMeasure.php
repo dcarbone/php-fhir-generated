@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Possible group measure aggregates (E.g. Mean, Median).
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRGroupMeasure
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -80,14 +80,14 @@ class FHIRGroupMeasure extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GROUP_MEASURE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRGroupMeasureList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRGroupMeasure Constructor
@@ -132,7 +132,7 @@ class FHIRGroupMeasure extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -169,7 +169,7 @@ class FHIRGroupMeasure extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRGroupMeasureList $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
+     * @return static
      */
     public function setValue($value = null)
     {

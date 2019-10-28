@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ASSERT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMPARE_TO_SOURCE_EXPRESSION = 'compareToSourceExpression';
     const FIELD_COMPARE_TO_SOURCE_EXPRESSION_EXT = '_compareToSourceExpression';
@@ -140,7 +140,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fluentpath expression to evaluate against the source fixture. When
      * compareToSourceId is defined, either compareToSourceExpression or
@@ -148,22 +148,24 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $compareToSourceExpression = null;
+    protected $compareToSourceExpression = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the source fixture used as the contents to be evaluated by either the
      * "source/expression" or "sourceId/path" definition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $compareToSourceId = null;
+    protected $compareToSourceId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * XPath or JSONPath expression to evaluate against the source fixture. When
      * compareToSourceId is defined, either compareToSourceExpression or
@@ -171,158 +173,174 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $compareToSourcePath = null;
+    protected $compareToSourcePath = null;
+
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContentType
      */
-    private $contentType = null;
+    protected $contentType = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * The type of direction to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction to use for the assertion.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAssertionDirectionType
      */
-    private $direction = null;
+    protected $direction = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fluentpath expression to be evaluated against the request or response
      * message contents - HTTP headers and payload.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $expression = null;
+    protected $expression = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The HTTP header field name e.g. 'Location'.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $headerField = null;
+    protected $headerField = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $label = null;
+    protected $label = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The ID of a fixture. Asserts that the response contains at a minimum the fixture
      * specified by minimumId.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $minimumId = null;
+    protected $minimumId = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not the test execution performs validation on the bundle navigation
      * links.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $navigationLinks = null;
+    protected $navigationLinks = null;
+
     /**
      * The type of operator to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The operator type defines the conditional behavior of the assert. If not
      * defined, the default is equals.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAssertionOperatorType
      */
-    private $operator = null;
+    protected $operator = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The XPath or JSONPath expression to be evaluated against the fixture
      * representing the response received from server.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
+
     /**
      * The allowable request method or HTTP operation codes.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The request method or HTTP operation code to compare against that used by the
      * client system under test.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTestScriptRequestMethodCode
      */
-    private $requestMethod = null;
+    protected $requestMethod = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to use in a comparison against the request URL path string.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $requestURL = null;
+    protected $requestURL = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRDefinedType
      */
-    private $resource = null;
+    protected $resource = null;
+
     /**
      * The type of response code to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * okay | created | noContent | notModified | bad | forbidden | notFound |
      * methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAssertionResponseTypes
      */
-    private $response = null;
+    protected $response = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the HTTP response code to be tested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $responseCode = null;
+    protected $responseCode = null;
+
     /**
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
@@ -331,7 +349,8 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule2
      */
-    private $rule = null;
+    protected $rule = null;
+
     /**
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
@@ -340,53 +359,57 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset1
      */
-    private $ruleset = null;
+    protected $ruleset = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $sourceId = null;
+    protected $sourceId = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The ID of the Profile to validate against.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    private $validateProfileId = null;
+    protected $validateProfileId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to compare to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not the test execution will produce a warning only on error for this
      * assert.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $warningOnly = null;
+    protected $warningOnly = null;
 
     /**
      * FHIRTestScriptAssert Constructor
@@ -706,7 +729,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -736,7 +759,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fluentpath expression to evaluate against the source fixture. When
      * compareToSourceId is defined, either compareToSourceExpression or
@@ -752,14 +775,14 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fluentpath expression to evaluate against the source fixture. When
      * compareToSourceId is defined, either compareToSourceExpression or
      * compareToSourcePath must be defined, but not both.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $compareToSourceExpression
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setCompareToSourceExpression($compareToSourceExpression = null)
     {
@@ -778,7 +801,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the source fixture used as the contents to be evaluated by either the
      * "source/expression" or "sourceId/path" definition.
@@ -793,13 +816,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the source fixture used as the contents to be evaluated by either the
      * "source/expression" or "sourceId/path" definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $compareToSourceId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setCompareToSourceId($compareToSourceId = null)
     {
@@ -818,7 +841,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * XPath or JSONPath expression to evaluate against the source fixture. When
      * compareToSourceId is defined, either compareToSourceExpression or
@@ -834,14 +857,14 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * XPath or JSONPath expression to evaluate against the source fixture. When
      * compareToSourceId is defined, either compareToSourceExpression or
      * compareToSourcePath must be defined, but not both.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $compareToSourcePath
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setCompareToSourcePath($compareToSourcePath = null)
     {
@@ -859,7 +882,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
@@ -873,13 +896,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The content or mime type.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The content-type or mime-type to use for RESTful operation in the 'Content-Type'
      * header.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContentType $contentType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setContentType(FHIRContentType $contentType = null)
     {
@@ -890,7 +913,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
@@ -905,13 +928,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -929,7 +952,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The type of direction to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction to use for the assertion.
      *
@@ -942,12 +965,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The type of direction to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction to use for the assertion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAssertionDirectionType $direction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setDirection(FHIRAssertionDirectionType $direction = null)
     {
@@ -958,7 +981,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fluentpath expression to be evaluated against the request or response
      * message contents - HTTP headers and payload.
@@ -973,13 +996,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fluentpath expression to be evaluated against the request or response
      * message contents - HTTP headers and payload.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $expression
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setExpression($expression = null)
     {
@@ -998,7 +1021,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The HTTP header field name e.g. 'Location'.
      *
@@ -1012,12 +1035,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The HTTP header field name e.g. 'Location'.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $headerField
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setHeaderField($headerField = null)
     {
@@ -1036,7 +1059,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
      *
@@ -1050,12 +1073,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $label
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setLabel($label = null)
     {
@@ -1074,7 +1097,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The ID of a fixture. Asserts that the response contains at a minimum the fixture
      * specified by minimumId.
@@ -1089,13 +1112,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The ID of a fixture. Asserts that the response contains at a minimum the fixture
      * specified by minimumId.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $minimumId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setMinimumId($minimumId = null)
     {
@@ -1113,7 +1136,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not the test execution performs validation on the bundle navigation
      * links.
@@ -1127,13 +1150,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not the test execution performs validation on the bundle navigation
      * links.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $navigationLinks
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setNavigationLinks($navigationLinks = null)
     {
@@ -1151,7 +1174,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The type of operator to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The operator type defines the conditional behavior of the assert. If not
      * defined, the default is equals.
@@ -1165,13 +1188,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The type of operator to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The operator type defines the conditional behavior of the assert. If not
      * defined, the default is equals.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAssertionOperatorType $operator
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setOperator(FHIRAssertionOperatorType $operator = null)
     {
@@ -1182,7 +1205,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The XPath or JSONPath expression to be evaluated against the fixture
      * representing the response received from server.
@@ -1197,13 +1220,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The XPath or JSONPath expression to be evaluated against the fixture
      * representing the response received from server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setPath($path = null)
     {
@@ -1221,7 +1244,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The allowable request method or HTTP operation codes.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The request method or HTTP operation code to compare against that used by the
      * client system under test.
@@ -1235,13 +1258,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The allowable request method or HTTP operation codes.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The request method or HTTP operation code to compare against that used by the
      * client system under test.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTestScriptRequestMethodCode $requestMethod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setRequestMethod(FHIRTestScriptRequestMethodCode $requestMethod = null)
     {
@@ -1252,7 +1275,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to use in a comparison against the request URL path string.
      *
@@ -1266,12 +1289,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to use in a comparison against the request URL path string.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $requestURL
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setRequestURL($requestURL = null)
     {
@@ -1288,7 +1311,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
      *
@@ -1300,12 +1323,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource. See http://build.fhir.org/resourcelist.html.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRDefinedType $resource
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setResource(FHIRFHIRDefinedType $resource = null)
     {
@@ -1315,7 +1338,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The type of response code to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * okay | created | noContent | notModified | bad | forbidden | notFound |
      * methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
@@ -1329,13 +1352,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * The type of response code to use for assertion.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * okay | created | noContent | notModified | bad | forbidden | notFound |
      * methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAssertionResponseTypes $response
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setResponse(FHIRAssertionResponseTypes $response = null)
     {
@@ -1346,7 +1369,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the HTTP response code to be tested.
      *
@@ -1360,12 +1383,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the HTTP response code to be tested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $responseCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setResponseCode($responseCode = null)
     {
@@ -1401,7 +1424,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * The TestScript.rule this assert will evaluate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule2 $rule
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setRule(FHIRTestScriptRule2 $rule = null)
     {
@@ -1429,7 +1452,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * The TestScript.ruleset this assert will evaluate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset1 $ruleset
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setRuleset(FHIRTestScriptRuleset1 $ruleset = null)
     {
@@ -1442,7 +1465,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against.
@@ -1459,13 +1482,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $sourceId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setSourceId($sourceId = null)
     {
@@ -1486,7 +1509,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The ID of the Profile to validate against.
@@ -1503,13 +1526,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The ID of the Profile to validate against.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $validateProfileId
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setValidateProfileId($validateProfileId = null)
     {
@@ -1528,7 +1551,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to compare to.
      *
@@ -1542,12 +1565,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value to compare to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setValue($value = null)
     {
@@ -1565,7 +1588,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not the test execution will produce a warning only on error for this
      * assert.
@@ -1579,13 +1602,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether or not the test execution will produce a warning only on error for this
      * assert.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $warningOnly
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
+     * @return static
      */
     public function setWarningOnly($warningOnly = null)
     {

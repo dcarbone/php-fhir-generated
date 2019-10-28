@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCompo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPOSITION_DOT_SECTION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_CODE = 'code';
@@ -109,53 +109,57 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $author = [];
+    protected $author = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $emptyReason = null;
+    protected $emptyReason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $entry = [];
+    protected $entry = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual focus of the section when it is not the subject of the composition,
      * but instead represents something or someone associated with the subject such as
@@ -168,10 +172,11 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $focus = null;
+    protected $focus = null;
+
     /**
      * The processing mode that applies to this section.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entry list was prepared - whether it is a working list that is suitable
      * for being maintained on an ongoing basis, or if it represents a snapshot of a
@@ -180,18 +185,20 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRListMode
      */
-    private $mode = null;
+    protected $mode = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $orderedBy = null;
+    protected $orderedBy = null;
+
     /**
      * A set of healthcare-related information that is assembled together into a single
      * logical package that provides a single coherent statement of meaning,
@@ -207,12 +214,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
-    private $section = [];
+    protected $section = [];
+
     /**
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable narrative that contains the attested content of the section,
      * used to represent the content of the resource to a human. The narrative need not
@@ -221,18 +229,19 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative
      */
-    private $text = null;
+    protected $text = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
 
     /**
      * FHIRCompositionSection Constructor
@@ -374,7 +383,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -404,7 +413,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
@@ -419,13 +428,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function addAuthor(FHIRReference $author = null)
     {
@@ -436,13 +445,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setAuthor(array $author = [])
     {
@@ -464,7 +473,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
@@ -480,13 +489,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -498,7 +507,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
@@ -514,13 +523,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $emptyReason
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setEmptyReason(FHIRCodeableConcept $emptyReason = null)
     {
@@ -531,7 +540,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
@@ -546,13 +555,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $entry
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function addEntry(FHIRReference $entry = null)
     {
@@ -563,13 +572,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $entry
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setEntry(array $entry = [])
     {
@@ -590,7 +599,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual focus of the section when it is not the subject of the composition,
      * but instead represents something or someone associated with the subject such as
@@ -611,7 +620,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual focus of the section when it is not the subject of the composition,
      * but instead represents something or someone associated with the subject such as
@@ -623,7 +632,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * logical subject (few resources).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $focus
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setFocus(FHIRReference $focus = null)
     {
@@ -633,7 +642,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
 
     /**
      * The processing mode that applies to this section.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entry list was prepared - whether it is a working list that is suitable
      * for being maintained on an ongoing basis, or if it represents a snapshot of a
@@ -649,7 +658,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
 
     /**
      * The processing mode that applies to this section.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entry list was prepared - whether it is a working list that is suitable
      * for being maintained on an ongoing basis, or if it represents a snapshot of a
@@ -657,7 +666,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * may be marked as added, modified or deleted.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRListMode $mode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setMode(FHIRListMode $mode = null)
     {
@@ -669,7 +678,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
      *
@@ -684,12 +693,12 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $orderedBy
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setOrderedBy(FHIRCodeableConcept $orderedBy = null)
     {
@@ -731,7 +740,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A nested sub-section within this section.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection $section
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function addSection(FHIRCompositionSection $section = null)
     {
@@ -753,7 +762,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A nested sub-section within this section.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[] $section
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setSection(array $section = [])
     {
@@ -775,7 +784,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable narrative that contains the attested content of the section,
      * used to represent the content of the resource to a human. The narrative need not
@@ -793,7 +802,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable narrative that contains the attested content of the section,
      * used to represent the content of the resource to a human. The narrative need not
@@ -801,7 +810,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * make it "clinically safe" for a human to just read the narrative.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative $text
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setText(FHIRNarrative $text = null)
     {
@@ -812,7 +821,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
@@ -827,13 +836,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
+     * @return static
      */
     public function setTitle($title = null)
     {

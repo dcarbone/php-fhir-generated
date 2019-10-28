@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * logical document that provides a single coherent statement of meaning,
  * establishes its own context and that has clinical attestation with regard to who
  * is making the statement.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRComposition
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -88,7 +88,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPOSITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ATTESTER = 'attester';
     const FIELD_AUTHOR = 'author';
@@ -119,75 +119,82 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[]
      */
-    private $attester = [];
+    protected $attester = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in the composition. (Not
      * necessarily who typed it in.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $author = [];
+    protected $author = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of the composition. This may be implied by or
      * derived from the code specified in the Composition Type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $class = null;
+    protected $class = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code specifying the level of confidentiality of the Composition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
-    private $confidentiality = null;
+    protected $confidentiality = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the composition/document information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $custodian = null;
+    protected $custodian = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The composition editing time, when the composition was last logically changed by
      * the author.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the clinical encounter or type of care this documentation is
      * associated with.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A set of healthcare-related information that is assembled together into a single
      * logical document that provides a single coherent statement of meaning,
@@ -199,18 +206,20 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent
      */
-    private $event = null;
+    protected $event = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Logical Identifier for the composition, assigned when created. This identifier
      * stays constant as the composition is changed over time.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A set of healthcare-related information that is assembled together into a single
      * logical document that provides a single coherent statement of meaning,
@@ -221,21 +230,23 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
-    private $section = [];
+    protected $section = [];
+
     /**
      * The workflow/clinical status of the composition
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow/clinical status of this composition. The status is a marker for the
      * clinical standing of the document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCompositionStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the composition is about. The composition can be about a person,
      * (patient or healthcare practitioner), a device (I.e. machine) or even a group of
@@ -244,21 +255,23 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official human-readable label for the composition.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the particular kind of composition (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
@@ -266,7 +279,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRComposition Constructor
@@ -446,7 +459,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -505,7 +518,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * A participant who has attested to the accuracy of the composition/document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester $attester
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function addAttester(FHIRCompositionAttester $attester = null)
     {
@@ -522,7 +535,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * A participant who has attested to the accuracy of the composition/document.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[] $attester
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setAttester(array $attester = [])
     {
@@ -543,7 +556,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in the composition. (Not
      * necessarily who typed it in.).
@@ -558,13 +571,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in the composition. (Not
      * necessarily who typed it in.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function addAuthor(FHIRResourceReference $author = null)
     {
@@ -575,13 +588,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for the information in the composition. (Not
      * necessarily who typed it in.).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setAuthor(array $author = [])
     {
@@ -603,7 +616,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of the composition. This may be implied by or
      * derived from the code specified in the Composition Type.
@@ -619,13 +632,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A categorization for the type of the composition. This may be implied by or
      * derived from the code specified in the Composition Type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $class
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setClass(FHIRCodeableConcept $class = null)
     {
@@ -636,7 +649,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code specifying the level of confidentiality of the Composition.
      *
@@ -650,12 +663,12 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The code specifying the level of confidentiality of the Composition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding $confidentiality
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setConfidentiality(FHIRCoding $confidentiality = null)
     {
@@ -666,7 +679,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the composition/document information.
@@ -681,13 +694,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the composition/document information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $custodian
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setCustodian(FHIRResourceReference $custodian = null)
     {
@@ -700,7 +713,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The composition editing time, when the composition was last logically changed by
      * the author.
@@ -717,13 +730,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The composition editing time, when the composition was last logically changed by
      * the author.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -742,7 +755,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the clinical encounter or type of care this documentation is
      * associated with.
@@ -757,13 +770,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the clinical encounter or type of care this documentation is
      * associated with.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setEncounter(FHIRResourceReference $encounter = null)
     {
@@ -797,7 +810,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * documented.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setEvent(FHIRCompositionEvent $event = null)
     {
@@ -808,7 +821,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Logical Identifier for the composition, assigned when created. This identifier
      * stays constant as the composition is changed over time.
@@ -823,13 +836,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Logical Identifier for the composition, assigned when created. This identifier
      * stays constant as the composition is changed over time.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -861,7 +874,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * The root of the sections that make up the composition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection $section
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function addSection(FHIRCompositionSection $section = null)
     {
@@ -878,7 +891,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * The root of the sections that make up the composition.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[] $section
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setSection(array $section = [])
     {
@@ -898,7 +911,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
 
     /**
      * The workflow/clinical status of the composition
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow/clinical status of this composition. The status is a marker for the
      * clinical standing of the document.
@@ -912,13 +925,13 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
 
     /**
      * The workflow/clinical status of the composition
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow/clinical status of this composition. The status is a marker for the
      * clinical standing of the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCompositionStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setStatus(FHIRCompositionStatus $status = null)
     {
@@ -929,7 +942,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the composition is about. The composition can be about a person,
      * (patient or healthcare practitioner), a device (I.e. machine) or even a group of
@@ -946,7 +959,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the composition is about. The composition can be about a person,
      * (patient or healthcare practitioner), a device (I.e. machine) or even a group of
@@ -954,7 +967,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * that share a common exposure).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {
@@ -964,7 +977,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official human-readable label for the composition.
      *
@@ -977,12 +990,12 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official human-readable label for the composition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -1002,7 +1015,7 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the particular kind of composition (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
@@ -1019,14 +1032,14 @@ class FHIRComposition extends FHIRResource implements PHPFHIRContainedTypeInterf
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the particular kind of composition (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the composition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRComposition
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

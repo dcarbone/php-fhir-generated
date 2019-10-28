@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_INGREDIENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IS_ACTIVE = 'isActive';
     const FIELD_IS_ACTIVE_EXT = '_isActive';
@@ -92,42 +92,45 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $isActive = null;
+    protected $isActive = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication. (choose any one of item*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $itemCodeableConcept = null;
+    protected $itemCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication. (choose any one of item*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $itemReference = null;
+    protected $itemReference = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
@@ -135,7 +138,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $strength = null;
+    protected $strength = null;
 
     /**
      * FHIRMedicationKnowledgeIngredient Constructor
@@ -206,7 +209,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -235,7 +238,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
@@ -249,13 +252,13 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $isActive
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
+     * @return static
      */
     public function setIsActive($isActive = null)
     {
@@ -275,7 +278,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication. (choose any one of item*, but only one)
@@ -291,13 +294,13 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication. (choose any one of item*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
+     * @return static
      */
     public function setItemCodeableConcept(FHIRCodeableConcept $itemCodeableConcept = null)
     {
@@ -308,7 +311,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication. (choose any one of item*, but only one)
@@ -323,13 +326,13 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication. (choose any one of item*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $itemReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
+     * @return static
      */
     public function setItemReference(FHIRReference $itemReference = null)
     {
@@ -341,7 +344,7 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
@@ -358,14 +361,14 @@ class FHIRMedicationKnowledgeIngredient extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $strength
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient
+     * @return static
      */
     public function setStrength(FHIRRatio $strength = null)
     {

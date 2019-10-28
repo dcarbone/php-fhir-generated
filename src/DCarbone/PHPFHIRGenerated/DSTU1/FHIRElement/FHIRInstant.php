@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * An instant in time - known at least to the second
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRInstant
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -75,14 +75,15 @@ class FHIRInstant extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSTANT;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRInstantPrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRInstant Constructor
@@ -130,7 +131,7 @@ class FHIRInstant extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -166,7 +167,7 @@ class FHIRInstant extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRInstantPrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     * @return static
      */
     public function setValue($value = null)
     {

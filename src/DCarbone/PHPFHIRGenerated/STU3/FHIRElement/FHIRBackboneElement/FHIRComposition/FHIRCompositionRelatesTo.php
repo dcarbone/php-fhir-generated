@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPOSITION_DOT_RELATES_TO;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -96,34 +96,36 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
 
     /**
      * The type of relationship between documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this composition has with anther composition or
      * document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDocumentRelationshipType
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $targetIdentifier = null;
+    protected $targetIdentifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $targetReference = null;
+    protected $targetReference = null;
 
     /**
      * FHIRCompositionRelatesTo Constructor
@@ -192,7 +194,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -221,7 +223,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
 
     /**
      * The type of relationship between documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this composition has with anther composition or
      * document.
@@ -235,13 +237,13 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
 
     /**
      * The type of relationship between documents.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship that this composition has with anther composition or
      * document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDocumentRelationshipType $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
+     * @return static
      */
     public function setCode(FHIRDocumentRelationshipType $code = null)
     {
@@ -252,7 +254,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
      *
@@ -266,12 +268,12 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $targetIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
+     * @return static
      */
     public function setTargetIdentifier(FHIRIdentifier $targetIdentifier = null)
     {
@@ -282,7 +284,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
      *
@@ -296,12 +298,12 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $targetReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo
+     * @return static
      */
     public function setTargetReference(FHIRReference $targetReference = null)
     {

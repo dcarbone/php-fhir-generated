@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Information about a medication that is used to support knowledge.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicationKnowledge
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ADMINISTRATION_GUIDELINES = 'administrationGuidelines';
     const FIELD_AMOUNT = 'amount';
@@ -133,13 +133,14 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[]
      */
-    private $administrationGuidelines = [];
+    protected $administrationGuidelines = [];
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific amount of the drug in the packaged product. For example, when
      * specifying a product that has the same strength (For example, Insulin glargine
@@ -148,11 +149,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $amount = null;
+    protected $amount = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated or related medications. For example, if the medication is a branded
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
@@ -161,12 +163,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $associatedMedication = [];
+    protected $associatedMedication = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that specifies this medication, or a textual description if no code is
      * available. Usage note: This could be a standard medication code such as a code
@@ -175,18 +178,20 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $contraindication = [];
+    protected $contraindication = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -194,18 +199,20 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
      */
-    private $cost = [];
+    protected $cost = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $doseForm = null;
+    protected $doseForm = null;
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -214,7 +221,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[]
      */
-    private $drugCharacteristic = [];
+    protected $drugCharacteristic = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -222,18 +230,20 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
      */
-    private $ingredient = [];
+    protected $ingredient = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $intendedRoute = [];
+    protected $intendedRoute = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -242,18 +252,20 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics[]
      */
-    private $kinetics = [];
+    protected $kinetics = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $manufacturer = null;
+    protected $manufacturer = null;
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -261,7 +273,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
      */
-    private $medicineClassification = [];
+    protected $medicineClassification = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -269,7 +282,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[]
      */
-    private $monitoringProgram = [];
+    protected $monitoringProgram = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -277,7 +291,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[]
      */
-    private $monograph = [];
+    protected $monograph = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -285,33 +300,36 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      */
-    private $packaging = null;
+    protected $packaging = null;
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    private $preparationInstruction = null;
+    protected $preparationInstruction = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $productType = [];
+    protected $productType = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -319,7 +337,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[]
      */
-    private $regulatory = [];
+    protected $regulatory = [];
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -327,11 +346,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[]
      */
-    private $relatedMedicationKnowledge = [];
+    protected $relatedMedicationKnowledge = [];
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code to indicate if the medication is in active use. The status refers to the
@@ -340,11 +360,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
@@ -352,7 +373,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $synonym = [];
+    protected $synonym = [];
 
     /**
      * FHIRMedicationKnowledge Constructor
@@ -686,7 +707,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -739,7 +760,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Guidelines for the administration of the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines $administrationGuidelines
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addAdministrationGuidelines(FHIRMedicationKnowledgeAdministrationGuidelines $administrationGuidelines = null)
     {
@@ -753,7 +774,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Guidelines for the administration of the medication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[] $administrationGuidelines
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setAdministrationGuidelines(array $administrationGuidelines = [])
     {
@@ -776,7 +797,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific amount of the drug in the packaged product. For example, when
      * specifying a product that has the same strength (For example, Insulin glargine
@@ -795,7 +816,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific amount of the drug in the packaged product. For example, when
      * specifying a product that has the same strength (For example, Insulin glargine
@@ -803,7 +824,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * clarification of the package amount (For example, 3 mL, 10mL, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $amount
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setAmount(FHIRQuantity $amount = null)
     {
@@ -814,7 +835,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated or related medications. For example, if the medication is a branded
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
@@ -831,7 +852,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated or related medications. For example, if the medication is a branded
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
@@ -839,7 +860,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * product (e.g. Crestor).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $associatedMedication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addAssociatedMedication(FHIRReference $associatedMedication = null)
     {
@@ -850,7 +871,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated or related medications. For example, if the medication is a branded
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
@@ -858,7 +879,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * product (e.g. Crestor).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $associatedMedication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setAssociatedMedication(array $associatedMedication = [])
     {
@@ -880,7 +901,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that specifies this medication, or a textual description if no code is
      * available. Usage note: This could be a standard medication code such as a code
@@ -898,7 +919,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that specifies this medication, or a textual description if no code is
      * available. Usage note: This could be a standard medication code such as a code
@@ -906,7 +927,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * code, optionally with translations to other code systems.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -917,7 +938,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
@@ -932,13 +953,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $contraindication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addContraindication(FHIRReference $contraindication = null)
     {
@@ -949,13 +970,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $contraindication
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setContraindication(array $contraindication = [])
     {
@@ -991,7 +1012,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * The price of the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $cost
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addCost(FHIRMedicationKnowledgeCost $cost = null)
     {
@@ -1005,7 +1026,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * The price of the medication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[] $cost
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setCost(array $cost = [])
     {
@@ -1027,7 +1048,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
      *
@@ -1042,12 +1063,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $doseForm
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setDoseForm(FHIRCodeableConcept $doseForm = null)
     {
@@ -1075,7 +1096,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * imprints, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic = null)
     {
@@ -1090,7 +1111,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * imprints, etc.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[] $drugCharacteristic
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setDrugCharacteristic(array $drugCharacteristic = [])
     {
@@ -1126,7 +1147,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Identifies a particular constituent of interest in the product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addIngredient(FHIRMedicationKnowledgeIngredient $ingredient = null)
     {
@@ -1140,7 +1161,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Identifies a particular constituent of interest in the product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[] $ingredient
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setIngredient(array $ingredient = [])
     {
@@ -1162,7 +1183,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
      *
@@ -1177,12 +1198,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $intendedRoute
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addIntendedRoute(FHIRCodeableConcept $intendedRoute = null)
     {
@@ -1194,12 +1215,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $intendedRoute
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setIntendedRoute(array $intendedRoute = [])
     {
@@ -1237,7 +1258,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * medication from the body.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics $kinetics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addKinetics(FHIRMedicationKnowledgeKinetics $kinetics = null)
     {
@@ -1252,7 +1273,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * medication from the body.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics[] $kinetics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setKinetics(array $kinetics = [])
     {
@@ -1273,7 +1294,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
@@ -1288,13 +1309,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setManufacturer(FHIRReference $manufacturer = null)
     {
@@ -1320,7 +1341,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Categorization of the medication within a formulary or classification system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification $medicineClassification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addMedicineClassification(FHIRMedicationKnowledgeMedicineClassification $medicineClassification = null)
     {
@@ -1334,7 +1355,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Categorization of the medication within a formulary or classification system.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[] $medicineClassification
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setMedicineClassification(array $medicineClassification = [])
     {
@@ -1370,7 +1391,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * The program under which the medication is reviewed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram $monitoringProgram
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram $monitoringProgram = null)
     {
@@ -1384,7 +1405,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * The program under which the medication is reviewed.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[] $monitoringProgram
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setMonitoringProgram(array $monitoringProgram = [])
     {
@@ -1420,7 +1441,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Associated documentation about the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph $monograph
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addMonograph(FHIRMedicationKnowledgeMonograph $monograph = null)
     {
@@ -1434,7 +1455,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Associated documentation about the medication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[] $monograph
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setMonograph(array $monograph = [])
     {
@@ -1470,7 +1491,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Information that only applies to packages (not products).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $packaging
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setPackaging(FHIRMedicationKnowledgePackaging $packaging = null)
     {
@@ -1484,7 +1505,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
@@ -1502,13 +1523,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Systems are not required to have markdown support, so the text should be
      * readable without markdown processing. The markdown syntax is GFM - see
      * https://github.github.com/gfm/
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $preparationInstruction
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setPreparationInstruction($preparationInstruction = null)
     {
@@ -1528,7 +1549,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
@@ -1544,13 +1565,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addProductType(FHIRCodeableConcept $productType = null)
     {
@@ -1562,13 +1583,13 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $productType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setProductType(array $productType = [])
     {
@@ -1604,7 +1625,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Regulatory information about a medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $regulatory
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addRegulatory(FHIRMedicationKnowledgeRegulatory $regulatory = null)
     {
@@ -1618,7 +1639,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Regulatory information about a medication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[] $regulatory
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setRegulatory(array $regulatory = [])
     {
@@ -1654,7 +1675,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Associated or related knowledge about a medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge $relatedMedicationKnowledge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge $relatedMedicationKnowledge = null)
     {
@@ -1668,7 +1689,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Associated or related knowledge about a medication.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[] $relatedMedicationKnowledge
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setRelatedMedicationKnowledge(array $relatedMedicationKnowledge = [])
     {
@@ -1689,7 +1710,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code to indicate if the medication is in active use. The status refers to the
@@ -1706,7 +1727,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code to indicate if the medication is in active use. The status refers to the
@@ -1714,7 +1735,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * properties.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setStatus($status = null)
     {
@@ -1733,7 +1754,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
@@ -1749,14 +1770,14 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
      * salbutamol and albuterol.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $synonym
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function addSynonym($synonym = null)
     {
@@ -1775,14 +1796,14 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
      * salbutamol and albuterol.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $synonym
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return static
      */
     public function setSynonym(array $synonym = [])
     {

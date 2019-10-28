@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * HTTP verbs (in the HTTP command line). See [HTTP
  * rfc](https://tools.ietf.org/html/rfc7231) for details.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRHTTPVerb
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -81,14 +81,14 @@ class FHIRHTTPVerb extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_HTTPVERB;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRHTTPVerbList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRHTTPVerb Constructor
@@ -133,7 +133,7 @@ class FHIRHTTPVerb extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHTTPVerb
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -170,7 +170,7 @@ class FHIRHTTPVerb extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRHTTPVerbList $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHTTPVerb
+     * @return static
      */
     public function setValue($value = null)
     {

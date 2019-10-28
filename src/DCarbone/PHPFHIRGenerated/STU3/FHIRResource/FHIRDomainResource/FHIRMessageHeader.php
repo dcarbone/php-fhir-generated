@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * action. The reference(s) that are the subject of the action as well as other
  * information related to the action are typically transmitted in a bundle in which
  * the MessageHeader resource instance is the first resource in the bundle.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMessageHeader
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -90,7 +90,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_DESTINATION = 'destination';
@@ -109,7 +109,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The logical author of the message - the person or device that decided the
      * described event should happen. When there is more than one candidate, pick the
@@ -117,7 +117,8 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * The header for a message exchange that is either requesting or responding to an
      * action. The reference(s) that are the subject of the action as well as other
@@ -128,11 +129,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[]
      */
-    private $destination = [];
+    protected $destination = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that performed the data entry leading to this message. When
      * there is more than one candidate, pick the most proximal to the message. Can
@@ -140,11 +142,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $enterer = null;
+    protected $enterer = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
@@ -152,41 +155,45 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
-    private $event = null;
+    protected $event = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $focus = [];
+    protected $focus = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $reason = null;
+    protected $reason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $receiver = null;
+    protected $receiver = null;
+
     /**
      * The header for a message exchange that is either requesting or responding to an
      * action. The reference(s) that are the subject of the action as well as other
@@ -198,11 +205,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
-    private $response = null;
+    protected $response = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
@@ -210,17 +218,19 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $responsible = null;
+    protected $responsible = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $sender = null;
+    protected $sender = null;
+
     /**
      * The header for a message exchange that is either requesting or responding to an
      * action. The reference(s) that are the subject of the action as well as other
@@ -231,19 +241,20 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
      */
-    private $source = null;
+    protected $source = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time that the message was sent.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $timestamp = null;
+    protected $timestamp = null;
 
     /**
      * FHIRMessageHeader Constructor
@@ -386,7 +397,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -424,7 +435,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The logical author of the message - the person or device that decided the
      * described event should happen. When there is more than one candidate, pick the
@@ -440,14 +451,14 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The logical author of the message - the person or device that decided the
      * described event should happen. When there is more than one candidate, pick the
      * most proximal to the MessageHeader. Can provide other authors in extensions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -479,7 +490,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * The destination application which the message is intended for.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination $destination
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function addDestination(FHIRMessageHeaderDestination $destination = null)
     {
@@ -496,7 +507,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * The destination application which the message is intended for.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[] $destination
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setDestination(array $destination = [])
     {
@@ -517,7 +528,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that performed the data entry leading to this message. When
      * there is more than one candidate, pick the most proximal to the message. Can
@@ -533,14 +544,14 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that performed the data entry leading to this message. When
      * there is more than one candidate, pick the most proximal to the message. Can
      * provide other enterers in extensions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $enterer
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setEnterer(FHIRReference $enterer = null)
     {
@@ -551,7 +562,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
@@ -567,14 +578,14 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that identifies the event this message represents and connects it with its
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://hl7.org/fhir/message-events".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $event
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setEvent(FHIRCoding $event = null)
     {
@@ -585,7 +596,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
@@ -600,13 +611,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $focus
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function addFocus(FHIRReference $focus = null)
     {
@@ -617,13 +628,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $focus
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setFocus(array $focus = [])
     {
@@ -645,7 +656,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
@@ -661,13 +672,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
@@ -678,7 +689,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
@@ -693,13 +704,13 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $receiver
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setReceiver(FHIRReference $receiver = null)
     {
@@ -733,7 +744,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * if this message is a response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $response
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setResponse(FHIRMessageHeaderResponse $response = null)
     {
@@ -744,7 +755,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
@@ -760,14 +771,14 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
      * policies of the responsible party.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $responsible
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setResponsible(FHIRReference $responsible = null)
     {
@@ -778,7 +789,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
      *
@@ -792,12 +803,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $sender
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setSender(FHIRReference $sender = null)
     {
@@ -829,7 +840,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * The source application from which this message originated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $source
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setSource(FHIRMessageHeaderSource $source = null)
     {
@@ -842,7 +853,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time that the message was sent.
      *
@@ -858,12 +869,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time that the message was sent.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $timestamp
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRMessageHeader
+     * @return static
      */
     public function setTimestamp($timestamp = null)
     {

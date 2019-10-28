@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAd
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADVERSE_REACTION_DOT_EXPOSURE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CAUSALITY_EXPECTATION = 'causalityExpectation';
     const FIELD_CAUSALITY_EXPECTATION_EXT = '_causalityExpectation';
@@ -90,46 +90,49 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /**
      * How likely is it that the given exposure caused a reaction
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCausalityExpectation
      */
-    private $causalityExpectation = null;
+    protected $causalityExpectation = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $substance = null;
+    protected $substance = null;
+
     /**
      * The type of exposure that resulted in an adverse reaction
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExposureType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRAdverseReactionExposure Constructor
@@ -210,7 +213,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -239,7 +242,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /**
      * How likely is it that the given exposure caused a reaction
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
@@ -253,13 +256,13 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /**
      * How likely is it that the given exposure caused a reaction
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCausalityExpectation $causalityExpectation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
+     * @return static
      */
     public function setCausalityExpectation(FHIRCausalityExpectation $causalityExpectation = null)
     {
@@ -272,7 +275,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
@@ -289,13 +292,13 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -314,7 +317,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
      *
@@ -328,12 +331,12 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $substance
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
+     * @return static
      */
     public function setSubstance(FHIRResourceReference $substance = null)
     {
@@ -343,7 +346,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /**
      * The type of exposure that resulted in an adverse reaction
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
      *
@@ -356,12 +359,12 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /**
      * The type of exposure that resulted in an adverse reaction
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExposureType $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
+     * @return static
      */
     public function setType(FHIRExposureType $type = null)
     {

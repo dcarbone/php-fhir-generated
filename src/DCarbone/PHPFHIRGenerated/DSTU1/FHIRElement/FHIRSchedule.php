@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * Specifies an event that may occur multiple times. Schedules are used for to
  * reord when things are expected or requested to occur.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRSchedule
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -77,7 +77,7 @@ class FHIRSchedule extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SCHEDULE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_EVENT = 'event';
     const FIELD_REPEAT = 'repeat';
@@ -85,24 +85,25 @@ class FHIRSchedule extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies specific time periods when the event should occur.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod[]
      */
-    private $event = [];
+    protected $event = [];
+
     /**
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a repeating pattern to the intended time periods.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
      */
-    private $repeat = null;
+    protected $repeat = null;
 
     /**
      * FHIRSchedule Constructor
@@ -162,7 +163,7 @@ class FHIRSchedule extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -192,7 +193,7 @@ class FHIRSchedule extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies specific time periods when the event should occur.
      *
@@ -206,12 +207,12 @@ class FHIRSchedule extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies specific time periods when the event should occur.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
+     * @return static
      */
     public function addEvent(FHIRPeriod $event = null)
     {
@@ -222,12 +223,12 @@ class FHIRSchedule extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies specific time periods when the event should occur.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod[] $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
+     * @return static
      */
     public function setEvent(array $event = [])
     {
@@ -249,7 +250,7 @@ class FHIRSchedule extends FHIRElement
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a repeating pattern to the intended time periods.
      *
@@ -264,12 +265,12 @@ class FHIRSchedule extends FHIRElement
      * Specifies an event that may occur multiple times. Schedules are used for to
      * reord when things are expected or requested to occur.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a repeating pattern to the intended time periods.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule\FHIRScheduleRepeat $repeat
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
+     * @return static
      */
     public function setRepeat(FHIRScheduleRepeat $repeat = null)
     {

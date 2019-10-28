@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
     const FIELD_DATE = 'date';
@@ -102,46 +102,50 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which attested information was submitted/retrieved (manual; API;
      * Push).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $communicationMethod = null;
+    protected $communicationMethod = null;
+
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the information was attested to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the who is asserting on behalf of another (organization or individual).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $onBehalfOf = null;
+    protected $onBehalfOf = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the proxy entity submitting
      * attested information on behalf of the attestation source.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $proxyIdentityCertificate = null;
+    protected $proxyIdentityCertificate = null;
+
     /**
      * A signature along with supporting context. The signature may be a digital
      * signature that is cryptographic in nature, or some other signature acceptable to
@@ -149,24 +153,26 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the proxy entity indicating that they have the right to
      * submit attested information on behalf of the attestation source.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
-    private $proxySignature = null;
+    protected $proxySignature = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the attestation source.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $sourceIdentityCertificate = null;
+    protected $sourceIdentityCertificate = null;
+
     /**
      * A signature along with supporting context. The signature may be a digital
      * signature that is cryptographic in nature, or some other signature acceptable to
@@ -174,24 +180,25 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the attestation source that they have attested to the
      * information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
-    private $sourceSignature = null;
+    protected $sourceSignature = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization attesting to information.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $who = null;
+    protected $who = null;
 
     /**
      * FHIRVerificationResultAttestation Constructor
@@ -300,7 +307,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -331,7 +338,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which attested information was submitted/retrieved (manual; API;
      * Push).
@@ -347,13 +354,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which attested information was submitted/retrieved (manual; API;
      * Push).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setCommunicationMethod(FHIRCodeableConcept $communicationMethod = null)
     {
@@ -365,7 +372,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the information was attested to.
      *
@@ -380,12 +387,12 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the information was attested to.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $date
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -404,7 +411,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the who is asserting on behalf of another (organization or individual).
      *
@@ -418,12 +425,12 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the who is asserting on behalf of another (organization or individual).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $onBehalfOf
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setOnBehalfOf(FHIRReference $onBehalfOf = null)
     {
@@ -434,7 +441,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the proxy entity submitting
      * attested information on behalf of the attestation source.
@@ -449,13 +456,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the proxy entity submitting
      * attested information on behalf of the attestation source.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $proxyIdentityCertificate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setProxyIdentityCertificate($proxyIdentityCertificate = null)
     {
@@ -478,7 +485,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the proxy entity indicating that they have the right to
      * submit attested information on behalf of the attestation source.
@@ -497,13 +504,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the proxy entity indicating that they have the right to
      * submit attested information on behalf of the attestation source.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $proxySignature
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setProxySignature(FHIRSignature $proxySignature = null)
     {
@@ -514,7 +521,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the attestation source.
      *
@@ -528,12 +535,12 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital identity certificate associated with the attestation source.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sourceIdentityCertificate
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setSourceIdentityCertificate($sourceIdentityCertificate = null)
     {
@@ -556,7 +563,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the attestation source that they have attested to the
      * information.
@@ -575,13 +582,13 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Signed assertion by the attestation source that they have attested to the
      * information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $sourceSignature
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setSourceSignature(FHIRSignature $sourceSignature = null)
     {
@@ -592,7 +599,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization attesting to information.
      *
@@ -606,12 +613,12 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization attesting to information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $who
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return static
      */
     public function setWho(FHIRReference $who = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_REFERENCE_SEQ;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CHROMOSOME = 'chromosome';
     const FIELD_GENOME_BUILD = 'genomeBuild';
@@ -106,7 +106,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structural unit composed of a nucleic acid molecule which controls its own
      * replication through the interaction of specific proteins at one or more origins
@@ -115,11 +115,12 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $chromosome = null;
+    protected $chromosome = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
@@ -127,10 +128,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $genomeBuild = null;
+    protected $genomeBuild = null;
+
     /**
      * Type for orientation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
@@ -138,12 +140,13 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROrientationType
      */
-    private $orientation = null;
+    protected $orientation = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference identifier of reference sequence submitted to NCBI. It must match the
      * type in the MolecularSequence.type field. For example, the prefix, “NG_”
@@ -152,30 +155,33 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $referenceSeqId = null;
+    protected $referenceSeqId = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another MolecularSequence entity as reference sequence.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $referenceSeqPointer = null;
+    protected $referenceSeqPointer = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $referenceSeqString = null;
+    protected $referenceSeqString = null;
+
     /**
      * Type for strand.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
@@ -183,11 +189,12 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStrandType
      */
-    private $strand = null;
+    protected $strand = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * End position of the window on the reference sequence. If the coordinate system
      * is 0-based then end is exclusive and does not include the last position. If the
@@ -196,18 +203,19 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $windowEnd = null;
+    protected $windowEnd = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $windowStart = null;
+    protected $windowStart = null;
 
     /**
      * FHIRMolecularSequenceReferenceSeq Constructor
@@ -338,7 +346,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -369,7 +377,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structural unit composed of a nucleic acid molecule which controls its own
      * replication through the interaction of specific proteins at one or more origins
@@ -387,7 +395,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Structural unit composed of a nucleic acid molecule which controls its own
      * replication through the interaction of specific proteins at one or more origins
@@ -395,7 +403,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $chromosome
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setChromosome(FHIRCodeableConcept $chromosome = null)
     {
@@ -406,7 +414,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
@@ -422,14 +430,14 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
      * was used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $genomeBuild
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setGenomeBuild($genomeBuild = null)
     {
@@ -447,7 +455,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
 
     /**
      * Type for orientation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
@@ -462,14 +470,14 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
 
     /**
      * Type for orientation.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
      * opposite complementary strand is the "antisense" strand.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROrientationType $orientation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setOrientation(FHIROrientationType $orientation = null)
     {
@@ -481,7 +489,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference identifier of reference sequence submitted to NCBI. It must match the
      * type in the MolecularSequence.type field. For example, the prefix, “NG_”
@@ -499,7 +507,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference identifier of reference sequence submitted to NCBI. It must match the
      * type in the MolecularSequence.type field. For example, the prefix, “NG_”
@@ -507,7 +515,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * transcripts, and “NP_” for amino acid sequences.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $referenceSeqId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setReferenceSeqId(FHIRCodeableConcept $referenceSeqId = null)
     {
@@ -518,7 +526,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another MolecularSequence entity as reference sequence.
      *
@@ -532,12 +540,12 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another MolecularSequence entity as reference sequence.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $referenceSeqPointer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setReferenceSeqPointer(FHIRReference $referenceSeqPointer = null)
     {
@@ -548,7 +556,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
      *
@@ -562,12 +570,12 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $referenceSeqString
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setReferenceSeqString($referenceSeqString = null)
     {
@@ -585,7 +593,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
 
     /**
      * Type for strand.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
@@ -600,14 +608,14 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
 
     /**
      * Type for strand.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
      * 5'-end is on the long arm.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStrandType $strand
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setStrand(FHIRStrandType $strand = null)
     {
@@ -618,7 +626,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * End position of the window on the reference sequence. If the coordinate system
      * is 0-based then end is exclusive and does not include the last position. If the
@@ -635,7 +643,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * End position of the window on the reference sequence. If the coordinate system
      * is 0-based then end is exclusive and does not include the last position. If the
@@ -643,7 +651,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * position.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $windowEnd
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setWindowEnd($windowEnd = null)
     {
@@ -662,7 +670,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
@@ -677,13 +685,13 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $windowStart
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return static
      */
     public function setWindowStart($windowStart = null)
     {

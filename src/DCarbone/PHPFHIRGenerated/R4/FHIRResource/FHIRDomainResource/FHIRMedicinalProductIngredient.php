@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedicinalProductIngredient
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -86,7 +86,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALLERGENIC_INDICATOR = 'allergenicIndicator';
     const FIELD_ALLERGENIC_INDICATOR_EXT = '_allergenicIndicator';
@@ -99,18 +99,19 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $allergenicIndicator = null;
+    protected $allergenicIndicator = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
@@ -118,28 +119,31 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $manufacturer = [];
+    protected $manufacturer = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $role = null;
+    protected $role = null;
+
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
@@ -147,7 +151,8 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
      */
-    private $specifiedSubstance = [];
+    protected $specifiedSubstance = [];
+
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
@@ -155,7 +160,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
-    private $substance = null;
+    protected $substance = null;
 
     /**
      * FHIRMedicinalProductIngredient Constructor
@@ -261,7 +266,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -298,7 +303,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
      *
@@ -311,12 +316,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $allergenicIndicator
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function setAllergenicIndicator($allergenicIndicator = null)
     {
@@ -336,7 +341,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
@@ -353,14 +358,14 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -371,7 +376,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
      *
@@ -385,12 +390,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer = null)
     {
@@ -401,12 +406,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function setManufacturer(array $manufacturer = [])
     {
@@ -428,7 +433,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
      *
@@ -443,12 +448,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $role
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function setRole(FHIRCodeableConcept $role = null)
     {
@@ -474,7 +479,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * A specified substance that comprises this ingredient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function addSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance = null)
     {
@@ -488,7 +493,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * A specified substance that comprises this ingredient.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[] $specifiedSubstance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function setSpecifiedSubstance(array $specifiedSubstance = [])
     {
@@ -524,7 +529,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * The ingredient substance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance $substance
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return static
      */
     public function setSubstance(FHIRMedicinalProductIngredientSubstance $substance = null)
     {

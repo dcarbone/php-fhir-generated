@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PHARMACEUTICAL_DOT_ROUTE_OF_ADMINISTRATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_FIRST_DOSE = 'firstDose';
@@ -99,19 +99,20 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the route.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The first dose (dose quantity) administered in humans can be specified, for a
      * product under investigation, using a numerical value and its unit of
@@ -119,13 +120,14 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $firstDose = null;
+    protected $firstDose = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered as per the protocol referenced in the
@@ -133,25 +135,27 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $maxDosePerDay = null;
+    protected $maxDosePerDay = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per treatment period that can be administered as per the
      * protocol referenced in the clinical trial authorisation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
-    private $maxDosePerTreatmentPeriod = null;
+    protected $maxDosePerTreatmentPeriod = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum single dose that can be administered as per the protocol of a
      * clinical trial can be specified using a numerical value and its unit of
@@ -159,11 +163,12 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $maxSingleDose = null;
+    protected $maxSingleDose = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum treatment period during which an Investigational Medicinal Product
      * can be administered as per the protocol referenced in the clinical trial
@@ -171,7 +176,8 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $maxTreatmentPeriod = null;
+    protected $maxTreatmentPeriod = null;
+
     /**
      * A pharmaceutical product described in terms of its composition and dose form.
      *
@@ -179,7 +185,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies[]
      */
-    private $targetSpecies = [];
+    protected $targetSpecies = [];
 
     /**
      * FHIRMedicinalProductPharmaceuticalRouteOfAdministration Constructor
@@ -289,7 +295,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -320,7 +326,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the route.
      *
@@ -335,12 +341,12 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the route.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -353,7 +359,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The first dose (dose quantity) administered in humans can be specified, for a
      * product under investigation, using a numerical value and its unit of
@@ -371,14 +377,14 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The first dose (dose quantity) administered in humans can be specified, for a
      * product under investigation, using a numerical value and its unit of
      * measurement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $firstDose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setFirstDose(FHIRQuantity $firstDose = null)
     {
@@ -391,7 +397,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered as per the protocol referenced in the
@@ -409,14 +415,14 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered as per the protocol referenced in the
      * clinical trial authorisation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $maxDosePerDay
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setMaxDosePerDay(FHIRQuantity $maxDosePerDay = null)
     {
@@ -428,7 +434,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per treatment period that can be administered as per the
      * protocol referenced in the clinical trial authorisation.
@@ -444,13 +450,13 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per treatment period that can be administered as per the
      * protocol referenced in the clinical trial authorisation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $maxDosePerTreatmentPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setMaxDosePerTreatmentPeriod(FHIRRatio $maxDosePerTreatmentPeriod = null)
     {
@@ -463,7 +469,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum single dose that can be administered as per the protocol of a
      * clinical trial can be specified using a numerical value and its unit of
@@ -481,14 +487,14 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum single dose that can be administered as per the protocol of a
      * clinical trial can be specified using a numerical value and its unit of
      * measurement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $maxSingleDose
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setMaxSingleDose(FHIRQuantity $maxSingleDose = null)
     {
@@ -499,7 +505,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum treatment period during which an Investigational Medicinal Product
      * can be administered as per the protocol referenced in the clinical trial
@@ -515,14 +521,14 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum treatment period during which an Investigational Medicinal Product
      * can be administered as per the protocol referenced in the clinical trial
      * authorisation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setMaxTreatmentPeriod(FHIRDuration $maxTreatmentPeriod = null)
     {
@@ -548,7 +554,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A species for which this route applies.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies $targetSpecies
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function addTargetSpecies(FHIRMedicinalProductPharmaceuticalTargetSpecies $targetSpecies = null)
     {
@@ -562,7 +568,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      * A species for which this route applies.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies[] $targetSpecies
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration
+     * @return static
      */
     public function setTargetSpecies(array $targetSpecies = [])
     {

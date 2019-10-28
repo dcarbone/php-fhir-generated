@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * Primarily used for identification and definition of Medication, but also covers
  * ingredients and packaging.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRMedication
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -83,7 +83,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_IS_BRAND = 'isBrand';
@@ -100,7 +100,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this medication. Usage note: This could
      * be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT
@@ -109,40 +109,44 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set to true if the item is attributable to a specific manufacturer (even if we
      * don't know who that is).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $isBrand = null;
+    protected $isBrand = null;
+
     /**
      * Whether the medication is a product or a package
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Medications are either a single administrable product or a package that contains
      * one or more products.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationKind
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $manufacturer = null;
+    protected $manufacturer = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The common/commercial name of the medication absent information such as
      * strength, form, etc. E.g. Acetaminophen, Tylenol 3, etc. The fully coordinated
@@ -150,7 +154,8 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * Primarily used for identification and definition of Medication, but also covers
      * ingredients and packaging.
@@ -159,7 +164,8 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationPackage
      */
-    private $package = null;
+    protected $package = null;
+
     /**
      * Primarily used for identification and definition of Medication, but also covers
      * ingredients and packaging.
@@ -168,7 +174,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
      */
-    private $product = null;
+    protected $product = null;
 
     /**
      * FHIRMedication Constructor
@@ -270,7 +276,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -309,7 +315,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this medication. Usage note: This could
      * be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT
@@ -327,7 +333,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this medication. Usage note: This could
      * be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT
@@ -335,7 +341,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * to the standard drug codes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -345,7 +351,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set to true if the item is attributable to a specific manufacturer (even if we
      * don't know who that is).
@@ -359,13 +365,13 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set to true if the item is attributable to a specific manufacturer (even if we
      * don't know who that is).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $isBrand
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setIsBrand($isBrand = null)
     {
@@ -383,7 +389,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * Whether the medication is a product or a package
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Medications are either a single administrable product or a package that contains
      * one or more products.
@@ -397,13 +403,13 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * Whether the medication is a product or a package
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Medications are either a single administrable product or a package that contains
      * one or more products.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationKind $kind
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setKind(FHIRMedicationKind $kind = null)
     {
@@ -414,7 +420,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer.
      *
@@ -428,12 +434,12 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $manufacturer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setManufacturer(FHIRResourceReference $manufacturer = null)
     {
@@ -443,7 +449,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The common/commercial name of the medication absent information such as
      * strength, form, etc. E.g. Acetaminophen, Tylenol 3, etc. The fully coordinated
@@ -458,14 +464,14 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The common/commercial name of the medication absent information such as
      * strength, form, etc. E.g. Acetaminophen, Tylenol 3, etc. The fully coordinated
      * name is communicated as the display of Medication.code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setName($name = null)
     {
@@ -501,7 +507,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * Information that only applies to packages (not products).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationPackage $package
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setPackage(FHIRMedicationPackage $package = null)
     {
@@ -529,7 +535,7 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * Information that only applies to products (not packages).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct $product
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedication
+     * @return static
      */
     public function setProduct(FHIRMedicationProduct $product = null)
     {

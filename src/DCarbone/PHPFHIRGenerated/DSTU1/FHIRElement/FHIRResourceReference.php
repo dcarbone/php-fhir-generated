@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 /**
  * A reference from one resource to another.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRResourceReference
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -75,7 +75,7 @@ class FHIRResourceReference extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_REFERENCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DISPLAY = 'display';
     const FIELD_DISPLAY_EXT = '_display';
@@ -84,17 +84,18 @@ class FHIRResourceReference extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a location at which the other resource is found. The reference
      * may a relative reference, in which case it is relative to the service base URL,
@@ -105,7 +106,7 @@ class FHIRResourceReference extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $reference = null;
+    protected $reference = null;
 
     /**
      * FHIRResourceReference Constructor
@@ -167,7 +168,7 @@ class FHIRResourceReference extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -196,7 +197,7 @@ class FHIRResourceReference extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
@@ -210,13 +211,13 @@ class FHIRResourceReference extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -234,7 +235,7 @@ class FHIRResourceReference extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a location at which the other resource is found. The reference
      * may a relative reference, in which case it is relative to the service base URL,
@@ -252,7 +253,7 @@ class FHIRResourceReference extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a location at which the other resource is found. The reference
      * may a relative reference, in which case it is relative to the service base URL,
@@ -262,7 +263,7 @@ class FHIRResourceReference extends FHIRElement
      * fragment references (start with '#') refer to contained resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $reference
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     * @return static
      */
     public function setReference($reference = null)
     {

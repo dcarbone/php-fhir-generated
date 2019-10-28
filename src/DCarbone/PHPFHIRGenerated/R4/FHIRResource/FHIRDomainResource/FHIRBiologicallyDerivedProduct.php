@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * A material substance originating from a biological entity intended to be
  * transplanted or infused into another (possibly the same) biological entity.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRBiologicallyDerivedProduct
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -91,7 +91,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COLLECTION = 'collection';
     const FIELD_IDENTIFIER = 'identifier';
@@ -117,12 +117,13 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
-    private $collection = null;
+    protected $collection = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this biologically derived product
      * instance that are defined by business processes and/or used to refer to it when
@@ -131,7 +132,8 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A material substance originating from a biological entity intended to be
      * transplanted or infused into another (possibly the same) biological entity.
@@ -142,17 +144,19 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
      */
-    private $manipulation = null;
+    protected $manipulation = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $parent = [];
+    protected $parent = [];
+
     /**
      * A material substance originating from a biological entity intended to be
      * transplanted or infused into another (possibly the same) biological entity.
@@ -163,57 +167,63 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
      */
-    private $processing = [];
+    protected $processing = [];
+
     /**
      * Biologically Derived Product Category.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory
      */
-    private $productCategory = null;
+    protected $productCategory = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $productCode = null;
+    protected $productCode = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    private $request = [];
+    protected $request = [];
+
     /**
      * Biologically Derived Product Status.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A material substance originating from a biological entity intended to be
      * transplanted or infused into another (possibly the same) biological entity.
@@ -222,7 +232,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[]
      */
-    private $storage = [];
+    protected $storage = [];
 
     /**
      * FHIRBiologicallyDerivedProduct Constructor
@@ -399,7 +409,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -454,7 +464,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * How this product was collected.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setCollection(FHIRBiologicallyDerivedProductCollection $collection = null)
     {
@@ -466,7 +476,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this biologically derived product
      * instance that are defined by business processes and/or used to refer to it when
@@ -484,7 +494,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this biologically derived product
      * instance that are defined by business processes and/or used to refer to it when
@@ -492,7 +502,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * documents, or in written / printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -504,7 +514,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this biologically derived product
      * instance that are defined by business processes and/or used to refer to it when
@@ -512,7 +522,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * documents, or in written / printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -554,7 +564,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * Blood Stem Cells to make it more suitable for infusion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setManipulation(FHIRBiologicallyDerivedProductManipulation $manipulation = null)
     {
@@ -565,7 +575,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
      *
@@ -579,12 +589,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $parent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function addParent(FHIRReference $parent = null)
     {
@@ -595,12 +605,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $parent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setParent(array $parent = [])
     {
@@ -642,7 +652,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * collection of Peripheral Blood Stem Cells.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing $processing
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function addProcessing(FHIRBiologicallyDerivedProductProcessing $processing = null)
     {
@@ -659,7 +669,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * collection of Peripheral Blood Stem Cells.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[] $processing
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setProcessing(array $processing = [])
     {
@@ -679,7 +689,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
 
     /**
      * Biologically Derived Product Category.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
      *
@@ -692,12 +702,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
 
     /**
      * Biologically Derived Product Category.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory $productCategory
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setProductCategory(FHIRBiologicallyDerivedProductCategory $productCategory = null)
     {
@@ -709,7 +719,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
@@ -725,13 +735,13 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $productCode
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setProductCode(FHIRCodeableConcept $productCode = null)
     {
@@ -742,7 +752,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
      *
@@ -756,12 +766,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $quantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setQuantity($quantity = null)
     {
@@ -780,7 +790,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
      *
@@ -794,12 +804,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $request
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function addRequest(FHIRReference $request = null)
     {
@@ -810,12 +820,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $request
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setRequest(array $request = [])
     {
@@ -835,7 +845,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
 
     /**
      * Biologically Derived Product Status.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
      *
@@ -848,12 +858,12 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
 
     /**
      * Biologically Derived Product Status.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setStatus(FHIRBiologicallyDerivedProductStatus $status = null)
     {
@@ -881,7 +891,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * Product storage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage $storage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function addStorage(FHIRBiologicallyDerivedProductStorage $storage = null)
     {
@@ -896,7 +906,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * Product storage.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[] $storage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return static
      */
     public function setStorage(array $storage = [])
     {

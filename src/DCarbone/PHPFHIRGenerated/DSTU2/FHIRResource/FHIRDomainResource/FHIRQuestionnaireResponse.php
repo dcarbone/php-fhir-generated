@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * A structured set of questions and their answers. The questions are ordered and
  * grouped into coherent subsets, corresponding to the structure of the grouping of
  * the underlying questions.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRQuestionnaireResponse
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -87,7 +87,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_RESPONSE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_AUTHORED = 'authored';
@@ -105,32 +105,34 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $authored = null;
+    protected $authored = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
@@ -138,7 +140,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A structured set of questions and their answers. The questions are ordered and
      * grouped into coherent subsets, corresponding to the structure of the grouping of
@@ -149,52 +152,57 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup
      */
-    private $group = null;
+    protected $group = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $questionnaire = null;
+    protected $questionnaire = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $source = null;
+    protected $source = null;
+
     /**
      * Lifecycle status of the questionnaire response.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuestionnaireResponseStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
@@ -202,7 +210,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRQuestionnaireResponse Constructor
@@ -318,7 +326,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -356,7 +364,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
@@ -371,13 +379,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -391,7 +399,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
@@ -409,13 +417,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $authored
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setAuthored($authored = null)
     {
@@ -434,7 +442,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
@@ -450,14 +458,14 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -489,7 +497,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * questionnaire response.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup $group
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setGroup(FHIRQuestionnaireResponseGroup $group = null)
     {
@@ -500,7 +508,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
@@ -515,13 +523,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -532,7 +540,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
@@ -547,13 +555,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $questionnaire
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setQuestionnaire(FHIRReference $questionnaire = null)
     {
@@ -564,7 +572,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
      *
@@ -578,12 +586,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $source
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setSource(FHIRReference $source = null)
     {
@@ -593,7 +601,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Lifecycle status of the questionnaire response.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
      *
@@ -606,12 +614,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
 
     /**
      * Lifecycle status of the questionnaire response.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuestionnaireResponseStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setStatus(FHIRQuestionnaireResponseStatus $status = null)
     {
@@ -622,7 +630,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
@@ -638,14 +646,14 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

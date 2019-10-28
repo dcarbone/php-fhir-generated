@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_PATIENT_CHARACTERISTICS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CHARACTERISTIC_CODEABLE_CONCEPT = 'characteristicCodeableConcept';
     const FIELD_CHARACTERISTIC_QUANTITY = 'characteristicQuantity';
@@ -93,37 +93,39 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $characteristicCodeableConcept = null;
+    protected $characteristicCodeableConcept = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $characteristicQuantity = null;
+    protected $characteristicQuantity = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific characteristic (e.g. height, weight, gender, etc.).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $value = [];
+    protected $value = [];
 
     /**
      * FHIRMedicationKnowledgePatientCharacteristics Constructor
@@ -206,7 +208,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -237,7 +239,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender). (choose any one of characteristic*, but only one)
@@ -253,13 +255,13 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $characteristicCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
+     * @return static
      */
     public function setCharacteristicCodeableConcept(FHIRCodeableConcept $characteristicCodeableConcept = null)
     {
@@ -272,7 +274,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender). (choose any one of characteristic*, but only one)
@@ -289,13 +291,13 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific characteristic that is relevant to the administration guideline (e.g.
      * height, weight, gender). (choose any one of characteristic*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $characteristicQuantity
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
+     * @return static
      */
     public function setCharacteristicQuantity(FHIRQuantity $characteristicQuantity = null)
     {
@@ -306,7 +308,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific characteristic (e.g. height, weight, gender, etc.).
      *
@@ -320,12 +322,12 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific characteristic (e.g. height, weight, gender, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
+     * @return static
      */
     public function addValue($value = null)
     {
@@ -344,12 +346,12 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The specific characteristic (e.g. height, weight, gender, etc.).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics
+     * @return static
      */
     public function setValue(array $value = [])
     {

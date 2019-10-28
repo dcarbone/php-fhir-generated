@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * A request for a diagnostic investigation service to be performed.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDiagnosticOrder
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -82,7 +82,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DIAGNOSTIC_ORDER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CLINICAL_NOTES = 'clinicalNotes';
     const FIELD_CLINICAL_NOTES_EXT = '_clinicalNotes';
@@ -101,25 +101,27 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanation or justification for why this diagnostic investigation is being
      * requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $clinicalNotes = null;
+    protected $clinicalNotes = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional informaton about the healthcare context in
      * which this request is made.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * A request for a diagnostic investigation service to be performed.
      *
@@ -129,17 +131,19 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[]
      */
-    private $event = [];
+    protected $event = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A request for a diagnostic investigation service to be performed.
      *
@@ -149,49 +153,54 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem[]
      */
-    private $item = [];
+    protected $item = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $orderer = null;
+    protected $orderer = null;
+
     /**
      * The clinical priority of a diagnostic order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDiagnosticOrderPriority
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $specimen = [];
+    protected $specimen = [];
+
     /**
      * The status of a diagnostic order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDiagnosticOrderStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the investigation is to be performed on. This is usually a human
      * patient, but diagnostic tests can also be requested on animals, groups of humans
@@ -200,7 +209,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRDiagnosticOrder Constructor
@@ -362,7 +371,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -399,7 +408,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanation or justification for why this diagnostic investigation is being
      * requested.
@@ -413,13 +422,13 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An explanation or justification for why this diagnostic investigation is being
      * requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $clinicalNotes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setClinicalNotes($clinicalNotes = null)
     {
@@ -438,7 +447,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional informaton about the healthcare context in
      * which this request is made.
@@ -453,13 +462,13 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional informaton about the healthcare context in
      * which this request is made.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setEncounter(FHIRResourceReference $encounter = null)
     {
@@ -489,7 +498,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * received), when it was completed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function addEvent(FHIRDiagnosticOrderEvent $event = null)
     {
@@ -505,7 +514,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * received), when it was completed.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[] $event
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setEvent(array $event = [])
     {
@@ -526,7 +535,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
@@ -540,12 +549,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -556,12 +565,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -601,7 +610,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * contexts, more than one investigation can be requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem $item
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function addItem(FHIRDiagnosticOrderItem $item = null)
     {
@@ -617,7 +626,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * contexts, more than one investigation can be requested.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setItem(array $item = [])
     {
@@ -638,7 +647,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
      *
@@ -652,12 +661,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $orderer
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setOrderer(FHIRResourceReference $orderer = null)
     {
@@ -667,7 +676,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * The clinical priority of a diagnostic order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
      *
@@ -680,12 +689,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * The clinical priority of a diagnostic order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDiagnosticOrderPriority $priority
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setPriority(FHIRDiagnosticOrderPriority $priority = null)
     {
@@ -696,7 +705,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
      *
@@ -710,12 +719,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $specimen
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function addSpecimen(FHIRResourceReference $specimen = null)
     {
@@ -726,12 +735,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $specimen
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setSpecimen(array $specimen = [])
     {
@@ -751,7 +760,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * The status of a diagnostic order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
      *
@@ -764,12 +773,12 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
 
     /**
      * The status of a diagnostic order
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDiagnosticOrderStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setStatus(FHIRDiagnosticOrderStatus $status = null)
     {
@@ -780,7 +789,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the investigation is to be performed on. This is usually a human
      * patient, but diagnostic tests can also be requested on animals, groups of humans
@@ -797,7 +806,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the investigation is to be performed on. This is usually a human
      * patient, but diagnostic tests can also be requested on animals, groups of humans
@@ -805,7 +814,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * environmental scans).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDiagnosticOrder
+     * @return static
      */
     public function setSubject(FHIRResourceReference $subject = null)
     {

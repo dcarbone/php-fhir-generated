@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_SETUP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTION = 'action';
     const FIELD_METADATA = 'metadata';
@@ -92,7 +92,8 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction[]
      */
-    private $action = [];
+    protected $action = [];
+
     /**
      * TestScript is a resource that specifies a suite of tests against a FHIR server
      * implementation to determine compliance against the FHIR specification.
@@ -102,7 +103,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
-    private $metadata = null;
+    protected $metadata = null;
 
     /**
      * FHIRTestScriptSetup Constructor
@@ -162,7 +163,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -209,7 +210,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      * Action would contain either an operation or an assertion.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction $action
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
+     * @return static
      */
     public function addAction(FHIRTestScriptAction $action = null)
     {
@@ -224,7 +225,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      * Action would contain either an operation or an assertion.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction[] $action
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
+     * @return static
      */
     public function setAction(array $action = [])
     {
@@ -264,7 +265,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
      * server being tested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata $metadata
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
+     * @return static
      */
     public function setMetadata(FHIRTestScriptMetadata $metadata = null)
     {

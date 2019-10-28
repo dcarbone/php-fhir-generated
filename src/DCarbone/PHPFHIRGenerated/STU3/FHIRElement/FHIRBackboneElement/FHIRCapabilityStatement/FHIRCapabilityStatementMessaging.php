@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_MESSAGING;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
@@ -95,7 +95,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
@@ -103,7 +103,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $documentation = null;
+    protected $documentation = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -114,7 +115,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
      */
-    private $endpoint = [];
+    protected $endpoint = [];
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -124,10 +126,11 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent[]
      */
-    private $event = [];
+    protected $event = [];
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
@@ -135,7 +138,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $reliableCache = null;
+    protected $reliableCache = null;
+
     /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
@@ -145,7 +149,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
      */
-    private $supportedMessage = [];
+    protected $supportedMessage = [];
 
     /**
      * FHIRCapabilityStatementMessaging Constructor
@@ -252,7 +256,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -282,7 +286,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
@@ -298,14 +302,14 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
      * becoming an authorized messaging exchange partner.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $documentation
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function setDocumentation($documentation = null)
     {
@@ -345,7 +349,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * be sent.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function addEndpoint(FHIRCapabilityStatementEndpoint $endpoint = null)
     {
@@ -362,7 +366,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * be sent.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[] $endpoint
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function setEndpoint(array $endpoint = [])
     {
@@ -402,7 +406,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * A description of the solution's support for an event at this end-point.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent $event
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function addEvent(FHIRCapabilityStatementEvent $event = null)
     {
@@ -418,7 +422,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * A description of the solution's support for an event at this end-point.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent[] $event
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function setEvent(array $event = [])
     {
@@ -438,7 +442,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
@@ -453,14 +457,14 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $reliableCache
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function setReliableCache($reliableCache = null)
     {
@@ -498,7 +502,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * References to message definitions for messages this system can send or receive.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage $supportedMessage
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function addSupportedMessage(FHIRCapabilityStatementSupportedMessage $supportedMessage = null)
     {
@@ -514,7 +518,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * References to message definitions for messages this system can send or receive.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[] $supportedMessage
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
+     * @return static
      */
     public function setSupportedMessage(array $supportedMessage = [])
     {

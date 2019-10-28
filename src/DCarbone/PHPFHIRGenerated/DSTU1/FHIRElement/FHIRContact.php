@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * All kinds of technology mediated contact details for a person or organization,
  * including telephone, email, etc.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRContact
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -76,7 +76,7 @@ class FHIRContact extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTACT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_PERIOD = 'period';
     const FIELD_SYSTEM = 'system';
@@ -89,42 +89,45 @@ class FHIRContact extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * Telecommunications form for contact
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContactSystem
      */
-    private $system = null;
+    protected $system = null;
+
     /**
      * Location, type or status of telecommunications address indicating use
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContactUse
      */
-    private $use = null;
+    protected $use = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRContact Constructor
@@ -209,7 +212,7 @@ class FHIRContact extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -239,7 +242,7 @@ class FHIRContact extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
      *
@@ -253,12 +256,12 @@ class FHIRContact extends FHIRElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -268,7 +271,7 @@ class FHIRContact extends FHIRElement
 
     /**
      * Telecommunications form for contact
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
@@ -282,13 +285,13 @@ class FHIRContact extends FHIRElement
 
     /**
      * Telecommunications form for contact
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContactSystem $system
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
+     * @return static
      */
     public function setSystem(FHIRContactSystem $system = null)
     {
@@ -298,7 +301,7 @@ class FHIRContact extends FHIRElement
 
     /**
      * Location, type or status of telecommunications address indicating use
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
      *
@@ -311,12 +314,12 @@ class FHIRContact extends FHIRElement
 
     /**
      * Location, type or status of telecommunications address indicating use
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContactUse $use
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
+     * @return static
      */
     public function setUse(FHIRContactUse $use = null)
     {
@@ -326,7 +329,7 @@ class FHIRContact extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
@@ -340,13 +343,13 @@ class FHIRContact extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact
+     * @return static
      */
     public function setValue($value = null)
     {

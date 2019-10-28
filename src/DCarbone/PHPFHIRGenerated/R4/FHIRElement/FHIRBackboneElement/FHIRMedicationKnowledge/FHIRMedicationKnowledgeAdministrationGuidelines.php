@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_ADMINISTRATION_GUIDELINES;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_DOSAGE = 'dosage';
     const FIELD_INDICATION_CODEABLE_CONCEPT = 'indicationCodeableConcept';
@@ -95,30 +95,33 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[]
      */
-    private $dosage = [];
+    protected $dosage = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines. (choose
      * any one of indication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $indicationCodeableConcept = null;
+    protected $indicationCodeableConcept = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines. (choose
      * any one of indication*, but only one)
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $indicationReference = null;
+    protected $indicationReference = null;
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -127,7 +130,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[]
      */
-    private $patientCharacteristics = [];
+    protected $patientCharacteristics = [];
 
     /**
      * FHIRMedicationKnowledgeAdministrationGuidelines Constructor
@@ -216,7 +219,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -261,7 +264,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Dosage for the medication for the specific guidelines.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage $dosage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function addDosage(FHIRMedicationKnowledgeDosage $dosage = null)
     {
@@ -275,7 +278,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Dosage for the medication for the specific guidelines.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[] $dosage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function setDosage(array $dosage = [])
     {
@@ -297,7 +300,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines. (choose
      * any one of indication*, but only one)
@@ -313,13 +316,13 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines. (choose
      * any one of indication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function setIndicationCodeableConcept(FHIRCodeableConcept $indicationCodeableConcept = null)
     {
@@ -330,7 +333,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines. (choose
      * any one of indication*, but only one)
@@ -345,13 +348,13 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication for use that apply to the specific administration guidelines. (choose
      * any one of indication*, but only one)
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $indicationReference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function setIndicationReference(FHIRReference $indicationReference = null)
     {
@@ -379,7 +382,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * guidelines (for example, height, weight, gender, etc.).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics = null)
     {
@@ -394,7 +397,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * guidelines (for example, height, weight, gender, etc.).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[] $patientCharacteristics
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
+     * @return static
      */
     public function setPatientCharacteristics(array $patientCharacteristics = [])
     {

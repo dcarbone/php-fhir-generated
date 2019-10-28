@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_HEALTHCARE_SERVICE_DOT_AVAILABLE_TIME;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALL_DAY = 'allDay';
     const FIELD_ALL_DAY_EXT = '_allDay';
@@ -94,42 +94,45 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $allDay = null;
+    protected $allDay = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $availableEndTime = null;
+    protected $availableEndTime = null;
+
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    private $availableStartTime = null;
+    protected $availableStartTime = null;
+
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDaysOfWeek[]
      */
-    private $daysOfWeek = [];
+    protected $daysOfWeek = [];
 
     /**
      * FHIRHealthcareServiceAvailableTime Constructor
@@ -225,7 +228,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -254,7 +257,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      *
@@ -267,12 +270,12 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $allDay
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
+     * @return static
      */
     public function setAllDay($allDay = null)
     {
@@ -290,7 +293,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
@@ -304,13 +307,13 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $availableEndTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
+     * @return static
      */
     public function setAvailableEndTime($availableEndTime = null)
     {
@@ -328,7 +331,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
@@ -342,13 +345,13 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * A time during the day, with no date specified
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $availableStartTime
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
+     * @return static
      */
     public function setAvailableStartTime($availableStartTime = null)
     {
@@ -366,7 +369,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
@@ -379,12 +382,12 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDaysOfWeek $daysOfWeek
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
+     * @return static
      */
     public function addDaysOfWeek(FHIRDaysOfWeek $daysOfWeek = null)
     {
@@ -394,12 +397,12 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /**
      * The days of the week.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDaysOfWeek[] $daysOfWeek
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
+     * @return static
      */
     public function setDaysOfWeek(array $daysOfWeek = [])
     {

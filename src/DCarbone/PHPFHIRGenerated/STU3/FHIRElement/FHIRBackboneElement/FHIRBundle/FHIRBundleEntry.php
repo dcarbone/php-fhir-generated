@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FULL_URL = 'fullUrl';
     const FIELD_FULL_URL_EXT = '_fullUrl';
@@ -94,7 +94,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Absolute URL for the resource. The fullUrl SHALL not disagree with the id in
      * the resource. The fullUrl is a version independent reference to the resource.
@@ -105,7 +105,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $fullUrl = null;
+    protected $fullUrl = null;
+
     /**
      * A container for a collection of resources.
      *
@@ -113,7 +114,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
-    private $link = [];
+    protected $link = [];
+
     /**
      * A container for a collection of resources.
      *
@@ -122,13 +124,15 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      */
-    private $request = null;
+    protected $request = null;
+
     /**
      * The Resources for the entry.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface
      */
-    private $resource = null;
+    protected $resource = null;
+
     /**
      * A container for a collection of resources.
      *
@@ -137,7 +141,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      */
-    private $response = null;
+    protected $response = null;
+
     /**
      * A container for a collection of resources.
      *
@@ -145,7 +150,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      */
-    private $search = null;
+    protected $search = null;
 
     /**
      * FHIRBundleEntry Constructor
@@ -257,7 +262,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -287,7 +292,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Absolute URL for the resource. The fullUrl SHALL not disagree with the id in
      * the resource. The fullUrl is a version independent reference to the resource.
@@ -306,7 +311,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Absolute URL for the resource. The fullUrl SHALL not disagree with the id in
      * the resource. The fullUrl is a version independent reference to the resource.
@@ -316,7 +321,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * identified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $fullUrl
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function setFullUrl($fullUrl = null)
     {
@@ -350,7 +355,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A series of links that provide context to this entry.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function addLink(FHIRBundleLink $link = null)
     {
@@ -364,7 +369,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A series of links that provide context to this entry.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function setLink(array $link = [])
     {
@@ -402,7 +407,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * transaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $request
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function setRequest(FHIRBundleRequest $request = null)
     {
@@ -424,7 +429,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * The Resources for the entry.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface $resource
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function setResource(PHPFHIRContainedTypeInterface $resource = null)
     {
@@ -452,7 +457,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * transaction.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse $response
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function setResponse(FHIRBundleResponse $response = null)
     {
@@ -478,7 +483,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Information about the search process that lead to the creation of this entry.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $search
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
+     * @return static
      */
     public function setSearch(FHIRBundleSearch $search = null)
     {

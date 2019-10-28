@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * This resource is a non-persisted resource used to pass information into and back
  * from an [operation](operations.html). It has no other use, and there is no
  * RESTful endpoint associated with it.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRParameters
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource
@@ -83,7 +83,7 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PARAMETERS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_PARAMETER = 'parameter';
 
@@ -96,7 +96,7 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
      */
-    private $parameter = [];
+    protected $parameter = [];
 
     /**
      * FHIRParameters Constructor
@@ -149,7 +149,7 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -206,7 +206,7 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A parameter passed to or received from the operation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
+     * @return static
      */
     public function addParameter(FHIRParametersParameter $parameter = null)
     {
@@ -222,7 +222,7 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A parameter passed to or received from the operation.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] $parameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
+     * @return static
      */
     public function setParameter(array $parameter = [])
     {

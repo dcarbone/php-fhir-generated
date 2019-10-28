@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDev
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_DOT_CALIBRATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_STATE = 'state';
     const FIELD_STATE_EXT = '_state';
@@ -92,34 +92,36 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /**
      * Describes the state of a metric calibration.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDeviceMetricCalibrationState
      */
-    private $state = null;
+    protected $state = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $time = null;
+    protected $time = null;
+
     /**
      * Describes the type of a metric calibration.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDeviceMetricCalibrationType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRDeviceMetricCalibration Constructor
@@ -193,7 +195,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -222,7 +224,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /**
      * Describes the state of a metric calibration.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
      *
@@ -235,12 +237,12 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /**
      * Describes the state of a metric calibration.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDeviceMetricCalibrationState $state
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
+     * @return static
      */
     public function setState(FHIRDeviceMetricCalibrationState $state = null)
     {
@@ -253,7 +255,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
      *
@@ -269,12 +271,12 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $time
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
+     * @return static
      */
     public function setTime($time = null)
     {
@@ -292,7 +294,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /**
      * Describes the type of a metric calibration.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
      *
@@ -305,12 +307,12 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /**
      * Describes the type of a metric calibration.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDeviceMetricCalibrationType $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
+     * @return static
      */
     public function setType(FHIRDeviceMetricCalibrationType $type = null)
     {

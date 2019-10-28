@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * Identifies two or more records (resource instances) that are referring to the
  * same real-world "occurrence".
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRLinkage
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -84,7 +84,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_LINKAGE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
@@ -93,24 +93,26 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the asserted set of linkages are considered to be "in effect".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $active = null;
+    protected $active = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the user or organization responsible for asserting the linkages and
      * who establishes the context for evaluating the nature of each linkage.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * Identifies two or more records (resource instances) that are referring to the
      * same real-world "occurrence".
@@ -121,7 +123,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem[]
      */
-    private $item = [];
+    protected $item = [];
 
     /**
      * FHIRLinkage Constructor
@@ -193,7 +195,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLinkage
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -230,7 +232,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the asserted set of linkages are considered to be "in effect".
      *
@@ -243,12 +245,12 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the asserted set of linkages are considered to be "in effect".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $active
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLinkage
+     * @return static
      */
     public function setActive($active = null)
     {
@@ -267,7 +269,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the user or organization responsible for asserting the linkages and
      * who establishes the context for evaluating the nature of each linkage.
@@ -282,13 +284,13 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the user or organization responsible for asserting the linkages and
      * who establishes the context for evaluating the nature of each linkage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLinkage
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -320,7 +322,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * linked items.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem $item
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLinkage
+     * @return static
      */
     public function addItem(FHIRLinkageItem $item = null)
     {
@@ -337,7 +339,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * linked items.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem[] $item
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRLinkage
+     * @return static
      */
     public function setItem(array $item = [])
     {

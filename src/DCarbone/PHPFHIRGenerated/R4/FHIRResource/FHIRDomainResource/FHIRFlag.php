@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * Prospective warnings of potential issues when providing care to the patient.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRFlag
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource
@@ -85,7 +85,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FLAG;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_CATEGORY = 'category';
@@ -101,18 +101,19 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization or device that created the flag.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $author = null;
+    protected $author = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
@@ -120,33 +121,36 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $category = [];
+    protected $category = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The coded value or textual component of the flag to display to the user.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This alert is only relevant during the encounter.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $encounter = null;
+    protected $encounter = null;
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this flag by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
@@ -154,39 +158,42 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time from the activation of the flag to inactivation of the flag.
      * If the flag is active, the end of the period should be unspecified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * Indicates whether this flag is active and needs to be displayed to a user, or
      * whether it is no longer needed or was entered in error.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFlagStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient, location, group, organization, or practitioner etc. this is about
      * record this flag is associated with.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    private $subject = null;
+    protected $subject = null;
 
     /**
      * FHIRFlag Constructor
@@ -308,7 +315,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -346,7 +353,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization or device that created the flag.
      *
@@ -360,12 +367,12 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization or device that created the flag.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $author
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setAuthor(FHIRReference $author = null)
     {
@@ -377,7 +384,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
@@ -394,14 +401,14 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
      * displayed to particular user or in a given context.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category = null)
     {
@@ -413,14 +420,14 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
      * displayed to particular user or in a given context.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $category
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setCategory(array $category = [])
     {
@@ -442,7 +449,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The coded value or textual component of the flag to display to the user.
      *
@@ -457,12 +464,12 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The coded value or textual component of the flag to display to the user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -473,7 +480,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This alert is only relevant during the encounter.
      *
@@ -487,12 +494,12 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This alert is only relevant during the encounter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
@@ -504,7 +511,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this flag by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
@@ -521,14 +528,14 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this flag by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
      * server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -540,14 +547,14 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers assigned to this flag by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
      * server.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -568,7 +575,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time from the activation of the flag to inactivation of the flag.
      * If the flag is active, the end of the period should be unspecified.
@@ -583,13 +590,13 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time from the activation of the flag to inactivation of the flag.
      * If the flag is active, the end of the period should be unspecified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -600,7 +607,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * Indicates whether this flag is active and needs to be displayed to a user, or
      * whether it is no longer needed or was entered in error.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
      *
@@ -614,12 +621,12 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * Indicates whether this flag is active and needs to be displayed to a user, or
      * whether it is no longer needed or was entered in error.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFlagStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setStatus(FHIRFlagStatus $status = null)
     {
@@ -630,7 +637,7 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient, location, group, organization, or practitioner etc. this is about
      * record this flag is associated with.
@@ -645,13 +652,13 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient, location, group, organization, or practitioner etc. this is about
      * record this flag is associated with.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRFlag
+     * @return static
      */
     public function setSubject(FHIRReference $subject = null)
     {

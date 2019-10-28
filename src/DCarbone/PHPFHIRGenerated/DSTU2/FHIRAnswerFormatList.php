@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,10 @@ class FHIRAnswerFormatList implements PHPFHIRTypeInterface
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     /** @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive */
-    private $value = null;
+    protected $value = null;
 
     /**
      * The list of values allowed by AnswerFormat-list
@@ -128,7 +128,7 @@ class FHIRAnswerFormatList implements PHPFHIRTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRAnswerFormatList
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -157,7 +157,7 @@ class FHIRAnswerFormatList implements PHPFHIRTypeInterface
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive $value;
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRAnswerFormatList
+     * @return static
      */
     public function setValue($value = null)
     {

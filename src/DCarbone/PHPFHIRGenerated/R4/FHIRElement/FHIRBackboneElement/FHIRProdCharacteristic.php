@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,7 +74,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
  * The marketing status describes the date when a medicinal product is actually put
  * on the market or the date as of which it is no longer available.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRProdCharacteristic
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement
@@ -85,7 +85,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_COLOR = 'color';
     const FIELD_COLOR_EXT = '_color';
@@ -111,20 +111,21 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $color = [];
+    protected $color = [];
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the depth can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -133,13 +134,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $depth = null;
+    protected $depth = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the external diameter can be specified using a numerical value
      * and its unit of measurement The unit of measurement shall be specified in
@@ -148,13 +150,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $externalDiameter = null;
+    protected $externalDiameter = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the height can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -163,34 +166,37 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $height = null;
+    protected $height = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
-    private $image = [];
+    protected $image = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $imprint = [];
+    protected $imprint = [];
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the nominal volume can be specified using a numerical value
      * and its unit of measurement The unit of measurement shall be specified in
@@ -199,36 +205,39 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $nominalVolume = null;
+    protected $nominalVolume = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the scoring can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $scoring = null;
+    protected $scoring = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the shape can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $shape = null;
+    protected $shape = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the weight can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -237,13 +246,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $weight = null;
+    protected $weight = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the width can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -252,7 +262,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    private $width = null;
+    protected $width = null;
 
     /**
      * FHIRProdCharacteristic Constructor
@@ -440,7 +450,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -470,7 +480,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
@@ -485,13 +495,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $color
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function addColor($color = null)
     {
@@ -510,13 +520,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $color
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setColor(array $color = [])
     {
@@ -539,7 +549,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the depth can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -558,7 +568,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the depth can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -566,7 +576,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $depth
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setDepth(FHIRQuantity $depth = null)
     {
@@ -579,7 +589,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the external diameter can be specified using a numerical value
      * and its unit of measurement The unit of measurement shall be specified in
@@ -598,7 +608,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the external diameter can be specified using a numerical value
      * and its unit of measurement The unit of measurement shall be specified in
@@ -606,7 +616,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * symbol identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $externalDiameter
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setExternalDiameter(FHIRQuantity $externalDiameter = null)
     {
@@ -619,7 +629,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the height can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -638,7 +648,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the height can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -646,7 +656,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $height
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setHeight(FHIRQuantity $height = null)
     {
@@ -657,7 +667,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
@@ -672,13 +682,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $image
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function addImage(FHIRAttachment $image = null)
     {
@@ -689,13 +699,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[] $image
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setImage(array $image = [])
     {
@@ -716,7 +726,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
      *
@@ -730,12 +740,12 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $imprint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function addImprint($imprint = null)
     {
@@ -754,12 +764,12 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $imprint
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setImprint(array $imprint = [])
     {
@@ -782,7 +792,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the nominal volume can be specified using a numerical value
      * and its unit of measurement The unit of measurement shall be specified in
@@ -801,7 +811,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the nominal volume can be specified using a numerical value
      * and its unit of measurement The unit of measurement shall be specified in
@@ -809,7 +819,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * symbol identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $nominalVolume
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setNominalVolume(FHIRQuantity $nominalVolume = null)
     {
@@ -821,7 +831,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the scoring can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
@@ -837,13 +847,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the scoring can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $scoring
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setScoring(FHIRCodeableConcept $scoring = null)
     {
@@ -854,7 +864,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the shape can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
@@ -869,13 +879,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the shape can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $shape
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setShape($shape = null)
     {
@@ -896,7 +906,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the weight can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -915,7 +925,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the weight can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -923,7 +933,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $weight
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setWeight(FHIRQuantity $weight = null)
     {
@@ -936,7 +946,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the width can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -955,7 +965,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where applicable, the width can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
@@ -963,7 +973,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * identifier shall be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $width
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     * @return static
      */
     public function setWidth(FHIRQuantity $width = null)
     {

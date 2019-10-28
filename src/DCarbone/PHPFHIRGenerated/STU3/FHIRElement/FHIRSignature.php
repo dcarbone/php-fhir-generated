@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * hand-written signature, or a signature process. Different signature approaches
  * have different utilities.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRSignature
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -83,7 +83,7 @@ class FHIRSignature extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SIGNATURE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_BLOB = 'blob';
     const FIELD_BLOB_EXT = '_blob';
@@ -102,18 +102,19 @@ class FHIRSignature extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
-    private $blob = null;
+    protected $blob = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A mime type that indicates the technical format of the signature. Important mime
@@ -122,33 +123,36 @@ class FHIRSignature extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
-    private $contentType = null;
+    protected $contentType = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $onBehalfOfReference = null;
+    protected $onBehalfOfReference = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $onBehalfOfUri = null;
+    protected $onBehalfOfUri = null;
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
@@ -156,41 +160,44 @@ class FHIRSignature extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    private $type = [];
+    protected $type = [];
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    private $when = null;
+    protected $when = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $whoReference = null;
+    protected $whoReference = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $whoUri = null;
+    protected $whoUri = null;
 
     /**
      * FHIRSignature Constructor
@@ -317,7 +324,7 @@ class FHIRSignature extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -347,7 +354,7 @@ class FHIRSignature extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
@@ -362,13 +369,13 @@ class FHIRSignature extends FHIRElement
     /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $blob
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setBlob($blob = null)
     {
@@ -387,7 +394,7 @@ class FHIRSignature extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A mime type that indicates the technical format of the signature. Important mime
@@ -404,7 +411,7 @@ class FHIRSignature extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A mime type that indicates the technical format of the signature. Important mime
@@ -412,7 +419,7 @@ class FHIRSignature extends FHIRElement
      * and image/* for a graphical image of a signature, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $contentType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setContentType($contentType = null)
     {
@@ -431,7 +438,7 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
@@ -446,13 +453,13 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOfReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setOnBehalfOfReference(FHIRReference $onBehalfOfReference = null)
     {
@@ -463,7 +470,7 @@ class FHIRSignature extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
@@ -478,13 +485,13 @@ class FHIRSignature extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $onBehalfOfUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setOnBehalfOfUri($onBehalfOfUri = null)
     {
@@ -503,7 +510,7 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
@@ -519,14 +526,14 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function addType(FHIRCoding $type = null)
     {
@@ -537,14 +544,14 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $type
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setType(array $type = [])
     {
@@ -567,7 +574,7 @@ class FHIRSignature extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
      *
@@ -583,12 +590,12 @@ class FHIRSignature extends FHIRElement
      * Note: This is intended for precisely observed times, typically system logs etc.,
      * and not human-reported times - for them, see date and dateTime below. Time zone
      * is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $when
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setWhen($when = null)
     {
@@ -607,7 +614,7 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
@@ -622,13 +629,13 @@ class FHIRSignature extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $whoReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setWhoReference(FHIRReference $whoReference = null)
     {
@@ -639,7 +646,7 @@ class FHIRSignature extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
@@ -654,13 +661,13 @@ class FHIRSignature extends FHIRElement
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $whoUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
+     * @return static
      */
     public function setWhoUri($whoUri = null)
     {

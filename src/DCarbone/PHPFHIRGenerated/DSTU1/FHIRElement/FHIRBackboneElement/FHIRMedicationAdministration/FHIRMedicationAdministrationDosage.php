@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AS_NEEDED_BOOLEAN = 'asNeededBoolean';
     const FIELD_AS_NEEDED_BOOLEAN_EXT = '_asNeededBoolean';
@@ -100,7 +100,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If set to true or if specified as a CodeableConcept, indicates that the
      * medication is only taken when needed within the specified schedule rather than
@@ -109,12 +109,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    private $asNeededBoolean = null;
+    protected $asNeededBoolean = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If set to true or if specified as a CodeableConcept, indicates that the
      * medication is only taken when needed within the specified schedule rather than
@@ -123,24 +124,26 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $asNeededCodeableConcept = null;
+    protected $asNeededCodeableConcept = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum total quantity of a therapeutic substance that was administered to
      * the patient over the specified period of time. E.g. 1000mg in 24 hours.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio
      */
-    private $maxDosePerPeriod = null;
+    protected $maxDosePerPeriod = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value indicating the method by which the medication was introduced into
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
@@ -149,13 +152,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $method = null;
+    protected $method = null;
+
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
@@ -163,12 +167,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    private $quantity = null;
+    protected $quantity = null;
+
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the speed with which the medication was introduced into the patient.
      * Typically the rate for an infusion e.g. 200ml in 2 hours. May also expressed as
@@ -177,37 +182,40 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio
      */
-    private $rate = null;
+    protected $rate = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. E.g. topical, intravenous, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $route = null;
+    protected $route = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. E.g. "left arm".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $site = null;
+    protected $site = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing schedule for giving the medication to the patient. This may be a
      * single time point (using dateTime) or it may be a start and end dateTime
@@ -215,11 +223,12 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $timingDateTime = null;
+    protected $timingDateTime = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for giving the medication to the patient. This may be a
      * single time point (using dateTime) or it may be a start and end dateTime
@@ -227,7 +236,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $timingPeriod = null;
+    protected $timingPeriod = null;
 
     /**
      * FHIRMedicationAdministrationDosage Constructor
@@ -350,7 +359,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -379,7 +388,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If set to true or if specified as a CodeableConcept, indicates that the
      * medication is only taken when needed within the specified schedule rather than
@@ -395,7 +404,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If set to true or if specified as a CodeableConcept, indicates that the
      * medication is only taken when needed within the specified schedule rather than
@@ -403,7 +412,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * pre-condition for taking the Medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setAsNeededBoolean($asNeededBoolean = null)
     {
@@ -423,7 +432,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If set to true or if specified as a CodeableConcept, indicates that the
      * medication is only taken when needed within the specified schedule rather than
@@ -441,7 +450,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If set to true or if specified as a CodeableConcept, indicates that the
      * medication is only taken when needed within the specified schedule rather than
@@ -449,7 +458,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * pre-condition for taking the Medication.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setAsNeededCodeableConcept(FHIRCodeableConcept $asNeededCodeableConcept = null)
     {
@@ -461,7 +470,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum total quantity of a therapeutic substance that was administered to
      * the patient over the specified period of time. E.g. 1000mg in 24 hours.
@@ -477,13 +486,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum total quantity of a therapeutic substance that was administered to
      * the patient over the specified period of time. E.g. 1000mg in 24 hours.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio $maxDosePerPeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setMaxDosePerPeriod(FHIRRatio $maxDosePerPeriod = null)
     {
@@ -495,7 +504,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value indicating the method by which the medication was introduced into
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
@@ -513,7 +522,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value indicating the method by which the medication was introduced into
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
@@ -521,7 +530,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * of administration.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $method
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setMethod(FHIRCodeableConcept $method = null)
     {
@@ -534,7 +543,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
@@ -552,14 +561,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity $quantity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
@@ -571,7 +580,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the speed with which the medication was introduced into the patient.
      * Typically the rate for an infusion e.g. 200ml in 2 hours. May also expressed as
@@ -589,7 +598,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the speed with which the medication was introduced into the patient.
      * Typically the rate for an infusion e.g. 200ml in 2 hours. May also expressed as
@@ -597,7 +606,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * specified, or is specified in the quantity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio $rate
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setRate(FHIRRatio $rate = null)
     {
@@ -609,7 +618,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. E.g. topical, intravenous, etc.
@@ -625,13 +634,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. E.g. topical, intravenous, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $route
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setRoute(FHIRCodeableConcept $route = null)
     {
@@ -643,7 +652,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. E.g. "left arm".
@@ -659,13 +668,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. E.g. "left arm".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $site
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setSite(FHIRCodeableConcept $site = null)
     {
@@ -678,7 +687,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing schedule for giving the medication to the patient. This may be a
      * single time point (using dateTime) or it may be a start and end dateTime
@@ -696,14 +705,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing schedule for giving the medication to the patient. This may be a
      * single time point (using dateTime) or it may be a start and end dateTime
      * (Period).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $timingDateTime
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setTimingDateTime($timingDateTime = null)
     {
@@ -722,7 +731,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for giving the medication to the patient. This may be a
      * single time point (using dateTime) or it may be a start and end dateTime
@@ -738,14 +747,14 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing schedule for giving the medication to the patient. This may be a
      * single time point (using dateTime) or it may be a start and end dateTime
      * (Period).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $timingPeriod
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return static
      */
     public function setTimingPeriod(FHIRPeriod $timingPeriod = null)
     {

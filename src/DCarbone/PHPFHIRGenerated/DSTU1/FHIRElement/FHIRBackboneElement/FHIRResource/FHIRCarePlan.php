@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * Describes the intention of how one or more practitioners intend to deliver care
  * for a particular patient for a period of time, possibly limited to care for a
  * specific condition or set of conditions.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCarePlan
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -86,7 +86,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CARE_PLAN;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACTIVITY = 'activity';
     const FIELD_CONCERN = 'concern';
@@ -113,18 +113,20 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity[]
      */
-    private $activity = [];
+    protected $activity = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $concern = [];
+    protected $concern = [];
+
     /**
      * Describes the intention of how one or more practitioners intend to deliver care
      * for a particular patient for a period of time, possibly limited to care for a
@@ -134,11 +136,12 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanGoal[]
      */
-    private $goal = [];
+    protected $goal = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this care plan that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -147,28 +150,31 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the most recent date on which the plan has been revised.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $modified = null;
+    protected $modified = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General notes about the care plan not covered elsewhere.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $notes = null;
+    protected $notes = null;
+
     /**
      * Describes the intention of how one or more practitioners intend to deliver care
      * for a particular patient for a period of time, possibly limited to care for a
@@ -179,38 +185,41 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanParticipant[]
      */
-    private $participant = [];
+    protected $participant = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient/subject whose intended care is described by the plan.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $patient = null;
+    protected $patient = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCarePlanStatus
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * FHIRCarePlan Constructor
@@ -380,7 +389,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -439,7 +448,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $activity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function addActivity(FHIRCarePlanActivity $activity = null)
     {
@@ -456,7 +465,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity[] $activity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setActivity(array $activity = [])
     {
@@ -477,7 +486,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
@@ -492,13 +501,13 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $concern
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function addConcern(FHIRResourceReference $concern = null)
     {
@@ -509,13 +518,13 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $concern
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setConcern(array $concern = [])
     {
@@ -555,7 +564,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Describes the intended objective(s) of carrying out the Care Plan.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanGoal $goal
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function addGoal(FHIRCarePlanGoal $goal = null)
     {
@@ -571,7 +580,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Describes the intended objective(s) of carrying out the Care Plan.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanGoal[] $goal
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setGoal(array $goal = [])
     {
@@ -592,7 +601,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this care plan that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -609,7 +618,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this care plan that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -617,7 +626,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * printed documentation).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -628,7 +637,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * This records identifiers associated with this care plan that are defined by
      * business processed and/ or used to refer to it when a direct URL reference to
@@ -636,7 +645,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * printed documentation).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -659,7 +668,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the most recent date on which the plan has been revised.
      *
@@ -675,12 +684,12 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the most recent date on which the plan has been revised.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $modified
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setModified($modified = null)
     {
@@ -698,7 +707,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General notes about the care plan not covered elsewhere.
      *
@@ -711,12 +720,12 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General notes about the care plan not covered elsewhere.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $notes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setNotes($notes = null)
     {
@@ -756,7 +765,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * care envisioned by this plan.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanParticipant $participant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function addParticipant(FHIRCarePlanParticipant $participant = null)
     {
@@ -773,7 +782,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * care envisioned by this plan.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanParticipant[] $participant
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setParticipant(array $participant = [])
     {
@@ -794,7 +803,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient/subject whose intended care is described by the plan.
      *
@@ -808,12 +817,12 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient/subject whose intended care is described by the plan.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $patient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setPatient(FHIRResourceReference $patient = null)
     {
@@ -824,7 +833,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
      *
@@ -838,12 +847,12 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -854,7 +863,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
@@ -869,13 +878,13 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now just historical record.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCarePlanStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRCarePlan
+     * @return static
      */
     public function setStatus(FHIRCarePlanStatus $status = null)
     {

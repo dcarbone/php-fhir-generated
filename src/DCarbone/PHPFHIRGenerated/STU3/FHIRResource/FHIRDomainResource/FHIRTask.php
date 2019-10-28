@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
  * A task to be performed.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRTask
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -95,7 +95,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TASK;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHORED_ON = 'authoredOn';
     const FIELD_AUTHORED_ON_EXT = '_authoredOn';
@@ -141,17 +141,18 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $authoredOn = null;
+    protected $authoredOn = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * BasedOn refers to a higher-level authorization that triggered the creation of
      * the task. It references a "request" resource such as a ProcedureRequest,
@@ -163,76 +164,83 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $basedOn = [];
+    protected $basedOn = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $businessStatus = null;
+    protected $businessStatus = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $context = null;
+    protected $context = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a formal or informal definition of the task. For example, a
      * protocol, a step within a defined workflow definition, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $definitionReference = null;
+    protected $definitionReference = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a formal or informal definition of the task. For example, a
      * protocol, a step within a defined workflow definition, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $definitionUri = null;
+    protected $definitionUri = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
@@ -240,49 +248,54 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    private $executionPeriod = null;
+    protected $executionPeriod = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $focus = null;
+    protected $focus = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $for = null;
+    protected $for = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $groupIdentifier = null;
+    protected $groupIdentifier = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A task to be performed.
      *
@@ -290,41 +303,45 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput[]
      */
-    private $input = [];
+    protected $input = [];
+
     /**
      * The kind of procedure or diagnostic request
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the "level" of actionability associated with the Task. I.e. Is this a
      * proposed task, a planned task, an actionable task, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent
      */
-    private $intent = null;
+    protected $intent = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $lastModified = null;
+    protected $lastModified = null;
+
     /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
-    private $note = [];
+    protected $note = [];
+
     /**
      * A task to be performed.
      *
@@ -332,63 +349,69 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput[]
      */
-    private $output = [];
+    protected $output = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $owner = null;
+    protected $owner = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $partOf = [];
+    protected $partOf = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant that can execute the task.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $performerType = [];
+    protected $performerType = [];
+
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
-    private $priority = null;
+    protected $priority = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $reason = null;
+    protected $reason = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
@@ -396,7 +419,8 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
-    private $relevantHistory = [];
+    protected $relevantHistory = [];
+
     /**
      * A task to be performed.
      *
@@ -404,7 +428,8 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRequester
      */
-    private $requester = null;
+    protected $requester = null;
+
     /**
      * A task to be performed.
      *
@@ -414,27 +439,29 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      */
-    private $restriction = null;
+    protected $restriction = null;
+
     /**
      * The current status of the task.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTaskStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    private $statusReason = null;
+    protected $statusReason = null;
 
     /**
      * FHIRTask Constructor
@@ -779,7 +806,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -820,7 +847,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
      *
@@ -837,12 +864,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $authoredOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setAuthoredOn($authoredOn = null)
     {
@@ -861,7 +888,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * BasedOn refers to a higher-level authorization that triggered the creation of
      * the task. It references a "request" resource such as a ProcedureRequest,
@@ -881,7 +908,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * BasedOn refers to a higher-level authorization that triggered the creation of
      * the task. It references a "request" resource such as a ProcedureRequest,
@@ -892,7 +919,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * from a patient.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn = null)
     {
@@ -903,7 +930,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * BasedOn refers to a higher-level authorization that triggered the creation of
      * the task. It references a "request" resource such as a ProcedureRequest,
@@ -914,7 +941,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * from a patient.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $basedOn
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setBasedOn(array $basedOn = [])
     {
@@ -936,7 +963,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
      *
@@ -951,12 +978,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $businessStatus
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setBusinessStatus(FHIRCodeableConcept $businessStatus = null)
     {
@@ -968,7 +995,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
      *
@@ -983,12 +1010,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $code
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
@@ -999,7 +1026,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
@@ -1014,13 +1041,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $context
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setContext(FHIRReference $context = null)
     {
@@ -1031,7 +1058,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a formal or informal definition of the task. For example, a
      * protocol, a step within a defined workflow definition, etc.
@@ -1046,13 +1073,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a formal or informal definition of the task. For example, a
      * protocol, a step within a defined workflow definition, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $definitionReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setDefinitionReference(FHIRReference $definitionReference = null)
     {
@@ -1063,7 +1090,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a formal or informal definition of the task. For example, a
      * protocol, a step within a defined workflow definition, etc.
@@ -1078,13 +1105,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to a formal or informal definition of the task. For example, a
      * protocol, a step within a defined workflow definition, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $definitionUri
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setDefinitionUri($definitionUri = null)
     {
@@ -1103,7 +1130,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
      *
@@ -1117,12 +1144,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1141,7 +1168,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
@@ -1157,14 +1184,14 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
      * (end).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $executionPeriod
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setExecutionPeriod(FHIRPeriod $executionPeriod = null)
     {
@@ -1175,7 +1202,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
      *
@@ -1189,12 +1216,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $focus
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setFocus(FHIRReference $focus = null)
     {
@@ -1205,7 +1232,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
@@ -1220,13 +1247,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $for
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setFor(FHIRReference $for = null)
     {
@@ -1237,7 +1264,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
@@ -1252,13 +1279,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $groupIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setGroupIdentifier(FHIRIdentifier $groupIdentifier = null)
     {
@@ -1269,7 +1296,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
      *
@@ -1283,12 +1310,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1299,12 +1326,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -1340,7 +1367,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Additional information that may be needed in the execution of the task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput $input
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addInput(FHIRTaskInput $input = null)
     {
@@ -1354,7 +1381,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Additional information that may be needed in the execution of the task.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput[] $input
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setInput(array $input = [])
     {
@@ -1374,7 +1401,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The kind of procedure or diagnostic request
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the "level" of actionability associated with the Task. I.e. Is this a
      * proposed task, a planned task, an actionable task, etc.
@@ -1388,13 +1415,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The kind of procedure or diagnostic request
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the "level" of actionability associated with the Task. I.e. Is this a
      * proposed task, a planned task, an actionable task, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent $intent
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setIntent(FHIRRequestIntent $intent = null)
     {
@@ -1408,7 +1435,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
      *
@@ -1425,12 +1452,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $lastModified
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setLastModified($lastModified = null)
     {
@@ -1450,7 +1477,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
      *
@@ -1465,12 +1492,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addNote(FHIRAnnotation $note = null)
     {
@@ -1482,12 +1509,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $note
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setNote(array $note = [])
     {
@@ -1523,7 +1550,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Outputs produced by the Task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput $output
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addOutput(FHIRTaskOutput $output = null)
     {
@@ -1537,7 +1564,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Outputs produced by the Task.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput[] $output
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setOutput(array $output = [])
     {
@@ -1558,7 +1585,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
      *
@@ -1572,12 +1599,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $owner
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setOwner(FHIRReference $owner = null)
     {
@@ -1588,7 +1615,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
      *
@@ -1602,12 +1629,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $partOf
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addPartOf(FHIRReference $partOf = null)
     {
@@ -1618,12 +1645,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $partOf
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setPartOf(array $partOf = [])
     {
@@ -1645,7 +1672,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant that can execute the task.
      *
@@ -1660,12 +1687,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant that can execute the task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $performerType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addPerformerType(FHIRCodeableConcept $performerType = null)
     {
@@ -1677,12 +1704,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant that can execute the task.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $performerType
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setPerformerType(array $performerType = [])
     {
@@ -1702,7 +1729,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
@@ -1716,13 +1743,13 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * Codes indicating the relative importance of a communication request.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority $priority
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setPriority(FHIRRequestPriority $priority = null)
     {
@@ -1734,7 +1761,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
      *
@@ -1749,12 +1776,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
@@ -1765,7 +1792,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
@@ -1781,14 +1808,14 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
      * the current version of the task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $relevantHistory
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory = null)
     {
@@ -1799,14 +1826,14 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
      * the current version of the task.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $relevantHistory
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setRelevantHistory(array $relevantHistory = [])
     {
@@ -1842,7 +1869,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * The creator of the task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRequester $requester
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setRequester(FHIRTaskRequester $requester = null)
     {
@@ -1872,7 +1899,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * limitations on what parts of the referenced request should be actioned.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $restriction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setRestriction(FHIRTaskRestriction $restriction = null)
     {
@@ -1882,7 +1909,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The current status of the task.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
      *
@@ -1895,12 +1922,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * The current status of the task.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTaskStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setStatus(FHIRTaskStatus $status = null)
     {
@@ -1912,7 +1939,7 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
      *
@@ -1927,12 +1954,12 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $statusReason
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRTask
+     * @return static
      */
     public function setStatusReason(FHIRCodeableConcept $statusReason = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PARAMETER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -92,7 +92,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
 
     /**
      * Code of parameter that is input to the guide.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter |
      * rule-broken-links | generate-xml | generate-json | generate-turtle |
@@ -100,17 +100,18 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuideParameterCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value for named type.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRImplementationGuideParameter Constructor
@@ -176,7 +177,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -205,7 +206,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
 
     /**
      * Code of parameter that is input to the guide.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter |
      * rule-broken-links | generate-xml | generate-json | generate-turtle |
@@ -220,14 +221,14 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
 
     /**
      * Code of parameter that is input to the guide.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter |
      * rule-broken-links | generate-xml | generate-json | generate-turtle |
      * html-template.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuideParameterCode $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter
+     * @return static
      */
     public function setCode(FHIRGuideParameterCode $code = null)
     {
@@ -238,7 +239,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value for named type.
      *
@@ -252,12 +253,12 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value for named type.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter
+     * @return static
      */
     public function setValue($value = null)
     {

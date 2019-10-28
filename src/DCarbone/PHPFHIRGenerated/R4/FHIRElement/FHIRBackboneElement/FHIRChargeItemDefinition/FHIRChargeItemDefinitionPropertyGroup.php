@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CHARGE_ITEM_DEFINITION_DOT_PROPERTY_GROUP;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_APPLICABILITY = 'applicability';
     const FIELD_PRICE_COMPONENT = 'priceComponent';
@@ -96,7 +96,8 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
-    private $applicability = [];
+    protected $applicability = [];
+
     /**
      * The ChargeItemDefinition resource provides the properties that apply to the
      * (billing) codes necessary to calculate costs and prices. The properties may
@@ -112,7 +113,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[]
      */
-    private $priceComponent = [];
+    protected $priceComponent = [];
 
     /**
      * FHIRChargeItemDefinitionPropertyGroup Constructor
@@ -180,7 +181,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -231,7 +232,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * Expressions that describe applicability criteria for the priceComponent.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $applicability
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup
+     * @return static
      */
     public function addApplicability(FHIRChargeItemDefinitionApplicability $applicability = null)
     {
@@ -248,7 +249,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * Expressions that describe applicability criteria for the priceComponent.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[] $applicability
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup
+     * @return static
      */
     public function setApplicability(array $applicability = [])
     {
@@ -300,7 +301,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * calculated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent $priceComponent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup
+     * @return static
      */
     public function addPriceComponent(FHIRChargeItemDefinitionPriceComponent $priceComponent = null)
     {
@@ -322,7 +323,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * calculated.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[] $priceComponent
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup
+     * @return static
      */
     public function setPriceComponent(array $priceComponent = [])
     {

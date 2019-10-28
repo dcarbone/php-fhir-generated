@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,21 +73,21 @@ class FHIRBackboneElement extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_MODIFIER_EXTENSION = 'modifierExtension';
 
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension that modifies the meaning of the element that contains it -
      * additional local content. The extension URL defines it's meaning
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
-    private $modifierExtension = [];
+    protected $modifierExtension = [];
 
     /**
      * FHIRBackboneElement Constructor
@@ -140,7 +140,7 @@ class FHIRBackboneElement extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -170,7 +170,7 @@ class FHIRBackboneElement extends FHIRElement
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension that modifies the meaning of the element that contains it -
      * additional local content. The extension URL defines it's meaning
@@ -185,13 +185,13 @@ class FHIRBackboneElement extends FHIRElement
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension that modifies the meaning of the element that contains it -
      * additional local content. The extension URL defines it's meaning
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $modifierExtension
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement
+     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension = null)
     {
@@ -202,13 +202,13 @@ class FHIRBackboneElement extends FHIRElement
     /**
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension that modifies the meaning of the element that contains it -
      * additional local content. The extension URL defines it's meaning
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $modifierExtension
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement
+     * @return static
      */
     public function setModifierExtension(array $modifierExtension = [])
     {

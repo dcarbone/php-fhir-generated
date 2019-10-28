@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
 /**
  * A manifest that defines a set of documents.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRDocumentManifest
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -82,7 +82,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOCUMENT_MANIFEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AUTHOR = 'author';
     const FIELD_CONFIDENTIALITY = 'confidentiality';
@@ -107,28 +107,30 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $author = [];
+    protected $author = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of this set of Documents.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $confidentiality = null;
+    protected $confidentiality = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of resources that describe the parts of this document reference.
      * Usually, these would be document references, but direct references to binary
@@ -136,13 +138,14 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $content = [];
+    protected $content = [];
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
@@ -150,72 +153,79 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    private $created = null;
+    protected $created = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
-    private $identifier = [];
+    protected $identifier = [];
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    private $masterIdentifier = null;
+    protected $masterIdentifier = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $recipient = [];
+    protected $recipient = [];
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $source = null;
+    protected $source = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDocumentReferenceStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the set of documents is about. The documents can be about a person,
      * (patient or healthcare practitioner), a device (i.e. machine) or even a group of
@@ -225,22 +235,24 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $subject = [];
+    protected $subject = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this document manifest replaces another.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $supercedes = null;
+    protected $supercedes = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
@@ -249,7 +261,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRDocumentManifest Constructor
@@ -450,7 +462,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -488,7 +500,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
@@ -502,12 +514,12 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function addAuthor(FHIRResourceReference $author = null)
     {
@@ -518,12 +530,12 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $author
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setAuthor(array $author = [])
     {
@@ -545,7 +557,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of this set of Documents.
      *
@@ -560,12 +572,12 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of this set of Documents.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $confidentiality
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setConfidentiality(FHIRCodeableConcept $confidentiality = null)
     {
@@ -576,7 +588,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of resources that describe the parts of this document reference.
      * Usually, these would be document references, but direct references to binary
@@ -592,14 +604,14 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of resources that describe the parts of this document reference.
      * Usually, these would be document references, but direct references to binary
      * attachments and images are also allowed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $content
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function addContent(FHIRResourceReference $content = null)
     {
@@ -610,14 +622,14 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The list of resources that describe the parts of this document reference.
      * Usually, these would be document references, but direct references to binary
      * attachments and images are also allowed.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $content
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setContent(array $content = [])
     {
@@ -640,7 +652,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
@@ -658,14 +670,14 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
      * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
      * may be modified, replicated etc).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $created
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setCreated($created = null)
     {
@@ -683,7 +695,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
@@ -697,13 +709,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -722,7 +734,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
@@ -737,13 +749,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -754,13 +766,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setIdentifier(array $identifier = [])
     {
@@ -781,7 +793,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
@@ -796,13 +808,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $masterIdentifier
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setMasterIdentifier(FHIRIdentifier $masterIdentifier = null)
     {
@@ -813,7 +825,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
@@ -828,13 +840,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $recipient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function addRecipient(FHIRResourceReference $recipient = null)
     {
@@ -845,13 +857,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $recipient
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setRecipient(array $recipient = [])
     {
@@ -871,7 +883,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
@@ -885,13 +897,13 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $source
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setSource($source = null)
     {
@@ -908,7 +920,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
      *
@@ -920,12 +932,12 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setStatus(FHIRDocumentReferenceStatus $status = null)
     {
@@ -936,7 +948,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the set of documents is about. The documents can be about a person,
      * (patient or healthcare practitioner), a device (i.e. machine) or even a group of
@@ -954,7 +966,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the set of documents is about. The documents can be about a person,
      * (patient or healthcare practitioner), a device (i.e. machine) or even a group of
@@ -963,7 +975,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * then more than one subject is allowed here (unusual use case).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function addSubject(FHIRResourceReference $subject = null)
     {
@@ -974,7 +986,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what the set of documents is about. The documents can be about a person,
      * (patient or healthcare practitioner), a device (i.e. machine) or even a group of
@@ -983,7 +995,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * then more than one subject is allowed here (unusual use case).
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $subject
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setSubject(array $subject = [])
     {
@@ -1004,7 +1016,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this document manifest replaces another.
      *
@@ -1018,12 +1030,12 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this document manifest replaces another.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $supercedes
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setSupercedes(FHIRResourceReference $supercedes = null)
     {
@@ -1035,7 +1047,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
@@ -1053,7 +1065,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
@@ -1061,7 +1073,7 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * wider.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRDocumentManifest
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

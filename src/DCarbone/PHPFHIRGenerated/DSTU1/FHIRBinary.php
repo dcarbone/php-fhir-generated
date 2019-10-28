@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,7 +69,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BINARY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTENT_TYPE = 'contentType';
     const FIELD_ID = 'id';
@@ -77,11 +77,12 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive
      */
-    private $contentType = null;
+    protected $contentType = null;
+
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive
      */
-    private $id = null;
+    protected $id = null;
 
     /**
      * FHIRBinary Constructor
@@ -124,7 +125,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -169,7 +170,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive $contentType
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
+     * @return static
      */
     public function setContentType($contentType = null)
     {
@@ -195,7 +196,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive $id
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
+     * @return static
      */
     public function setId($id = null)
     {

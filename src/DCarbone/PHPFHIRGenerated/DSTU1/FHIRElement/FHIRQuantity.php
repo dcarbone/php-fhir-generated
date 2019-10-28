@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,7 +66,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * measured amounts include amounts that are not precisely quantified, including
  * amounts involving arbitrary units and floating currencies.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRQuantity
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement
@@ -77,7 +77,7 @@ class FHIRQuantity extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUANTITY;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -93,17 +93,18 @@ class FHIRQuantity extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * How the Quantity should be understood and represented
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
@@ -111,35 +112,38 @@ class FHIRQuantity extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantityCompararator
      */
-    private $comparator = null;
+    protected $comparator = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
-    private $system = null;
+    protected $system = null;
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $units = null;
+    protected $units = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRQuantity Constructor
@@ -241,7 +245,7 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -271,7 +275,7 @@ class FHIRQuantity extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
@@ -286,13 +290,13 @@ class FHIRQuantity extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -310,7 +314,7 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * How the Quantity should be understood and represented
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
@@ -325,14 +329,14 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * How the Quantity should be understood and represented
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
      * comparator is "<" , then the real value is < stated value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantityCompararator $comparator
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
+     * @return static
      */
     public function setComparator(FHIRQuantityCompararator $comparator = null)
     {
@@ -342,7 +346,7 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
      *
@@ -355,12 +359,12 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $system
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
+     * @return static
      */
     public function setSystem($system = null)
     {
@@ -378,7 +382,7 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
      *
@@ -391,12 +395,12 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $units
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
+     * @return static
      */
     public function setUnits($units = null)
     {
@@ -414,7 +418,7 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
@@ -428,13 +432,13 @@ class FHIRQuantity extends FHIRElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
+     * @return static
      */
     public function setValue($value = null)
     {

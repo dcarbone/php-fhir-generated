@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 /**
  * A sequence of Unicode characters
  * Note that FHIR strings may not exceed 1MB in size
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRString
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement
@@ -81,14 +81,15 @@ class FHIRString extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRING;
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive
      */
-    private $value = null;
+    protected $value = null;
+
 
     /**
      * FHIRString Constructor
@@ -136,7 +137,7 @@ class FHIRString extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -172,7 +173,7 @@ class FHIRString extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive $value
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @return static
      */
     public function setValue($value = null)
     {

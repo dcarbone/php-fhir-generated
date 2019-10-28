@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 /**
  * How a rule statement is applied, such as adding additional consent or removing
  * consent.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRConsentProvisionType
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
@@ -81,14 +81,14 @@ class FHIRConsentProvisionType extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_PROVISION_TYPE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRConsentProvisionTypeList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRConsentProvisionType Constructor
@@ -133,7 +133,7 @@ class FHIRConsentProvisionType extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentProvisionType
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -170,7 +170,7 @@ class FHIRConsentProvisionType extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRConsentProvisionTypeList $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentProvisionType
+     * @return static
      */
     public function setValue($value = null)
     {

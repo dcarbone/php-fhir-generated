@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_HYBRID_TYPE = 'hybridType';
     const FIELD_MATERNAL_ORGANISM_ID = 'maternalOrganismId';
@@ -108,17 +108,18 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The hybrid type of an organism shall be specified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $hybridType = null;
+    protected $hybridType = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of the maternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary. For plants, the parents aren’t
@@ -127,11 +128,12 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $maternalOrganismId = null;
+    protected $maternalOrganismId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the maternal species constituting the hybrid organism shall be
      * specified. For plants, the parents aren’t always known, and it is unlikely
@@ -139,29 +141,31 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $maternalOrganismName = null;
+    protected $maternalOrganismName = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of the paternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $paternalOrganismId = null;
+    protected $paternalOrganismId = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the paternal species constituting the hybrid organism shall be
      * specified.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $paternalOrganismName = null;
+    protected $paternalOrganismName = null;
 
     /**
      * FHIRSubstanceSourceMaterialHybrid Constructor
@@ -254,7 +258,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -285,7 +289,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The hybrid type of an organism shall be specified.
      *
@@ -300,12 +304,12 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The hybrid type of an organism shall be specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $hybridType
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return static
      */
     public function setHybridType(FHIRCodeableConcept $hybridType = null)
     {
@@ -316,7 +320,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of the maternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary. For plants, the parents aren’t
@@ -333,7 +337,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of the maternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary. For plants, the parents aren’t
@@ -341,7 +345,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * which is paternal.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $maternalOrganismId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return static
      */
     public function setMaternalOrganismId($maternalOrganismId = null)
     {
@@ -360,7 +364,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the maternal species constituting the hybrid organism shall be
      * specified. For plants, the parents aren’t always known, and it is unlikely
@@ -376,14 +380,14 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the maternal species constituting the hybrid organism shall be
      * specified. For plants, the parents aren’t always known, and it is unlikely
      * that it will be known which is maternal and which is paternal.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $maternalOrganismName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return static
      */
     public function setMaternalOrganismName($maternalOrganismName = null)
     {
@@ -402,7 +406,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of the paternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary.
@@ -417,13 +421,13 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier of the paternal species constituting the hybrid organism shall be
      * specified based on a controlled vocabulary.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $paternalOrganismId
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return static
      */
     public function setPaternalOrganismId($paternalOrganismId = null)
     {
@@ -442,7 +446,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the paternal species constituting the hybrid organism shall be
      * specified.
@@ -457,13 +461,13 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the paternal species constituting the hybrid organism shall be
      * specified.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $paternalOrganismName
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return static
      */
     public function setPaternalOrganismName($paternalOrganismName = null)
     {

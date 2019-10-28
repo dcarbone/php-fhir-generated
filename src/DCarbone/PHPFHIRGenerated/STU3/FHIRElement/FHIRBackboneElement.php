@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,7 +70,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * Base definition for all elements that are defined inside a resource - but not
  * those in a data type.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRBackboneElement
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -81,14 +81,14 @@ class FHIRBackboneElement extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_MODIFIER_EXTENSION = 'modifierExtension';
 
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element, and that modifies the understanding of the element
@@ -101,7 +101,7 @@ class FHIRBackboneElement extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension[]
      */
-    private $modifierExtension = [];
+    protected $modifierExtension = [];
 
     /**
      * FHIRBackboneElement Constructor
@@ -154,7 +154,7 @@ class FHIRBackboneElement extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -184,7 +184,7 @@ class FHIRBackboneElement extends FHIRElement
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element, and that modifies the understanding of the element
@@ -205,7 +205,7 @@ class FHIRBackboneElement extends FHIRElement
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element, and that modifies the understanding of the element
@@ -217,7 +217,7 @@ class FHIRBackboneElement extends FHIRElement
      * processing a resource are required to check for modifier extensions.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension $modifierExtension
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement
+     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension = null)
     {
@@ -228,7 +228,7 @@ class FHIRBackboneElement extends FHIRElement
     /**
      * Optional Extension Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be used to represent additional information that is not part of the basic
      * definition of the element, and that modifies the understanding of the element
@@ -240,7 +240,7 @@ class FHIRBackboneElement extends FHIRElement
      * processing a resource are required to check for modifier extensions.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension[] $modifierExtension
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement
+     * @return static
      */
     public function setModifierExtension(array $modifierExtension = [])
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CODE_SYSTEM_DOT_CONCEPT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -98,7 +98,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
@@ -106,7 +106,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * The CodeSystem resource is used to declare the existence of and describe a code
      * system or code system supplement and its key properties, and optionally define a
@@ -118,11 +119,12 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
-    private $concept = [];
+    protected $concept = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The formal definition of the concept. The code system resource does not make
      * formal definitions required, because of the prevalence of legacy systems.
@@ -131,7 +133,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $definition = null;
+    protected $definition = null;
+
     /**
      * The CodeSystem resource is used to declare the existence of and describe a code
      * system or code system supplement and its key properties, and optionally define a
@@ -142,18 +145,20 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[]
      */
-    private $designation = [];
+    protected $designation = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $display = null;
+    protected $display = null;
+
     /**
      * The CodeSystem resource is used to declare the existence of and describe a code
      * system or code system supplement and its key properties, and optionally define a
@@ -163,7 +168,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[]
      */
-    private $property = [];
+    protected $property = [];
 
     /**
      * FHIRCodeSystemConcept Constructor
@@ -289,7 +294,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -319,7 +324,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
@@ -335,14 +340,14 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function setCode($code = null)
     {
@@ -384,7 +389,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * hierarchyMeaning.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept $concept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function addConcept(FHIRCodeSystemConcept $concept = null)
     {
@@ -402,7 +407,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * hierarchyMeaning.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[] $concept
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function setConcept(array $concept = [])
     {
@@ -423,7 +428,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The formal definition of the concept. The code system resource does not make
      * formal definitions required, because of the prevalence of legacy systems.
@@ -440,7 +445,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The formal definition of the concept. The code system resource does not make
      * formal definitions required, because of the prevalence of legacy systems.
@@ -448,7 +453,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * associated with the concept.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $definition
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function setDefinition($definition = null)
     {
@@ -488,7 +493,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * specialized purposes, used for particular purposes, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function addDesignation(FHIRCodeSystemDesignation $designation = null)
     {
@@ -505,7 +510,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * specialized purposes, used for particular purposes, etc.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[] $designation
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function setDesignation(array $designation = [])
     {
@@ -526,7 +531,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
@@ -541,13 +546,13 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $display
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function setDisplay($display = null)
     {
@@ -585,7 +590,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * A property value for this concept.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1 $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function addProperty(FHIRCodeSystemProperty1 $property = null)
     {
@@ -601,7 +606,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * A property value for this concept.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[] $property
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
+     * @return static
      */
     public function setProperty(array $property = [])
     {

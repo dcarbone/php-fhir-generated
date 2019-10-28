@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_TYPE_TESTED;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CONTAINER = 'container';
     const FIELD_HANDLING = 'handling';
@@ -104,7 +104,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
-    private $container = null;
+    protected $container = null;
+
     /**
      * A kind of specimen with associated set of requirements.
      *
@@ -113,69 +114,75 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[]
      */
-    private $handling = [];
+    protected $handling = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $isDerived = null;
+    protected $isDerived = null;
+
     /**
      * Degree of preference of a type of conditioned specimen.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSpecimenContainedPreference
      */
-    private $preference = null;
+    protected $preference = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    private $rejectionCriterion = [];
+    protected $rejectionCriterion = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $requirement = null;
+    protected $requirement = null;
+
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    private $retentionTime = null;
+    protected $retentionTime = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRSpecimenDefinitionTypeTested Constructor
@@ -300,7 +307,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -345,7 +352,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * The specimen's container.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setContainer(FHIRSpecimenDefinitionContainer $container = null)
     {
@@ -373,7 +380,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * temperature interval, prior the testing process.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $handling
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function addHandling(FHIRSpecimenDefinitionHandling $handling = null)
     {
@@ -388,7 +395,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * temperature interval, prior the testing process.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[] $handling
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setHandling(array $handling = [])
     {
@@ -408,7 +415,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
      *
@@ -421,12 +428,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $isDerived
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setIsDerived($isDerived = null)
     {
@@ -444,7 +451,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /**
      * Degree of preference of a type of conditioned specimen.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
      *
@@ -457,12 +464,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /**
      * Degree of preference of a type of conditioned specimen.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSpecimenContainedPreference $preference
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setPreference(FHIRSpecimenContainedPreference $preference = null)
     {
@@ -474,7 +481,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
      *
@@ -489,12 +496,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $rejectionCriterion
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function addRejectionCriterion(FHIRCodeableConcept $rejectionCriterion = null)
     {
@@ -506,12 +513,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $rejectionCriterion
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setRejectionCriterion(array $rejectionCriterion = [])
     {
@@ -532,7 +539,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
@@ -547,13 +554,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $requirement
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setRequirement($requirement = null)
     {
@@ -572,7 +579,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
@@ -587,13 +594,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * A length of time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setRetentionTime(FHIRDuration $retentionTime = null)
     {
@@ -605,7 +612,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
      *
@@ -620,12 +627,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
+     * @return static
      */
     public function setType(FHIRCodeableConcept $type = null)
     {

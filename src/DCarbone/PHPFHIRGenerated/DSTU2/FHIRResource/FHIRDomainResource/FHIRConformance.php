@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
  * A conformance statement is a set of capabilities of a FHIR Server that may be
  * used as a statement of actual server functionality or a statement of required or
  * desired server implementation.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRConformance
  * @package \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ACCEPT_UNKNOWN = 'acceptUnknown';
     const FIELD_ACCEPT_UNKNOWN_EXT = '_acceptUnknown';
@@ -138,14 +138,15 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A code that indicates whether an application accepts unknown elements or
      * extensions when reading resources.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates whether the application accepts unknown elements or
      * extensions when reading resources.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnknownContentCode
      */
-    private $acceptUnknown = null;
+    protected $acceptUnknown = null;
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -155,11 +156,12 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceContact[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the conformance statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
@@ -167,14 +169,15 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the conformance statement was published. The
      * date must change when the business version changes, if it does, and it must
@@ -183,11 +186,12 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the conformance statement and its
      * use. Typically, this is used when the conformance statement describes a desired
@@ -196,7 +200,8 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -206,10 +211,11 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument[]
      */
-    private $document = [];
+    protected $document = [];
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that this conformance statement is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -217,13 +223,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this conformance statement is
@@ -231,11 +238,12 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
-    private $fhirVersion = null;
+    protected $fhirVersion = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
@@ -243,7 +251,8 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode[]
      */
-    private $format = [];
+    protected $format = [];
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -255,10 +264,11 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceImplementation
      */
-    private $implementation = null;
+    protected $implementation = null;
+
     /**
      * How a conformance statement is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind not instance of
@@ -266,7 +276,8 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceStatementKind
      */
-    private $kind = null;
+    protected $kind = null;
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -276,21 +287,23 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging[]
      */
-    private $messaging = [];
+    protected $messaging = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the conformance statement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of profiles that represent different use cases supported by the system.
      * For a server, "supported by the system" means the system hosts/produces a set of
@@ -302,28 +315,31 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    private $profile = [];
+    protected $profile = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the conformance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this conformance statement is needed and why it's been constrained
      * as it has.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $requirements = null;
+    protected $requirements = null;
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -333,7 +349,8 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest[]
      */
-    private $rest = [];
+    protected $rest = [];
+
     /**
      * A conformance statement is a set of capabilities of a FHIR Server that may be
      * used as a statement of actual server functionality or a statement of required or
@@ -345,22 +362,24 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSoftware
      */
-    private $software = null;
+    protected $software = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of this conformance statement.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this conformance statement when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -369,11 +388,12 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the conformance
      * statement when it is referenced in a specification, model, design or instance.
@@ -382,7 +402,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
 
     /**
      * FHIRConformance Constructor
@@ -687,7 +707,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -725,7 +745,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A code that indicates whether an application accepts unknown elements or
      * extensions when reading resources.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates whether the application accepts unknown elements or
      * extensions when reading resources.
@@ -740,13 +760,13 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A code that indicates whether an application accepts unknown elements or
      * extensions when reading resources.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates whether the application accepts unknown elements or
      * extensions when reading resources.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnknownContentCode $acceptUnknown
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setAcceptUnknown(FHIRUnknownContentCode $acceptUnknown = null)
     {
@@ -776,7 +796,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceContact $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function addContact(FHIRConformanceContact $contact = null)
     {
@@ -792,7 +812,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * Contacts to assist a user in finding and communicating with the publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceContact[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -813,7 +833,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the conformance statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
@@ -829,14 +849,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the conformance statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the system described by the conformance statement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $copyright
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -858,7 +878,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the conformance statement was published. The
      * date must change when the business version changes, if it does, and it must
@@ -878,7 +898,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the conformance statement was published. The
      * date must change when the business version changes, if it does, and it must
@@ -886,7 +906,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * substantive content of the conformance statement changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -905,7 +925,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the conformance statement and its
      * use. Typically, this is used when the conformance statement describes a desired
@@ -922,7 +942,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the conformance statement and its
      * use. Typically, this is used when the conformance statement describes a desired
@@ -930,7 +950,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * requirements as part of an RFP.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -968,7 +988,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A document definition.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument $document
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function addDocument(FHIRConformanceDocument $document = null)
     {
@@ -984,7 +1004,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A document definition.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument[] $document
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setDocument(array $document = [])
     {
@@ -1004,7 +1024,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that this conformance statement is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -1019,14 +1039,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag to indicate that this conformance statement is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1047,7 +1067,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this conformance statement is
@@ -1065,14 +1085,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
      * RFC 4122
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this conformance statement is
      * based.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId $fhirVersion
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setFhirVersion($fhirVersion = null)
     {
@@ -1091,7 +1111,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
@@ -1107,14 +1127,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
      * types.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $format
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function addFormat($format = null)
     {
@@ -1133,14 +1153,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A list of the formats supported by this implementation using their content
      * types.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode[] $format
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setFormat(array $format = [])
     {
@@ -1184,7 +1204,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * capabilities of a software program.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceImplementation $implementation
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setImplementation(FHIRConformanceImplementation $implementation = null)
     {
@@ -1194,7 +1214,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * How a conformance statement is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind not instance of
@@ -1209,14 +1229,14 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
 
     /**
      * How a conformance statement is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind not instance of
      * software) or a class of implementation (e.g. a desired purchase).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceStatementKind $kind
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setKind(FHIRConformanceStatementKind $kind = null)
     {
@@ -1246,7 +1266,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A description of the messaging capabilities of the solution.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging $messaging
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function addMessaging(FHIRConformanceMessaging $messaging = null)
     {
@@ -1262,7 +1282,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A description of the messaging capabilities of the solution.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging[] $messaging
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setMessaging(array $messaging = [])
     {
@@ -1283,7 +1303,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the conformance statement.
      *
@@ -1297,12 +1317,12 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the conformance statement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1321,7 +1341,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of profiles that represent different use cases supported by the system.
      * For a server, "supported by the system" means the system hosts/produces a set of
@@ -1341,7 +1361,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of profiles that represent different use cases supported by the system.
      * For a server, "supported by the system" means the system hosts/produces a set of
@@ -1352,7 +1372,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * [Using Profiles]{profiling.html#profile-uses}.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function addProfile(FHIRReference $profile = null)
     {
@@ -1363,7 +1383,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of profiles that represent different use cases supported by the system.
      * For a server, "supported by the system" means the system hosts/produces a set of
@@ -1374,7 +1394,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * [Using Profiles]{profiling.html#profile-uses}.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $profile
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setProfile(array $profile = [])
     {
@@ -1395,7 +1415,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the conformance.
      *
@@ -1409,12 +1429,12 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the conformance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1433,7 +1453,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this conformance statement is needed and why it's been constrained
      * as it has.
@@ -1448,13 +1468,13 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this conformance statement is needed and why it's been constrained
      * as it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $requirements
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setRequirements($requirements = null)
     {
@@ -1492,7 +1512,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A definition of the restful capabilities of the solution, if any.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest $rest
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function addRest(FHIRConformanceRest $rest = null)
     {
@@ -1508,7 +1528,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A definition of the restful capabilities of the solution, if any.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest[] $rest
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setRest(array $rest = [])
     {
@@ -1552,7 +1572,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * version, independent of an installation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSoftware $software
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setSoftware(FHIRConformanceSoftware $software = null)
     {
@@ -1563,7 +1583,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of this conformance statement.
@@ -1578,13 +1598,13 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The status of this conformance statement.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $status
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setStatus($status = null)
     {
@@ -1603,7 +1623,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this conformance statement when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1620,7 +1640,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URL that is used to identify this conformance statement when it is
      * referenced in a specification, model, design or an instance. This SHALL be a
@@ -1628,7 +1648,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * conformance statement is (or will be) published.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1647,7 +1667,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the conformance
      * statement when it is referenced in a specification, model, design or instance.
@@ -1664,7 +1684,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the conformance
      * statement when it is referenced in a specification, model, design or instance.
@@ -1672,7 +1692,7 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * should be a timestamp.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRConformance
+     * @return static
      */
     public function setVersion($version = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,10 @@ class FHIRTimePrimitive implements PHPFHIRTypeInterface
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    private $_xmlns = '';
+    protected $_xmlns = '';
 
     /** @var null|string */
-    private $value = null;
+    protected $value = null;
 
     /** null|\DateTime */
     private $_dateTime = null;
@@ -96,7 +96,7 @@ class FHIRTimePrimitive implements PHPFHIRTypeInterface
     }
     /**
      * @param null|string $value
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRTimePrimitive
+     * @return static
      */
     public function setValue($value)
     {
@@ -170,7 +170,7 @@ class FHIRTimePrimitive implements PHPFHIRTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRTimePrimitive
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {

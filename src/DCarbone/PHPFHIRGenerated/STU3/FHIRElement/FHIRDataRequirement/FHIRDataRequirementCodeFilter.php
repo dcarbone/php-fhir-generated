@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,7 +75,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
  * Describes a required data item for evaluation in terms of the type of data, and
  * optional code or date-based filters of the data.
  * If the element is present, it must have a value for at least one of the defined
- * elements, an @id referenced from the Narrative, or extensions
+ * elements, an \@id referenced from the Narrative, or extensions
  *
  * Class FHIRDataRequirementCodeFilter
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement
@@ -86,7 +86,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_CODE_FILTER;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
@@ -101,7 +101,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The code-valued attribute of the filter. The specified path must be resolvable
      * from the type of the required data. The path is allowed to contain qualifiers
@@ -112,11 +112,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $path = null;
+    protected $path = null;
+
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The codes for the code filter. Only one of valueSet, valueCode, valueCoding, or
@@ -126,12 +127,13 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode[]
      */
-    private $valueCode = [];
+    protected $valueCode = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The CodeableConcepts for the code filter. Only one of valueSet, valueCode,
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
@@ -140,11 +142,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $valueCodeableConcept = [];
+    protected $valueCodeableConcept = [];
+
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Codings for the code filter. Only one of valueSet, valueCode, valueConding,
      * or valueCodeableConcept may be specified. If values are given, the filter will
@@ -153,11 +156,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    private $valueCoding = [];
+    protected $valueCoding = [];
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The valueset for the code filter. The valueSet and value elements are exclusive.
      * If valueSet is specified, the filter will return only those data items for which
@@ -166,11 +170,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    private $valueSetReference = null;
+    protected $valueSetReference = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The valueset for the code filter. The valueSet and value elements are exclusive.
      * If valueSet is specified, the filter will return only those data items for which
@@ -179,7 +184,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $valueSetString = null;
+    protected $valueSetString = null;
 
     /**
      * FHIRDataRequirementCodeFilter Constructor
@@ -300,7 +305,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -330,7 +335,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The code-valued attribute of the filter. The specified path must be resolvable
      * from the type of the required data. The path is allowed to contain qualifiers
@@ -349,7 +354,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The code-valued attribute of the filter. The specified path must be resolvable
      * from the type of the required data. The path is allowed to contain qualifiers
@@ -359,7 +364,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * CodeableConcept.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $path
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function setPath($path = null)
     {
@@ -378,7 +383,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The codes for the code filter. Only one of valueSet, valueCode, valueCoding, or
@@ -396,7 +401,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The codes for the code filter. Only one of valueSet, valueCode, valueCoding, or
@@ -405,7 +410,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * the path has a value that is one of the specified codes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $valueCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function addValueCode($valueCode = null)
     {
@@ -424,7 +429,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A string which has at least one character and no leading or trailing whitespace
      * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The codes for the code filter. Only one of valueSet, valueCode, valueCoding, or
@@ -433,7 +438,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * the path has a value that is one of the specified codes.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode[] $valueCode
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function setValueCode(array $valueCode = [])
     {
@@ -455,7 +460,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The CodeableConcepts for the code filter. Only one of valueSet, valueCode,
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
@@ -473,7 +478,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The CodeableConcepts for the code filter. Only one of valueSet, valueCode,
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
@@ -481,7 +486,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * specified by the path has a value that is one of the specified CodeableConcepts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function addValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
     {
@@ -493,7 +498,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The CodeableConcepts for the code filter. Only one of valueSet, valueCode,
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
@@ -501,7 +506,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * specified by the path has a value that is one of the specified CodeableConcepts.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $valueCodeableConcept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function setValueCodeableConcept(array $valueCodeableConcept = [])
     {
@@ -522,7 +527,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Codings for the code filter. Only one of valueSet, valueCode, valueConding,
      * or valueCodeableConcept may be specified. If values are given, the filter will
@@ -539,7 +544,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Codings for the code filter. Only one of valueSet, valueCode, valueConding,
      * or valueCodeableConcept may be specified. If values are given, the filter will
@@ -547,7 +552,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * the path has a value that is one of the specified Codings.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $valueCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function addValueCoding(FHIRCoding $valueCoding = null)
     {
@@ -558,7 +563,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Codings for the code filter. Only one of valueSet, valueCode, valueConding,
      * or valueCodeableConcept may be specified. If values are given, the filter will
@@ -566,7 +571,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * the path has a value that is one of the specified Codings.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $valueCoding
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function setValueCoding(array $valueCoding = [])
     {
@@ -587,7 +592,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The valueset for the code filter. The valueSet and value elements are exclusive.
      * If valueSet is specified, the filter will return only those data items for which
@@ -604,7 +609,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The valueset for the code filter. The valueSet and value elements are exclusive.
      * If valueSet is specified, the filter will return only those data items for which
@@ -612,7 +617,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * specified valueset.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $valueSetReference
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function setValueSetReference(FHIRReference $valueSetReference = null)
     {
@@ -623,7 +628,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The valueset for the code filter. The valueSet and value elements are exclusive.
      * If valueSet is specified, the filter will return only those data items for which
@@ -640,7 +645,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The valueset for the code filter. The valueSet and value elements are exclusive.
      * If valueSet is specified, the filter will return only those data items for which
@@ -648,7 +653,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * specified valueset.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $valueSetString
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
+     * @return static
      */
     public function setValueSetString($valueSetString = null)
     {

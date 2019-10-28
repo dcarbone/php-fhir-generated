@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
  * reliability or trace where the information in them came from. The focus of the
  * provenance resource is record keeping, audit and traceability, and not explicit
  * statements of clinical significance.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRProvenance
  * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
@@ -87,7 +87,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_AGENT = 'agent';
     const FIELD_ENTITY = 'entity';
@@ -116,7 +116,8 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    private $agent = [];
+    protected $agent = [];
+
     /**
      * Provenance information that describes the activity that led to the creation of a
      * set of resources. This information can be used to help determine their
@@ -128,10 +129,11 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity[]
      */
-    private $entity = [];
+    protected $entity = [];
+
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital signature on the target resource(s). The signature should match a
      * Provenance.agent.reference in the provenance resource. The signature is only
@@ -141,30 +143,33 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    private $integritySignature = null;
+    protected $integritySignature = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    private $location = null;
+    protected $location = null;
+
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    private $period = null;
+    protected $period = null;
+
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
@@ -172,31 +177,34 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
      */
-    private $policy = [];
+    protected $policy = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that the activity was taking place.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    private $reason = null;
+    protected $reason = null;
+
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
-    private $recorded = null;
+    protected $recorded = null;
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource(s) that were generated by the activity described in this resource.
      * A provenance can point to more than one target if multiple resources were
@@ -204,7 +212,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    private $target = [];
+    protected $target = [];
 
     /**
      * FHIRProvenance Constructor
@@ -354,7 +362,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -421,7 +429,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * entities that may be ascribed responsibility.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $agent
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function addAgent(FHIRProvenanceAgent $agent = null)
     {
@@ -442,7 +450,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * entities that may be ascribed responsibility.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] $agent
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setAgent(array $agent = [])
     {
@@ -486,7 +494,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * An entity used in this activity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $entity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function addEntity(FHIRProvenanceEntity $entity = null)
     {
@@ -504,7 +512,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * An entity used in this activity.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity[] $entity
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setEntity(array $entity = [])
     {
@@ -524,7 +532,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital signature on the target resource(s). The signature should match a
      * Provenance.agent.reference in the provenance resource. The signature is only
@@ -541,7 +549,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * A sequence of Unicode characters
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A digital signature on the target resource(s). The signature should match a
      * Provenance.agent.reference in the provenance resource. The signature is only
@@ -550,7 +558,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * non-repudiation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $integritySignature
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setIntegritySignature($integritySignature = null)
     {
@@ -569,7 +577,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
      *
@@ -583,12 +591,12 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $location
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setLocation(FHIRResourceReference $location = null)
     {
@@ -599,7 +607,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
      *
@@ -613,12 +621,12 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
@@ -628,7 +636,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
@@ -643,14 +651,14 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $policy
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function addPolicy($policy = null)
     {
@@ -668,14 +676,14 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[] $policy
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setPolicy(array $policy = [])
     {
@@ -697,7 +705,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that the activity was taking place.
      *
@@ -712,12 +720,12 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that the activity was taking place.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $reason
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
@@ -727,7 +735,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
      *
@@ -740,12 +748,12 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
 
     /**
      * An instant in time - known at least to the second
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $recorded
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setRecorded($recorded = null)
     {
@@ -764,7 +772,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource(s) that were generated by the activity described in this resource.
      * A provenance can point to more than one target if multiple resources were
@@ -780,14 +788,14 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource(s) that were generated by the activity described in this resource.
      * A provenance can point to more than one target if multiple resources were
      * created/updated by the same activity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $target
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function addTarget(FHIRResourceReference $target = null)
     {
@@ -798,14 +806,14 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource(s) that were generated by the activity described in this resource.
      * A provenance can point to more than one target if multiple resources were
      * created/updated by the same activity.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $target
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance
+     * @return static
      */
     public function setTarget(array $target = [])
     {

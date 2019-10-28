@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRLo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ class FHIRLocationPosition extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_POSITION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ALTITUDE = 'altitude';
     const FIELD_ALTITUDE_EXT = '_altitude';
@@ -87,34 +87,36 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Altitude. The value domain and the interpretation are the same as for the text
      * of the altitude element in KML (see notes below).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $altitude = null;
+    protected $altitude = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Latitude. The value domain and the interpretation are the same as for the text
      * of the latitude element in KML (see notes below).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $latitude = null;
+    protected $latitude = null;
+
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Longitude. The value domain and the interpretation are the same as for the text
      * of the longitude element in KML (see notes below).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
-    private $longitude = null;
+    protected $longitude = null;
 
     /**
      * FHIRLocationPosition Constructor
@@ -188,7 +190,7 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -217,7 +219,7 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Altitude. The value domain and the interpretation are the same as for the text
      * of the altitude element in KML (see notes below).
@@ -231,13 +233,13 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Altitude. The value domain and the interpretation are the same as for the text
      * of the altitude element in KML (see notes below).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $altitude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
+     * @return static
      */
     public function setAltitude($altitude = null)
     {
@@ -255,7 +257,7 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Latitude. The value domain and the interpretation are the same as for the text
      * of the latitude element in KML (see notes below).
@@ -269,13 +271,13 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Latitude. The value domain and the interpretation are the same as for the text
      * of the latitude element in KML (see notes below).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $latitude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
+     * @return static
      */
     public function setLatitude($latitude = null)
     {
@@ -293,7 +295,7 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Longitude. The value domain and the interpretation are the same as for the text
      * of the longitude element in KML (see notes below).
@@ -307,13 +309,13 @@ class FHIRLocationPosition extends FHIRBackboneElement
 
     /**
      * A rational number with implicit precision
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Longitude. The value domain and the interpretation are the same as for the text
      * of the longitude element in KML (see notes below).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal $longitude
-     * @return \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
+     * @return static
      */
     public function setLongitude($longitude = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRFHIRAllTypes
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
@@ -79,14 +79,14 @@ class FHIRFHIRAllTypes extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FHIRALL_TYPES;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRFHIRAllTypesList
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * FHIRFHIRAllTypes Constructor
@@ -131,7 +131,7 @@ class FHIRFHIRAllTypes extends FHIRElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRAllTypes
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -168,7 +168,7 @@ class FHIRFHIRAllTypes extends FHIRElement
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRFHIRAllTypesList $value
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRAllTypes
+     * @return static
      */
     public function setValue($value = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_MANIFEST;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_IMAGE = 'image';
     const FIELD_IMAGE_EXT = '_image';
@@ -97,17 +97,18 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $image = [];
+    protected $image = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
@@ -115,7 +116,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    private $other = [];
+    protected $other = [];
+
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -126,10 +128,11 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
      */
-    private $page = [];
+    protected $page = [];
+
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A pointer to official web page, PDF or other rendering of the implementation
@@ -137,7 +140,8 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
-    private $rendering = null;
+    protected $rendering = null;
+
     /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
@@ -151,7 +155,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1[]
      */
-    private $resource = [];
+    protected $resource = [];
 
     /**
      * FHIRImplementationGuideManifest Constructor
@@ -275,7 +279,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -305,7 +309,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
      *
@@ -319,12 +323,12 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $image
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function addImage($image = null)
     {
@@ -343,12 +347,12 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $image
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function setImage(array $image = [])
     {
@@ -369,7 +373,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
@@ -385,14 +389,14 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
      * hyperlink in a derived IG.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $other
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function addOther($other = null)
     {
@@ -411,14 +415,14 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
      * hyperlink in a derived IG.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $other
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function setOther(array $other = [])
     {
@@ -460,7 +464,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * Information about a page within the IG.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage1 $page
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function addPage(FHIRImplementationGuidePage1 $page = null)
     {
@@ -477,7 +481,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * Information about a page within the IG.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage1[] $page
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function setPage(array $page = [])
     {
@@ -497,7 +501,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
 
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A pointer to official web page, PDF or other rendering of the implementation
@@ -512,14 +516,14 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
 
     /**
      * A URI that is a literal reference
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A pointer to official web page, PDF or other rendering of the implementation
      * guide.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $rendering
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function setRendering($rendering = null)
     {
@@ -565,7 +569,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1 $resource
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function addResource(FHIRImplementationGuideResource1 $resource = null)
     {
@@ -585,7 +589,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * resource.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1[] $resource
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return static
      */
     public function setResource(array $resource = [])
     {

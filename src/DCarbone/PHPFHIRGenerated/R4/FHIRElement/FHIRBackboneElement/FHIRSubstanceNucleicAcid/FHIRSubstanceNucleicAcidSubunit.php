@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_FIVE_PRIME = 'fivePrime';
     const FIELD_LENGTH = 'length';
@@ -103,7 +103,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nucleotide present at the 5’ terminal shall be specified based on a
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
@@ -112,17 +112,19 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $fivePrime = null;
+    protected $fivePrime = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of the sequence shall be captured.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $length = null;
+    protected $length = null;
+
     /**
      * Nucleic acids are defined by three distinct elements: the base, sugar and
      * linkage. Individual substance/moiety IDs will be created for each of these
@@ -133,11 +135,12 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
      */
-    private $linkage = [];
+    protected $linkage = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Actual nucleotide sequence notation from 5' to 3' end using standard single
      * letter codes. In addition to the base sequence, sugar and type of phosphate or
@@ -145,21 +148,23 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    private $sequence = null;
+    protected $sequence = null;
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    private $sequenceAttachment = null;
+    protected $sequenceAttachment = null;
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Index of linear sequences of nucleic acids in order of decreasing length.
      * Sequences of the same length will be ordered by molecular weight. Subunits that
@@ -167,7 +172,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    private $subunit = null;
+    protected $subunit = null;
+
     /**
      * Nucleic acids are defined by three distinct elements: the base, sugar and
      * linkage. Individual substance/moiety IDs will be created for each of these
@@ -178,12 +184,13 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
      */
-    private $sugar = [];
+    protected $sugar = [];
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nucleotide present at the 3’ terminal shall be specified based on a
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
@@ -192,7 +199,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $threePrime = null;
+    protected $threePrime = null;
 
     /**
      * FHIRSubstanceNucleicAcidSubunit Constructor
@@ -317,7 +324,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -348,7 +355,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nucleotide present at the 5’ terminal shall be specified based on a
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
@@ -366,7 +373,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nucleotide present at the 5’ terminal shall be specified based on a
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
@@ -374,7 +381,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * sequence. A separate representation would be redundant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $fivePrime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setFivePrime(FHIRCodeableConcept $fivePrime = null)
     {
@@ -385,7 +392,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of the sequence shall be captured.
      *
@@ -399,12 +406,12 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of the sequence shall be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setLength($length = null)
     {
@@ -444,7 +451,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * The linkages between sugar residues will also be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage $linkage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function addLinkage(FHIRSubstanceNucleicAcidLinkage $linkage = null)
     {
@@ -461,7 +468,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * The linkages between sugar residues will also be captured.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[] $linkage
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setLinkage(array $linkage = [])
     {
@@ -482,7 +489,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Actual nucleotide sequence notation from 5' to 3' end using standard single
      * letter codes. In addition to the base sequence, sugar and type of phosphate or
@@ -498,14 +505,14 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Actual nucleotide sequence notation from 5' to 3' end using standard single
      * letter codes. In addition to the base sequence, sugar and type of phosphate or
      * non-phosphate linkage should also be captured.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sequence
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setSequence($sequence = null)
     {
@@ -524,7 +531,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
      *
@@ -538,12 +545,12 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sequenceAttachment
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setSequenceAttachment(FHIRAttachment $sequenceAttachment = null)
     {
@@ -554,7 +561,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Index of linear sequences of nucleic acids in order of decreasing length.
      * Sequences of the same length will be ordered by molecular weight. Subunits that
@@ -570,14 +577,14 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Index of linear sequences of nucleic acids in order of decreasing length.
      * Sequences of the same length will be ordered by molecular weight. Subunits that
      * have identical sequences will be repeated and have sequential subscripts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $subunit
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setSubunit($subunit = null)
     {
@@ -617,7 +624,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * 5.3.6.8.1 Sugar ID (Mandatory).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar $sugar
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function addSugar(FHIRSubstanceNucleicAcidSugar $sugar = null)
     {
@@ -634,7 +641,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * 5.3.6.8.1 Sugar ID (Mandatory).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[] $sugar
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setSugar(array $sugar = [])
     {
@@ -656,7 +663,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nucleotide present at the 3’ terminal shall be specified based on a
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
@@ -674,7 +681,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nucleotide present at the 3’ terminal shall be specified based on a
      * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
@@ -682,7 +689,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * sequence. A separate representation would be redundant.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $threePrime
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
+     * @return static
      */
     public function setThreePrime(FHIRCodeableConcept $threePrime = null)
     {

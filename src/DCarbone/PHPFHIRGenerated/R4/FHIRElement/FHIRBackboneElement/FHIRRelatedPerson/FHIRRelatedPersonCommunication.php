@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RELATED_PERSON_DOT_COMMUNICATION;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_LANGUAGE = 'language';
     const FIELD_PREFERRED = 'preferred';
@@ -92,7 +92,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
@@ -101,17 +101,18 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    private $language = null;
+    protected $language = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether or not the patient prefers this language (over other languages
      * he masters up a certain level).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    private $preferred = null;
+    protected $preferred = null;
 
     /**
      * FHIRRelatedPersonCommunication Constructor
@@ -168,7 +169,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -199,7 +200,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
@@ -217,7 +218,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
@@ -225,7 +226,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      * English.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $language
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication
+     * @return static
      */
     public function setLanguage(FHIRCodeableConcept $language = null)
     {
@@ -235,7 +236,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether or not the patient prefers this language (over other languages
      * he masters up a certain level).
@@ -249,13 +250,13 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether or not the patient prefers this language (over other languages
      * he masters up a certain level).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $preferred
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication
+     * @return static
      */
     public function setPreferred($preferred = null)
     {

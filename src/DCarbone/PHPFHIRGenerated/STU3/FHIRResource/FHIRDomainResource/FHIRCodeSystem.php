@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:51+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 /**
  * A code system resource specifies a set of codes drawn from one or more code
  * systems.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRCodeSystem
  * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource
@@ -97,7 +97,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CODE_SYSTEM;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CASE_SENSITIVE = 'caseSensitive';
     const FIELD_CASE_SENSITIVE_EXT = '_caseSensitive';
@@ -147,23 +147,25 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $caseSensitive = null;
+    protected $caseSensitive = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True If code system defines a post-composition grammar.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $compositional = null;
+    protected $compositional = null;
+
     /**
      * A code system resource specifies a set of codes drawn from one or more code
      * systems.
@@ -174,29 +176,32 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
-    private $concept = [];
+    protected $concept = [];
+
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
-    private $contact = [];
+    protected $contact = [];
+
     /**
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in a code system resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in this resource.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeSystemContentMode
      */
-    private $content = null;
+    protected $content = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -205,7 +210,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the code system and/or its contents. Copyright
@@ -214,10 +219,11 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $copyright = null;
+    protected $copyright = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The total number of concepts defined by the code system. Where the code system
@@ -226,14 +232,15 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
-    private $count = null;
+    protected $count = null;
+
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the code system was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -242,7 +249,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    private $date = null;
+    protected $date = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -251,7 +259,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the code system from a consumer's
@@ -259,10 +267,11 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $description = null;
+    protected $description = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this code system is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -270,7 +279,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $experimental = null;
+    protected $experimental = null;
+
     /**
      * A code system resource specifies a set of codes drawn from one or more code
      * systems.
@@ -280,20 +290,22 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter[]
      */
-    private $filter = [];
+    protected $filter = [];
+
     /**
      * The meaning of the hierarchy of concepts in a code system
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The meaning of the hierarchy of concepts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
-    private $hierarchyMeaning = null;
+    protected $hierarchyMeaning = null;
+
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -301,22 +313,24 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    private $jurisdiction = [];
+    protected $jurisdiction = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the code system. This name should be usable
      * as an identifier for the module by machine processing applications such as code
@@ -324,7 +338,8 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $name = null;
+    protected $name = null;
+
     /**
      * A code system resource specifies a set of codes drawn from one or more code
      * systems.
@@ -334,17 +349,19 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty[]
      */
-    private $property = [];
+    protected $property = [];
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the code system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $publisher = null;
+    protected $publisher = null;
+
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
@@ -353,7 +370,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this code system is needed and why it has been designed as
@@ -361,29 +378,32 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
-    private $purpose = null;
+    protected $purpose = null;
+
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this code system. Enables tracking the life-cycle of the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
-    private $status = null;
+    protected $status = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the code system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $title = null;
+    protected $title = null;
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this code system when it is referenced
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -394,14 +414,15 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $url = null;
+    protected $url = null;
+
     /**
      * Specifies clinical/business/etc metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -409,21 +430,23 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
-    private $useContext = [];
+    protected $useContext = [];
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical URL of value set that contains the entire code system.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    private $valueSet = null;
+    protected $valueSet = null;
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the code system when it
      * is referenced in a specification, model, design or instance. This is an
@@ -435,10 +458,11 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    private $version = null;
+    protected $version = null;
+
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This flag is used to signify that the code system has not (or does not) maintain
      * the definitions, and a version must be specified when referencing this code
@@ -446,7 +470,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    private $versionNeeded = null;
+    protected $versionNeeded = null;
 
     /**
      * FHIRCodeSystem Constructor
@@ -809,7 +833,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -846,7 +870,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
@@ -860,13 +884,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $caseSensitive
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setCaseSensitive($caseSensitive = null)
     {
@@ -884,7 +908,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True If code system defines a post-composition grammar.
      *
@@ -897,12 +921,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True If code system defines a post-composition grammar.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $compositional
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setCompositional($compositional = null)
     {
@@ -942,7 +966,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * meaning of the hierarchical relationships are.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept $concept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function addConcept(FHIRCodeSystemConcept $concept = null)
     {
@@ -959,7 +983,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * meaning of the hierarchical relationships are.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[] $concept
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setConcept(array $concept = [])
     {
@@ -980,7 +1004,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
@@ -995,13 +1019,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function addContact(FHIRContactDetail $contact = null)
     {
@@ -1012,13 +1036,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[] $contact
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setContact(array $contact = [])
     {
@@ -1039,7 +1063,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in a code system resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in this resource.
@@ -1054,13 +1078,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in a code system resource
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in this resource.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeSystemContentMode $content
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setContent(FHIRCodeSystemContentMode $content = null)
     {
@@ -1076,7 +1100,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the code system and/or its contents. Copyright
@@ -1098,7 +1122,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A copyright statement relating to the code system and/or its contents. Copyright
@@ -1106,7 +1130,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * code system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $copyright
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setCopyright($copyright = null)
     {
@@ -1124,7 +1148,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The total number of concepts defined by the code system. Where the code system
@@ -1140,7 +1164,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * The total number of concepts defined by the code system. Where the code system
@@ -1148,7 +1172,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * concepts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt $count
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setCount($count = null)
     {
@@ -1170,7 +1194,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the code system was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -1190,7 +1214,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
      * due to schema type constraints but may be zero-filled and may be ignored. Dates
      * SHALL be valid dates.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and optionally time) when the code system was published. The date must
      * change if and when the business version changes and it must change if the status
@@ -1198,7 +1222,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * code system changes.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $date
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setDate($date = null)
     {
@@ -1222,7 +1246,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the code system from a consumer's
@@ -1243,14 +1267,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * A free text natural language description of the code system from a consumer's
      * perspective.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $description
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setDescription($description = null)
     {
@@ -1268,7 +1292,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this code system is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
@@ -1283,14 +1307,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A boolean value to indicate that this code system is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $experimental
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setExperimental($experimental = null)
     {
@@ -1328,7 +1352,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * concepts using a filter.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter $filter
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function addFilter(FHIRCodeSystemFilter $filter = null)
     {
@@ -1344,7 +1368,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * concepts using a filter.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter[] $filter
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setFilter(array $filter = [])
     {
@@ -1364,7 +1388,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * The meaning of the hierarchy of concepts in a code system
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The meaning of the hierarchy of concepts.
      *
@@ -1377,12 +1401,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * The meaning of the hierarchy of concepts in a code system
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The meaning of the hierarchy of concepts.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeSystemHierarchyMeaning $hierarchyMeaning
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setHierarchyMeaning(FHIRCodeSystemHierarchyMeaning $hierarchyMeaning = null)
     {
@@ -1393,7 +1417,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
@@ -1409,14 +1433,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -1428,7 +1452,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
      *
@@ -1443,12 +1467,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
     {
@@ -1460,12 +1484,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setJurisdiction(array $jurisdiction = [])
     {
@@ -1486,7 +1510,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the code system. This name should be usable
      * as an identifier for the module by machine processing applications such as code
@@ -1502,14 +1526,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the code system. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setName($name = null)
     {
@@ -1547,7 +1571,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * be provided about a concept.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty $property
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function addProperty(FHIRCodeSystemProperty $property = null)
     {
@@ -1563,7 +1587,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * be provided about a concept.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty[] $property
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setProperty(array $property = [])
     {
@@ -1584,7 +1608,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the code system.
      *
@@ -1598,12 +1622,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the code system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $publisher
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setPublisher($publisher = null)
     {
@@ -1627,7 +1651,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this code system is needed and why it has been designed as
@@ -1648,14 +1672,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * processing. The preferred markdown syntax is described here:
      * http://daringfireball.net/projects/markdown/syntax (and tests here:
      * http://daringfireball.net/projects/downloads/MarkdownTest_1.0.zip)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * Explaination of why this code system is needed and why it has been designed as
      * it has.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown $purpose
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setPurpose($purpose = null)
     {
@@ -1672,7 +1696,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this code system. Enables tracking the life-cycle of the content.
      *
@@ -1684,12 +1708,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this code system. Enables tracking the life-cycle of the content.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus $status
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setStatus(FHIRPublicationStatus $status = null)
     {
@@ -1700,7 +1724,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the code system.
      *
@@ -1714,12 +1738,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the code system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setTitle($title = null)
     {
@@ -1738,7 +1762,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this code system when it is referenced
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -1757,7 +1781,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An absolute URI that is used to identify this code system when it is referenced
      * in a specification, model, design or an instance. This SHALL be a URL, SHOULD be
@@ -1767,7 +1791,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * This is used in [Coding]{datatypes.html#Coding}.system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $url
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setUrl($url = null)
     {
@@ -1789,7 +1813,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
@@ -1808,14 +1832,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate code system instances.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext = null)
     {
@@ -1829,14 +1853,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * applicable population (e.g., age category, DRG) or the specific context of care
      * (e.g., venue, care setting, provider of care).
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate code system instances.
      *
      * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[] $useContext
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setUseContext(array $useContext = [])
     {
@@ -1857,7 +1881,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical URL of value set that contains the entire code system.
      *
@@ -1871,12 +1895,12 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical URL of value set that contains the entire code system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $valueSet
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setValueSet($valueSet = null)
     {
@@ -1895,7 +1919,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the code system when it
      * is referenced in a specification, model, design or instance. This is an
@@ -1915,7 +1939,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identifier that is used to identify this version of the code system when it
      * is referenced in a specification, model, design or instance. This is an
@@ -1926,7 +1950,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * [Coding]{datatypes.html#Coding}.version.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $version
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setVersion($version = null)
     {
@@ -1944,7 +1968,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This flag is used to signify that the code system has not (or does not) maintain
      * the definitions, and a version must be specified when referencing this code
@@ -1959,14 +1983,14 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
 
     /**
      * Value of "true" or "false"
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This flag is used to signify that the code system has not (or does not) maintain
      * the definitions, and a version must be specified when referencing this code
      * system.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $versionNeeded
-     * @return \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRCodeSystem
+     * @return static
      */
     public function setVersionNeeded($versionNeeded = null)
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,7 +76,7 @@ use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
  * A container for a collection of resources.
- * If the element is present, it must have either a @value, an @id, or extensions
+ * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRBundle
  * @package \DCarbone\PHPFHIRGenerated\R4\FHIRResource
@@ -87,7 +87,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_ENTRY = 'entry';
     const FIELD_IDENTIFIER = 'identifier';
@@ -109,19 +109,21 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[]
      */
-    private $entry = [];
+    protected $entry = [];
+
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    private $identifier = null;
+    protected $identifier = null;
+
     /**
      * A container for a collection of resources.
      *
@@ -129,7 +131,8 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
-    private $link = [];
+    protected $link = [];
+
     /**
      * A signature along with supporting context. The signature may be a digital
      * signature that is cryptographic in nature, or some other signature acceptable to
@@ -137,30 +140,32 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
-    private $signature = null;
+    protected $signature = null;
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
-    private $timestamp = null;
+    protected $timestamp = null;
+
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If a set of search matches, this is the total number of entries of type 'match'
@@ -170,16 +175,17 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
-    private $total = null;
+    protected $total = null;
+
     /**
      * Indicates the purpose of a bundle - how it is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBundleType
      */
-    private $type = null;
+    protected $type = null;
 
     /**
      * FHIRBundle Constructor
@@ -302,7 +308,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -357,7 +363,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * about a resource (transactions and history only).
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $entry
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function addEntry(FHIRBundleEntry $entry = null)
     {
@@ -372,7 +378,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * about a resource (transactions and history only).
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[] $entry
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setEntry(array $entry = [])
     {
@@ -394,7 +400,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
@@ -410,13 +416,13 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
@@ -442,7 +448,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A series of links that provide context to this bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function addLink(FHIRBundleLink $link = null)
     {
@@ -456,7 +462,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A series of links that provide context to this bundle.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setLink(array $link = [])
     {
@@ -481,7 +487,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
      *
@@ -499,12 +505,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * representing a hand-written signature, or a signature ceremony Different
      * signature approaches have different utilities.
      * If the element is present, it must have a value for at least one of the defined
-     * elements, an @id referenced from the Narrative, or extensions
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature $signature
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setSignature(FHIRSignature $signature = null)
     {
@@ -518,7 +524,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
@@ -536,13 +542,13 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * typically system logs etc., and not human-reported times - for them, see date
      * and dateTime (which can be as precise as instant, but is not required to be)
      * below. Time zone is always required
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant $timestamp
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setTimestamp($timestamp = null)
     {
@@ -560,7 +566,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If a set of search matches, this is the total number of entries of type 'match'
@@ -577,7 +583,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a @value, an @id referenced from
+     * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * If a set of search matches, this is the total number of entries of type 'match'
@@ -586,7 +592,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * the Bundle.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $total
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setTotal($total = null)
     {
@@ -604,7 +610,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * Indicates the purpose of a bundle - how it is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
      *
@@ -617,12 +623,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 
     /**
      * Indicates the purpose of a bundle - how it is intended to be used.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBundleType $type
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle
+     * @return static
      */
     public function setType(FHIRBundleType $type = null)
     {

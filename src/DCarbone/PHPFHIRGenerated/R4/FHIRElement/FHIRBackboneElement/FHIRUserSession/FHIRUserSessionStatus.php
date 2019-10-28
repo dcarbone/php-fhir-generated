@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 22nd, 2019 01:52+0000
+ * Class creation date: October 28th, 2019 20:54+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,7 +80,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_USER_SESSION_DOT_STATUS;
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
@@ -89,22 +89,23 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
 
     /**
      * The status of the user session.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the user session.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus
      */
-    private $code = null;
+    protected $code = null;
+
     /**
      * The source of the status of the user session.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source of the status code.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource
      */
-    private $source = null;
+    protected $source = null;
 
     /**
      * FHIRUserSessionStatus Constructor
@@ -166,7 +167,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
 
     /**
      * @param null|string $xmlNamespace
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus
+     * @return static
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
@@ -195,7 +196,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
 
     /**
      * The status of the user session.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the user session.
      *
@@ -208,12 +209,12 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
 
     /**
      * The status of the user session.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the user session.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus $code
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus
+     * @return static
      */
     public function setCode(FHIRUserSessionStatus1 $code = null)
     {
@@ -223,7 +224,7 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
 
     /**
      * The source of the status of the user session.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source of the status code.
      *
@@ -236,12 +237,12 @@ class FHIRUserSessionStatus extends FHIRBackboneElement
 
     /**
      * The source of the status of the user session.
-     * If the element is present, it must have either a @value, an @id, or extensions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source of the status code.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource $source
-     * @return \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus
+     * @return static
      */
     public function setSource(FHIRUserSessionStatusSource $source = null)
     {
