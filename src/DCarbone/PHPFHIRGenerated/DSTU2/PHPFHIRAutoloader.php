@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,18 +65,18 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
 // if this class is used, assume not using Composer...
 
 // interfaces
-if (!class_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface', false)) {
+if (!interface_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeInterface.php';
 }
-if (!class_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface', false)) {
+if (!interface_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRContainedTypeInterface.php';
 }
-if (!class_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRCommentContainerInterface', false)) {
+if (!interface_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRCommentContainerInterface', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerInterface.php';
 }
 
 // traits
-if (!class_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRCommentContainerTrait', false)) {
+if (!trait_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRCommentContainerTrait', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerTrait.php';
 }
 

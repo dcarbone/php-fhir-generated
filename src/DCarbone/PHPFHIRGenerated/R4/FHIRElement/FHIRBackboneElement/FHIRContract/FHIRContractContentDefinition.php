@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -134,7 +134,9 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Status of the publication of contract content.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * draft | active | retired | unknown.
+     * amended | appended | cancelled | disputed | entered-in-error | executable |
+     * executed | negotiable | offered | policy | rejected | renewed | revoked |
+     * resolved | terminated.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
@@ -401,7 +403,9 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Status of the publication of contract content.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * draft | active | retired | unknown.
+     * amended | appended | cancelled | disputed | entered-in-error | executable |
+     * executed | negotiable | offered | policy | rejected | renewed | revoked |
+     * resolved | terminated.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
@@ -414,7 +418,9 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Status of the publication of contract content.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * draft | active | retired | unknown.
+     * amended | appended | cancelled | disputed | entered-in-error | executable |
+     * executed | negotiable | offered | policy | rejected | renewed | revoked |
+     * resolved | terminated.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
      * @return static

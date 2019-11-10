@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,8 +88,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionConditionKind-list'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionGroupingBehavior'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionGroupingBehavior-list'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionList'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionList-list'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionParticipantType'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionParticipantType-list'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ActionPrecheckBehavior'));
@@ -649,7 +647,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('IssueSeverity-list'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('IssueType'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('IssueType-list'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ItemInstance'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLibrary', PHPFHIRTypeMap::getContainedTypeClassName('Library'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLinkage', PHPFHIRTypeMap::getContainedTypeClassName('Linkage'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Linkage.Item'));
@@ -737,17 +734,8 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization', PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductAuthorization'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductAuthorization.JurisdictionalAuthorization'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductAuthorization.Procedure'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals.Contraindication'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals.Interactions'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals.OtherTherapy'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals.Population'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals.TherapeuticIndication'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductClinicals.UndesirableEffects'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication', PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductContraindication'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductContraindication.OtherTherapy'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductDeviceSpec'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductDeviceSpec.Material'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication', PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductIndication'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductIndication.OtherTherapy'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient', PHPFHIRTypeMap::getContainedTypeClassName('MedicinalProductIngredient'));
@@ -876,12 +864,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure', PHPFHIRTypeMap::getContainedTypeClassName('Procedure'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Procedure.FocalDevice'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Procedure.Performer'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProcessOutcomeCodes'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProcessOutcomeCodes-list'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProcessRequest'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProcessRequest.Item'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProcessResponse'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProcessResponse.ProcessNote'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProdCharacteristic'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ProductShelfLife'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('PropertyRepresentation'));
@@ -987,15 +969,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('SearchParameter.Component'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('SearchParamType'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('SearchParamType-list'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.Inner'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.Outer'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.Quality'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.ReferenceSeq'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.Repository'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.Roc'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.StructureVariant'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Sequence.Variant'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('sequenceType'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('sequenceType-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest', PHPFHIRTypeMap::getContainedTypeClassName('ServiceRequest'));
@@ -1195,13 +1168,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UsageContext'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Use'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Use-list'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSession'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSession.Context'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSession.Status'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSessionStatus'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSessionStatus-list'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSessionStatusSource'));
-        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('UserSessionStatusSource-list'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('uuid'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('uuid-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRValueSet', PHPFHIRTypeMap::getContainedTypeClassName('ValueSet'));
@@ -1256,10 +1222,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionGroupingBehavior'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRActionGroupingBehaviorList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRActionGroupingBehaviorList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRActionListList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRActionListList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionParticipantType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionParticipantType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRActionParticipantTypeList'));
@@ -2378,8 +2340,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIssueType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRIssueTypeList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRIssueTypeList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRItemInstance'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRItemInstance'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLibrary'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLibrary'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLinkage'));
@@ -2554,28 +2514,10 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy'));
@@ -2832,18 +2774,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRProcessOutcomeCodesList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRProcessOutcomeCodesList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessRequest'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessRequest'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessResponse'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessResponse'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife'));
@@ -3054,24 +2984,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchParamType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRSearchParamTypeList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRSearchParamTypeList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSequenceType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSequenceType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRSequenceTypeList'));
@@ -3470,20 +3382,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRUseList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRUseList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusSourceList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusSourceList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRUuidPrimitive'));
@@ -3555,8 +3453,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionConditionKind-list'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionGroupingBehavior'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionGroupingBehavior-list'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionList'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionList-list'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionParticipantType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionParticipantType-list'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ActionPrecheckBehavior'));
@@ -4116,7 +4012,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('IssueSeverity-list'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('IssueType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('IssueType-list'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ItemInstance'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('Library'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('Linkage'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Linkage.Item'));
@@ -4204,17 +4099,8 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('MedicinalProductAuthorization'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductAuthorization.JurisdictionalAuthorization'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductAuthorization.Procedure'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals.Contraindication'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals.Interactions'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals.OtherTherapy'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals.Population'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals.TherapeuticIndication'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductClinicals.UndesirableEffects'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('MedicinalProductContraindication'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductContraindication.OtherTherapy'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductDeviceSpec'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductDeviceSpec.Material'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('MedicinalProductIndication'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('MedicinalProductIndication.OtherTherapy'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('MedicinalProductIngredient'));
@@ -4343,12 +4229,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('Procedure'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Procedure.FocalDevice'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Procedure.Performer'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProcessOutcomeCodes'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProcessOutcomeCodes-list'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProcessRequest'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProcessRequest.Item'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProcessResponse'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProcessResponse.ProcessNote'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProdCharacteristic'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ProductShelfLife'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('PropertyRepresentation'));
@@ -4454,15 +4334,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('SearchParameter.Component'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('SearchParamType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('SearchParamType-list'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.Inner'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.Outer'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.Quality'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.ReferenceSeq'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.Repository'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.Roc'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.StructureVariant'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Sequence.Variant'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('sequenceType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('sequenceType-list'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('ServiceRequest'));
@@ -4662,13 +4533,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UsageContext'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Use'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Use-list'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSession'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSession.Context'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSession.Status'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSessionStatus'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSessionStatus-list'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSessionStatusSource'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('UserSessionStatusSource-list'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('uuid'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('uuid-primitive'));
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource('ValueSet'));
@@ -4722,10 +4586,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionGroupingBehavior;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRActionGroupingBehaviorList;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionList;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRActionListList;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionParticipantType;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
@@ -5845,8 +5705,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRIssueTypeList;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRItemInstance;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLibrary;
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLinkage;
@@ -6021,27 +5879,9 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication;
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication;
         $this->assertTrue(PHPFHIRTypeMap::isContainableResource($type));
@@ -6299,18 +6139,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRProcessOutcomeCodesList;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessRequest;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessResponse;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife;
@@ -6520,24 +6348,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchParamType;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRSearchParamTypeList;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSequenceType;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
@@ -6937,20 +6747,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRUseList;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusList;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusSourceList;
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRUuidPrimitive;
@@ -7015,7 +6811,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionCardinalityBehaviorList', PHPFHIRTypeMap::getTypeClass('ActionCardinalityBehavior-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionConditionKindList', PHPFHIRTypeMap::getTypeClass('ActionConditionKind-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionGroupingBehaviorList', PHPFHIRTypeMap::getTypeClass('ActionGroupingBehavior-list'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionListList', PHPFHIRTypeMap::getTypeClass('ActionList-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionParticipantTypeList', PHPFHIRTypeMap::getTypeClass('ActionParticipantType-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionPrecheckBehaviorList', PHPFHIRTypeMap::getTypeClass('ActionPrecheckBehavior-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRActionRelationshipTypeList', PHPFHIRTypeMap::getTypeClass('ActionRelationshipType-list'));
@@ -7096,7 +6891,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionCardinalityBehavior', PHPFHIRTypeMap::getTypeClass('ActionCardinalityBehavior'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind', PHPFHIRTypeMap::getTypeClass('ActionConditionKind'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionGroupingBehavior', PHPFHIRTypeMap::getTypeClass('ActionGroupingBehavior'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionList', PHPFHIRTypeMap::getTypeClass('ActionList'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionParticipantType', PHPFHIRTypeMap::getTypeClass('ActionParticipantType'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionPrecheckBehavior', PHPFHIRTypeMap::getTypeClass('ActionPrecheckBehavior'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionRelationshipType', PHPFHIRTypeMap::getTypeClass('ActionRelationshipType'));
@@ -7399,14 +7193,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient', PHPFHIRTypeMap::getTypeClass('Medication.Ingredient'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization', PHPFHIRTypeMap::getTypeClass('MedicinalProductAuthorization.JurisdictionalAuthorization'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure', PHPFHIRTypeMap::getTypeClass('MedicinalProductAuthorization.Procedure'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals.Contraindication'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals.Interactions'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals.OtherTherapy'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals.Population'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals.TherapeuticIndication'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals.UndesirableEffects'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy', PHPFHIRTypeMap::getTypeClass('MedicinalProductContraindication.OtherTherapy'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial', PHPFHIRTypeMap::getTypeClass('MedicinalProductDeviceSpec.Material'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy', PHPFHIRTypeMap::getTypeClass('MedicinalProductIndication.OtherTherapy'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength', PHPFHIRTypeMap::getTypeClass('MedicinalProductIngredient.ReferenceStrength'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance', PHPFHIRTypeMap::getTypeClass('MedicinalProductIngredient.SpecifiedSubstance'));
@@ -7474,8 +7261,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification', PHPFHIRTypeMap::getTypeClass('Practitioner.Qualification'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice', PHPFHIRTypeMap::getTypeClass('Procedure.FocalDevice'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer', PHPFHIRTypeMap::getTypeClass('Procedure.Performer'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem', PHPFHIRTypeMap::getTypeClass('ProcessRequest.Item'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote', PHPFHIRTypeMap::getTypeClass('ProcessResponse.ProcessNote'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic', PHPFHIRTypeMap::getTypeClass('ProdCharacteristic'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife', PHPFHIRTypeMap::getTypeClass('ProductShelfLife'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent', PHPFHIRTypeMap::getTypeClass('Provenance.Agent'));
@@ -7500,14 +7285,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate', PHPFHIRTypeMap::getTypeClass('RiskEvidenceSynthesis.RiskEstimate'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize', PHPFHIRTypeMap::getTypeClass('RiskEvidenceSynthesis.SampleSize'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent', PHPFHIRTypeMap::getTypeClass('SearchParameter.Component'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner', PHPFHIRTypeMap::getTypeClass('Sequence.Inner'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter', PHPFHIRTypeMap::getTypeClass('Sequence.Outer'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality', PHPFHIRTypeMap::getTypeClass('Sequence.Quality'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq', PHPFHIRTypeMap::getTypeClass('Sequence.ReferenceSeq'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository', PHPFHIRTypeMap::getTypeClass('Sequence.Repository'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc', PHPFHIRTypeMap::getTypeClass('Sequence.Roc'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant', PHPFHIRTypeMap::getTypeClass('Sequence.StructureVariant'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant', PHPFHIRTypeMap::getTypeClass('Sequence.Variant'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive', PHPFHIRTypeMap::getTypeClass('SpecimenDefinition.Additive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer', PHPFHIRTypeMap::getTypeClass('SpecimenDefinition.Container'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling', PHPFHIRTypeMap::getTypeClass('SpecimenDefinition.Handling'));
@@ -7604,8 +7381,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable', PHPFHIRTypeMap::getTypeClass('TestScript.Variable'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming', PHPFHIRTypeMap::getTypeClass('Timing'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat', PHPFHIRTypeMap::getTypeClass('Timing.Repeat'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext', PHPFHIRTypeMap::getTypeClass('UserSession.Context'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus', PHPFHIRTypeMap::getTypeClass('UserSession.Status'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose', PHPFHIRTypeMap::getTypeClass('ValueSet.Compose'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept', PHPFHIRTypeMap::getTypeClass('ValueSet.Concept'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains', PHPFHIRTypeMap::getTypeClass('ValueSet.Contains'));
@@ -7764,7 +7539,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipationStatus', PHPFHIRTypeMap::getTypeClass('ParticipationStatus'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod', PHPFHIRTypeMap::getTypeClass('Period'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt', PHPFHIRTypeMap::getTypeClass('positiveInt'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes', PHPFHIRTypeMap::getTypeClass('ProcessOutcomeCodes'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPropertyRepresentation', PHPFHIRTypeMap::getTypeClass('PropertyRepresentation'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPropertyType', PHPFHIRTypeMap::getTypeClass('PropertyType'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole', PHPFHIRTypeMap::getTypeClass('ProvenanceEntityRole'));
@@ -7847,8 +7621,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl', PHPFHIRTypeMap::getTypeClass('url'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext', PHPFHIRTypeMap::getTypeClass('UsageContext'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse', PHPFHIRTypeMap::getTypeClass('Use'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus', PHPFHIRTypeMap::getTypeClass('UserSessionStatus'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource', PHPFHIRTypeMap::getTypeClass('UserSessionStatusSource'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid', PHPFHIRTypeMap::getTypeClass('uuid'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVariableType', PHPFHIRTypeMap::getTypeClass('VariableType'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVConfidentialityClassification', PHPFHIRTypeMap::getTypeClass('vConfidentialityClassification'));
@@ -7928,7 +7700,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRParticipantRequiredList', PHPFHIRTypeMap::getTypeClass('ParticipantRequired-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRParticipationStatusList', PHPFHIRTypeMap::getTypeClass('ParticipationStatus-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive', PHPFHIRTypeMap::getTypeClass('positiveInt-primitive'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRProcessOutcomeCodesList', PHPFHIRTypeMap::getTypeClass('ProcessOutcomeCodes-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRPropertyRepresentationList', PHPFHIRTypeMap::getTypeClass('PropertyRepresentation-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRPropertyTypeList', PHPFHIRTypeMap::getTypeClass('PropertyType-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRProvenanceEntityRoleList', PHPFHIRTypeMap::getTypeClass('ProvenanceEntityRole-list'));
@@ -8023,7 +7794,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImplementationGuide', PHPFHIRTypeMap::getTypeClass('ImplementationGuide'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInsurancePlan', PHPFHIRTypeMap::getTypeClass('InsurancePlan'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice', PHPFHIRTypeMap::getTypeClass('Invoice'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRItemInstance', PHPFHIRTypeMap::getTypeClass('ItemInstance'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLibrary', PHPFHIRTypeMap::getTypeClass('Library'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLinkage', PHPFHIRTypeMap::getTypeClass('Linkage'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList', PHPFHIRTypeMap::getTypeClass('List'));
@@ -8039,9 +7809,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement', PHPFHIRTypeMap::getTypeClass('MedicationStatement'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct', PHPFHIRTypeMap::getTypeClass('MedicinalProduct'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization', PHPFHIRTypeMap::getTypeClass('MedicinalProductAuthorization'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals', PHPFHIRTypeMap::getTypeClass('MedicinalProductClinicals'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication', PHPFHIRTypeMap::getTypeClass('MedicinalProductContraindication'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec', PHPFHIRTypeMap::getTypeClass('MedicinalProductDeviceSpec'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication', PHPFHIRTypeMap::getTypeClass('MedicinalProductIndication'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient', PHPFHIRTypeMap::getTypeClass('MedicinalProductIngredient'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction', PHPFHIRTypeMap::getTypeClass('MedicinalProductInteraction'));
@@ -8068,8 +7836,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitioner', PHPFHIRTypeMap::getTypeClass('Practitioner'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole', PHPFHIRTypeMap::getTypeClass('PractitionerRole'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure', PHPFHIRTypeMap::getTypeClass('Procedure'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessRequest', PHPFHIRTypeMap::getTypeClass('ProcessRequest'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessResponse', PHPFHIRTypeMap::getTypeClass('ProcessResponse'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProvenance', PHPFHIRTypeMap::getTypeClass('Provenance'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRQuestionnaire', PHPFHIRTypeMap::getTypeClass('Questionnaire'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse', PHPFHIRTypeMap::getTypeClass('QuestionnaireResponse'));
@@ -8083,7 +7849,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRiskEvidenceSynthesis', PHPFHIRTypeMap::getTypeClass('RiskEvidenceSynthesis'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSchedule', PHPFHIRTypeMap::getTypeClass('Schedule'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter', PHPFHIRTypeMap::getTypeClass('SearchParameter'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence', PHPFHIRTypeMap::getTypeClass('Sequence'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest', PHPFHIRTypeMap::getTypeClass('ServiceRequest'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSlot', PHPFHIRTypeMap::getTypeClass('Slot'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen', PHPFHIRTypeMap::getTypeClass('Specimen'));
@@ -8104,7 +7869,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities', PHPFHIRTypeMap::getTypeClass('TerminologyCapabilities'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRTestReport', PHPFHIRTypeMap::getTypeClass('TestReport'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRTestScript', PHPFHIRTypeMap::getTypeClass('TestScript'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession', PHPFHIRTypeMap::getTypeClass('UserSession'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRValueSet', PHPFHIRTypeMap::getTypeClass('ValueSet'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRVerificationResult', PHPFHIRTypeMap::getTypeClass('VerificationResult'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRVisionPrescription', PHPFHIRTypeMap::getTypeClass('VisionPrescription'));
@@ -8156,8 +7920,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive', PHPFHIRTypeMap::getTypeClass('uri-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUrlPrimitive', PHPFHIRTypeMap::getTypeClass('url-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUseList', PHPFHIRTypeMap::getTypeClass('Use-list'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusList', PHPFHIRTypeMap::getTypeClass('UserSessionStatus-list'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusSourceList', PHPFHIRTypeMap::getTypeClass('UserSessionStatusSource-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRUuidPrimitive', PHPFHIRTypeMap::getTypeClass('uuid-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRVariableTypeList', PHPFHIRTypeMap::getTypeClass('VariableType-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRVConfidentialityClassificationList', PHPFHIRTypeMap::getTypeClass('vConfidentialityClassification-list'));

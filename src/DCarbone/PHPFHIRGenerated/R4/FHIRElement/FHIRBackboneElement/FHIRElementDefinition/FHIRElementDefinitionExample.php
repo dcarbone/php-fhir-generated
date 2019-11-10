@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition;
@@ -174,6 +175,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
     const FIELD_VALUE_INTEGER_EXT = '_valueInteger';
     const FIELD_VALUE_MARKDOWN = 'valueMarkdown';
     const FIELD_VALUE_MARKDOWN_EXT = '_valueMarkdown';
+    const FIELD_VALUE_META = 'valueMeta';
     const FIELD_VALUE_MONEY = 'valueMoney';
     const FIELD_VALUE_MONEY_EXT = '_valueMoney';
     const FIELD_VALUE_OID = 'valueOid';
@@ -582,6 +584,20 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected $valueMarkdown = null;
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual value for the element, which must be one of the types allowed for
+     * this element. (choose any one of the elements, but only one)
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    protected $valueMeta = null;
 
     /**
      * An amount of economic utility in some recognized currency.
@@ -1142,6 +1158,13 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
                 $this->setValueMarkdown(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_VALUE_MARKDOWN]] + $ext));
             } else {
                 $this->setValueMarkdown(new FHIRMarkdown($data[self::FIELD_VALUE_MARKDOWN]));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_META])) {
+            if ($data[self::FIELD_VALUE_META] instanceof FHIRMeta) {
+                $this->setValueMeta($data[self::FIELD_VALUE_META]);
+            } else {
+                $this->setValueMeta(new FHIRMeta($data[self::FIELD_VALUE_META]));
             }
         }
         if (isset($data[self::FIELD_VALUE_MONEY])) {
@@ -2471,6 +2494,42 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
     }
 
     /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual value for the element, which must be one of the types allowed for
+     * this element. (choose any one of the elements, but only one)
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    public function getValueMeta()
+    {
+        return $this->valueMeta;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual value for the element, which must be one of the types allowed for
+     * this element. (choose any one of the elements, but only one)
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $valueMeta
+     * @return static
+     */
+    public function setValueMeta(FHIRMeta $valueMeta = null)
+    {
+        $this->valueMeta = $valueMeta;
+        return $this;
+    }
+
+    /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -3409,6 +3468,9 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
         if (isset($children->valueMarkdown)) {
             $type->setValueMarkdown(FHIRMarkdown::xmlUnserialize($children->valueMarkdown));
         }
+        if (isset($children->valueMeta)) {
+            $type->setValueMeta(FHIRMeta::xmlUnserialize($children->valueMeta));
+        }
         if (isset($children->valueMoney)) {
             $type->setValueMoney(FHIRMoney::xmlUnserialize($children->valueMoney));
         }
@@ -3615,6 +3677,10 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
+        if (null !== ($v = $this->getValueMeta())) {
+            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_META, null, $v->_getFHIRXMLNamespace()));
+        }
+
         if (null !== ($v = $this->getValueMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -3797,6 +3863,9 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement
         if (null !== ($v = $this->getValueMarkdown())) {
             $a[self::FIELD_VALUE_MARKDOWN] = $v->getValue();
             $a[self::FIELD_VALUE_MARKDOWN_EXT] = $v;
+        }
+        if (null !== ($v = $this->getValueMeta())) {
+            $a[self::FIELD_VALUE_META] = $v;
         }
         if (null !== ($v = $this->getValueMoney())) {
             $a[self::FIELD_VALUE_MONEY] = $v;

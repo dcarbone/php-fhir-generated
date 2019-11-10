@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition;
@@ -177,6 +178,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     const FIELD_DEFAULT_VALUE_INTEGER_EXT = '_defaultValueInteger';
     const FIELD_DEFAULT_VALUE_MARKDOWN = 'defaultValueMarkdown';
     const FIELD_DEFAULT_VALUE_MARKDOWN_EXT = '_defaultValueMarkdown';
+    const FIELD_DEFAULT_VALUE_META = 'defaultValueMeta';
     const FIELD_DEFAULT_VALUE_MONEY = 'defaultValueMoney';
     const FIELD_DEFAULT_VALUE_MONEY_EXT = '_defaultValueMoney';
     const FIELD_DEFAULT_VALUE_OID = 'defaultValueOid';
@@ -625,6 +627,20 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected $defaultValueMarkdown = null;
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A value to use if there is no existing value in the source object. (choose any
+     * one of defaultValue*, but only one)
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    protected $defaultValueMeta = null;
 
     /**
      * An amount of economic utility in some recognized currency.
@@ -1293,6 +1309,13 @@ class FHIRStructureMapSource extends FHIRBackboneElement
                 $this->setDefaultValueMarkdown(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_DEFAULT_VALUE_MARKDOWN]] + $ext));
             } else {
                 $this->setDefaultValueMarkdown(new FHIRMarkdown($data[self::FIELD_DEFAULT_VALUE_MARKDOWN]));
+            }
+        }
+        if (isset($data[self::FIELD_DEFAULT_VALUE_META])) {
+            if ($data[self::FIELD_DEFAULT_VALUE_META] instanceof FHIRMeta) {
+                $this->setDefaultValueMeta($data[self::FIELD_DEFAULT_VALUE_META]);
+            } else {
+                $this->setDefaultValueMeta(new FHIRMeta($data[self::FIELD_DEFAULT_VALUE_META]));
             }
         }
         if (isset($data[self::FIELD_DEFAULT_VALUE_MONEY])) {
@@ -2790,6 +2813,42 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     }
 
     /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A value to use if there is no existing value in the source object. (choose any
+     * one of defaultValue*, but only one)
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    public function getDefaultValueMeta()
+    {
+        return $this->defaultValueMeta;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A value to use if there is no existing value in the source object. (choose any
+     * one of defaultValue*, but only one)
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $defaultValueMeta
+     * @return static
+     */
+    public function setDefaultValueMeta(FHIRMeta $defaultValueMeta = null)
+    {
+        $this->defaultValueMeta = $defaultValueMeta;
+        return $this;
+    }
+
+    /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -4012,6 +4071,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         if (isset($children->defaultValueMarkdown)) {
             $type->setDefaultValueMarkdown(FHIRMarkdown::xmlUnserialize($children->defaultValueMarkdown));
         }
+        if (isset($children->defaultValueMeta)) {
+            $type->setDefaultValueMeta(FHIRMeta::xmlUnserialize($children->defaultValueMeta));
+        }
         if (isset($children->defaultValueMoney)) {
             $type->setDefaultValueMoney(FHIRMoney::xmlUnserialize($children->defaultValueMoney));
         }
@@ -4263,6 +4325,10 @@ class FHIRStructureMapSource extends FHIRBackboneElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_META, null, $v->_getFHIRXMLNamespace()));
+        }
+
         if (null !== ($v = $this->getDefaultValueMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -4475,6 +4541,9 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         if (null !== ($v = $this->getDefaultValueMarkdown())) {
             $a[self::FIELD_DEFAULT_VALUE_MARKDOWN] = $v->getValue();
             $a[self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT] = $v;
+        }
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            $a[self::FIELD_DEFAULT_VALUE_META] = $v;
         }
         if (null !== ($v = $this->getDefaultValueMoney())) {
             $a[self::FIELD_DEFAULT_VALUE_MONEY] = $v;

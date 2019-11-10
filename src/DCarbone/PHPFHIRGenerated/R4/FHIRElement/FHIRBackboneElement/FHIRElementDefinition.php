@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition;
@@ -190,6 +191,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
     const FIELD_DEFAULT_VALUE_INTEGER_EXT = '_defaultValueInteger';
     const FIELD_DEFAULT_VALUE_MARKDOWN = 'defaultValueMarkdown';
     const FIELD_DEFAULT_VALUE_MARKDOWN_EXT = '_defaultValueMarkdown';
+    const FIELD_DEFAULT_VALUE_META = 'defaultValueMeta';
     const FIELD_DEFAULT_VALUE_MONEY = 'defaultValueMoney';
     const FIELD_DEFAULT_VALUE_MONEY_EXT = '_defaultValueMoney';
     const FIELD_DEFAULT_VALUE_OID = 'defaultValueOid';
@@ -265,6 +267,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
     const FIELD_FIXED_INTEGER_EXT = '_fixedInteger';
     const FIELD_FIXED_MARKDOWN = 'fixedMarkdown';
     const FIELD_FIXED_MARKDOWN_EXT = '_fixedMarkdown';
+    const FIELD_FIXED_META = 'fixedMeta';
     const FIELD_FIXED_MONEY = 'fixedMoney';
     const FIELD_FIXED_MONEY_EXT = '_fixedMoney';
     const FIELD_FIXED_OID = 'fixedOid';
@@ -396,6 +399,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
     const FIELD_PATTERN_INTEGER_EXT = '_patternInteger';
     const FIELD_PATTERN_MARKDOWN = 'patternMarkdown';
     const FIELD_PATTERN_MARKDOWN_EXT = '_patternMarkdown';
+    const FIELD_PATTERN_META = 'patternMeta';
     const FIELD_PATTERN_MONEY = 'patternMoney';
     const FIELD_PATTERN_MONEY_EXT = '_patternMoney';
     const FIELD_PATTERN_OID = 'patternOid';
@@ -942,6 +946,21 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected $defaultValueMarkdown = null;
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be used if there is no value stated in the instance (e.g.
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    protected $defaultValueMeta = null;
 
     /**
      * An amount of economic utility in some recognized currency.
@@ -1717,6 +1736,23 @@ class FHIRElementDefinition extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected $fixedMarkdown = null;
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies a value that SHALL be exactly the value for this element in the
+     * instance. For purposes of comparison, non-significant whitespace is ignored, and
+     * all values must be an exact match (case and accent sensitive). Missing
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    protected $fixedMeta = null;
 
     /**
      * An amount of economic utility in some recognized currency.
@@ -3132,6 +3168,31 @@ class FHIRElementDefinition extends FHIRBackboneElement
     protected $patternMarkdown = null;
 
     /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies a value that the value in the instance SHALL follow - that is, any
+     * value in the pattern must be found in the instance. Other additional values may
+     * be found too. This is effectively constraint by example. When pattern[x] is used
+     * to constrain a primitive, it means that the value provided in the pattern[x]
+     * must match the instance value exactly. When pattern[x] is used to constrain an
+     * array, it means that each element provided in the pattern[x] array must
+     * (recursively) match at least one element from the instance array. When
+     * pattern[x] is used to constrain a complex object, it means that each property in
+     * the pattern must be present in the complex object, and its value must
+     * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
+     * value 2. If a complex object: it must match (recursively) the pattern value 3.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    protected $patternMeta = null;
+
+    /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -4119,6 +4180,13 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $this->setDefaultValueMarkdown(new FHIRMarkdown($data[self::FIELD_DEFAULT_VALUE_MARKDOWN]));
             }
         }
+        if (isset($data[self::FIELD_DEFAULT_VALUE_META])) {
+            if ($data[self::FIELD_DEFAULT_VALUE_META] instanceof FHIRMeta) {
+                $this->setDefaultValueMeta($data[self::FIELD_DEFAULT_VALUE_META]);
+            } else {
+                $this->setDefaultValueMeta(new FHIRMeta($data[self::FIELD_DEFAULT_VALUE_META]));
+            }
+        }
         if (isset($data[self::FIELD_DEFAULT_VALUE_MONEY])) {
             $ext = (isset($data[self::FIELD_DEFAULT_VALUE_MONEY_EXT]) && is_array($data[self::FIELD_DEFAULT_VALUE_MONEY_EXT]))
                 ? $data[self::FIELD_DEFAULT_VALUE_MONEY_EXT]
@@ -4602,6 +4670,13 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $this->setFixedMarkdown(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_FIXED_MARKDOWN]] + $ext));
             } else {
                 $this->setFixedMarkdown(new FHIRMarkdown($data[self::FIELD_FIXED_MARKDOWN]));
+            }
+        }
+        if (isset($data[self::FIELD_FIXED_META])) {
+            if ($data[self::FIELD_FIXED_META] instanceof FHIRMeta) {
+                $this->setFixedMeta($data[self::FIELD_FIXED_META]);
+            } else {
+                $this->setFixedMeta(new FHIRMeta($data[self::FIELD_FIXED_META]));
             }
         }
         if (isset($data[self::FIELD_FIXED_MONEY])) {
@@ -5423,6 +5498,13 @@ class FHIRElementDefinition extends FHIRBackboneElement
                 $this->setPatternMarkdown(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_PATTERN_MARKDOWN]] + $ext));
             } else {
                 $this->setPatternMarkdown(new FHIRMarkdown($data[self::FIELD_PATTERN_MARKDOWN]));
+            }
+        }
+        if (isset($data[self::FIELD_PATTERN_META])) {
+            if ($data[self::FIELD_PATTERN_META] instanceof FHIRMeta) {
+                $this->setPatternMeta($data[self::FIELD_PATTERN_META]);
+            } else {
+                $this->setPatternMeta(new FHIRMeta($data[self::FIELD_PATTERN_META]));
             }
         }
         if (isset($data[self::FIELD_PATTERN_MONEY])) {
@@ -7281,6 +7363,44 @@ class FHIRElementDefinition extends FHIRBackboneElement
             return $this;
         }
         $this->defaultValueMarkdown = new FHIRMarkdown($defaultValueMarkdown);
+        return $this;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be used if there is no value stated in the instance (e.g.
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    public function getDefaultValueMeta()
+    {
+        return $this->defaultValueMeta;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be used if there is no value stated in the instance (e.g.
+     * 'if not otherwise specified, the abstract is false'). (choose any one of the
+     * elements, but only one)
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $defaultValueMeta
+     * @return static
+     */
+    public function setDefaultValueMeta(FHIRMeta $defaultValueMeta = null)
+    {
+        $this->defaultValueMeta = $defaultValueMeta;
         return $this;
     }
 
@@ -9426,6 +9546,48 @@ class FHIRElementDefinition extends FHIRBackboneElement
             return $this;
         }
         $this->fixedMarkdown = new FHIRMarkdown($fixedMarkdown);
+        return $this;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies a value that SHALL be exactly the value for this element in the
+     * instance. For purposes of comparison, non-significant whitespace is ignored, and
+     * all values must be an exact match (case and accent sensitive). Missing
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    public function getFixedMeta()
+    {
+        return $this->fixedMeta;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies a value that SHALL be exactly the value for this element in the
+     * instance. For purposes of comparison, non-significant whitespace is ignored, and
+     * all values must be an exact match (case and accent sensitive). Missing
+     * elements/attributes must also be missing. (choose any one of the elements, but
+     * only one)
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $fixedMeta
+     * @return static
+     */
+    public function setFixedMeta(FHIRMeta $fixedMeta = null)
+    {
+        $this->fixedMeta = $fixedMeta;
         return $this;
     }
 
@@ -13283,6 +13445,64 @@ class FHIRElementDefinition extends FHIRBackboneElement
     }
 
     /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies a value that the value in the instance SHALL follow - that is, any
+     * value in the pattern must be found in the instance. Other additional values may
+     * be found too. This is effectively constraint by example. When pattern[x] is used
+     * to constrain a primitive, it means that the value provided in the pattern[x]
+     * must match the instance value exactly. When pattern[x] is used to constrain an
+     * array, it means that each element provided in the pattern[x] array must
+     * (recursively) match at least one element from the instance array. When
+     * pattern[x] is used to constrain a complex object, it means that each property in
+     * the pattern must be present in the complex object, and its value must
+     * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
+     * value 2. If a complex object: it must match (recursively) the pattern value 3.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
+     */
+    public function getPatternMeta()
+    {
+        return $this->patternMeta;
+    }
+
+    /**
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content might not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies a value that the value in the instance SHALL follow - that is, any
+     * value in the pattern must be found in the instance. Other additional values may
+     * be found too. This is effectively constraint by example. When pattern[x] is used
+     * to constrain a primitive, it means that the value provided in the pattern[x]
+     * must match the instance value exactly. When pattern[x] is used to constrain an
+     * array, it means that each element provided in the pattern[x] array must
+     * (recursively) match at least one element from the instance array. When
+     * pattern[x] is used to constrain a complex object, it means that each property in
+     * the pattern must be present in the complex object, and its value must
+     * recursively match -- i.e., 1. If primitive: it must match exactly the pattern
+     * value 2. If a complex object: it must match (recursively) the pattern value 3.
+     * If an array: it must match (recursively) the pattern value. (choose any one of
+     * the elements, but only one)
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $patternMeta
+     * @return static
+     */
+    public function setPatternMeta(FHIRMeta $patternMeta = null)
+    {
+        $this->patternMeta = $patternMeta;
+        return $this;
+    }
+
+    /**
      * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -15053,6 +15273,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($children->defaultValueMarkdown)) {
             $type->setDefaultValueMarkdown(FHIRMarkdown::xmlUnserialize($children->defaultValueMarkdown));
         }
+        if (isset($children->defaultValueMeta)) {
+            $type->setDefaultValueMeta(FHIRMeta::xmlUnserialize($children->defaultValueMeta));
+        }
         if (isset($children->defaultValueMoney)) {
             $type->setDefaultValueMoney(FHIRMoney::xmlUnserialize($children->defaultValueMoney));
         }
@@ -15267,6 +15490,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (isset($children->fixedMarkdown)) {
             $type->setFixedMarkdown(FHIRMarkdown::xmlUnserialize($children->fixedMarkdown));
+        }
+        if (isset($children->fixedMeta)) {
+            $type->setFixedMeta(FHIRMeta::xmlUnserialize($children->fixedMeta));
         }
         if (isset($children->fixedMoney)) {
             $type->setFixedMoney(FHIRMoney::xmlUnserialize($children->fixedMoney));
@@ -15645,6 +15871,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (isset($children->patternMarkdown)) {
             $type->setPatternMarkdown(FHIRMarkdown::xmlUnserialize($children->patternMarkdown));
         }
+        if (isset($children->patternMeta)) {
+            $type->setPatternMeta(FHIRMeta::xmlUnserialize($children->patternMeta));
+        }
         if (isset($children->patternMoney)) {
             $type->setPatternMoney(FHIRMoney::xmlUnserialize($children->patternMoney));
         }
@@ -15933,6 +16162,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_META, null, $v->_getFHIRXMLNamespace()));
+        }
+
         if (null !== ($v = $this->getDefaultValueMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFAULT_VALUE_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -16120,6 +16353,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getFixedMarkdown())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
+        }
+
+        if (null !== ($v = $this->getFixedMeta())) {
+            $v->xmlSerialize($sxe->addChild(self::FIELD_FIXED_META, null, $v->_getFHIRXMLNamespace()));
         }
 
         if (null !== ($v = $this->getFixedMoney())) {
@@ -16397,6 +16634,10 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
         }
 
+        if (null !== ($v = $this->getPatternMeta())) {
+            $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_META, null, $v->_getFHIRXMLNamespace()));
+        }
+
         if (null !== ($v = $this->getPatternMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATTERN_MONEY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -16650,6 +16891,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
             $a[self::FIELD_DEFAULT_VALUE_MARKDOWN] = $v->getValue();
             $a[self::FIELD_DEFAULT_VALUE_MARKDOWN_EXT] = $v;
         }
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            $a[self::FIELD_DEFAULT_VALUE_META] = $v;
+        }
         if (null !== ($v = $this->getDefaultValueMoney())) {
             $a[self::FIELD_DEFAULT_VALUE_MONEY] = $v;
         }
@@ -16822,6 +17066,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getFixedMarkdown())) {
             $a[self::FIELD_FIXED_MARKDOWN] = $v->getValue();
             $a[self::FIELD_FIXED_MARKDOWN_EXT] = $v;
+        }
+        if (null !== ($v = $this->getFixedMeta())) {
+            $a[self::FIELD_FIXED_META] = $v;
         }
         if (null !== ($v = $this->getFixedMoney())) {
             $a[self::FIELD_FIXED_MONEY] = $v;
@@ -17105,6 +17352,9 @@ class FHIRElementDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPatternMarkdown())) {
             $a[self::FIELD_PATTERN_MARKDOWN] = $v->getValue();
             $a[self::FIELD_PATTERN_MARKDOWN_EXT] = $v;
+        }
+        if (null !== ($v = $this->getPatternMeta())) {
+            $a[self::FIELD_PATTERN_META] = $v;
         }
         if (null !== ($v = $this->getPatternMoney())) {
             $a[self::FIELD_PATTERN_MONEY] = $v;

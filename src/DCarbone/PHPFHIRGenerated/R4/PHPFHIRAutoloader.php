@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: October 28th, 2019 20:54+0000
+ * Class creation date: November 10th, 2019 18:12+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,18 +65,18 @@ namespace DCarbone\PHPFHIRGenerated\R4;
 // if this class is used, assume not using Composer...
 
 // interfaces
-if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface', false)) {
+if (!interface_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRTypeInterface.php';
 }
-if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface', false)) {
+if (!interface_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRContainedTypeInterface.php';
 }
-if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerInterface', false)) {
+if (!interface_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerInterface', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerInterface.php';
 }
 
 // traits
-if (!class_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerTrait', false)) {
+if (!trait_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerTrait', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerTrait.php';
 }
 
@@ -111,7 +111,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRActionCardinalityBehaviorList' => 'FHIRActionCardinalityBehaviorList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRActionConditionKindList' => 'FHIRActionConditionKindList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRActionGroupingBehaviorList' => 'FHIRActionGroupingBehaviorList.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRActionListList' => 'FHIRActionListList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRActionParticipantTypeList' => 'FHIRActionParticipantTypeList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRActionPrecheckBehaviorList' => 'FHIRActionPrecheckBehaviorList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRActionRelationshipTypeList' => 'FHIRActionRelationshipTypeList.php',
@@ -192,7 +191,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionCardinalityBehavior' => 'FHIRElement/FHIRActionCardinalityBehavior.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind' => 'FHIRElement/FHIRActionConditionKind.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionGroupingBehavior' => 'FHIRElement/FHIRActionGroupingBehavior.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionList' => 'FHIRElement/FHIRActionList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionParticipantType' => 'FHIRElement/FHIRActionParticipantType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionPrecheckBehavior' => 'FHIRElement/FHIRActionPrecheckBehavior.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionRelationshipType' => 'FHIRElement/FHIRActionRelationshipType.php',
@@ -495,14 +493,7 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient' => 'FHIRElement/FHIRBackboneElement/FHIRMedication/FHIRMedicationIngredient.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductAuthorization/FHIRMedicinalProductAuthorizationJurisdictionalAuthorization.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductAuthorization/FHIRMedicinalProductAuthorizationProcedure.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsContraindication' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductClinicals/FHIRMedicinalProductClinicalsContraindication.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsInteractions' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductClinicals/FHIRMedicinalProductClinicalsInteractions.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsOtherTherapy' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductClinicals/FHIRMedicinalProductClinicalsOtherTherapy.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsPopulation' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductClinicals/FHIRMedicinalProductClinicalsPopulation.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsTherapeuticIndication' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductClinicals/FHIRMedicinalProductClinicalsTherapeuticIndication.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductClinicals\FHIRMedicinalProductClinicalsUndesirableEffects' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductClinicals/FHIRMedicinalProductClinicalsUndesirableEffects.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductContraindication/FHIRMedicinalProductContraindicationOtherTherapy.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDeviceSpec\FHIRMedicinalProductDeviceSpecMaterial' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductDeviceSpec/FHIRMedicinalProductDeviceSpecMaterial.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductIndication/FHIRMedicinalProductIndicationOtherTherapy.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductIngredient/FHIRMedicinalProductIngredientReferenceStrength.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance' => 'FHIRElement/FHIRBackboneElement/FHIRMedicinalProductIngredient/FHIRMedicinalProductIngredientSpecifiedSubstance.php',
@@ -570,8 +561,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification' => 'FHIRElement/FHIRBackboneElement/FHIRPractitioner/FHIRPractitionerQualification.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice' => 'FHIRElement/FHIRBackboneElement/FHIRProcedure/FHIRProcedureFocalDevice.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer' => 'FHIRElement/FHIRBackboneElement/FHIRProcedure/FHIRProcedurePerformer.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem' => 'FHIRElement/FHIRBackboneElement/FHIRProcessRequest/FHIRProcessRequestItem.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProcessResponse\FHIRProcessResponseProcessNote' => 'FHIRElement/FHIRBackboneElement/FHIRProcessResponse/FHIRProcessResponseProcessNote.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic' => 'FHIRElement/FHIRBackboneElement/FHIRProdCharacteristic.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife' => 'FHIRElement/FHIRBackboneElement/FHIRProductShelfLife.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent' => 'FHIRElement/FHIRBackboneElement/FHIRProvenance/FHIRProvenanceAgent.php',
@@ -596,14 +585,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate' => 'FHIRElement/FHIRBackboneElement/FHIRRiskEvidenceSynthesis/FHIRRiskEvidenceSynthesisRiskEstimate.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize' => 'FHIRElement/FHIRBackboneElement/FHIRRiskEvidenceSynthesis/FHIRRiskEvidenceSynthesisSampleSize.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent' => 'FHIRElement/FHIRBackboneElement/FHIRSearchParameter/FHIRSearchParameterComponent.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceInner' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceInner.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceOuter' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceOuter.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceQuality.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceReferenceSeq.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceRepository.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRoc' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceRoc.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceStructureVariant' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceStructureVariant.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant' => 'FHIRElement/FHIRBackboneElement/FHIRSequence/FHIRSequenceVariant.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive' => 'FHIRElement/FHIRBackboneElement/FHIRSpecimenDefinition/FHIRSpecimenDefinitionAdditive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer' => 'FHIRElement/FHIRBackboneElement/FHIRSpecimenDefinition/FHIRSpecimenDefinitionContainer.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling' => 'FHIRElement/FHIRBackboneElement/FHIRSpecimenDefinition/FHIRSpecimenDefinitionHandling.php',
@@ -700,8 +681,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable' => 'FHIRElement/FHIRBackboneElement/FHIRTestScript/FHIRTestScriptVariable.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming' => 'FHIRElement/FHIRBackboneElement/FHIRTiming.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat' => 'FHIRElement/FHIRBackboneElement/FHIRTiming/FHIRTimingRepeat.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionContext' => 'FHIRElement/FHIRBackboneElement/FHIRUserSession/FHIRUserSessionContext.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRUserSession\FHIRUserSessionStatus' => 'FHIRElement/FHIRBackboneElement/FHIRUserSession/FHIRUserSessionStatus.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose' => 'FHIRElement/FHIRBackboneElement/FHIRValueSet/FHIRValueSetCompose.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept' => 'FHIRElement/FHIRBackboneElement/FHIRValueSet/FHIRValueSetConcept.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains' => 'FHIRElement/FHIRBackboneElement/FHIRValueSet/FHIRValueSetContains.php',
@@ -860,7 +839,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParticipationStatus' => 'FHIRElement/FHIRParticipationStatus.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod' => 'FHIRElement/FHIRPeriod.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt' => 'FHIRElement/FHIRPositiveInt.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProcessOutcomeCodes' => 'FHIRElement/FHIRProcessOutcomeCodes.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPropertyRepresentation' => 'FHIRElement/FHIRPropertyRepresentation.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPropertyType' => 'FHIRElement/FHIRPropertyType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole' => 'FHIRElement/FHIRProvenanceEntityRole.php',
@@ -943,8 +921,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl' => 'FHIRElement/FHIRUrl.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext' => 'FHIRElement/FHIRUsageContext.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse' => 'FHIRElement/FHIRUse.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatus' => 'FHIRElement/FHIRUserSessionStatus.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUserSessionStatusSource' => 'FHIRElement/FHIRUserSessionStatusSource.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid' => 'FHIRElement/FHIRUuid.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVariableType' => 'FHIRElement/FHIRVariableType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVConfidentialityClassification' => 'FHIRElement/FHIRVConfidentialityClassification.php',
@@ -1024,7 +1000,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRParticipantRequiredList' => 'FHIRParticipantRequiredList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRParticipationStatusList' => 'FHIRParticipationStatusList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive' => 'FHIRPositiveIntPrimitive.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRProcessOutcomeCodesList' => 'FHIRProcessOutcomeCodesList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRPropertyRepresentationList' => 'FHIRPropertyRepresentationList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRPropertyTypeList' => 'FHIRPropertyTypeList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRProvenanceEntityRoleList' => 'FHIRProvenanceEntityRoleList.php',
@@ -1119,7 +1094,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRImplementationGuide' => 'FHIRResource/FHIRDomainResource/FHIRImplementationGuide.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInsurancePlan' => 'FHIRResource/FHIRDomainResource/FHIRInsurancePlan.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRInvoice' => 'FHIRResource/FHIRDomainResource/FHIRInvoice.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRItemInstance' => 'FHIRResource/FHIRDomainResource/FHIRItemInstance.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLibrary' => 'FHIRResource/FHIRDomainResource/FHIRLibrary.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRLinkage' => 'FHIRResource/FHIRDomainResource/FHIRLinkage.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRList' => 'FHIRResource/FHIRDomainResource/FHIRList.php',
@@ -1135,9 +1109,7 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationStatement' => 'FHIRResource/FHIRDomainResource/FHIRMedicationStatement.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProduct.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductAuthorization.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductClinicals' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductClinicals.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductContraindication.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDeviceSpec' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductDeviceSpec.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductIndication.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductIngredient.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction' => 'FHIRResource/FHIRDomainResource/FHIRMedicinalProductInteraction.php',
@@ -1164,8 +1136,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitioner' => 'FHIRResource/FHIRDomainResource/FHIRPractitioner.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPractitionerRole' => 'FHIRResource/FHIRDomainResource/FHIRPractitionerRole.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcedure' => 'FHIRResource/FHIRDomainResource/FHIRProcedure.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessRequest' => 'FHIRResource/FHIRDomainResource/FHIRProcessRequest.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProcessResponse' => 'FHIRResource/FHIRDomainResource/FHIRProcessResponse.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRProvenance' => 'FHIRResource/FHIRDomainResource/FHIRProvenance.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRQuestionnaire' => 'FHIRResource/FHIRDomainResource/FHIRQuestionnaire.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse' => 'FHIRResource/FHIRDomainResource/FHIRQuestionnaireResponse.php',
@@ -1179,7 +1149,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRRiskEvidenceSynthesis' => 'FHIRResource/FHIRDomainResource/FHIRRiskEvidenceSynthesis.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSchedule' => 'FHIRResource/FHIRDomainResource/FHIRSchedule.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSearchParameter' => 'FHIRResource/FHIRDomainResource/FHIRSearchParameter.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSequence' => 'FHIRResource/FHIRDomainResource/FHIRSequence.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRServiceRequest' => 'FHIRResource/FHIRDomainResource/FHIRServiceRequest.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSlot' => 'FHIRResource/FHIRDomainResource/FHIRSlot.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimen' => 'FHIRResource/FHIRDomainResource/FHIRSpecimen.php',
@@ -1200,7 +1169,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities' => 'FHIRResource/FHIRDomainResource/FHIRTerminologyCapabilities.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRTestReport' => 'FHIRResource/FHIRDomainResource/FHIRTestReport.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRTestScript' => 'FHIRResource/FHIRDomainResource/FHIRTestScript.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRUserSession' => 'FHIRResource/FHIRDomainResource/FHIRUserSession.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRValueSet' => 'FHIRResource/FHIRDomainResource/FHIRValueSet.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRVerificationResult' => 'FHIRResource/FHIRDomainResource/FHIRVerificationResult.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRVisionPrescription' => 'FHIRResource/FHIRDomainResource/FHIRVisionPrescription.php',
@@ -1252,8 +1220,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive' => 'FHIRUriPrimitive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRUrlPrimitive' => 'FHIRUrlPrimitive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRUseList' => 'FHIRUseList.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusList' => 'FHIRUserSessionStatusList.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRUserSessionStatusSourceList' => 'FHIRUserSessionStatusSourceList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRUuidPrimitive' => 'FHIRUuidPrimitive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRVariableTypeList' => 'FHIRVariableTypeList.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRVConfidentialityClassificationList' => 'FHIRVConfidentialityClassificationList.php',
