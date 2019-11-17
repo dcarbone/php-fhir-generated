@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,10 +75,6 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_MAPPING_1;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_IDENTITY = 'identity';
     const FIELD_IDENTITY_EXT = '_identity';
     const FIELD_MAP = 'map';
@@ -107,6 +103,9 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
      */
     protected $map = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRProfileMapping1 Constructor
      * @param null|array $data
@@ -129,8 +128,12 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTITY] instanceof FHIRId) {
                 $this->setIdentity($data[self::FIELD_IDENTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTITY])) {
-                $this->setIdentity(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_IDENTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTITY])) {
+                    $this->setIdentity(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_IDENTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTITY])) {
+                    $this->setIdentity(new FHIRId(array_merge($ext, $data[self::FIELD_IDENTITY])));
+                }
             } else {
                 $this->setIdentity(new FHIRId($data[self::FIELD_IDENTITY]));
             }
@@ -141,8 +144,12 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MAP] instanceof FHIRString) {
                 $this->setMap($data[self::FIELD_MAP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MAP])) {
-                $this->setMap(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MAP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAP])) {
+                    $this->setMap(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MAP]] + $ext));
+                } else if (is_array($data[self::FIELD_MAP])) {
+                    $this->setMap(new FHIRString(array_merge($ext, $data[self::FIELD_MAP])));
+                }
             } else {
                 $this->setMap(new FHIRString($data[self::FIELD_MAP]));
             }
@@ -354,12 +361,26 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentity())) {
-            $a[self::FIELD_IDENTITY] = $v->getValue();
-            $a[self::FIELD_IDENTITY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getMap())) {
-            $a[self::FIELD_MAP] = $v->getValue();
-            $a[self::FIELD_MAP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAP] = $v;
+            }
         }
         return $a;
     }

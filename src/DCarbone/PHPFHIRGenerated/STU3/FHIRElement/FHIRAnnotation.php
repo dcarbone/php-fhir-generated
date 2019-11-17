@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRAnnotation extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ANNOTATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTHOR_REFERENCE = 'authorReference';
     const FIELD_AUTHOR_STRING = 'authorString';
     const FIELD_AUTHOR_STRING_EXT = '_authorString';
@@ -138,6 +134,9 @@ class FHIRAnnotation extends FHIRElement
      */
     protected $time = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRAnnotation Constructor
      * @param null|array $data
@@ -167,8 +166,12 @@ class FHIRAnnotation extends FHIRElement
                 : null;
             if ($data[self::FIELD_AUTHOR_STRING] instanceof FHIRString) {
                 $this->setAuthorString($data[self::FIELD_AUTHOR_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AUTHOR_STRING])) {
-                $this->setAuthorString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AUTHOR_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AUTHOR_STRING])) {
+                    $this->setAuthorString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AUTHOR_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_AUTHOR_STRING])) {
+                    $this->setAuthorString(new FHIRString(array_merge($ext, $data[self::FIELD_AUTHOR_STRING])));
+                }
             } else {
                 $this->setAuthorString(new FHIRString($data[self::FIELD_AUTHOR_STRING]));
             }
@@ -179,8 +182,12 @@ class FHIRAnnotation extends FHIRElement
                 : null;
             if ($data[self::FIELD_TEXT] instanceof FHIRString) {
                 $this->setText($data[self::FIELD_TEXT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TEXT])) {
-                $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+                } else if (is_array($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString(array_merge($ext, $data[self::FIELD_TEXT])));
+                }
             } else {
                 $this->setText(new FHIRString($data[self::FIELD_TEXT]));
             }
@@ -191,8 +198,12 @@ class FHIRAnnotation extends FHIRElement
                 : null;
             if ($data[self::FIELD_TIME] instanceof FHIRDateTime) {
                 $this->setTime($data[self::FIELD_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIME])) {
-                $this->setTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIME])) {
+                    $this->setTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_TIME])) {
+                    $this->setTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_TIME])));
+                }
             } else {
                 $this->setTime(new FHIRDateTime($data[self::FIELD_TIME]));
             }
@@ -495,16 +506,37 @@ class FHIRAnnotation extends FHIRElement
             $a[self::FIELD_AUTHOR_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getAuthorString())) {
-            $a[self::FIELD_AUTHOR_STRING] = $v->getValue();
-            $a[self::FIELD_AUTHOR_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AUTHOR_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AUTHOR_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AUTHOR_STRING] = $v;
+            }
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $a[self::FIELD_TEXT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TEXT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TEXT] = $v;
+            }
         }
         if (null !== ($v = $this->getTime())) {
-            $a[self::FIELD_TIME] = $v->getValue();
-            $a[self::FIELD_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIME] = $v;
+            }
         }
         return $a;
     }

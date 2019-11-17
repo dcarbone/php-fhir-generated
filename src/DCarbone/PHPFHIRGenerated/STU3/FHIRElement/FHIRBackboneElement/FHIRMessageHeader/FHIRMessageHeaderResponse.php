@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER_DOT_RESPONSE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
     const FIELD_DETAILS = 'details';
@@ -128,6 +124,9 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      */
     protected $identifier = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMessageHeaderResponse Constructor
      * @param null|array $data
@@ -150,8 +149,12 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CODE] instanceof FHIRResponseType) {
                 $this->setCode($data[self::FIELD_CODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CODE])) {
-                $this->setCode(new FHIRResponseType([FHIRResponseType::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRResponseType([FHIRResponseType::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+                } else if (is_array($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRResponseType(array_merge($ext, $data[self::FIELD_CODE])));
+                }
             } else {
                 $this->setCode(new FHIRResponseType($data[self::FIELD_CODE]));
             }
@@ -169,8 +172,12 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRId) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRId(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRId($data[self::FIELD_IDENTIFIER]));
             }
@@ -396,7 +403,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDetails())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAILS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -413,14 +419,29 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CODE] = $v;
+            }
         }
         if (null !== ($v = $this->getDetails())) {
             $a[self::FIELD_DETAILS] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            $a[self::FIELD_IDENTIFIER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         return $a;
     }

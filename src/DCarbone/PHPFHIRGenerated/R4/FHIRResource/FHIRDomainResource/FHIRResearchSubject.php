@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACTUAL_ARM = 'actualArm';
     const FIELD_ACTUAL_ARM_EXT = '_actualArm';
     const FIELD_ASSIGNED_ARM = 'assignedArm';
@@ -191,6 +187,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      */
     protected $study = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRResearchSubject Constructor
      * @param null|array $data
@@ -213,8 +212,12 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_ACTUAL_ARM] instanceof FHIRString) {
                 $this->setActualArm($data[self::FIELD_ACTUAL_ARM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ACTUAL_ARM])) {
-                $this->setActualArm(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ACTUAL_ARM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ACTUAL_ARM])) {
+                    $this->setActualArm(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ACTUAL_ARM]] + $ext));
+                } else if (is_array($data[self::FIELD_ACTUAL_ARM])) {
+                    $this->setActualArm(new FHIRString(array_merge($ext, $data[self::FIELD_ACTUAL_ARM])));
+                }
             } else {
                 $this->setActualArm(new FHIRString($data[self::FIELD_ACTUAL_ARM]));
             }
@@ -225,8 +228,12 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_ASSIGNED_ARM] instanceof FHIRString) {
                 $this->setAssignedArm($data[self::FIELD_ASSIGNED_ARM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ASSIGNED_ARM])) {
-                $this->setAssignedArm(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ASSIGNED_ARM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ASSIGNED_ARM])) {
+                    $this->setAssignedArm(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ASSIGNED_ARM]] + $ext));
+                } else if (is_array($data[self::FIELD_ASSIGNED_ARM])) {
+                    $this->setAssignedArm(new FHIRString(array_merge($ext, $data[self::FIELD_ASSIGNED_ARM])));
+                }
             } else {
                 $this->setAssignedArm(new FHIRString($data[self::FIELD_ASSIGNED_ARM]));
             }
@@ -244,17 +251,24 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
             } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
                 $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
@@ -280,8 +294,12 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRResearchSubjectStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRResearchSubjectStatus([FHIRResearchSubjectStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRResearchSubjectStatus([FHIRResearchSubjectStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRResearchSubjectStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRResearchSubjectStatus($data[self::FIELD_STATUS]));
             }
@@ -727,11 +745,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
         if (null !== ($v = $this->getAssignedArm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSIGNED_ARM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getConsent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONSENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -744,15 +760,12 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
         if (null !== ($v = $this->getIndividual())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INDIVIDUAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStudy())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -766,18 +779,48 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActualArm())) {
-            $a[self::FIELD_ACTUAL_ARM] = $v->getValue();
-            $a[self::FIELD_ACTUAL_ARM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ACTUAL_ARM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ACTUAL_ARM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ACTUAL_ARM] = $v;
+            }
         }
         if (null !== ($v = $this->getAssignedArm())) {
-            $a[self::FIELD_ASSIGNED_ARM] = $v->getValue();
-            $a[self::FIELD_ASSIGNED_ARM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ASSIGNED_ARM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ASSIGNED_ARM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ASSIGNED_ARM] = $v;
+            }
         }
         if (null !== ($v = $this->getConsent())) {
             $a[self::FIELD_CONSENT] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IDENTIFIER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IDENTIFIER][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getIndividual())) {
             $a[self::FIELD_INDIVIDUAL] = $v;
@@ -786,7 +829,15 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getStudy())) {
             $a[self::FIELD_STUDY] = $v;

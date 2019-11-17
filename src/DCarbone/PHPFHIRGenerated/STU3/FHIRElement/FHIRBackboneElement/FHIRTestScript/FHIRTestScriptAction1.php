@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION_1;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ASSERT = 'assert';
     const FIELD_ASSERT_EXT = '_assert';
     const FIELD_OPERATION = 'operation';
@@ -106,6 +102,9 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
      */
     protected $operation = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTestScriptAction1 Constructor
      * @param null|array $data
@@ -128,8 +127,12 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ASSERT] instanceof FHIRTestScriptAssert) {
                 $this->setAssert($data[self::FIELD_ASSERT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ASSERT])) {
-                $this->setAssert(new FHIRTestScriptAssert([FHIRTestScriptAssert::FIELD_VALUE => $data[self::FIELD_ASSERT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ASSERT])) {
+                    $this->setAssert(new FHIRTestScriptAssert([FHIRTestScriptAssert::FIELD_VALUE => $data[self::FIELD_ASSERT]] + $ext));
+                } else if (is_array($data[self::FIELD_ASSERT])) {
+                    $this->setAssert(new FHIRTestScriptAssert(array_merge($ext, $data[self::FIELD_ASSERT])));
+                }
             } else {
                 $this->setAssert(new FHIRTestScriptAssert($data[self::FIELD_ASSERT]));
             }
@@ -310,7 +313,6 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
         if (null !== ($v = $this->getAssert())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOperation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -324,7 +326,15 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAssert())) {
-            $a[self::FIELD_ASSERT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ASSERT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ASSERT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ASSERT] = $v;
+            }
         }
         if (null !== ($v = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = $v;

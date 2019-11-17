@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EPISODE_OF_CARE_DOT_CARE_TEAM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_MEMBER = 'member';
     const FIELD_PERIOD = 'period';
     const FIELD_ROLE = 'role';
@@ -124,6 +120,9 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      */
     protected $role = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIREpisodeOfCareCareTeam Constructor
      * @param null|array $data
@@ -157,6 +156,9 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
         if (isset($data[self::FIELD_ROLE])) {
             if (is_array($data[self::FIELD_ROLE])) {
                 foreach($data[self::FIELD_ROLE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addRole($v);
                     } else {
@@ -402,15 +404,12 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getMember())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEMBER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRole())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -419,6 +418,7 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

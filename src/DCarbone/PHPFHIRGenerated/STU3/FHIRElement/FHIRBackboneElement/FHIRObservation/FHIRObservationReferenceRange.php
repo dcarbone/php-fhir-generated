@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRObs
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AGE = 'age';
     const FIELD_APPLIES_TO = 'appliesTo';
     const FIELD_HIGH = 'high';
@@ -179,6 +175,9 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRObservationReferenceRange Constructor
      * @param null|array $data
@@ -205,6 +204,9 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         if (isset($data[self::FIELD_APPLIES_TO])) {
             if (is_array($data[self::FIELD_APPLIES_TO])) {
                 foreach($data[self::FIELD_APPLIES_TO] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addAppliesTo($v);
                     } else {
@@ -223,8 +225,12 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_HIGH] instanceof FHIRQuantity) {
                 $this->setHigh($data[self::FIELD_HIGH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_HIGH])) {
-                $this->setHigh(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HIGH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_HIGH])) {
+                    $this->setHigh(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HIGH]] + $ext));
+                } else if (is_array($data[self::FIELD_HIGH])) {
+                    $this->setHigh(new FHIRQuantity(array_merge($ext, $data[self::FIELD_HIGH])));
+                }
             } else {
                 $this->setHigh(new FHIRQuantity($data[self::FIELD_HIGH]));
             }
@@ -235,8 +241,12 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_LOW] instanceof FHIRQuantity) {
                 $this->setLow($data[self::FIELD_LOW]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LOW])) {
-                $this->setLow(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_LOW]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LOW])) {
+                    $this->setLow(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_LOW]] + $ext));
+                } else if (is_array($data[self::FIELD_LOW])) {
+                    $this->setLow(new FHIRQuantity(array_merge($ext, $data[self::FIELD_LOW])));
+                }
             } else {
                 $this->setLow(new FHIRQuantity($data[self::FIELD_LOW]));
             }
@@ -247,8 +257,12 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TEXT] instanceof FHIRString) {
                 $this->setText($data[self::FIELD_TEXT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TEXT])) {
-                $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+                } else if (is_array($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString(array_merge($ext, $data[self::FIELD_TEXT])));
+                }
             } else {
                 $this->setText(new FHIRString($data[self::FIELD_TEXT]));
             }
@@ -641,7 +655,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         if (null !== ($v = $this->getAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getAppliesTo())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -650,18 +663,15 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES_TO, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getHigh())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getLow())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -681,14 +691,37 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             $a[self::FIELD_APPLIES_TO] = $vs;
         }
         if (null !== ($v = $this->getHigh())) {
-            $a[self::FIELD_HIGH] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_HIGH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_HIGH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_HIGH] = $v;
+            }
         }
         if (null !== ($v = $this->getLow())) {
-            $a[self::FIELD_LOW] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LOW] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LOW_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LOW] = $v;
+            }
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $a[self::FIELD_TEXT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TEXT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TEXT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_CODE_SYSTEM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_SUBSUMPTION = 'subsumption';
     const FIELD_SUBSUMPTION_EXT = '_subsumption';
     const FIELD_URI = 'uri';
@@ -123,6 +119,9 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      */
     protected $version = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTerminologyCapabilitiesCodeSystem Constructor
      * @param null|array $data
@@ -145,8 +144,12 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SUBSUMPTION] instanceof FHIRBoolean) {
                 $this->setSubsumption($data[self::FIELD_SUBSUMPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SUBSUMPTION])) {
-                $this->setSubsumption(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_SUBSUMPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SUBSUMPTION])) {
+                    $this->setSubsumption(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_SUBSUMPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_SUBSUMPTION])) {
+                    $this->setSubsumption(new FHIRBoolean(array_merge($ext, $data[self::FIELD_SUBSUMPTION])));
+                }
             } else {
                 $this->setSubsumption(new FHIRBoolean($data[self::FIELD_SUBSUMPTION]));
             }
@@ -157,8 +160,12 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URI] instanceof FHIRCanonical) {
                 $this->setUri($data[self::FIELD_URI]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URI])) {
-                $this->setUri(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_URI]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URI])) {
+                    $this->setUri(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_URI]] + $ext));
+                } else if (is_array($data[self::FIELD_URI])) {
+                    $this->setUri(new FHIRCanonical(array_merge($ext, $data[self::FIELD_URI])));
+                }
             } else {
                 $this->setUri(new FHIRCanonical($data[self::FIELD_URI]));
             }
@@ -166,6 +173,9 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
         if (isset($data[self::FIELD_VERSION])) {
             if (is_array($data[self::FIELD_VERSION])) {
                 foreach($data[self::FIELD_VERSION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTerminologyCapabilitiesVersion) {
                         $this->addVersion($v);
                     } else {
@@ -434,7 +444,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
         if (null !== ($v = $this->getUri())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_URI, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getVersion())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -443,6 +452,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -453,12 +463,26 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSubsumption())) {
-            $a[self::FIELD_SUBSUMPTION] = $v->getValue();
-            $a[self::FIELD_SUBSUMPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUBSUMPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SUBSUMPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SUBSUMPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getUri())) {
-            $a[self::FIELD_URI] = $v->getValue();
-            $a[self::FIELD_URI_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URI] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URI_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URI] = $v;
+            }
         }
         if ([] !== ($vs = $this->getVersion())) {
             $a[self::FIELD_VERSION] = $vs;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,10 +73,6 @@ class FHIRIdentifier extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IDENTIFIER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ASSIGNER = 'assigner';
     const FIELD_LABEL = 'label';
     const FIELD_LABEL_EXT = '_label';
@@ -152,6 +148,9 @@ class FHIRIdentifier extends FHIRElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRIdentifier Constructor
      * @param null|array $data
@@ -185,8 +184,12 @@ class FHIRIdentifier extends FHIRElement
                 : null;
             if ($data[self::FIELD_LABEL] instanceof FHIRString) {
                 $this->setLabel($data[self::FIELD_LABEL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LABEL])) {
-                $this->setLabel(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LABEL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LABEL])) {
+                    $this->setLabel(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LABEL]] + $ext));
+                } else if (is_array($data[self::FIELD_LABEL])) {
+                    $this->setLabel(new FHIRString(array_merge($ext, $data[self::FIELD_LABEL])));
+                }
             } else {
                 $this->setLabel(new FHIRString($data[self::FIELD_LABEL]));
             }
@@ -204,8 +207,12 @@ class FHIRIdentifier extends FHIRElement
                 : null;
             if ($data[self::FIELD_SYSTEM] instanceof FHIRUri) {
                 $this->setSystem($data[self::FIELD_SYSTEM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SYSTEM])) {
-                $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+                } else if (is_array($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRUri(array_merge($ext, $data[self::FIELD_SYSTEM])));
+                }
             } else {
                 $this->setSystem(new FHIRUri($data[self::FIELD_SYSTEM]));
             }
@@ -216,8 +223,12 @@ class FHIRIdentifier extends FHIRElement
                 : null;
             if ($data[self::FIELD_USE] instanceof FHIRIdentifierUse) {
                 $this->setUse($data[self::FIELD_USE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_USE])) {
-                $this->setUse(new FHIRIdentifierUse([FHIRIdentifierUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_USE])) {
+                    $this->setUse(new FHIRIdentifierUse([FHIRIdentifierUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
+                } else if (is_array($data[self::FIELD_USE])) {
+                    $this->setUse(new FHIRIdentifierUse(array_merge($ext, $data[self::FIELD_USE])));
+                }
             } else {
                 $this->setUse(new FHIRIdentifierUse($data[self::FIELD_USE]));
             }
@@ -228,8 +239,12 @@ class FHIRIdentifier extends FHIRElement
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRString) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRString(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRString($data[self::FIELD_VALUE]));
             }
@@ -562,25 +577,23 @@ class FHIRIdentifier extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAssigner())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSIGNER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getLabel())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LABEL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSystem())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -596,22 +609,51 @@ class FHIRIdentifier extends FHIRElement
             $a[self::FIELD_ASSIGNER] = $v;
         }
         if (null !== ($v = $this->getLabel())) {
-            $a[self::FIELD_LABEL] = $v->getValue();
-            $a[self::FIELD_LABEL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LABEL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LABEL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LABEL] = $v;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = $v->getValue();
-            $a[self::FIELD_SYSTEM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SYSTEM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SYSTEM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SYSTEM] = $v;
+            }
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_USE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_USE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_USE] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            $a[self::FIELD_VALUE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_MAX = 'max';
     const FIELD_MAX_EXT = '_max';
@@ -139,6 +135,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      */
     protected $profile = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMessageDefinitionFocus Constructor
      * @param null|array $data
@@ -164,8 +163,12 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MAX] instanceof FHIRString) {
                 $this->setMax($data[self::FIELD_MAX]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MAX])) {
-                $this->setMax(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MAX]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX])) {
+                    $this->setMax(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MAX]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX])) {
+                    $this->setMax(new FHIRString(array_merge($ext, $data[self::FIELD_MAX])));
+                }
             } else {
                 $this->setMax(new FHIRString($data[self::FIELD_MAX]));
             }
@@ -176,8 +179,12 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MIN] instanceof FHIRUnsignedInt) {
                 $this->setMin($data[self::FIELD_MIN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MIN])) {
-                $this->setMin(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_MIN]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MIN])) {
+                    $this->setMin(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_MIN]] + $ext));
+                } else if (is_array($data[self::FIELD_MIN])) {
+                    $this->setMin(new FHIRUnsignedInt(array_merge($ext, $data[self::FIELD_MIN])));
+                }
             } else {
                 $this->setMin(new FHIRUnsignedInt($data[self::FIELD_MIN]));
             }
@@ -468,7 +475,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         if (null !== ($v = $this->getMin())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getProfile())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -485,12 +491,26 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getMax())) {
-            $a[self::FIELD_MAX] = $v->getValue();
-            $a[self::FIELD_MAX_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX] = $v;
+            }
         }
         if (null !== ($v = $this->getMin())) {
-            $a[self::FIELD_MIN] = $v->getValue();
-            $a[self::FIELD_MIN_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MIN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MIN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MIN] = $v;
+            }
         }
         if (null !== ($v = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = $v;

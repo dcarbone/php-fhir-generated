@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEFINITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_GROUPING = 'grouping';
     const FIELD_PAGE = 'page';
     const FIELD_PARAMETER = 'parameter';
@@ -154,6 +150,9 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      */
     protected $template = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImplementationGuideDefinition Constructor
      * @param null|array $data
@@ -173,6 +172,9 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         if (isset($data[self::FIELD_GROUPING])) {
             if (is_array($data[self::FIELD_GROUPING])) {
                 foreach($data[self::FIELD_GROUPING] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRImplementationGuideGrouping) {
                         $this->addGrouping($v);
                     } else {
@@ -198,17 +200,24 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_PARAMETER])) {
                 foreach($data[self::FIELD_PARAMETER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRImplementationGuideParameter) {
                         $this->addParameter($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addParameter(new FHIRImplementationGuideParameter([FHIRImplementationGuideParameter::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addParameter(new FHIRImplementationGuideParameter([FHIRImplementationGuideParameter::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addParameter(new FHIRImplementationGuideParameter(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addParameter(new FHIRImplementationGuideParameter($v));
                     }
                 }
             } elseif ($data[self::FIELD_PARAMETER] instanceof FHIRImplementationGuideParameter) {
                 $this->addParameter($data[self::FIELD_PARAMETER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARAMETER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PARAMETER])) {
                 $this->addParameter(new FHIRImplementationGuideParameter([FHIRImplementationGuideParameter::FIELD_VALUE => $data[self::FIELD_PARAMETER]] + $ext));
             } else {
                 $this->addParameter(new FHIRImplementationGuideParameter($data[self::FIELD_PARAMETER]));
@@ -217,6 +226,9 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         if (isset($data[self::FIELD_RESOURCE])) {
             if (is_array($data[self::FIELD_RESOURCE])) {
                 foreach($data[self::FIELD_RESOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRImplementationGuideResource) {
                         $this->addResource($v);
                     } else {
@@ -232,6 +244,9 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         if (isset($data[self::FIELD_TEMPLATE])) {
             if (is_array($data[self::FIELD_TEMPLATE])) {
                 foreach($data[self::FIELD_TEMPLATE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRImplementationGuideTemplate) {
                         $this->addTemplate($v);
                     } else {
@@ -647,7 +662,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getGrouping())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -660,7 +674,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getParameter())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -687,6 +700,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TEMPLATE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -703,7 +717,23 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             $a[self::FIELD_PAGE] = $v;
         }
         if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = $vs;
+            $a[self::FIELD_PARAMETER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PARAMETER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PARAMETER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PARAMETER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PARAMETER][] = $v;
+                }
+            }
         }
         if ([] !== ($vs = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $vs;

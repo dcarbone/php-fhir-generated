@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,10 +72,6 @@ class FHIRDeviceObservationReportVirtualDevice extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_OBSERVATION_REPORT_DOT_VIRTUAL_DEVICE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CHANNEL = 'channel';
     const FIELD_CODE = 'code';
 
@@ -100,6 +96,9 @@ class FHIRDeviceObservationReportVirtualDevice extends FHIRBackboneElement
      */
     protected $code = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDeviceObservationReportVirtualDevice Constructor
      * @param null|array $data
@@ -119,6 +118,9 @@ class FHIRDeviceObservationReportVirtualDevice extends FHIRBackboneElement
         if (isset($data[self::FIELD_CHANNEL])) {
             if (is_array($data[self::FIELD_CHANNEL])) {
                 foreach($data[self::FIELD_CHANNEL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDeviceObservationReportChannel) {
                         $this->addChannel($v);
                     } else {
@@ -329,7 +331,6 @@ class FHIRDeviceObservationReportVirtualDevice extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getChannel())) {
             foreach($vs as $v) {
                 if (null === $v) {

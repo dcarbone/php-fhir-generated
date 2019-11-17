@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,10 +75,6 @@ class FHIRQuantity extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUANTITY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
     const FIELD_COMPARATOR = 'comparator';
@@ -145,6 +141,9 @@ class FHIRQuantity extends FHIRElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRQuantity Constructor
      * @param null|array $data
@@ -171,8 +170,12 @@ class FHIRQuantity extends FHIRElement
                 : null;
             if ($data[self::FIELD_CODE] instanceof FHIRCode) {
                 $this->setCode($data[self::FIELD_CODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CODE])) {
-                $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+                } else if (is_array($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRCode(array_merge($ext, $data[self::FIELD_CODE])));
+                }
             } else {
                 $this->setCode(new FHIRCode($data[self::FIELD_CODE]));
             }
@@ -183,8 +186,12 @@ class FHIRQuantity extends FHIRElement
                 : null;
             if ($data[self::FIELD_COMPARATOR] instanceof FHIRQuantityCompararator) {
                 $this->setComparator($data[self::FIELD_COMPARATOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMPARATOR])) {
-                $this->setComparator(new FHIRQuantityCompararator([FHIRQuantityCompararator::FIELD_VALUE => $data[self::FIELD_COMPARATOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COMPARATOR])) {
+                    $this->setComparator(new FHIRQuantityCompararator([FHIRQuantityCompararator::FIELD_VALUE => $data[self::FIELD_COMPARATOR]] + $ext));
+                } else if (is_array($data[self::FIELD_COMPARATOR])) {
+                    $this->setComparator(new FHIRQuantityCompararator(array_merge($ext, $data[self::FIELD_COMPARATOR])));
+                }
             } else {
                 $this->setComparator(new FHIRQuantityCompararator($data[self::FIELD_COMPARATOR]));
             }
@@ -195,8 +202,12 @@ class FHIRQuantity extends FHIRElement
                 : null;
             if ($data[self::FIELD_SYSTEM] instanceof FHIRUri) {
                 $this->setSystem($data[self::FIELD_SYSTEM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SYSTEM])) {
-                $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+                } else if (is_array($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRUri(array_merge($ext, $data[self::FIELD_SYSTEM])));
+                }
             } else {
                 $this->setSystem(new FHIRUri($data[self::FIELD_SYSTEM]));
             }
@@ -207,8 +218,12 @@ class FHIRQuantity extends FHIRElement
                 : null;
             if ($data[self::FIELD_UNITS] instanceof FHIRString) {
                 $this->setUnits($data[self::FIELD_UNITS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_UNITS])) {
-                $this->setUnits(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_UNITS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_UNITS])) {
+                    $this->setUnits(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_UNITS]] + $ext));
+                } else if (is_array($data[self::FIELD_UNITS])) {
+                    $this->setUnits(new FHIRString(array_merge($ext, $data[self::FIELD_UNITS])));
+                }
             } else {
                 $this->setUnits(new FHIRString($data[self::FIELD_UNITS]));
             }
@@ -219,8 +234,12 @@ class FHIRQuantity extends FHIRElement
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRDecimal) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRDecimal(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRDecimal($data[self::FIELD_VALUE]));
             }
@@ -538,7 +557,6 @@ class FHIRQuantity extends FHIRElement
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getComparator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARATOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -549,6 +567,7 @@ class FHIRQuantity extends FHIRElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNITS, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -561,23 +580,59 @@ class FHIRQuantity extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            $a[self::FIELD_CODE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CODE] = $v;
+            }
         }
         if (null !== ($v = $this->getComparator())) {
-            $a[self::FIELD_COMPARATOR] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COMPARATOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COMPARATOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COMPARATOR] = $v;
+            }
         }
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = $v->getValue();
-            $a[self::FIELD_SYSTEM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SYSTEM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SYSTEM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SYSTEM] = $v;
+            }
         }
         if (null !== ($v = $this->getUnits())) {
-            $a[self::FIELD_UNITS] = $v->getValue();
-            $a[self::FIELD_UNITS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UNITS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_UNITS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_UNITS] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            $a[self::FIELD_VALUE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

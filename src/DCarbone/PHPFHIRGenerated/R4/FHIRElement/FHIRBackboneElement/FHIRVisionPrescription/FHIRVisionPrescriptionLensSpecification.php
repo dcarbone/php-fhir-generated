@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADD = 'add';
     const FIELD_ADD_EXT = '_add';
     const FIELD_AXIS = 'axis';
@@ -277,6 +273,9 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      */
     protected $sphere = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRVisionPrescriptionLensSpecification Constructor
      * @param null|array $data
@@ -299,8 +298,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ADD] instanceof FHIRDecimal) {
                 $this->setAdd($data[self::FIELD_ADD]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ADD])) {
-                $this->setAdd(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_ADD]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ADD])) {
+                    $this->setAdd(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_ADD]] + $ext));
+                } else if (is_array($data[self::FIELD_ADD])) {
+                    $this->setAdd(new FHIRDecimal(array_merge($ext, $data[self::FIELD_ADD])));
+                }
             } else {
                 $this->setAdd(new FHIRDecimal($data[self::FIELD_ADD]));
             }
@@ -311,8 +314,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AXIS] instanceof FHIRInteger) {
                 $this->setAxis($data[self::FIELD_AXIS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AXIS])) {
-                $this->setAxis(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_AXIS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AXIS])) {
+                    $this->setAxis(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_AXIS]] + $ext));
+                } else if (is_array($data[self::FIELD_AXIS])) {
+                    $this->setAxis(new FHIRInteger(array_merge($ext, $data[self::FIELD_AXIS])));
+                }
             } else {
                 $this->setAxis(new FHIRInteger($data[self::FIELD_AXIS]));
             }
@@ -323,8 +330,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_BACK_CURVE] instanceof FHIRDecimal) {
                 $this->setBackCurve($data[self::FIELD_BACK_CURVE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BACK_CURVE])) {
-                $this->setBackCurve(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_BACK_CURVE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BACK_CURVE])) {
+                    $this->setBackCurve(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_BACK_CURVE]] + $ext));
+                } else if (is_array($data[self::FIELD_BACK_CURVE])) {
+                    $this->setBackCurve(new FHIRDecimal(array_merge($ext, $data[self::FIELD_BACK_CURVE])));
+                }
             } else {
                 $this->setBackCurve(new FHIRDecimal($data[self::FIELD_BACK_CURVE]));
             }
@@ -335,8 +346,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_BRAND] instanceof FHIRString) {
                 $this->setBrand($data[self::FIELD_BRAND]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BRAND])) {
-                $this->setBrand(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BRAND]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BRAND])) {
+                    $this->setBrand(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BRAND]] + $ext));
+                } else if (is_array($data[self::FIELD_BRAND])) {
+                    $this->setBrand(new FHIRString(array_merge($ext, $data[self::FIELD_BRAND])));
+                }
             } else {
                 $this->setBrand(new FHIRString($data[self::FIELD_BRAND]));
             }
@@ -347,8 +362,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COLOR] instanceof FHIRString) {
                 $this->setColor($data[self::FIELD_COLOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COLOR])) {
-                $this->setColor(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COLOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COLOR])) {
+                    $this->setColor(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COLOR]] + $ext));
+                } else if (is_array($data[self::FIELD_COLOR])) {
+                    $this->setColor(new FHIRString(array_merge($ext, $data[self::FIELD_COLOR])));
+                }
             } else {
                 $this->setColor(new FHIRString($data[self::FIELD_COLOR]));
             }
@@ -359,8 +378,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CYLINDER] instanceof FHIRDecimal) {
                 $this->setCylinder($data[self::FIELD_CYLINDER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CYLINDER])) {
-                $this->setCylinder(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_CYLINDER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CYLINDER])) {
+                    $this->setCylinder(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_CYLINDER]] + $ext));
+                } else if (is_array($data[self::FIELD_CYLINDER])) {
+                    $this->setCylinder(new FHIRDecimal(array_merge($ext, $data[self::FIELD_CYLINDER])));
+                }
             } else {
                 $this->setCylinder(new FHIRDecimal($data[self::FIELD_CYLINDER]));
             }
@@ -371,8 +394,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DIAMETER] instanceof FHIRDecimal) {
                 $this->setDiameter($data[self::FIELD_DIAMETER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DIAMETER])) {
-                $this->setDiameter(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_DIAMETER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DIAMETER])) {
+                    $this->setDiameter(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_DIAMETER]] + $ext));
+                } else if (is_array($data[self::FIELD_DIAMETER])) {
+                    $this->setDiameter(new FHIRDecimal(array_merge($ext, $data[self::FIELD_DIAMETER])));
+                }
             } else {
                 $this->setDiameter(new FHIRDecimal($data[self::FIELD_DIAMETER]));
             }
@@ -383,8 +410,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
                 $this->setDuration($data[self::FIELD_DURATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DURATION])) {
-                $this->setDuration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DURATION])) {
+                    $this->setDuration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
+                } else if (is_array($data[self::FIELD_DURATION])) {
+                    $this->setDuration(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DURATION])));
+                }
             } else {
                 $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
             }
@@ -395,8 +426,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EYE] instanceof FHIRVisionEyes) {
                 $this->setEye($data[self::FIELD_EYE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EYE])) {
-                $this->setEye(new FHIRVisionEyes([FHIRVisionEyes::FIELD_VALUE => $data[self::FIELD_EYE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EYE])) {
+                    $this->setEye(new FHIRVisionEyes([FHIRVisionEyes::FIELD_VALUE => $data[self::FIELD_EYE]] + $ext));
+                } else if (is_array($data[self::FIELD_EYE])) {
+                    $this->setEye(new FHIRVisionEyes(array_merge($ext, $data[self::FIELD_EYE])));
+                }
             } else {
                 $this->setEye(new FHIRVisionEyes($data[self::FIELD_EYE]));
             }
@@ -404,6 +439,9 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
         if (isset($data[self::FIELD_NOTE])) {
             if (is_array($data[self::FIELD_NOTE])) {
                 foreach($data[self::FIELD_NOTE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAnnotation) {
                         $this->addNote($v);
                     } else {
@@ -422,8 +460,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_POWER] instanceof FHIRDecimal) {
                 $this->setPower($data[self::FIELD_POWER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_POWER])) {
-                $this->setPower(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_POWER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_POWER])) {
+                    $this->setPower(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_POWER]] + $ext));
+                } else if (is_array($data[self::FIELD_POWER])) {
+                    $this->setPower(new FHIRDecimal(array_merge($ext, $data[self::FIELD_POWER])));
+                }
             } else {
                 $this->setPower(new FHIRDecimal($data[self::FIELD_POWER]));
             }
@@ -431,6 +473,9 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
         if (isset($data[self::FIELD_PRISM])) {
             if (is_array($data[self::FIELD_PRISM])) {
                 foreach($data[self::FIELD_PRISM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRVisionPrescriptionPrism) {
                         $this->addPrism($v);
                     } else {
@@ -456,8 +501,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SPHERE] instanceof FHIRDecimal) {
                 $this->setSphere($data[self::FIELD_SPHERE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SPHERE])) {
-                $this->setSphere(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_SPHERE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SPHERE])) {
+                    $this->setSphere(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_SPHERE]] + $ext));
+                } else if (is_array($data[self::FIELD_SPHERE])) {
+                    $this->setSphere(new FHIRDecimal(array_merge($ext, $data[self::FIELD_SPHERE])));
+                }
             } else {
                 $this->setSphere(new FHIRDecimal($data[self::FIELD_SPHERE]));
             }
@@ -1219,15 +1268,12 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
         if (null !== ($v = $this->getDiameter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DIAMETER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEye())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EYE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getNote())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1236,10 +1282,10 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPower())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_POWER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getPrism())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1265,45 +1311,117 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdd())) {
-            $a[self::FIELD_ADD] = $v->getValue();
-            $a[self::FIELD_ADD_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ADD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ADD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ADD] = $v;
+            }
         }
         if (null !== ($v = $this->getAxis())) {
-            $a[self::FIELD_AXIS] = $v->getValue();
-            $a[self::FIELD_AXIS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AXIS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AXIS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AXIS] = $v;
+            }
         }
         if (null !== ($v = $this->getBackCurve())) {
-            $a[self::FIELD_BACK_CURVE] = $v->getValue();
-            $a[self::FIELD_BACK_CURVE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BACK_CURVE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BACK_CURVE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BACK_CURVE] = $v;
+            }
         }
         if (null !== ($v = $this->getBrand())) {
-            $a[self::FIELD_BRAND] = $v->getValue();
-            $a[self::FIELD_BRAND_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BRAND] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BRAND_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BRAND] = $v;
+            }
         }
         if (null !== ($v = $this->getColor())) {
-            $a[self::FIELD_COLOR] = $v->getValue();
-            $a[self::FIELD_COLOR_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COLOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COLOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COLOR] = $v;
+            }
         }
         if (null !== ($v = $this->getCylinder())) {
-            $a[self::FIELD_CYLINDER] = $v->getValue();
-            $a[self::FIELD_CYLINDER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CYLINDER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CYLINDER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CYLINDER] = $v;
+            }
         }
         if (null !== ($v = $this->getDiameter())) {
-            $a[self::FIELD_DIAMETER] = $v->getValue();
-            $a[self::FIELD_DIAMETER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DIAMETER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DIAMETER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DIAMETER] = $v;
+            }
         }
         if (null !== ($v = $this->getDuration())) {
-            $a[self::FIELD_DURATION] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DURATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DURATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DURATION] = $v;
+            }
         }
         if (null !== ($v = $this->getEye())) {
-            $a[self::FIELD_EYE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EYE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EYE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EYE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getPower())) {
-            $a[self::FIELD_POWER] = $v->getValue();
-            $a[self::FIELD_POWER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_POWER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_POWER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_POWER] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPrism())) {
             $a[self::FIELD_PRISM] = $vs;
@@ -1312,8 +1430,15 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
             $a[self::FIELD_PRODUCT] = $v;
         }
         if (null !== ($v = $this->getSphere())) {
-            $a[self::FIELD_SPHERE] = $v->getValue();
-            $a[self::FIELD_SPHERE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SPHERE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SPHERE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SPHERE] = $v;
+            }
         }
         return $a;
     }

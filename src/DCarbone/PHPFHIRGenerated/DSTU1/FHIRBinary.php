@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,9 +67,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BINARY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_FHIR_COMMENTS = 'fhir_comments';
 
     const FIELD_CONTENT_TYPE = 'contentType';
     const FIELD_ID = 'id';
@@ -83,6 +81,9 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive
      */
     protected $id = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRBinary Constructor
@@ -98,6 +99,13 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
                 'FHIRBinary::_construct - $data expected to be null or array, %s seen',
                 gettype($data)
             ));
+        }
+        if (isset($data[self::FIELD_FHIR_COMMENTS])) {
+            if (is_array($data[self::FIELD_FHIR_COMMENTS])) {
+                $this->_setFHIRComments($data[self::FIELD_FHIR_COMMENTS]);
+            } else if (is_string($data[self::FIELD_FHIR_COMMENTS])) {
+                $this->_addFHIRComment($data[self::FIELD_FHIR_COMMENTS]);
+            }
         }
         if (isset($data[self::FIELD_CONTENT_TYPE])) {
             $this->setContentType($data[self::FIELD_CONTENT_TYPE]);
@@ -278,8 +286,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getContentType())) {
             $sxe->addAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
-        }
-        if (null !== ($v = $this->getId())) {
+        }        if (null !== ($v = $this->getId())) {
             $sxe->addAttribute(self::FIELD_ID, (string)$v);
         }
         return $sxe;
@@ -291,6 +298,9 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     public function jsonSerialize()
     {
         $a = [];
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[self::FIELD_FHIR_COMMENTS] = $vs;
+        }
         if (null !== ($v = $this->getContentType())) {
             $a[self::FIELD_CONTENT_TYPE] = $v;
         }

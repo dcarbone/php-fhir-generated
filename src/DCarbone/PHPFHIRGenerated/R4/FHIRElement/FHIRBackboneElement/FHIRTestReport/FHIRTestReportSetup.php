@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,10 +76,6 @@ class FHIRTestReportSetup extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_REPORT_DOT_SETUP;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACTION = 'action';
 
     /**
@@ -90,6 +86,9 @@ class FHIRTestReportSetup extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction[]
      */
     protected $action = [];
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRTestReportSetup Constructor
@@ -110,6 +109,9 @@ class FHIRTestReportSetup extends FHIRBackboneElement
         if (isset($data[self::FIELD_ACTION])) {
             if (is_array($data[self::FIELD_ACTION])) {
                 foreach($data[self::FIELD_ACTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTestReportAction) {
                         $this->addAction($v);
                     } else {
@@ -278,7 +280,6 @@ class FHIRTestReportSetup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -287,6 +288,7 @@ class FHIRTestReportSetup extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

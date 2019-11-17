@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRPatientContact extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PATIENT_DOT_CONTACT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADDRESS = 'address';
     const FIELD_GENDER = 'gender';
     const FIELD_NAME = 'name';
@@ -161,6 +157,9 @@ class FHIRPatientContact extends FHIRBackboneElement
      */
     protected $telecom = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRPatientContact Constructor
      * @param null|array $data
@@ -208,6 +207,9 @@ class FHIRPatientContact extends FHIRBackboneElement
         if (isset($data[self::FIELD_RELATIONSHIP])) {
             if (is_array($data[self::FIELD_RELATIONSHIP])) {
                 foreach($data[self::FIELD_RELATIONSHIP] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addRelationship($v);
                     } else {
@@ -226,17 +228,24 @@ class FHIRPatientContact extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_TELECOM])) {
                 foreach($data[self::FIELD_TELECOM] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRContact) {
                         $this->addTelecom($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addTelecom(new FHIRContact([FHIRContact::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addTelecom(new FHIRContact([FHIRContact::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addTelecom(new FHIRContact(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addTelecom(new FHIRContact($v));
                     }
                 }
             } elseif ($data[self::FIELD_TELECOM] instanceof FHIRContact) {
                 $this->addTelecom($data[self::FIELD_TELECOM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TELECOM])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_TELECOM])) {
                 $this->addTelecom(new FHIRContact([FHIRContact::FIELD_VALUE => $data[self::FIELD_TELECOM]] + $ext));
             } else {
                 $this->addTelecom(new FHIRContact($data[self::FIELD_TELECOM]));
@@ -611,23 +620,18 @@ class FHIRPatientContact extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAddress())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGender())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrganization())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRelationship())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -645,6 +649,7 @@ class FHIRPatientContact extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -670,7 +675,23 @@ class FHIRPatientContact extends FHIRBackboneElement
             $a[self::FIELD_RELATIONSHIP] = $vs;
         }
         if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = $vs;
+            $a[self::FIELD_TELECOM] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_TELECOM][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_TELECOM_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_TELECOM_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_TELECOM][] = $v;
+                }
+            }
         }
         return $a;
     }

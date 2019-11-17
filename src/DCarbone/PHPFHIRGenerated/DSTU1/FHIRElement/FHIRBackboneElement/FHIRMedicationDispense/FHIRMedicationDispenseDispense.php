@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_DISPENSE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DESTINATION = 'destination';
     const FIELD_DOSAGE = 'dosage';
     const FIELD_IDENTIFIER = 'identifier';
@@ -221,6 +217,9 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      */
     protected $whenPrepared = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationDispenseDispense Constructor
      * @param null|array $data
@@ -247,6 +246,9 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         if (isset($data[self::FIELD_DOSAGE])) {
             if (is_array($data[self::FIELD_DOSAGE])) {
                 foreach($data[self::FIELD_DOSAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationDispenseDosage) {
                         $this->addDosage($v);
                     } else {
@@ -265,8 +267,12 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -284,8 +290,12 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
-                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -293,6 +303,9 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         if (isset($data[self::FIELD_RECEIVER])) {
             if (is_array($data[self::FIELD_RECEIVER])) {
                 foreach($data[self::FIELD_RECEIVER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRResourceReference) {
                         $this->addReceiver($v);
                     } else {
@@ -311,8 +324,12 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRMedicationDispenseStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRMedicationDispenseStatus([FHIRMedicationDispenseStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRMedicationDispenseStatus([FHIRMedicationDispenseStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRMedicationDispenseStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRMedicationDispenseStatus($data[self::FIELD_STATUS]));
             }
@@ -330,8 +347,12 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_WHEN_HANDED_OVER] instanceof FHIRDateTime) {
                 $this->setWhenHandedOver($data[self::FIELD_WHEN_HANDED_OVER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WHEN_HANDED_OVER])) {
-                $this->setWhenHandedOver(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_WHEN_HANDED_OVER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WHEN_HANDED_OVER])) {
+                    $this->setWhenHandedOver(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_WHEN_HANDED_OVER]] + $ext));
+                } else if (is_array($data[self::FIELD_WHEN_HANDED_OVER])) {
+                    $this->setWhenHandedOver(new FHIRDateTime(array_merge($ext, $data[self::FIELD_WHEN_HANDED_OVER])));
+                }
             } else {
                 $this->setWhenHandedOver(new FHIRDateTime($data[self::FIELD_WHEN_HANDED_OVER]));
             }
@@ -342,8 +363,12 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_WHEN_PREPARED] instanceof FHIRDateTime) {
                 $this->setWhenPrepared($data[self::FIELD_WHEN_PREPARED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WHEN_PREPARED])) {
-                $this->setWhenPrepared(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_WHEN_PREPARED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WHEN_PREPARED])) {
+                    $this->setWhenPrepared(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_WHEN_PREPARED]] + $ext));
+                } else if (is_array($data[self::FIELD_WHEN_PREPARED])) {
+                    $this->setWhenPrepared(new FHIRDateTime(array_merge($ext, $data[self::FIELD_WHEN_PREPARED])));
+                }
             } else {
                 $this->setWhenPrepared(new FHIRDateTime($data[self::FIELD_WHEN_PREPARED]));
             }
@@ -884,11 +909,9 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDestination())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDosage())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -901,15 +924,12 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMedication())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getReceiver())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -922,7 +942,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -948,30 +967,68 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
             $a[self::FIELD_DOSAGE] = $vs;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getMedication())) {
             $a[self::FIELD_MEDICATION] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         if ([] !== ($vs = $this->getReceiver())) {
             $a[self::FIELD_RECEIVER] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getWhenHandedOver())) {
-            $a[self::FIELD_WHEN_HANDED_OVER] = $v->getValue();
-            $a[self::FIELD_WHEN_HANDED_OVER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHEN_HANDED_OVER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WHEN_HANDED_OVER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WHEN_HANDED_OVER] = $v;
+            }
         }
         if (null !== ($v = $this->getWhenPrepared())) {
-            $a[self::FIELD_WHEN_PREPARED] = $v->getValue();
-            $a[self::FIELD_WHEN_PREPARED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHEN_PREPARED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WHEN_PREPARED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WHEN_PREPARED] = $v;
+            }
         }
         return $a;
     }

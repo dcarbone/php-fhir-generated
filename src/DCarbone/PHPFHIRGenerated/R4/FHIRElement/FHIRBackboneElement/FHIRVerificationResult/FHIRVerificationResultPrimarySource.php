@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CAN_PUSH_UPDATES = 'canPushUpdates';
     const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
     const FIELD_PUSH_TYPE_AVAILABLE = 'pushTypeAvailable';
@@ -182,6 +178,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      */
     protected $who = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRVerificationResultPrimarySource Constructor
      * @param null|array $data
@@ -208,6 +207,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         if (isset($data[self::FIELD_COMMUNICATION_METHOD])) {
             if (is_array($data[self::FIELD_COMMUNICATION_METHOD])) {
                 foreach($data[self::FIELD_COMMUNICATION_METHOD] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addCommunicationMethod($v);
                     } else {
@@ -223,6 +225,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         if (isset($data[self::FIELD_PUSH_TYPE_AVAILABLE])) {
             if (is_array($data[self::FIELD_PUSH_TYPE_AVAILABLE])) {
                 foreach($data[self::FIELD_PUSH_TYPE_AVAILABLE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addPushTypeAvailable($v);
                     } else {
@@ -238,6 +243,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         if (isset($data[self::FIELD_TYPE])) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addType($v);
                     } else {
@@ -256,8 +264,12 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALIDATION_DATE] instanceof FHIRDateTime) {
                 $this->setValidationDate($data[self::FIELD_VALIDATION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALIDATION_DATE])) {
-                $this->setValidationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_VALIDATION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALIDATION_DATE])) {
+                    $this->setValidationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_VALIDATION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALIDATION_DATE])) {
+                    $this->setValidationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_VALIDATION_DATE])));
+                }
             } else {
                 $this->setValidationDate(new FHIRDateTime($data[self::FIELD_VALIDATION_DATE]));
             }
@@ -733,11 +745,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCanPushUpdates())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAN_PUSH_UPDATES, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getCommunicationMethod())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -764,14 +774,13 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getValidationDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValidationStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWho())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHO, null, $v->_getFHIRXMLNamespace()));
         }
@@ -797,8 +806,15 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
             $a[self::FIELD_TYPE] = $vs;
         }
         if (null !== ($v = $this->getValidationDate())) {
-            $a[self::FIELD_VALIDATION_DATE] = $v->getValue();
-            $a[self::FIELD_VALIDATION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALIDATION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALIDATION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALIDATION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getValidationStatus())) {
             $a[self::FIELD_VALIDATION_STATUS] = $v;

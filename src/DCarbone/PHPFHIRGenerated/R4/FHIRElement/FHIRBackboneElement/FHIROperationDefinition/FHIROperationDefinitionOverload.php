@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIROpera
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_OVERLOAD;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
     const FIELD_PARAMETER_NAME = 'parameterName';
@@ -109,6 +105,9 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
      */
     protected $parameterName = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIROperationDefinitionOverload Constructor
      * @param null|array $data
@@ -131,8 +130,12 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COMMENT] instanceof FHIRString) {
                 $this->setComment($data[self::FIELD_COMMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMMENT])) {
-                $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COMMENT])) {
+                    $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_COMMENT])) {
+                    $this->setComment(new FHIRString(array_merge($ext, $data[self::FIELD_COMMENT])));
+                }
             } else {
                 $this->setComment(new FHIRString($data[self::FIELD_COMMENT]));
             }
@@ -143,17 +146,24 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_PARAMETER_NAME])) {
                 foreach($data[self::FIELD_PARAMETER_NAME] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addParameterName($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addParameterName(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addParameterName(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addParameterName(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addParameterName(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_PARAMETER_NAME] instanceof FHIRString) {
                 $this->addParameterName($data[self::FIELD_PARAMETER_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARAMETER_NAME])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PARAMETER_NAME])) {
                 $this->addParameterName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARAMETER_NAME]] + $ext));
             } else {
                 $this->addParameterName(new FHIRString($data[self::FIELD_PARAMETER_NAME]));
@@ -387,6 +397,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER_NAME, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -397,8 +408,15 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComment())) {
-            $a[self::FIELD_COMMENT] = $v->getValue();
-            $a[self::FIELD_COMMENT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COMMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COMMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COMMENT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getParameterName())) {
             $a[self::FIELD_PARAMETER_NAME] = [];
@@ -406,8 +424,17 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PARAMETER_NAME][] = $v->getValue();
-                $a[self::FIELD_PARAMETER_NAME_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PARAMETER_NAME][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PARAMETER_NAME_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PARAMETER_NAME_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PARAMETER_NAME][] = $v;
+                }
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_STARTING_MATERIAL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AMOUNT = 'amount';
     const FIELD_IS_DEFINING = 'isDefining';
     const FIELD_IS_DEFINING_EXT = '_isDefining';
@@ -139,6 +135,9 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstancePolymerStartingMaterial Constructor
      * @param null|array $data
@@ -168,8 +167,12 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IS_DEFINING] instanceof FHIRBoolean) {
                 $this->setIsDefining($data[self::FIELD_IS_DEFINING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IS_DEFINING])) {
-                $this->setIsDefining(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_DEFINING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IS_DEFINING])) {
+                    $this->setIsDefining(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_DEFINING]] + $ext));
+                } else if (is_array($data[self::FIELD_IS_DEFINING])) {
+                    $this->setIsDefining(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_DEFINING])));
+                }
             } else {
                 $this->setIsDefining(new FHIRBoolean($data[self::FIELD_IS_DEFINING]));
             }
@@ -444,18 +447,15 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIsDefining())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DEFINING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaterial())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MATERIAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -472,8 +472,15 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
             $a[self::FIELD_AMOUNT] = $v;
         }
         if (null !== ($v = $this->getIsDefining())) {
-            $a[self::FIELD_IS_DEFINING] = $v->getValue();
-            $a[self::FIELD_IS_DEFINING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IS_DEFINING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IS_DEFINING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IS_DEFINING] = $v;
+            }
         }
         if (null !== ($v = $this->getMaterial())) {
             $a[self::FIELD_MATERIAL] = $v;

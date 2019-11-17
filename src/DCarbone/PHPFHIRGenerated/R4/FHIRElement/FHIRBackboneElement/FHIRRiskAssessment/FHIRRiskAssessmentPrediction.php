@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskA
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_OUTCOME = 'outcome';
     const FIELD_PROBABILITY_DECIMAL = 'probabilityDecimal';
     const FIELD_PROBABILITY_DECIMAL_EXT = '_probabilityDecimal';
@@ -199,6 +195,9 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      */
     protected $whenRange = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRRiskAssessmentPrediction Constructor
      * @param null|array $data
@@ -228,8 +227,12 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PROBABILITY_DECIMAL] instanceof FHIRDecimal) {
                 $this->setProbabilityDecimal($data[self::FIELD_PROBABILITY_DECIMAL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PROBABILITY_DECIMAL])) {
-                $this->setProbabilityDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PROBABILITY_DECIMAL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PROBABILITY_DECIMAL])) {
+                    $this->setProbabilityDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PROBABILITY_DECIMAL]] + $ext));
+                } else if (is_array($data[self::FIELD_PROBABILITY_DECIMAL])) {
+                    $this->setProbabilityDecimal(new FHIRDecimal(array_merge($ext, $data[self::FIELD_PROBABILITY_DECIMAL])));
+                }
             } else {
                 $this->setProbabilityDecimal(new FHIRDecimal($data[self::FIELD_PROBABILITY_DECIMAL]));
             }
@@ -254,8 +257,12 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RATIONALE] instanceof FHIRString) {
                 $this->setRationale($data[self::FIELD_RATIONALE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RATIONALE])) {
-                $this->setRationale(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_RATIONALE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RATIONALE])) {
+                    $this->setRationale(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_RATIONALE]] + $ext));
+                } else if (is_array($data[self::FIELD_RATIONALE])) {
+                    $this->setRationale(new FHIRString(array_merge($ext, $data[self::FIELD_RATIONALE])));
+                }
             } else {
                 $this->setRationale(new FHIRString($data[self::FIELD_RATIONALE]));
             }
@@ -266,8 +273,12 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RELATIVE_RISK] instanceof FHIRDecimal) {
                 $this->setRelativeRisk($data[self::FIELD_RELATIVE_RISK]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RELATIVE_RISK])) {
-                $this->setRelativeRisk(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_RELATIVE_RISK]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RELATIVE_RISK])) {
+                    $this->setRelativeRisk(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_RELATIVE_RISK]] + $ext));
+                } else if (is_array($data[self::FIELD_RELATIVE_RISK])) {
+                    $this->setRelativeRisk(new FHIRDecimal(array_merge($ext, $data[self::FIELD_RELATIVE_RISK])));
+                }
             } else {
                 $this->setRelativeRisk(new FHIRDecimal($data[self::FIELD_RELATIVE_RISK]));
             }
@@ -710,18 +721,15 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getOutcome())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getProbabilityDecimal())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROBABILITY_DECIMAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getProbabilityRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROBABILITY_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQualitativeRisk())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUALITATIVE_RISK, null, $v->_getFHIRXMLNamespace()));
         }
@@ -731,11 +739,9 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         if (null !== ($v = $this->getRelativeRisk())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIVE_RISK, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWhenPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWhenRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -752,8 +758,15 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $a[self::FIELD_OUTCOME] = $v;
         }
         if (null !== ($v = $this->getProbabilityDecimal())) {
-            $a[self::FIELD_PROBABILITY_DECIMAL] = $v->getValue();
-            $a[self::FIELD_PROBABILITY_DECIMAL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PROBABILITY_DECIMAL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PROBABILITY_DECIMAL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PROBABILITY_DECIMAL] = $v;
+            }
         }
         if (null !== ($v = $this->getProbabilityRange())) {
             $a[self::FIELD_PROBABILITY_RANGE] = $v;
@@ -762,12 +775,26 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $a[self::FIELD_QUALITATIVE_RISK] = $v;
         }
         if (null !== ($v = $this->getRationale())) {
-            $a[self::FIELD_RATIONALE] = $v->getValue();
-            $a[self::FIELD_RATIONALE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RATIONALE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RATIONALE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RATIONALE] = $v;
+            }
         }
         if (null !== ($v = $this->getRelativeRisk())) {
-            $a[self::FIELD_RELATIVE_RISK] = $v->getValue();
-            $a[self::FIELD_RELATIVE_RISK_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RELATIVE_RISK] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RELATIVE_RISK_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RELATIVE_RISK] = $v;
+            }
         }
         if (null !== ($v = $this->getWhenPeriod())) {
             $a[self::FIELD_WHEN_PERIOD] = $v;

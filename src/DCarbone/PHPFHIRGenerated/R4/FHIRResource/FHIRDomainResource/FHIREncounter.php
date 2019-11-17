@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,10 +92,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ENCOUNTER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACCOUNT = 'account';
     const FIELD_APPOINTMENT = 'appointment';
     const FIELD_BASED_ON = 'basedOn';
@@ -107,6 +103,7 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_LENGTH = 'length';
+    const FIELD_LENGTH_EXT = '_length';
     const FIELD_LOCATION = 'location';
     const FIELD_PART_OF = 'partOf';
     const FIELD_PARTICIPANT = 'participant';
@@ -400,6 +397,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      */
     protected $type = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIREncounter Constructor
      * @param null|array $data
@@ -419,6 +419,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_ACCOUNT])) {
             if (is_array($data[self::FIELD_ACCOUNT])) {
                 foreach($data[self::FIELD_ACCOUNT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addAccount($v);
                     } else {
@@ -434,6 +437,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_APPOINTMENT])) {
             if (is_array($data[self::FIELD_APPOINTMENT])) {
                 foreach($data[self::FIELD_APPOINTMENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addAppointment($v);
                     } else {
@@ -449,6 +455,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_BASED_ON])) {
             if (is_array($data[self::FIELD_BASED_ON])) {
                 foreach($data[self::FIELD_BASED_ON] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addBasedOn($v);
                     } else {
@@ -471,6 +480,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_CLASS_HISTORY])) {
             if (is_array($data[self::FIELD_CLASS_HISTORY])) {
                 foreach($data[self::FIELD_CLASS_HISTORY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIREncounterClassHistory) {
                         $this->addClassHistory($v);
                     } else {
@@ -486,6 +498,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_DIAGNOSIS])) {
             if (is_array($data[self::FIELD_DIAGNOSIS])) {
                 foreach($data[self::FIELD_DIAGNOSIS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIREncounterDiagnosis) {
                         $this->addDiagnosis($v);
                     } else {
@@ -501,6 +516,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_EPISODE_OF_CARE])) {
             if (is_array($data[self::FIELD_EPISODE_OF_CARE])) {
                 foreach($data[self::FIELD_EPISODE_OF_CARE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addEpisodeOfCare($v);
                     } else {
@@ -526,25 +544,41 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
             } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
                 $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
         if (isset($data[self::FIELD_LENGTH])) {
+            $ext = (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT]))
+                ? $data[self::FIELD_LENGTH_EXT]
+                : null;
             if ($data[self::FIELD_LENGTH] instanceof FHIRDuration) {
                 $this->setLength($data[self::FIELD_LENGTH]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LENGTH])) {
+                    $this->setLength(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_LENGTH]] + $ext));
+                } else if (is_array($data[self::FIELD_LENGTH])) {
+                    $this->setLength(new FHIRDuration(array_merge($ext, $data[self::FIELD_LENGTH])));
+                }
             } else {
                 $this->setLength(new FHIRDuration($data[self::FIELD_LENGTH]));
             }
@@ -552,6 +586,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_LOCATION])) {
             if (is_array($data[self::FIELD_LOCATION])) {
                 foreach($data[self::FIELD_LOCATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIREncounterLocation) {
                         $this->addLocation($v);
                     } else {
@@ -574,6 +611,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_PARTICIPANT])) {
             if (is_array($data[self::FIELD_PARTICIPANT])) {
                 foreach($data[self::FIELD_PARTICIPANT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIREncounterParticipant) {
                         $this->addParticipant($v);
                     } else {
@@ -603,6 +643,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_REASON_CODE])) {
             if (is_array($data[self::FIELD_REASON_CODE])) {
                 foreach($data[self::FIELD_REASON_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addReasonCode($v);
                     } else {
@@ -618,6 +661,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_REASON_REFERENCE])) {
             if (is_array($data[self::FIELD_REASON_REFERENCE])) {
                 foreach($data[self::FIELD_REASON_REFERENCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addReasonReference($v);
                     } else {
@@ -650,8 +696,12 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIREncounterStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIREncounterStatus([FHIREncounterStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIREncounterStatus([FHIREncounterStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIREncounterStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIREncounterStatus($data[self::FIELD_STATUS]));
             }
@@ -659,6 +709,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_STATUS_HISTORY])) {
             if (is_array($data[self::FIELD_STATUS_HISTORY])) {
                 foreach($data[self::FIELD_STATUS_HISTORY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIREncounterStatusHistory) {
                         $this->addStatusHistory($v);
                     } else {
@@ -681,6 +734,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($data[self::FIELD_TYPE])) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addType($v);
                     } else {
@@ -1991,7 +2047,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAccount())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2022,7 +2077,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getClassHistory())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2053,7 +2107,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getHospitalization())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HOSPITALIZATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2066,7 +2119,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getLength())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LENGTH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getLocation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2079,7 +2131,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getPartOf())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PART_OF, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getParticipant())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2092,11 +2143,9 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getReasonCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2118,15 +2167,12 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getServiceProvider())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE_PROVIDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getServiceType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getStatusHistory())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2139,7 +2185,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (null !== ($v = $this->getSubject())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getType())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2148,6 +2193,7 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -2182,10 +2228,34 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_HOSPITALIZATION] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IDENTIFIER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IDENTIFIER][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getLength())) {
-            $a[self::FIELD_LENGTH] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LENGTH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LENGTH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LENGTH] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLocation())) {
             $a[self::FIELD_LOCATION] = $vs;
@@ -2215,7 +2285,15 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_SERVICE_TYPE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if ([] !== ($vs = $this->getStatusHistory())) {
             $a[self::FIELD_STATUS_HISTORY] = $vs;

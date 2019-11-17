@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,10 +86,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPOSITION_DOT_SECTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_EMPTY_REASON = 'emptyReason';
     const FIELD_ENTRY = 'entry';
@@ -206,6 +202,9 @@ class FHIRCompositionSection extends FHIRBackboneElement
      */
     protected $title = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCompositionSection Constructor
      * @param null|array $data
@@ -239,6 +238,9 @@ class FHIRCompositionSection extends FHIRBackboneElement
         if (isset($data[self::FIELD_ENTRY])) {
             if (is_array($data[self::FIELD_ENTRY])) {
                 foreach($data[self::FIELD_ENTRY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addEntry($v);
                     } else {
@@ -257,8 +259,12 @@ class FHIRCompositionSection extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MODE] instanceof FHIRCode) {
                 $this->setMode($data[self::FIELD_MODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MODE])) {
-                $this->setMode(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MODE])) {
+                    $this->setMode(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
+                } else if (is_array($data[self::FIELD_MODE])) {
+                    $this->setMode(new FHIRCode(array_merge($ext, $data[self::FIELD_MODE])));
+                }
             } else {
                 $this->setMode(new FHIRCode($data[self::FIELD_MODE]));
             }
@@ -273,6 +279,9 @@ class FHIRCompositionSection extends FHIRBackboneElement
         if (isset($data[self::FIELD_SECTION])) {
             if (is_array($data[self::FIELD_SECTION])) {
                 foreach($data[self::FIELD_SECTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCompositionSection) {
                         $this->addSection($v);
                     } else {
@@ -298,8 +307,12 @@ class FHIRCompositionSection extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TITLE] instanceof FHIRString) {
                 $this->setTitle($data[self::FIELD_TITLE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TITLE])) {
-                $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TITLE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TITLE])) {
+                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TITLE]] + $ext));
+                } else if (is_array($data[self::FIELD_TITLE])) {
+                    $this->setTitle(new FHIRString(array_merge($ext, $data[self::FIELD_TITLE])));
+                }
             } else {
                 $this->setTitle(new FHIRString($data[self::FIELD_TITLE]));
             }
@@ -785,15 +798,12 @@ class FHIRCompositionSection extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEmptyReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EMPTY_REASON, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getEntry())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -802,14 +812,13 @@ class FHIRCompositionSection extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ENTRY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getMode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrderedBy())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORDERED_BY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSection())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -844,8 +853,15 @@ class FHIRCompositionSection extends FHIRBackboneElement
             $a[self::FIELD_ENTRY] = $vs;
         }
         if (null !== ($v = $this->getMode())) {
-            $a[self::FIELD_MODE] = $v->getValue();
-            $a[self::FIELD_MODE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MODE] = $v;
+            }
         }
         if (null !== ($v = $this->getOrderedBy())) {
             $a[self::FIELD_ORDERED_BY] = $v;
@@ -857,8 +873,15 @@ class FHIRCompositionSection extends FHIRBackboneElement
             $a[self::FIELD_TEXT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
-            $a[self::FIELD_TITLE] = $v->getValue();
-            $a[self::FIELD_TITLE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TITLE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TITLE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TITLE] = $v;
+            }
         }
         return $a;
     }

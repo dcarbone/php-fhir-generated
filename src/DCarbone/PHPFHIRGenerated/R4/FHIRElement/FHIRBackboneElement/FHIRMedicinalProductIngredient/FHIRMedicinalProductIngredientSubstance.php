@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_SUBSTANCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_STRENGTH = 'strength';
 
@@ -105,6 +101,9 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
     protected $strength = [];
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRMedicinalProductIngredientSubstance Constructor
@@ -132,6 +131,9 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement
         if (isset($data[self::FIELD_STRENGTH])) {
             if (is_array($data[self::FIELD_STRENGTH])) {
                 foreach($data[self::FIELD_STRENGTH] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicinalProductIngredientStrength) {
                         $this->addStrength($v);
                     } else {
@@ -338,11 +340,9 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getStrength())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -351,6 +351,7 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

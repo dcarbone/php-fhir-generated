@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEPENDS_ON;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_PACKAGE_ID = 'packageId';
     const FIELD_PACKAGE_ID_EXT = '_packageId';
     const FIELD_URI = 'uri';
@@ -131,6 +127,9 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      */
     protected $version = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImplementationGuideDependsOn Constructor
      * @param null|array $data
@@ -153,8 +152,12 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PACKAGE_ID] instanceof FHIRId) {
                 $this->setPackageId($data[self::FIELD_PACKAGE_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PACKAGE_ID])) {
-                $this->setPackageId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_PACKAGE_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PACKAGE_ID])) {
+                    $this->setPackageId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_PACKAGE_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_PACKAGE_ID])) {
+                    $this->setPackageId(new FHIRId(array_merge($ext, $data[self::FIELD_PACKAGE_ID])));
+                }
             } else {
                 $this->setPackageId(new FHIRId($data[self::FIELD_PACKAGE_ID]));
             }
@@ -165,8 +168,12 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URI] instanceof FHIRCanonical) {
                 $this->setUri($data[self::FIELD_URI]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URI])) {
-                $this->setUri(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_URI]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URI])) {
+                    $this->setUri(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_URI]] + $ext));
+                } else if (is_array($data[self::FIELD_URI])) {
+                    $this->setUri(new FHIRCanonical(array_merge($ext, $data[self::FIELD_URI])));
+                }
             } else {
                 $this->setUri(new FHIRCanonical($data[self::FIELD_URI]));
             }
@@ -177,8 +184,12 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VERSION] instanceof FHIRString) {
                 $this->setVersion($data[self::FIELD_VERSION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERSION])) {
-                $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERSION])) {
+                    $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION]] + $ext));
+                } else if (is_array($data[self::FIELD_VERSION])) {
+                    $this->setVersion(new FHIRString(array_merge($ext, $data[self::FIELD_VERSION])));
+                }
             } else {
                 $this->setVersion(new FHIRString($data[self::FIELD_VERSION]));
             }
@@ -445,16 +456,37 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getPackageId())) {
-            $a[self::FIELD_PACKAGE_ID] = $v->getValue();
-            $a[self::FIELD_PACKAGE_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PACKAGE_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PACKAGE_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PACKAGE_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getUri())) {
-            $a[self::FIELD_URI] = $v->getValue();
-            $a[self::FIELD_URI_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URI] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URI_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URI] = $v;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = $v->getValue();
-            $a[self::FIELD_VERSION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERSION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERSION] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_CODE_FILTER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
@@ -155,6 +151,9 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      */
     protected $valueSet = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDataRequirementCodeFilter Constructor
      * @param null|array $data
@@ -174,6 +173,9 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         if (isset($data[self::FIELD_CODE])) {
             if (is_array($data[self::FIELD_CODE])) {
                 foreach($data[self::FIELD_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addCode($v);
                     } else {
@@ -192,8 +194,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 : null;
             if ($data[self::FIELD_PATH] instanceof FHIRString) {
                 $this->setPath($data[self::FIELD_PATH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PATH])) {
-                $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PATH])) {
+                    $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATH]] + $ext));
+                } else if (is_array($data[self::FIELD_PATH])) {
+                    $this->setPath(new FHIRString(array_merge($ext, $data[self::FIELD_PATH])));
+                }
             } else {
                 $this->setPath(new FHIRString($data[self::FIELD_PATH]));
             }
@@ -204,8 +210,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 : null;
             if ($data[self::FIELD_SEARCH_PARAM] instanceof FHIRString) {
                 $this->setSearchParam($data[self::FIELD_SEARCH_PARAM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEARCH_PARAM])) {
-                $this->setSearchParam(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SEARCH_PARAM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEARCH_PARAM])) {
+                    $this->setSearchParam(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SEARCH_PARAM]] + $ext));
+                } else if (is_array($data[self::FIELD_SEARCH_PARAM])) {
+                    $this->setSearchParam(new FHIRString(array_merge($ext, $data[self::FIELD_SEARCH_PARAM])));
+                }
             } else {
                 $this->setSearchParam(new FHIRString($data[self::FIELD_SEARCH_PARAM]));
             }
@@ -216,8 +226,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 : null;
             if ($data[self::FIELD_VALUE_SET] instanceof FHIRCanonical) {
                 $this->setValueSet($data[self::FIELD_VALUE_SET]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_SET])) {
-                $this->setValueSet(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_VALUE_SET]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_SET])) {
+                    $this->setValueSet(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_VALUE_SET]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_SET])) {
+                    $this->setValueSet(new FHIRCanonical(array_merge($ext, $data[self::FIELD_VALUE_SET])));
+                }
             } else {
                 $this->setValueSet(new FHIRCanonical($data[self::FIELD_VALUE_SET]));
             }
@@ -554,7 +568,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -563,6 +576,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPath())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->_getFHIRXMLNamespace()));
         }
@@ -585,16 +599,37 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             $a[self::FIELD_CODE] = $vs;
         }
         if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = $v->getValue();
-            $a[self::FIELD_PATH_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PATH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PATH] = $v;
+            }
         }
         if (null !== ($v = $this->getSearchParam())) {
-            $a[self::FIELD_SEARCH_PARAM] = $v->getValue();
-            $a[self::FIELD_SEARCH_PARAM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEARCH_PARAM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEARCH_PARAM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEARCH_PARAM] = $v;
+            }
         }
         if (null !== ($v = $this->getValueSet())) {
-            $a[self::FIELD_VALUE_SET] = $v->getValue();
-            $a[self::FIELD_VALUE_SET_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_SET] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_SET_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_SET] = $v;
+            }
         }
         return $a;
     }

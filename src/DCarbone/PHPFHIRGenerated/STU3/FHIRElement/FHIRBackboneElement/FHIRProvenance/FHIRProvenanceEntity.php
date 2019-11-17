@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,10 +88,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AGENT = 'agent';
     const FIELD_ROLE = 'role';
     const FIELD_ROLE_EXT = '_role';
@@ -167,6 +163,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      */
     protected $whatUri = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRProvenanceEntity Constructor
      * @param null|array $data
@@ -186,6 +185,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         if (isset($data[self::FIELD_AGENT])) {
             if (is_array($data[self::FIELD_AGENT])) {
                 foreach($data[self::FIELD_AGENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRProvenanceAgent) {
                         $this->addAgent($v);
                     } else {
@@ -204,8 +206,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ROLE] instanceof FHIRProvenanceEntityRole) {
                 $this->setRole($data[self::FIELD_ROLE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ROLE])) {
-                $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $data[self::FIELD_ROLE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ROLE])) {
+                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $data[self::FIELD_ROLE]] + $ext));
+                } else if (is_array($data[self::FIELD_ROLE])) {
+                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $data[self::FIELD_ROLE])));
+                }
             } else {
                 $this->setRole(new FHIRProvenanceEntityRole($data[self::FIELD_ROLE]));
             }
@@ -216,8 +222,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_WHAT_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setWhatIdentifier($data[self::FIELD_WHAT_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WHAT_IDENTIFIER])) {
-                $this->setWhatIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_WHAT_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WHAT_IDENTIFIER])) {
+                    $this->setWhatIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_WHAT_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_WHAT_IDENTIFIER])) {
+                    $this->setWhatIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_WHAT_IDENTIFIER])));
+                }
             } else {
                 $this->setWhatIdentifier(new FHIRIdentifier($data[self::FIELD_WHAT_IDENTIFIER]));
             }
@@ -235,8 +245,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_WHAT_URI] instanceof FHIRUri) {
                 $this->setWhatUri($data[self::FIELD_WHAT_URI]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WHAT_URI])) {
-                $this->setWhatUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_WHAT_URI]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WHAT_URI])) {
+                    $this->setWhatUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_WHAT_URI]] + $ext));
+                } else if (is_array($data[self::FIELD_WHAT_URI])) {
+                    $this->setWhatUri(new FHIRUri(array_merge($ext, $data[self::FIELD_WHAT_URI])));
+                }
             } else {
                 $this->setWhatUri(new FHIRUri($data[self::FIELD_WHAT_URI]));
             }
@@ -586,15 +600,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWhatIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWhatReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -614,17 +625,40 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $a[self::FIELD_AGENT] = $vs;
         }
         if (null !== ($v = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ROLE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ROLE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ROLE] = $v;
+            }
         }
         if (null !== ($v = $this->getWhatIdentifier())) {
-            $a[self::FIELD_WHAT_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHAT_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WHAT_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WHAT_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getWhatReference())) {
             $a[self::FIELD_WHAT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhatUri())) {
-            $a[self::FIELD_WHAT_URI] = $v->getValue();
-            $a[self::FIELD_WHAT_URI_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHAT_URI] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WHAT_URI_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WHAT_URI] = $v;
+            }
         }
         return $a;
     }

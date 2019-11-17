@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,10 +73,6 @@ class FHIRRange extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RANGE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_HIGH = 'high';
     const FIELD_HIGH_EXT = '_high';
     const FIELD_LOW = 'low';
@@ -108,6 +104,9 @@ class FHIRRange extends FHIRElement
      */
     protected $low = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRRange Constructor
      * @param null|array $data
@@ -130,8 +129,12 @@ class FHIRRange extends FHIRElement
                 : null;
             if ($data[self::FIELD_HIGH] instanceof FHIRQuantity) {
                 $this->setHigh($data[self::FIELD_HIGH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_HIGH])) {
-                $this->setHigh(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HIGH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_HIGH])) {
+                    $this->setHigh(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HIGH]] + $ext));
+                } else if (is_array($data[self::FIELD_HIGH])) {
+                    $this->setHigh(new FHIRQuantity(array_merge($ext, $data[self::FIELD_HIGH])));
+                }
             } else {
                 $this->setHigh(new FHIRQuantity($data[self::FIELD_HIGH]));
             }
@@ -142,8 +145,12 @@ class FHIRRange extends FHIRElement
                 : null;
             if ($data[self::FIELD_LOW] instanceof FHIRQuantity) {
                 $this->setLow($data[self::FIELD_LOW]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LOW])) {
-                $this->setLow(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_LOW]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LOW])) {
+                    $this->setLow(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_LOW]] + $ext));
+                } else if (is_array($data[self::FIELD_LOW])) {
+                    $this->setLow(new FHIRQuantity(array_merge($ext, $data[self::FIELD_LOW])));
+                }
             } else {
                 $this->setLow(new FHIRQuantity($data[self::FIELD_LOW]));
             }
@@ -323,11 +330,9 @@ class FHIRRange extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getHigh())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getLow())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->_getFHIRXMLNamespace()));
         }
@@ -341,10 +346,26 @@ class FHIRRange extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getHigh())) {
-            $a[self::FIELD_HIGH] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_HIGH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_HIGH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_HIGH] = $v;
+            }
         }
         if (null !== ($v = $this->getLow())) {
-            $a[self::FIELD_LOW] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LOW] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LOW_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LOW] = $v;
+            }
         }
         return $a;
     }

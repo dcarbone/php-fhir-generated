@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PHARMACEUTICAL_DOT_ROUTE_OF_ADMINISTRATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_FIRST_DOSE = 'firstDose';
     const FIELD_FIRST_DOSE_EXT = '_firstDose';
@@ -93,6 +89,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
     const FIELD_MAX_SINGLE_DOSE = 'maxSingleDose';
     const FIELD_MAX_SINGLE_DOSE_EXT = '_maxSingleDose';
     const FIELD_MAX_TREATMENT_PERIOD = 'maxTreatmentPeriod';
+    const FIELD_MAX_TREATMENT_PERIOD_EXT = '_maxTreatmentPeriod';
     const FIELD_TARGET_SPECIES = 'targetSpecies';
 
     /**
@@ -187,6 +184,9 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
      */
     protected $targetSpecies = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicinalProductPharmaceuticalRouteOfAdministration Constructor
      * @param null|array $data
@@ -216,8 +216,12 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
                 : null;
             if ($data[self::FIELD_FIRST_DOSE] instanceof FHIRQuantity) {
                 $this->setFirstDose($data[self::FIELD_FIRST_DOSE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FIRST_DOSE])) {
-                $this->setFirstDose(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_FIRST_DOSE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FIRST_DOSE])) {
+                    $this->setFirstDose(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_FIRST_DOSE]] + $ext));
+                } else if (is_array($data[self::FIELD_FIRST_DOSE])) {
+                    $this->setFirstDose(new FHIRQuantity(array_merge($ext, $data[self::FIELD_FIRST_DOSE])));
+                }
             } else {
                 $this->setFirstDose(new FHIRQuantity($data[self::FIELD_FIRST_DOSE]));
             }
@@ -228,8 +232,12 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
                 : null;
             if ($data[self::FIELD_MAX_DOSE_PER_DAY] instanceof FHIRQuantity) {
                 $this->setMaxDosePerDay($data[self::FIELD_MAX_DOSE_PER_DAY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MAX_DOSE_PER_DAY])) {
-                $this->setMaxDosePerDay(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_DAY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX_DOSE_PER_DAY])) {
+                    $this->setMaxDosePerDay(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_DAY]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX_DOSE_PER_DAY])) {
+                    $this->setMaxDosePerDay(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MAX_DOSE_PER_DAY])));
+                }
             } else {
                 $this->setMaxDosePerDay(new FHIRQuantity($data[self::FIELD_MAX_DOSE_PER_DAY]));
             }
@@ -247,15 +255,28 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
                 : null;
             if ($data[self::FIELD_MAX_SINGLE_DOSE] instanceof FHIRQuantity) {
                 $this->setMaxSingleDose($data[self::FIELD_MAX_SINGLE_DOSE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MAX_SINGLE_DOSE])) {
-                $this->setMaxSingleDose(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_SINGLE_DOSE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX_SINGLE_DOSE])) {
+                    $this->setMaxSingleDose(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_SINGLE_DOSE]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX_SINGLE_DOSE])) {
+                    $this->setMaxSingleDose(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MAX_SINGLE_DOSE])));
+                }
             } else {
                 $this->setMaxSingleDose(new FHIRQuantity($data[self::FIELD_MAX_SINGLE_DOSE]));
             }
         }
         if (isset($data[self::FIELD_MAX_TREATMENT_PERIOD])) {
+            $ext = (isset($data[self::FIELD_MAX_TREATMENT_PERIOD_EXT]) && is_array($data[self::FIELD_MAX_TREATMENT_PERIOD_EXT]))
+                ? $data[self::FIELD_MAX_TREATMENT_PERIOD_EXT]
+                : null;
             if ($data[self::FIELD_MAX_TREATMENT_PERIOD] instanceof FHIRDuration) {
                 $this->setMaxTreatmentPeriod($data[self::FIELD_MAX_TREATMENT_PERIOD]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX_TREATMENT_PERIOD])) {
+                    $this->setMaxTreatmentPeriod(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_MAX_TREATMENT_PERIOD]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX_TREATMENT_PERIOD])) {
+                    $this->setMaxTreatmentPeriod(new FHIRDuration(array_merge($ext, $data[self::FIELD_MAX_TREATMENT_PERIOD])));
+                }
             } else {
                 $this->setMaxTreatmentPeriod(new FHIRDuration($data[self::FIELD_MAX_TREATMENT_PERIOD]));
             }
@@ -263,6 +284,9 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
         if (isset($data[self::FIELD_TARGET_SPECIES])) {
             if (is_array($data[self::FIELD_TARGET_SPECIES])) {
                 foreach($data[self::FIELD_TARGET_SPECIES] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicinalProductPharmaceuticalTargetSpecies) {
                         $this->addTargetSpecies($v);
                     } else {
@@ -663,31 +687,24 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getFirstDose())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIRST_DOSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxDosePerDay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_DAY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxDosePerTreatmentPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxSingleDose())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_SINGLE_DOSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxTreatmentPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_TREATMENT_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getTargetSpecies())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -696,6 +713,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_SPECIES, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -709,19 +727,51 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getFirstDose())) {
-            $a[self::FIELD_FIRST_DOSE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FIRST_DOSE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FIRST_DOSE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FIRST_DOSE] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxDosePerDay())) {
-            $a[self::FIELD_MAX_DOSE_PER_DAY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX_DOSE_PER_DAY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_DOSE_PER_DAY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX_DOSE_PER_DAY] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxDosePerTreatmentPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD] = $v;
         }
         if (null !== ($v = $this->getMaxSingleDose())) {
-            $a[self::FIELD_MAX_SINGLE_DOSE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX_SINGLE_DOSE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_SINGLE_DOSE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX_SINGLE_DOSE] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxTreatmentPeriod())) {
-            $a[self::FIELD_MAX_TREATMENT_PERIOD] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX_TREATMENT_PERIOD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_TREATMENT_PERIOD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX_TREATMENT_PERIOD] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTargetSpecies())) {
             $a[self::FIELD_TARGET_SPECIES] = $vs;

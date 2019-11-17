@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_INSURANCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_BENEFIT_PERIOD = 'benefitPeriod';
     const FIELD_COVERAGE = 'coverage';
     const FIELD_INFORCE = 'inforce';
@@ -136,6 +132,9 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      */
     protected $item = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCoverageEligibilityResponseInsurance Constructor
      * @param null|array $data
@@ -172,8 +171,12 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_INFORCE] instanceof FHIRBoolean) {
                 $this->setInforce($data[self::FIELD_INFORCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_INFORCE])) {
-                $this->setInforce(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INFORCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_INFORCE])) {
+                    $this->setInforce(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INFORCE]] + $ext));
+                } else if (is_array($data[self::FIELD_INFORCE])) {
+                    $this->setInforce(new FHIRBoolean(array_merge($ext, $data[self::FIELD_INFORCE])));
+                }
             } else {
                 $this->setInforce(new FHIRBoolean($data[self::FIELD_INFORCE]));
             }
@@ -181,6 +184,9 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         if (isset($data[self::FIELD_ITEM])) {
             if (is_array($data[self::FIELD_ITEM])) {
                 foreach($data[self::FIELD_ITEM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoverageEligibilityResponseItem) {
                         $this->addItem($v);
                     } else {
@@ -469,18 +475,15 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBenefitPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFIT_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCoverage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getInforce())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INFORCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getItem())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -489,6 +492,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -505,8 +509,15 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $a[self::FIELD_COVERAGE] = $v;
         }
         if (null !== ($v = $this->getInforce())) {
-            $a[self::FIELD_INFORCE] = $v->getValue();
-            $a[self::FIELD_INFORCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_INFORCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_INFORCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_INFORCE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getItem())) {
             $a[self::FIELD_ITEM] = $vs;

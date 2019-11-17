@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRResea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,10 +89,6 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESEARCH_ELEMENT_DEFINITION_DOT_CHARACTERISTIC;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DEFINITION_CANONICAL = 'definitionCanonical';
     const FIELD_DEFINITION_CANONICAL_EXT = '_definitionCanonical';
     const FIELD_DEFINITION_CODEABLE_CONCEPT = 'definitionCodeableConcept';
@@ -105,20 +101,24 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     const FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION = 'participantEffectiveDescription';
     const FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION_EXT = '_participantEffectiveDescription';
     const FIELD_PARTICIPANT_EFFECTIVE_DURATION = 'participantEffectiveDuration';
+    const FIELD_PARTICIPANT_EFFECTIVE_DURATION_EXT = '_participantEffectiveDuration';
     const FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE = 'participantEffectiveGroupMeasure';
     const FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE_EXT = '_participantEffectiveGroupMeasure';
     const FIELD_PARTICIPANT_EFFECTIVE_PERIOD = 'participantEffectivePeriod';
     const FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START = 'participantEffectiveTimeFromStart';
+    const FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START_EXT = '_participantEffectiveTimeFromStart';
     const FIELD_PARTICIPANT_EFFECTIVE_TIMING = 'participantEffectiveTiming';
     const FIELD_STUDY_EFFECTIVE_DATE_TIME = 'studyEffectiveDateTime';
     const FIELD_STUDY_EFFECTIVE_DATE_TIME_EXT = '_studyEffectiveDateTime';
     const FIELD_STUDY_EFFECTIVE_DESCRIPTION = 'studyEffectiveDescription';
     const FIELD_STUDY_EFFECTIVE_DESCRIPTION_EXT = '_studyEffectiveDescription';
     const FIELD_STUDY_EFFECTIVE_DURATION = 'studyEffectiveDuration';
+    const FIELD_STUDY_EFFECTIVE_DURATION_EXT = '_studyEffectiveDuration';
     const FIELD_STUDY_EFFECTIVE_GROUP_MEASURE = 'studyEffectiveGroupMeasure';
     const FIELD_STUDY_EFFECTIVE_GROUP_MEASURE_EXT = '_studyEffectiveGroupMeasure';
     const FIELD_STUDY_EFFECTIVE_PERIOD = 'studyEffectivePeriod';
     const FIELD_STUDY_EFFECTIVE_TIME_FROM_START = 'studyEffectiveTimeFromStart';
+    const FIELD_STUDY_EFFECTIVE_TIME_FROM_START_EXT = '_studyEffectiveTimeFromStart';
     const FIELD_STUDY_EFFECTIVE_TIMING = 'studyEffectiveTiming';
     const FIELD_UNIT_OF_MEASURE = 'unitOfMeasure';
     const FIELD_USAGE_CONTEXT = 'usageContext';
@@ -395,6 +395,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      */
     protected $usageContext = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRResearchElementDefinitionCharacteristic Constructor
      * @param null|array $data
@@ -417,8 +420,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DEFINITION_CANONICAL] instanceof FHIRCanonical) {
                 $this->setDefinitionCanonical($data[self::FIELD_DEFINITION_CANONICAL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DEFINITION_CANONICAL])) {
-                $this->setDefinitionCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_DEFINITION_CANONICAL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DEFINITION_CANONICAL])) {
+                    $this->setDefinitionCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_DEFINITION_CANONICAL]] + $ext));
+                } else if (is_array($data[self::FIELD_DEFINITION_CANONICAL])) {
+                    $this->setDefinitionCanonical(new FHIRCanonical(array_merge($ext, $data[self::FIELD_DEFINITION_CANONICAL])));
+                }
             } else {
                 $this->setDefinitionCanonical(new FHIRCanonical($data[self::FIELD_DEFINITION_CANONICAL]));
             }
@@ -450,8 +457,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EXCLUDE] instanceof FHIRBoolean) {
                 $this->setExclude($data[self::FIELD_EXCLUDE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EXCLUDE])) {
-                $this->setExclude(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXCLUDE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EXCLUDE])) {
+                    $this->setExclude(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXCLUDE]] + $ext));
+                } else if (is_array($data[self::FIELD_EXCLUDE])) {
+                    $this->setExclude(new FHIRBoolean(array_merge($ext, $data[self::FIELD_EXCLUDE])));
+                }
             } else {
                 $this->setExclude(new FHIRBoolean($data[self::FIELD_EXCLUDE]));
             }
@@ -462,8 +473,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] instanceof FHIRDateTime) {
                 $this->setParticipantEffectiveDateTime($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
-                $this->setParticipantEffectiveDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
+                    $this->setParticipantEffectiveDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
+                    $this->setParticipantEffectiveDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])));
+                }
             } else {
                 $this->setParticipantEffectiveDateTime(new FHIRDateTime($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]));
             }
@@ -474,15 +489,28 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] instanceof FHIRString) {
                 $this->setParticipantEffectiveDescription($data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])) {
-                $this->setParticipantEffectiveDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])) {
+                    $this->setParticipantEffectiveDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])) {
+                    $this->setParticipantEffectiveDescription(new FHIRString(array_merge($ext, $data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])));
+                }
             } else {
                 $this->setParticipantEffectiveDescription(new FHIRString($data[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION]));
             }
         }
         if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+            $ext = (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION_EXT]) && is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION_EXT]))
+                ? $data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION_EXT]
+                : null;
             if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] instanceof FHIRDuration) {
                 $this->setParticipantEffectiveDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+                    $this->setParticipantEffectiveDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]] + $ext));
+                } else if (is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+                    $this->setParticipantEffectiveDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])));
+                }
             } else {
                 $this->setParticipantEffectiveDuration(new FHIRDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]));
             }
@@ -493,8 +521,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE] instanceof FHIRGroupMeasure) {
                 $this->setParticipantEffectiveGroupMeasure($data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE])) {
-                $this->setParticipantEffectiveGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE])) {
+                    $this->setParticipantEffectiveGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]] + $ext));
+                } else if (is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE])) {
+                    $this->setParticipantEffectiveGroupMeasure(new FHIRGroupMeasure(array_merge($ext, $data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE])));
+                }
             } else {
                 $this->setParticipantEffectiveGroupMeasure(new FHIRGroupMeasure($data[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE]));
             }
@@ -507,8 +539,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START])) {
+            $ext = (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START_EXT]) && is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START_EXT]))
+                ? $data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START_EXT]
+                : null;
             if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START] instanceof FHIRDuration) {
                 $this->setParticipantEffectiveTimeFromStart($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START])) {
+                    $this->setParticipantEffectiveTimeFromStart(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START]] + $ext));
+                } else if (is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START])) {
+                    $this->setParticipantEffectiveTimeFromStart(new FHIRDuration(array_merge($ext, $data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START])));
+                }
             } else {
                 $this->setParticipantEffectiveTimeFromStart(new FHIRDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START]));
             }
@@ -526,8 +567,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] instanceof FHIRDateTime) {
                 $this->setStudyEffectiveDateTime($data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])) {
-                $this->setStudyEffectiveDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])) {
+                    $this->setStudyEffectiveDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])) {
+                    $this->setStudyEffectiveDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])));
+                }
             } else {
                 $this->setStudyEffectiveDateTime(new FHIRDateTime($data[self::FIELD_STUDY_EFFECTIVE_DATE_TIME]));
             }
@@ -538,15 +583,28 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] instanceof FHIRString) {
                 $this->setStudyEffectiveDescription($data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])) {
-                $this->setStudyEffectiveDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])) {
+                    $this->setStudyEffectiveDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])) {
+                    $this->setStudyEffectiveDescription(new FHIRString(array_merge($ext, $data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])));
+                }
             } else {
                 $this->setStudyEffectiveDescription(new FHIRString($data[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION]));
             }
         }
         if (isset($data[self::FIELD_STUDY_EFFECTIVE_DURATION])) {
+            $ext = (isset($data[self::FIELD_STUDY_EFFECTIVE_DURATION_EXT]) && is_array($data[self::FIELD_STUDY_EFFECTIVE_DURATION_EXT]))
+                ? $data[self::FIELD_STUDY_EFFECTIVE_DURATION_EXT]
+                : null;
             if ($data[self::FIELD_STUDY_EFFECTIVE_DURATION] instanceof FHIRDuration) {
                 $this->setStudyEffectiveDuration($data[self::FIELD_STUDY_EFFECTIVE_DURATION]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STUDY_EFFECTIVE_DURATION])) {
+                    $this->setStudyEffectiveDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_DURATION]] + $ext));
+                } else if (is_array($data[self::FIELD_STUDY_EFFECTIVE_DURATION])) {
+                    $this->setStudyEffectiveDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_STUDY_EFFECTIVE_DURATION])));
+                }
             } else {
                 $this->setStudyEffectiveDuration(new FHIRDuration($data[self::FIELD_STUDY_EFFECTIVE_DURATION]));
             }
@@ -557,8 +615,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE] instanceof FHIRGroupMeasure) {
                 $this->setStudyEffectiveGroupMeasure($data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE])) {
-                $this->setStudyEffectiveGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE])) {
+                    $this->setStudyEffectiveGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]] + $ext));
+                } else if (is_array($data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE])) {
+                    $this->setStudyEffectiveGroupMeasure(new FHIRGroupMeasure(array_merge($ext, $data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE])));
+                }
             } else {
                 $this->setStudyEffectiveGroupMeasure(new FHIRGroupMeasure($data[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE]));
             }
@@ -571,8 +633,17 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START])) {
+            $ext = (isset($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START_EXT]) && is_array($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START_EXT]))
+                ? $data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START_EXT]
+                : null;
             if ($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START] instanceof FHIRDuration) {
                 $this->setStudyEffectiveTimeFromStart($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START])) {
+                    $this->setStudyEffectiveTimeFromStart(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START]] + $ext));
+                } else if (is_array($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START])) {
+                    $this->setStudyEffectiveTimeFromStart(new FHIRDuration(array_merge($ext, $data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START])));
+                }
             } else {
                 $this->setStudyEffectiveTimeFromStart(new FHIRDuration($data[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START]));
             }
@@ -594,6 +665,9 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (isset($data[self::FIELD_USAGE_CONTEXT])) {
             if (is_array($data[self::FIELD_USAGE_CONTEXT])) {
                 foreach($data[self::FIELD_USAGE_CONTEXT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUsageContext) {
                         $this->addUsageContext($v);
                     } else {
@@ -1583,15 +1657,12 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (null !== ($v = $this->getDefinitionCanonical())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefinitionCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefinitionDataRequirement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_DATA_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefinitionExpression())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1604,23 +1675,18 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (null !== ($v = $this->getParticipantEffectiveDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getParticipantEffectiveDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getParticipantEffectiveGroupMeasure())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getParticipantEffectivePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getParticipantEffectiveTimeFromStart())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getParticipantEffectiveTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1630,31 +1696,24 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         if (null !== ($v = $this->getStudyEffectiveDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY_EFFECTIVE_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStudyEffectiveDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY_EFFECTIVE_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStudyEffectiveGroupMeasure())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStudyEffectivePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY_EFFECTIVE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStudyEffectiveTimeFromStart())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStudyEffectiveTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY_EFFECTIVE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUnitOfMeasure())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_OF_MEASURE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getUsageContext())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1663,6 +1722,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_USAGE_CONTEXT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -1673,8 +1733,15 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDefinitionCanonical())) {
-            $a[self::FIELD_DEFINITION_CANONICAL] = $v->getValue();
-            $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DEFINITION_CANONICAL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DEFINITION_CANONICAL] = $v;
+            }
         }
         if (null !== ($v = $this->getDefinitionCodeableConcept())) {
             $a[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = $v;
@@ -1686,51 +1753,134 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $a[self::FIELD_DEFINITION_EXPRESSION] = $v;
         }
         if (null !== ($v = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = $v->getValue();
-            $a[self::FIELD_EXCLUDE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXCLUDE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EXCLUDE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EXCLUDE] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $v->getValue();
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveDescription())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveDuration())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveGroupMeasure())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_GROUP_MEASURE] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectivePeriod())) {
             $a[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getParticipantEffectiveTimeFromStart())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIME_FROM_START] = $v;
+            }
         }
         if (null !== ($v = $this->getParticipantEffectiveTiming())) {
             $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING] = $v;
         }
         if (null !== ($v = $this->getStudyEffectiveDateTime())) {
-            $a[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] = $v->getValue();
-            $a[self::FIELD_STUDY_EFFECTIVE_DATE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STUDY_EFFECTIVE_DATE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getStudyEffectiveDescription())) {
-            $a[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getStudyEffectiveDuration())) {
-            $a[self::FIELD_STUDY_EFFECTIVE_DURATION] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STUDY_EFFECTIVE_DURATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STUDY_EFFECTIVE_DURATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STUDY_EFFECTIVE_DURATION] = $v;
+            }
         }
         if (null !== ($v = $this->getStudyEffectiveGroupMeasure())) {
-            $a[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STUDY_EFFECTIVE_GROUP_MEASURE] = $v;
+            }
         }
         if (null !== ($v = $this->getStudyEffectivePeriod())) {
             $a[self::FIELD_STUDY_EFFECTIVE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getStudyEffectiveTimeFromStart())) {
-            $a[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STUDY_EFFECTIVE_TIME_FROM_START] = $v;
+            }
         }
         if (null !== ($v = $this->getStudyEffectiveTiming())) {
             $a[self::FIELD_STUDY_EFFECTIVE_TIMING] = $v;

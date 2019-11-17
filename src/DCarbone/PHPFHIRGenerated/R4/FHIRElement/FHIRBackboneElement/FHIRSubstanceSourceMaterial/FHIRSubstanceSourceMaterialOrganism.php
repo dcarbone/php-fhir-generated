@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,10 +90,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTHOR = 'author';
     const FIELD_FAMILY = 'family';
     const FIELD_GENUS = 'genus';
@@ -232,6 +228,9 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      */
     protected $species = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSourceMaterialOrganism Constructor
      * @param null|array $data
@@ -251,6 +250,9 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         if (isset($data[self::FIELD_AUTHOR])) {
             if (is_array($data[self::FIELD_AUTHOR])) {
                 foreach($data[self::FIELD_AUTHOR] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSourceMaterialAuthor) {
                         $this->addAuthor($v);
                     } else {
@@ -290,8 +292,12 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_INTRASPECIFIC_DESCRIPTION] instanceof FHIRString) {
                 $this->setIntraspecificDescription($data[self::FIELD_INTRASPECIFIC_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_INTRASPECIFIC_DESCRIPTION])) {
-                $this->setIntraspecificDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INTRASPECIFIC_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_INTRASPECIFIC_DESCRIPTION])) {
+                    $this->setIntraspecificDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INTRASPECIFIC_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_INTRASPECIFIC_DESCRIPTION])) {
+                    $this->setIntraspecificDescription(new FHIRString(array_merge($ext, $data[self::FIELD_INTRASPECIFIC_DESCRIPTION])));
+                }
             } else {
                 $this->setIntraspecificDescription(new FHIRString($data[self::FIELD_INTRASPECIFIC_DESCRIPTION]));
             }
@@ -811,7 +817,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAuthor())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -824,26 +829,21 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         if (null !== ($v = $this->getFamily())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FAMILY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGenus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getHybrid())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HYBRID, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIntraspecificDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTRASPECIFIC_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIntraspecificType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTRASPECIFIC_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrganismGeneral())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM_GENERAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSpecies())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIES, null, $v->_getFHIRXMLNamespace()));
         }
@@ -869,8 +869,15 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
             $a[self::FIELD_HYBRID] = $v;
         }
         if (null !== ($v = $this->getIntraspecificDescription())) {
-            $a[self::FIELD_INTRASPECIFIC_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_INTRASPECIFIC_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_INTRASPECIFIC_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getIntraspecificType())) {
             $a[self::FIELD_INTRASPECIFIC_TYPE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRBundleLink extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_LINK;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_RELATION = 'relation';
     const FIELD_RELATION_EXT = '_relation';
     const FIELD_URL = 'url';
@@ -110,6 +106,9 @@ class FHIRBundleLink extends FHIRBackboneElement
      */
     protected $url = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRBundleLink Constructor
      * @param null|array $data
@@ -132,8 +131,12 @@ class FHIRBundleLink extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RELATION] instanceof FHIRString) {
                 $this->setRelation($data[self::FIELD_RELATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RELATION])) {
-                $this->setRelation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_RELATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RELATION])) {
+                    $this->setRelation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_RELATION]] + $ext));
+                } else if (is_array($data[self::FIELD_RELATION])) {
+                    $this->setRelation(new FHIRString(array_merge($ext, $data[self::FIELD_RELATION])));
+                }
             } else {
                 $this->setRelation(new FHIRString($data[self::FIELD_RELATION]));
             }
@@ -144,8 +147,12 @@ class FHIRBundleLink extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URL] instanceof FHIRUri) {
                 $this->setUrl($data[self::FIELD_URL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URL])) {
-                $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+                } else if (is_array($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_URL])));
+                }
             } else {
                 $this->setUrl(new FHIRUri($data[self::FIELD_URL]));
             }
@@ -357,12 +364,26 @@ class FHIRBundleLink extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getRelation())) {
-            $a[self::FIELD_RELATION] = $v->getValue();
-            $a[self::FIELD_RELATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RELATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RELATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RELATION] = $v;
+            }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $a[self::FIELD_URL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URL] = $v;
+            }
         }
         return $a;
     }

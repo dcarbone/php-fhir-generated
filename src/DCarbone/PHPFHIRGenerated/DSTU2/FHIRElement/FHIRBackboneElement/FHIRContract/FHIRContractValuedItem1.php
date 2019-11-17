@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM_1;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_EFFECTIVE_TIME = 'effectiveTime';
     const FIELD_EFFECTIVE_TIME_EXT = '_effectiveTime';
     const FIELD_ENTITY_CODEABLE_CONCEPT = 'entityCodeableConcept';
@@ -97,10 +93,13 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_NET = 'net';
+    const FIELD_NET_EXT = '_net';
     const FIELD_POINTS = 'points';
     const FIELD_POINTS_EXT = '_points';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_UNIT_PRICE = 'unitPrice';
+    const FIELD_UNIT_PRICE_EXT = '_unitPrice';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -207,6 +206,9 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
      */
     protected $unitPrice = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRContractValuedItem1 Constructor
      * @param null|array $data
@@ -229,8 +231,12 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EFFECTIVE_TIME] instanceof FHIRDateTime) {
                 $this->setEffectiveTime($data[self::FIELD_EFFECTIVE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EFFECTIVE_TIME])) {
-                $this->setEffectiveTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EFFECTIVE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EFFECTIVE_TIME])) {
+                    $this->setEffectiveTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EFFECTIVE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_EFFECTIVE_TIME])) {
+                    $this->setEffectiveTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_EFFECTIVE_TIME])));
+                }
             } else {
                 $this->setEffectiveTime(new FHIRDateTime($data[self::FIELD_EFFECTIVE_TIME]));
             }
@@ -255,8 +261,12 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_FACTOR] instanceof FHIRDecimal) {
                 $this->setFactor($data[self::FIELD_FACTOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FACTOR])) {
-                $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_FACTOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FACTOR])) {
+                    $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_FACTOR]] + $ext));
+                } else if (is_array($data[self::FIELD_FACTOR])) {
+                    $this->setFactor(new FHIRDecimal(array_merge($ext, $data[self::FIELD_FACTOR])));
+                }
             } else {
                 $this->setFactor(new FHIRDecimal($data[self::FIELD_FACTOR]));
             }
@@ -267,15 +277,28 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
         if (isset($data[self::FIELD_NET])) {
+            $ext = (isset($data[self::FIELD_NET_EXT]) && is_array($data[self::FIELD_NET_EXT]))
+                ? $data[self::FIELD_NET_EXT]
+                : null;
             if ($data[self::FIELD_NET] instanceof FHIRMoney) {
                 $this->setNet($data[self::FIELD_NET]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NET])) {
+                    $this->setNet(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_NET]] + $ext));
+                } else if (is_array($data[self::FIELD_NET])) {
+                    $this->setNet(new FHIRMoney(array_merge($ext, $data[self::FIELD_NET])));
+                }
             } else {
                 $this->setNet(new FHIRMoney($data[self::FIELD_NET]));
             }
@@ -286,22 +309,44 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_POINTS] instanceof FHIRDecimal) {
                 $this->setPoints($data[self::FIELD_POINTS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_POINTS])) {
-                $this->setPoints(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_POINTS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_POINTS])) {
+                    $this->setPoints(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_POINTS]] + $ext));
+                } else if (is_array($data[self::FIELD_POINTS])) {
+                    $this->setPoints(new FHIRDecimal(array_merge($ext, $data[self::FIELD_POINTS])));
+                }
             } else {
                 $this->setPoints(new FHIRDecimal($data[self::FIELD_POINTS]));
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
+                ? $data[self::FIELD_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRSimpleQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRSimpleQuantity([FHIRSimpleQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRSimpleQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRSimpleQuantity($data[self::FIELD_QUANTITY]));
             }
         }
         if (isset($data[self::FIELD_UNIT_PRICE])) {
+            $ext = (isset($data[self::FIELD_UNIT_PRICE_EXT]) && is_array($data[self::FIELD_UNIT_PRICE_EXT]))
+                ? $data[self::FIELD_UNIT_PRICE_EXT]
+                : null;
             if ($data[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
                 $this->setUnitPrice($data[self::FIELD_UNIT_PRICE]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_UNIT_PRICE])) {
+                    $this->setUnitPrice(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_UNIT_PRICE]] + $ext));
+                } else if (is_array($data[self::FIELD_UNIT_PRICE])) {
+                    $this->setUnitPrice(new FHIRMoney(array_merge($ext, $data[self::FIELD_UNIT_PRICE])));
+                }
             } else {
                 $this->setUnitPrice(new FHIRMoney($data[self::FIELD_UNIT_PRICE]));
             }
@@ -752,33 +797,27 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         if (null !== ($v = $this->getEffectiveTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEntityCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEntityReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getFactor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getNet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPoints())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUnitPrice())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -792,8 +831,15 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEffectiveTime())) {
-            $a[self::FIELD_EFFECTIVE_TIME] = $v->getValue();
-            $a[self::FIELD_EFFECTIVE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EFFECTIVE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EFFECTIVE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EFFECTIVE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getEntityCodeableConcept())) {
             $a[self::FIELD_ENTITY_CODEABLE_CONCEPT] = $v;
@@ -802,24 +848,70 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
             $a[self::FIELD_ENTITY_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = $v->getValue();
-            $a[self::FIELD_FACTOR_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FACTOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FACTOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FACTOR] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NET] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NET_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NET] = $v;
+            }
         }
         if (null !== ($v = $this->getPoints())) {
-            $a[self::FIELD_POINTS] = $v->getValue();
-            $a[self::FIELD_POINTS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_POINTS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_POINTS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_POINTS] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UNIT_PRICE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_UNIT_PRICE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_UNIT_PRICE] = $v;
+            }
         }
         return $a;
     }

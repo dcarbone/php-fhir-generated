@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,10 +72,6 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EXPLANATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_REASON = 'reason';
     const FIELD_REFUSAL_REASON = 'refusalReason';
 
@@ -103,6 +99,9 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
      */
     protected $refusalReason = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImmunizationExplanation Constructor
      * @param null|array $data
@@ -122,6 +121,9 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
         if (isset($data[self::FIELD_REASON])) {
             if (is_array($data[self::FIELD_REASON])) {
                 foreach($data[self::FIELD_REASON] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addReason($v);
                     } else {
@@ -137,6 +139,9 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
         if (isset($data[self::FIELD_REFUSAL_REASON])) {
             if (is_array($data[self::FIELD_REFUSAL_REASON])) {
                 foreach($data[self::FIELD_REFUSAL_REASON] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addRefusalReason($v);
                     } else {
@@ -378,7 +383,6 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getReason())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -396,6 +400,7 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REFUSAL_REASON, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

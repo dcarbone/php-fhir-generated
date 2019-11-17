@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_MANIFEST_DOT_STUDY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ENDPOINT = 'endpoint';
     const FIELD_IMAGING_STUDY = 'imagingStudy';
     const FIELD_SERIES = 'series';
@@ -137,6 +133,9 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      */
     protected $uid = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImagingManifestStudy Constructor
      * @param null|array $data
@@ -156,6 +155,9 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
         if (isset($data[self::FIELD_ENDPOINT])) {
             if (is_array($data[self::FIELD_ENDPOINT])) {
                 foreach($data[self::FIELD_ENDPOINT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addEndpoint($v);
                     } else {
@@ -178,6 +180,9 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
         if (isset($data[self::FIELD_SERIES])) {
             if (is_array($data[self::FIELD_SERIES])) {
                 foreach($data[self::FIELD_SERIES] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRImagingManifestSeries) {
                         $this->addSeries($v);
                     } else {
@@ -196,8 +201,12 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_UID] instanceof FHIROid) {
                 $this->setUid($data[self::FIELD_UID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_UID])) {
-                $this->setUid(new FHIROid([FHIROid::FIELD_VALUE => $data[self::FIELD_UID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_UID])) {
+                    $this->setUid(new FHIROid([FHIROid::FIELD_VALUE => $data[self::FIELD_UID]] + $ext));
+                } else if (is_array($data[self::FIELD_UID])) {
+                    $this->setUid(new FHIROid(array_merge($ext, $data[self::FIELD_UID])));
+                }
             } else {
                 $this->setUid(new FHIROid($data[self::FIELD_UID]));
             }
@@ -522,11 +531,9 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ENDPOINT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getImagingStudy())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGING_STUDY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSeries())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -557,8 +564,15 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
             $a[self::FIELD_SERIES] = $vs;
         }
         if (null !== ($v = $this->getUid())) {
-            $a[self::FIELD_UID] = $v->getValue();
-            $a[self::FIELD_UID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_UID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_UID] = $v;
+            }
         }
         return $a;
     }

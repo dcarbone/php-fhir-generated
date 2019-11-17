@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_OBSERVATION_REPORT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_INSTANT = 'instant';
@@ -142,6 +138,9 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      */
     protected $virtualDevice = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDeviceObservationReport Constructor
      * @param null|array $data
@@ -164,8 +163,12 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -176,8 +179,12 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
                 : null;
             if ($data[self::FIELD_INSTANT] instanceof FHIRInstant) {
                 $this->setInstant($data[self::FIELD_INSTANT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_INSTANT])) {
-                $this->setInstant(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_INSTANT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_INSTANT])) {
+                    $this->setInstant(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_INSTANT]] + $ext));
+                } else if (is_array($data[self::FIELD_INSTANT])) {
+                    $this->setInstant(new FHIRInstant(array_merge($ext, $data[self::FIELD_INSTANT])));
+                }
             } else {
                 $this->setInstant(new FHIRInstant($data[self::FIELD_INSTANT]));
             }
@@ -199,6 +206,9 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
         if (isset($data[self::FIELD_VIRTUAL_DEVICE])) {
             if (is_array($data[self::FIELD_VIRTUAL_DEVICE])) {
                 foreach($data[self::FIELD_VIRTUAL_DEVICE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDeviceObservationReportVirtualDevice) {
                         $this->addVirtualDevice($v);
                     } else {
@@ -518,22 +528,18 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getInstant())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubject())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getVirtualDevice())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -542,6 +548,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VIRTUAL_DEVICE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -552,11 +559,26 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getInstant())) {
-            $a[self::FIELD_INSTANT] = $v->getValue();
-            $a[self::FIELD_INSTANT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_INSTANT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_INSTANT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_INSTANT] = $v;
+            }
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v;

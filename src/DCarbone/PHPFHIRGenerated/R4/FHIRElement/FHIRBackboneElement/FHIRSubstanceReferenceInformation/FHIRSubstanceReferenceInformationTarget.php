@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_TARGET;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
     const FIELD_AMOUNT_QUANTITY_EXT = '_amountQuantity';
     const FIELD_AMOUNT_RANGE = 'amountRange';
@@ -218,6 +214,9 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceReferenceInformationTarget Constructor
      * @param null|array $data
@@ -240,8 +239,12 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AMOUNT_QUANTITY] instanceof FHIRQuantity) {
                 $this->setAmountQuantity($data[self::FIELD_AMOUNT_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT_QUANTITY])) {
-                $this->setAmountQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AMOUNT_QUANTITY])) {
+                    $this->setAmountQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_AMOUNT_QUANTITY])) {
+                    $this->setAmountQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_AMOUNT_QUANTITY])));
+                }
             } else {
                 $this->setAmountQuantity(new FHIRQuantity($data[self::FIELD_AMOUNT_QUANTITY]));
             }
@@ -259,8 +262,12 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AMOUNT_STRING] instanceof FHIRString) {
                 $this->setAmountString($data[self::FIELD_AMOUNT_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT_STRING])) {
-                $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AMOUNT_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AMOUNT_STRING])) {
+                    $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AMOUNT_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_AMOUNT_STRING])) {
+                    $this->setAmountString(new FHIRString(array_merge($ext, $data[self::FIELD_AMOUNT_STRING])));
+                }
             } else {
                 $this->setAmountString(new FHIRString($data[self::FIELD_AMOUNT_STRING]));
             }
@@ -296,6 +303,9 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         if (isset($data[self::FIELD_SOURCE])) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSource($v);
                     } else {
@@ -314,8 +324,12 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TARGET] instanceof FHIRIdentifier) {
                 $this->setTarget($data[self::FIELD_TARGET]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TARGET])) {
-                $this->setTarget(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_TARGET]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TARGET])) {
+                    $this->setTarget(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_TARGET]] + $ext));
+                } else if (is_array($data[self::FIELD_TARGET])) {
+                    $this->setTarget(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_TARGET])));
+                }
             } else {
                 $this->setTarget(new FHIRIdentifier($data[self::FIELD_TARGET]));
             }
@@ -813,34 +827,27 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAmountRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAmountString())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAmountType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getInteraction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTERACTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrganism())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrganismType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -853,7 +860,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getTarget())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -867,14 +873,29 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmountQuantity())) {
-            $a[self::FIELD_AMOUNT_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AMOUNT_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AMOUNT_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getAmountRange())) {
             $a[self::FIELD_AMOUNT_RANGE] = $v;
         }
         if (null !== ($v = $this->getAmountString())) {
-            $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
-            $a[self::FIELD_AMOUNT_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AMOUNT_STRING] = $v;
+            }
         }
         if (null !== ($v = $this->getAmountType())) {
             $a[self::FIELD_AMOUNT_TYPE] = $v;
@@ -892,7 +913,15 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             $a[self::FIELD_SOURCE] = $vs;
         }
         if (null !== ($v = $this->getTarget())) {
-            $a[self::FIELD_TARGET] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TARGET] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TARGET_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TARGET] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

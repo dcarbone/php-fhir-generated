@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_CARE_TEAM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_PROVIDER = 'provider';
     const FIELD_QUALIFICATION = 'qualification';
     const FIELD_RESPONSIBLE = 'responsible';
@@ -151,6 +147,9 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      */
     protected $sequence = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRClaimCareTeam Constructor
      * @param null|array $data
@@ -187,8 +186,12 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RESPONSIBLE] instanceof FHIRBoolean) {
                 $this->setResponsible($data[self::FIELD_RESPONSIBLE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RESPONSIBLE])) {
-                $this->setResponsible(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_RESPONSIBLE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RESPONSIBLE])) {
+                    $this->setResponsible(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_RESPONSIBLE]] + $ext));
+                } else if (is_array($data[self::FIELD_RESPONSIBLE])) {
+                    $this->setResponsible(new FHIRBoolean(array_merge($ext, $data[self::FIELD_RESPONSIBLE])));
+                }
             } else {
                 $this->setResponsible(new FHIRBoolean($data[self::FIELD_RESPONSIBLE]));
             }
@@ -206,8 +209,12 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SEQUENCE] instanceof FHIRPositiveInt) {
                 $this->setSequence($data[self::FIELD_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEQUENCE])) {
-                $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SEQUENCE])));
+                }
             } else {
                 $this->setSequence(new FHIRPositiveInt($data[self::FIELD_SEQUENCE]));
             }
@@ -510,14 +517,12 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
         if (null !== ($v = $this->getProvider())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQualification())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUALIFICATION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getResponsible())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -540,15 +545,29 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
             $a[self::FIELD_QUALIFICATION] = $v;
         }
         if (null !== ($v = $this->getResponsible())) {
-            $a[self::FIELD_RESPONSIBLE] = $v->getValue();
-            $a[self::FIELD_RESPONSIBLE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RESPONSIBLE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RESPONSIBLE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RESPONSIBLE] = $v;
+            }
         }
         if (null !== ($v = $this->getRole())) {
             $a[self::FIELD_ROLE] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEQUENCE] = $v;
+            }
         }
         return $a;
     }

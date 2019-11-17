@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAudit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_DOT_DETAIL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
     const FIELD_VALUE_BASE_64BINARY = 'valueBase64Binary';
@@ -124,6 +120,9 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
      */
     protected $valueString = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRAuditEventDetail Constructor
      * @param null|array $data
@@ -146,8 +145,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRString) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRString(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRString($data[self::FIELD_TYPE]));
             }
@@ -158,8 +161,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_BASE_64BINARY] instanceof FHIRBase64Binary) {
                 $this->setValueBase64Binary($data[self::FIELD_VALUE_BASE_64BINARY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_BASE_64BINARY])) {
-                $this->setValueBase64Binary(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_VALUE_BASE_64BINARY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_BASE_64BINARY])) {
+                    $this->setValueBase64Binary(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_VALUE_BASE_64BINARY]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_BASE_64BINARY])) {
+                    $this->setValueBase64Binary(new FHIRBase64Binary(array_merge($ext, $data[self::FIELD_VALUE_BASE_64BINARY])));
+                }
             } else {
                 $this->setValueBase64Binary(new FHIRBase64Binary($data[self::FIELD_VALUE_BASE_64BINARY]));
             }
@@ -170,8 +177,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_STRING] instanceof FHIRString) {
                 $this->setValueString($data[self::FIELD_VALUE_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_STRING])) {
-                $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_STRING])) {
+                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_STRING])) {
+                    $this->setValueString(new FHIRString(array_merge($ext, $data[self::FIELD_VALUE_STRING])));
+                }
             } else {
                 $this->setValueString(new FHIRString($data[self::FIELD_VALUE_STRING]));
             }
@@ -428,16 +439,37 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            $a[self::FIELD_TYPE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
-            $a[self::FIELD_VALUE_BASE_64BINARY] = $v->getValue();
-            $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_BASE_64BINARY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_BASE_64BINARY] = $v;
+            }
         }
         if (null !== ($v = $this->getValueString())) {
-            $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            $a[self::FIELD_VALUE_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_STRING] = $v;
+            }
         }
         return $a;
     }

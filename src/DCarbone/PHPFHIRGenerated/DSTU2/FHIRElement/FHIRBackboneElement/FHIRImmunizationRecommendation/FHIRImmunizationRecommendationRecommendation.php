@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
     const FIELD_DATE_CRITERION = 'dateCriterion';
@@ -195,6 +191,9 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     protected $vaccineCode = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImmunizationRecommendationRecommendation Constructor
      * @param null|array $data
@@ -217,8 +216,12 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
                 $this->setDate($data[self::FIELD_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATE])) {
-                $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
+                }
             } else {
                 $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
             }
@@ -229,17 +232,24 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_DATE_CRITERION])) {
                 foreach($data[self::FIELD_DATE_CRITERION] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRImmunizationRecommendationDateCriterion) {
                         $this->addDateCriterion($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion([FHIRImmunizationRecommendationDateCriterion::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion([FHIRImmunizationRecommendationDateCriterion::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
                     }
                 }
             } elseif ($data[self::FIELD_DATE_CRITERION] instanceof FHIRImmunizationRecommendationDateCriterion) {
                 $this->addDateCriterion($data[self::FIELD_DATE_CRITERION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATE_CRITERION])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_DATE_CRITERION])) {
                 $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion([FHIRImmunizationRecommendationDateCriterion::FIELD_VALUE => $data[self::FIELD_DATE_CRITERION]] + $ext));
             } else {
                 $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($data[self::FIELD_DATE_CRITERION]));
@@ -251,8 +261,12 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DOSE_NUMBER] instanceof FHIRPositiveInt) {
                 $this->setDoseNumber($data[self::FIELD_DOSE_NUMBER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DOSE_NUMBER])) {
-                $this->setDoseNumber(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DOSE_NUMBER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DOSE_NUMBER])) {
+                    $this->setDoseNumber(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DOSE_NUMBER]] + $ext));
+                } else if (is_array($data[self::FIELD_DOSE_NUMBER])) {
+                    $this->setDoseNumber(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_DOSE_NUMBER])));
+                }
             } else {
                 $this->setDoseNumber(new FHIRPositiveInt($data[self::FIELD_DOSE_NUMBER]));
             }
@@ -274,6 +288,9 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (isset($data[self::FIELD_SUPPORTING_IMMUNIZATION])) {
             if (is_array($data[self::FIELD_SUPPORTING_IMMUNIZATION])) {
                 foreach($data[self::FIELD_SUPPORTING_IMMUNIZATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSupportingImmunization($v);
                     } else {
@@ -289,6 +306,9 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (isset($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION])) {
             if (is_array($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION])) {
                 foreach($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSupportingPatientInformation($v);
                     } else {
@@ -802,7 +822,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDateCriterion())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -811,18 +830,16 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_CRITERION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getDoseNumber())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_NUMBER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getForecastStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FORECAST_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getProtocol())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROTOCOL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSupportingImmunization())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -854,15 +871,45 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $a[self::FIELD_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDateCriterion())) {
-            $a[self::FIELD_DATE_CRITERION] = $vs;
+            $a[self::FIELD_DATE_CRITERION] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_DATE_CRITERION][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_DATE_CRITERION_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_DATE_CRITERION_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_DATE_CRITERION][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getDoseNumber())) {
-            $a[self::FIELD_DOSE_NUMBER] = $v->getValue();
-            $a[self::FIELD_DOSE_NUMBER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOSE_NUMBER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DOSE_NUMBER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DOSE_NUMBER] = $v;
+            }
         }
         if (null !== ($v = $this->getForecastStatus())) {
             $a[self::FIELD_FORECAST_STATUS] = $v;

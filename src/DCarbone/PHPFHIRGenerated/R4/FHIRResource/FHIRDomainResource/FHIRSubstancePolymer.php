@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CLASS = 'class';
     const FIELD_COPOLYMER_CONNECTIVITY = 'copolymerConnectivity';
     const FIELD_GEOMETRY = 'geometry';
@@ -159,6 +155,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      */
     protected $repeat = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstancePolymer Constructor
      * @param null|array $data
@@ -185,6 +184,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($data[self::FIELD_COPOLYMER_CONNECTIVITY])) {
             if (is_array($data[self::FIELD_COPOLYMER_CONNECTIVITY])) {
                 foreach($data[self::FIELD_COPOLYMER_CONNECTIVITY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addCopolymerConnectivity($v);
                     } else {
@@ -210,17 +212,24 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 : null;
             if (is_array($data[self::FIELD_MODIFICATION])) {
                 foreach($data[self::FIELD_MODIFICATION] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addModification($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addModification(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addModification(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_MODIFICATION] instanceof FHIRString) {
                 $this->addModification($data[self::FIELD_MODIFICATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MODIFICATION])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_MODIFICATION])) {
                 $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MODIFICATION]] + $ext));
             } else {
                 $this->addModification(new FHIRString($data[self::FIELD_MODIFICATION]));
@@ -229,6 +238,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($data[self::FIELD_MONOMER_SET])) {
             if (is_array($data[self::FIELD_MONOMER_SET])) {
                 foreach($data[self::FIELD_MONOMER_SET] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstancePolymerMonomerSet) {
                         $this->addMonomerSet($v);
                     } else {
@@ -244,6 +256,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($data[self::FIELD_REPEAT])) {
             if (is_array($data[self::FIELD_REPEAT])) {
                 foreach($data[self::FIELD_REPEAT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstancePolymerRepeat) {
                         $this->addRepeat($v);
                     } else {
@@ -681,11 +696,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getCopolymerConnectivity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -724,6 +737,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REPEAT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -748,8 +762,17 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_MODIFICATION][] = $v->getValue();
-                $a[self::FIELD_MODIFICATION_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_MODIFICATION][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_MODIFICATION_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_MODIFICATION_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_MODIFICATION][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getMonomerSet())) {

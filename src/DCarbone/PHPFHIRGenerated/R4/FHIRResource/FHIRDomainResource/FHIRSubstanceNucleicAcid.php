@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,10 +85,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AREA_OF_HYBRIDISATION = 'areaOfHybridisation';
     const FIELD_AREA_OF_HYBRIDISATION_EXT = '_areaOfHybridisation';
     const FIELD_NUMBER_OF_SUBUNITS = 'numberOfSubunits';
@@ -163,6 +159,9 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      */
     protected $subunit = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceNucleicAcid Constructor
      * @param null|array $data
@@ -185,8 +184,12 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
                 : null;
             if ($data[self::FIELD_AREA_OF_HYBRIDISATION] instanceof FHIRString) {
                 $this->setAreaOfHybridisation($data[self::FIELD_AREA_OF_HYBRIDISATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
-                $this->setAreaOfHybridisation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AREA_OF_HYBRIDISATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
+                    $this->setAreaOfHybridisation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AREA_OF_HYBRIDISATION]] + $ext));
+                } else if (is_array($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
+                    $this->setAreaOfHybridisation(new FHIRString(array_merge($ext, $data[self::FIELD_AREA_OF_HYBRIDISATION])));
+                }
             } else {
                 $this->setAreaOfHybridisation(new FHIRString($data[self::FIELD_AREA_OF_HYBRIDISATION]));
             }
@@ -197,8 +200,12 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
                 : null;
             if ($data[self::FIELD_NUMBER_OF_SUBUNITS] instanceof FHIRInteger) {
                 $this->setNumberOfSubunits($data[self::FIELD_NUMBER_OF_SUBUNITS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
-                $this->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_SUBUNITS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
+                    $this->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_SUBUNITS]] + $ext));
+                } else if (is_array($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
+                    $this->setNumberOfSubunits(new FHIRInteger(array_merge($ext, $data[self::FIELD_NUMBER_OF_SUBUNITS])));
+                }
             } else {
                 $this->setNumberOfSubunits(new FHIRInteger($data[self::FIELD_NUMBER_OF_SUBUNITS]));
             }
@@ -220,6 +227,9 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
         if (isset($data[self::FIELD_SUBUNIT])) {
             if (is_array($data[self::FIELD_SUBUNIT])) {
                 foreach($data[self::FIELD_SUBUNIT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceNucleicAcidSubunit) {
                         $this->addSubunit($v);
                     } else {
@@ -587,15 +597,12 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
         if (null !== ($v = $this->getNumberOfSubunits())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_SUBUNITS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOligoNucleotideType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OLIGO_NUCLEOTIDE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSequenceType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSubunit())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -604,6 +611,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -614,12 +622,26 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAreaOfHybridisation())) {
-            $a[self::FIELD_AREA_OF_HYBRIDISATION] = $v->getValue();
-            $a[self::FIELD_AREA_OF_HYBRIDISATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AREA_OF_HYBRIDISATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AREA_OF_HYBRIDISATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AREA_OF_HYBRIDISATION] = $v;
+            }
         }
         if (null !== ($v = $this->getNumberOfSubunits())) {
-            $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v->getValue();
-            $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMBER_OF_SUBUNITS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v;
+            }
         }
         if (null !== ($v = $this->getOligoNucleotideType())) {
             $a[self::FIELD_OLIGO_NUCLEOTIDE_TYPE] = $v;

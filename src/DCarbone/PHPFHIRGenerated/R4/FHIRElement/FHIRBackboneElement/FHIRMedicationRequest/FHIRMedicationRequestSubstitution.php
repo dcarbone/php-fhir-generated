@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_SUBSTITUTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ALLOWED_BOOLEAN = 'allowedBoolean';
     const FIELD_ALLOWED_BOOLEAN_EXT = '_allowedBoolean';
     const FIELD_ALLOWED_CODEABLE_CONCEPT = 'allowedCodeableConcept';
@@ -128,6 +124,9 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      */
     protected $reason = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationRequestSubstitution Constructor
      * @param null|array $data
@@ -150,8 +149,12 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ALLOWED_BOOLEAN] instanceof FHIRBoolean) {
                 $this->setAllowedBoolean($data[self::FIELD_ALLOWED_BOOLEAN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ALLOWED_BOOLEAN])) {
-                $this->setAllowedBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLOWED_BOOLEAN]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ALLOWED_BOOLEAN])) {
+                    $this->setAllowedBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLOWED_BOOLEAN]] + $ext));
+                } else if (is_array($data[self::FIELD_ALLOWED_BOOLEAN])) {
+                    $this->setAllowedBoolean(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALLOWED_BOOLEAN])));
+                }
             } else {
                 $this->setAllowedBoolean(new FHIRBoolean($data[self::FIELD_ALLOWED_BOOLEAN]));
             }
@@ -392,11 +395,9 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
         if (null !== ($v = $this->getAllowedBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAllowedCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
@@ -410,8 +411,15 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllowedBoolean())) {
-            $a[self::FIELD_ALLOWED_BOOLEAN] = $v->getValue();
-            $a[self::FIELD_ALLOWED_BOOLEAN_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ALLOWED_BOOLEAN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ALLOWED_BOOLEAN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ALLOWED_BOOLEAN] = $v;
+            }
         }
         if (null !== ($v = $this->getAllowedCodeableConcept())) {
             $a[self::FIELD_ALLOWED_CODEABLE_CONCEPT] = $v;

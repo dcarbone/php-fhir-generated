@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_CONTAINER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADDITIVE_CODEABLE_CONCEPT = 'additiveCodeableConcept';
     const FIELD_ADDITIVE_REFERENCE = 'additiveReference';
     const FIELD_CAPACITY = 'capacity';
@@ -186,6 +182,9 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSpecimenContainer Constructor
      * @param null|array $data
@@ -222,8 +221,12 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CAPACITY] instanceof FHIRQuantity) {
                 $this->setCapacity($data[self::FIELD_CAPACITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CAPACITY])) {
-                $this->setCapacity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_CAPACITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CAPACITY])) {
+                    $this->setCapacity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_CAPACITY]] + $ext));
+                } else if (is_array($data[self::FIELD_CAPACITY])) {
+                    $this->setCapacity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_CAPACITY])));
+                }
             } else {
                 $this->setCapacity(new FHIRQuantity($data[self::FIELD_CAPACITY]));
             }
@@ -234,8 +237,12 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -246,17 +253,24 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
             } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
                 $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
@@ -268,8 +282,12 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SPECIMEN_QUANTITY] instanceof FHIRQuantity) {
                 $this->setSpecimenQuantity($data[self::FIELD_SPECIMEN_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SPECIMEN_QUANTITY])) {
-                $this->setSpecimenQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_SPECIMEN_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SPECIMEN_QUANTITY])) {
+                    $this->setSpecimenQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_SPECIMEN_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_SPECIMEN_QUANTITY])) {
+                    $this->setSpecimenQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_SPECIMEN_QUANTITY])));
+                }
             } else {
                 $this->setSpecimenQuantity(new FHIRQuantity($data[self::FIELD_SPECIMEN_QUANTITY]));
             }
@@ -679,22 +697,18 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAdditiveCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAdditiveReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCapacity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAPACITY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -707,7 +721,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
         if (null !== ($v = $this->getSpecimenQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -727,17 +740,56 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
             $a[self::FIELD_ADDITIVE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getCapacity())) {
-            $a[self::FIELD_CAPACITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CAPACITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CAPACITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CAPACITY] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IDENTIFIER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IDENTIFIER][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getSpecimenQuantity())) {
-            $a[self::FIELD_SPECIMEN_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SPECIMEN_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SPECIMEN_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SPECIMEN_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

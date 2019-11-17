@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRImmunizationReaction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_REACTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
     const FIELD_DETAIL = 'detail';
@@ -126,6 +122,9 @@ class FHIRImmunizationReaction extends FHIRBackboneElement
      */
     protected $reported = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImmunizationReaction Constructor
      * @param null|array $data
@@ -148,8 +147,12 @@ class FHIRImmunizationReaction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
                 $this->setDate($data[self::FIELD_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATE])) {
-                $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
+                }
             } else {
                 $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
             }
@@ -167,8 +170,12 @@ class FHIRImmunizationReaction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_REPORTED] instanceof FHIRBoolean) {
                 $this->setReported($data[self::FIELD_REPORTED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REPORTED])) {
-                $this->setReported(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_REPORTED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REPORTED])) {
+                    $this->setReported(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_REPORTED]] + $ext));
+                } else if (is_array($data[self::FIELD_REPORTED])) {
+                    $this->setReported(new FHIRBoolean(array_merge($ext, $data[self::FIELD_REPORTED])));
+                }
             } else {
                 $this->setReported(new FHIRBoolean($data[self::FIELD_REPORTED]));
             }
@@ -399,10 +406,10 @@ class FHIRImmunizationReaction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDetail())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
         }
@@ -419,15 +426,29 @@ class FHIRImmunizationReaction extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $a[self::FIELD_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getDetail())) {
             $a[self::FIELD_DETAIL] = $v;
         }
         if (null !== ($v = $this->getReported())) {
-            $a[self::FIELD_REPORTED] = $v->getValue();
-            $a[self::FIELD_REPORTED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REPORTED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REPORTED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REPORTED] = $v;
+            }
         }
         return $a;
     }

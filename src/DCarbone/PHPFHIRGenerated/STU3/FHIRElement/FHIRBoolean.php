@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRBoolean extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BOOLEAN;
-
-    /** @var string */
-    protected $_xmlns = '';
-
     const FIELD_VALUE = 'value';
 
     /**
@@ -89,6 +85,8 @@ class FHIRBoolean extends FHIRElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRBoolean Constructor

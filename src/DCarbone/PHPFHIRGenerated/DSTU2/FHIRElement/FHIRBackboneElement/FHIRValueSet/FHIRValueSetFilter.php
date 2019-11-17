@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_FILTER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_OP = 'op';
     const FIELD_OP_EXT = '_op';
     const FIELD_PROPERTY = 'property';
@@ -124,6 +120,9 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRValueSetFilter Constructor
      * @param null|array $data
@@ -150,8 +149,12 @@ class FHIRValueSetFilter extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_OP] instanceof FHIRFilterOperator) {
                 $this->setOp($data[self::FIELD_OP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_OP])) {
-                $this->setOp(new FHIRFilterOperator([FHIRFilterOperator::FIELD_VALUE => $data[self::FIELD_OP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_OP])) {
+                    $this->setOp(new FHIRFilterOperator([FHIRFilterOperator::FIELD_VALUE => $data[self::FIELD_OP]] + $ext));
+                } else if (is_array($data[self::FIELD_OP])) {
+                    $this->setOp(new FHIRFilterOperator(array_merge($ext, $data[self::FIELD_OP])));
+                }
             } else {
                 $this->setOp(new FHIRFilterOperator($data[self::FIELD_OP]));
             }
@@ -162,8 +165,12 @@ class FHIRValueSetFilter extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PROPERTY] instanceof FHIRCode) {
                 $this->setProperty($data[self::FIELD_PROPERTY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PROPERTY])) {
-                $this->setProperty(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_PROPERTY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PROPERTY])) {
+                    $this->setProperty(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_PROPERTY]] + $ext));
+                } else if (is_array($data[self::FIELD_PROPERTY])) {
+                    $this->setProperty(new FHIRCode(array_merge($ext, $data[self::FIELD_PROPERTY])));
+                }
             } else {
                 $this->setProperty(new FHIRCode($data[self::FIELD_PROPERTY]));
             }
@@ -174,8 +181,12 @@ class FHIRValueSetFilter extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRCode) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRCode(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRCode($data[self::FIELD_VALUE]));
             }
@@ -406,7 +417,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getOp())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OP, null, $v->_getFHIRXMLNamespace()));
         }
@@ -414,6 +424,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROPERTY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -426,15 +437,37 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getOp())) {
-            $a[self::FIELD_OP] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_OP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_OP] = $v;
+            }
         }
         if (null !== ($v = $this->getProperty())) {
-            $a[self::FIELD_PROPERTY] = $v->getValue();
-            $a[self::FIELD_PROPERTY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PROPERTY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PROPERTY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PROPERTY] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            $a[self::FIELD_VALUE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

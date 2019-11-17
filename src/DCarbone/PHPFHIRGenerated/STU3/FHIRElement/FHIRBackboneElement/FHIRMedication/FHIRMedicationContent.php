@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRMedicationContent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_CONTENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AMOUNT = 'amount';
     const FIELD_AMOUNT_EXT = '_amount';
     const FIELD_ITEM_CODEABLE_CONCEPT = 'itemCodeableConcept';
@@ -125,6 +121,9 @@ class FHIRMedicationContent extends FHIRBackboneElement
      */
     protected $itemReference = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationContent Constructor
      * @param null|array $data
@@ -147,8 +146,12 @@ class FHIRMedicationContent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AMOUNT] instanceof FHIRQuantity) {
                 $this->setAmount($data[self::FIELD_AMOUNT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT])) {
-                $this->setAmount(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AMOUNT])) {
+                    $this->setAmount(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
+                } else if (is_array($data[self::FIELD_AMOUNT])) {
+                    $this->setAmount(new FHIRQuantity(array_merge($ext, $data[self::FIELD_AMOUNT])));
+                }
             } else {
                 $this->setAmount(new FHIRQuantity($data[self::FIELD_AMOUNT]));
             }
@@ -377,11 +380,9 @@ class FHIRMedicationContent extends FHIRBackboneElement
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getItemReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -395,7 +396,15 @@ class FHIRMedicationContent extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmount())) {
-            $a[self::FIELD_AMOUNT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AMOUNT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AMOUNT] = $v;
+            }
         }
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $a[self::FIELD_ITEM_CODEABLE_CONCEPT] = $v;

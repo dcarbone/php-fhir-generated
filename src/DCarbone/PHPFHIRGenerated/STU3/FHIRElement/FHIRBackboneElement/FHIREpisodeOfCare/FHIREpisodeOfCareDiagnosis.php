@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREpi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EPISODE_OF_CARE_DOT_DIAGNOSIS;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONDITION = 'condition';
     const FIELD_RANK = 'rank';
     const FIELD_RANK_EXT = '_rank';
@@ -126,6 +122,9 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      */
     protected $role = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIREpisodeOfCareDiagnosis Constructor
      * @param null|array $data
@@ -155,8 +154,12 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RANK] instanceof FHIRPositiveInt) {
                 $this->setRank($data[self::FIELD_RANK]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RANK])) {
-                $this->setRank(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_RANK]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RANK])) {
+                    $this->setRank(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_RANK]] + $ext));
+                } else if (is_array($data[self::FIELD_RANK])) {
+                    $this->setRank(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_RANK])));
+                }
             } else {
                 $this->setRank(new FHIRPositiveInt($data[self::FIELD_RANK]));
             }
@@ -392,7 +395,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
         if (null !== ($v = $this->getRank())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RANK, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -409,8 +411,15 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
             $a[self::FIELD_CONDITION] = $v;
         }
         if (null !== ($v = $this->getRank())) {
-            $a[self::FIELD_RANK] = $v->getValue();
-            $a[self::FIELD_RANK_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RANK] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RANK_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RANK] = $v;
+            }
         }
         if (null !== ($v = $this->getRole())) {
             $a[self::FIELD_ROLE] = $v;

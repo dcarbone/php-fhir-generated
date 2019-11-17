@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,11 +78,8 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_MAX_DISPENSE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_PERIOD = 'period';
+    const FIELD_PERIOD_EXT = '_period';
     const FIELD_QUANTITY = 'quantity';
     const FIELD_QUANTITY_EXT = '_quantity';
 
@@ -110,6 +107,9 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
      */
     protected $quantity = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgeMaxDispense Constructor
      * @param null|array $data
@@ -127,8 +127,17 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_PERIOD])) {
+            $ext = (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT]))
+                ? $data[self::FIELD_PERIOD_EXT]
+                : null;
             if ($data[self::FIELD_PERIOD] instanceof FHIRDuration) {
                 $this->setPeriod($data[self::FIELD_PERIOD]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PERIOD])) {
+                    $this->setPeriod(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_PERIOD]] + $ext));
+                } else if (is_array($data[self::FIELD_PERIOD])) {
+                    $this->setPeriod(new FHIRDuration(array_merge($ext, $data[self::FIELD_PERIOD])));
+                }
             } else {
                 $this->setPeriod(new FHIRDuration($data[self::FIELD_PERIOD]));
             }
@@ -139,8 +148,12 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
-                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -316,11 +329,9 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -334,10 +345,26 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PERIOD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PERIOD] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         return $a;
     }

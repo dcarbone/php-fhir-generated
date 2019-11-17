@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,6 @@ class FHIRRatio extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RATIO;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DENOMINATOR = 'denominator';
     const FIELD_DENOMINATOR_EXT = '_denominator';
     const FIELD_NUMERATOR = 'numerator';
@@ -109,6 +105,9 @@ class FHIRRatio extends FHIRElement
      */
     protected $numerator = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRRatio Constructor
      * @param null|array $data
@@ -131,8 +130,12 @@ class FHIRRatio extends FHIRElement
                 : null;
             if ($data[self::FIELD_DENOMINATOR] instanceof FHIRQuantity) {
                 $this->setDenominator($data[self::FIELD_DENOMINATOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DENOMINATOR])) {
-                $this->setDenominator(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DENOMINATOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DENOMINATOR])) {
+                    $this->setDenominator(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DENOMINATOR]] + $ext));
+                } else if (is_array($data[self::FIELD_DENOMINATOR])) {
+                    $this->setDenominator(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DENOMINATOR])));
+                }
             } else {
                 $this->setDenominator(new FHIRQuantity($data[self::FIELD_DENOMINATOR]));
             }
@@ -143,8 +146,12 @@ class FHIRRatio extends FHIRElement
                 : null;
             if ($data[self::FIELD_NUMERATOR] instanceof FHIRQuantity) {
                 $this->setNumerator($data[self::FIELD_NUMERATOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NUMERATOR])) {
-                $this->setNumerator(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_NUMERATOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NUMERATOR])) {
+                    $this->setNumerator(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_NUMERATOR]] + $ext));
+                } else if (is_array($data[self::FIELD_NUMERATOR])) {
+                    $this->setNumerator(new FHIRQuantity(array_merge($ext, $data[self::FIELD_NUMERATOR])));
+                }
             } else {
                 $this->setNumerator(new FHIRQuantity($data[self::FIELD_NUMERATOR]));
             }
@@ -324,11 +331,9 @@ class FHIRRatio extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDenominator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DENOMINATOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getNumerator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NUMERATOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -342,10 +347,26 @@ class FHIRRatio extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDenominator())) {
-            $a[self::FIELD_DENOMINATOR] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DENOMINATOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DENOMINATOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DENOMINATOR] = $v;
+            }
         }
         if (null !== ($v = $this->getNumerator())) {
-            $a[self::FIELD_NUMERATOR] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMERATOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUMERATOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NUMERATOR] = $v;
+            }
         }
         return $a;
     }

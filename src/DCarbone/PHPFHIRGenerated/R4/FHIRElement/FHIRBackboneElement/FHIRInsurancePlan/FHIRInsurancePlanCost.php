@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_COST;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_APPLICABILITY = 'applicability';
     const FIELD_QUALIFIERS = 'qualifiers';
     const FIELD_TYPE = 'type';
@@ -140,6 +136,9 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRInsurancePlanCost Constructor
      * @param null|array $data
@@ -170,6 +169,9 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
         if (isset($data[self::FIELD_QUALIFIERS])) {
             if (is_array($data[self::FIELD_QUALIFIERS])) {
                 foreach($data[self::FIELD_QUALIFIERS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addQualifiers($v);
                     } else {
@@ -195,8 +197,12 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRQuantity) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRQuantity(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRQuantity($data[self::FIELD_VALUE]));
             }
@@ -480,11 +486,9 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getApplicability())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_APPLICABILITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getQualifiers())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -497,8 +501,8 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -520,7 +524,15 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

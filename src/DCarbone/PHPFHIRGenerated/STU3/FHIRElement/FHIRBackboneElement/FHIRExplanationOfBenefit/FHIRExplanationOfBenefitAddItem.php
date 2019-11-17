@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,15 +81,12 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_ADD_ITEM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADJUDICATION = 'adjudication';
     const FIELD_ADJUDICATION_EXT = '_adjudication';
     const FIELD_CATEGORY = 'category';
     const FIELD_DETAIL = 'detail';
     const FIELD_FEE = 'fee';
+    const FIELD_FEE_EXT = '_fee';
     const FIELD_MODIFIER = 'modifier';
     const FIELD_NOTE_NUMBER = 'noteNumber';
     const FIELD_NOTE_NUMBER_EXT = '_noteNumber';
@@ -207,6 +204,9 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      */
     protected $service = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRExplanationOfBenefitAddItem Constructor
      * @param null|array $data
@@ -229,17 +229,24 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_ADJUDICATION])) {
                 foreach($data[self::FIELD_ADJUDICATION] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExplanationOfBenefitAdjudication) {
                         $this->addAdjudication($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addAdjudication(new FHIRExplanationOfBenefitAdjudication([FHIRExplanationOfBenefitAdjudication::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addAdjudication(new FHIRExplanationOfBenefitAdjudication([FHIRExplanationOfBenefitAdjudication::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addAdjudication(new FHIRExplanationOfBenefitAdjudication(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addAdjudication(new FHIRExplanationOfBenefitAdjudication($v));
                     }
                 }
             } elseif ($data[self::FIELD_ADJUDICATION] instanceof FHIRExplanationOfBenefitAdjudication) {
                 $this->addAdjudication($data[self::FIELD_ADJUDICATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ADJUDICATION])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_ADJUDICATION])) {
                 $this->addAdjudication(new FHIRExplanationOfBenefitAdjudication([FHIRExplanationOfBenefitAdjudication::FIELD_VALUE => $data[self::FIELD_ADJUDICATION]] + $ext));
             } else {
                 $this->addAdjudication(new FHIRExplanationOfBenefitAdjudication($data[self::FIELD_ADJUDICATION]));
@@ -255,6 +262,9 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
         if (isset($data[self::FIELD_DETAIL])) {
             if (is_array($data[self::FIELD_DETAIL])) {
                 foreach($data[self::FIELD_DETAIL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExplanationOfBenefitDetail1) {
                         $this->addDetail($v);
                     } else {
@@ -268,8 +278,17 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_FEE])) {
+            $ext = (isset($data[self::FIELD_FEE_EXT]) && is_array($data[self::FIELD_FEE_EXT]))
+                ? $data[self::FIELD_FEE_EXT]
+                : null;
             if ($data[self::FIELD_FEE] instanceof FHIRMoney) {
                 $this->setFee($data[self::FIELD_FEE]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FEE])) {
+                    $this->setFee(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_FEE]] + $ext));
+                } else if (is_array($data[self::FIELD_FEE])) {
+                    $this->setFee(new FHIRMoney(array_merge($ext, $data[self::FIELD_FEE])));
+                }
             } else {
                 $this->setFee(new FHIRMoney($data[self::FIELD_FEE]));
             }
@@ -277,6 +296,9 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
         if (isset($data[self::FIELD_MODIFIER])) {
             if (is_array($data[self::FIELD_MODIFIER])) {
                 foreach($data[self::FIELD_MODIFIER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addModifier($v);
                     } else {
@@ -295,17 +317,24 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_NOTE_NUMBER])) {
                 foreach($data[self::FIELD_NOTE_NUMBER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRPositiveInt) {
                         $this->addNoteNumber($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addNoteNumber(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addNoteNumber(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addNoteNumber(new FHIRPositiveInt(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addNoteNumber(new FHIRPositiveInt($v));
                     }
                 }
             } elseif ($data[self::FIELD_NOTE_NUMBER] instanceof FHIRPositiveInt) {
                 $this->addNoteNumber($data[self::FIELD_NOTE_NUMBER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NOTE_NUMBER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_NOTE_NUMBER])) {
                 $this->addNoteNumber(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_NOTE_NUMBER]] + $ext));
             } else {
                 $this->addNoteNumber(new FHIRPositiveInt($data[self::FIELD_NOTE_NUMBER]));
@@ -324,17 +353,24 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_SEQUENCE_LINK_ID])) {
                 foreach($data[self::FIELD_SEQUENCE_LINK_ID] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRPositiveInt) {
                         $this->addSequenceLinkId($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addSequenceLinkId(new FHIRPositiveInt(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addSequenceLinkId(new FHIRPositiveInt($v));
                     }
                 }
             } elseif ($data[self::FIELD_SEQUENCE_LINK_ID] instanceof FHIRPositiveInt) {
                 $this->addSequenceLinkId($data[self::FIELD_SEQUENCE_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEQUENCE_LINK_ID])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_SEQUENCE_LINK_ID])) {
                 $this->addSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE_LINK_ID]] + $ext));
             } else {
                 $this->addSequenceLinkId(new FHIRPositiveInt($data[self::FIELD_SEQUENCE_LINK_ID]));
@@ -939,11 +975,9 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADJUDICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDetail())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -952,11 +986,9 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getFee())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FEE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getModifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -973,7 +1005,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE_NUMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getRevenue())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REVENUE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -985,7 +1016,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_LINK_ID, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getService())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -999,7 +1029,23 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = $vs;
+            $a[self::FIELD_ADJUDICATION] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_ADJUDICATION][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_ADJUDICATION_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_ADJUDICATION_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_ADJUDICATION][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
@@ -1008,7 +1054,15 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
             $a[self::FIELD_DETAIL] = $vs;
         }
         if (null !== ($v = $this->getFee())) {
-            $a[self::FIELD_FEE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FEE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FEE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FEE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getModifier())) {
             $a[self::FIELD_MODIFIER] = $vs;
@@ -1019,8 +1073,17 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_NOTE_NUMBER][] = $v->getValue();
-                $a[self::FIELD_NOTE_NUMBER_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_NOTE_NUMBER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_NOTE_NUMBER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_NOTE_NUMBER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_NOTE_NUMBER][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getRevenue())) {
@@ -1032,8 +1095,17 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_SEQUENCE_LINK_ID][] = $v->getValue();
-                $a[self::FIELD_SEQUENCE_LINK_ID_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_SEQUENCE_LINK_ID][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_SEQUENCE_LINK_ID_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_SEQUENCE_LINK_ID_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_SEQUENCE_LINK_ID][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getService())) {

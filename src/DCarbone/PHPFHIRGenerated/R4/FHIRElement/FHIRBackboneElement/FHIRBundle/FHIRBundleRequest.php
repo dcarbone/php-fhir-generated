@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_REQUEST;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_IF_MATCH = 'ifMatch';
     const FIELD_IF_MATCH_EXT = '_ifMatch';
     const FIELD_IF_MODIFIED_SINCE = 'ifModifiedSince';
@@ -174,6 +170,9 @@ class FHIRBundleRequest extends FHIRBackboneElement
      */
     protected $url = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRBundleRequest Constructor
      * @param null|array $data
@@ -196,8 +195,12 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IF_MATCH] instanceof FHIRString) {
                 $this->setIfMatch($data[self::FIELD_IF_MATCH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IF_MATCH])) {
-                $this->setIfMatch(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IF_MATCH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IF_MATCH])) {
+                    $this->setIfMatch(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IF_MATCH]] + $ext));
+                } else if (is_array($data[self::FIELD_IF_MATCH])) {
+                    $this->setIfMatch(new FHIRString(array_merge($ext, $data[self::FIELD_IF_MATCH])));
+                }
             } else {
                 $this->setIfMatch(new FHIRString($data[self::FIELD_IF_MATCH]));
             }
@@ -208,8 +211,12 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IF_MODIFIED_SINCE] instanceof FHIRInstant) {
                 $this->setIfModifiedSince($data[self::FIELD_IF_MODIFIED_SINCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IF_MODIFIED_SINCE])) {
-                $this->setIfModifiedSince(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_IF_MODIFIED_SINCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IF_MODIFIED_SINCE])) {
+                    $this->setIfModifiedSince(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_IF_MODIFIED_SINCE]] + $ext));
+                } else if (is_array($data[self::FIELD_IF_MODIFIED_SINCE])) {
+                    $this->setIfModifiedSince(new FHIRInstant(array_merge($ext, $data[self::FIELD_IF_MODIFIED_SINCE])));
+                }
             } else {
                 $this->setIfModifiedSince(new FHIRInstant($data[self::FIELD_IF_MODIFIED_SINCE]));
             }
@@ -220,8 +227,12 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IF_NONE_EXIST] instanceof FHIRString) {
                 $this->setIfNoneExist($data[self::FIELD_IF_NONE_EXIST]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IF_NONE_EXIST])) {
-                $this->setIfNoneExist(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IF_NONE_EXIST]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IF_NONE_EXIST])) {
+                    $this->setIfNoneExist(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IF_NONE_EXIST]] + $ext));
+                } else if (is_array($data[self::FIELD_IF_NONE_EXIST])) {
+                    $this->setIfNoneExist(new FHIRString(array_merge($ext, $data[self::FIELD_IF_NONE_EXIST])));
+                }
             } else {
                 $this->setIfNoneExist(new FHIRString($data[self::FIELD_IF_NONE_EXIST]));
             }
@@ -232,8 +243,12 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IF_NONE_MATCH] instanceof FHIRString) {
                 $this->setIfNoneMatch($data[self::FIELD_IF_NONE_MATCH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IF_NONE_MATCH])) {
-                $this->setIfNoneMatch(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IF_NONE_MATCH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IF_NONE_MATCH])) {
+                    $this->setIfNoneMatch(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IF_NONE_MATCH]] + $ext));
+                } else if (is_array($data[self::FIELD_IF_NONE_MATCH])) {
+                    $this->setIfNoneMatch(new FHIRString(array_merge($ext, $data[self::FIELD_IF_NONE_MATCH])));
+                }
             } else {
                 $this->setIfNoneMatch(new FHIRString($data[self::FIELD_IF_NONE_MATCH]));
             }
@@ -244,8 +259,12 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_METHOD] instanceof FHIRHTTPVerb) {
                 $this->setMethod($data[self::FIELD_METHOD]);
-            } elseif ($ext && is_scalar($data[self::FIELD_METHOD])) {
-                $this->setMethod(new FHIRHTTPVerb([FHIRHTTPVerb::FIELD_VALUE => $data[self::FIELD_METHOD]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_METHOD])) {
+                    $this->setMethod(new FHIRHTTPVerb([FHIRHTTPVerb::FIELD_VALUE => $data[self::FIELD_METHOD]] + $ext));
+                } else if (is_array($data[self::FIELD_METHOD])) {
+                    $this->setMethod(new FHIRHTTPVerb(array_merge($ext, $data[self::FIELD_METHOD])));
+                }
             } else {
                 $this->setMethod(new FHIRHTTPVerb($data[self::FIELD_METHOD]));
             }
@@ -256,8 +275,12 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URL] instanceof FHIRUri) {
                 $this->setUrl($data[self::FIELD_URL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URL])) {
-                $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+                } else if (is_array($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_URL])));
+                }
             } else {
                 $this->setUrl(new FHIRUri($data[self::FIELD_URL]));
             }
@@ -650,7 +673,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
         if (null !== ($v = $this->getIfNoneMatch())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IF_NONE_MATCH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
@@ -667,27 +689,70 @@ class FHIRBundleRequest extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIfMatch())) {
-            $a[self::FIELD_IF_MATCH] = $v->getValue();
-            $a[self::FIELD_IF_MATCH_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IF_MATCH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IF_MATCH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IF_MATCH] = $v;
+            }
         }
         if (null !== ($v = $this->getIfModifiedSince())) {
-            $a[self::FIELD_IF_MODIFIED_SINCE] = $v->getValue();
-            $a[self::FIELD_IF_MODIFIED_SINCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IF_MODIFIED_SINCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IF_MODIFIED_SINCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IF_MODIFIED_SINCE] = $v;
+            }
         }
         if (null !== ($v = $this->getIfNoneExist())) {
-            $a[self::FIELD_IF_NONE_EXIST] = $v->getValue();
-            $a[self::FIELD_IF_NONE_EXIST_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IF_NONE_EXIST] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IF_NONE_EXIST_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IF_NONE_EXIST] = $v;
+            }
         }
         if (null !== ($v = $this->getIfNoneMatch())) {
-            $a[self::FIELD_IF_NONE_MATCH] = $v->getValue();
-            $a[self::FIELD_IF_NONE_MATCH_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IF_NONE_MATCH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IF_NONE_MATCH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IF_NONE_MATCH] = $v;
+            }
         }
         if (null !== ($v = $this->getMethod())) {
-            $a[self::FIELD_METHOD] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_METHOD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_METHOD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_METHOD] = $v;
+            }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $a[self::FIELD_URL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URL] = $v;
+            }
         }
         return $a;
     }

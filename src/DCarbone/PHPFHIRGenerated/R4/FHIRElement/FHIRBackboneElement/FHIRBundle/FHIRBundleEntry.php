@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_FULL_URL = 'fullUrl';
     const FIELD_FULL_URL_EXT = '_fullUrl';
     const FIELD_LINK = 'link';
@@ -158,6 +154,9 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     protected $search = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRBundleEntry Constructor
      * @param null|array $data
@@ -180,8 +179,12 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_FULL_URL] instanceof FHIRUri) {
                 $this->setFullUrl($data[self::FIELD_FULL_URL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FULL_URL])) {
-                $this->setFullUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_FULL_URL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FULL_URL])) {
+                    $this->setFullUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_FULL_URL]] + $ext));
+                } else if (is_array($data[self::FIELD_FULL_URL])) {
+                    $this->setFullUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_FULL_URL])));
+                }
             } else {
                 $this->setFullUrl(new FHIRUri($data[self::FIELD_FULL_URL]));
             }
@@ -189,6 +192,9 @@ class FHIRBundleEntry extends FHIRBackboneElement
         if (isset($data[self::FIELD_LINK])) {
             if (is_array($data[self::FIELD_LINK])) {
                 foreach($data[self::FIELD_LINK] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRBundleLink) {
                         $this->addLink($v);
                     } else {
@@ -594,7 +600,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
         if (null !== ($v = $this->getFullUrl())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FULL_URL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -607,16 +612,13 @@ class FHIRBundleEntry extends FHIRBackboneElement
         if (null !== ($v = $this->getRequest())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResource())) {
             $tsxe = $sxe->addChild(self::FIELD_RESOURCE);
             $v->xmlSerialize($tsxe->addChild($v->_getFHIRTypeName(), null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResponse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSearch())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH, null, $v->_getFHIRXMLNamespace()));
         }
@@ -630,8 +632,15 @@ class FHIRBundleEntry extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFullUrl())) {
-            $a[self::FIELD_FULL_URL] = $v->getValue();
-            $a[self::FIELD_FULL_URL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FULL_URL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FULL_URL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FULL_URL] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLink())) {
             $a[self::FIELD_LINK] = $vs;

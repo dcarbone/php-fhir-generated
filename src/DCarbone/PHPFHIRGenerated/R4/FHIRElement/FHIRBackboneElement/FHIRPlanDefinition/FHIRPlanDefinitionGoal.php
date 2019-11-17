@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADDRESSES = 'addresses';
     const FIELD_CATEGORY = 'category';
     const FIELD_DESCRIPTION = 'description';
@@ -183,6 +179,9 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     protected $target = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRPlanDefinitionGoal Constructor
      * @param null|array $data
@@ -202,6 +201,9 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         if (isset($data[self::FIELD_ADDRESSES])) {
             if (is_array($data[self::FIELD_ADDRESSES])) {
                 foreach($data[self::FIELD_ADDRESSES] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addAddresses($v);
                     } else {
@@ -231,6 +233,9 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         if (isset($data[self::FIELD_DOCUMENTATION])) {
             if (is_array($data[self::FIELD_DOCUMENTATION])) {
                 foreach($data[self::FIELD_DOCUMENTATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRRelatedArtifact) {
                         $this->addDocumentation($v);
                     } else {
@@ -260,6 +265,9 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         if (isset($data[self::FIELD_TARGET])) {
             if (is_array($data[self::FIELD_TARGET])) {
                 foreach($data[self::FIELD_TARGET] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRPlanDefinitionTarget) {
                         $this->addTarget($v);
                     } else {
@@ -720,7 +728,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAddresses())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -733,11 +740,9 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDocumentation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -750,11 +755,9 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         if (null !== ($v = $this->getPriority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStart())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_START, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getTarget())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -763,6 +766,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

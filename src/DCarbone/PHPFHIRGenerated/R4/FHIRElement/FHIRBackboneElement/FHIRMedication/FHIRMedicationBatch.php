@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRMedicationBatch extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_BATCH;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_EXPIRATION_DATE = 'expirationDate';
     const FIELD_EXPIRATION_DATE_EXT = '_expirationDate';
     const FIELD_LOT_NUMBER = 'lotNumber';
@@ -114,6 +110,9 @@ class FHIRMedicationBatch extends FHIRBackboneElement
      */
     protected $lotNumber = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationBatch Constructor
      * @param null|array $data
@@ -136,8 +135,12 @@ class FHIRMedicationBatch extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EXPIRATION_DATE] instanceof FHIRDateTime) {
                 $this->setExpirationDate($data[self::FIELD_EXPIRATION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EXPIRATION_DATE])) {
-                $this->setExpirationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EXPIRATION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EXPIRATION_DATE])) {
+                    $this->setExpirationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EXPIRATION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_EXPIRATION_DATE])) {
+                    $this->setExpirationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_EXPIRATION_DATE])));
+                }
             } else {
                 $this->setExpirationDate(new FHIRDateTime($data[self::FIELD_EXPIRATION_DATE]));
             }
@@ -148,8 +151,12 @@ class FHIRMedicationBatch extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_LOT_NUMBER] instanceof FHIRString) {
                 $this->setLotNumber($data[self::FIELD_LOT_NUMBER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LOT_NUMBER])) {
-                $this->setLotNumber(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LOT_NUMBER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LOT_NUMBER])) {
+                    $this->setLotNumber(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LOT_NUMBER]] + $ext));
+                } else if (is_array($data[self::FIELD_LOT_NUMBER])) {
+                    $this->setLotNumber(new FHIRString(array_merge($ext, $data[self::FIELD_LOT_NUMBER])));
+                }
             } else {
                 $this->setLotNumber(new FHIRString($data[self::FIELD_LOT_NUMBER]));
             }
@@ -365,12 +372,26 @@ class FHIRMedicationBatch extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExpirationDate())) {
-            $a[self::FIELD_EXPIRATION_DATE] = $v->getValue();
-            $a[self::FIELD_EXPIRATION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXPIRATION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EXPIRATION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EXPIRATION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getLotNumber())) {
-            $a[self::FIELD_LOT_NUMBER] = $v->getValue();
-            $a[self::FIELD_LOT_NUMBER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LOT_NUMBER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LOT_NUMBER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LOT_NUMBER] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,11 +82,8 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_INITIAL_FILL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DURATION = 'duration';
+    const FIELD_DURATION_EXT = '_duration';
     const FIELD_QUANTITY = 'quantity';
     const FIELD_QUANTITY_EXT = '_quantity';
 
@@ -114,6 +111,9 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement
      */
     protected $quantity = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationRequestInitialFill Constructor
      * @param null|array $data
@@ -131,8 +131,17 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_DURATION])) {
+            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT]))
+                ? $data[self::FIELD_DURATION_EXT]
+                : null;
             if ($data[self::FIELD_DURATION] instanceof FHIRDuration) {
                 $this->setDuration($data[self::FIELD_DURATION]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DURATION])) {
+                    $this->setDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
+                } else if (is_array($data[self::FIELD_DURATION])) {
+                    $this->setDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_DURATION])));
+                }
             } else {
                 $this->setDuration(new FHIRDuration($data[self::FIELD_DURATION]));
             }
@@ -143,8 +152,12 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
-                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -320,11 +333,9 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -338,10 +349,26 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDuration())) {
-            $a[self::FIELD_DURATION] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DURATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DURATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DURATION] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         return $a;
     }

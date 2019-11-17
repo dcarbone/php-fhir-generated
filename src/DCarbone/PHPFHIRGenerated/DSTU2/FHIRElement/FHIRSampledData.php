@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRSampledData extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DATA = 'data';
     const FIELD_DATA_EXT = '_data';
     const FIELD_DIMENSIONS = 'dimensions';
@@ -93,6 +89,7 @@ class FHIRSampledData extends FHIRElement
     const FIELD_LOWER_LIMIT = 'lowerLimit';
     const FIELD_LOWER_LIMIT_EXT = '_lowerLimit';
     const FIELD_ORIGIN = 'origin';
+    const FIELD_ORIGIN_EXT = '_origin';
     const FIELD_PERIOD = 'period';
     const FIELD_PERIOD_EXT = '_period';
     const FIELD_UPPER_LIMIT = 'upperLimit';
@@ -179,6 +176,9 @@ class FHIRSampledData extends FHIRElement
      */
     protected $upperLimit = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSampledData Constructor
      * @param null|array $data
@@ -201,8 +201,12 @@ class FHIRSampledData extends FHIRElement
                 : null;
             if ($data[self::FIELD_DATA] instanceof FHIRSampledDataDataType) {
                 $this->setData($data[self::FIELD_DATA]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATA])) {
-                $this->setData(new FHIRSampledDataDataType([FHIRSampledDataDataType::FIELD_VALUE => $data[self::FIELD_DATA]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATA])) {
+                    $this->setData(new FHIRSampledDataDataType([FHIRSampledDataDataType::FIELD_VALUE => $data[self::FIELD_DATA]] + $ext));
+                } else if (is_array($data[self::FIELD_DATA])) {
+                    $this->setData(new FHIRSampledDataDataType(array_merge($ext, $data[self::FIELD_DATA])));
+                }
             } else {
                 $this->setData(new FHIRSampledDataDataType($data[self::FIELD_DATA]));
             }
@@ -213,8 +217,12 @@ class FHIRSampledData extends FHIRElement
                 : null;
             if ($data[self::FIELD_DIMENSIONS] instanceof FHIRPositiveInt) {
                 $this->setDimensions($data[self::FIELD_DIMENSIONS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DIMENSIONS])) {
-                $this->setDimensions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DIMENSIONS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DIMENSIONS])) {
+                    $this->setDimensions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DIMENSIONS]] + $ext));
+                } else if (is_array($data[self::FIELD_DIMENSIONS])) {
+                    $this->setDimensions(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_DIMENSIONS])));
+                }
             } else {
                 $this->setDimensions(new FHIRPositiveInt($data[self::FIELD_DIMENSIONS]));
             }
@@ -225,8 +233,12 @@ class FHIRSampledData extends FHIRElement
                 : null;
             if ($data[self::FIELD_FACTOR] instanceof FHIRDecimal) {
                 $this->setFactor($data[self::FIELD_FACTOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FACTOR])) {
-                $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_FACTOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FACTOR])) {
+                    $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_FACTOR]] + $ext));
+                } else if (is_array($data[self::FIELD_FACTOR])) {
+                    $this->setFactor(new FHIRDecimal(array_merge($ext, $data[self::FIELD_FACTOR])));
+                }
             } else {
                 $this->setFactor(new FHIRDecimal($data[self::FIELD_FACTOR]));
             }
@@ -237,15 +249,28 @@ class FHIRSampledData extends FHIRElement
                 : null;
             if ($data[self::FIELD_LOWER_LIMIT] instanceof FHIRDecimal) {
                 $this->setLowerLimit($data[self::FIELD_LOWER_LIMIT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LOWER_LIMIT])) {
-                $this->setLowerLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_LOWER_LIMIT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LOWER_LIMIT])) {
+                    $this->setLowerLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_LOWER_LIMIT]] + $ext));
+                } else if (is_array($data[self::FIELD_LOWER_LIMIT])) {
+                    $this->setLowerLimit(new FHIRDecimal(array_merge($ext, $data[self::FIELD_LOWER_LIMIT])));
+                }
             } else {
                 $this->setLowerLimit(new FHIRDecimal($data[self::FIELD_LOWER_LIMIT]));
             }
         }
         if (isset($data[self::FIELD_ORIGIN])) {
+            $ext = (isset($data[self::FIELD_ORIGIN_EXT]) && is_array($data[self::FIELD_ORIGIN_EXT]))
+                ? $data[self::FIELD_ORIGIN_EXT]
+                : null;
             if ($data[self::FIELD_ORIGIN] instanceof FHIRSimpleQuantity) {
                 $this->setOrigin($data[self::FIELD_ORIGIN]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ORIGIN])) {
+                    $this->setOrigin(new FHIRSimpleQuantity([FHIRSimpleQuantity::FIELD_VALUE => $data[self::FIELD_ORIGIN]] + $ext));
+                } else if (is_array($data[self::FIELD_ORIGIN])) {
+                    $this->setOrigin(new FHIRSimpleQuantity(array_merge($ext, $data[self::FIELD_ORIGIN])));
+                }
             } else {
                 $this->setOrigin(new FHIRSimpleQuantity($data[self::FIELD_ORIGIN]));
             }
@@ -256,8 +281,12 @@ class FHIRSampledData extends FHIRElement
                 : null;
             if ($data[self::FIELD_PERIOD] instanceof FHIRDecimal) {
                 $this->setPeriod($data[self::FIELD_PERIOD]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PERIOD])) {
-                $this->setPeriod(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PERIOD]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PERIOD])) {
+                    $this->setPeriod(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PERIOD]] + $ext));
+                } else if (is_array($data[self::FIELD_PERIOD])) {
+                    $this->setPeriod(new FHIRDecimal(array_merge($ext, $data[self::FIELD_PERIOD])));
+                }
             } else {
                 $this->setPeriod(new FHIRDecimal($data[self::FIELD_PERIOD]));
             }
@@ -268,8 +297,12 @@ class FHIRSampledData extends FHIRElement
                 : null;
             if ($data[self::FIELD_UPPER_LIMIT] instanceof FHIRDecimal) {
                 $this->setUpperLimit($data[self::FIELD_UPPER_LIMIT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_UPPER_LIMIT])) {
-                $this->setUpperLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_UPPER_LIMIT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_UPPER_LIMIT])) {
+                    $this->setUpperLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_UPPER_LIMIT]] + $ext));
+                } else if (is_array($data[self::FIELD_UPPER_LIMIT])) {
+                    $this->setUpperLimit(new FHIRDecimal(array_merge($ext, $data[self::FIELD_UPPER_LIMIT])));
+                }
             } else {
                 $this->setUpperLimit(new FHIRDecimal($data[self::FIELD_UPPER_LIMIT]));
             }
@@ -692,7 +725,6 @@ class FHIRSampledData extends FHIRElement
         if (null !== ($v = $this->getLowerLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LOWER_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrigin())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGIN, null, $v->_getFHIRXMLNamespace()));
         }
@@ -712,31 +744,81 @@ class FHIRSampledData extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getData())) {
-            $a[self::FIELD_DATA] = $v->getValue();
-            $a[self::FIELD_DATA_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATA] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATA_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATA] = $v;
+            }
         }
         if (null !== ($v = $this->getDimensions())) {
-            $a[self::FIELD_DIMENSIONS] = $v->getValue();
-            $a[self::FIELD_DIMENSIONS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DIMENSIONS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DIMENSIONS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DIMENSIONS] = $v;
+            }
         }
         if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = $v->getValue();
-            $a[self::FIELD_FACTOR_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FACTOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FACTOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FACTOR] = $v;
+            }
         }
         if (null !== ($v = $this->getLowerLimit())) {
-            $a[self::FIELD_LOWER_LIMIT] = $v->getValue();
-            $a[self::FIELD_LOWER_LIMIT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LOWER_LIMIT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LOWER_LIMIT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LOWER_LIMIT] = $v;
+            }
         }
         if (null !== ($v = $this->getOrigin())) {
-            $a[self::FIELD_ORIGIN] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ORIGIN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ORIGIN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ORIGIN] = $v;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v->getValue();
-            $a[self::FIELD_PERIOD_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PERIOD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PERIOD] = $v;
+            }
         }
         if (null !== ($v = $this->getUpperLimit())) {
-            $a[self::FIELD_UPPER_LIMIT] = $v->getValue();
-            $a[self::FIELD_UPPER_LIMIT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UPPER_LIMIT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_UPPER_LIMIT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_UPPER_LIMIT] = $v;
+            }
         }
         return $a;
     }

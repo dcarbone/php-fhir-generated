@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DEFINITION_DOT_SPECIALIZATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_SYSTEM_TYPE = 'systemType';
     const FIELD_SYSTEM_TYPE_EXT = '_systemType';
     const FIELD_VERSION = 'version';
@@ -109,6 +105,9 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement
      */
     protected $version = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDeviceDefinitionSpecialization Constructor
      * @param null|array $data
@@ -131,8 +130,12 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SYSTEM_TYPE] instanceof FHIRString) {
                 $this->setSystemType($data[self::FIELD_SYSTEM_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SYSTEM_TYPE])) {
-                $this->setSystemType(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SYSTEM_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SYSTEM_TYPE])) {
+                    $this->setSystemType(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SYSTEM_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_SYSTEM_TYPE])) {
+                    $this->setSystemType(new FHIRString(array_merge($ext, $data[self::FIELD_SYSTEM_TYPE])));
+                }
             } else {
                 $this->setSystemType(new FHIRString($data[self::FIELD_SYSTEM_TYPE]));
             }
@@ -143,8 +146,12 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VERSION] instanceof FHIRString) {
                 $this->setVersion($data[self::FIELD_VERSION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERSION])) {
-                $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERSION])) {
+                    $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION]] + $ext));
+                } else if (is_array($data[self::FIELD_VERSION])) {
+                    $this->setVersion(new FHIRString(array_merge($ext, $data[self::FIELD_VERSION])));
+                }
             } else {
                 $this->setVersion(new FHIRString($data[self::FIELD_VERSION]));
             }
@@ -354,12 +361,26 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSystemType())) {
-            $a[self::FIELD_SYSTEM_TYPE] = $v->getValue();
-            $a[self::FIELD_SYSTEM_TYPE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SYSTEM_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SYSTEM_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SYSTEM_TYPE] = $v;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = $v->getValue();
-            $a[self::FIELD_VERSION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERSION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERSION] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,10 +89,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ATTESTATION = 'attestation';
     const FIELD_FAILURE_ACTION = 'failureAction';
     const FIELD_FREQUENCY = 'frequency';
@@ -281,6 +277,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      */
     protected $validator = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRVerificationResult Constructor
      * @param null|array $data
@@ -324,8 +323,12 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if ($data[self::FIELD_LAST_PERFORMED] instanceof FHIRDateTime) {
                 $this->setLastPerformed($data[self::FIELD_LAST_PERFORMED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LAST_PERFORMED])) {
-                $this->setLastPerformed(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_LAST_PERFORMED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LAST_PERFORMED])) {
+                    $this->setLastPerformed(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_LAST_PERFORMED]] + $ext));
+                } else if (is_array($data[self::FIELD_LAST_PERFORMED])) {
+                    $this->setLastPerformed(new FHIRDateTime(array_merge($ext, $data[self::FIELD_LAST_PERFORMED])));
+                }
             } else {
                 $this->setLastPerformed(new FHIRDateTime($data[self::FIELD_LAST_PERFORMED]));
             }
@@ -343,8 +346,12 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if ($data[self::FIELD_NEXT_SCHEDULED] instanceof FHIRDate) {
                 $this->setNextScheduled($data[self::FIELD_NEXT_SCHEDULED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NEXT_SCHEDULED])) {
-                $this->setNextScheduled(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_NEXT_SCHEDULED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NEXT_SCHEDULED])) {
+                    $this->setNextScheduled(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_NEXT_SCHEDULED]] + $ext));
+                } else if (is_array($data[self::FIELD_NEXT_SCHEDULED])) {
+                    $this->setNextScheduled(new FHIRDate(array_merge($ext, $data[self::FIELD_NEXT_SCHEDULED])));
+                }
             } else {
                 $this->setNextScheduled(new FHIRDate($data[self::FIELD_NEXT_SCHEDULED]));
             }
@@ -352,6 +359,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_PRIMARY_SOURCE])) {
             if (is_array($data[self::FIELD_PRIMARY_SOURCE])) {
                 foreach($data[self::FIELD_PRIMARY_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRVerificationResultPrimarySource) {
                         $this->addPrimarySource($v);
                     } else {
@@ -370,8 +380,12 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRStatus([FHIRStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRStatus([FHIRStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRStatus($data[self::FIELD_STATUS]));
             }
@@ -382,8 +396,12 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if ($data[self::FIELD_STATUS_DATE] instanceof FHIRDateTime) {
                 $this->setStatusDate($data[self::FIELD_STATUS_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS_DATE])) {
-                $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STATUS_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS_DATE])) {
+                    $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STATUS_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS_DATE])) {
+                    $this->setStatusDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_STATUS_DATE])));
+                }
             } else {
                 $this->setStatusDate(new FHIRDateTime($data[self::FIELD_STATUS_DATE]));
             }
@@ -391,6 +409,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_TARGET])) {
             if (is_array($data[self::FIELD_TARGET])) {
                 foreach($data[self::FIELD_TARGET] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addTarget($v);
                     } else {
@@ -409,17 +430,24 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if (is_array($data[self::FIELD_TARGET_LOCATION])) {
                 foreach($data[self::FIELD_TARGET_LOCATION] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addTargetLocation($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addTargetLocation(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addTargetLocation(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_TARGET_LOCATION] instanceof FHIRString) {
                 $this->addTargetLocation($data[self::FIELD_TARGET_LOCATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TARGET_LOCATION])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_TARGET_LOCATION])) {
                 $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TARGET_LOCATION]] + $ext));
             } else {
                 $this->addTargetLocation(new FHIRString($data[self::FIELD_TARGET_LOCATION]));
@@ -428,6 +456,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_VALIDATION_PROCESS])) {
             if (is_array($data[self::FIELD_VALIDATION_PROCESS])) {
                 foreach($data[self::FIELD_VALIDATION_PROCESS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addValidationProcess($v);
                     } else {
@@ -450,6 +481,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_VALIDATOR])) {
             if (is_array($data[self::FIELD_VALIDATOR])) {
                 foreach($data[self::FIELD_VALIDATOR] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRVerificationResultValidator) {
                         $this->addValidator($v);
                     } else {
@@ -1245,29 +1279,24 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAttestation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getFailureAction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FAILURE_ACTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getFrequency())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FREQUENCY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getLastPerformed())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_PERFORMED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getNeed())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NEED, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getNextScheduled())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NEXT_SCHEDULED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getPrimarySource())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1283,7 +1312,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getStatusDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getTarget())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1292,6 +1320,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getTargetLocation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1313,7 +1342,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getValidationType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getValidator())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1322,6 +1350,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATOR, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -1341,25 +1370,54 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_FREQUENCY] = $v;
         }
         if (null !== ($v = $this->getLastPerformed())) {
-            $a[self::FIELD_LAST_PERFORMED] = $v->getValue();
-            $a[self::FIELD_LAST_PERFORMED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LAST_PERFORMED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LAST_PERFORMED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LAST_PERFORMED] = $v;
+            }
         }
         if (null !== ($v = $this->getNeed())) {
             $a[self::FIELD_NEED] = $v;
         }
         if (null !== ($v = $this->getNextScheduled())) {
-            $a[self::FIELD_NEXT_SCHEDULED] = $v->getValue();
-            $a[self::FIELD_NEXT_SCHEDULED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NEXT_SCHEDULED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NEXT_SCHEDULED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NEXT_SCHEDULED] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPrimarySource())) {
             $a[self::FIELD_PRIMARY_SOURCE] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getStatusDate())) {
-            $a[self::FIELD_STATUS_DATE] = $v->getValue();
-            $a[self::FIELD_STATUS_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS_DATE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $vs;
@@ -1370,8 +1428,17 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_TARGET_LOCATION][] = $v->getValue();
-                $a[self::FIELD_TARGET_LOCATION_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_TARGET_LOCATION][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_TARGET_LOCATION_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_TARGET_LOCATION_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_TARGET_LOCATION][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getValidationProcess())) {

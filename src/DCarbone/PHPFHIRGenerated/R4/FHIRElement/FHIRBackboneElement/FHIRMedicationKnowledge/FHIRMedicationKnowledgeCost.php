@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_COST;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COST = 'cost';
     const FIELD_COST_EXT = '_cost';
     const FIELD_SOURCE = 'source';
@@ -124,6 +120,9 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgeCost Constructor
      * @param null|array $data
@@ -146,8 +145,12 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COST] instanceof FHIRMoney) {
                 $this->setCost($data[self::FIELD_COST]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COST])) {
-                $this->setCost(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_COST]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COST])) {
+                    $this->setCost(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_COST]] + $ext));
+                } else if (is_array($data[self::FIELD_COST])) {
+                    $this->setCost(new FHIRMoney(array_merge($ext, $data[self::FIELD_COST])));
+                }
             } else {
                 $this->setCost(new FHIRMoney($data[self::FIELD_COST]));
             }
@@ -158,8 +161,12 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SOURCE] instanceof FHIRString) {
                 $this->setSource($data[self::FIELD_SOURCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SOURCE])) {
-                $this->setSource(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SOURCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SOURCE])) {
+                    $this->setSource(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SOURCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SOURCE])) {
+                    $this->setSource(new FHIRString(array_merge($ext, $data[self::FIELD_SOURCE])));
+                }
             } else {
                 $this->setSource(new FHIRString($data[self::FIELD_SOURCE]));
             }
@@ -386,14 +393,12 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCost())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COST, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -407,11 +412,26 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCost())) {
-            $a[self::FIELD_COST] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COST] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COST_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COST] = $v;
+            }
         }
         if (null !== ($v = $this->getSource())) {
-            $a[self::FIELD_SOURCE] = $v->getValue();
-            $a[self::FIELD_SOURCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SOURCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SOURCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SOURCE] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

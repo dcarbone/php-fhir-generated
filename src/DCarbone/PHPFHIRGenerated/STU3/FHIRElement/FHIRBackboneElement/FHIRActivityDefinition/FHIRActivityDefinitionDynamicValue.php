@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAct
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ACTIVITY_DEFINITION_DOT_DYNAMIC_VALUE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_EXPRESSION = 'expression';
@@ -137,6 +133,9 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      */
     protected $path = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRActivityDefinitionDynamicValue Constructor
      * @param null|array $data
@@ -159,8 +158,12 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -171,8 +174,12 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EXPRESSION] instanceof FHIRString) {
                 $this->setExpression($data[self::FIELD_EXPRESSION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EXPRESSION])) {
-                $this->setExpression(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_EXPRESSION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EXPRESSION])) {
+                    $this->setExpression(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_EXPRESSION]] + $ext));
+                } else if (is_array($data[self::FIELD_EXPRESSION])) {
+                    $this->setExpression(new FHIRString(array_merge($ext, $data[self::FIELD_EXPRESSION])));
+                }
             } else {
                 $this->setExpression(new FHIRString($data[self::FIELD_EXPRESSION]));
             }
@@ -183,8 +190,12 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_LANGUAGE] instanceof FHIRString) {
                 $this->setLanguage($data[self::FIELD_LANGUAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LANGUAGE])) {
-                $this->setLanguage(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LANGUAGE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LANGUAGE])) {
+                    $this->setLanguage(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LANGUAGE]] + $ext));
+                } else if (is_array($data[self::FIELD_LANGUAGE])) {
+                    $this->setLanguage(new FHIRString(array_merge($ext, $data[self::FIELD_LANGUAGE])));
+                }
             } else {
                 $this->setLanguage(new FHIRString($data[self::FIELD_LANGUAGE]));
             }
@@ -195,8 +206,12 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PATH] instanceof FHIRString) {
                 $this->setPath($data[self::FIELD_PATH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PATH])) {
-                $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PATH])) {
+                    $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATH]] + $ext));
+                } else if (is_array($data[self::FIELD_PATH])) {
+                    $this->setPath(new FHIRString(array_merge($ext, $data[self::FIELD_PATH])));
+                }
             } else {
                 $this->setPath(new FHIRString($data[self::FIELD_PATH]));
             }
@@ -482,6 +497,7 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -504,20 +520,48 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getExpression())) {
-            $a[self::FIELD_EXPRESSION] = $v->getValue();
-            $a[self::FIELD_EXPRESSION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXPRESSION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EXPRESSION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EXPRESSION] = $v;
+            }
         }
         if (null !== ($v = $this->getLanguage())) {
-            $a[self::FIELD_LANGUAGE] = $v->getValue();
-            $a[self::FIELD_LANGUAGE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LANGUAGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LANGUAGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LANGUAGE] = $v;
+            }
         }
         if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = $v->getValue();
-            $a[self::FIELD_PATH_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PATH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PATH] = $v;
+            }
         }
         return $a;
     }

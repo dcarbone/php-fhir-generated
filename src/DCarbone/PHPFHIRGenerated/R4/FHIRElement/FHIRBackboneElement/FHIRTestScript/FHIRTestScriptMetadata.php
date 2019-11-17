@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_METADATA;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CAPABILITY = 'capability';
     const FIELD_LINK = 'link';
 
@@ -105,6 +101,9 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      */
     protected $link = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTestScriptMetadata Constructor
      * @param null|array $data
@@ -124,6 +123,9 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
         if (isset($data[self::FIELD_CAPABILITY])) {
             if (is_array($data[self::FIELD_CAPABILITY])) {
                 foreach($data[self::FIELD_CAPABILITY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTestScriptCapability) {
                         $this->addCapability($v);
                     } else {
@@ -139,6 +141,9 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
         if (isset($data[self::FIELD_LINK])) {
             if (is_array($data[self::FIELD_LINK])) {
                 foreach($data[self::FIELD_LINK] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTestScriptLink) {
                         $this->addLink($v);
                     } else {
@@ -371,7 +376,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCapability())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -389,6 +393,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

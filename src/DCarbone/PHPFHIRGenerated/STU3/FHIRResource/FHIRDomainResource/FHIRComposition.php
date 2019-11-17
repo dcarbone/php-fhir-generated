@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,10 +94,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPOSITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ATTESTER = 'attester';
     const FIELD_AUTHOR = 'author';
     const FIELD_CLASS = 'class';
@@ -314,6 +310,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRComposition Constructor
      * @param null|array $data
@@ -333,6 +332,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($data[self::FIELD_ATTESTER])) {
             if (is_array($data[self::FIELD_ATTESTER])) {
                 foreach($data[self::FIELD_ATTESTER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCompositionAttester) {
                         $this->addAttester($v);
                     } else {
@@ -348,6 +350,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($data[self::FIELD_AUTHOR])) {
             if (is_array($data[self::FIELD_AUTHOR])) {
                 foreach($data[self::FIELD_AUTHOR] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addAuthor($v);
                     } else {
@@ -373,8 +378,12 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 : null;
             if ($data[self::FIELD_CONFIDENTIALITY] instanceof FHIRConfidentialityClassification) {
                 $this->setConfidentiality($data[self::FIELD_CONFIDENTIALITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CONFIDENTIALITY])) {
-                $this->setConfidentiality(new FHIRConfidentialityClassification([FHIRConfidentialityClassification::FIELD_VALUE => $data[self::FIELD_CONFIDENTIALITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CONFIDENTIALITY])) {
+                    $this->setConfidentiality(new FHIRConfidentialityClassification([FHIRConfidentialityClassification::FIELD_VALUE => $data[self::FIELD_CONFIDENTIALITY]] + $ext));
+                } else if (is_array($data[self::FIELD_CONFIDENTIALITY])) {
+                    $this->setConfidentiality(new FHIRConfidentialityClassification(array_merge($ext, $data[self::FIELD_CONFIDENTIALITY])));
+                }
             } else {
                 $this->setConfidentiality(new FHIRConfidentialityClassification($data[self::FIELD_CONFIDENTIALITY]));
             }
@@ -392,8 +401,12 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 : null;
             if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
                 $this->setDate($data[self::FIELD_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATE])) {
-                $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
+                }
             } else {
                 $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
             }
@@ -408,6 +421,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($data[self::FIELD_EVENT])) {
             if (is_array($data[self::FIELD_EVENT])) {
                 foreach($data[self::FIELD_EVENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCompositionEvent) {
                         $this->addEvent($v);
                     } else {
@@ -426,8 +442,12 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -435,6 +455,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($data[self::FIELD_RELATES_TO])) {
             if (is_array($data[self::FIELD_RELATES_TO])) {
                 foreach($data[self::FIELD_RELATES_TO] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCompositionRelatesTo) {
                         $this->addRelatesTo($v);
                     } else {
@@ -450,6 +473,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($data[self::FIELD_SECTION])) {
             if (is_array($data[self::FIELD_SECTION])) {
                 foreach($data[self::FIELD_SECTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCompositionSection) {
                         $this->addSection($v);
                     } else {
@@ -468,8 +494,12 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRCompositionStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRCompositionStatus([FHIRCompositionStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRCompositionStatus([FHIRCompositionStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRCompositionStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRCompositionStatus($data[self::FIELD_STATUS]));
             }
@@ -487,8 +517,12 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 : null;
             if ($data[self::FIELD_TITLE] instanceof FHIRString) {
                 $this->setTitle($data[self::FIELD_TITLE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TITLE])) {
-                $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TITLE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TITLE])) {
+                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TITLE]] + $ext));
+                } else if (is_array($data[self::FIELD_TITLE])) {
+                    $this->setTitle(new FHIRString(array_merge($ext, $data[self::FIELD_TITLE])));
+                }
             } else {
                 $this->setTitle(new FHIRString($data[self::FIELD_TITLE]));
             }
@@ -1350,7 +1384,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getAuthor())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1359,26 +1392,21 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getConfidentiality())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONFIDENTIALITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCustodian())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CUSTODIAN, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getEvent())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1387,11 +1415,9 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRelatesTo())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1400,7 +1426,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATES_TO, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSection())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1409,18 +1434,15 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SECTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubject())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTitle())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1443,14 +1465,29 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
             $a[self::FIELD_CLASS] = $v;
         }
         if (null !== ($v = $this->getConfidentiality())) {
-            $a[self::FIELD_CONFIDENTIALITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CONFIDENTIALITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CONFIDENTIALITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CONFIDENTIALITY] = $v;
+            }
         }
         if (null !== ($v = $this->getCustodian())) {
             $a[self::FIELD_CUSTODIAN] = $v;
         }
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $a[self::FIELD_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
@@ -1459,7 +1496,15 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
             $a[self::FIELD_EVENT] = $vs;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRelatesTo())) {
             $a[self::FIELD_RELATES_TO] = $vs;
@@ -1468,14 +1513,29 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
             $a[self::FIELD_SECTION] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
         if (null !== ($v = $this->getTitle())) {
-            $a[self::FIELD_TITLE] = $v->getValue();
-            $a[self::FIELD_TITLE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TITLE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TITLE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TITLE] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

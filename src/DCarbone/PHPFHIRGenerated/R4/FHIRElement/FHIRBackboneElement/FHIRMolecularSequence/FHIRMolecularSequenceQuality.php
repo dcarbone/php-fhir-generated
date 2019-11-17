@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_QUALITY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_END = 'end';
     const FIELD_END_EXT = '_end';
     const FIELD_F_SCORE = 'fScore';
@@ -306,6 +302,9 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMolecularSequenceQuality Constructor
      * @param null|array $data
@@ -328,8 +327,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_END] instanceof FHIRInteger) {
                 $this->setEnd($data[self::FIELD_END]);
-            } elseif ($ext && is_scalar($data[self::FIELD_END])) {
-                $this->setEnd(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_END]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_END])) {
+                    $this->setEnd(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_END]] + $ext));
+                } else if (is_array($data[self::FIELD_END])) {
+                    $this->setEnd(new FHIRInteger(array_merge($ext, $data[self::FIELD_END])));
+                }
             } else {
                 $this->setEnd(new FHIRInteger($data[self::FIELD_END]));
             }
@@ -340,8 +343,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_F_SCORE] instanceof FHIRDecimal) {
                 $this->setFScore($data[self::FIELD_F_SCORE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_F_SCORE])) {
-                $this->setFScore(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_F_SCORE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_F_SCORE])) {
+                    $this->setFScore(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_F_SCORE]] + $ext));
+                } else if (is_array($data[self::FIELD_F_SCORE])) {
+                    $this->setFScore(new FHIRDecimal(array_merge($ext, $data[self::FIELD_F_SCORE])));
+                }
             } else {
                 $this->setFScore(new FHIRDecimal($data[self::FIELD_F_SCORE]));
             }
@@ -352,8 +359,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_GT_FP] instanceof FHIRDecimal) {
                 $this->setGtFP($data[self::FIELD_GT_FP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_GT_FP])) {
-                $this->setGtFP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_GT_FP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_GT_FP])) {
+                    $this->setGtFP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_GT_FP]] + $ext));
+                } else if (is_array($data[self::FIELD_GT_FP])) {
+                    $this->setGtFP(new FHIRDecimal(array_merge($ext, $data[self::FIELD_GT_FP])));
+                }
             } else {
                 $this->setGtFP(new FHIRDecimal($data[self::FIELD_GT_FP]));
             }
@@ -371,8 +382,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PRECISION] instanceof FHIRDecimal) {
                 $this->setPrecision($data[self::FIELD_PRECISION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PRECISION])) {
-                $this->setPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PRECISION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PRECISION])) {
+                    $this->setPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PRECISION]] + $ext));
+                } else if (is_array($data[self::FIELD_PRECISION])) {
+                    $this->setPrecision(new FHIRDecimal(array_merge($ext, $data[self::FIELD_PRECISION])));
+                }
             } else {
                 $this->setPrecision(new FHIRDecimal($data[self::FIELD_PRECISION]));
             }
@@ -383,8 +398,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUERY_FP] instanceof FHIRDecimal) {
                 $this->setQueryFP($data[self::FIELD_QUERY_FP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUERY_FP])) {
-                $this->setQueryFP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_QUERY_FP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUERY_FP])) {
+                    $this->setQueryFP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_QUERY_FP]] + $ext));
+                } else if (is_array($data[self::FIELD_QUERY_FP])) {
+                    $this->setQueryFP(new FHIRDecimal(array_merge($ext, $data[self::FIELD_QUERY_FP])));
+                }
             } else {
                 $this->setQueryFP(new FHIRDecimal($data[self::FIELD_QUERY_FP]));
             }
@@ -395,8 +414,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUERY_TP] instanceof FHIRDecimal) {
                 $this->setQueryTP($data[self::FIELD_QUERY_TP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUERY_TP])) {
-                $this->setQueryTP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_QUERY_TP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUERY_TP])) {
+                    $this->setQueryTP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_QUERY_TP]] + $ext));
+                } else if (is_array($data[self::FIELD_QUERY_TP])) {
+                    $this->setQueryTP(new FHIRDecimal(array_merge($ext, $data[self::FIELD_QUERY_TP])));
+                }
             } else {
                 $this->setQueryTP(new FHIRDecimal($data[self::FIELD_QUERY_TP]));
             }
@@ -407,8 +430,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RECALL] instanceof FHIRDecimal) {
                 $this->setRecall($data[self::FIELD_RECALL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RECALL])) {
-                $this->setRecall(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_RECALL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RECALL])) {
+                    $this->setRecall(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_RECALL]] + $ext));
+                } else if (is_array($data[self::FIELD_RECALL])) {
+                    $this->setRecall(new FHIRDecimal(array_merge($ext, $data[self::FIELD_RECALL])));
+                }
             } else {
                 $this->setRecall(new FHIRDecimal($data[self::FIELD_RECALL]));
             }
@@ -426,8 +453,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SCORE] instanceof FHIRQuantity) {
                 $this->setScore($data[self::FIELD_SCORE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SCORE])) {
-                $this->setScore(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_SCORE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SCORE])) {
+                    $this->setScore(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_SCORE]] + $ext));
+                } else if (is_array($data[self::FIELD_SCORE])) {
+                    $this->setScore(new FHIRQuantity(array_merge($ext, $data[self::FIELD_SCORE])));
+                }
             } else {
                 $this->setScore(new FHIRQuantity($data[self::FIELD_SCORE]));
             }
@@ -445,8 +476,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_START] instanceof FHIRInteger) {
                 $this->setStart($data[self::FIELD_START]);
-            } elseif ($ext && is_scalar($data[self::FIELD_START])) {
-                $this->setStart(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_START]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_START])) {
+                    $this->setStart(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_START]] + $ext));
+                } else if (is_array($data[self::FIELD_START])) {
+                    $this->setStart(new FHIRInteger(array_merge($ext, $data[self::FIELD_START])));
+                }
             } else {
                 $this->setStart(new FHIRInteger($data[self::FIELD_START]));
             }
@@ -457,8 +492,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TRUTH_FN] instanceof FHIRDecimal) {
                 $this->setTruthFN($data[self::FIELD_TRUTH_FN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TRUTH_FN])) {
-                $this->setTruthFN(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_TRUTH_FN]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TRUTH_FN])) {
+                    $this->setTruthFN(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_TRUTH_FN]] + $ext));
+                } else if (is_array($data[self::FIELD_TRUTH_FN])) {
+                    $this->setTruthFN(new FHIRDecimal(array_merge($ext, $data[self::FIELD_TRUTH_FN])));
+                }
             } else {
                 $this->setTruthFN(new FHIRDecimal($data[self::FIELD_TRUTH_FN]));
             }
@@ -469,8 +508,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TRUTH_TP] instanceof FHIRDecimal) {
                 $this->setTruthTP($data[self::FIELD_TRUTH_TP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TRUTH_TP])) {
-                $this->setTruthTP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_TRUTH_TP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TRUTH_TP])) {
+                    $this->setTruthTP(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_TRUTH_TP]] + $ext));
+                } else if (is_array($data[self::FIELD_TRUTH_TP])) {
+                    $this->setTruthTP(new FHIRDecimal(array_merge($ext, $data[self::FIELD_TRUTH_TP])));
+                }
             } else {
                 $this->setTruthTP(new FHIRDecimal($data[self::FIELD_TRUTH_TP]));
             }
@@ -481,8 +524,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRQualityType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRQualityType([FHIRQualityType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRQualityType([FHIRQualityType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRQualityType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRQualityType($data[self::FIELD_TYPE]));
             }
@@ -1258,7 +1305,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         if (null !== ($v = $this->getGtFP())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GT_FP, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1274,15 +1320,12 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         if (null !== ($v = $this->getRecall())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RECALL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRoc())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROC, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getScore())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SCORE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStandardSequence())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STANDARD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1295,7 +1338,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         if (null !== ($v = $this->getTruthTP())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TRUTH_TP, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1309,59 +1351,145 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEnd())) {
-            $a[self::FIELD_END] = $v->getValue();
-            $a[self::FIELD_END_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_END] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_END_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_END] = $v;
+            }
         }
         if (null !== ($v = $this->getFScore())) {
-            $a[self::FIELD_F_SCORE] = $v->getValue();
-            $a[self::FIELD_F_SCORE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_F_SCORE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_F_SCORE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_F_SCORE] = $v;
+            }
         }
         if (null !== ($v = $this->getGtFP())) {
-            $a[self::FIELD_GT_FP] = $v->getValue();
-            $a[self::FIELD_GT_FP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_GT_FP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_GT_FP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_GT_FP] = $v;
+            }
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getPrecision())) {
-            $a[self::FIELD_PRECISION] = $v->getValue();
-            $a[self::FIELD_PRECISION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRECISION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PRECISION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PRECISION] = $v;
+            }
         }
         if (null !== ($v = $this->getQueryFP())) {
-            $a[self::FIELD_QUERY_FP] = $v->getValue();
-            $a[self::FIELD_QUERY_FP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUERY_FP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUERY_FP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUERY_FP] = $v;
+            }
         }
         if (null !== ($v = $this->getQueryTP())) {
-            $a[self::FIELD_QUERY_TP] = $v->getValue();
-            $a[self::FIELD_QUERY_TP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUERY_TP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUERY_TP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUERY_TP] = $v;
+            }
         }
         if (null !== ($v = $this->getRecall())) {
-            $a[self::FIELD_RECALL] = $v->getValue();
-            $a[self::FIELD_RECALL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RECALL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RECALL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RECALL] = $v;
+            }
         }
         if (null !== ($v = $this->getRoc())) {
             $a[self::FIELD_ROC] = $v;
         }
         if (null !== ($v = $this->getScore())) {
-            $a[self::FIELD_SCORE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SCORE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SCORE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SCORE] = $v;
+            }
         }
         if (null !== ($v = $this->getStandardSequence())) {
             $a[self::FIELD_STANDARD_SEQUENCE] = $v;
         }
         if (null !== ($v = $this->getStart())) {
-            $a[self::FIELD_START] = $v->getValue();
-            $a[self::FIELD_START_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_START] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_START_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_START] = $v;
+            }
         }
         if (null !== ($v = $this->getTruthFN())) {
-            $a[self::FIELD_TRUTH_FN] = $v->getValue();
-            $a[self::FIELD_TRUTH_FN_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TRUTH_FN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TRUTH_FN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TRUTH_FN] = $v;
+            }
         }
         if (null !== ($v = $this->getTruthTP())) {
-            $a[self::FIELD_TRUTH_TP] = $v->getValue();
-            $a[self::FIELD_TRUTH_TP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TRUTH_TP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TRUTH_TP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TRUTH_TP] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return $a;
     }

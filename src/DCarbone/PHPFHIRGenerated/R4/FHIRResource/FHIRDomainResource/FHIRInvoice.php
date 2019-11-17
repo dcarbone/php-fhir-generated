@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,10 +91,6 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INVOICE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACCOUNT = 'account';
     const FIELD_CANCELLED_REASON = 'cancelledReason';
     const FIELD_CANCELLED_REASON_EXT = '_cancelledReason';
@@ -310,6 +306,9 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRInvoice Constructor
      * @param null|array $data
@@ -339,8 +338,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if ($data[self::FIELD_CANCELLED_REASON] instanceof FHIRString) {
                 $this->setCancelledReason($data[self::FIELD_CANCELLED_REASON]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CANCELLED_REASON])) {
-                $this->setCancelledReason(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CANCELLED_REASON]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CANCELLED_REASON])) {
+                    $this->setCancelledReason(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CANCELLED_REASON]] + $ext));
+                } else if (is_array($data[self::FIELD_CANCELLED_REASON])) {
+                    $this->setCancelledReason(new FHIRString(array_merge($ext, $data[self::FIELD_CANCELLED_REASON])));
+                }
             } else {
                 $this->setCancelledReason(new FHIRString($data[self::FIELD_CANCELLED_REASON]));
             }
@@ -351,8 +354,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
                 $this->setDate($data[self::FIELD_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATE])) {
-                $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
+                }
             } else {
                 $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
             }
@@ -363,17 +370,24 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
             } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
                 $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
@@ -389,6 +403,9 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (isset($data[self::FIELD_LINE_ITEM])) {
             if (is_array($data[self::FIELD_LINE_ITEM])) {
                 foreach($data[self::FIELD_LINE_ITEM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRInvoiceLineItem) {
                         $this->addLineItem($v);
                     } else {
@@ -404,6 +421,9 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (isset($data[self::FIELD_NOTE])) {
             if (is_array($data[self::FIELD_NOTE])) {
                 foreach($data[self::FIELD_NOTE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAnnotation) {
                         $this->addNote($v);
                     } else {
@@ -419,6 +439,9 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (isset($data[self::FIELD_PARTICIPANT])) {
             if (is_array($data[self::FIELD_PARTICIPANT])) {
                 foreach($data[self::FIELD_PARTICIPANT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRInvoiceParticipant) {
                         $this->addParticipant($v);
                     } else {
@@ -437,8 +460,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if ($data[self::FIELD_PAYMENT_TERMS] instanceof FHIRMarkdown) {
                 $this->setPaymentTerms($data[self::FIELD_PAYMENT_TERMS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PAYMENT_TERMS])) {
-                $this->setPaymentTerms(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_PAYMENT_TERMS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PAYMENT_TERMS])) {
+                    $this->setPaymentTerms(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_PAYMENT_TERMS]] + $ext));
+                } else if (is_array($data[self::FIELD_PAYMENT_TERMS])) {
+                    $this->setPaymentTerms(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_PAYMENT_TERMS])));
+                }
             } else {
                 $this->setPaymentTerms(new FHIRMarkdown($data[self::FIELD_PAYMENT_TERMS]));
             }
@@ -456,8 +483,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRInvoiceStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRInvoiceStatus([FHIRInvoiceStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRInvoiceStatus([FHIRInvoiceStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRInvoiceStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRInvoiceStatus($data[self::FIELD_STATUS]));
             }
@@ -475,8 +506,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if ($data[self::FIELD_TOTAL_GROSS] instanceof FHIRMoney) {
                 $this->setTotalGross($data[self::FIELD_TOTAL_GROSS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TOTAL_GROSS])) {
-                $this->setTotalGross(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_TOTAL_GROSS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TOTAL_GROSS])) {
+                    $this->setTotalGross(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_TOTAL_GROSS]] + $ext));
+                } else if (is_array($data[self::FIELD_TOTAL_GROSS])) {
+                    $this->setTotalGross(new FHIRMoney(array_merge($ext, $data[self::FIELD_TOTAL_GROSS])));
+                }
             } else {
                 $this->setTotalGross(new FHIRMoney($data[self::FIELD_TOTAL_GROSS]));
             }
@@ -487,8 +522,12 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 : null;
             if ($data[self::FIELD_TOTAL_NET] instanceof FHIRMoney) {
                 $this->setTotalNet($data[self::FIELD_TOTAL_NET]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TOTAL_NET])) {
-                $this->setTotalNet(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_TOTAL_NET]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TOTAL_NET])) {
+                    $this->setTotalNet(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_TOTAL_NET]] + $ext));
+                } else if (is_array($data[self::FIELD_TOTAL_NET])) {
+                    $this->setTotalNet(new FHIRMoney(array_merge($ext, $data[self::FIELD_TOTAL_NET])));
+                }
             } else {
                 $this->setTotalNet(new FHIRMoney($data[self::FIELD_TOTAL_NET]));
             }
@@ -496,6 +535,9 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (isset($data[self::FIELD_TOTAL_PRICE_COMPONENT])) {
             if (is_array($data[self::FIELD_TOTAL_PRICE_COMPONENT])) {
                 foreach($data[self::FIELD_TOTAL_PRICE_COMPONENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRInvoicePriceComponent) {
                         $this->addTotalPriceComponent($v);
                     } else {
@@ -1359,7 +1401,6 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAccount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACCOUNT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1369,7 +1410,6 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1382,7 +1422,6 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (null !== ($v = $this->getIssuer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getLineItem())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1409,30 +1448,25 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPaymentTerms())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_TERMS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRecipient())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubject())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTotalGross())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL_GROSS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTotalNet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL_NET, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getTotalPriceComponent())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1458,15 +1492,45 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $a[self::FIELD_ACCOUNT] = $v;
         }
         if (null !== ($v = $this->getCancelledReason())) {
-            $a[self::FIELD_CANCELLED_REASON] = $v->getValue();
-            $a[self::FIELD_CANCELLED_REASON_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CANCELLED_REASON] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CANCELLED_REASON_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CANCELLED_REASON] = $v;
+            }
         }
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $a[self::FIELD_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IDENTIFIER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IDENTIFIER][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getIssuer())) {
             $a[self::FIELD_ISSUER] = $v;
@@ -1481,23 +1545,54 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $a[self::FIELD_PARTICIPANT] = $vs;
         }
         if (null !== ($v = $this->getPaymentTerms())) {
-            $a[self::FIELD_PAYMENT_TERMS] = $v->getValue();
-            $a[self::FIELD_PAYMENT_TERMS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PAYMENT_TERMS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PAYMENT_TERMS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PAYMENT_TERMS] = $v;
+            }
         }
         if (null !== ($v = $this->getRecipient())) {
             $a[self::FIELD_RECIPIENT] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
         if (null !== ($v = $this->getTotalGross())) {
-            $a[self::FIELD_TOTAL_GROSS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TOTAL_GROSS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TOTAL_GROSS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TOTAL_GROSS] = $v;
+            }
         }
         if (null !== ($v = $this->getTotalNet())) {
-            $a[self::FIELD_TOTAL_NET] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TOTAL_NET] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TOTAL_NET_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TOTAL_NET] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTotalPriceComponent())) {
             $a[self::FIELD_TOTAL_PRICE_COMPONENT] = $vs;

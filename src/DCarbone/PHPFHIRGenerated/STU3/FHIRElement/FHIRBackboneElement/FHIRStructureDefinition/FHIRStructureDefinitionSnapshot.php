@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_DEFINITION_DOT_SNAPSHOT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ELEMENT = 'element';
 
     /**
@@ -95,6 +91,9 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition[]
      */
     protected $element = [];
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRStructureDefinitionSnapshot Constructor
@@ -115,6 +114,9 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement
         if (isset($data[self::FIELD_ELEMENT])) {
             if (is_array($data[self::FIELD_ELEMENT])) {
                 foreach($data[self::FIELD_ELEMENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRElementDefinition) {
                         $this->addElement($v);
                     } else {

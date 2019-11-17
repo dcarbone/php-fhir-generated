@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_EXCEPT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACTION = 'action';
     const FIELD_ACTOR = 'actor';
     const FIELD_CLASS = 'class';
@@ -217,6 +213,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConsentExcept Constructor
      * @param null|array $data
@@ -236,6 +235,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_ACTION])) {
             if (is_array($data[self::FIELD_ACTION])) {
                 foreach($data[self::FIELD_ACTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addAction($v);
                     } else {
@@ -251,6 +253,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_ACTOR])) {
             if (is_array($data[self::FIELD_ACTOR])) {
                 foreach($data[self::FIELD_ACTOR] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRConsentActor1) {
                         $this->addActor($v);
                     } else {
@@ -266,6 +271,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_CLASS])) {
             if (is_array($data[self::FIELD_CLASS])) {
                 foreach($data[self::FIELD_CLASS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addClass($v);
                     } else {
@@ -281,6 +289,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_CODE])) {
             if (is_array($data[self::FIELD_CODE])) {
                 foreach($data[self::FIELD_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addCode($v);
                     } else {
@@ -296,6 +307,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_DATA])) {
             if (is_array($data[self::FIELD_DATA])) {
                 foreach($data[self::FIELD_DATA] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRConsentData1) {
                         $this->addData($v);
                     } else {
@@ -325,6 +339,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_PURPOSE])) {
             if (is_array($data[self::FIELD_PURPOSE])) {
                 foreach($data[self::FIELD_PURPOSE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addPurpose($v);
                     } else {
@@ -340,6 +357,9 @@ class FHIRConsentExcept extends FHIRBackboneElement
         if (isset($data[self::FIELD_SECURITY_LABEL])) {
             if (is_array($data[self::FIELD_SECURITY_LABEL])) {
                 foreach($data[self::FIELD_SECURITY_LABEL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addSecurityLabel($v);
                     } else {
@@ -358,8 +378,12 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRConsentExceptType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRConsentExceptType([FHIRConsentExceptType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRConsentExceptType([FHIRConsentExceptType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRConsentExceptType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRConsentExceptType($data[self::FIELD_TYPE]));
             }
@@ -1026,7 +1050,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getActor())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1035,7 +1058,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ACTOR, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getClass())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1044,7 +1066,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1053,7 +1074,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getData())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1062,15 +1082,12 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDataPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATA_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getPurpose())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1079,7 +1096,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSecurityLabel())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1088,7 +1104,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1129,7 +1144,15 @@ class FHIRConsentExcept extends FHIRBackboneElement
             $a[self::FIELD_SECURITY_LABEL] = $vs;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return $a;
     }

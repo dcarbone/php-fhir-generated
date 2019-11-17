@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRDeviceProperty extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_PROPERTY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_TYPE = 'type';
     const FIELD_VALUE_CODE = 'valueCode';
     const FIELD_VALUE_QUANTITY = 'valueQuantity';
@@ -126,6 +122,9 @@ class FHIRDeviceProperty extends FHIRBackboneElement
      */
     protected $valueQuantity = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDeviceProperty Constructor
      * @param null|array $data
@@ -152,6 +151,9 @@ class FHIRDeviceProperty extends FHIRBackboneElement
         if (isset($data[self::FIELD_VALUE_CODE])) {
             if (is_array($data[self::FIELD_VALUE_CODE])) {
                 foreach($data[self::FIELD_VALUE_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addValueCode($v);
                     } else {
@@ -170,17 +172,24 @@ class FHIRDeviceProperty extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_VALUE_QUANTITY])) {
                 foreach($data[self::FIELD_VALUE_QUANTITY] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRQuantity) {
                         $this->addValueQuantity($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addValueQuantity(new FHIRQuantity(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addValueQuantity(new FHIRQuantity($v));
                     }
                 }
             } elseif ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->addValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_QUANTITY])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_VALUE_QUANTITY])) {
                 $this->addValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE_QUANTITY]] + $ext));
             } else {
                 $this->addValueQuantity(new FHIRQuantity($data[self::FIELD_VALUE_QUANTITY]));
@@ -453,11 +462,9 @@ class FHIRDeviceProperty extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getValueCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -475,6 +482,7 @@ class FHIRDeviceProperty extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -491,7 +499,23 @@ class FHIRDeviceProperty extends FHIRBackboneElement
             $a[self::FIELD_VALUE_CODE] = $vs;
         }
         if ([] !== ($vs = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $vs;
+            $a[self::FIELD_VALUE_QUANTITY] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_VALUE_QUANTITY][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_VALUE_QUANTITY_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_VALUE_QUANTITY_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_VALUE_QUANTITY][] = $v;
+                }
+            }
         }
         return $a;
     }

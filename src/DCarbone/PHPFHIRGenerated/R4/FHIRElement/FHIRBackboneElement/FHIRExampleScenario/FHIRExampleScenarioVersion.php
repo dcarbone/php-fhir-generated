@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_VERSION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_VERSION_ID = 'versionId';
@@ -113,6 +109,9 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
      */
     protected $versionId = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRExampleScenarioVersion Constructor
      * @param null|array $data
@@ -135,8 +134,12 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRMarkdown) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRMarkdown($data[self::FIELD_DESCRIPTION]));
             }
@@ -147,8 +150,12 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VERSION_ID] instanceof FHIRString) {
                 $this->setVersionId($data[self::FIELD_VERSION_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERSION_ID])) {
-                $this->setVersionId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERSION_ID])) {
+                    $this->setVersionId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_VERSION_ID])) {
+                    $this->setVersionId(new FHIRString(array_merge($ext, $data[self::FIELD_VERSION_ID])));
+                }
             } else {
                 $this->setVersionId(new FHIRString($data[self::FIELD_VERSION_ID]));
             }
@@ -366,12 +373,26 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getVersionId())) {
-            $a[self::FIELD_VERSION_ID] = $v->getValue();
-            $a[self::FIELD_VERSION_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERSION_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERSION_ID] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRHe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_HEALTHCARE_SERVICE_DOT_SERVICE_TYPE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_SPECIALTY = 'specialty';
     const FIELD_TYPE = 'type';
 
@@ -109,6 +105,9 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRHealthcareServiceServiceType Constructor
      * @param null|array $data
@@ -128,6 +127,9 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
         if (isset($data[self::FIELD_SPECIALTY])) {
             if (is_array($data[self::FIELD_SPECIALTY])) {
                 foreach($data[self::FIELD_SPECIALTY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addSpecialty($v);
                     } else {
@@ -350,7 +352,6 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getSpecialty())) {
             foreach($vs as $v) {
                 if (null === $v) {

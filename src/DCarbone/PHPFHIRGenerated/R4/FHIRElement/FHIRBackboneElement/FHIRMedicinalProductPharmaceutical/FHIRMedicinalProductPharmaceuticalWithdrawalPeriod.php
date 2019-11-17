@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PHARMACEUTICAL_DOT_WITHDRAWAL_PERIOD;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_SUPPORTING_INFORMATION = 'supportingInformation';
     const FIELD_SUPPORTING_INFORMATION_EXT = '_supportingInformation';
     const FIELD_TISSUE = 'tissue';
@@ -126,6 +122,9 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicinalProductPharmaceuticalWithdrawalPeriod Constructor
      * @param null|array $data
@@ -152,8 +151,12 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
                 : null;
             if ($data[self::FIELD_SUPPORTING_INFORMATION] instanceof FHIRString) {
                 $this->setSupportingInformation($data[self::FIELD_SUPPORTING_INFORMATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SUPPORTING_INFORMATION])) {
-                $this->setSupportingInformation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SUPPORTING_INFORMATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SUPPORTING_INFORMATION])) {
+                    $this->setSupportingInformation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SUPPORTING_INFORMATION]] + $ext));
+                } else if (is_array($data[self::FIELD_SUPPORTING_INFORMATION])) {
+                    $this->setSupportingInformation(new FHIRString(array_merge($ext, $data[self::FIELD_SUPPORTING_INFORMATION])));
+                }
             } else {
                 $this->setSupportingInformation(new FHIRString($data[self::FIELD_SUPPORTING_INFORMATION]));
             }
@@ -171,8 +174,12 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRQuantity) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRQuantity(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRQuantity($data[self::FIELD_VALUE]));
             }
@@ -399,12 +406,11 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
         if (null !== ($v = $this->getSupportingInformation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_INFORMATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTissue())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TISSUE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -417,14 +423,29 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSupportingInformation())) {
-            $a[self::FIELD_SUPPORTING_INFORMATION] = $v->getValue();
-            $a[self::FIELD_SUPPORTING_INFORMATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUPPORTING_INFORMATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SUPPORTING_INFORMATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SUPPORTING_INFORMATION] = $v;
+            }
         }
         if (null !== ($v = $this->getTissue())) {
             $a[self::FIELD_TISSUE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

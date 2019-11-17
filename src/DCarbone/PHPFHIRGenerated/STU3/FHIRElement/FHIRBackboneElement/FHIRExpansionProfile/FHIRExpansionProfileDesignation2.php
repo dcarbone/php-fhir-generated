@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRExpansionProfileDesignation2 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPANSION_PROFILE_DOT_DESIGNATION_2;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_LANGUAGE = 'language';
     const FIELD_LANGUAGE_EXT = '_language';
     const FIELD_USE = 'use';
@@ -109,6 +105,9 @@ class FHIRExpansionProfileDesignation2 extends FHIRBackboneElement
      */
     protected $use = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRExpansionProfileDesignation2 Constructor
      * @param null|array $data
@@ -131,8 +130,12 @@ class FHIRExpansionProfileDesignation2 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_LANGUAGE] instanceof FHIRCode) {
                 $this->setLanguage($data[self::FIELD_LANGUAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LANGUAGE])) {
-                $this->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_LANGUAGE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LANGUAGE])) {
+                    $this->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_LANGUAGE]] + $ext));
+                } else if (is_array($data[self::FIELD_LANGUAGE])) {
+                    $this->setLanguage(new FHIRCode(array_merge($ext, $data[self::FIELD_LANGUAGE])));
+                }
             } else {
                 $this->setLanguage(new FHIRCode($data[self::FIELD_LANGUAGE]));
             }
@@ -324,10 +327,10 @@ class FHIRExpansionProfileDesignation2 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getLanguage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -341,8 +344,15 @@ class FHIRExpansionProfileDesignation2 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getLanguage())) {
-            $a[self::FIELD_LANGUAGE] = $v->getValue();
-            $a[self::FIELD_LANGUAGE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LANGUAGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LANGUAGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LANGUAGE] = $v;
+            }
         }
         if (null !== ($v = $this->getUse())) {
             $a[self::FIELD_USE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_BENEFIT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_LIMIT = 'limit';
     const FIELD_LIMIT_EXT = '_limit';
     const FIELD_REQUIREMENT = 'requirement';
@@ -120,6 +116,9 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRInsurancePlanBenefit Constructor
      * @param null|array $data
@@ -142,17 +141,24 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_LIMIT])) {
                 foreach($data[self::FIELD_LIMIT] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRInsurancePlanLimit) {
                         $this->addLimit($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addLimit(new FHIRInsurancePlanLimit([FHIRInsurancePlanLimit::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addLimit(new FHIRInsurancePlanLimit([FHIRInsurancePlanLimit::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addLimit(new FHIRInsurancePlanLimit(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addLimit(new FHIRInsurancePlanLimit($v));
                     }
                 }
             } elseif ($data[self::FIELD_LIMIT] instanceof FHIRInsurancePlanLimit) {
                 $this->addLimit($data[self::FIELD_LIMIT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LIMIT])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_LIMIT])) {
                 $this->addLimit(new FHIRInsurancePlanLimit([FHIRInsurancePlanLimit::FIELD_VALUE => $data[self::FIELD_LIMIT]] + $ext));
             } else {
                 $this->addLimit(new FHIRInsurancePlanLimit($data[self::FIELD_LIMIT]));
@@ -164,8 +170,12 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_REQUIREMENT] instanceof FHIRString) {
                 $this->setRequirement($data[self::FIELD_REQUIREMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REQUIREMENT])) {
-                $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REQUIREMENT])) {
+                    $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_REQUIREMENT])) {
+                    $this->setRequirement(new FHIRString(array_merge($ext, $data[self::FIELD_REQUIREMENT])));
+                }
             } else {
                 $this->setRequirement(new FHIRString($data[self::FIELD_REQUIREMENT]));
             }
@@ -412,7 +422,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getLimit())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -421,10 +430,10 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LIMIT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getRequirement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -438,11 +447,34 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getLimit())) {
-            $a[self::FIELD_LIMIT] = $vs;
+            $a[self::FIELD_LIMIT] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_LIMIT][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_LIMIT_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_LIMIT_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_LIMIT][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getRequirement())) {
-            $a[self::FIELD_REQUIREMENT] = $v->getValue();
-            $a[self::FIELD_REQUIREMENT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REQUIREMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REQUIREMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REQUIREMENT] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

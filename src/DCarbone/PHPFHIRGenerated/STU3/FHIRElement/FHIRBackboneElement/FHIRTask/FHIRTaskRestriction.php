@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTas
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TASK_DOT_RESTRICTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_PERIOD = 'period';
     const FIELD_RECIPIENT = 'recipient';
     const FIELD_REPETITIONS = 'repetitions';
@@ -122,6 +118,9 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      */
     protected $repetitions = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTaskRestriction Constructor
      * @param null|array $data
@@ -148,6 +147,9 @@ class FHIRTaskRestriction extends FHIRBackboneElement
         if (isset($data[self::FIELD_RECIPIENT])) {
             if (is_array($data[self::FIELD_RECIPIENT])) {
                 foreach($data[self::FIELD_RECIPIENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addRecipient($v);
                     } else {
@@ -166,8 +168,12 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_REPETITIONS] instanceof FHIRPositiveInt) {
                 $this->setRepetitions($data[self::FIELD_REPETITIONS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REPETITIONS])) {
-                $this->setRepetitions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_REPETITIONS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REPETITIONS])) {
+                    $this->setRepetitions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_REPETITIONS]] + $ext));
+                } else if (is_array($data[self::FIELD_REPETITIONS])) {
+                    $this->setRepetitions(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_REPETITIONS])));
+                }
             } else {
                 $this->setRepetitions(new FHIRPositiveInt($data[self::FIELD_REPETITIONS]));
             }
@@ -418,7 +424,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRecipient())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -446,8 +451,15 @@ class FHIRTaskRestriction extends FHIRBackboneElement
             $a[self::FIELD_RECIPIENT] = $vs;
         }
         if (null !== ($v = $this->getRepetitions())) {
-            $a[self::FIELD_REPETITIONS] = $v->getValue();
-            $a[self::FIELD_REPETITIONS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REPETITIONS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REPETITIONS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REPETITIONS] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRReque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REQUEST_GROUP_DOT_CONDITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_EXPRESSION = 'expression';
     const FIELD_KIND = 'kind';
     const FIELD_KIND_EXT = '_kind';
@@ -110,6 +106,9 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind
      */
     protected $kind = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRRequestGroupCondition Constructor
@@ -140,8 +139,12 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_KIND] instanceof FHIRActionConditionKind) {
                 $this->setKind($data[self::FIELD_KIND]);
-            } elseif ($ext && is_scalar($data[self::FIELD_KIND])) {
-                $this->setKind(new FHIRActionConditionKind([FHIRActionConditionKind::FIELD_VALUE => $data[self::FIELD_KIND]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_KIND])) {
+                    $this->setKind(new FHIRActionConditionKind([FHIRActionConditionKind::FIELD_VALUE => $data[self::FIELD_KIND]] + $ext));
+                } else if (is_array($data[self::FIELD_KIND])) {
+                    $this->setKind(new FHIRActionConditionKind(array_merge($ext, $data[self::FIELD_KIND])));
+                }
             } else {
                 $this->setKind(new FHIRActionConditionKind($data[self::FIELD_KIND]));
             }
@@ -317,11 +320,9 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getExpression())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getKind())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_KIND, null, $v->_getFHIRXMLNamespace()));
         }
@@ -338,7 +339,15 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement
             $a[self::FIELD_EXPRESSION] = $v;
         }
         if (null !== ($v = $this->getKind())) {
-            $a[self::FIELD_KIND] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_KIND] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_KIND_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_KIND] = $v;
+            }
         }
         return $a;
     }

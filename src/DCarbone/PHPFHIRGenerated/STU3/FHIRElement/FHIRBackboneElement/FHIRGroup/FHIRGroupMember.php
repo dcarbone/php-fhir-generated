@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRGroupMember extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GROUP_DOT_MEMBER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ENTITY = 'entity';
     const FIELD_INACTIVE = 'inactive';
     const FIELD_INACTIVE_EXT = '_inactive';
@@ -124,6 +120,9 @@ class FHIRGroupMember extends FHIRBackboneElement
      */
     protected $period = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRGroupMember Constructor
      * @param null|array $data
@@ -153,8 +152,12 @@ class FHIRGroupMember extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_INACTIVE] instanceof FHIRBoolean) {
                 $this->setInactive($data[self::FIELD_INACTIVE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_INACTIVE])) {
-                $this->setInactive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INACTIVE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_INACTIVE])) {
+                    $this->setInactive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INACTIVE]] + $ext));
+                } else if (is_array($data[self::FIELD_INACTIVE])) {
+                    $this->setInactive(new FHIRBoolean(array_merge($ext, $data[self::FIELD_INACTIVE])));
+                }
             } else {
                 $this->setInactive(new FHIRBoolean($data[self::FIELD_INACTIVE]));
             }
@@ -386,7 +389,6 @@ class FHIRGroupMember extends FHIRBackboneElement
         if (null !== ($v = $this->getInactive())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INACTIVE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
@@ -403,8 +405,15 @@ class FHIRGroupMember extends FHIRBackboneElement
             $a[self::FIELD_ENTITY] = $v;
         }
         if (null !== ($v = $this->getInactive())) {
-            $a[self::FIELD_INACTIVE] = $v->getValue();
-            $a[self::FIELD_INACTIVE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_INACTIVE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_INACTIVE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_INACTIVE] = $v;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;

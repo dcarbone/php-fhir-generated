@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_NAME;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DOMAIN = 'domain';
     const FIELD_JURISDICTION = 'jurisdiction';
     const FIELD_LANGUAGE = 'language';
@@ -222,6 +218,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSpecificationName Constructor
      * @param null|array $data
@@ -241,6 +240,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_DOMAIN])) {
             if (is_array($data[self::FIELD_DOMAIN])) {
                 foreach($data[self::FIELD_DOMAIN] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addDomain($v);
                     } else {
@@ -256,6 +258,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_JURISDICTION])) {
             if (is_array($data[self::FIELD_JURISDICTION])) {
                 foreach($data[self::FIELD_JURISDICTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addJurisdiction($v);
                     } else {
@@ -271,6 +276,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_LANGUAGE])) {
             if (is_array($data[self::FIELD_LANGUAGE])) {
                 foreach($data[self::FIELD_LANGUAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addLanguage($v);
                     } else {
@@ -289,8 +297,12 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NAME] instanceof FHIRString) {
                 $this->setName($data[self::FIELD_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NAME])) {
-                $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
+                }
             } else {
                 $this->setName(new FHIRString($data[self::FIELD_NAME]));
             }
@@ -298,6 +310,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_OFFICIAL])) {
             if (is_array($data[self::FIELD_OFFICIAL])) {
                 foreach($data[self::FIELD_OFFICIAL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationOfficial) {
                         $this->addOfficial($v);
                     } else {
@@ -316,8 +331,12 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PREFERRED] instanceof FHIRBoolean) {
                 $this->setPreferred($data[self::FIELD_PREFERRED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PREFERRED])) {
-                $this->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PREFERRED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PREFERRED])) {
+                    $this->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PREFERRED]] + $ext));
+                } else if (is_array($data[self::FIELD_PREFERRED])) {
+                    $this->setPreferred(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PREFERRED])));
+                }
             } else {
                 $this->setPreferred(new FHIRBoolean($data[self::FIELD_PREFERRED]));
             }
@@ -325,6 +344,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_SOURCE])) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSource($v);
                     } else {
@@ -347,6 +369,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_SYNONYM])) {
             if (is_array($data[self::FIELD_SYNONYM])) {
                 foreach($data[self::FIELD_SYNONYM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationName) {
                         $this->addSynonym($v);
                     } else {
@@ -362,6 +387,9 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (isset($data[self::FIELD_TRANSLATION])) {
             if (is_array($data[self::FIELD_TRANSLATION])) {
                 foreach($data[self::FIELD_TRANSLATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationName) {
                         $this->addTranslation($v);
                     } else {
@@ -1068,7 +1096,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getDomain())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1095,10 +1122,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getOfficial())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1107,10 +1134,10 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_OFFICIAL, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getPreferred())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERRED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1123,7 +1150,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSynonym())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1164,15 +1190,29 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             $a[self::FIELD_LANGUAGE] = $vs;
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $a[self::FIELD_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NAME] = $v;
+            }
         }
         if ([] !== ($vs = $this->getOfficial())) {
             $a[self::FIELD_OFFICIAL] = $vs;
         }
         if (null !== ($v = $this->getPreferred())) {
-            $a[self::FIELD_PREFERRED] = $v->getValue();
-            $a[self::FIELD_PREFERRED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PREFERRED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PREFERRED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PREFERRED] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $vs;

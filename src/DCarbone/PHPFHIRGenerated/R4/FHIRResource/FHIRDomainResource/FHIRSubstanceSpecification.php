@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,10 +90,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
@@ -324,6 +320,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSpecification Constructor
      * @param null|array $data
@@ -343,6 +342,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_CODE])) {
             if (is_array($data[self::FIELD_CODE])) {
                 foreach($data[self::FIELD_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationCode) {
                         $this->addCode($v);
                     } else {
@@ -361,8 +363,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
                 : null;
             if ($data[self::FIELD_COMMENT] instanceof FHIRString) {
                 $this->setComment($data[self::FIELD_COMMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMMENT])) {
-                $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COMMENT])) {
+                    $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_COMMENT])) {
+                    $this->setComment(new FHIRString(array_merge($ext, $data[self::FIELD_COMMENT])));
+                }
             } else {
                 $this->setComment(new FHIRString($data[self::FIELD_COMMENT]));
             }
@@ -373,8 +379,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -392,8 +402,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -401,6 +415,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_MOIETY])) {
             if (is_array($data[self::FIELD_MOIETY])) {
                 foreach($data[self::FIELD_MOIETY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationMoiety) {
                         $this->addMoiety($v);
                     } else {
@@ -416,6 +433,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_MOLECULAR_WEIGHT])) {
             if (is_array($data[self::FIELD_MOLECULAR_WEIGHT])) {
                 foreach($data[self::FIELD_MOLECULAR_WEIGHT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationMolecularWeight) {
                         $this->addMolecularWeight($v);
                     } else {
@@ -431,6 +451,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_NAME])) {
             if (is_array($data[self::FIELD_NAME])) {
                 foreach($data[self::FIELD_NAME] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationName) {
                         $this->addName($v);
                     } else {
@@ -460,6 +483,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_PROPERTY])) {
             if (is_array($data[self::FIELD_PROPERTY])) {
                 foreach($data[self::FIELD_PROPERTY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationProperty) {
                         $this->addProperty($v);
                     } else {
@@ -489,6 +515,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_RELATIONSHIP])) {
             if (is_array($data[self::FIELD_RELATIONSHIP])) {
                 foreach($data[self::FIELD_RELATIONSHIP] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceSpecificationRelationship) {
                         $this->addRelationship($v);
                     } else {
@@ -504,6 +533,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (isset($data[self::FIELD_SOURCE])) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSource($v);
                     } else {
@@ -1489,7 +1521,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1498,21 +1529,19 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getComment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDomain())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOMAIN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getMoiety())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1543,11 +1572,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (null !== ($v = $this->getNucleicAcid())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NUCLEIC_ACID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPolymer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_POLYMER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getProperty())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1560,11 +1587,9 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (null !== ($v = $this->getProtein())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROTEIN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getReferenceInformation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_INFORMATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRelationship())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1586,15 +1611,12 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         if (null !== ($v = $this->getSourceMaterial())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_MATERIAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStructure())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STRUCTURE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1611,18 +1633,40 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
             $a[self::FIELD_CODE] = $vs;
         }
         if (null !== ($v = $this->getComment())) {
-            $a[self::FIELD_COMMENT] = $v->getValue();
-            $a[self::FIELD_COMMENT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COMMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COMMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COMMENT] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getDomain())) {
             $a[self::FIELD_DOMAIN] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMoiety())) {
             $a[self::FIELD_MOIETY] = $vs;

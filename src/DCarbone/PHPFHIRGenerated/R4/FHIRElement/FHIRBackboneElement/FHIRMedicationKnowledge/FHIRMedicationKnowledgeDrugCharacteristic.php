@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_DRUG_CHARACTERISTIC;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_TYPE = 'type';
     const FIELD_VALUE_BASE_64BINARY = 'valueBase64Binary';
     const FIELD_VALUE_BASE_64BINARY_EXT = '_valueBase64Binary';
@@ -153,6 +149,9 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      */
     protected $valueString = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgeDrugCharacteristic Constructor
      * @param null|array $data
@@ -182,8 +181,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_BASE_64BINARY] instanceof FHIRBase64Binary) {
                 $this->setValueBase64Binary($data[self::FIELD_VALUE_BASE_64BINARY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_BASE_64BINARY])) {
-                $this->setValueBase64Binary(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_VALUE_BASE_64BINARY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_BASE_64BINARY])) {
+                    $this->setValueBase64Binary(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_VALUE_BASE_64BINARY]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_BASE_64BINARY])) {
+                    $this->setValueBase64Binary(new FHIRBase64Binary(array_merge($ext, $data[self::FIELD_VALUE_BASE_64BINARY])));
+                }
             } else {
                 $this->setValueBase64Binary(new FHIRBase64Binary($data[self::FIELD_VALUE_BASE_64BINARY]));
             }
@@ -201,8 +204,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_QUANTITY])) {
-                $this->setValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_QUANTITY])) {
+                    $this->setValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_QUANTITY])) {
+                    $this->setValueQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_VALUE_QUANTITY])));
+                }
             } else {
                 $this->setValueQuantity(new FHIRQuantity($data[self::FIELD_VALUE_QUANTITY]));
             }
@@ -213,8 +220,12 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_STRING] instanceof FHIRString) {
                 $this->setValueString($data[self::FIELD_VALUE_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_STRING])) {
-                $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_STRING])) {
+                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_STRING])) {
+                    $this->setValueString(new FHIRString(array_merge($ext, $data[self::FIELD_VALUE_STRING])));
+                }
             } else {
                 $this->setValueString(new FHIRString($data[self::FIELD_VALUE_STRING]));
             }
@@ -517,18 +528,15 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -548,18 +556,40 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
-            $a[self::FIELD_VALUE_BASE_64BINARY] = $v->getValue();
-            $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_BASE_64BINARY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_BASE_64BINARY] = $v;
+            }
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getValueString())) {
-            $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            $a[self::FIELD_VALUE_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_STRING] = $v;
+            }
         }
         return $a;
     }

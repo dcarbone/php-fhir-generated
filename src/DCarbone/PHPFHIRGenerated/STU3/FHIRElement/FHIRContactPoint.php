@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRContactPoint extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTACT_POINT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_PERIOD = 'period';
     const FIELD_RANK = 'rank';
     const FIELD_RANK_EXT = '_rank';
@@ -149,6 +145,9 @@ class FHIRContactPoint extends FHIRElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRContactPoint Constructor
      * @param null|array $data
@@ -182,8 +181,12 @@ class FHIRContactPoint extends FHIRElement
                 : null;
             if ($data[self::FIELD_RANK] instanceof FHIRPositiveInt) {
                 $this->setRank($data[self::FIELD_RANK]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RANK])) {
-                $this->setRank(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_RANK]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RANK])) {
+                    $this->setRank(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_RANK]] + $ext));
+                } else if (is_array($data[self::FIELD_RANK])) {
+                    $this->setRank(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_RANK])));
+                }
             } else {
                 $this->setRank(new FHIRPositiveInt($data[self::FIELD_RANK]));
             }
@@ -194,8 +197,12 @@ class FHIRContactPoint extends FHIRElement
                 : null;
             if ($data[self::FIELD_SYSTEM] instanceof FHIRContactPointSystem) {
                 $this->setSystem($data[self::FIELD_SYSTEM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SYSTEM])) {
-                $this->setSystem(new FHIRContactPointSystem([FHIRContactPointSystem::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRContactPointSystem([FHIRContactPointSystem::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+                } else if (is_array($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRContactPointSystem(array_merge($ext, $data[self::FIELD_SYSTEM])));
+                }
             } else {
                 $this->setSystem(new FHIRContactPointSystem($data[self::FIELD_SYSTEM]));
             }
@@ -206,8 +213,12 @@ class FHIRContactPoint extends FHIRElement
                 : null;
             if ($data[self::FIELD_USE] instanceof FHIRContactPointUse) {
                 $this->setUse($data[self::FIELD_USE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_USE])) {
-                $this->setUse(new FHIRContactPointUse([FHIRContactPointUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_USE])) {
+                    $this->setUse(new FHIRContactPointUse([FHIRContactPointUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
+                } else if (is_array($data[self::FIELD_USE])) {
+                    $this->setUse(new FHIRContactPointUse(array_merge($ext, $data[self::FIELD_USE])));
+                }
             } else {
                 $this->setUse(new FHIRContactPointUse($data[self::FIELD_USE]));
             }
@@ -218,8 +229,12 @@ class FHIRContactPoint extends FHIRElement
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRString) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRString(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRString($data[self::FIELD_VALUE]));
             }
@@ -521,15 +536,14 @@ class FHIRContactPoint extends FHIRElement
         if (null !== ($v = $this->getRank())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RANK, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSystem())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -545,18 +559,48 @@ class FHIRContactPoint extends FHIRElement
             $a[self::FIELD_PERIOD] = $v;
         }
         if (null !== ($v = $this->getRank())) {
-            $a[self::FIELD_RANK] = $v->getValue();
-            $a[self::FIELD_RANK_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RANK] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RANK_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RANK] = $v;
+            }
         }
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SYSTEM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SYSTEM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SYSTEM] = $v;
+            }
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_USE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_USE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_USE] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            $a[self::FIELD_VALUE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

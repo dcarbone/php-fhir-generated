@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_CODE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
@@ -154,6 +150,9 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      */
     protected $statusDate = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSpecificationCode Constructor
      * @param null|array $data
@@ -183,8 +182,12 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COMMENT] instanceof FHIRString) {
                 $this->setComment($data[self::FIELD_COMMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMMENT])) {
-                $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COMMENT])) {
+                    $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_COMMENT])) {
+                    $this->setComment(new FHIRString(array_merge($ext, $data[self::FIELD_COMMENT])));
+                }
             } else {
                 $this->setComment(new FHIRString($data[self::FIELD_COMMENT]));
             }
@@ -192,6 +195,9 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
         if (isset($data[self::FIELD_SOURCE])) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSource($v);
                     } else {
@@ -217,8 +223,12 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_STATUS_DATE] instanceof FHIRDateTime) {
                 $this->setStatusDate($data[self::FIELD_STATUS_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS_DATE])) {
-                $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STATUS_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS_DATE])) {
+                    $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STATUS_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS_DATE])) {
+                    $this->setStatusDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_STATUS_DATE])));
+                }
             } else {
                 $this->setStatusDate(new FHIRDateTime($data[self::FIELD_STATUS_DATE]));
             }
@@ -551,14 +561,12 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getComment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -587,8 +595,15 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getComment())) {
-            $a[self::FIELD_COMMENT] = $v->getValue();
-            $a[self::FIELD_COMMENT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COMMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COMMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COMMENT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $vs;
@@ -597,8 +612,15 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
             $a[self::FIELD_STATUS] = $v;
         }
         if (null !== ($v = $this->getStatusDate())) {
-            $a[self::FIELD_STATUS_DATE] = $v->getValue();
-            $a[self::FIELD_STATUS_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS_DATE] = $v;
+            }
         }
         return $a;
     }

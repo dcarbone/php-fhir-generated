@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_DETAIL_SEQUENCE = 'detailSequence';
     const FIELD_DETAIL_SEQUENCE_EXT = '_detailSequence';
@@ -142,6 +138,9 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      */
     protected $subDetailSequence = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRClaimResponseError Constructor
      * @param null|array $data
@@ -171,8 +170,12 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DETAIL_SEQUENCE] instanceof FHIRPositiveInt) {
                 $this->setDetailSequence($data[self::FIELD_DETAIL_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DETAIL_SEQUENCE])) {
-                $this->setDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DETAIL_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DETAIL_SEQUENCE])) {
+                    $this->setDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DETAIL_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_DETAIL_SEQUENCE])) {
+                    $this->setDetailSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_DETAIL_SEQUENCE])));
+                }
             } else {
                 $this->setDetailSequence(new FHIRPositiveInt($data[self::FIELD_DETAIL_SEQUENCE]));
             }
@@ -183,8 +186,12 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ITEM_SEQUENCE] instanceof FHIRPositiveInt) {
                 $this->setItemSequence($data[self::FIELD_ITEM_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ITEM_SEQUENCE])) {
-                $this->setItemSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_ITEM_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ITEM_SEQUENCE])) {
+                    $this->setItemSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_ITEM_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_ITEM_SEQUENCE])) {
+                    $this->setItemSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_ITEM_SEQUENCE])));
+                }
             } else {
                 $this->setItemSequence(new FHIRPositiveInt($data[self::FIELD_ITEM_SEQUENCE]));
             }
@@ -195,8 +202,12 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SUB_DETAIL_SEQUENCE] instanceof FHIRPositiveInt) {
                 $this->setSubDetailSequence($data[self::FIELD_SUB_DETAIL_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SUB_DETAIL_SEQUENCE])) {
-                $this->setSubDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SUB_DETAIL_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SUB_DETAIL_SEQUENCE])) {
+                    $this->setSubDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SUB_DETAIL_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SUB_DETAIL_SEQUENCE])) {
+                    $this->setSubDetailSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SUB_DETAIL_SEQUENCE])));
+                }
             } else {
                 $this->setSubDetailSequence(new FHIRPositiveInt($data[self::FIELD_SUB_DETAIL_SEQUENCE]));
             }
@@ -481,7 +492,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -507,16 +517,37 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getDetailSequence())) {
-            $a[self::FIELD_DETAIL_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_DETAIL_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DETAIL_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DETAIL_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DETAIL_SEQUENCE] = $v;
+            }
         }
         if (null !== ($v = $this->getItemSequence())) {
-            $a[self::FIELD_ITEM_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_ITEM_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ITEM_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ITEM_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ITEM_SEQUENCE] = $v;
+            }
         }
         if (null !== ($v = $this->getSubDetailSequence())) {
-            $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $v;
+            }
         }
         return $a;
     }

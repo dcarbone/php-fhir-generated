@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDoc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOCUMENT_REFERENCE_DOT_CONTEXT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ENCOUNTER = 'encounter';
     const FIELD_EVENT = 'event';
     const FIELD_FACILITY_TYPE = 'facilityType';
@@ -176,6 +172,9 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      */
     protected $sourcePatientInfo = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDocumentReferenceContext Constructor
      * @param null|array $data
@@ -202,6 +201,9 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
         if (isset($data[self::FIELD_EVENT])) {
             if (is_array($data[self::FIELD_EVENT])) {
                 foreach($data[self::FIELD_EVENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addEvent($v);
                     } else {
@@ -238,6 +240,9 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
         if (isset($data[self::FIELD_RELATED])) {
             if (is_array($data[self::FIELD_RELATED])) {
                 foreach($data[self::FIELD_RELATED] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDocumentReferenceRelated) {
                         $this->addRelated($v);
                     } else {
@@ -667,7 +672,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getEvent())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -676,19 +680,15 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getFacilityType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FACILITY_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPracticeSetting())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRACTICE_SETTING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRelated())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -697,7 +697,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSourcePatientInfo())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_PATIENT_INFO, null, $v->_getFHIRXMLNamespace()));
         }

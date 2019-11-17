@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_CLASSIFICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CLASSIFICATION = 'classification';
     const FIELD_DOMAIN = 'domain';
     const FIELD_SOURCE = 'source';
@@ -134,6 +130,9 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      */
     protected $subtype = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceReferenceInformationClassification Constructor
      * @param null|array $data
@@ -167,6 +166,9 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         if (isset($data[self::FIELD_SOURCE])) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSource($v);
                     } else {
@@ -182,6 +184,9 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         if (isset($data[self::FIELD_SUBTYPE])) {
             if (is_array($data[self::FIELD_SUBTYPE])) {
                 foreach($data[self::FIELD_SUBTYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addSubtype($v);
                     } else {
@@ -490,15 +495,12 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getClassification())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASSIFICATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDomain())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOMAIN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -516,6 +518,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBTYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

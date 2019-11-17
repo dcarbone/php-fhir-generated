@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,10 +85,6 @@ class FHIRDosage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOSAGE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADDITIONAL_INSTRUCTION = 'additionalInstruction';
     const FIELD_AS_NEEDED_BOOLEAN = 'asNeededBoolean';
     const FIELD_AS_NEEDED_BOOLEAN_EXT = '_asNeededBoolean';
@@ -285,6 +281,9 @@ class FHIRDosage extends FHIRBackboneElement
      */
     protected $timing = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDosage Constructor
      * @param null|array $data
@@ -304,6 +303,9 @@ class FHIRDosage extends FHIRBackboneElement
         if (isset($data[self::FIELD_ADDITIONAL_INSTRUCTION])) {
             if (is_array($data[self::FIELD_ADDITIONAL_INSTRUCTION])) {
                 foreach($data[self::FIELD_ADDITIONAL_INSTRUCTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addAdditionalInstruction($v);
                     } else {
@@ -322,8 +324,12 @@ class FHIRDosage extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AS_NEEDED_BOOLEAN] instanceof FHIRBoolean) {
                 $this->setAsNeededBoolean($data[self::FIELD_AS_NEEDED_BOOLEAN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AS_NEEDED_BOOLEAN])) {
-                $this->setAsNeededBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AS_NEEDED_BOOLEAN]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AS_NEEDED_BOOLEAN])) {
+                    $this->setAsNeededBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AS_NEEDED_BOOLEAN]] + $ext));
+                } else if (is_array($data[self::FIELD_AS_NEEDED_BOOLEAN])) {
+                    $this->setAsNeededBoolean(new FHIRBoolean(array_merge($ext, $data[self::FIELD_AS_NEEDED_BOOLEAN])));
+                }
             } else {
                 $this->setAsNeededBoolean(new FHIRBoolean($data[self::FIELD_AS_NEEDED_BOOLEAN]));
             }
@@ -338,6 +344,9 @@ class FHIRDosage extends FHIRBackboneElement
         if (isset($data[self::FIELD_DOSE_AND_RATE])) {
             if (is_array($data[self::FIELD_DOSE_AND_RATE])) {
                 foreach($data[self::FIELD_DOSE_AND_RATE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDosageDoseAndRate) {
                         $this->addDoseAndRate($v);
                     } else {
@@ -356,8 +365,12 @@ class FHIRDosage extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] instanceof FHIRQuantity) {
                 $this->setMaxDosePerAdministration($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
-                $this->setMaxDosePerAdministration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
+                    $this->setMaxDosePerAdministration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
+                    $this->setMaxDosePerAdministration(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])));
+                }
             } else {
                 $this->setMaxDosePerAdministration(new FHIRQuantity($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]));
             }
@@ -368,8 +381,12 @@ class FHIRDosage extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MAX_DOSE_PER_LIFETIME] instanceof FHIRQuantity) {
                 $this->setMaxDosePerLifetime($data[self::FIELD_MAX_DOSE_PER_LIFETIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
-                $this->setMaxDosePerLifetime(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_LIFETIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
+                    $this->setMaxDosePerLifetime(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_LIFETIME]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
+                    $this->setMaxDosePerLifetime(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MAX_DOSE_PER_LIFETIME])));
+                }
             } else {
                 $this->setMaxDosePerLifetime(new FHIRQuantity($data[self::FIELD_MAX_DOSE_PER_LIFETIME]));
             }
@@ -394,8 +411,12 @@ class FHIRDosage extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PATIENT_INSTRUCTION] instanceof FHIRString) {
                 $this->setPatientInstruction($data[self::FIELD_PATIENT_INSTRUCTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PATIENT_INSTRUCTION])) {
-                $this->setPatientInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATIENT_INSTRUCTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PATIENT_INSTRUCTION])) {
+                    $this->setPatientInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATIENT_INSTRUCTION]] + $ext));
+                } else if (is_array($data[self::FIELD_PATIENT_INSTRUCTION])) {
+                    $this->setPatientInstruction(new FHIRString(array_merge($ext, $data[self::FIELD_PATIENT_INSTRUCTION])));
+                }
             } else {
                 $this->setPatientInstruction(new FHIRString($data[self::FIELD_PATIENT_INSTRUCTION]));
             }
@@ -413,8 +434,12 @@ class FHIRDosage extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SEQUENCE] instanceof FHIRInteger) {
                 $this->setSequence($data[self::FIELD_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEQUENCE])) {
-                $this->setSequence(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRInteger(array_merge($ext, $data[self::FIELD_SEQUENCE])));
+                }
             } else {
                 $this->setSequence(new FHIRInteger($data[self::FIELD_SEQUENCE]));
             }
@@ -432,8 +457,12 @@ class FHIRDosage extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TEXT] instanceof FHIRString) {
                 $this->setText($data[self::FIELD_TEXT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TEXT])) {
-                $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+                } else if (is_array($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString(array_merge($ext, $data[self::FIELD_TEXT])));
+                }
             } else {
                 $this->setText(new FHIRString($data[self::FIELD_TEXT]));
             }
@@ -1154,7 +1183,6 @@ class FHIRDosage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdditionalInstruction())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1163,14 +1191,13 @@ class FHIRDosage extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIONAL_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDoseAndRate())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1183,36 +1210,30 @@ class FHIRDosage extends FHIRBackboneElement
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_LIFETIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DOSE_PER_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getPatientInstruction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRoute())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getSequence())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSite())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1229,8 +1250,15 @@ class FHIRDosage extends FHIRBackboneElement
             $a[self::FIELD_ADDITIONAL_INSTRUCTION] = $vs;
         }
         if (null !== ($v = $this->getAsNeededBoolean())) {
-            $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
-            $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AS_NEEDED_BOOLEAN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v;
+            }
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
@@ -1239,10 +1267,26 @@ class FHIRDosage extends FHIRBackboneElement
             $a[self::FIELD_DOSE_AND_RATE] = $vs;
         }
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
-            $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
-            $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_PERIOD] = $v;
@@ -1251,22 +1295,43 @@ class FHIRDosage extends FHIRBackboneElement
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getPatientInstruction())) {
-            $a[self::FIELD_PATIENT_INSTRUCTION] = $v->getValue();
-            $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATIENT_INSTRUCTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PATIENT_INSTRUCTION] = $v;
+            }
         }
         if (null !== ($v = $this->getRoute())) {
             $a[self::FIELD_ROUTE] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEQUENCE] = $v;
+            }
         }
         if (null !== ($v = $this->getSite())) {
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $a[self::FIELD_TEXT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TEXT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TEXT] = $v;
+            }
         }
         if (null !== ($v = $this->getTiming())) {
             $a[self::FIELD_TIMING] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_RULESET_1;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_RULE = 'rule';
     const FIELD_RULESET_ID = 'rulesetId';
     const FIELD_RULESET_ID_EXT = '_rulesetId';
@@ -110,6 +106,9 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
      */
     protected $rulesetId = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTestScriptRuleset1 Constructor
      * @param null|array $data
@@ -129,6 +128,9 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
         if (isset($data[self::FIELD_RULE])) {
             if (is_array($data[self::FIELD_RULE])) {
                 foreach($data[self::FIELD_RULE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTestScriptRule3) {
                         $this->addRule($v);
                     } else {
@@ -147,8 +149,12 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RULESET_ID] instanceof FHIRId) {
                 $this->setRulesetId($data[self::FIELD_RULESET_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RULESET_ID])) {
-                $this->setRulesetId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_RULESET_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RULESET_ID])) {
+                    $this->setRulesetId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_RULESET_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_RULESET_ID])) {
+                    $this->setRulesetId(new FHIRId(array_merge($ext, $data[self::FIELD_RULESET_ID])));
+                }
             } else {
                 $this->setRulesetId(new FHIRId($data[self::FIELD_RULESET_ID]));
             }
@@ -387,8 +393,15 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
             $a[self::FIELD_RULE] = $vs;
         }
         if (null !== ($v = $this->getRulesetId())) {
-            $a[self::FIELD_RULESET_ID] = $v->getValue();
-            $a[self::FIELD_RULESET_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RULESET_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RULESET_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RULESET_ID] = $v;
+            }
         }
         return $a;
     }

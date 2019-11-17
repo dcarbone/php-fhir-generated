@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,10 +86,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CALIBRATION = 'calibration';
     const FIELD_CATEGORY = 'category';
     const FIELD_CATEGORY_EXT = '_category';
@@ -241,6 +237,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      */
     protected $unit = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDeviceMetric Constructor
      * @param null|array $data
@@ -260,6 +259,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (isset($data[self::FIELD_CALIBRATION])) {
             if (is_array($data[self::FIELD_CALIBRATION])) {
                 foreach($data[self::FIELD_CALIBRATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDeviceMetricCalibration) {
                         $this->addCalibration($v);
                     } else {
@@ -278,8 +280,12 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
                 : null;
             if ($data[self::FIELD_CATEGORY] instanceof FHIRDeviceMetricCategory) {
                 $this->setCategory($data[self::FIELD_CATEGORY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CATEGORY])) {
-                $this->setCategory(new FHIRDeviceMetricCategory([FHIRDeviceMetricCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CATEGORY])) {
+                    $this->setCategory(new FHIRDeviceMetricCategory([FHIRDeviceMetricCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
+                } else if (is_array($data[self::FIELD_CATEGORY])) {
+                    $this->setCategory(new FHIRDeviceMetricCategory(array_merge($ext, $data[self::FIELD_CATEGORY])));
+                }
             } else {
                 $this->setCategory(new FHIRDeviceMetricCategory($data[self::FIELD_CATEGORY]));
             }
@@ -290,8 +296,12 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
                 : null;
             if ($data[self::FIELD_COLOR] instanceof FHIRDeviceMetricColor) {
                 $this->setColor($data[self::FIELD_COLOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COLOR])) {
-                $this->setColor(new FHIRDeviceMetricColor([FHIRDeviceMetricColor::FIELD_VALUE => $data[self::FIELD_COLOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COLOR])) {
+                    $this->setColor(new FHIRDeviceMetricColor([FHIRDeviceMetricColor::FIELD_VALUE => $data[self::FIELD_COLOR]] + $ext));
+                } else if (is_array($data[self::FIELD_COLOR])) {
+                    $this->setColor(new FHIRDeviceMetricColor(array_merge($ext, $data[self::FIELD_COLOR])));
+                }
             } else {
                 $this->setColor(new FHIRDeviceMetricColor($data[self::FIELD_COLOR]));
             }
@@ -302,8 +312,12 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -321,8 +335,12 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
                 : null;
             if ($data[self::FIELD_OPERATIONAL_STATUS] instanceof FHIRDeviceMetricOperationalStatus) {
                 $this->setOperationalStatus($data[self::FIELD_OPERATIONAL_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_OPERATIONAL_STATUS])) {
-                $this->setOperationalStatus(new FHIRDeviceMetricOperationalStatus([FHIRDeviceMetricOperationalStatus::FIELD_VALUE => $data[self::FIELD_OPERATIONAL_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_OPERATIONAL_STATUS])) {
+                    $this->setOperationalStatus(new FHIRDeviceMetricOperationalStatus([FHIRDeviceMetricOperationalStatus::FIELD_VALUE => $data[self::FIELD_OPERATIONAL_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_OPERATIONAL_STATUS])) {
+                    $this->setOperationalStatus(new FHIRDeviceMetricOperationalStatus(array_merge($ext, $data[self::FIELD_OPERATIONAL_STATUS])));
+                }
             } else {
                 $this->setOperationalStatus(new FHIRDeviceMetricOperationalStatus($data[self::FIELD_OPERATIONAL_STATUS]));
             }
@@ -882,39 +900,30 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CALIBRATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getColor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMeasurementPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOperationalStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATIONAL_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getParent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUnit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -931,19 +940,51 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_CALIBRATION] = $vs;
         }
         if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CATEGORY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CATEGORY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CATEGORY] = $v;
+            }
         }
         if (null !== ($v = $this->getColor())) {
-            $a[self::FIELD_COLOR] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COLOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COLOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COLOR] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getMeasurementPeriod())) {
             $a[self::FIELD_MEASUREMENT_PERIOD] = $v;
         }
         if (null !== ($v = $this->getOperationalStatus())) {
-            $a[self::FIELD_OPERATIONAL_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OPERATIONAL_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_OPERATIONAL_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_OPERATIONAL_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getParent())) {
             $a[self::FIELD_PARENT] = $v;

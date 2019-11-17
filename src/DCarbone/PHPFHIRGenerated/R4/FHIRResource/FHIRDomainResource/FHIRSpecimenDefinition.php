@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COLLECTION = 'collection';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
@@ -163,6 +159,9 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     protected $typeTested = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSpecimenDefinition Constructor
      * @param null|array $data
@@ -182,6 +181,9 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_COLLECTION])) {
             if (is_array($data[self::FIELD_COLLECTION])) {
                 foreach($data[self::FIELD_COLLECTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addCollection($v);
                     } else {
@@ -200,8 +202,12 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -209,6 +215,9 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_PATIENT_PREPARATION])) {
             if (is_array($data[self::FIELD_PATIENT_PREPARATION])) {
                 foreach($data[self::FIELD_PATIENT_PREPARATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addPatientPreparation($v);
                     } else {
@@ -227,8 +236,12 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 : null;
             if ($data[self::FIELD_TIME_ASPECT] instanceof FHIRString) {
                 $this->setTimeAspect($data[self::FIELD_TIME_ASPECT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIME_ASPECT])) {
-                $this->setTimeAspect(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TIME_ASPECT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIME_ASPECT])) {
+                    $this->setTimeAspect(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TIME_ASPECT]] + $ext));
+                } else if (is_array($data[self::FIELD_TIME_ASPECT])) {
+                    $this->setTimeAspect(new FHIRString(array_merge($ext, $data[self::FIELD_TIME_ASPECT])));
+                }
             } else {
                 $this->setTimeAspect(new FHIRString($data[self::FIELD_TIME_ASPECT]));
             }
@@ -243,6 +256,9 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
         if (isset($data[self::FIELD_TYPE_TESTED])) {
             if (is_array($data[self::FIELD_TYPE_TESTED])) {
                 foreach($data[self::FIELD_TYPE_TESTED] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSpecimenDefinitionTypeTested) {
                         $this->addTypeTested($v);
                     } else {
@@ -661,7 +677,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCollection())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -674,7 +689,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getPatientPreparation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -683,14 +697,13 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_PREPARATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getTimeAspect())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_ASPECT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTypeCollected())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE_COLLECTED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getTypeTested())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -699,6 +712,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE_TESTED, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -712,14 +726,29 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_COLLECTION] = $vs;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPatientPreparation())) {
             $a[self::FIELD_PATIENT_PREPARATION] = $vs;
         }
         if (null !== ($v = $this->getTimeAspect())) {
-            $a[self::FIELD_TIME_ASPECT] = $v->getValue();
-            $a[self::FIELD_TIME_ASPECT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIME_ASPECT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIME_ASPECT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIME_ASPECT] = $v;
+            }
         }
         if (null !== ($v = $this->getTypeCollected())) {
             $a[self::FIELD_TYPE_COLLECTED] = $v;

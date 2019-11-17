@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CATEGORY = 'category';
     const FIELD_CATEGORY_EXT = '_category';
     const FIELD_CODE = 'code';
@@ -185,6 +181,9 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      */
     protected $response = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConformanceEvent Constructor
      * @param null|array $data
@@ -207,8 +206,12 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CATEGORY] instanceof FHIRMessageSignificanceCategory) {
                 $this->setCategory($data[self::FIELD_CATEGORY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CATEGORY])) {
-                $this->setCategory(new FHIRMessageSignificanceCategory([FHIRMessageSignificanceCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CATEGORY])) {
+                    $this->setCategory(new FHIRMessageSignificanceCategory([FHIRMessageSignificanceCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
+                } else if (is_array($data[self::FIELD_CATEGORY])) {
+                    $this->setCategory(new FHIRMessageSignificanceCategory(array_merge($ext, $data[self::FIELD_CATEGORY])));
+                }
             } else {
                 $this->setCategory(new FHIRMessageSignificanceCategory($data[self::FIELD_CATEGORY]));
             }
@@ -226,8 +229,12 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DOCUMENTATION] instanceof FHIRString) {
                 $this->setDocumentation($data[self::FIELD_DOCUMENTATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DOCUMENTATION])) {
-                $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENTATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DOCUMENTATION])) {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENTATION]] + $ext));
+                } else if (is_array($data[self::FIELD_DOCUMENTATION])) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $data[self::FIELD_DOCUMENTATION])));
+                }
             } else {
                 $this->setDocumentation(new FHIRString($data[self::FIELD_DOCUMENTATION]));
             }
@@ -238,8 +245,12 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_FOCUS] instanceof FHIRCode) {
                 $this->setFocus($data[self::FIELD_FOCUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FOCUS])) {
-                $this->setFocus(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_FOCUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FOCUS])) {
+                    $this->setFocus(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_FOCUS]] + $ext));
+                } else if (is_array($data[self::FIELD_FOCUS])) {
+                    $this->setFocus(new FHIRCode(array_merge($ext, $data[self::FIELD_FOCUS])));
+                }
             } else {
                 $this->setFocus(new FHIRCode($data[self::FIELD_FOCUS]));
             }
@@ -250,8 +261,12 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MODE] instanceof FHIRConformanceEventMode) {
                 $this->setMode($data[self::FIELD_MODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MODE])) {
-                $this->setMode(new FHIRConformanceEventMode([FHIRConformanceEventMode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MODE])) {
+                    $this->setMode(new FHIRConformanceEventMode([FHIRConformanceEventMode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
+                } else if (is_array($data[self::FIELD_MODE])) {
+                    $this->setMode(new FHIRConformanceEventMode(array_merge($ext, $data[self::FIELD_MODE])));
+                }
             } else {
                 $this->setMode(new FHIRConformanceEventMode($data[self::FIELD_MODE]));
             }
@@ -259,6 +274,9 @@ class FHIRConformanceEvent extends FHIRBackboneElement
         if (isset($data[self::FIELD_PROTOCOL])) {
             if (is_array($data[self::FIELD_PROTOCOL])) {
                 foreach($data[self::FIELD_PROTOCOL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addProtocol($v);
                     } else {
@@ -703,11 +721,9 @@ class FHIRConformanceEvent extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -717,11 +733,9 @@ class FHIRConformanceEvent extends FHIRBackboneElement
         if (null !== ($v = $this->getFocus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getProtocol())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -734,7 +748,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
         if (null !== ($v = $this->getRequest())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResponse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -748,21 +761,51 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CATEGORY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CATEGORY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CATEGORY] = $v;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOCUMENTATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DOCUMENTATION] = $v;
+            }
         }
         if (null !== ($v = $this->getFocus())) {
-            $a[self::FIELD_FOCUS] = $v->getValue();
-            $a[self::FIELD_FOCUS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FOCUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FOCUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FOCUS] = $v;
+            }
         }
         if (null !== ($v = $this->getMode())) {
-            $a[self::FIELD_MODE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MODE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getProtocol())) {
             $a[self::FIELD_PROTOCOL] = $vs;

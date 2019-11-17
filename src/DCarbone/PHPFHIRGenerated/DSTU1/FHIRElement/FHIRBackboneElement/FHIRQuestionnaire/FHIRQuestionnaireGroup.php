@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_GROUP;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_GROUP = 'group';
     const FIELD_HEADER = 'header';
     const FIELD_HEADER_EXT = '_header';
@@ -161,6 +157,9 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      */
     protected $text = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRQuestionnaireGroup Constructor
      * @param null|array $data
@@ -180,6 +179,9 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
         if (isset($data[self::FIELD_GROUP])) {
             if (is_array($data[self::FIELD_GROUP])) {
                 foreach($data[self::FIELD_GROUP] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRQuestionnaireGroup) {
                         $this->addGroup($v);
                     } else {
@@ -198,8 +200,12 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_HEADER] instanceof FHIRString) {
                 $this->setHeader($data[self::FIELD_HEADER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_HEADER])) {
-                $this->setHeader(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_HEADER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_HEADER])) {
+                    $this->setHeader(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_HEADER]] + $ext));
+                } else if (is_array($data[self::FIELD_HEADER])) {
+                    $this->setHeader(new FHIRString(array_merge($ext, $data[self::FIELD_HEADER])));
+                }
             } else {
                 $this->setHeader(new FHIRString($data[self::FIELD_HEADER]));
             }
@@ -214,6 +220,9 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
         if (isset($data[self::FIELD_QUESTION])) {
             if (is_array($data[self::FIELD_QUESTION])) {
                 foreach($data[self::FIELD_QUESTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRQuestionnaireQuestion) {
                         $this->addQuestion($v);
                     } else {
@@ -239,8 +248,12 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TEXT] instanceof FHIRString) {
                 $this->setText($data[self::FIELD_TEXT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TEXT])) {
-                $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+                } else if (is_array($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString(array_merge($ext, $data[self::FIELD_TEXT])));
+                }
             } else {
                 $this->setText(new FHIRString($data[self::FIELD_TEXT]));
             }
@@ -636,7 +649,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getGroup())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -645,14 +657,13 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getHeader())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HEADER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getQuestion())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -681,8 +692,15 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             $a[self::FIELD_GROUP] = $vs;
         }
         if (null !== ($v = $this->getHeader())) {
-            $a[self::FIELD_HEADER] = $v->getValue();
-            $a[self::FIELD_HEADER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_HEADER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_HEADER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_HEADER] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v;
@@ -694,8 +712,15 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             $a[self::FIELD_SUBJECT] = $v;
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $a[self::FIELD_TEXT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TEXT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TEXT] = $v;
+            }
         }
         return $a;
     }

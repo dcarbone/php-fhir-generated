@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_MISSING_TEETH;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_EXTRACTION_DATE = 'extractionDate';
     const FIELD_EXTRACTION_DATE_EXT = '_extractionDate';
     const FIELD_REASON = 'reason';
@@ -123,6 +119,9 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      */
     protected $tooth = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRClaimMissingTeeth Constructor
      * @param null|array $data
@@ -145,8 +144,12 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EXTRACTION_DATE] instanceof FHIRDate) {
                 $this->setExtractionDate($data[self::FIELD_EXTRACTION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EXTRACTION_DATE])) {
-                $this->setExtractionDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_EXTRACTION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EXTRACTION_DATE])) {
+                    $this->setExtractionDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_EXTRACTION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_EXTRACTION_DATE])) {
+                    $this->setExtractionDate(new FHIRDate(array_merge($ext, $data[self::FIELD_EXTRACTION_DATE])));
+                }
             } else {
                 $this->setExtractionDate(new FHIRDate($data[self::FIELD_EXTRACTION_DATE]));
             }
@@ -383,11 +386,9 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
         if (null !== ($v = $this->getExtractionDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXTRACTION_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTooth())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TOOTH, null, $v->_getFHIRXMLNamespace()));
         }
@@ -401,8 +402,15 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExtractionDate())) {
-            $a[self::FIELD_EXTRACTION_DATE] = $v->getValue();
-            $a[self::FIELD_EXTRACTION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXTRACTION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EXTRACTION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EXTRACTION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getReason())) {
             $a[self::FIELD_REASON] = $v;

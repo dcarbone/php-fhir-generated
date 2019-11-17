@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRMoney extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MONEY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CURRENCY = 'currency';
     const FIELD_CURRENCY_EXT = '_currency';
     const FIELD_VALUE = 'value';
@@ -111,6 +107,9 @@ class FHIRMoney extends FHIRElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMoney Constructor
      * @param null|array $data
@@ -137,8 +136,12 @@ class FHIRMoney extends FHIRElement
                 : null;
             if ($data[self::FIELD_CURRENCY] instanceof FHIRCode) {
                 $this->setCurrency($data[self::FIELD_CURRENCY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CURRENCY])) {
-                $this->setCurrency(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CURRENCY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CURRENCY])) {
+                    $this->setCurrency(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CURRENCY]] + $ext));
+                } else if (is_array($data[self::FIELD_CURRENCY])) {
+                    $this->setCurrency(new FHIRCode(array_merge($ext, $data[self::FIELD_CURRENCY])));
+                }
             } else {
                 $this->setCurrency(new FHIRCode($data[self::FIELD_CURRENCY]));
             }
@@ -149,8 +152,12 @@ class FHIRMoney extends FHIRElement
                 : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRDecimal) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
-                $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE])) {
+                    $this->setValue(new FHIRDecimal(array_merge($ext, $data[self::FIELD_VALUE])));
+                }
             } else {
                 $this->setValue(new FHIRDecimal($data[self::FIELD_VALUE]));
             }
@@ -352,6 +359,7 @@ class FHIRMoney extends FHIRElement
             $v->xmlSerialize($sxe->addChild(self::FIELD_CURRENCY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
@@ -364,12 +372,26 @@ class FHIRMoney extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCurrency())) {
-            $a[self::FIELD_CURRENCY] = $v->getValue();
-            $a[self::FIELD_CURRENCY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CURRENCY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CURRENCY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CURRENCY] = $v;
+            }
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            $a[self::FIELD_VALUE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE] = $v;
+            }
         }
         return $a;
     }

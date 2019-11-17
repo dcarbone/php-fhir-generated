@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,9 +79,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_FHIR_COMMENTS = 'fhir_comments';
 
     const FIELD_ID = 'id';
     const FIELD_ID_EXT = '_id';
@@ -145,6 +143,9 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      */
     protected $meta = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRResource Constructor
      * @param null|array $data
@@ -160,14 +161,25 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
                 gettype($data)
             ));
         }
+        if (isset($data[self::FIELD_FHIR_COMMENTS])) {
+            if (is_array($data[self::FIELD_FHIR_COMMENTS])) {
+                $this->_setFHIRComments($data[self::FIELD_FHIR_COMMENTS]);
+            } else if (is_string($data[self::FIELD_FHIR_COMMENTS])) {
+                $this->_addFHIRComment($data[self::FIELD_FHIR_COMMENTS]);
+            }
+        }
         if (isset($data[self::FIELD_ID])) {
             $ext = (isset($data[self::FIELD_ID_EXT]) && is_array($data[self::FIELD_ID_EXT]))
                 ? $data[self::FIELD_ID_EXT]
                 : null;
             if ($data[self::FIELD_ID] instanceof FHIRId) {
                 $this->setId($data[self::FIELD_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ID])) {
-                $this->setId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ID])) {
+                    $this->setId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_ID])) {
+                    $this->setId(new FHIRId(array_merge($ext, $data[self::FIELD_ID])));
+                }
             } else {
                 $this->setId(new FHIRId($data[self::FIELD_ID]));
             }
@@ -178,8 +190,12 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
                 : null;
             if ($data[self::FIELD_IMPLICIT_RULES] instanceof FHIRUri) {
                 $this->setImplicitRules($data[self::FIELD_IMPLICIT_RULES]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IMPLICIT_RULES])) {
-                $this->setImplicitRules(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_IMPLICIT_RULES]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IMPLICIT_RULES])) {
+                    $this->setImplicitRules(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_IMPLICIT_RULES]] + $ext));
+                } else if (is_array($data[self::FIELD_IMPLICIT_RULES])) {
+                    $this->setImplicitRules(new FHIRUri(array_merge($ext, $data[self::FIELD_IMPLICIT_RULES])));
+                }
             } else {
                 $this->setImplicitRules(new FHIRUri($data[self::FIELD_IMPLICIT_RULES]));
             }
@@ -190,8 +206,12 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
                 : null;
             if ($data[self::FIELD_LANGUAGE] instanceof FHIRCode) {
                 $this->setLanguage($data[self::FIELD_LANGUAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LANGUAGE])) {
-                $this->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_LANGUAGE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LANGUAGE])) {
+                    $this->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_LANGUAGE]] + $ext));
+                } else if (is_array($data[self::FIELD_LANGUAGE])) {
+                    $this->setLanguage(new FHIRCode(array_merge($ext, $data[self::FIELD_LANGUAGE])));
+                }
             } else {
                 $this->setLanguage(new FHIRCode($data[self::FIELD_LANGUAGE]));
             }
@@ -487,6 +507,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
+
         if (null !== ($v = $this->getId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -496,7 +517,6 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
         if (null !== ($v = $this->getLanguage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMeta())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_META, null, $v->_getFHIRXMLNamespace()));
         }
@@ -509,17 +529,41 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     public function jsonSerialize()
     {
         $a = [];
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[self::FIELD_FHIR_COMMENTS] = $vs;
+        }
         if (null !== ($v = $this->getId())) {
-            $a[self::FIELD_ID] = $v->getValue();
-            $a[self::FIELD_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getImplicitRules())) {
-            $a[self::FIELD_IMPLICIT_RULES] = $v->getValue();
-            $a[self::FIELD_IMPLICIT_RULES_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IMPLICIT_RULES] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IMPLICIT_RULES_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IMPLICIT_RULES] = $v;
+            }
         }
         if (null !== ($v = $this->getLanguage())) {
-            $a[self::FIELD_LANGUAGE] = $v->getValue();
-            $a[self::FIELD_LANGUAGE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LANGUAGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LANGUAGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LANGUAGE] = $v;
+            }
         }
         if (null !== ($v = $this->getMeta())) {
             $a[self::FIELD_META] = $v;

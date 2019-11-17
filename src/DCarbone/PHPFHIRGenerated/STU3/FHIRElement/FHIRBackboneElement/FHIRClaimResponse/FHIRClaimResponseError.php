@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_DETAIL_SEQUENCE_LINK_ID = 'detailSequenceLinkId';
     const FIELD_DETAIL_SEQUENCE_LINK_ID_EXT = '_detailSequenceLinkId';
@@ -142,6 +138,9 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      */
     protected $subdetailSequenceLinkId = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRClaimResponseError Constructor
      * @param null|array $data
@@ -171,8 +170,12 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DETAIL_SEQUENCE_LINK_ID] instanceof FHIRPositiveInt) {
                 $this->setDetailSequenceLinkId($data[self::FIELD_DETAIL_SEQUENCE_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DETAIL_SEQUENCE_LINK_ID])) {
-                $this->setDetailSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DETAIL_SEQUENCE_LINK_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DETAIL_SEQUENCE_LINK_ID])) {
+                    $this->setDetailSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DETAIL_SEQUENCE_LINK_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_DETAIL_SEQUENCE_LINK_ID])) {
+                    $this->setDetailSequenceLinkId(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_DETAIL_SEQUENCE_LINK_ID])));
+                }
             } else {
                 $this->setDetailSequenceLinkId(new FHIRPositiveInt($data[self::FIELD_DETAIL_SEQUENCE_LINK_ID]));
             }
@@ -183,8 +186,12 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SEQUENCE_LINK_ID] instanceof FHIRPositiveInt) {
                 $this->setSequenceLinkId($data[self::FIELD_SEQUENCE_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEQUENCE_LINK_ID])) {
-                $this->setSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE_LINK_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEQUENCE_LINK_ID])) {
+                    $this->setSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE_LINK_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_SEQUENCE_LINK_ID])) {
+                    $this->setSequenceLinkId(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SEQUENCE_LINK_ID])));
+                }
             } else {
                 $this->setSequenceLinkId(new FHIRPositiveInt($data[self::FIELD_SEQUENCE_LINK_ID]));
             }
@@ -195,8 +202,12 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] instanceof FHIRPositiveInt) {
                 $this->setSubdetailSequenceLinkId($data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID])) {
-                $this->setSubdetailSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID])) {
+                    $this->setSubdetailSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID])) {
+                    $this->setSubdetailSequenceLinkId(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID])));
+                }
             } else {
                 $this->setSubdetailSequenceLinkId(new FHIRPositiveInt($data[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]));
             }
@@ -507,16 +518,37 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getDetailSequenceLinkId())) {
-            $a[self::FIELD_DETAIL_SEQUENCE_LINK_ID] = $v->getValue();
-            $a[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DETAIL_SEQUENCE_LINK_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DETAIL_SEQUENCE_LINK_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getSequenceLinkId())) {
-            $a[self::FIELD_SEQUENCE_LINK_ID] = $v->getValue();
-            $a[self::FIELD_SEQUENCE_LINK_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE_LINK_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEQUENCE_LINK_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEQUENCE_LINK_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getSubdetailSequenceLinkId())) {
-            $a[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] = $v->getValue();
-            $a[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] = $v;
+            }
         }
         return $a;
     }

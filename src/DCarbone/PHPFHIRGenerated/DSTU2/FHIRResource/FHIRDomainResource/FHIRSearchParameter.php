@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,10 +86,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SEARCH_PARAMETER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_BASE = 'base';
     const FIELD_BASE_EXT = '_base';
     const FIELD_CODE = 'code';
@@ -302,6 +298,9 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      */
     protected $xpathUsage = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSearchParameter Constructor
      * @param null|array $data
@@ -324,8 +323,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_BASE] instanceof FHIRCode) {
                 $this->setBase($data[self::FIELD_BASE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BASE])) {
-                $this->setBase(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_BASE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BASE])) {
+                    $this->setBase(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_BASE]] + $ext));
+                } else if (is_array($data[self::FIELD_BASE])) {
+                    $this->setBase(new FHIRCode(array_merge($ext, $data[self::FIELD_BASE])));
+                }
             } else {
                 $this->setBase(new FHIRCode($data[self::FIELD_BASE]));
             }
@@ -336,8 +339,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_CODE] instanceof FHIRCode) {
                 $this->setCode($data[self::FIELD_CODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CODE])) {
-                $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+                } else if (is_array($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRCode(array_merge($ext, $data[self::FIELD_CODE])));
+                }
             } else {
                 $this->setCode(new FHIRCode($data[self::FIELD_CODE]));
             }
@@ -345,6 +352,9 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
         if (isset($data[self::FIELD_CONTACT])) {
             if (is_array($data[self::FIELD_CONTACT])) {
                 foreach($data[self::FIELD_CONTACT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSearchParameterContact) {
                         $this->addContact($v);
                     } else {
@@ -363,8 +373,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
                 $this->setDate($data[self::FIELD_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATE])) {
-                $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_DATE])) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
+                }
             } else {
                 $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
             }
@@ -375,8 +389,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -387,8 +405,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_EXPERIMENTAL] instanceof FHIRBoolean) {
                 $this->setExperimental($data[self::FIELD_EXPERIMENTAL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EXPERIMENTAL])) {
-                $this->setExperimental(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXPERIMENTAL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EXPERIMENTAL])) {
+                    $this->setExperimental(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXPERIMENTAL]] + $ext));
+                } else if (is_array($data[self::FIELD_EXPERIMENTAL])) {
+                    $this->setExperimental(new FHIRBoolean(array_merge($ext, $data[self::FIELD_EXPERIMENTAL])));
+                }
             } else {
                 $this->setExperimental(new FHIRBoolean($data[self::FIELD_EXPERIMENTAL]));
             }
@@ -399,8 +421,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_NAME] instanceof FHIRString) {
                 $this->setName($data[self::FIELD_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NAME])) {
-                $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
+                }
             } else {
                 $this->setName(new FHIRString($data[self::FIELD_NAME]));
             }
@@ -411,8 +437,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_PUBLISHER] instanceof FHIRString) {
                 $this->setPublisher($data[self::FIELD_PUBLISHER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PUBLISHER])) {
-                $this->setPublisher(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PUBLISHER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PUBLISHER])) {
+                    $this->setPublisher(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PUBLISHER]] + $ext));
+                } else if (is_array($data[self::FIELD_PUBLISHER])) {
+                    $this->setPublisher(new FHIRString(array_merge($ext, $data[self::FIELD_PUBLISHER])));
+                }
             } else {
                 $this->setPublisher(new FHIRString($data[self::FIELD_PUBLISHER]));
             }
@@ -423,8 +453,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_REQUIREMENTS] instanceof FHIRString) {
                 $this->setRequirements($data[self::FIELD_REQUIREMENTS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REQUIREMENTS])) {
-                $this->setRequirements(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENTS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REQUIREMENTS])) {
+                    $this->setRequirements(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENTS]] + $ext));
+                } else if (is_array($data[self::FIELD_REQUIREMENTS])) {
+                    $this->setRequirements(new FHIRString(array_merge($ext, $data[self::FIELD_REQUIREMENTS])));
+                }
             } else {
                 $this->setRequirements(new FHIRString($data[self::FIELD_REQUIREMENTS]));
             }
@@ -435,8 +469,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRCode) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRCode(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRCode($data[self::FIELD_STATUS]));
             }
@@ -447,17 +485,24 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if (is_array($data[self::FIELD_TARGET])) {
                 foreach($data[self::FIELD_TARGET] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCode) {
                         $this->addTarget($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addTarget(new FHIRCode([FHIRCode::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addTarget(new FHIRCode([FHIRCode::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addTarget(new FHIRCode(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addTarget(new FHIRCode($v));
                     }
                 }
             } elseif ($data[self::FIELD_TARGET] instanceof FHIRCode) {
                 $this->addTarget($data[self::FIELD_TARGET]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TARGET])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_TARGET])) {
                 $this->addTarget(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TARGET]] + $ext));
             } else {
                 $this->addTarget(new FHIRCode($data[self::FIELD_TARGET]));
@@ -469,8 +514,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRCode) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRCode(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRCode($data[self::FIELD_TYPE]));
             }
@@ -481,8 +530,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_URL] instanceof FHIRUri) {
                 $this->setUrl($data[self::FIELD_URL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URL])) {
-                $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+                } else if (is_array($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_URL])));
+                }
             } else {
                 $this->setUrl(new FHIRUri($data[self::FIELD_URL]));
             }
@@ -493,8 +546,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_XPATH] instanceof FHIRString) {
                 $this->setXpath($data[self::FIELD_XPATH]);
-            } elseif ($ext && is_scalar($data[self::FIELD_XPATH])) {
-                $this->setXpath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_XPATH]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_XPATH])) {
+                    $this->setXpath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_XPATH]] + $ext));
+                } else if (is_array($data[self::FIELD_XPATH])) {
+                    $this->setXpath(new FHIRString(array_merge($ext, $data[self::FIELD_XPATH])));
+                }
             } else {
                 $this->setXpath(new FHIRString($data[self::FIELD_XPATH]));
             }
@@ -505,8 +562,12 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 : null;
             if ($data[self::FIELD_XPATH_USAGE] instanceof FHIRXPathUsageType) {
                 $this->setXpathUsage($data[self::FIELD_XPATH_USAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_XPATH_USAGE])) {
-                $this->setXpathUsage(new FHIRXPathUsageType([FHIRXPathUsageType::FIELD_VALUE => $data[self::FIELD_XPATH_USAGE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_XPATH_USAGE])) {
+                    $this->setXpathUsage(new FHIRXPathUsageType([FHIRXPathUsageType::FIELD_VALUE => $data[self::FIELD_XPATH_USAGE]] + $ext));
+                } else if (is_array($data[self::FIELD_XPATH_USAGE])) {
+                    $this->setXpathUsage(new FHIRXPathUsageType(array_merge($ext, $data[self::FIELD_XPATH_USAGE])));
+                }
             } else {
                 $this->setXpathUsage(new FHIRXPathUsageType($data[self::FIELD_XPATH_USAGE]));
             }
@@ -1354,7 +1415,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1363,6 +1423,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1392,6 +1453,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1401,7 +1463,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
         if (null !== ($v = $this->getXpath())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_XPATH, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getXpathUsage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_XPATH_USAGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1415,43 +1476,106 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBase())) {
-            $a[self::FIELD_BASE] = $v->getValue();
-            $a[self::FIELD_BASE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BASE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BASE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BASE] = $v;
+            }
         }
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            $a[self::FIELD_CODE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CODE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getContact())) {
             $a[self::FIELD_CONTACT] = $vs;
         }
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $a[self::FIELD_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getExperimental())) {
-            $a[self::FIELD_EXPERIMENTAL] = $v->getValue();
-            $a[self::FIELD_EXPERIMENTAL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXPERIMENTAL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EXPERIMENTAL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EXPERIMENTAL] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $a[self::FIELD_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
-            $a[self::FIELD_PUBLISHER] = $v->getValue();
-            $a[self::FIELD_PUBLISHER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PUBLISHER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PUBLISHER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PUBLISHER] = $v;
+            }
         }
         if (null !== ($v = $this->getRequirements())) {
-            $a[self::FIELD_REQUIREMENTS] = $v->getValue();
-            $a[self::FIELD_REQUIREMENTS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REQUIREMENTS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REQUIREMENTS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REQUIREMENTS] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $a[self::FIELD_STATUS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTarget())) {
             $a[self::FIELD_TARGET] = [];
@@ -1459,24 +1583,62 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_TARGET][] = $v->getValue();
-                $a[self::FIELD_TARGET_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_TARGET][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_TARGET_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_TARGET_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_TARGET][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            $a[self::FIELD_TYPE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $a[self::FIELD_URL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URL] = $v;
+            }
         }
         if (null !== ($v = $this->getXpath())) {
-            $a[self::FIELD_XPATH] = $v->getValue();
-            $a[self::FIELD_XPATH_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_XPATH] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_XPATH_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_XPATH] = $v;
+            }
         }
         if (null !== ($v = $this->getXpathUsage())) {
-            $a[self::FIELD_XPATH_USAGE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_XPATH_USAGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_XPATH_USAGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_XPATH_USAGE] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

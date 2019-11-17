@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAd
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,6 @@ class FHIRAdverseReactionSymptom extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADVERSE_REACTION_DOT_SYMPTOM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_SEVERITY = 'severity';
     const FIELD_SEVERITY_EXT = '_severity';
@@ -103,6 +99,9 @@ class FHIRAdverseReactionSymptom extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRReactionSeverity
      */
     protected $severity = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRAdverseReactionSymptom Constructor
@@ -133,8 +132,12 @@ class FHIRAdverseReactionSymptom extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SEVERITY] instanceof FHIRReactionSeverity) {
                 $this->setSeverity($data[self::FIELD_SEVERITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEVERITY])) {
-                $this->setSeverity(new FHIRReactionSeverity([FHIRReactionSeverity::FIELD_VALUE => $data[self::FIELD_SEVERITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEVERITY])) {
+                    $this->setSeverity(new FHIRReactionSeverity([FHIRReactionSeverity::FIELD_VALUE => $data[self::FIELD_SEVERITY]] + $ext));
+                } else if (is_array($data[self::FIELD_SEVERITY])) {
+                    $this->setSeverity(new FHIRReactionSeverity(array_merge($ext, $data[self::FIELD_SEVERITY])));
+                }
             } else {
                 $this->setSeverity(new FHIRReactionSeverity($data[self::FIELD_SEVERITY]));
             }
@@ -306,11 +309,9 @@ class FHIRAdverseReactionSymptom extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSeverity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -327,7 +328,15 @@ class FHIRAdverseReactionSymptom extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getSeverity())) {
-            $a[self::FIELD_SEVERITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEVERITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEVERITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEVERITY] = $v;
+            }
         }
         return $a;
     }

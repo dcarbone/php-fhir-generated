@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,10 +87,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_INFORMATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CATEGORY = 'category';
     const FIELD_CODE = 'code';
     const FIELD_REASON = 'reason';
@@ -229,6 +225,9 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
      */
     protected $valueString = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRExplanationOfBenefitInformation Constructor
      * @param null|array $data
@@ -272,8 +271,12 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SEQUENCE] instanceof FHIRPositiveInt) {
                 $this->setSequence($data[self::FIELD_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEQUENCE])) {
-                $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SEQUENCE])));
+                }
             } else {
                 $this->setSequence(new FHIRPositiveInt($data[self::FIELD_SEQUENCE]));
             }
@@ -284,8 +287,12 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TIMING_DATE] instanceof FHIRDate) {
                 $this->setTimingDate($data[self::FIELD_TIMING_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIMING_DATE])) {
-                $this->setTimingDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_TIMING_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIMING_DATE])) {
+                    $this->setTimingDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_TIMING_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_TIMING_DATE])) {
+                    $this->setTimingDate(new FHIRDate(array_merge($ext, $data[self::FIELD_TIMING_DATE])));
+                }
             } else {
                 $this->setTimingDate(new FHIRDate($data[self::FIELD_TIMING_DATE]));
             }
@@ -310,8 +317,12 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_QUANTITY])) {
-                $this->setValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_QUANTITY])) {
+                    $this->setValueQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_QUANTITY])) {
+                    $this->setValueQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_VALUE_QUANTITY])));
+                }
             } else {
                 $this->setValueQuantity(new FHIRQuantity($data[self::FIELD_VALUE_QUANTITY]));
             }
@@ -329,8 +340,12 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VALUE_STRING] instanceof FHIRString) {
                 $this->setValueString($data[self::FIELD_VALUE_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE_STRING])) {
-                $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VALUE_STRING])) {
+                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_VALUE_STRING])) {
+                    $this->setValueString(new FHIRString(array_merge($ext, $data[self::FIELD_VALUE_STRING])));
+                }
             } else {
                 $this->setValueString(new FHIRString($data[self::FIELD_VALUE_STRING]));
             }
@@ -829,11 +844,9 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
@@ -843,19 +856,15 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
         if (null !== ($v = $this->getTimingDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTimingPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValueAttachment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValueQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getValueReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -881,12 +890,26 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
             $a[self::FIELD_REASON] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEQUENCE] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingDate())) {
-            $a[self::FIELD_TIMING_DATE] = $v->getValue();
-            $a[self::FIELD_TIMING_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIMING_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIMING_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIMING_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingPeriod())) {
             $a[self::FIELD_TIMING_PERIOD] = $v;
@@ -895,14 +918,29 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement
             $a[self::FIELD_VALUE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getValueReference())) {
             $a[self::FIELD_VALUE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getValueString())) {
-            $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            $a[self::FIELD_VALUE_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VALUE_STRING] = $v;
+            }
         }
         return $a;
     }

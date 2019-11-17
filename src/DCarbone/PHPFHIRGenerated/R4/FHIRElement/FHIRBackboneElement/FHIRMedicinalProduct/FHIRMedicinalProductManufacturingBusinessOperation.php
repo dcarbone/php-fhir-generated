@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_DOT_MANUFACTURING_BUSINESS_OPERATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTHORISATION_REFERENCE_NUMBER = 'authorisationReferenceNumber';
     const FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT = '_authorisationReferenceNumber';
     const FIELD_CONFIDENTIALITY_INDICATOR = 'confidentialityIndicator';
@@ -166,6 +162,9 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      */
     protected $regulator = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicinalProductManufacturingBusinessOperation Constructor
      * @param null|array $data
@@ -188,8 +187,12 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
                 : null;
             if ($data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] instanceof FHIRIdentifier) {
                 $this->setAuthorisationReferenceNumber($data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])) {
-                $this->setAuthorisationReferenceNumber(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])) {
+                    $this->setAuthorisationReferenceNumber(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]] + $ext));
+                } else if (is_array($data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])) {
+                    $this->setAuthorisationReferenceNumber(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])));
+                }
             } else {
                 $this->setAuthorisationReferenceNumber(new FHIRIdentifier($data[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]));
             }
@@ -207,8 +210,12 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
                 : null;
             if ($data[self::FIELD_EFFECTIVE_DATE] instanceof FHIRDateTime) {
                 $this->setEffectiveDate($data[self::FIELD_EFFECTIVE_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EFFECTIVE_DATE])) {
-                $this->setEffectiveDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EFFECTIVE_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EFFECTIVE_DATE])) {
+                    $this->setEffectiveDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EFFECTIVE_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_EFFECTIVE_DATE])) {
+                    $this->setEffectiveDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_EFFECTIVE_DATE])));
+                }
             } else {
                 $this->setEffectiveDate(new FHIRDateTime($data[self::FIELD_EFFECTIVE_DATE]));
             }
@@ -216,6 +223,9 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         if (isset($data[self::FIELD_MANUFACTURER])) {
             if (is_array($data[self::FIELD_MANUFACTURER])) {
                 foreach($data[self::FIELD_MANUFACTURER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addManufacturer($v);
                     } else {
@@ -592,18 +602,15 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthorisationReferenceNumber())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getConfidentialityIndicator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONFIDENTIALITY_INDICATOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getEffectiveDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getManufacturer())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -616,7 +623,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         if (null !== ($v = $this->getOperationType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRegulator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REGULATOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -630,14 +636,29 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthorisationReferenceNumber())) {
-            $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = $v;
+            }
         }
         if (null !== ($v = $this->getConfidentialityIndicator())) {
             $a[self::FIELD_CONFIDENTIALITY_INDICATOR] = $v;
         }
         if (null !== ($v = $this->getEffectiveDate())) {
-            $a[self::FIELD_EFFECTIVE_DATE] = $v->getValue();
-            $a[self::FIELD_EFFECTIVE_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EFFECTIVE_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EFFECTIVE_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EFFECTIVE_DATE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $vs;

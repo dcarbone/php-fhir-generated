@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,10 +76,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_SLICING;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DISCRIMINATOR = 'discriminator';
     const FIELD_DISCRIMINATOR_EXT = '_discriminator';
     const FIELD_ORDERED = 'ordered';
@@ -125,6 +121,9 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      */
     protected $rules = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRProfileSlicing Constructor
      * @param null|array $data
@@ -147,8 +146,12 @@ class FHIRProfileSlicing extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DISCRIMINATOR] instanceof FHIRId) {
                 $this->setDiscriminator($data[self::FIELD_DISCRIMINATOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DISCRIMINATOR])) {
-                $this->setDiscriminator(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_DISCRIMINATOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DISCRIMINATOR])) {
+                    $this->setDiscriminator(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_DISCRIMINATOR]] + $ext));
+                } else if (is_array($data[self::FIELD_DISCRIMINATOR])) {
+                    $this->setDiscriminator(new FHIRId(array_merge($ext, $data[self::FIELD_DISCRIMINATOR])));
+                }
             } else {
                 $this->setDiscriminator(new FHIRId($data[self::FIELD_DISCRIMINATOR]));
             }
@@ -159,8 +162,12 @@ class FHIRProfileSlicing extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ORDERED] instanceof FHIRBoolean) {
                 $this->setOrdered($data[self::FIELD_ORDERED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ORDERED])) {
-                $this->setOrdered(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ORDERED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ORDERED])) {
+                    $this->setOrdered(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ORDERED]] + $ext));
+                } else if (is_array($data[self::FIELD_ORDERED])) {
+                    $this->setOrdered(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ORDERED])));
+                }
             } else {
                 $this->setOrdered(new FHIRBoolean($data[self::FIELD_ORDERED]));
             }
@@ -171,8 +178,12 @@ class FHIRProfileSlicing extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RULES] instanceof FHIRSlicingRules) {
                 $this->setRules($data[self::FIELD_RULES]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RULES])) {
-                $this->setRules(new FHIRSlicingRules([FHIRSlicingRules::FIELD_VALUE => $data[self::FIELD_RULES]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RULES])) {
+                    $this->setRules(new FHIRSlicingRules([FHIRSlicingRules::FIELD_VALUE => $data[self::FIELD_RULES]] + $ext));
+                } else if (is_array($data[self::FIELD_RULES])) {
+                    $this->setRules(new FHIRSlicingRules(array_merge($ext, $data[self::FIELD_RULES])));
+                }
             } else {
                 $this->setRules(new FHIRSlicingRules($data[self::FIELD_RULES]));
             }
@@ -415,7 +426,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         if (null !== ($v = $this->getOrdered())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORDERED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRules())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RULES, null, $v->_getFHIRXMLNamespace()));
         }
@@ -429,15 +439,37 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDiscriminator())) {
-            $a[self::FIELD_DISCRIMINATOR] = $v->getValue();
-            $a[self::FIELD_DISCRIMINATOR_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DISCRIMINATOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DISCRIMINATOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DISCRIMINATOR] = $v;
+            }
         }
         if (null !== ($v = $this->getOrdered())) {
-            $a[self::FIELD_ORDERED] = $v->getValue();
-            $a[self::FIELD_ORDERED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ORDERED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ORDERED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ORDERED] = $v;
+            }
         }
         if (null !== ($v = $this->getRules())) {
-            $a[self::FIELD_RULES] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RULES] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RULES_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RULES] = $v;
+            }
         }
         return $a;
     }

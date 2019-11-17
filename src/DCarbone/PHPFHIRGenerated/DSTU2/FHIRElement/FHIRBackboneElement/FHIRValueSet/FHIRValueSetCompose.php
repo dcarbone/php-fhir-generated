@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_EXCLUDE = 'exclude';
     const FIELD_IMPORT = 'import';
     const FIELD_IMPORT_EXT = '_import';
@@ -116,6 +112,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      */
     protected $include = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRValueSetCompose Constructor
      * @param null|array $data
@@ -135,6 +134,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         if (isset($data[self::FIELD_EXCLUDE])) {
             if (is_array($data[self::FIELD_EXCLUDE])) {
                 foreach($data[self::FIELD_EXCLUDE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRValueSetInclude) {
                         $this->addExclude($v);
                     } else {
@@ -153,17 +155,24 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_IMPORT])) {
                 foreach($data[self::FIELD_IMPORT] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUri) {
                         $this->addImport($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addImport(new FHIRUri(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addImport(new FHIRUri($v));
                     }
                 }
             } elseif ($data[self::FIELD_IMPORT] instanceof FHIRUri) {
                 $this->addImport($data[self::FIELD_IMPORT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IMPORT])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IMPORT])) {
                 $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_IMPORT]] + $ext));
             } else {
                 $this->addImport(new FHIRUri($data[self::FIELD_IMPORT]));
@@ -172,6 +181,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         if (isset($data[self::FIELD_INCLUDE])) {
             if (is_array($data[self::FIELD_INCLUDE])) {
                 foreach($data[self::FIELD_INCLUDE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRValueSetInclude) {
                         $this->addInclude($v);
                     } else {
@@ -470,7 +482,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getExclude())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -479,6 +490,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getImport())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -496,6 +508,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INCLUDE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -514,8 +527,17 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_IMPORT][] = $v->getValue();
-                $a[self::FIELD_IMPORT_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IMPORT][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IMPORT_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IMPORT_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IMPORT][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getInclude())) {

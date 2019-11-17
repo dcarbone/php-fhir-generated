@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,10 +86,6 @@ class FHIRContractAction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_ACTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONTEXT = 'context';
     const FIELD_CONTEXT_LINK_ID = 'contextLinkId';
     const FIELD_CONTEXT_LINK_ID_EXT = '_contextLinkId';
@@ -399,6 +395,9 @@ class FHIRContractAction extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRContractAction Constructor
      * @param null|array $data
@@ -428,17 +427,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_CONTEXT_LINK_ID])) {
                 foreach($data[self::FIELD_CONTEXT_LINK_ID] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addContextLinkId($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addContextLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addContextLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addContextLinkId(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addContextLinkId(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_CONTEXT_LINK_ID] instanceof FHIRString) {
                 $this->addContextLinkId($data[self::FIELD_CONTEXT_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CONTEXT_LINK_ID])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_CONTEXT_LINK_ID])) {
                 $this->addContextLinkId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CONTEXT_LINK_ID]] + $ext));
             } else {
                 $this->addContextLinkId(new FHIRString($data[self::FIELD_CONTEXT_LINK_ID]));
@@ -450,8 +456,12 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DO_NOT_PERFORM] instanceof FHIRBoolean) {
                 $this->setDoNotPerform($data[self::FIELD_DO_NOT_PERFORM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DO_NOT_PERFORM])) {
-                $this->setDoNotPerform(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_DO_NOT_PERFORM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DO_NOT_PERFORM])) {
+                    $this->setDoNotPerform(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_DO_NOT_PERFORM]] + $ext));
+                } else if (is_array($data[self::FIELD_DO_NOT_PERFORM])) {
+                    $this->setDoNotPerform(new FHIRBoolean(array_merge($ext, $data[self::FIELD_DO_NOT_PERFORM])));
+                }
             } else {
                 $this->setDoNotPerform(new FHIRBoolean($data[self::FIELD_DO_NOT_PERFORM]));
             }
@@ -469,17 +479,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_LINK_ID])) {
                 foreach($data[self::FIELD_LINK_ID] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addLinkId($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addLinkId(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addLinkId(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_LINK_ID] instanceof FHIRString) {
                 $this->addLinkId($data[self::FIELD_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LINK_ID])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_LINK_ID])) {
                 $this->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_LINK_ID]] + $ext));
             } else {
                 $this->addLinkId(new FHIRString($data[self::FIELD_LINK_ID]));
@@ -488,6 +505,9 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_NOTE])) {
             if (is_array($data[self::FIELD_NOTE])) {
                 foreach($data[self::FIELD_NOTE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAnnotation) {
                         $this->addNote($v);
                     } else {
@@ -506,8 +526,12 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_OCCURRENCE_DATE_TIME] instanceof FHIRDateTime) {
                 $this->setOccurrenceDateTime($data[self::FIELD_OCCURRENCE_DATE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_OCCURRENCE_DATE_TIME])) {
-                $this->setOccurrenceDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_OCCURRENCE_DATE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_OCCURRENCE_DATE_TIME])) {
+                    $this->setOccurrenceDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_OCCURRENCE_DATE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_OCCURRENCE_DATE_TIME])) {
+                    $this->setOccurrenceDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_OCCURRENCE_DATE_TIME])));
+                }
             } else {
                 $this->setOccurrenceDateTime(new FHIRDateTime($data[self::FIELD_OCCURRENCE_DATE_TIME]));
             }
@@ -539,17 +563,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_PERFORMER_LINK_ID])) {
                 foreach($data[self::FIELD_PERFORMER_LINK_ID] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addPerformerLinkId($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addPerformerLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addPerformerLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addPerformerLinkId(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addPerformerLinkId(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_PERFORMER_LINK_ID] instanceof FHIRString) {
                 $this->addPerformerLinkId($data[self::FIELD_PERFORMER_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PERFORMER_LINK_ID])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PERFORMER_LINK_ID])) {
                 $this->addPerformerLinkId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PERFORMER_LINK_ID]] + $ext));
             } else {
                 $this->addPerformerLinkId(new FHIRString($data[self::FIELD_PERFORMER_LINK_ID]));
@@ -565,6 +596,9 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_PERFORMER_TYPE])) {
             if (is_array($data[self::FIELD_PERFORMER_TYPE])) {
                 foreach($data[self::FIELD_PERFORMER_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addPerformerType($v);
                     } else {
@@ -583,17 +617,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_REASON])) {
                 foreach($data[self::FIELD_REASON] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addReason($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addReason(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addReason(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addReason(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addReason(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_REASON] instanceof FHIRString) {
                 $this->addReason($data[self::FIELD_REASON]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REASON])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_REASON])) {
                 $this->addReason(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REASON]] + $ext));
             } else {
                 $this->addReason(new FHIRString($data[self::FIELD_REASON]));
@@ -602,6 +643,9 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_REASON_CODE])) {
             if (is_array($data[self::FIELD_REASON_CODE])) {
                 foreach($data[self::FIELD_REASON_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addReasonCode($v);
                     } else {
@@ -620,17 +664,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_REASON_LINK_ID])) {
                 foreach($data[self::FIELD_REASON_LINK_ID] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addReasonLinkId($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addReasonLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addReasonLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addReasonLinkId(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addReasonLinkId(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_REASON_LINK_ID] instanceof FHIRString) {
                 $this->addReasonLinkId($data[self::FIELD_REASON_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REASON_LINK_ID])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_REASON_LINK_ID])) {
                 $this->addReasonLinkId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REASON_LINK_ID]] + $ext));
             } else {
                 $this->addReasonLinkId(new FHIRString($data[self::FIELD_REASON_LINK_ID]));
@@ -639,6 +690,9 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_REASON_REFERENCE])) {
             if (is_array($data[self::FIELD_REASON_REFERENCE])) {
                 foreach($data[self::FIELD_REASON_REFERENCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addReasonReference($v);
                     } else {
@@ -654,6 +708,9 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_REQUESTER])) {
             if (is_array($data[self::FIELD_REQUESTER])) {
                 foreach($data[self::FIELD_REQUESTER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addRequester($v);
                     } else {
@@ -672,17 +729,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_REQUESTER_LINK_ID])) {
                 foreach($data[self::FIELD_REQUESTER_LINK_ID] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addRequesterLinkId($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addRequesterLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addRequesterLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addRequesterLinkId(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addRequesterLinkId(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_REQUESTER_LINK_ID] instanceof FHIRString) {
                 $this->addRequesterLinkId($data[self::FIELD_REQUESTER_LINK_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REQUESTER_LINK_ID])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_REQUESTER_LINK_ID])) {
                 $this->addRequesterLinkId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUESTER_LINK_ID]] + $ext));
             } else {
                 $this->addRequesterLinkId(new FHIRString($data[self::FIELD_REQUESTER_LINK_ID]));
@@ -694,17 +758,24 @@ class FHIRContractAction extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_SECURITY_LABEL_NUMBER])) {
                 foreach($data[self::FIELD_SECURITY_LABEL_NUMBER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUnsignedInt) {
                         $this->addSecurityLabelNumber($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addSecurityLabelNumber(new FHIRUnsignedInt(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addSecurityLabelNumber(new FHIRUnsignedInt($v));
                     }
                 }
             } elseif ($data[self::FIELD_SECURITY_LABEL_NUMBER] instanceof FHIRUnsignedInt) {
                 $this->addSecurityLabelNumber($data[self::FIELD_SECURITY_LABEL_NUMBER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SECURITY_LABEL_NUMBER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_SECURITY_LABEL_NUMBER])) {
                 $this->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_SECURITY_LABEL_NUMBER]] + $ext));
             } else {
                 $this->addSecurityLabelNumber(new FHIRUnsignedInt($data[self::FIELD_SECURITY_LABEL_NUMBER]));
@@ -720,6 +791,9 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($data[self::FIELD_SUBJECT])) {
             if (is_array($data[self::FIELD_SUBJECT])) {
                 foreach($data[self::FIELD_SUBJECT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRContractSubject) {
                         $this->addSubject($v);
                     } else {
@@ -2119,7 +2193,6 @@ class FHIRContractAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2131,10 +2204,10 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT_LINK_ID, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getDoNotPerform())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DO_NOT_PERFORM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIntent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2155,18 +2228,16 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOccurrenceTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPerformer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2182,7 +2253,6 @@ class FHIRContractAction extends FHIRBackboneElement
         if (null !== ($v = $this->getPerformerRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getPerformerType())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2191,6 +2261,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getReason())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2208,6 +2279,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getReasonLinkId())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2234,6 +2306,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getRequesterLinkId())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2242,6 +2315,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTER_LINK_ID, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2254,7 +2328,6 @@ class FHIRContractAction extends FHIRBackboneElement
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSubject())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2285,13 +2358,29 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_CONTEXT_LINK_ID][] = $v->getValue();
-                $a[self::FIELD_CONTEXT_LINK_ID_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_CONTEXT_LINK_ID][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_CONTEXT_LINK_ID_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_CONTEXT_LINK_ID_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_CONTEXT_LINK_ID][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getDoNotPerform())) {
-            $a[self::FIELD_DO_NOT_PERFORM] = $v->getValue();
-            $a[self::FIELD_DO_NOT_PERFORM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DO_NOT_PERFORM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DO_NOT_PERFORM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DO_NOT_PERFORM] = $v;
+            }
         }
         if (null !== ($v = $this->getIntent())) {
             $a[self::FIELD_INTENT] = $v;
@@ -2302,16 +2391,32 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_LINK_ID][] = $v->getValue();
-                $a[self::FIELD_LINK_ID_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_LINK_ID][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_LINK_ID_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_LINK_ID_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_LINK_ID][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OCCURRENCE_DATE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getOccurrencePeriod())) {
             $a[self::FIELD_OCCURRENCE_PERIOD] = $v;
@@ -2328,8 +2433,17 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PERFORMER_LINK_ID][] = $v->getValue();
-                $a[self::FIELD_PERFORMER_LINK_ID_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PERFORMER_LINK_ID][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PERFORMER_LINK_ID_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PERFORMER_LINK_ID_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PERFORMER_LINK_ID][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getPerformerRole())) {
@@ -2344,8 +2458,17 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_REASON][] = $v->getValue();
-                $a[self::FIELD_REASON_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_REASON][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_REASON_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_REASON_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_REASON][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getReasonCode())) {
@@ -2357,8 +2480,17 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_REASON_LINK_ID][] = $v->getValue();
-                $a[self::FIELD_REASON_LINK_ID_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_REASON_LINK_ID][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_REASON_LINK_ID_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_REASON_LINK_ID_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_REASON_LINK_ID][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getReasonReference())) {
@@ -2373,8 +2505,17 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_REQUESTER_LINK_ID][] = $v->getValue();
-                $a[self::FIELD_REQUESTER_LINK_ID_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_REQUESTER_LINK_ID][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_REQUESTER_LINK_ID_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_REQUESTER_LINK_ID_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_REQUESTER_LINK_ID][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
@@ -2383,8 +2524,17 @@ class FHIRContractAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
-                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getStatus())) {

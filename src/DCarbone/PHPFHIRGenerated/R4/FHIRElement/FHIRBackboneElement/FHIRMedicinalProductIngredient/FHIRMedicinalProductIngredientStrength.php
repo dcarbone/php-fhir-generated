@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONCENTRATION = 'concentration';
     const FIELD_CONCENTRATION_LOW_LIMIT = 'concentrationLowLimit';
     const FIELD_COUNTRY = 'country';
@@ -176,6 +172,9 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      */
     protected $referenceStrength = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicinalProductIngredientStrength Constructor
      * @param null|array $data
@@ -209,6 +208,9 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         if (isset($data[self::FIELD_COUNTRY])) {
             if (is_array($data[self::FIELD_COUNTRY])) {
                 foreach($data[self::FIELD_COUNTRY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addCountry($v);
                     } else {
@@ -227,8 +229,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MEASUREMENT_POINT] instanceof FHIRString) {
                 $this->setMeasurementPoint($data[self::FIELD_MEASUREMENT_POINT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MEASUREMENT_POINT])) {
-                $this->setMeasurementPoint(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MEASUREMENT_POINT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MEASUREMENT_POINT])) {
+                    $this->setMeasurementPoint(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MEASUREMENT_POINT]] + $ext));
+                } else if (is_array($data[self::FIELD_MEASUREMENT_POINT])) {
+                    $this->setMeasurementPoint(new FHIRString(array_merge($ext, $data[self::FIELD_MEASUREMENT_POINT])));
+                }
             } else {
                 $this->setMeasurementPoint(new FHIRString($data[self::FIELD_MEASUREMENT_POINT]));
             }
@@ -250,6 +256,9 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         if (isset($data[self::FIELD_REFERENCE_STRENGTH])) {
             if (is_array($data[self::FIELD_REFERENCE_STRENGTH])) {
                 foreach($data[self::FIELD_REFERENCE_STRENGTH] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicinalProductIngredientReferenceStrength) {
                         $this->addReferenceStrength($v);
                     } else {
@@ -674,15 +683,12 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getConcentration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONCENTRATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getConcentrationLowLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONCENTRATION_LOW_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getCountry())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -691,18 +697,16 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COUNTRY, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getMeasurementPoint())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPresentation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRESENTATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPresentationLowLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRESENTATION_LOW_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getReferenceStrength())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -711,6 +715,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_STRENGTH, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -730,8 +735,15 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             $a[self::FIELD_COUNTRY] = $vs;
         }
         if (null !== ($v = $this->getMeasurementPoint())) {
-            $a[self::FIELD_MEASUREMENT_POINT] = $v->getValue();
-            $a[self::FIELD_MEASUREMENT_POINT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MEASUREMENT_POINT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MEASUREMENT_POINT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MEASUREMENT_POINT] = $v;
+            }
         }
         if (null !== ($v = $this->getPresentation())) {
             $a[self::FIELD_PRESENTATION] = $v;

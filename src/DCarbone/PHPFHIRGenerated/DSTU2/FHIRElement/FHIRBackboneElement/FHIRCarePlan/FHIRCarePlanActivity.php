@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CARE_PLAN_DOT_ACTIVITY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACTION_RESULTING = 'actionResulting';
     const FIELD_DETAIL = 'detail';
     const FIELD_PROGRESS = 'progress';
@@ -137,6 +133,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      */
     protected $reference = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCarePlanActivity Constructor
      * @param null|array $data
@@ -156,6 +155,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         if (isset($data[self::FIELD_ACTION_RESULTING])) {
             if (is_array($data[self::FIELD_ACTION_RESULTING])) {
                 foreach($data[self::FIELD_ACTION_RESULTING] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addActionResulting($v);
                     } else {
@@ -178,6 +180,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         if (isset($data[self::FIELD_PROGRESS])) {
             if (is_array($data[self::FIELD_PROGRESS])) {
                 foreach($data[self::FIELD_PROGRESS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAnnotation) {
                         $this->addProgress($v);
                     } else {
@@ -496,7 +501,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getActionResulting())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -509,7 +513,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         if (null !== ($v = $this->getDetail())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getProgress())) {
             foreach($vs as $v) {
                 if (null === $v) {

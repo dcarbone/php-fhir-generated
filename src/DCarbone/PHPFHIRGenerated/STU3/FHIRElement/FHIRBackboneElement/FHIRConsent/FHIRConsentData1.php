@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRConsentData1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_DATA_1;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_MEANING = 'meaning';
     const FIELD_MEANING_EXT = '_meaning';
     const FIELD_REFERENCE = 'reference';
@@ -110,6 +106,9 @@ class FHIRConsentData1 extends FHIRBackboneElement
      */
     protected $reference = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConsentData1 Constructor
      * @param null|array $data
@@ -132,8 +131,12 @@ class FHIRConsentData1 extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MEANING] instanceof FHIRConsentDataMeaning) {
                 $this->setMeaning($data[self::FIELD_MEANING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MEANING])) {
-                $this->setMeaning(new FHIRConsentDataMeaning([FHIRConsentDataMeaning::FIELD_VALUE => $data[self::FIELD_MEANING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MEANING])) {
+                    $this->setMeaning(new FHIRConsentDataMeaning([FHIRConsentDataMeaning::FIELD_VALUE => $data[self::FIELD_MEANING]] + $ext));
+                } else if (is_array($data[self::FIELD_MEANING])) {
+                    $this->setMeaning(new FHIRConsentDataMeaning(array_merge($ext, $data[self::FIELD_MEANING])));
+                }
             } else {
                 $this->setMeaning(new FHIRConsentDataMeaning($data[self::FIELD_MEANING]));
             }
@@ -316,7 +319,6 @@ class FHIRConsentData1 extends FHIRBackboneElement
         if (null !== ($v = $this->getMeaning())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEANING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -330,7 +332,15 @@ class FHIRConsentData1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMeaning())) {
-            $a[self::FIELD_MEANING] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MEANING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MEANING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MEANING] = $v;
+            }
         }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v;

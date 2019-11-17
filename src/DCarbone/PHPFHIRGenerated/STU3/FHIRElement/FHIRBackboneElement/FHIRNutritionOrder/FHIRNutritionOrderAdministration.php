@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_QUANTITY = 'quantity';
     const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_RATE_QUANTITY = 'rateQuantity';
@@ -148,6 +144,9 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      */
     protected $schedule = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRNutritionOrderAdministration Constructor
      * @param null|array $data
@@ -170,8 +169,12 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
-                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -182,8 +185,12 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RATE_QUANTITY])) {
-                $this->setRateQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_RATE_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RATE_QUANTITY])) {
+                    $this->setRateQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_RATE_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_RATE_QUANTITY])) {
+                    $this->setRateQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_RATE_QUANTITY])));
+                }
             } else {
                 $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
             }
@@ -465,15 +472,12 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRateQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRateRatio())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSchedule())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -487,10 +491,26 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RATE_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RATE_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RATE_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getRateRatio())) {
             $a[self::FIELD_RATE_RATIO] = $v;

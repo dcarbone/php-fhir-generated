@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_OUTER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_END = 'end';
     const FIELD_END_EXT = '_end';
     const FIELD_START = 'start';
@@ -111,6 +107,9 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
      */
     protected $start = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMolecularSequenceOuter Constructor
      * @param null|array $data
@@ -133,8 +132,12 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_END] instanceof FHIRInteger) {
                 $this->setEnd($data[self::FIELD_END]);
-            } elseif ($ext && is_scalar($data[self::FIELD_END])) {
-                $this->setEnd(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_END]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_END])) {
+                    $this->setEnd(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_END]] + $ext));
+                } else if (is_array($data[self::FIELD_END])) {
+                    $this->setEnd(new FHIRInteger(array_merge($ext, $data[self::FIELD_END])));
+                }
             } else {
                 $this->setEnd(new FHIRInteger($data[self::FIELD_END]));
             }
@@ -145,8 +148,12 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_START] instanceof FHIRInteger) {
                 $this->setStart($data[self::FIELD_START]);
-            } elseif ($ext && is_scalar($data[self::FIELD_START])) {
-                $this->setStart(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_START]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_START])) {
+                    $this->setStart(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_START]] + $ext));
+                } else if (is_array($data[self::FIELD_START])) {
+                    $this->setStart(new FHIRInteger(array_merge($ext, $data[self::FIELD_START])));
+                }
             } else {
                 $this->setStart(new FHIRInteger($data[self::FIELD_START]));
             }
@@ -362,12 +369,26 @@ class FHIRMolecularSequenceOuter extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getEnd())) {
-            $a[self::FIELD_END] = $v->getValue();
-            $a[self::FIELD_END_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_END] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_END_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_END] = $v;
+            }
         }
         if (null !== ($v = $this->getStart())) {
-            $a[self::FIELD_START] = $v->getValue();
-            $a[self::FIELD_START_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_START] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_START_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_START] = $v;
+            }
         }
         return $a;
     }

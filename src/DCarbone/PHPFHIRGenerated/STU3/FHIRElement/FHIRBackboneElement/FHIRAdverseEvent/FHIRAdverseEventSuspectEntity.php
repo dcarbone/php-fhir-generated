@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,10 +83,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CAUSALITY = 'causality';
     const FIELD_CAUSALITY_EXT = '_causality';
     const FIELD_CAUSALITY_ASSESSMENT = 'causalityAssessment';
@@ -178,6 +174,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      */
     protected $instance = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRAdverseEventSuspectEntity Constructor
      * @param null|array $data
@@ -200,8 +199,12 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CAUSALITY] instanceof FHIRAdverseEventCausality) {
                 $this->setCausality($data[self::FIELD_CAUSALITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CAUSALITY])) {
-                $this->setCausality(new FHIRAdverseEventCausality([FHIRAdverseEventCausality::FIELD_VALUE => $data[self::FIELD_CAUSALITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CAUSALITY])) {
+                    $this->setCausality(new FHIRAdverseEventCausality([FHIRAdverseEventCausality::FIELD_VALUE => $data[self::FIELD_CAUSALITY]] + $ext));
+                } else if (is_array($data[self::FIELD_CAUSALITY])) {
+                    $this->setCausality(new FHIRAdverseEventCausality(array_merge($ext, $data[self::FIELD_CAUSALITY])));
+                }
             } else {
                 $this->setCausality(new FHIRAdverseEventCausality($data[self::FIELD_CAUSALITY]));
             }
@@ -233,8 +236,12 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] instanceof FHIRString) {
                 $this->setCausalityProductRelatedness($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-                $this->setCausalityProductRelatedness(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+                    $this->setCausalityProductRelatedness(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]] + $ext));
+                } else if (is_array($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+                    $this->setCausalityProductRelatedness(new FHIRString(array_merge($ext, $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])));
+                }
             } else {
                 $this->setCausalityProductRelatedness(new FHIRString($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]));
             }
@@ -608,26 +615,21 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         if (null !== ($v = $this->getCausality())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCausalityAssessment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_ASSESSMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCausalityAuthor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCausalityMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getCausalityProductRelatedness())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCausalityResult())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_RESULT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getInstance())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -641,7 +643,15 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCausality())) {
-            $a[self::FIELD_CAUSALITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CAUSALITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CAUSALITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CAUSALITY] = $v;
+            }
         }
         if (null !== ($v = $this->getCausalityAssessment())) {
             $a[self::FIELD_CAUSALITY_ASSESSMENT] = $v;
@@ -653,8 +663,15 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             $a[self::FIELD_CAUSALITY_METHOD] = $v;
         }
         if (null !== ($v = $this->getCausalityProductRelatedness())) {
-            $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $v->getValue();
-            $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $v;
+            }
         }
         if (null !== ($v = $this->getCausalityResult())) {
             $a[self::FIELD_CAUSALITY_RESULT] = $v;

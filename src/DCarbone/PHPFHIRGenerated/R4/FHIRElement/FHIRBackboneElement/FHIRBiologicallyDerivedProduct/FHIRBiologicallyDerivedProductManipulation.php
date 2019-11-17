@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiolo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRBiologicallyDerivedProductManipulation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_MANIPULATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_TIME_DATE_TIME = 'timeDateTime';
@@ -126,6 +122,9 @@ class FHIRBiologicallyDerivedProductManipulation extends FHIRBackboneElement
      */
     protected $timePeriod = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRBiologicallyDerivedProductManipulation Constructor
      * @param null|array $data
@@ -148,8 +147,12 @@ class FHIRBiologicallyDerivedProductManipulation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -160,8 +163,12 @@ class FHIRBiologicallyDerivedProductManipulation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TIME_DATE_TIME] instanceof FHIRDateTime) {
                 $this->setTimeDateTime($data[self::FIELD_TIME_DATE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIME_DATE_TIME])) {
-                $this->setTimeDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIME_DATE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIME_DATE_TIME])) {
+                    $this->setTimeDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIME_DATE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_TIME_DATE_TIME])) {
+                    $this->setTimeDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_TIME_DATE_TIME])));
+                }
             } else {
                 $this->setTimeDateTime(new FHIRDateTime($data[self::FIELD_TIME_DATE_TIME]));
             }
@@ -407,7 +414,6 @@ class FHIRBiologicallyDerivedProductManipulation extends FHIRBackboneElement
         if (null !== ($v = $this->getTimeDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTimePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
@@ -421,12 +427,26 @@ class FHIRBiologicallyDerivedProductManipulation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getTimeDateTime())) {
-            $a[self::FIELD_TIME_DATE_TIME] = $v->getValue();
-            $a[self::FIELD_TIME_DATE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIME_DATE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIME_DATE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIME_DATE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getTimePeriod())) {
             $a[self::FIELD_TIME_PERIOD] = $v;

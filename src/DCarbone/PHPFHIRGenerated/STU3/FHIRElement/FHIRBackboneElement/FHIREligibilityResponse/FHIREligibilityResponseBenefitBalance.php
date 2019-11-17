@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREli
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELIGIBILITY_RESPONSE_DOT_BENEFIT_BALANCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CATEGORY = 'category';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
@@ -202,6 +198,9 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      */
     protected $unit = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIREligibilityResponseBenefitBalance Constructor
      * @param null|array $data
@@ -231,8 +230,12 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -243,8 +246,12 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_EXCLUDED] instanceof FHIRBoolean) {
                 $this->setExcluded($data[self::FIELD_EXCLUDED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EXCLUDED])) {
-                $this->setExcluded(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXCLUDED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_EXCLUDED])) {
+                    $this->setExcluded(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXCLUDED]] + $ext));
+                } else if (is_array($data[self::FIELD_EXCLUDED])) {
+                    $this->setExcluded(new FHIRBoolean(array_merge($ext, $data[self::FIELD_EXCLUDED])));
+                }
             } else {
                 $this->setExcluded(new FHIRBoolean($data[self::FIELD_EXCLUDED]));
             }
@@ -252,6 +259,9 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
         if (isset($data[self::FIELD_FINANCIAL])) {
             if (is_array($data[self::FIELD_FINANCIAL])) {
                 foreach($data[self::FIELD_FINANCIAL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIREligibilityResponseFinancial) {
                         $this->addFinancial($v);
                     } else {
@@ -270,8 +280,12 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NAME] instanceof FHIRString) {
                 $this->setName($data[self::FIELD_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NAME])) {
-                $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
+                }
             } else {
                 $this->setName(new FHIRString($data[self::FIELD_NAME]));
             }
@@ -784,7 +798,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
         if (null !== ($v = $this->getExcluded())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getFinancial())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -796,19 +809,15 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getNetwork())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NETWORK, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTerm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TERM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUnit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -825,19 +834,40 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
             $a[self::FIELD_CATEGORY] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getExcluded())) {
-            $a[self::FIELD_EXCLUDED] = $v->getValue();
-            $a[self::FIELD_EXCLUDED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXCLUDED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_EXCLUDED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_EXCLUDED] = $v;
+            }
         }
         if ([] !== ($vs = $this->getFinancial())) {
             $a[self::FIELD_FINANCIAL] = $vs;
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $a[self::FIELD_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getNetwork())) {
             $a[self::FIELD_NETWORK] = $v;

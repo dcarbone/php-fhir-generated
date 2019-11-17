@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COPYRIGHT = 'copyright';
     const FIELD_COPYRIGHT_EXT = '_copyright';
     const FIELD_PUBLICATION_DATE = 'publicationDate';
@@ -179,6 +175,9 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRContractContentDefinition Constructor
      * @param null|array $data
@@ -201,8 +200,12 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COPYRIGHT] instanceof FHIRMarkdown) {
                 $this->setCopyright($data[self::FIELD_COPYRIGHT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COPYRIGHT])) {
-                $this->setCopyright(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_COPYRIGHT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COPYRIGHT])) {
+                    $this->setCopyright(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_COPYRIGHT]] + $ext));
+                } else if (is_array($data[self::FIELD_COPYRIGHT])) {
+                    $this->setCopyright(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_COPYRIGHT])));
+                }
             } else {
                 $this->setCopyright(new FHIRMarkdown($data[self::FIELD_COPYRIGHT]));
             }
@@ -213,8 +216,12 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PUBLICATION_DATE] instanceof FHIRDateTime) {
                 $this->setPublicationDate($data[self::FIELD_PUBLICATION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PUBLICATION_DATE])) {
-                $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PUBLICATION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PUBLICATION_DATE])) {
+                    $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PUBLICATION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_PUBLICATION_DATE])) {
+                    $this->setPublicationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_PUBLICATION_DATE])));
+                }
             } else {
                 $this->setPublicationDate(new FHIRDateTime($data[self::FIELD_PUBLICATION_DATE]));
             }
@@ -225,8 +232,12 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PUBLICATION_STATUS] instanceof FHIRContractResourcePublicationStatusCodes) {
                 $this->setPublicationStatus($data[self::FIELD_PUBLICATION_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PUBLICATION_STATUS])) {
-                $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes([FHIRContractResourcePublicationStatusCodes::FIELD_VALUE => $data[self::FIELD_PUBLICATION_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PUBLICATION_STATUS])) {
+                    $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes([FHIRContractResourcePublicationStatusCodes::FIELD_VALUE => $data[self::FIELD_PUBLICATION_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_PUBLICATION_STATUS])) {
+                    $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes(array_merge($ext, $data[self::FIELD_PUBLICATION_STATUS])));
+                }
             } else {
                 $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes($data[self::FIELD_PUBLICATION_STATUS]));
             }
@@ -613,19 +624,15 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
         if (null !== ($v = $this->getPublicationDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_DATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPublicationStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPublisher())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLISHER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -639,15 +646,37 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCopyright())) {
-            $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            $a[self::FIELD_COPYRIGHT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COPYRIGHT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COPYRIGHT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COPYRIGHT] = $v;
+            }
         }
         if (null !== ($v = $this->getPublicationDate())) {
-            $a[self::FIELD_PUBLICATION_DATE] = $v->getValue();
-            $a[self::FIELD_PUBLICATION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PUBLICATION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PUBLICATION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PUBLICATION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getPublicationStatus())) {
-            $a[self::FIELD_PUBLICATION_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PUBLICATION_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PUBLICATION_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PUBLICATION_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getPublisher())) {
             $a[self::FIELD_PUBLISHER] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -221,9 +221,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_CONTAINER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_FHIR_COMMENTS = 'fhir_comments';
 
     const FIELD_ACCOUNT = 'Account';
     const FIELD_ACTIVITY_DEFINITION = 'ActivityDefinition';
@@ -1797,6 +1795,9 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     protected $VisionPrescription = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRResourceContainer Constructor
      * @param null|array $data
@@ -1811,6 +1812,13 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
                 'FHIRResourceContainer::_construct - $data expected to be null or array, %s seen',
                 gettype($data)
             ));
+        }
+        if (isset($data[self::FIELD_FHIR_COMMENTS])) {
+            if (is_array($data[self::FIELD_FHIR_COMMENTS])) {
+                $this->_setFHIRComments($data[self::FIELD_FHIR_COMMENTS]);
+            } else if (is_string($data[self::FIELD_FHIR_COMMENTS])) {
+                $this->_addFHIRComment($data[self::FIELD_FHIR_COMMENTS]);
+            }
         }
         if (isset($data[self::FIELD_ACCOUNT])) {
             if ($data[self::FIELD_ACCOUNT] instanceof FHIRAccount) {
@@ -7973,6 +7981,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
+
         return $sxe;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRTestScriptRule extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_RULE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_PARAM = 'param';
     const FIELD_PARAM_EXT = '_param';
     const FIELD_RESOURCE = 'resource';
@@ -108,6 +104,9 @@ class FHIRTestScriptRule extends FHIRBackboneElement
      */
     protected $resource = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTestScriptRule Constructor
      * @param null|array $data
@@ -130,17 +129,24 @@ class FHIRTestScriptRule extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_PARAM])) {
                 foreach($data[self::FIELD_PARAM] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTestScriptParam) {
                         $this->addParam($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addParam(new FHIRTestScriptParam([FHIRTestScriptParam::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addParam(new FHIRTestScriptParam([FHIRTestScriptParam::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addParam(new FHIRTestScriptParam(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addParam(new FHIRTestScriptParam($v));
                     }
                 }
             } elseif ($data[self::FIELD_PARAM] instanceof FHIRTestScriptParam) {
                 $this->addParam($data[self::FIELD_PARAM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARAM])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PARAM])) {
                 $this->addParam(new FHIRTestScriptParam([FHIRTestScriptParam::FIELD_VALUE => $data[self::FIELD_PARAM]] + $ext));
             } else {
                 $this->addParam(new FHIRTestScriptParam($data[self::FIELD_PARAM]));
@@ -356,7 +362,6 @@ class FHIRTestScriptRule extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARAM, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getResource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -370,7 +375,23 @@ class FHIRTestScriptRule extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getParam())) {
-            $a[self::FIELD_PARAM] = $vs;
+            $a[self::FIELD_PARAM] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PARAM][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PARAM_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PARAM_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PARAM][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRBackboneElement extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_MODIFIER_EXTENSION = 'modifierExtension';
 
     /**
@@ -106,6 +102,9 @@ class FHIRBackboneElement extends FHIRElement
      */
     protected $modifierExtension = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRBackboneElement Constructor
      * @param null|array $data
@@ -125,6 +124,9 @@ class FHIRBackboneElement extends FHIRElement
         if (isset($data[self::FIELD_MODIFIER_EXTENSION])) {
             if (is_array($data[self::FIELD_MODIFIER_EXTENSION])) {
                 foreach($data[self::FIELD_MODIFIER_EXTENSION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExtension) {
                         $this->addModifierExtension($v);
                     } else {
@@ -329,7 +331,6 @@ class FHIRBackboneElement extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getModifierExtension())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -338,6 +339,7 @@ class FHIRBackboneElement extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER_EXTENSION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

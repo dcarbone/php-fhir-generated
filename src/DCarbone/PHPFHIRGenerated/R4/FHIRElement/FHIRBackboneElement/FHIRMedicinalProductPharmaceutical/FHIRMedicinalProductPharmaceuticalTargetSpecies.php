@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PHARMACEUTICAL_DOT_TARGET_SPECIES;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_WITHDRAWAL_PERIOD = 'withdrawalPeriod';
     const FIELD_WITHDRAWAL_PERIOD_EXT = '_withdrawalPeriod';
@@ -106,6 +102,9 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[]
      */
     protected $withdrawalPeriod = [];
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRMedicinalProductPharmaceuticalTargetSpecies Constructor
@@ -136,17 +135,24 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
                 : null;
             if (is_array($data[self::FIELD_WITHDRAWAL_PERIOD])) {
                 foreach($data[self::FIELD_WITHDRAWAL_PERIOD] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicinalProductPharmaceuticalWithdrawalPeriod) {
                         $this->addWithdrawalPeriod($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addWithdrawalPeriod(new FHIRMedicinalProductPharmaceuticalWithdrawalPeriod([FHIRMedicinalProductPharmaceuticalWithdrawalPeriod::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addWithdrawalPeriod(new FHIRMedicinalProductPharmaceuticalWithdrawalPeriod([FHIRMedicinalProductPharmaceuticalWithdrawalPeriod::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addWithdrawalPeriod(new FHIRMedicinalProductPharmaceuticalWithdrawalPeriod(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addWithdrawalPeriod(new FHIRMedicinalProductPharmaceuticalWithdrawalPeriod($v));
                     }
                 }
             } elseif ($data[self::FIELD_WITHDRAWAL_PERIOD] instanceof FHIRMedicinalProductPharmaceuticalWithdrawalPeriod) {
                 $this->addWithdrawalPeriod($data[self::FIELD_WITHDRAWAL_PERIOD]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WITHDRAWAL_PERIOD])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_WITHDRAWAL_PERIOD])) {
                 $this->addWithdrawalPeriod(new FHIRMedicinalProductPharmaceuticalWithdrawalPeriod([FHIRMedicinalProductPharmaceuticalWithdrawalPeriod::FIELD_VALUE => $data[self::FIELD_WITHDRAWAL_PERIOD]] + $ext));
             } else {
                 $this->addWithdrawalPeriod(new FHIRMedicinalProductPharmaceuticalWithdrawalPeriod($data[self::FIELD_WITHDRAWAL_PERIOD]));
@@ -346,11 +352,9 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getWithdrawalPeriod())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -359,6 +363,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
                 $v->xmlSerialize($sxe->addChild(self::FIELD_WITHDRAWAL_PERIOD, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -372,7 +377,23 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
             $a[self::FIELD_CODE] = $v;
         }
         if ([] !== ($vs = $this->getWithdrawalPeriod())) {
-            $a[self::FIELD_WITHDRAWAL_PERIOD] = $vs;
+            $a[self::FIELD_WITHDRAWAL_PERIOD] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_WITHDRAWAL_PERIOD][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_WITHDRAWAL_PERIOD_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_WITHDRAWAL_PERIOD_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_WITHDRAWAL_PERIOD][] = $v;
+                }
+            }
         }
         return $a;
     }

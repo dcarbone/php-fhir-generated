@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIROpera
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_REFERENCED_FROM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_SOURCE = 'source';
     const FIELD_SOURCE_EXT = '_source';
     const FIELD_SOURCE_ID = 'sourceId';
@@ -111,6 +107,9 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      */
     protected $sourceId = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIROperationDefinitionReferencedFrom Constructor
      * @param null|array $data
@@ -133,8 +132,12 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SOURCE] instanceof FHIRString) {
                 $this->setSource($data[self::FIELD_SOURCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SOURCE])) {
-                $this->setSource(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SOURCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SOURCE])) {
+                    $this->setSource(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SOURCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SOURCE])) {
+                    $this->setSource(new FHIRString(array_merge($ext, $data[self::FIELD_SOURCE])));
+                }
             } else {
                 $this->setSource(new FHIRString($data[self::FIELD_SOURCE]));
             }
@@ -145,8 +148,12 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SOURCE_ID] instanceof FHIRString) {
                 $this->setSourceId($data[self::FIELD_SOURCE_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SOURCE_ID])) {
-                $this->setSourceId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SOURCE_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SOURCE_ID])) {
+                    $this->setSourceId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SOURCE_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_SOURCE_ID])) {
+                    $this->setSourceId(new FHIRString(array_merge($ext, $data[self::FIELD_SOURCE_ID])));
+                }
             } else {
                 $this->setSourceId(new FHIRString($data[self::FIELD_SOURCE_ID]));
             }
@@ -360,12 +367,26 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSource())) {
-            $a[self::FIELD_SOURCE] = $v->getValue();
-            $a[self::FIELD_SOURCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SOURCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SOURCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SOURCE] = $v;
+            }
         }
         if (null !== ($v = $this->getSourceId())) {
-            $a[self::FIELD_SOURCE_ID] = $v->getValue();
-            $a[self::FIELD_SOURCE_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SOURCE_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SOURCE_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SOURCE_ID] = $v;
+            }
         }
         return $a;
     }

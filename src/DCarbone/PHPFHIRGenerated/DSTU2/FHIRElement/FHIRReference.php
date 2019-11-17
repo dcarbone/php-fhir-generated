@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRReference extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_REFERENCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DISPLAY = 'display';
     const FIELD_DISPLAY_EXT = '_display';
     const FIELD_REFERENCE = 'reference';
@@ -115,6 +111,9 @@ class FHIRReference extends FHIRElement
      */
     protected $reference = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRReference Constructor
      * @param null|array $data
@@ -137,8 +136,12 @@ class FHIRReference extends FHIRElement
                 : null;
             if ($data[self::FIELD_DISPLAY] instanceof FHIRString) {
                 $this->setDisplay($data[self::FIELD_DISPLAY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DISPLAY])) {
-                $this->setDisplay(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DISPLAY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DISPLAY])) {
+                    $this->setDisplay(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DISPLAY]] + $ext));
+                } else if (is_array($data[self::FIELD_DISPLAY])) {
+                    $this->setDisplay(new FHIRString(array_merge($ext, $data[self::FIELD_DISPLAY])));
+                }
             } else {
                 $this->setDisplay(new FHIRString($data[self::FIELD_DISPLAY]));
             }
@@ -149,8 +152,12 @@ class FHIRReference extends FHIRElement
                 : null;
             if ($data[self::FIELD_REFERENCE] instanceof FHIRString) {
                 $this->setReference($data[self::FIELD_REFERENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REFERENCE])) {
-                $this->setReference(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REFERENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REFERENCE])) {
+                    $this->setReference(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REFERENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_REFERENCE])) {
+                    $this->setReference(new FHIRString(array_merge($ext, $data[self::FIELD_REFERENCE])));
+                }
             } else {
                 $this->setReference(new FHIRString($data[self::FIELD_REFERENCE]));
             }
@@ -372,12 +379,26 @@ class FHIRReference extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDisplay())) {
-            $a[self::FIELD_DISPLAY] = $v->getValue();
-            $a[self::FIELD_DISPLAY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DISPLAY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DISPLAY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DISPLAY] = $v;
+            }
         }
         if (null !== ($v = $this->getReference())) {
-            $a[self::FIELD_REFERENCE] = $v->getValue();
-            $a[self::FIELD_REFERENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REFERENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REFERENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REFERENCE] = $v;
+            }
         }
         return $a;
     }

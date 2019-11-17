@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRDomainResource extends FHIRResource
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONTAINED = 'contained';
     const FIELD_EXTENSION = 'extension';
     const FIELD_MODIFIER_EXTENSION = 'modifierExtension';
@@ -154,6 +150,9 @@ class FHIRDomainResource extends FHIRResource
      */
     protected $text = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDomainResource Constructor
      * @param null|array $data
@@ -191,6 +190,9 @@ class FHIRDomainResource extends FHIRResource
         if (isset($data[self::FIELD_EXTENSION])) {
             if (is_array($data[self::FIELD_EXTENSION])) {
                 foreach($data[self::FIELD_EXTENSION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExtension) {
                         $this->addExtension($v);
                     } else {
@@ -206,6 +208,9 @@ class FHIRDomainResource extends FHIRResource
         if (isset($data[self::FIELD_MODIFIER_EXTENSION])) {
             if (is_array($data[self::FIELD_MODIFIER_EXTENSION])) {
                 foreach($data[self::FIELD_MODIFIER_EXTENSION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExtension) {
                         $this->addModifierExtension($v);
                     } else {
@@ -624,7 +629,6 @@ class FHIRDomainResource extends FHIRResource
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContained())) {
             foreach($vs as $v) {
                 if (null === $v) {

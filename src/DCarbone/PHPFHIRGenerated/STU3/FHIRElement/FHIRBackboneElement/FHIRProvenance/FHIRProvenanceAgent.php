@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,10 +87,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ON_BEHALF_OF_REFERENCE = 'onBehalfOfReference';
     const FIELD_ON_BEHALF_OF_URI = 'onBehalfOfUri';
     const FIELD_ON_BEHALF_OF_URI_EXT = '_onBehalfOfUri';
@@ -169,6 +165,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      */
     protected $whoUri = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRProvenanceAgent Constructor
      * @param null|array $data
@@ -198,8 +197,12 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ON_BEHALF_OF_URI] instanceof FHIRUri) {
                 $this->setOnBehalfOfUri($data[self::FIELD_ON_BEHALF_OF_URI]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ON_BEHALF_OF_URI])) {
-                $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_ON_BEHALF_OF_URI]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ON_BEHALF_OF_URI])) {
+                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_ON_BEHALF_OF_URI]] + $ext));
+                } else if (is_array($data[self::FIELD_ON_BEHALF_OF_URI])) {
+                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $data[self::FIELD_ON_BEHALF_OF_URI])));
+                }
             } else {
                 $this->setOnBehalfOfUri(new FHIRUri($data[self::FIELD_ON_BEHALF_OF_URI]));
             }
@@ -214,6 +217,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         if (isset($data[self::FIELD_ROLE])) {
             if (is_array($data[self::FIELD_ROLE])) {
                 foreach($data[self::FIELD_ROLE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addRole($v);
                     } else {
@@ -239,8 +245,12 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_WHO_URI] instanceof FHIRUri) {
                 $this->setWhoUri($data[self::FIELD_WHO_URI]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WHO_URI])) {
-                $this->setWhoUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_WHO_URI]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WHO_URI])) {
+                    $this->setWhoUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_WHO_URI]] + $ext));
+                } else if (is_array($data[self::FIELD_WHO_URI])) {
+                    $this->setWhoUri(new FHIRUri(array_merge($ext, $data[self::FIELD_WHO_URI])));
+                }
             } else {
                 $this->setWhoUri(new FHIRUri($data[self::FIELD_WHO_URI]));
             }
@@ -609,11 +619,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         if (null !== ($v = $this->getOnBehalfOfUri())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF_URI, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRelatedAgentType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_AGENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRole())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -622,7 +630,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getWhoReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -642,8 +649,15 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $a[self::FIELD_ON_BEHALF_OF_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getOnBehalfOfUri())) {
-            $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
-            $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ON_BEHALF_OF_URI] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ON_BEHALF_OF_URI] = $v;
+            }
         }
         if (null !== ($v = $this->getRelatedAgentType())) {
             $a[self::FIELD_RELATED_AGENT_TYPE] = $v;
@@ -655,8 +669,15 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $a[self::FIELD_WHO_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhoUri())) {
-            $a[self::FIELD_WHO_URI] = $v->getValue();
-            $a[self::FIELD_WHO_URI_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHO_URI] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WHO_URI_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WHO_URI] = $v;
+            }
         }
         return $a;
     }

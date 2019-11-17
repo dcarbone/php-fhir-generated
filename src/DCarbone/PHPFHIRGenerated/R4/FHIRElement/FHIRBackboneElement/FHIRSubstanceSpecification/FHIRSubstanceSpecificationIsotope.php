@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_HALF_LIFE = 'halfLife';
     const FIELD_HALF_LIFE_EXT = '_halfLife';
     const FIELD_IDENTIFIER = 'identifier';
@@ -151,6 +147,9 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      */
     protected $substitution = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSpecificationIsotope Constructor
      * @param null|array $data
@@ -173,8 +172,12 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_HALF_LIFE] instanceof FHIRQuantity) {
                 $this->setHalfLife($data[self::FIELD_HALF_LIFE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_HALF_LIFE])) {
-                $this->setHalfLife(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HALF_LIFE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_HALF_LIFE])) {
+                    $this->setHalfLife(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HALF_LIFE]] + $ext));
+                } else if (is_array($data[self::FIELD_HALF_LIFE])) {
+                    $this->setHalfLife(new FHIRQuantity(array_merge($ext, $data[self::FIELD_HALF_LIFE])));
+                }
             } else {
                 $this->setHalfLife(new FHIRQuantity($data[self::FIELD_HALF_LIFE]));
             }
@@ -185,8 +188,12 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -486,23 +493,18 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getHalfLife())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HALF_LIFE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMolecularWeight())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MOLECULAR_WEIGHT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubstitution())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTITUTION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -516,10 +518,26 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getHalfLife())) {
-            $a[self::FIELD_HALF_LIFE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_HALF_LIFE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_HALF_LIFE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_HALF_LIFE] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getMolecularWeight())) {
             $a[self::FIELD_MOLECULAR_WEIGHT] = $v;

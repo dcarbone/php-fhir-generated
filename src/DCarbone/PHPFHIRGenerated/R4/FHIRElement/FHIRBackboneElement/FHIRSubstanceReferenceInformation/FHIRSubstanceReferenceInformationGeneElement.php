@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_GENE_ELEMENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ELEMENT = 'element';
     const FIELD_ELEMENT_EXT = '_element';
     const FIELD_SOURCE = 'source';
@@ -123,6 +119,9 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceReferenceInformationGeneElement Constructor
      * @param null|array $data
@@ -145,8 +144,12 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ELEMENT] instanceof FHIRIdentifier) {
                 $this->setElement($data[self::FIELD_ELEMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ELEMENT])) {
-                $this->setElement(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_ELEMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ELEMENT])) {
+                    $this->setElement(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_ELEMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_ELEMENT])) {
+                    $this->setElement(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_ELEMENT])));
+                }
             } else {
                 $this->setElement(new FHIRIdentifier($data[self::FIELD_ELEMENT]));
             }
@@ -154,6 +157,9 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
         if (isset($data[self::FIELD_SOURCE])) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSource($v);
                     } else {
@@ -405,11 +411,9 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getElement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -432,7 +436,15 @@ class FHIRSubstanceReferenceInformationGeneElement extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getElement())) {
-            $a[self::FIELD_ELEMENT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ELEMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ELEMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ELEMENT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $vs;

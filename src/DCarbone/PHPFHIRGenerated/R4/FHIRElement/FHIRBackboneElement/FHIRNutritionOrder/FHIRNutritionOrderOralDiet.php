@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ORAL_DIET;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_FLUID_CONSISTENCY_TYPE = 'fluidConsistencyType';
     const FIELD_INSTRUCTION = 'instruction';
     const FIELD_INSTRUCTION_EXT = '_instruction';
@@ -168,6 +164,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      */
     protected $type = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRNutritionOrderOralDiet Constructor
      * @param null|array $data
@@ -187,6 +186,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         if (isset($data[self::FIELD_FLUID_CONSISTENCY_TYPE])) {
             if (is_array($data[self::FIELD_FLUID_CONSISTENCY_TYPE])) {
                 foreach($data[self::FIELD_FLUID_CONSISTENCY_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addFluidConsistencyType($v);
                     } else {
@@ -205,8 +207,12 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_INSTRUCTION] instanceof FHIRString) {
                 $this->setInstruction($data[self::FIELD_INSTRUCTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_INSTRUCTION])) {
-                $this->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INSTRUCTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_INSTRUCTION])) {
+                    $this->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INSTRUCTION]] + $ext));
+                } else if (is_array($data[self::FIELD_INSTRUCTION])) {
+                    $this->setInstruction(new FHIRString(array_merge($ext, $data[self::FIELD_INSTRUCTION])));
+                }
             } else {
                 $this->setInstruction(new FHIRString($data[self::FIELD_INSTRUCTION]));
             }
@@ -214,6 +220,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         if (isset($data[self::FIELD_NUTRIENT])) {
             if (is_array($data[self::FIELD_NUTRIENT])) {
                 foreach($data[self::FIELD_NUTRIENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRNutritionOrderNutrient) {
                         $this->addNutrient($v);
                     } else {
@@ -229,6 +238,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         if (isset($data[self::FIELD_SCHEDULE])) {
             if (is_array($data[self::FIELD_SCHEDULE])) {
                 foreach($data[self::FIELD_SCHEDULE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTiming) {
                         $this->addSchedule($v);
                     } else {
@@ -244,6 +256,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         if (isset($data[self::FIELD_TEXTURE])) {
             if (is_array($data[self::FIELD_TEXTURE])) {
                 foreach($data[self::FIELD_TEXTURE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRNutritionOrderTexture) {
                         $this->addTexture($v);
                     } else {
@@ -259,6 +274,9 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         if (isset($data[self::FIELD_TYPE])) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addType($v);
                     } else {
@@ -751,7 +769,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getFluidConsistencyType())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -760,10 +777,10 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_FLUID_CONSISTENCY_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getInstruction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getNutrient())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -799,6 +816,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -812,8 +830,15 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
             $a[self::FIELD_FLUID_CONSISTENCY_TYPE] = $vs;
         }
         if (null !== ($v = $this->getInstruction())) {
-            $a[self::FIELD_INSTRUCTION] = $v->getValue();
-            $a[self::FIELD_INSTRUCTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_INSTRUCTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_INSTRUCTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_INSTRUCTION] = $v;
+            }
         }
         if ([] !== ($vs = $this->getNutrient())) {
             $a[self::FIELD_NUTRIENT] = $vs;

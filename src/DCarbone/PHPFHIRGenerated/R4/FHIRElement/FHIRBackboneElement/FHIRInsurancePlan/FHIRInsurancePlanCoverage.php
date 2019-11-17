@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_COVERAGE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_BENEFIT = 'benefit';
     const FIELD_NETWORK = 'network';
     const FIELD_TYPE = 'type';
@@ -119,6 +115,9 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRInsurancePlanCoverage Constructor
      * @param null|array $data
@@ -138,6 +137,9 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
         if (isset($data[self::FIELD_BENEFIT])) {
             if (is_array($data[self::FIELD_BENEFIT])) {
                 foreach($data[self::FIELD_BENEFIT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRInsurancePlanBenefit) {
                         $this->addBenefit($v);
                     } else {
@@ -153,6 +155,9 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
         if (isset($data[self::FIELD_NETWORK])) {
             if (is_array($data[self::FIELD_NETWORK])) {
                 foreach($data[self::FIELD_NETWORK] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addNetwork($v);
                     } else {
@@ -426,7 +431,6 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getBenefit())) {
             foreach($vs as $v) {
                 if (null === $v) {

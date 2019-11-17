@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_SECURITY_LABEL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CATEGORY = 'category';
     const FIELD_CLASSIFICATION = 'classification';
     const FIELD_CONTROL = 'control';
@@ -136,6 +132,9 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      */
     protected $number = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRContractSecurityLabel Constructor
      * @param null|array $data
@@ -155,6 +154,9 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         if (isset($data[self::FIELD_CATEGORY])) {
             if (is_array($data[self::FIELD_CATEGORY])) {
                 foreach($data[self::FIELD_CATEGORY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addCategory($v);
                     } else {
@@ -177,6 +179,9 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         if (isset($data[self::FIELD_CONTROL])) {
             if (is_array($data[self::FIELD_CONTROL])) {
                 foreach($data[self::FIELD_CONTROL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addControl($v);
                     } else {
@@ -195,17 +200,24 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_NUMBER])) {
                 foreach($data[self::FIELD_NUMBER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUnsignedInt) {
                         $this->addNumber($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addNumber(new FHIRUnsignedInt(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addNumber(new FHIRUnsignedInt($v));
                     }
                 }
             } elseif ($data[self::FIELD_NUMBER] instanceof FHIRUnsignedInt) {
                 $this->addNumber($data[self::FIELD_NUMBER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NUMBER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_NUMBER])) {
                 $this->addNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_NUMBER]] + $ext));
             } else {
                 $this->addNumber(new FHIRUnsignedInt($data[self::FIELD_NUMBER]));
@@ -547,7 +559,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCategory())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -560,7 +571,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         if (null !== ($v = $this->getClassification())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASSIFICATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getControl())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -569,6 +579,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONTROL, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getNumber())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -577,6 +588,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -601,8 +613,17 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_NUMBER][] = $v->getValue();
-                $a[self::FIELD_NUMBER_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_NUMBER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_NUMBER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_NUMBER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_NUMBER][] = $v;
+                }
             }
         }
         return $a;

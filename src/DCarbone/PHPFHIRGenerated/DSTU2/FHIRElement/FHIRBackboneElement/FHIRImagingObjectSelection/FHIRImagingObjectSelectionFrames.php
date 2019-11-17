@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,10 +87,6 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION_DOT_FRAMES;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_FRAME_NUMBERS = 'frameNumbers';
     const FIELD_FRAME_NUMBERS_EXT = '_frameNumbers';
     const FIELD_URL = 'url';
@@ -118,6 +114,9 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
      */
     protected $url = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImagingObjectSelectionFrames Constructor
      * @param null|array $data
@@ -140,17 +139,24 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_FRAME_NUMBERS])) {
                 foreach($data[self::FIELD_FRAME_NUMBERS] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUnsignedInt) {
                         $this->addFrameNumbers($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addFrameNumbers(new FHIRUnsignedInt(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addFrameNumbers(new FHIRUnsignedInt($v));
                     }
                 }
             } elseif ($data[self::FIELD_FRAME_NUMBERS] instanceof FHIRUnsignedInt) {
                 $this->addFrameNumbers($data[self::FIELD_FRAME_NUMBERS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FRAME_NUMBERS])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_FRAME_NUMBERS])) {
                 $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_FRAME_NUMBERS]] + $ext));
             } else {
                 $this->addFrameNumbers(new FHIRUnsignedInt($data[self::FIELD_FRAME_NUMBERS]));
@@ -162,8 +168,12 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URL] instanceof FHIRUri) {
                 $this->setUrl($data[self::FIELD_URL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URL])) {
-                $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+                } else if (is_array($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_URL])));
+                }
             } else {
                 $this->setUrl(new FHIRUri($data[self::FIELD_URL]));
             }
@@ -393,6 +403,7 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_FRAME_NUMBERS, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getUrl())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->_getFHIRXMLNamespace()));
         }
@@ -411,13 +422,29 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_FRAME_NUMBERS][] = $v->getValue();
-                $a[self::FIELD_FRAME_NUMBERS_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_FRAME_NUMBERS][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_FRAME_NUMBERS_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_FRAME_NUMBERS_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_FRAME_NUMBERS][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $a[self::FIELD_URL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URL] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,10 +74,6 @@ class FHIRValueSetDefine extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_DEFINE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CASE_SENSITIVE = 'caseSensitive';
     const FIELD_CASE_SENSITIVE_EXT = '_caseSensitive';
     const FIELD_CONCEPT = 'concept';
@@ -130,6 +126,9 @@ class FHIRValueSetDefine extends FHIRBackboneElement
      */
     protected $version = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRValueSetDefine Constructor
      * @param null|array $data
@@ -152,8 +151,12 @@ class FHIRValueSetDefine extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CASE_SENSITIVE] instanceof FHIRBoolean) {
                 $this->setCaseSensitive($data[self::FIELD_CASE_SENSITIVE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CASE_SENSITIVE])) {
-                $this->setCaseSensitive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_CASE_SENSITIVE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CASE_SENSITIVE])) {
+                    $this->setCaseSensitive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_CASE_SENSITIVE]] + $ext));
+                } else if (is_array($data[self::FIELD_CASE_SENSITIVE])) {
+                    $this->setCaseSensitive(new FHIRBoolean(array_merge($ext, $data[self::FIELD_CASE_SENSITIVE])));
+                }
             } else {
                 $this->setCaseSensitive(new FHIRBoolean($data[self::FIELD_CASE_SENSITIVE]));
             }
@@ -161,6 +164,9 @@ class FHIRValueSetDefine extends FHIRBackboneElement
         if (isset($data[self::FIELD_CONCEPT])) {
             if (is_array($data[self::FIELD_CONCEPT])) {
                 foreach($data[self::FIELD_CONCEPT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRValueSetConcept) {
                         $this->addConcept($v);
                     } else {
@@ -179,8 +185,12 @@ class FHIRValueSetDefine extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SYSTEM] instanceof FHIRUri) {
                 $this->setSystem($data[self::FIELD_SYSTEM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SYSTEM])) {
-                $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_SYSTEM]] + $ext));
+                } else if (is_array($data[self::FIELD_SYSTEM])) {
+                    $this->setSystem(new FHIRUri(array_merge($ext, $data[self::FIELD_SYSTEM])));
+                }
             } else {
                 $this->setSystem(new FHIRUri($data[self::FIELD_SYSTEM]));
             }
@@ -191,8 +201,12 @@ class FHIRValueSetDefine extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VERSION] instanceof FHIRString) {
                 $this->setVersion($data[self::FIELD_VERSION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERSION])) {
-                $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERSION])) {
+                    $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VERSION]] + $ext));
+                } else if (is_array($data[self::FIELD_VERSION])) {
+                    $this->setVersion(new FHIRString(array_merge($ext, $data[self::FIELD_VERSION])));
+                }
             } else {
                 $this->setVersion(new FHIRString($data[self::FIELD_VERSION]));
             }
@@ -492,7 +506,6 @@ class FHIRValueSetDefine extends FHIRBackboneElement
         if (null !== ($v = $this->getCaseSensitive())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CASE_SENSITIVE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getConcept())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -501,6 +514,7 @@ class FHIRValueSetDefine extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONCEPT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getSystem())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->_getFHIRXMLNamespace()));
         }
@@ -517,19 +531,40 @@ class FHIRValueSetDefine extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCaseSensitive())) {
-            $a[self::FIELD_CASE_SENSITIVE] = $v->getValue();
-            $a[self::FIELD_CASE_SENSITIVE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CASE_SENSITIVE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CASE_SENSITIVE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CASE_SENSITIVE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getConcept())) {
             $a[self::FIELD_CONCEPT] = $vs;
         }
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = $v->getValue();
-            $a[self::FIELD_SYSTEM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SYSTEM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SYSTEM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SYSTEM] = $v;
+            }
         }
         if (null !== ($v = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = $v->getValue();
-            $a[self::FIELD_VERSION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERSION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERSION] = $v;
+            }
         }
         return $a;
     }

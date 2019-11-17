@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_ALLOWED_RESPONSE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_MESSAGE = 'message';
     const FIELD_MESSAGE_EXT = '_message';
     const FIELD_SITUATION = 'situation';
@@ -118,6 +114,9 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      */
     protected $situation = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMessageDefinitionAllowedResponse Constructor
      * @param null|array $data
@@ -140,8 +139,12 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MESSAGE] instanceof FHIRCanonical) {
                 $this->setMessage($data[self::FIELD_MESSAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MESSAGE])) {
-                $this->setMessage(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_MESSAGE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MESSAGE])) {
+                    $this->setMessage(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_MESSAGE]] + $ext));
+                } else if (is_array($data[self::FIELD_MESSAGE])) {
+                    $this->setMessage(new FHIRCanonical(array_merge($ext, $data[self::FIELD_MESSAGE])));
+                }
             } else {
                 $this->setMessage(new FHIRCanonical($data[self::FIELD_MESSAGE]));
             }
@@ -152,8 +155,12 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SITUATION] instanceof FHIRMarkdown) {
                 $this->setSituation($data[self::FIELD_SITUATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SITUATION])) {
-                $this->setSituation(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_SITUATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SITUATION])) {
+                    $this->setSituation(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_SITUATION]] + $ext));
+                } else if (is_array($data[self::FIELD_SITUATION])) {
+                    $this->setSituation(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_SITUATION])));
+                }
             } else {
                 $this->setSituation(new FHIRMarkdown($data[self::FIELD_SITUATION]));
             }
@@ -377,12 +384,26 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMessage())) {
-            $a[self::FIELD_MESSAGE] = $v->getValue();
-            $a[self::FIELD_MESSAGE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MESSAGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MESSAGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MESSAGE] = $v;
+            }
         }
         if (null !== ($v = $this->getSituation())) {
-            $a[self::FIELD_SITUATION] = $v->getValue();
-            $a[self::FIELD_SITUATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SITUATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SITUATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SITUATION] = $v;
+            }
         }
         return $a;
     }

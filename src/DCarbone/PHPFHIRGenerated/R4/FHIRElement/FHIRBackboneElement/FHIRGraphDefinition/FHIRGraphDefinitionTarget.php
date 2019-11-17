@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraph
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GRAPH_DEFINITION_DOT_TARGET;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COMPARTMENT = 'compartment';
     const FIELD_LINK = 'link';
     const FIELD_PARAMS = 'params';
@@ -151,6 +147,9 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRGraphDefinitionTarget Constructor
      * @param null|array $data
@@ -170,6 +169,9 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         if (isset($data[self::FIELD_COMPARTMENT])) {
             if (is_array($data[self::FIELD_COMPARTMENT])) {
                 foreach($data[self::FIELD_COMPARTMENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRGraphDefinitionCompartment) {
                         $this->addCompartment($v);
                     } else {
@@ -185,6 +187,9 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         if (isset($data[self::FIELD_LINK])) {
             if (is_array($data[self::FIELD_LINK])) {
                 foreach($data[self::FIELD_LINK] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRGraphDefinitionLink) {
                         $this->addLink($v);
                     } else {
@@ -203,8 +208,12 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PARAMS] instanceof FHIRString) {
                 $this->setParams($data[self::FIELD_PARAMS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARAMS])) {
-                $this->setParams(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARAMS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARAMS])) {
+                    $this->setParams(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARAMS]] + $ext));
+                } else if (is_array($data[self::FIELD_PARAMS])) {
+                    $this->setParams(new FHIRString(array_merge($ext, $data[self::FIELD_PARAMS])));
+                }
             } else {
                 $this->setParams(new FHIRString($data[self::FIELD_PARAMS]));
             }
@@ -215,8 +224,12 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PROFILE] instanceof FHIRCanonical) {
                 $this->setProfile($data[self::FIELD_PROFILE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PROFILE])) {
-                $this->setProfile(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_PROFILE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PROFILE])) {
+                    $this->setProfile(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_PROFILE]] + $ext));
+                } else if (is_array($data[self::FIELD_PROFILE])) {
+                    $this->setProfile(new FHIRCanonical(array_merge($ext, $data[self::FIELD_PROFILE])));
+                }
             } else {
                 $this->setProfile(new FHIRCanonical($data[self::FIELD_PROFILE]));
             }
@@ -227,8 +240,12 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRCode) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRCode(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRCode($data[self::FIELD_TYPE]));
             }
@@ -592,7 +609,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCompartment())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -610,6 +626,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getParams())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -635,16 +652,37 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
             $a[self::FIELD_LINK] = $vs;
         }
         if (null !== ($v = $this->getParams())) {
-            $a[self::FIELD_PARAMS] = $v->getValue();
-            $a[self::FIELD_PARAMS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARAMS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARAMS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARAMS] = $v;
+            }
         }
         if (null !== ($v = $this->getProfile())) {
-            $a[self::FIELD_PROFILE] = $v->getValue();
-            $a[self::FIELD_PROFILE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PROFILE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PROFILE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PROFILE] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            $a[self::FIELD_TYPE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return $a;
     }

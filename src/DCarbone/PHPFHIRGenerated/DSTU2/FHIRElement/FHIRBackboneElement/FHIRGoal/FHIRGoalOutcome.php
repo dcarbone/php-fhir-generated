@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRGo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRGoalOutcome extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GOAL_DOT_OUTCOME;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_RESULT_CODEABLE_CONCEPT = 'resultCodeableConcept';
     const FIELD_RESULT_REFERENCE = 'resultReference';
 
@@ -109,6 +105,9 @@ class FHIRGoalOutcome extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected $resultReference = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRGoalOutcome Constructor
@@ -309,11 +308,9 @@ class FHIRGoalOutcome extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getResultCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResultReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }

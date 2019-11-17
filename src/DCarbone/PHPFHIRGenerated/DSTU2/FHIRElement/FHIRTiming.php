@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRTiming extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIMING;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_EVENT = 'event';
     const FIELD_EVENT_EXT = '_event';
@@ -132,6 +128,9 @@ class FHIRTiming extends FHIRElement
      */
     protected $repeat = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTiming Constructor
      * @param null|array $data
@@ -161,17 +160,24 @@ class FHIRTiming extends FHIRElement
                 : null;
             if (is_array($data[self::FIELD_EVENT])) {
                 foreach($data[self::FIELD_EVENT] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDateTime) {
                         $this->addEvent($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addEvent(new FHIRDateTime(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addEvent(new FHIRDateTime($v));
                     }
                 }
             } elseif ($data[self::FIELD_EVENT] instanceof FHIRDateTime) {
                 $this->addEvent($data[self::FIELD_EVENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_EVENT])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_EVENT])) {
                 $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EVENT]] + $ext));
             } else {
                 $this->addEvent(new FHIRDateTime($data[self::FIELD_EVENT]));
@@ -442,7 +448,6 @@ class FHIRTiming extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -476,8 +481,17 @@ class FHIRTiming extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_EVENT][] = $v->getValue();
-                $a[self::FIELD_EVENT_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_EVENT][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_EVENT_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_EVENT_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_EVENT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getRepeat())) {

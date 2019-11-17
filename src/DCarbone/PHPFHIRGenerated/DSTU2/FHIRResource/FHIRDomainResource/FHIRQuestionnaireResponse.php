@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,10 +85,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_RESPONSE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTHOR = 'author';
     const FIELD_AUTHORED = 'authored';
     const FIELD_AUTHORED_EXT = '_authored';
@@ -212,6 +208,9 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      */
     protected $subject = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRQuestionnaireResponse Constructor
      * @param null|array $data
@@ -241,8 +240,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
                 : null;
             if ($data[self::FIELD_AUTHORED] instanceof FHIRDateTime) {
                 $this->setAuthored($data[self::FIELD_AUTHORED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AUTHORED])) {
-                $this->setAuthored(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_AUTHORED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AUTHORED])) {
+                    $this->setAuthored(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_AUTHORED]] + $ext));
+                } else if (is_array($data[self::FIELD_AUTHORED])) {
+                    $this->setAuthored(new FHIRDateTime(array_merge($ext, $data[self::FIELD_AUTHORED])));
+                }
             } else {
                 $this->setAuthored(new FHIRDateTime($data[self::FIELD_AUTHORED]));
             }
@@ -267,8 +270,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -293,8 +300,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRQuestionnaireResponseStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRQuestionnaireResponseStatus([FHIRQuestionnaireResponseStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRQuestionnaireResponseStatus([FHIRQuestionnaireResponseStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRQuestionnaireResponseStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRQuestionnaireResponseStatus($data[self::FIELD_STATUS]));
             }
@@ -745,38 +756,30 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAuthored())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEncounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGroup())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuestionnaire())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUESTIONNAIRE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSubject())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -793,8 +796,15 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_AUTHOR] = $v;
         }
         if (null !== ($v = $this->getAuthored())) {
-            $a[self::FIELD_AUTHORED] = $v->getValue();
-            $a[self::FIELD_AUTHORED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AUTHORED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AUTHORED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AUTHORED] = $v;
+            }
         }
         if (null !== ($v = $this->getEncounter())) {
             $a[self::FIELD_ENCOUNTER] = $v;
@@ -803,7 +813,15 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_GROUP] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getQuestionnaire())) {
             $a[self::FIELD_QUESTIONNAIRE] = $v;
@@ -812,7 +830,15 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_SOURCE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;

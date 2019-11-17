@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,10 +90,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GROUP;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACTIVE = 'active';
     const FIELD_ACTIVE_EXT = '_active';
     const FIELD_ACTUAL = 'actual';
@@ -226,6 +222,9 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRGroup Constructor
      * @param null|array $data
@@ -248,8 +247,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 : null;
             if ($data[self::FIELD_ACTIVE] instanceof FHIRBoolean) {
                 $this->setActive($data[self::FIELD_ACTIVE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ACTIVE])) {
-                $this->setActive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ACTIVE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ACTIVE])) {
+                    $this->setActive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ACTIVE]] + $ext));
+                } else if (is_array($data[self::FIELD_ACTIVE])) {
+                    $this->setActive(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ACTIVE])));
+                }
             } else {
                 $this->setActive(new FHIRBoolean($data[self::FIELD_ACTIVE]));
             }
@@ -260,8 +263,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 : null;
             if ($data[self::FIELD_ACTUAL] instanceof FHIRBoolean) {
                 $this->setActual($data[self::FIELD_ACTUAL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ACTUAL])) {
-                $this->setActual(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ACTUAL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ACTUAL])) {
+                    $this->setActual(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ACTUAL]] + $ext));
+                } else if (is_array($data[self::FIELD_ACTUAL])) {
+                    $this->setActual(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ACTUAL])));
+                }
             } else {
                 $this->setActual(new FHIRBoolean($data[self::FIELD_ACTUAL]));
             }
@@ -269,6 +276,9 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (isset($data[self::FIELD_CHARACTERISTIC])) {
             if (is_array($data[self::FIELD_CHARACTERISTIC])) {
                 foreach($data[self::FIELD_CHARACTERISTIC] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRGroupCharacteristic) {
                         $this->addCharacteristic($v);
                     } else {
@@ -294,17 +304,24 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
             } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
                 $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
@@ -320,6 +337,9 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (isset($data[self::FIELD_MEMBER])) {
             if (is_array($data[self::FIELD_MEMBER])) {
                 foreach($data[self::FIELD_MEMBER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRGroupMember) {
                         $this->addMember($v);
                     } else {
@@ -338,8 +358,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 : null;
             if ($data[self::FIELD_NAME] instanceof FHIRString) {
                 $this->setName($data[self::FIELD_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NAME])) {
-                $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
+                }
             } else {
                 $this->setName(new FHIRString($data[self::FIELD_NAME]));
             }
@@ -350,8 +374,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRUnsignedInt) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
-                $this->setQuantity(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRUnsignedInt(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRUnsignedInt($data[self::FIELD_QUANTITY]));
             }
@@ -362,8 +390,12 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRGroupType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRGroupType([FHIRGroupType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRGroupType([FHIRGroupType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRGroupType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRGroupType($data[self::FIELD_TYPE]));
             }
@@ -954,7 +986,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getActual())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTUAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getCharacteristic())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -967,7 +998,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -980,7 +1010,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (null !== ($v = $this->getManagingEntity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MANAGING_ENTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getMember())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -989,13 +1018,13 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MEMBER, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1009,12 +1038,26 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActive())) {
-            $a[self::FIELD_ACTIVE] = $v->getValue();
-            $a[self::FIELD_ACTIVE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ACTIVE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ACTIVE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ACTIVE] = $v;
+            }
         }
         if (null !== ($v = $this->getActual())) {
-            $a[self::FIELD_ACTUAL] = $v->getValue();
-            $a[self::FIELD_ACTUAL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ACTUAL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ACTUAL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ACTUAL] = $v;
+            }
         }
         if ([] !== ($vs = $this->getCharacteristic())) {
             $a[self::FIELD_CHARACTERISTIC] = $vs;
@@ -1023,7 +1066,23 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_CODE] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IDENTIFIER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IDENTIFIER][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getManagingEntity())) {
             $a[self::FIELD_MANAGING_ENTITY] = $v;
@@ -1032,15 +1091,37 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_MEMBER] = $vs;
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $a[self::FIELD_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            $a[self::FIELD_QUANTITY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

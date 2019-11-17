@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,10 +90,6 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_HYBRID_TYPE = 'hybridType';
     const FIELD_MATERNAL_ORGANISM_ID = 'maternalOrganismId';
     const FIELD_MATERNAL_ORGANISM_ID_EXT = '_maternalOrganismId';
@@ -167,6 +163,9 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      */
     protected $paternalOrganismName = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSourceMaterialHybrid Constructor
      * @param null|array $data
@@ -196,8 +195,12 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MATERNAL_ORGANISM_ID] instanceof FHIRString) {
                 $this->setMaternalOrganismId($data[self::FIELD_MATERNAL_ORGANISM_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
-                $this->setMaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MATERNAL_ORGANISM_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
+                    $this->setMaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MATERNAL_ORGANISM_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
+                    $this->setMaternalOrganismId(new FHIRString(array_merge($ext, $data[self::FIELD_MATERNAL_ORGANISM_ID])));
+                }
             } else {
                 $this->setMaternalOrganismId(new FHIRString($data[self::FIELD_MATERNAL_ORGANISM_ID]));
             }
@@ -208,8 +211,12 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MATERNAL_ORGANISM_NAME] instanceof FHIRString) {
                 $this->setMaternalOrganismName($data[self::FIELD_MATERNAL_ORGANISM_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
-                $this->setMaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MATERNAL_ORGANISM_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
+                    $this->setMaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MATERNAL_ORGANISM_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
+                    $this->setMaternalOrganismName(new FHIRString(array_merge($ext, $data[self::FIELD_MATERNAL_ORGANISM_NAME])));
+                }
             } else {
                 $this->setMaternalOrganismName(new FHIRString($data[self::FIELD_MATERNAL_ORGANISM_NAME]));
             }
@@ -220,8 +227,12 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PATERNAL_ORGANISM_ID] instanceof FHIRString) {
                 $this->setPaternalOrganismId($data[self::FIELD_PATERNAL_ORGANISM_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
-                $this->setPaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATERNAL_ORGANISM_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
+                    $this->setPaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATERNAL_ORGANISM_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
+                    $this->setPaternalOrganismId(new FHIRString(array_merge($ext, $data[self::FIELD_PATERNAL_ORGANISM_ID])));
+                }
             } else {
                 $this->setPaternalOrganismId(new FHIRString($data[self::FIELD_PATERNAL_ORGANISM_ID]));
             }
@@ -232,8 +243,12 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PATERNAL_ORGANISM_NAME] instanceof FHIRString) {
                 $this->setPaternalOrganismName($data[self::FIELD_PATERNAL_ORGANISM_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
-                $this->setPaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATERNAL_ORGANISM_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
+                    $this->setPaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATERNAL_ORGANISM_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
+                    $this->setPaternalOrganismName(new FHIRString(array_merge($ext, $data[self::FIELD_PATERNAL_ORGANISM_NAME])));
+                }
             } else {
                 $this->setPaternalOrganismName(new FHIRString($data[self::FIELD_PATERNAL_ORGANISM_NAME]));
             }
@@ -564,7 +579,6 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getHybridType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HYBRID_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -593,20 +607,48 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             $a[self::FIELD_HYBRID_TYPE] = $v;
         }
         if (null !== ($v = $this->getMaternalOrganismId())) {
-            $a[self::FIELD_MATERNAL_ORGANISM_ID] = $v->getValue();
-            $a[self::FIELD_MATERNAL_ORGANISM_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MATERNAL_ORGANISM_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MATERNAL_ORGANISM_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MATERNAL_ORGANISM_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getMaternalOrganismName())) {
-            $a[self::FIELD_MATERNAL_ORGANISM_NAME] = $v->getValue();
-            $a[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MATERNAL_ORGANISM_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MATERNAL_ORGANISM_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getPaternalOrganismId())) {
-            $a[self::FIELD_PATERNAL_ORGANISM_ID] = $v->getValue();
-            $a[self::FIELD_PATERNAL_ORGANISM_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATERNAL_ORGANISM_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PATERNAL_ORGANISM_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PATERNAL_ORGANISM_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getPaternalOrganismName())) {
-            $a[self::FIELD_PATERNAL_ORGANISM_NAME] = $v->getValue();
-            $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATERNAL_ORGANISM_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PATERNAL_ORGANISM_NAME] = $v;
+            }
         }
         return $a;
     }

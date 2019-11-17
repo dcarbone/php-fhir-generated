@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_SUBSTITUTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_REASON = 'reason';
     const FIELD_RESPONSIBLE_PARTY = 'responsibleParty';
     const FIELD_TYPE = 'type';
@@ -140,6 +136,9 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      */
     protected $wasSubstituted = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationDispenseSubstitution Constructor
      * @param null|array $data
@@ -159,6 +158,9 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
         if (isset($data[self::FIELD_REASON])) {
             if (is_array($data[self::FIELD_REASON])) {
                 foreach($data[self::FIELD_REASON] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addReason($v);
                     } else {
@@ -174,6 +176,9 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
         if (isset($data[self::FIELD_RESPONSIBLE_PARTY])) {
             if (is_array($data[self::FIELD_RESPONSIBLE_PARTY])) {
                 foreach($data[self::FIELD_RESPONSIBLE_PARTY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addResponsibleParty($v);
                     } else {
@@ -199,8 +204,12 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_WAS_SUBSTITUTED] instanceof FHIRBoolean) {
                 $this->setWasSubstituted($data[self::FIELD_WAS_SUBSTITUTED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WAS_SUBSTITUTED])) {
-                $this->setWasSubstituted(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_WAS_SUBSTITUTED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WAS_SUBSTITUTED])) {
+                    $this->setWasSubstituted(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_WAS_SUBSTITUTED]] + $ext));
+                } else if (is_array($data[self::FIELD_WAS_SUBSTITUTED])) {
+                    $this->setWasSubstituted(new FHIRBoolean(array_merge($ext, $data[self::FIELD_WAS_SUBSTITUTED])));
+                }
             } else {
                 $this->setWasSubstituted(new FHIRBoolean($data[self::FIELD_WAS_SUBSTITUTED]));
             }
@@ -524,7 +533,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getResponsibleParty())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -533,7 +541,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE_PARTY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -559,8 +566,15 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getWasSubstituted())) {
-            $a[self::FIELD_WAS_SUBSTITUTED] = $v->getValue();
-            $a[self::FIELD_WAS_SUBSTITUTED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WAS_SUBSTITUTED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WAS_SUBSTITUTED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WAS_SUBSTITUTED] = $v;
+            }
         }
         return $a;
     }

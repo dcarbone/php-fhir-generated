@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_VERIFICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_VERIFICATION_DATE = 'verificationDate';
     const FIELD_VERIFICATION_DATE_EXT = '_verificationDate';
     const FIELD_VERIFIED = 'verified';
@@ -126,6 +122,9 @@ class FHIRConsentVerification extends FHIRBackboneElement
      */
     protected $verifiedWith = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConsentVerification Constructor
      * @param null|array $data
@@ -148,8 +147,12 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VERIFICATION_DATE] instanceof FHIRDateTime) {
                 $this->setVerificationDate($data[self::FIELD_VERIFICATION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERIFICATION_DATE])) {
-                $this->setVerificationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_VERIFICATION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERIFICATION_DATE])) {
+                    $this->setVerificationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_VERIFICATION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_VERIFICATION_DATE])) {
+                    $this->setVerificationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_VERIFICATION_DATE])));
+                }
             } else {
                 $this->setVerificationDate(new FHIRDateTime($data[self::FIELD_VERIFICATION_DATE]));
             }
@@ -160,8 +163,12 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VERIFIED] instanceof FHIRBoolean) {
                 $this->setVerified($data[self::FIELD_VERIFIED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERIFIED])) {
-                $this->setVerified(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_VERIFIED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERIFIED])) {
+                    $this->setVerified(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_VERIFIED]] + $ext));
+                } else if (is_array($data[self::FIELD_VERIFIED])) {
+                    $this->setVerified(new FHIRBoolean(array_merge($ext, $data[self::FIELD_VERIFIED])));
+                }
             } else {
                 $this->setVerified(new FHIRBoolean($data[self::FIELD_VERIFIED]));
             }
@@ -405,7 +412,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
         if (null !== ($v = $this->getVerified())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFIED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getVerifiedWith())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFIED_WITH, null, $v->_getFHIRXMLNamespace()));
         }
@@ -419,12 +425,26 @@ class FHIRConsentVerification extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getVerificationDate())) {
-            $a[self::FIELD_VERIFICATION_DATE] = $v->getValue();
-            $a[self::FIELD_VERIFICATION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERIFICATION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERIFICATION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERIFICATION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getVerified())) {
-            $a[self::FIELD_VERIFIED] = $v->getValue();
-            $a[self::FIELD_VERIFIED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERIFIED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERIFIED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERIFIED] = $v;
+            }
         }
         if (null !== ($v = $this->getVerifiedWith())) {
             $a[self::FIELD_VERIFIED_WITH] = $v;

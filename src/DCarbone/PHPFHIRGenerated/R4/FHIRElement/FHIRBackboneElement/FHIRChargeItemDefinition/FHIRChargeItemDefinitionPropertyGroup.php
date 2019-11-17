@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CHARGE_ITEM_DEFINITION_DOT_PROPERTY_GROUP;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_APPLICABILITY = 'applicability';
     const FIELD_PRICE_COMPONENT = 'priceComponent';
 
@@ -115,6 +111,9 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      */
     protected $priceComponent = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRChargeItemDefinitionPropertyGroup Constructor
      * @param null|array $data
@@ -134,6 +133,9 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
         if (isset($data[self::FIELD_APPLICABILITY])) {
             if (is_array($data[self::FIELD_APPLICABILITY])) {
                 foreach($data[self::FIELD_APPLICABILITY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRChargeItemDefinitionApplicability) {
                         $this->addApplicability($v);
                     } else {
@@ -149,6 +151,9 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
         if (isset($data[self::FIELD_PRICE_COMPONENT])) {
             if (is_array($data[self::FIELD_PRICE_COMPONENT])) {
                 foreach($data[self::FIELD_PRICE_COMPONENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRChargeItemDefinitionPriceComponent) {
                         $this->addPriceComponent($v);
                     } else {
@@ -405,7 +410,6 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getApplicability())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -423,6 +427,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRICE_COMPONENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

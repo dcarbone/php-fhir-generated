@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRTriggerDefinition extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONDITION = 'condition';
     const FIELD_DATA = 'data';
     const FIELD_NAME = 'name';
@@ -203,6 +199,9 @@ class FHIRTriggerDefinition extends FHIRElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTriggerDefinition Constructor
      * @param null|array $data
@@ -229,6 +228,9 @@ class FHIRTriggerDefinition extends FHIRElement
         if (isset($data[self::FIELD_DATA])) {
             if (is_array($data[self::FIELD_DATA])) {
                 foreach($data[self::FIELD_DATA] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDataRequirement) {
                         $this->addData($v);
                     } else {
@@ -247,8 +249,12 @@ class FHIRTriggerDefinition extends FHIRElement
                 : null;
             if ($data[self::FIELD_NAME] instanceof FHIRString) {
                 $this->setName($data[self::FIELD_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NAME])) {
-                $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
+                }
             } else {
                 $this->setName(new FHIRString($data[self::FIELD_NAME]));
             }
@@ -259,8 +265,12 @@ class FHIRTriggerDefinition extends FHIRElement
                 : null;
             if ($data[self::FIELD_TIMING_DATE] instanceof FHIRDate) {
                 $this->setTimingDate($data[self::FIELD_TIMING_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIMING_DATE])) {
-                $this->setTimingDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_TIMING_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIMING_DATE])) {
+                    $this->setTimingDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_TIMING_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_TIMING_DATE])) {
+                    $this->setTimingDate(new FHIRDate(array_merge($ext, $data[self::FIELD_TIMING_DATE])));
+                }
             } else {
                 $this->setTimingDate(new FHIRDate($data[self::FIELD_TIMING_DATE]));
             }
@@ -271,8 +281,12 @@ class FHIRTriggerDefinition extends FHIRElement
                 : null;
             if ($data[self::FIELD_TIMING_DATE_TIME] instanceof FHIRDateTime) {
                 $this->setTimingDateTime($data[self::FIELD_TIMING_DATE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIMING_DATE_TIME])) {
-                $this->setTimingDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIMING_DATE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIMING_DATE_TIME])) {
+                    $this->setTimingDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIMING_DATE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_TIMING_DATE_TIME])) {
+                    $this->setTimingDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_TIMING_DATE_TIME])));
+                }
             } else {
                 $this->setTimingDateTime(new FHIRDateTime($data[self::FIELD_TIMING_DATE_TIME]));
             }
@@ -297,8 +311,12 @@ class FHIRTriggerDefinition extends FHIRElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRTriggerType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRTriggerType([FHIRTriggerType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRTriggerType([FHIRTriggerType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRTriggerType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRTriggerType($data[self::FIELD_TYPE]));
             }
@@ -767,11 +785,9 @@ class FHIRTriggerDefinition extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCondition())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getData())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -780,6 +796,7 @@ class FHIRTriggerDefinition extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -789,15 +806,12 @@ class FHIRTriggerDefinition extends FHIRElement
         if (null !== ($v = $this->getTimingDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTimingReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTimingTiming())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -817,16 +831,37 @@ class FHIRTriggerDefinition extends FHIRElement
             $a[self::FIELD_DATA] = $vs;
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $a[self::FIELD_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingDate())) {
-            $a[self::FIELD_TIMING_DATE] = $v->getValue();
-            $a[self::FIELD_TIMING_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIMING_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIMING_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIMING_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
-            $a[self::FIELD_TIMING_DATE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIMING_DATE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIMING_DATE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIMING_DATE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getTimingReference())) {
             $a[self::FIELD_TIMING_REFERENCE] = $v;
@@ -835,7 +870,15 @@ class FHIRTriggerDefinition extends FHIRElement
             $a[self::FIELD_TIMING_TIMING] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return $a;
     }

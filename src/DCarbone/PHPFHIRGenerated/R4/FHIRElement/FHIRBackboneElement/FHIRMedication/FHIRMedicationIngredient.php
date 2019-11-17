@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_INGREDIENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_IS_ACTIVE = 'isActive';
     const FIELD_IS_ACTIVE_EXT = '_isActive';
     const FIELD_ITEM_CODEABLE_CONCEPT = 'itemCodeableConcept';
@@ -142,6 +138,9 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      */
     protected $strength = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationIngredient Constructor
      * @param null|array $data
@@ -164,8 +163,12 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IS_ACTIVE] instanceof FHIRBoolean) {
                 $this->setIsActive($data[self::FIELD_IS_ACTIVE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IS_ACTIVE])) {
-                $this->setIsActive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_ACTIVE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IS_ACTIVE])) {
+                    $this->setIsActive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_ACTIVE]] + $ext));
+                } else if (is_array($data[self::FIELD_IS_ACTIVE])) {
+                    $this->setIsActive(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_ACTIVE])));
+                }
             } else {
                 $this->setIsActive(new FHIRBoolean($data[self::FIELD_IS_ACTIVE]));
             }
@@ -450,15 +453,12 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         if (null !== ($v = $this->getIsActive())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IS_ACTIVE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getItemReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStrength())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->_getFHIRXMLNamespace()));
         }
@@ -472,8 +472,15 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIsActive())) {
-            $a[self::FIELD_IS_ACTIVE] = $v->getValue();
-            $a[self::FIELD_IS_ACTIVE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IS_ACTIVE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IS_ACTIVE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IS_ACTIVE] = $v;
+            }
         }
         if (null !== ($v = $this->getItemCodeableConcept())) {
             $a[self::FIELD_ITEM_CODEABLE_CONCEPT] = $v;

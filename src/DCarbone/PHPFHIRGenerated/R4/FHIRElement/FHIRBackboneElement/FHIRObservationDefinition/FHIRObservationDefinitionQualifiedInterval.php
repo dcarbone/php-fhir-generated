@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUALIFIED_INTERVAL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AGE = 'age';
     const FIELD_APPLIES_TO = 'appliesTo';
     const FIELD_CATEGORY = 'category';
@@ -190,6 +186,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      */
     protected $range = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRObservationDefinitionQualifiedInterval Constructor
      * @param null|array $data
@@ -216,6 +215,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         if (isset($data[self::FIELD_APPLIES_TO])) {
             if (is_array($data[self::FIELD_APPLIES_TO])) {
                 foreach($data[self::FIELD_APPLIES_TO] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addAppliesTo($v);
                     } else {
@@ -234,8 +236,12 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CATEGORY] instanceof FHIRObservationRangeCategory) {
                 $this->setCategory($data[self::FIELD_CATEGORY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CATEGORY])) {
-                $this->setCategory(new FHIRObservationRangeCategory([FHIRObservationRangeCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CATEGORY])) {
+                    $this->setCategory(new FHIRObservationRangeCategory([FHIRObservationRangeCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
+                } else if (is_array($data[self::FIELD_CATEGORY])) {
+                    $this->setCategory(new FHIRObservationRangeCategory(array_merge($ext, $data[self::FIELD_CATEGORY])));
+                }
             } else {
                 $this->setCategory(new FHIRObservationRangeCategory($data[self::FIELD_CATEGORY]));
             }
@@ -246,8 +252,12 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CONDITION] instanceof FHIRString) {
                 $this->setCondition($data[self::FIELD_CONDITION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CONDITION])) {
-                $this->setCondition(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CONDITION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CONDITION])) {
+                    $this->setCondition(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CONDITION]] + $ext));
+                } else if (is_array($data[self::FIELD_CONDITION])) {
+                    $this->setCondition(new FHIRString(array_merge($ext, $data[self::FIELD_CONDITION])));
+                }
             } else {
                 $this->setCondition(new FHIRString($data[self::FIELD_CONDITION]));
             }
@@ -265,8 +275,12 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_GENDER] instanceof FHIRAdministrativeGender) {
                 $this->setGender($data[self::FIELD_GENDER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_GENDER])) {
-                $this->setGender(new FHIRAdministrativeGender([FHIRAdministrativeGender::FIELD_VALUE => $data[self::FIELD_GENDER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_GENDER])) {
+                    $this->setGender(new FHIRAdministrativeGender([FHIRAdministrativeGender::FIELD_VALUE => $data[self::FIELD_GENDER]] + $ext));
+                } else if (is_array($data[self::FIELD_GENDER])) {
+                    $this->setGender(new FHIRAdministrativeGender(array_merge($ext, $data[self::FIELD_GENDER])));
+                }
             } else {
                 $this->setGender(new FHIRAdministrativeGender($data[self::FIELD_GENDER]));
             }
@@ -698,11 +712,9 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getAppliesTo())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -718,19 +730,15 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
         if (null !== ($v = $this->getCondition())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGender())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getGestationalAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GESTATIONAL_AGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -750,17 +758,40 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $a[self::FIELD_APPLIES_TO] = $vs;
         }
         if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CATEGORY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CATEGORY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CATEGORY] = $v;
+            }
         }
         if (null !== ($v = $this->getCondition())) {
-            $a[self::FIELD_CONDITION] = $v->getValue();
-            $a[self::FIELD_CONDITION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CONDITION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CONDITION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CONDITION] = $v;
+            }
         }
         if (null !== ($v = $this->getContext())) {
             $a[self::FIELD_CONTEXT] = $v;
         }
         if (null !== ($v = $this->getGender())) {
-            $a[self::FIELD_GENDER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_GENDER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_GENDER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_GENDER] = $v;
+            }
         }
         if (null !== ($v = $this->getGestationalAge())) {
             $a[self::FIELD_GESTATIONAL_AGE] = $v;

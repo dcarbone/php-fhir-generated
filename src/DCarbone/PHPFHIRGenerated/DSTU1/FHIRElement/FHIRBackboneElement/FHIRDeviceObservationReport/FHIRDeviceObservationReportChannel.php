@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,10 +72,6 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_OBSERVATION_REPORT_DOT_CHANNEL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_METRIC = 'metric';
 
@@ -99,6 +95,9 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportMetric[]
      */
     protected $metric = [];
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRDeviceObservationReportChannel Constructor
@@ -126,6 +125,9 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
         if (isset($data[self::FIELD_METRIC])) {
             if (is_array($data[self::FIELD_METRIC])) {
                 foreach($data[self::FIELD_METRIC] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDeviceObservationReportMetric) {
                         $this->addMetric($v);
                     } else {
@@ -329,11 +331,9 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getMetric())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -342,6 +342,7 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_METRIC, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

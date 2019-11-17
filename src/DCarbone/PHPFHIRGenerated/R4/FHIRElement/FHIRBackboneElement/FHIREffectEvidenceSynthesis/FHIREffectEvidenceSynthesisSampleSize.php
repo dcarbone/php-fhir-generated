@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_SAMPLE_SIZE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_NUMBER_OF_PARTICIPANTS = 'numberOfParticipants';
@@ -124,6 +120,9 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
      */
     protected $numberOfStudies = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIREffectEvidenceSynthesisSampleSize Constructor
      * @param null|array $data
@@ -146,8 +145,12 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -158,8 +161,12 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NUMBER_OF_PARTICIPANTS] instanceof FHIRInteger) {
                 $this->setNumberOfParticipants($data[self::FIELD_NUMBER_OF_PARTICIPANTS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
-                $this->setNumberOfParticipants(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_PARTICIPANTS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
+                    $this->setNumberOfParticipants(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_PARTICIPANTS]] + $ext));
+                } else if (is_array($data[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
+                    $this->setNumberOfParticipants(new FHIRInteger(array_merge($ext, $data[self::FIELD_NUMBER_OF_PARTICIPANTS])));
+                }
             } else {
                 $this->setNumberOfParticipants(new FHIRInteger($data[self::FIELD_NUMBER_OF_PARTICIPANTS]));
             }
@@ -170,8 +177,12 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NUMBER_OF_STUDIES] instanceof FHIRInteger) {
                 $this->setNumberOfStudies($data[self::FIELD_NUMBER_OF_STUDIES]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NUMBER_OF_STUDIES])) {
-                $this->setNumberOfStudies(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_STUDIES]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NUMBER_OF_STUDIES])) {
+                    $this->setNumberOfStudies(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_STUDIES]] + $ext));
+                } else if (is_array($data[self::FIELD_NUMBER_OF_STUDIES])) {
+                    $this->setNumberOfStudies(new FHIRInteger(array_merge($ext, $data[self::FIELD_NUMBER_OF_STUDIES])));
+                }
             } else {
                 $this->setNumberOfStudies(new FHIRInteger($data[self::FIELD_NUMBER_OF_STUDIES]));
             }
@@ -428,16 +439,37 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if (null !== ($v = $this->getNumberOfParticipants())) {
-            $a[self::FIELD_NUMBER_OF_PARTICIPANTS] = $v->getValue();
-            $a[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMBER_OF_PARTICIPANTS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NUMBER_OF_PARTICIPANTS] = $v;
+            }
         }
         if (null !== ($v = $this->getNumberOfStudies())) {
-            $a[self::FIELD_NUMBER_OF_STUDIES] = $v->getValue();
-            $a[self::FIELD_NUMBER_OF_STUDIES_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMBER_OF_STUDIES] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUMBER_OF_STUDIES_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NUMBER_OF_STUDIES] = $v;
+            }
         }
         return $a;
     }

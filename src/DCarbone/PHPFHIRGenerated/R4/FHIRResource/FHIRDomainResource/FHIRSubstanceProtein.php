@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,10 +89,6 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DISULFIDE_LINKAGE = 'disulfideLinkage';
     const FIELD_DISULFIDE_LINKAGE_EXT = '_disulfideLinkage';
     const FIELD_NUMBER_OF_SUBUNITS = 'numberOfSubunits';
@@ -166,6 +162,9 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
      */
     protected $subunit = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceProtein Constructor
      * @param null|array $data
@@ -188,17 +187,24 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
                 : null;
             if (is_array($data[self::FIELD_DISULFIDE_LINKAGE])) {
                 foreach($data[self::FIELD_DISULFIDE_LINKAGE] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addDisulfideLinkage($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addDisulfideLinkage(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addDisulfideLinkage(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addDisulfideLinkage(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addDisulfideLinkage(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_DISULFIDE_LINKAGE] instanceof FHIRString) {
                 $this->addDisulfideLinkage($data[self::FIELD_DISULFIDE_LINKAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DISULFIDE_LINKAGE])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_DISULFIDE_LINKAGE])) {
                 $this->addDisulfideLinkage(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DISULFIDE_LINKAGE]] + $ext));
             } else {
                 $this->addDisulfideLinkage(new FHIRString($data[self::FIELD_DISULFIDE_LINKAGE]));
@@ -210,8 +216,12 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
                 : null;
             if ($data[self::FIELD_NUMBER_OF_SUBUNITS] instanceof FHIRInteger) {
                 $this->setNumberOfSubunits($data[self::FIELD_NUMBER_OF_SUBUNITS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
-                $this->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_SUBUNITS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
+                    $this->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_SUBUNITS]] + $ext));
+                } else if (is_array($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
+                    $this->setNumberOfSubunits(new FHIRInteger(array_merge($ext, $data[self::FIELD_NUMBER_OF_SUBUNITS])));
+                }
             } else {
                 $this->setNumberOfSubunits(new FHIRInteger($data[self::FIELD_NUMBER_OF_SUBUNITS]));
             }
@@ -226,6 +236,9 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($data[self::FIELD_SUBUNIT])) {
             if (is_array($data[self::FIELD_SUBUNIT])) {
                 foreach($data[self::FIELD_SUBUNIT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSubstanceProteinSubunit) {
                         $this->addSubunit($v);
                     } else {
@@ -626,14 +639,13 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DISULFIDE_LINKAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getNumberOfSubunits())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_SUBUNITS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSequenceType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSubunit())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -642,6 +654,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -657,13 +670,29 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_DISULFIDE_LINKAGE][] = $v->getValue();
-                $a[self::FIELD_DISULFIDE_LINKAGE_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_DISULFIDE_LINKAGE][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_DISULFIDE_LINKAGE_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_DISULFIDE_LINKAGE_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_DISULFIDE_LINKAGE][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getNumberOfSubunits())) {
-            $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v->getValue();
-            $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMBER_OF_SUBUNITS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v;
+            }
         }
         if (null !== ($v = $this->getSequenceType())) {
             $a[self::FIELD_SEQUENCE_TYPE] = $v;

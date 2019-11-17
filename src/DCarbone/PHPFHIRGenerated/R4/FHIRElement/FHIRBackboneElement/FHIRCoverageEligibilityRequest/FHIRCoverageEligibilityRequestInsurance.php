@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,10 +83,6 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_INSURANCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_BUSINESS_ARRANGEMENT = 'businessArrangement';
     const FIELD_BUSINESS_ARRANGEMENT_EXT = '_businessArrangement';
     const FIELD_COVERAGE = 'coverage';
@@ -129,6 +125,9 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      */
     protected $focal = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCoverageEligibilityRequestInsurance Constructor
      * @param null|array $data
@@ -151,8 +150,12 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_BUSINESS_ARRANGEMENT] instanceof FHIRString) {
                 $this->setBusinessArrangement($data[self::FIELD_BUSINESS_ARRANGEMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BUSINESS_ARRANGEMENT])) {
-                $this->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BUSINESS_ARRANGEMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BUSINESS_ARRANGEMENT])) {
+                    $this->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BUSINESS_ARRANGEMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_BUSINESS_ARRANGEMENT])) {
+                    $this->setBusinessArrangement(new FHIRString(array_merge($ext, $data[self::FIELD_BUSINESS_ARRANGEMENT])));
+                }
             } else {
                 $this->setBusinessArrangement(new FHIRString($data[self::FIELD_BUSINESS_ARRANGEMENT]));
             }
@@ -170,8 +173,12 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_FOCAL] instanceof FHIRBoolean) {
                 $this->setFocal($data[self::FIELD_FOCAL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FOCAL])) {
-                $this->setFocal(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_FOCAL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FOCAL])) {
+                    $this->setFocal(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_FOCAL]] + $ext));
+                } else if (is_array($data[self::FIELD_FOCAL])) {
+                    $this->setFocal(new FHIRBoolean(array_merge($ext, $data[self::FIELD_FOCAL])));
+                }
             } else {
                 $this->setFocal(new FHIRBoolean($data[self::FIELD_FOCAL]));
             }
@@ -407,7 +414,6 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
         if (null !== ($v = $this->getBusinessArrangement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BUSINESS_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCoverage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -424,15 +430,29 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBusinessArrangement())) {
-            $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
-            $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BUSINESS_ARRANGEMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v;
+            }
         }
         if (null !== ($v = $this->getCoverage())) {
             $a[self::FIELD_COVERAGE] = $v;
         }
         if (null !== ($v = $this->getFocal())) {
-            $a[self::FIELD_FOCAL] = $v->getValue();
-            $a[self::FIELD_FOCAL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FOCAL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FOCAL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FOCAL] = $v;
+            }
         }
         return $a;
     }

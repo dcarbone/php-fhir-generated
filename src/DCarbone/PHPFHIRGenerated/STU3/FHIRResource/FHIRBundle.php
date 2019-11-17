@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ENTRY = 'entry';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
@@ -165,6 +161,9 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRBundle Constructor
      * @param null|array $data
@@ -184,6 +183,9 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (isset($data[self::FIELD_ENTRY])) {
             if (is_array($data[self::FIELD_ENTRY])) {
                 foreach($data[self::FIELD_ENTRY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRBundleEntry) {
                         $this->addEntry($v);
                     } else {
@@ -202,8 +204,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -211,6 +217,9 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (isset($data[self::FIELD_LINK])) {
             if (is_array($data[self::FIELD_LINK])) {
                 foreach($data[self::FIELD_LINK] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRBundleLink) {
                         $this->addLink($v);
                     } else {
@@ -236,8 +245,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 : null;
             if ($data[self::FIELD_TOTAL] instanceof FHIRUnsignedInt) {
                 $this->setTotal($data[self::FIELD_TOTAL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TOTAL])) {
-                $this->setTotal(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_TOTAL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TOTAL])) {
+                    $this->setTotal(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_TOTAL]] + $ext));
+                } else if (is_array($data[self::FIELD_TOTAL])) {
+                    $this->setTotal(new FHIRUnsignedInt(array_merge($ext, $data[self::FIELD_TOTAL])));
+                }
             } else {
                 $this->setTotal(new FHIRUnsignedInt($data[self::FIELD_TOTAL]));
             }
@@ -248,8 +261,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRBundleType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRBundleType([FHIRBundleType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRBundleType([FHIRBundleType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRBundleType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRBundleType($data[self::FIELD_TYPE]));
             }
@@ -636,11 +653,9 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ENTRY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -649,14 +664,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSignature())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getTotal())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -673,7 +686,15 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $a[self::FIELD_ENTRY] = $vs;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLink())) {
             $a[self::FIELD_LINK] = $vs;
@@ -682,11 +703,26 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $a[self::FIELD_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getTotal())) {
-            $a[self::FIELD_TOTAL] = $v->getValue();
-            $a[self::FIELD_TOTAL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TOTAL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TOTAL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TOTAL] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

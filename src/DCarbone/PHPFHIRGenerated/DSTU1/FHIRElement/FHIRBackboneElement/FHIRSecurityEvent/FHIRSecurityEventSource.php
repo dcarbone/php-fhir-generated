@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,10 +75,6 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_DOT_SOURCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_SITE = 'site';
@@ -116,6 +112,9 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
      */
     protected $type = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSecurityEventSource Constructor
      * @param null|array $data
@@ -138,8 +137,12 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRString) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRString(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRString($data[self::FIELD_IDENTIFIER]));
             }
@@ -150,8 +153,12 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SITE] instanceof FHIRString) {
                 $this->setSite($data[self::FIELD_SITE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SITE])) {
-                $this->setSite(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SITE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SITE])) {
+                    $this->setSite(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SITE]] + $ext));
+                } else if (is_array($data[self::FIELD_SITE])) {
+                    $this->setSite(new FHIRString(array_merge($ext, $data[self::FIELD_SITE])));
+                }
             } else {
                 $this->setSite(new FHIRString($data[self::FIELD_SITE]));
             }
@@ -159,6 +166,9 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         if (isset($data[self::FIELD_TYPE])) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addType($v);
                     } else {
@@ -423,7 +433,6 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
         if (null !== ($v = $this->getSite())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getType())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -432,6 +441,7 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -442,12 +452,26 @@ class FHIRSecurityEventSource extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            $a[self::FIELD_IDENTIFIER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getSite())) {
-            $a[self::FIELD_SITE] = $v->getValue();
-            $a[self::FIELD_SITE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SITE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SITE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SITE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;

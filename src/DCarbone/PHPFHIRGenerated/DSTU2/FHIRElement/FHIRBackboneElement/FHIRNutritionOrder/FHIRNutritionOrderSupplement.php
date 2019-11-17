@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,15 +81,12 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_SUPPLEMENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_INSTRUCTION = 'instruction';
     const FIELD_INSTRUCTION_EXT = '_instruction';
     const FIELD_PRODUCT_NAME = 'productName';
     const FIELD_PRODUCT_NAME_EXT = '_productName';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_SCHEDULE = 'schedule';
     const FIELD_TYPE = 'type';
 
@@ -151,6 +148,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRNutritionOrderSupplement Constructor
      * @param null|array $data
@@ -173,8 +173,12 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_INSTRUCTION] instanceof FHIRString) {
                 $this->setInstruction($data[self::FIELD_INSTRUCTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_INSTRUCTION])) {
-                $this->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INSTRUCTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_INSTRUCTION])) {
+                    $this->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INSTRUCTION]] + $ext));
+                } else if (is_array($data[self::FIELD_INSTRUCTION])) {
+                    $this->setInstruction(new FHIRString(array_merge($ext, $data[self::FIELD_INSTRUCTION])));
+                }
             } else {
                 $this->setInstruction(new FHIRString($data[self::FIELD_INSTRUCTION]));
             }
@@ -185,15 +189,28 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PRODUCT_NAME] instanceof FHIRString) {
                 $this->setProductName($data[self::FIELD_PRODUCT_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PRODUCT_NAME])) {
-                $this->setProductName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRODUCT_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PRODUCT_NAME])) {
+                    $this->setProductName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRODUCT_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_PRODUCT_NAME])) {
+                    $this->setProductName(new FHIRString(array_merge($ext, $data[self::FIELD_PRODUCT_NAME])));
+                }
             } else {
                 $this->setProductName(new FHIRString($data[self::FIELD_PRODUCT_NAME]));
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
+                ? $data[self::FIELD_QUANTITY_EXT]
+                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRSimpleQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRSimpleQuantity([FHIRSimpleQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRSimpleQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRSimpleQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -201,6 +218,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         if (isset($data[self::FIELD_SCHEDULE])) {
             if (is_array($data[self::FIELD_SCHEDULE])) {
                 foreach($data[self::FIELD_SCHEDULE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRTiming) {
                         $this->addSchedule($v);
                     } else {
@@ -551,11 +571,9 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         if (null !== ($v = $this->getProductName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSchedule())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -578,15 +596,37 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getInstruction())) {
-            $a[self::FIELD_INSTRUCTION] = $v->getValue();
-            $a[self::FIELD_INSTRUCTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_INSTRUCTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_INSTRUCTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_INSTRUCTION] = $v;
+            }
         }
         if (null !== ($v = $this->getProductName())) {
-            $a[self::FIELD_PRODUCT_NAME] = $v->getValue();
-            $a[self::FIELD_PRODUCT_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRODUCT_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PRODUCT_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PRODUCT_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSchedule())) {
             $a[self::FIELD_SCHEDULE] = $vs;

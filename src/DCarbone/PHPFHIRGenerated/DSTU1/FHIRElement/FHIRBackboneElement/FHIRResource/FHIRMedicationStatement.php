@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_STATEMENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DEVICE = 'device';
     const FIELD_DOSAGE = 'dosage';
     const FIELD_IDENTIFIER = 'identifier';
@@ -194,6 +190,9 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
      */
     protected $whenGiven = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationStatement Constructor
      * @param null|array $data
@@ -213,6 +212,9 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
         if (isset($data[self::FIELD_DEVICE])) {
             if (is_array($data[self::FIELD_DEVICE])) {
                 foreach($data[self::FIELD_DEVICE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRResourceReference) {
                         $this->addDevice($v);
                     } else {
@@ -228,6 +230,9 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
         if (isset($data[self::FIELD_DOSAGE])) {
             if (is_array($data[self::FIELD_DOSAGE])) {
                 foreach($data[self::FIELD_DOSAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationStatementDosage) {
                         $this->addDosage($v);
                     } else {
@@ -246,17 +251,24 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
                 : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
             } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
                 $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
@@ -279,6 +291,9 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
         if (isset($data[self::FIELD_REASON_NOT_GIVEN])) {
             if (is_array($data[self::FIELD_REASON_NOT_GIVEN])) {
                 foreach($data[self::FIELD_REASON_NOT_GIVEN] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addReasonNotGiven($v);
                     } else {
@@ -297,8 +312,12 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
                 : null;
             if ($data[self::FIELD_WAS_NOT_GIVEN] instanceof FHIRBoolean) {
                 $this->setWasNotGiven($data[self::FIELD_WAS_NOT_GIVEN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WAS_NOT_GIVEN])) {
-                $this->setWasNotGiven(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_WAS_NOT_GIVEN]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WAS_NOT_GIVEN])) {
+                    $this->setWasNotGiven(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_WAS_NOT_GIVEN]] + $ext));
+                } else if (is_array($data[self::FIELD_WAS_NOT_GIVEN])) {
+                    $this->setWasNotGiven(new FHIRBoolean(array_merge($ext, $data[self::FIELD_WAS_NOT_GIVEN])));
+                }
             } else {
                 $this->setWasNotGiven(new FHIRBoolean($data[self::FIELD_WAS_NOT_GIVEN]));
             }
@@ -834,7 +853,6 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getDevice())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -865,11 +883,9 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getMedication())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPatient())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getReasonNotGiven())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -878,10 +894,10 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_NOT_GIVEN, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getWasNotGiven())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WAS_NOT_GIVEN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWhenGiven())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN_GIVEN, null, $v->_getFHIRXMLNamespace()));
         }
@@ -901,7 +917,23 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
             $a[self::FIELD_DOSAGE] = $vs;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_IDENTIFIER][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_IDENTIFIER][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getMedication())) {
             $a[self::FIELD_MEDICATION] = $v;
@@ -913,8 +945,15 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
             $a[self::FIELD_REASON_NOT_GIVEN] = $vs;
         }
         if (null !== ($v = $this->getWasNotGiven())) {
-            $a[self::FIELD_WAS_NOT_GIVEN] = $v->getValue();
-            $a[self::FIELD_WAS_NOT_GIVEN_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WAS_NOT_GIVEN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WAS_NOT_GIVEN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WAS_NOT_GIVEN] = $v;
+            }
         }
         if (null !== ($v = $this->getWhenGiven())) {
             $a[self::FIELD_WHEN_GIVEN] = $v;

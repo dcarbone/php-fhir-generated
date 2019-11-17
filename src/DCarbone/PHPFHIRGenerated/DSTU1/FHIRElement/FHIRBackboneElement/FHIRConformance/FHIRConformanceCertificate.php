@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,10 +75,6 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_CERTIFICATE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_BLOB = 'blob';
     const FIELD_BLOB_EXT = '_blob';
     const FIELD_TYPE = 'type';
@@ -106,6 +102,9 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConformanceCertificate Constructor
      * @param null|array $data
@@ -128,8 +127,12 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_BLOB] instanceof FHIRBase64Binary) {
                 $this->setBlob($data[self::FIELD_BLOB]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BLOB])) {
-                $this->setBlob(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_BLOB]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BLOB])) {
+                    $this->setBlob(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_BLOB]] + $ext));
+                } else if (is_array($data[self::FIELD_BLOB])) {
+                    $this->setBlob(new FHIRBase64Binary(array_merge($ext, $data[self::FIELD_BLOB])));
+                }
             } else {
                 $this->setBlob(new FHIRBase64Binary($data[self::FIELD_BLOB]));
             }
@@ -140,8 +143,12 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRCode) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRCode(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRCode($data[self::FIELD_TYPE]));
             }
@@ -351,12 +358,26 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBlob())) {
-            $a[self::FIELD_BLOB] = $v->getValue();
-            $a[self::FIELD_BLOB_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BLOB] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BLOB_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BLOB] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            $a[self::FIELD_TYPE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return $a;
     }

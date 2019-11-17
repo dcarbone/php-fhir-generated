@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRId extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ID;
-
-    /** @var string */
-    protected $_xmlns = '';
-
     const FIELD_VALUE = 'value';
 
     /**
@@ -93,6 +89,8 @@ class FHIRId extends FHIRElement
      */
     protected $value = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRId Constructor
@@ -250,8 +248,7 @@ class FHIRId extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getValue())) {
+        parent::xmlSerialize($sxe);        if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRNarrative extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NARRATIVE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DIV = 'div';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
@@ -105,6 +101,9 @@ class FHIRNarrative extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRNarrativeStatus
      */
     protected $status = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRNarrative Constructor
@@ -131,8 +130,12 @@ class FHIRNarrative extends FHIRElement
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRNarrativeStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRNarrativeStatus([FHIRNarrativeStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRNarrativeStatus([FHIRNarrativeStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRNarrativeStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRNarrativeStatus($data[self::FIELD_STATUS]));
             }
@@ -312,7 +315,6 @@ class FHIRNarrative extends FHIRElement
         if (null !== ($v = $this->getDiv())) {
             $sxe->addAttribute(self::FIELD_DIV, (string)$v);
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -329,7 +331,15 @@ class FHIRNarrative extends FHIRElement
             $a[self::FIELD_DIV] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION_DOT_TYPE_TESTED;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONTAINER = 'container';
     const FIELD_HANDLING = 'handling';
     const FIELD_IS_DERIVED = 'isDerived';
@@ -95,6 +91,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     const FIELD_REQUIREMENT = 'requirement';
     const FIELD_REQUIREMENT_EXT = '_requirement';
     const FIELD_RETENTION_TIME = 'retentionTime';
+    const FIELD_RETENTION_TIME_EXT = '_retentionTime';
     const FIELD_TYPE = 'type';
 
     /**
@@ -184,6 +181,9 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSpecimenDefinitionTypeTested Constructor
      * @param null|array $data
@@ -210,6 +210,9 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         if (isset($data[self::FIELD_HANDLING])) {
             if (is_array($data[self::FIELD_HANDLING])) {
                 foreach($data[self::FIELD_HANDLING] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRSpecimenDefinitionHandling) {
                         $this->addHandling($v);
                     } else {
@@ -228,8 +231,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IS_DERIVED] instanceof FHIRBoolean) {
                 $this->setIsDerived($data[self::FIELD_IS_DERIVED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IS_DERIVED])) {
-                $this->setIsDerived(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_DERIVED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IS_DERIVED])) {
+                    $this->setIsDerived(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_DERIVED]] + $ext));
+                } else if (is_array($data[self::FIELD_IS_DERIVED])) {
+                    $this->setIsDerived(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_DERIVED])));
+                }
             } else {
                 $this->setIsDerived(new FHIRBoolean($data[self::FIELD_IS_DERIVED]));
             }
@@ -240,8 +247,12 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PREFERENCE] instanceof FHIRSpecimenContainedPreference) {
                 $this->setPreference($data[self::FIELD_PREFERENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PREFERENCE])) {
-                $this->setPreference(new FHIRSpecimenContainedPreference([FHIRSpecimenContainedPreference::FIELD_VALUE => $data[self::FIELD_PREFERENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PREFERENCE])) {
+                    $this->setPreference(new FHIRSpecimenContainedPreference([FHIRSpecimenContainedPreference::FIELD_VALUE => $data[self::FIELD_PREFERENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_PREFERENCE])) {
+                    $this->setPreference(new FHIRSpecimenContainedPreference(array_merge($ext, $data[self::FIELD_PREFERENCE])));
+                }
             } else {
                 $this->setPreference(new FHIRSpecimenContainedPreference($data[self::FIELD_PREFERENCE]));
             }
@@ -249,6 +260,9 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         if (isset($data[self::FIELD_REJECTION_CRITERION])) {
             if (is_array($data[self::FIELD_REJECTION_CRITERION])) {
                 foreach($data[self::FIELD_REJECTION_CRITERION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addRejectionCriterion($v);
                     } else {
@@ -267,15 +281,28 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_REQUIREMENT] instanceof FHIRString) {
                 $this->setRequirement($data[self::FIELD_REQUIREMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REQUIREMENT])) {
-                $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REQUIREMENT])) {
+                    $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENT]] + $ext));
+                } else if (is_array($data[self::FIELD_REQUIREMENT])) {
+                    $this->setRequirement(new FHIRString(array_merge($ext, $data[self::FIELD_REQUIREMENT])));
+                }
             } else {
                 $this->setRequirement(new FHIRString($data[self::FIELD_REQUIREMENT]));
             }
         }
         if (isset($data[self::FIELD_RETENTION_TIME])) {
+            $ext = (isset($data[self::FIELD_RETENTION_TIME_EXT]) && is_array($data[self::FIELD_RETENTION_TIME_EXT]))
+                ? $data[self::FIELD_RETENTION_TIME_EXT]
+                : null;
             if ($data[self::FIELD_RETENTION_TIME] instanceof FHIRDuration) {
                 $this->setRetentionTime($data[self::FIELD_RETENTION_TIME]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RETENTION_TIME])) {
+                    $this->setRetentionTime(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_RETENTION_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_RETENTION_TIME])) {
+                    $this->setRetentionTime(new FHIRDuration(array_merge($ext, $data[self::FIELD_RETENTION_TIME])));
+                }
             } else {
                 $this->setRetentionTime(new FHIRDuration($data[self::FIELD_RETENTION_TIME]));
             }
@@ -728,11 +755,9 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContainer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getHandling())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -741,14 +766,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_HANDLING, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getIsDerived())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPreference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PREFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getRejectionCriterion())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -757,14 +781,13 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REJECTION_CRITERION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getRequirement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRetentionTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RETENTION_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -784,21 +807,51 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $a[self::FIELD_HANDLING] = $vs;
         }
         if (null !== ($v = $this->getIsDerived())) {
-            $a[self::FIELD_IS_DERIVED] = $v->getValue();
-            $a[self::FIELD_IS_DERIVED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IS_DERIVED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IS_DERIVED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IS_DERIVED] = $v;
+            }
         }
         if (null !== ($v = $this->getPreference())) {
-            $a[self::FIELD_PREFERENCE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PREFERENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PREFERENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PREFERENCE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRejectionCriterion())) {
             $a[self::FIELD_REJECTION_CRITERION] = $vs;
         }
         if (null !== ($v = $this->getRequirement())) {
-            $a[self::FIELD_REQUIREMENT] = $v->getValue();
-            $a[self::FIELD_REQUIREMENT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REQUIREMENT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REQUIREMENT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REQUIREMENT] = $v;
+            }
         }
         if (null !== ($v = $this->getRetentionTime())) {
-            $a[self::FIELD_RETENTION_TIME] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RETENTION_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RETENTION_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RETENTION_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

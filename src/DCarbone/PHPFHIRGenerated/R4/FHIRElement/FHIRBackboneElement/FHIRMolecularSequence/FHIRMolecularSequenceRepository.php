@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_REPOSITORY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DATASET_ID = 'datasetId';
     const FIELD_DATASET_ID_EXT = '_datasetId';
     const FIELD_NAME = 'name';
@@ -166,6 +162,9 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      */
     protected $variantsetId = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMolecularSequenceRepository Constructor
      * @param null|array $data
@@ -188,8 +187,12 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DATASET_ID] instanceof FHIRString) {
                 $this->setDatasetId($data[self::FIELD_DATASET_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATASET_ID])) {
-                $this->setDatasetId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DATASET_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATASET_ID])) {
+                    $this->setDatasetId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DATASET_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_DATASET_ID])) {
+                    $this->setDatasetId(new FHIRString(array_merge($ext, $data[self::FIELD_DATASET_ID])));
+                }
             } else {
                 $this->setDatasetId(new FHIRString($data[self::FIELD_DATASET_ID]));
             }
@@ -200,8 +203,12 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NAME] instanceof FHIRString) {
                 $this->setName($data[self::FIELD_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NAME])) {
-                $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_NAME])) {
+                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
+                }
             } else {
                 $this->setName(new FHIRString($data[self::FIELD_NAME]));
             }
@@ -212,8 +219,12 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_READSET_ID] instanceof FHIRString) {
                 $this->setReadsetId($data[self::FIELD_READSET_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_READSET_ID])) {
-                $this->setReadsetId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_READSET_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_READSET_ID])) {
+                    $this->setReadsetId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_READSET_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_READSET_ID])) {
+                    $this->setReadsetId(new FHIRString(array_merge($ext, $data[self::FIELD_READSET_ID])));
+                }
             } else {
                 $this->setReadsetId(new FHIRString($data[self::FIELD_READSET_ID]));
             }
@@ -224,8 +235,12 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRRepositoryType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRRepositoryType([FHIRRepositoryType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRRepositoryType([FHIRRepositoryType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRRepositoryType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRRepositoryType($data[self::FIELD_TYPE]));
             }
@@ -236,8 +251,12 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URL] instanceof FHIRUri) {
                 $this->setUrl($data[self::FIELD_URL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URL])) {
-                $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
+                } else if (is_array($data[self::FIELD_URL])) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_URL])));
+                }
             } else {
                 $this->setUrl(new FHIRUri($data[self::FIELD_URL]));
             }
@@ -248,8 +267,12 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_VARIANTSET_ID] instanceof FHIRString) {
                 $this->setVariantsetId($data[self::FIELD_VARIANTSET_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VARIANTSET_ID])) {
-                $this->setVariantsetId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VARIANTSET_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VARIANTSET_ID])) {
+                    $this->setVariantsetId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VARIANTSET_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_VARIANTSET_ID])) {
+                    $this->setVariantsetId(new FHIRString(array_merge($ext, $data[self::FIELD_VARIANTSET_ID])));
+                }
             } else {
                 $this->setVariantsetId(new FHIRString($data[self::FIELD_VARIANTSET_ID]));
             }
@@ -625,7 +648,6 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         if (null !== ($v = $this->getReadsetId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_READSET_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -645,27 +667,70 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDatasetId())) {
-            $a[self::FIELD_DATASET_ID] = $v->getValue();
-            $a[self::FIELD_DATASET_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATASET_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATASET_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATASET_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $a[self::FIELD_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getReadsetId())) {
-            $a[self::FIELD_READSET_ID] = $v->getValue();
-            $a[self::FIELD_READSET_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_READSET_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_READSET_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_READSET_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $a[self::FIELD_URL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URL] = $v;
+            }
         }
         if (null !== ($v = $this->getVariantsetId())) {
-            $a[self::FIELD_VARIANTSET_ID] = $v->getValue();
-            $a[self::FIELD_VARIANTSET_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VARIANTSET_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VARIANTSET_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VARIANTSET_ID] = $v;
+            }
         }
         return $a;
     }

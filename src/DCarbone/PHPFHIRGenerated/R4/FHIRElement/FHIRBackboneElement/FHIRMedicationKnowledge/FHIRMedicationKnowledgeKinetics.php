@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,13 +78,10 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_KINETICS;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AREA_UNDER_CURVE = 'areaUnderCurve';
     const FIELD_AREA_UNDER_CURVE_EXT = '_areaUnderCurve';
     const FIELD_HALF_LIFE_PERIOD = 'halfLifePeriod';
+    const FIELD_HALF_LIFE_PERIOD_EXT = '_halfLifePeriod';
     const FIELD_LETHAL_DOSE_50 = 'lethalDose50';
     const FIELD_LETHAL_DOSE_50_EXT = '_lethalDose50';
 
@@ -126,6 +123,9 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      */
     protected $lethalDose50 = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgeKinetics Constructor
      * @param null|array $data
@@ -148,25 +148,41 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_AREA_UNDER_CURVE])) {
                 foreach($data[self::FIELD_AREA_UNDER_CURVE] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRQuantity) {
                         $this->addAreaUnderCurve($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addAreaUnderCurve(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addAreaUnderCurve(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addAreaUnderCurve(new FHIRQuantity(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addAreaUnderCurve(new FHIRQuantity($v));
                     }
                 }
             } elseif ($data[self::FIELD_AREA_UNDER_CURVE] instanceof FHIRQuantity) {
                 $this->addAreaUnderCurve($data[self::FIELD_AREA_UNDER_CURVE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AREA_UNDER_CURVE])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_AREA_UNDER_CURVE])) {
                 $this->addAreaUnderCurve(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AREA_UNDER_CURVE]] + $ext));
             } else {
                 $this->addAreaUnderCurve(new FHIRQuantity($data[self::FIELD_AREA_UNDER_CURVE]));
             }
         }
         if (isset($data[self::FIELD_HALF_LIFE_PERIOD])) {
+            $ext = (isset($data[self::FIELD_HALF_LIFE_PERIOD_EXT]) && is_array($data[self::FIELD_HALF_LIFE_PERIOD_EXT]))
+                ? $data[self::FIELD_HALF_LIFE_PERIOD_EXT]
+                : null;
             if ($data[self::FIELD_HALF_LIFE_PERIOD] instanceof FHIRDuration) {
                 $this->setHalfLifePeriod($data[self::FIELD_HALF_LIFE_PERIOD]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_HALF_LIFE_PERIOD])) {
+                    $this->setHalfLifePeriod(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_HALF_LIFE_PERIOD]] + $ext));
+                } else if (is_array($data[self::FIELD_HALF_LIFE_PERIOD])) {
+                    $this->setHalfLifePeriod(new FHIRDuration(array_merge($ext, $data[self::FIELD_HALF_LIFE_PERIOD])));
+                }
             } else {
                 $this->setHalfLifePeriod(new FHIRDuration($data[self::FIELD_HALF_LIFE_PERIOD]));
             }
@@ -177,17 +193,24 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_LETHAL_DOSE_50])) {
                 foreach($data[self::FIELD_LETHAL_DOSE_50] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRQuantity) {
                         $this->addLethalDose50($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addLethalDose50(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addLethalDose50(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addLethalDose50(new FHIRQuantity(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addLethalDose50(new FHIRQuantity($v));
                     }
                 }
             } elseif ($data[self::FIELD_LETHAL_DOSE_50] instanceof FHIRQuantity) {
                 $this->addLethalDose50($data[self::FIELD_LETHAL_DOSE_50]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LETHAL_DOSE_50])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_LETHAL_DOSE_50])) {
                 $this->addLethalDose50(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_LETHAL_DOSE_50]] + $ext));
             } else {
                 $this->addLethalDose50(new FHIRQuantity($data[self::FIELD_LETHAL_DOSE_50]));
@@ -463,7 +486,6 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAreaUnderCurve())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -476,7 +498,6 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         if (null !== ($v = $this->getHalfLifePeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HALF_LIFE_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getLethalDose50())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -485,6 +506,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LETHAL_DOSE_50, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -495,13 +517,53 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAreaUnderCurve())) {
-            $a[self::FIELD_AREA_UNDER_CURVE] = $vs;
+            $a[self::FIELD_AREA_UNDER_CURVE] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_AREA_UNDER_CURVE][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_AREA_UNDER_CURVE_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_AREA_UNDER_CURVE_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_AREA_UNDER_CURVE][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getHalfLifePeriod())) {
-            $a[self::FIELD_HALF_LIFE_PERIOD] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_HALF_LIFE_PERIOD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_HALF_LIFE_PERIOD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_HALF_LIFE_PERIOD] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLethalDose50())) {
-            $a[self::FIELD_LETHAL_DOSE_50] = $vs;
+            $a[self::FIELD_LETHAL_DOSE_50] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_LETHAL_DOSE_50][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_LETHAL_DOSE_50_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_LETHAL_DOSE_50_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_LETHAL_DOSE_50][] = $v;
+                }
+            }
         }
         return $a;
     }

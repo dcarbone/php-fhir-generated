@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRMeta extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_META;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_LAST_UPDATED = 'lastUpdated';
     const FIELD_LAST_UPDATED_EXT = '_lastUpdated';
     const FIELD_PROFILE = 'profile';
@@ -159,6 +155,9 @@ class FHIRMeta extends FHIRElement
      */
     protected $versionId = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMeta Constructor
      * @param null|array $data
@@ -181,8 +180,12 @@ class FHIRMeta extends FHIRElement
                 : null;
             if ($data[self::FIELD_LAST_UPDATED] instanceof FHIRInstant) {
                 $this->setLastUpdated($data[self::FIELD_LAST_UPDATED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LAST_UPDATED])) {
-                $this->setLastUpdated(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_LAST_UPDATED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LAST_UPDATED])) {
+                    $this->setLastUpdated(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_LAST_UPDATED]] + $ext));
+                } else if (is_array($data[self::FIELD_LAST_UPDATED])) {
+                    $this->setLastUpdated(new FHIRInstant(array_merge($ext, $data[self::FIELD_LAST_UPDATED])));
+                }
             } else {
                 $this->setLastUpdated(new FHIRInstant($data[self::FIELD_LAST_UPDATED]));
             }
@@ -193,17 +196,24 @@ class FHIRMeta extends FHIRElement
                 : null;
             if (is_array($data[self::FIELD_PROFILE])) {
                 foreach($data[self::FIELD_PROFILE] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUri) {
                         $this->addProfile($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addProfile(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addProfile(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addProfile(new FHIRUri(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addProfile(new FHIRUri($v));
                     }
                 }
             } elseif ($data[self::FIELD_PROFILE] instanceof FHIRUri) {
                 $this->addProfile($data[self::FIELD_PROFILE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PROFILE])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PROFILE])) {
                 $this->addProfile(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_PROFILE]] + $ext));
             } else {
                 $this->addProfile(new FHIRUri($data[self::FIELD_PROFILE]));
@@ -212,6 +222,9 @@ class FHIRMeta extends FHIRElement
         if (isset($data[self::FIELD_SECURITY])) {
             if (is_array($data[self::FIELD_SECURITY])) {
                 foreach($data[self::FIELD_SECURITY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addSecurity($v);
                     } else {
@@ -227,6 +240,9 @@ class FHIRMeta extends FHIRElement
         if (isset($data[self::FIELD_TAG])) {
             if (is_array($data[self::FIELD_TAG])) {
                 foreach($data[self::FIELD_TAG] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addTag($v);
                     } else {
@@ -245,8 +261,12 @@ class FHIRMeta extends FHIRElement
                 : null;
             if ($data[self::FIELD_VERSION_ID] instanceof FHIRId) {
                 $this->setVersionId($data[self::FIELD_VERSION_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VERSION_ID])) {
-                $this->setVersionId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_VERSION_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_VERSION_ID])) {
+                    $this->setVersionId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_VERSION_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_VERSION_ID])) {
+                    $this->setVersionId(new FHIRId(array_merge($ext, $data[self::FIELD_VERSION_ID])));
+                }
             } else {
                 $this->setVersionId(new FHIRId($data[self::FIELD_VERSION_ID]));
             }
@@ -661,6 +681,7 @@ class FHIRMeta extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getLastUpdated())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_UPDATED, null, $v->_getFHIRXMLNamespace()));
         }
@@ -672,7 +693,6 @@ class FHIRMeta extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSecurity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -681,7 +701,6 @@ class FHIRMeta extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getTag())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -703,8 +722,15 @@ class FHIRMeta extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getLastUpdated())) {
-            $a[self::FIELD_LAST_UPDATED] = $v->getValue();
-            $a[self::FIELD_LAST_UPDATED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LAST_UPDATED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LAST_UPDATED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LAST_UPDATED] = $v;
+            }
         }
         if ([] !== ($vs = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = [];
@@ -712,8 +738,17 @@ class FHIRMeta extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PROFILE][] = $v->getValue();
-                $a[self::FIELD_PROFILE_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PROFILE][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PROFILE_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PROFILE_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PROFILE][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getSecurity())) {
@@ -723,8 +758,15 @@ class FHIRMeta extends FHIRElement
             $a[self::FIELD_TAG] = $vs;
         }
         if (null !== ($v = $this->getVersionId())) {
-            $a[self::FIELD_VERSION_ID] = $v->getValue();
-            $a[self::FIELD_VERSION_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VERSION_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_VERSION_ID] = $v;
+            }
         }
         return $a;
     }

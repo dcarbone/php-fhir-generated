@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_VALIDATOR;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ATTESTATION_SIGNATURE = 'attestationSignature';
     const FIELD_IDENTITY_CERTIFICATE = 'identityCertificate';
     const FIELD_IDENTITY_CERTIFICATE_EXT = '_identityCertificate';
@@ -126,6 +122,9 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      */
     protected $organization = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRVerificationResultValidator Constructor
      * @param null|array $data
@@ -155,8 +154,12 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTITY_CERTIFICATE] instanceof FHIRString) {
                 $this->setIdentityCertificate($data[self::FIELD_IDENTITY_CERTIFICATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTITY_CERTIFICATE])) {
-                $this->setIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IDENTITY_CERTIFICATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTITY_CERTIFICATE])) {
+                    $this->setIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IDENTITY_CERTIFICATE]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTITY_CERTIFICATE])) {
+                    $this->setIdentityCertificate(new FHIRString(array_merge($ext, $data[self::FIELD_IDENTITY_CERTIFICATE])));
+                }
             } else {
                 $this->setIdentityCertificate(new FHIRString($data[self::FIELD_IDENTITY_CERTIFICATE]));
             }
@@ -387,14 +390,12 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAttestationSignature())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTATION_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getIdentityCertificate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTITY_CERTIFICATE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrganization())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -411,8 +412,15 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $a[self::FIELD_ATTESTATION_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getIdentityCertificate())) {
-            $a[self::FIELD_IDENTITY_CERTIFICATE] = $v->getValue();
-            $a[self::FIELD_IDENTITY_CERTIFICATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTITY_CERTIFICATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTITY_CERTIFICATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTITY_CERTIFICATE] = $v;
+            }
         }
         if (null !== ($v = $this->getOrganization())) {
             $a[self::FIELD_ORGANIZATION] = $v;

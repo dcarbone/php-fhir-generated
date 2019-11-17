@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COMPARTMENT = 'compartment';
     const FIELD_COMPARTMENT_EXT = '_compartment';
     const FIELD_DOCUMENTATION = 'documentation';
@@ -206,6 +202,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     protected $transactionMode = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConformanceRest Constructor
      * @param null|array $data
@@ -228,17 +227,24 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_COMPARTMENT])) {
                 foreach($data[self::FIELD_COMPARTMENT] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRUri) {
                         $this->addCompartment($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addCompartment(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addCompartment(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addCompartment(new FHIRUri(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addCompartment(new FHIRUri($v));
                     }
                 }
             } elseif ($data[self::FIELD_COMPARTMENT] instanceof FHIRUri) {
                 $this->addCompartment($data[self::FIELD_COMPARTMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMPARTMENT])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_COMPARTMENT])) {
                 $this->addCompartment(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_COMPARTMENT]] + $ext));
             } else {
                 $this->addCompartment(new FHIRUri($data[self::FIELD_COMPARTMENT]));
@@ -250,8 +256,12 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DOCUMENTATION] instanceof FHIRString) {
                 $this->setDocumentation($data[self::FIELD_DOCUMENTATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DOCUMENTATION])) {
-                $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENTATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DOCUMENTATION])) {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENTATION]] + $ext));
+                } else if (is_array($data[self::FIELD_DOCUMENTATION])) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $data[self::FIELD_DOCUMENTATION])));
+                }
             } else {
                 $this->setDocumentation(new FHIRString($data[self::FIELD_DOCUMENTATION]));
             }
@@ -259,6 +269,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
         if (isset($data[self::FIELD_INTERACTION])) {
             if (is_array($data[self::FIELD_INTERACTION])) {
                 foreach($data[self::FIELD_INTERACTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRConformanceInteraction1) {
                         $this->addInteraction($v);
                     } else {
@@ -277,8 +290,12 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MODE] instanceof FHIRRestfulConformanceMode) {
                 $this->setMode($data[self::FIELD_MODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MODE])) {
-                $this->setMode(new FHIRRestfulConformanceMode([FHIRRestfulConformanceMode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MODE])) {
+                    $this->setMode(new FHIRRestfulConformanceMode([FHIRRestfulConformanceMode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
+                } else if (is_array($data[self::FIELD_MODE])) {
+                    $this->setMode(new FHIRRestfulConformanceMode(array_merge($ext, $data[self::FIELD_MODE])));
+                }
             } else {
                 $this->setMode(new FHIRRestfulConformanceMode($data[self::FIELD_MODE]));
             }
@@ -286,6 +303,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
         if (isset($data[self::FIELD_OPERATION])) {
             if (is_array($data[self::FIELD_OPERATION])) {
                 foreach($data[self::FIELD_OPERATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRConformanceOperation) {
                         $this->addOperation($v);
                     } else {
@@ -301,6 +321,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
         if (isset($data[self::FIELD_RESOURCE])) {
             if (is_array($data[self::FIELD_RESOURCE])) {
                 foreach($data[self::FIELD_RESOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRConformanceResource) {
                         $this->addResource($v);
                     } else {
@@ -316,6 +339,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
         if (isset($data[self::FIELD_SEARCH_PARAM])) {
             if (is_array($data[self::FIELD_SEARCH_PARAM])) {
                 foreach($data[self::FIELD_SEARCH_PARAM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRConformanceSearchParam) {
                         $this->addSearchParam($v);
                     } else {
@@ -341,8 +367,12 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TRANSACTION_MODE] instanceof FHIRTransactionMode) {
                 $this->setTransactionMode($data[self::FIELD_TRANSACTION_MODE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TRANSACTION_MODE])) {
-                $this->setTransactionMode(new FHIRTransactionMode([FHIRTransactionMode::FIELD_VALUE => $data[self::FIELD_TRANSACTION_MODE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TRANSACTION_MODE])) {
+                    $this->setTransactionMode(new FHIRTransactionMode([FHIRTransactionMode::FIELD_VALUE => $data[self::FIELD_TRANSACTION_MODE]] + $ext));
+                } else if (is_array($data[self::FIELD_TRANSACTION_MODE])) {
+                    $this->setTransactionMode(new FHIRTransactionMode(array_merge($ext, $data[self::FIELD_TRANSACTION_MODE])));
+                }
             } else {
                 $this->setTransactionMode(new FHIRTransactionMode($data[self::FIELD_TRANSACTION_MODE]));
             }
@@ -935,10 +965,10 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARTMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getDocumentation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getInteraction())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -951,7 +981,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
         if (null !== ($v = $this->getMode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getOperation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -982,7 +1011,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
         if (null !== ($v = $this->getSecurity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getTransactionMode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TRANSACTION_MODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1001,19 +1029,43 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_COMPARTMENT][] = $v->getValue();
-                $a[self::FIELD_COMPARTMENT_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_COMPARTMENT][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_COMPARTMENT_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_COMPARTMENT_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_COMPARTMENT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            $a[self::FIELD_DOCUMENTATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOCUMENTATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DOCUMENTATION] = $v;
+            }
         }
         if ([] !== ($vs = $this->getInteraction())) {
             $a[self::FIELD_INTERACTION] = $vs;
         }
         if (null !== ($v = $this->getMode())) {
-            $a[self::FIELD_MODE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MODE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = $vs;
@@ -1028,7 +1080,15 @@ class FHIRConformanceRest extends FHIRBackboneElement
             $a[self::FIELD_SECURITY] = $v;
         }
         if (null !== ($v = $this->getTransactionMode())) {
-            $a[self::FIELD_TRANSACTION_MODE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TRANSACTION_MODE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TRANSACTION_MODE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TRANSACTION_MODE] = $v;
+            }
         }
         return $a;
     }

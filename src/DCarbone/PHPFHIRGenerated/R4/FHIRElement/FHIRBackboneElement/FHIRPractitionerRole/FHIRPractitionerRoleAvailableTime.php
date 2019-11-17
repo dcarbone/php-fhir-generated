@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPract
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PRACTITIONER_ROLE_DOT_AVAILABLE_TIME;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ALL_DAY = 'allDay';
     const FIELD_ALL_DAY_EXT = '_allDay';
     const FIELD_AVAILABLE_END_TIME = 'availableEndTime';
@@ -135,6 +131,9 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      */
     protected $daysOfWeek = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRPractitionerRoleAvailableTime Constructor
      * @param null|array $data
@@ -157,8 +156,12 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ALL_DAY] instanceof FHIRBoolean) {
                 $this->setAllDay($data[self::FIELD_ALL_DAY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ALL_DAY])) {
-                $this->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALL_DAY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ALL_DAY])) {
+                    $this->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALL_DAY]] + $ext));
+                } else if (is_array($data[self::FIELD_ALL_DAY])) {
+                    $this->setAllDay(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALL_DAY])));
+                }
             } else {
                 $this->setAllDay(new FHIRBoolean($data[self::FIELD_ALL_DAY]));
             }
@@ -169,8 +172,12 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AVAILABLE_END_TIME] instanceof FHIRTime) {
                 $this->setAvailableEndTime($data[self::FIELD_AVAILABLE_END_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AVAILABLE_END_TIME])) {
-                $this->setAvailableEndTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_AVAILABLE_END_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AVAILABLE_END_TIME])) {
+                    $this->setAvailableEndTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_AVAILABLE_END_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_AVAILABLE_END_TIME])) {
+                    $this->setAvailableEndTime(new FHIRTime(array_merge($ext, $data[self::FIELD_AVAILABLE_END_TIME])));
+                }
             } else {
                 $this->setAvailableEndTime(new FHIRTime($data[self::FIELD_AVAILABLE_END_TIME]));
             }
@@ -181,8 +188,12 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AVAILABLE_START_TIME] instanceof FHIRTime) {
                 $this->setAvailableStartTime($data[self::FIELD_AVAILABLE_START_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AVAILABLE_START_TIME])) {
-                $this->setAvailableStartTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_AVAILABLE_START_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AVAILABLE_START_TIME])) {
+                    $this->setAvailableStartTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_AVAILABLE_START_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_AVAILABLE_START_TIME])) {
+                    $this->setAvailableStartTime(new FHIRTime(array_merge($ext, $data[self::FIELD_AVAILABLE_START_TIME])));
+                }
             } else {
                 $this->setAvailableStartTime(new FHIRTime($data[self::FIELD_AVAILABLE_START_TIME]));
             }
@@ -193,17 +204,24 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_DAYS_OF_WEEK])) {
                 foreach($data[self::FIELD_DAYS_OF_WEEK] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDaysOfWeek) {
                         $this->addDaysOfWeek($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addDaysOfWeek(new FHIRDaysOfWeek(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addDaysOfWeek(new FHIRDaysOfWeek($v));
                     }
                 }
             } elseif ($data[self::FIELD_DAYS_OF_WEEK] instanceof FHIRDaysOfWeek) {
                 $this->addDaysOfWeek($data[self::FIELD_DAYS_OF_WEEK]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DAYS_OF_WEEK])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_DAYS_OF_WEEK])) {
                 $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $data[self::FIELD_DAYS_OF_WEEK]] + $ext));
             } else {
                 $this->addDaysOfWeek(new FHIRDaysOfWeek($data[self::FIELD_DAYS_OF_WEEK]));
@@ -507,7 +525,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         if (null !== ($v = $this->getAvailableStartTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AVAILABLE_START_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDaysOfWeek())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -516,6 +533,7 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DAYS_OF_WEEK, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -526,19 +544,56 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllDay())) {
-            $a[self::FIELD_ALL_DAY] = $v->getValue();
-            $a[self::FIELD_ALL_DAY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ALL_DAY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ALL_DAY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ALL_DAY] = $v;
+            }
         }
         if (null !== ($v = $this->getAvailableEndTime())) {
-            $a[self::FIELD_AVAILABLE_END_TIME] = $v->getValue();
-            $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AVAILABLE_END_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AVAILABLE_END_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getAvailableStartTime())) {
-            $a[self::FIELD_AVAILABLE_START_TIME] = $v->getValue();
-            $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AVAILABLE_START_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AVAILABLE_START_TIME] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDaysOfWeek())) {
-            $a[self::FIELD_DAYS_OF_WEEK] = $vs;
+            $a[self::FIELD_DAYS_OF_WEEK] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_DAYS_OF_WEEK][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_DAYS_OF_WEEK_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_DAYS_OF_WEEK_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_DAYS_OF_WEEK][] = $v;
+                }
+            }
         }
         return $a;
     }

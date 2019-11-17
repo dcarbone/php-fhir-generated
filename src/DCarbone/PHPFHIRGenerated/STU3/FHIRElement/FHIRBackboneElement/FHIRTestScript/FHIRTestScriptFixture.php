@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_FIXTURE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTOCREATE = 'autocreate';
     const FIELD_AUTOCREATE_EXT = '_autocreate';
     const FIELD_AUTODELETE = 'autodelete';
@@ -127,6 +123,9 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      */
     protected $resource = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTestScriptFixture Constructor
      * @param null|array $data
@@ -149,8 +148,12 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AUTOCREATE] instanceof FHIRBoolean) {
                 $this->setAutocreate($data[self::FIELD_AUTOCREATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AUTOCREATE])) {
-                $this->setAutocreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AUTOCREATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AUTOCREATE])) {
+                    $this->setAutocreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AUTOCREATE]] + $ext));
+                } else if (is_array($data[self::FIELD_AUTOCREATE])) {
+                    $this->setAutocreate(new FHIRBoolean(array_merge($ext, $data[self::FIELD_AUTOCREATE])));
+                }
             } else {
                 $this->setAutocreate(new FHIRBoolean($data[self::FIELD_AUTOCREATE]));
             }
@@ -161,8 +164,12 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AUTODELETE] instanceof FHIRBoolean) {
                 $this->setAutodelete($data[self::FIELD_AUTODELETE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AUTODELETE])) {
-                $this->setAutodelete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AUTODELETE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AUTODELETE])) {
+                    $this->setAutodelete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AUTODELETE]] + $ext));
+                } else if (is_array($data[self::FIELD_AUTODELETE])) {
+                    $this->setAutodelete(new FHIRBoolean(array_merge($ext, $data[self::FIELD_AUTODELETE])));
+                }
             } else {
                 $this->setAutodelete(new FHIRBoolean($data[self::FIELD_AUTODELETE]));
             }
@@ -406,13 +413,13 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAutocreate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTOCREATE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAutodelete())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTODELETE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -426,12 +433,26 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAutocreate())) {
-            $a[self::FIELD_AUTOCREATE] = $v->getValue();
-            $a[self::FIELD_AUTOCREATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AUTOCREATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AUTOCREATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AUTOCREATE] = $v;
+            }
         }
         if (null !== ($v = $this->getAutodelete())) {
-            $a[self::FIELD_AUTODELETE] = $v->getValue();
-            $a[self::FIELD_AUTODELETE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AUTODELETE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AUTODELETE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AUTODELETE] = $v;
+            }
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;

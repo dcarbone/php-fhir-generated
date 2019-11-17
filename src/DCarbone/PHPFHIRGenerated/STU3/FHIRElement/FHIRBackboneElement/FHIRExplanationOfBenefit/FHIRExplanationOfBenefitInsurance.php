@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPLANATION_OF_BENEFIT_DOT_INSURANCE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COVERAGE = 'coverage';
     const FIELD_PRE_AUTH_REF = 'preAuthRef';
     const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
@@ -109,6 +105,9 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected $preAuthRef = [];
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRExplanationOfBenefitInsurance Constructor
@@ -139,17 +138,24 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_PRE_AUTH_REF])) {
                 foreach($data[self::FIELD_PRE_AUTH_REF] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addPreAuthRef($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addPreAuthRef(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addPreAuthRef(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_PRE_AUTH_REF] instanceof FHIRString) {
                 $this->addPreAuthRef($data[self::FIELD_PRE_AUTH_REF]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PRE_AUTH_REF])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PRE_AUTH_REF])) {
                 $this->addPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRE_AUTH_REF]] + $ext));
             } else {
                 $this->addPreAuthRef(new FHIRString($data[self::FIELD_PRE_AUTH_REF]));
@@ -391,8 +397,17 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PRE_AUTH_REF][] = $v->getValue();
-                $a[self::FIELD_PRE_AUTH_REF_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PRE_AUTH_REF][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PRE_AUTH_REF_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PRE_AUTH_REF_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PRE_AUTH_REF][] = $v;
+                }
             }
         }
         return $a;

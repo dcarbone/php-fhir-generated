@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,10 +86,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_FORM = 'form';
     const FIELD_IMAGE = 'image';
@@ -204,6 +200,9 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      */
     protected $status = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedication Constructor
      * @param null|array $data
@@ -237,6 +236,9 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($data[self::FIELD_IMAGE])) {
             if (is_array($data[self::FIELD_IMAGE])) {
                 foreach($data[self::FIELD_IMAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAttachment) {
                         $this->addImage($v);
                     } else {
@@ -252,6 +254,9 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($data[self::FIELD_INGREDIENT])) {
             if (is_array($data[self::FIELD_INGREDIENT])) {
                 foreach($data[self::FIELD_INGREDIENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationIngredient) {
                         $this->addIngredient($v);
                     } else {
@@ -270,8 +275,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 : null;
             if ($data[self::FIELD_IS_BRAND] instanceof FHIRBoolean) {
                 $this->setIsBrand($data[self::FIELD_IS_BRAND]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IS_BRAND])) {
-                $this->setIsBrand(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_BRAND]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IS_BRAND])) {
+                    $this->setIsBrand(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_BRAND]] + $ext));
+                } else if (is_array($data[self::FIELD_IS_BRAND])) {
+                    $this->setIsBrand(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_BRAND])));
+                }
             } else {
                 $this->setIsBrand(new FHIRBoolean($data[self::FIELD_IS_BRAND]));
             }
@@ -282,8 +291,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 : null;
             if ($data[self::FIELD_IS_OVER_THE_COUNTER] instanceof FHIRBoolean) {
                 $this->setIsOverTheCounter($data[self::FIELD_IS_OVER_THE_COUNTER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IS_OVER_THE_COUNTER])) {
-                $this->setIsOverTheCounter(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_OVER_THE_COUNTER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IS_OVER_THE_COUNTER])) {
+                    $this->setIsOverTheCounter(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_OVER_THE_COUNTER]] + $ext));
+                } else if (is_array($data[self::FIELD_IS_OVER_THE_COUNTER])) {
+                    $this->setIsOverTheCounter(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_OVER_THE_COUNTER])));
+                }
             } else {
                 $this->setIsOverTheCounter(new FHIRBoolean($data[self::FIELD_IS_OVER_THE_COUNTER]));
             }
@@ -308,8 +321,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 : null;
             if ($data[self::FIELD_STATUS] instanceof FHIRMedicationStatus) {
                 $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STATUS])) {
-                $this->setStatus(new FHIRMedicationStatus([FHIRMedicationStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRMedicationStatus([FHIRMedicationStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
+                } else if (is_array($data[self::FIELD_STATUS])) {
+                    $this->setStatus(new FHIRMedicationStatus(array_merge($ext, $data[self::FIELD_STATUS])));
+                }
             } else {
                 $this->setStatus(new FHIRMedicationStatus($data[self::FIELD_STATUS]));
             }
@@ -805,11 +822,9 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getForm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FORM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getImage())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -818,7 +833,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getIngredient())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -833,15 +847,12 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (null !== ($v = $this->getIsOverTheCounter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IS_OVER_THE_COUNTER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getManufacturer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPackage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -867,12 +878,26 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_INGREDIENT] = $vs;
         }
         if (null !== ($v = $this->getIsBrand())) {
-            $a[self::FIELD_IS_BRAND] = $v->getValue();
-            $a[self::FIELD_IS_BRAND_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IS_BRAND] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IS_BRAND_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IS_BRAND] = $v;
+            }
         }
         if (null !== ($v = $this->getIsOverTheCounter())) {
-            $a[self::FIELD_IS_OVER_THE_COUNTER] = $v->getValue();
-            $a[self::FIELD_IS_OVER_THE_COUNTER_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IS_OVER_THE_COUNTER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IS_OVER_THE_COUNTER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IS_OVER_THE_COUNTER] = $v;
+            }
         }
         if (null !== ($v = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $v;
@@ -881,7 +906,15 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_PACKAGE] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_STATUS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_STATUS] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,13 +76,10 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_NOTE = 'note';
     const FIELD_NOTE_EXT = '_note';
     const FIELD_ONSET_AGE = 'onsetAge';
+    const FIELD_ONSET_AGE_EXT = '_onsetAge';
     const FIELD_ONSET_RANGE = 'onsetRange';
     const FIELD_ONSET_STRING = 'onsetString';
     const FIELD_ONSET_STRING_EXT = '_onsetString';
@@ -160,6 +157,9 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRFamilyHistoryCondition Constructor
      * @param null|array $data
@@ -182,15 +182,28 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NOTE] instanceof FHIRString) {
                 $this->setNote($data[self::FIELD_NOTE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NOTE])) {
-                $this->setNote(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NOTE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NOTE])) {
+                    $this->setNote(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NOTE]] + $ext));
+                } else if (is_array($data[self::FIELD_NOTE])) {
+                    $this->setNote(new FHIRString(array_merge($ext, $data[self::FIELD_NOTE])));
+                }
             } else {
                 $this->setNote(new FHIRString($data[self::FIELD_NOTE]));
             }
         }
         if (isset($data[self::FIELD_ONSET_AGE])) {
+            $ext = (isset($data[self::FIELD_ONSET_AGE_EXT]) && is_array($data[self::FIELD_ONSET_AGE_EXT]))
+                ? $data[self::FIELD_ONSET_AGE_EXT]
+                : null;
             if ($data[self::FIELD_ONSET_AGE] instanceof FHIRAge) {
                 $this->setOnsetAge($data[self::FIELD_ONSET_AGE]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ONSET_AGE])) {
+                    $this->setOnsetAge(new FHIRAge([FHIRAge::FIELD_VALUE => $data[self::FIELD_ONSET_AGE]] + $ext));
+                } else if (is_array($data[self::FIELD_ONSET_AGE])) {
+                    $this->setOnsetAge(new FHIRAge(array_merge($ext, $data[self::FIELD_ONSET_AGE])));
+                }
             } else {
                 $this->setOnsetAge(new FHIRAge($data[self::FIELD_ONSET_AGE]));
             }
@@ -208,8 +221,12 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ONSET_STRING] instanceof FHIRString) {
                 $this->setOnsetString($data[self::FIELD_ONSET_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ONSET_STRING])) {
-                $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ONSET_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ONSET_STRING])) {
+                    $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ONSET_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_ONSET_STRING])) {
+                    $this->setOnsetString(new FHIRString(array_merge($ext, $data[self::FIELD_ONSET_STRING])));
+                }
             } else {
                 $this->setOnsetString(new FHIRString($data[self::FIELD_ONSET_STRING]));
             }
@@ -562,22 +579,18 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
         if (null !== ($v = $this->getNote())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOnsetAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_AGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOnsetRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getOnsetString())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_STRING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOutcome())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -591,18 +604,40 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getNote())) {
-            $a[self::FIELD_NOTE] = $v->getValue();
-            $a[self::FIELD_NOTE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NOTE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NOTE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NOTE] = $v;
+            }
         }
         if (null !== ($v = $this->getOnsetAge())) {
-            $a[self::FIELD_ONSET_AGE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ONSET_AGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ONSET_AGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ONSET_AGE] = $v;
+            }
         }
         if (null !== ($v = $this->getOnsetRange())) {
             $a[self::FIELD_ONSET_RANGE] = $v;
         }
         if (null !== ($v = $this->getOnsetString())) {
-            $a[self::FIELD_ONSET_STRING] = $v->getValue();
-            $a[self::FIELD_ONSET_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ONSET_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ONSET_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ONSET_STRING] = $v;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v;

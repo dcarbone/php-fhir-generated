@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,10 +83,6 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COMORBIDITY = 'comorbidity';
     const FIELD_DISEASE = 'disease';
     const FIELD_DISEASE_STATUS = 'diseaseStatus';
@@ -176,6 +172,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
      */
     protected $therapeuticIndication = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicinalProductContraindication Constructor
      * @param null|array $data
@@ -195,6 +194,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         if (isset($data[self::FIELD_COMORBIDITY])) {
             if (is_array($data[self::FIELD_COMORBIDITY])) {
                 foreach($data[self::FIELD_COMORBIDITY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addComorbidity($v);
                     } else {
@@ -224,6 +226,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         if (isset($data[self::FIELD_OTHER_THERAPY])) {
             if (is_array($data[self::FIELD_OTHER_THERAPY])) {
                 foreach($data[self::FIELD_OTHER_THERAPY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicinalProductContraindicationOtherTherapy) {
                         $this->addOtherTherapy($v);
                     } else {
@@ -239,6 +244,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         if (isset($data[self::FIELD_POPULATION])) {
             if (is_array($data[self::FIELD_POPULATION])) {
                 foreach($data[self::FIELD_POPULATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRPopulation) {
                         $this->addPopulation($v);
                     } else {
@@ -254,6 +262,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         if (isset($data[self::FIELD_SUBJECT])) {
             if (is_array($data[self::FIELD_SUBJECT])) {
                 foreach($data[self::FIELD_SUBJECT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSubject($v);
                     } else {
@@ -269,6 +280,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         if (isset($data[self::FIELD_THERAPEUTIC_INDICATION])) {
             if (is_array($data[self::FIELD_THERAPEUTIC_INDICATION])) {
                 foreach($data[self::FIELD_THERAPEUTIC_INDICATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addTherapeuticIndication($v);
                     } else {
@@ -771,7 +785,6 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getComorbidity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -784,11 +797,9 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         if (null !== ($v = $this->getDisease())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISEASE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDiseaseStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISEASE_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getOtherTherapy())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -824,6 +835,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
                 $v->xmlSerialize($sxe->addChild(self::FIELD_THERAPEUTIC_INDICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

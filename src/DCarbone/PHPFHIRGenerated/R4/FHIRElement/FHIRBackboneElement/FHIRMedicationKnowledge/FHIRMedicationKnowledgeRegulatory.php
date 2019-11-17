@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_MAX_DISPENSE = 'maxDispense';
     const FIELD_REGULATORY_AUTHORITY = 'regulatoryAuthority';
     const FIELD_SCHEDULE = 'schedule';
@@ -125,6 +121,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      */
     protected $substitution = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgeRegulatory Constructor
      * @param null|array $data
@@ -158,6 +157,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
         if (isset($data[self::FIELD_SCHEDULE])) {
             if (is_array($data[self::FIELD_SCHEDULE])) {
                 foreach($data[self::FIELD_SCHEDULE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationKnowledgeSchedule) {
                         $this->addSchedule($v);
                     } else {
@@ -173,6 +175,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
         if (isset($data[self::FIELD_SUBSTITUTION])) {
             if (is_array($data[self::FIELD_SUBSTITUTION])) {
                 foreach($data[self::FIELD_SUBSTITUTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationKnowledgeSubstitution) {
                         $this->addSubstitution($v);
                     } else {
@@ -461,15 +466,12 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getMaxDispense())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DISPENSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRegulatoryAuthority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REGULATORY_AUTHORITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSchedule())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -487,6 +489,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTITUTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 

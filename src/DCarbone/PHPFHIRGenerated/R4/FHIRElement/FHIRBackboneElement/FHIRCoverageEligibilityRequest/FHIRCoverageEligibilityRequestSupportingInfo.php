@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,10 +83,6 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_APPLIES_TO_ALL = 'appliesToAll';
     const FIELD_APPLIES_TO_ALL_EXT = '_appliesToAll';
     const FIELD_INFORMATION = 'information';
@@ -127,6 +123,9 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      */
     protected $sequence = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCoverageEligibilityRequestSupportingInfo Constructor
      * @param null|array $data
@@ -149,8 +148,12 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_APPLIES_TO_ALL] instanceof FHIRBoolean) {
                 $this->setAppliesToAll($data[self::FIELD_APPLIES_TO_ALL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_APPLIES_TO_ALL])) {
-                $this->setAppliesToAll(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_APPLIES_TO_ALL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_APPLIES_TO_ALL])) {
+                    $this->setAppliesToAll(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_APPLIES_TO_ALL]] + $ext));
+                } else if (is_array($data[self::FIELD_APPLIES_TO_ALL])) {
+                    $this->setAppliesToAll(new FHIRBoolean(array_merge($ext, $data[self::FIELD_APPLIES_TO_ALL])));
+                }
             } else {
                 $this->setAppliesToAll(new FHIRBoolean($data[self::FIELD_APPLIES_TO_ALL]));
             }
@@ -168,8 +171,12 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_SEQUENCE] instanceof FHIRPositiveInt) {
                 $this->setSequence($data[self::FIELD_SEQUENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SEQUENCE])) {
-                $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_SEQUENCE])) {
+                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SEQUENCE])));
+                }
             } else {
                 $this->setSequence(new FHIRPositiveInt($data[self::FIELD_SEQUENCE]));
             }
@@ -401,7 +408,6 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
         if (null !== ($v = $this->getAppliesToAll())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES_TO_ALL, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getInformation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -418,15 +424,29 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAppliesToAll())) {
-            $a[self::FIELD_APPLIES_TO_ALL] = $v->getValue();
-            $a[self::FIELD_APPLIES_TO_ALL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_APPLIES_TO_ALL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_APPLIES_TO_ALL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_APPLIES_TO_ALL] = $v;
+            }
         }
         if (null !== ($v = $this->getInformation())) {
             $a[self::FIELD_INFORMATION] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $a[self::FIELD_SEQUENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SEQUENCE] = $v;
+            }
         }
         return $a;
     }

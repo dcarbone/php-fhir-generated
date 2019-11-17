@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMMUNICATION_DOT_PAYLOAD;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONTENT_ATTACHMENT = 'contentAttachment';
     const FIELD_CONTENT_REFERENCE = 'contentReference';
     const FIELD_CONTENT_STRING = 'contentString';
@@ -126,6 +122,9 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      */
     protected $contentString = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCommunicationPayload Constructor
      * @param null|array $data
@@ -162,8 +161,12 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CONTENT_STRING] instanceof FHIRString) {
                 $this->setContentString($data[self::FIELD_CONTENT_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CONTENT_STRING])) {
-                $this->setContentString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CONTENT_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CONTENT_STRING])) {
+                    $this->setContentString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CONTENT_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_CONTENT_STRING])) {
+                    $this->setContentString(new FHIRString(array_merge($ext, $data[self::FIELD_CONTENT_STRING])));
+                }
             } else {
                 $this->setContentString(new FHIRString($data[self::FIELD_CONTENT_STRING]));
             }
@@ -385,11 +388,9 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContentAttachment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getContentReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -412,8 +413,15 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
             $a[self::FIELD_CONTENT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getContentString())) {
-            $a[self::FIELD_CONTENT_STRING] = $v->getValue();
-            $a[self::FIELD_CONTENT_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CONTENT_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CONTENT_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CONTENT_STRING] = $v;
+            }
         }
         return $a;
     }

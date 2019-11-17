@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADDITIVE_PRODUCT_NAME = 'additiveProductName';
     const FIELD_ADDITIVE_PRODUCT_NAME_EXT = '_additiveProductName';
     const FIELD_ADDITIVE_TYPE = 'additiveType';
@@ -94,7 +90,9 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     const FIELD_BASE_FORMULA_PRODUCT_NAME_EXT = '_baseFormulaProductName';
     const FIELD_BASE_FORMULA_TYPE = 'baseFormulaType';
     const FIELD_CALORIC_DENSITY = 'caloricDensity';
+    const FIELD_CALORIC_DENSITY_EXT = '_caloricDensity';
     const FIELD_MAX_VOLUME_TO_DELIVER = 'maxVolumeToDeliver';
+    const FIELD_MAX_VOLUME_TO_DELIVER_EXT = '_maxVolumeToDeliver';
     const FIELD_ROUTEOF_ADMINISTRATION = 'routeofAdministration';
 
     /**
@@ -204,6 +202,9 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      */
     protected $routeofAdministration = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRNutritionOrderEnteralFormula Constructor
      * @param null|array $data
@@ -226,8 +227,12 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ADDITIVE_PRODUCT_NAME] instanceof FHIRString) {
                 $this->setAdditiveProductName($data[self::FIELD_ADDITIVE_PRODUCT_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
-                $this->setAdditiveProductName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADDITIVE_PRODUCT_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+                    $this->setAdditiveProductName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADDITIVE_PRODUCT_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+                    $this->setAdditiveProductName(new FHIRString(array_merge($ext, $data[self::FIELD_ADDITIVE_PRODUCT_NAME])));
+                }
             } else {
                 $this->setAdditiveProductName(new FHIRString($data[self::FIELD_ADDITIVE_PRODUCT_NAME]));
             }
@@ -242,6 +247,9 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         if (isset($data[self::FIELD_ADMINISTRATION])) {
             if (is_array($data[self::FIELD_ADMINISTRATION])) {
                 foreach($data[self::FIELD_ADMINISTRATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRNutritionOrderAdministration) {
                         $this->addAdministration($v);
                     } else {
@@ -260,8 +268,12 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ADMINISTRATION_INSTRUCTION] instanceof FHIRString) {
                 $this->setAdministrationInstruction($data[self::FIELD_ADMINISTRATION_INSTRUCTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
-                $this->setAdministrationInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADMINISTRATION_INSTRUCTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+                    $this->setAdministrationInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADMINISTRATION_INSTRUCTION]] + $ext));
+                } else if (is_array($data[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+                    $this->setAdministrationInstruction(new FHIRString(array_merge($ext, $data[self::FIELD_ADMINISTRATION_INSTRUCTION])));
+                }
             } else {
                 $this->setAdministrationInstruction(new FHIRString($data[self::FIELD_ADMINISTRATION_INSTRUCTION]));
             }
@@ -272,8 +284,12 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME] instanceof FHIRString) {
                 $this->setBaseFormulaProductName($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
-                $this->setBaseFormulaProductName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
+                    $this->setBaseFormulaProductName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME]] + $ext));
+                } else if (is_array($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
+                    $this->setBaseFormulaProductName(new FHIRString(array_merge($ext, $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME])));
+                }
             } else {
                 $this->setBaseFormulaProductName(new FHIRString($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME]));
             }
@@ -286,15 +302,33 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_CALORIC_DENSITY])) {
+            $ext = (isset($data[self::FIELD_CALORIC_DENSITY_EXT]) && is_array($data[self::FIELD_CALORIC_DENSITY_EXT]))
+                ? $data[self::FIELD_CALORIC_DENSITY_EXT]
+                : null;
             if ($data[self::FIELD_CALORIC_DENSITY] instanceof FHIRSimpleQuantity) {
                 $this->setCaloricDensity($data[self::FIELD_CALORIC_DENSITY]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CALORIC_DENSITY])) {
+                    $this->setCaloricDensity(new FHIRSimpleQuantity([FHIRSimpleQuantity::FIELD_VALUE => $data[self::FIELD_CALORIC_DENSITY]] + $ext));
+                } else if (is_array($data[self::FIELD_CALORIC_DENSITY])) {
+                    $this->setCaloricDensity(new FHIRSimpleQuantity(array_merge($ext, $data[self::FIELD_CALORIC_DENSITY])));
+                }
             } else {
                 $this->setCaloricDensity(new FHIRSimpleQuantity($data[self::FIELD_CALORIC_DENSITY]));
             }
         }
         if (isset($data[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
+            $ext = (isset($data[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT]) && is_array($data[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT]))
+                ? $data[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT]
+                : null;
             if ($data[self::FIELD_MAX_VOLUME_TO_DELIVER] instanceof FHIRSimpleQuantity) {
                 $this->setMaxVolumeToDeliver($data[self::FIELD_MAX_VOLUME_TO_DELIVER]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
+                    $this->setMaxVolumeToDeliver(new FHIRSimpleQuantity([FHIRSimpleQuantity::FIELD_VALUE => $data[self::FIELD_MAX_VOLUME_TO_DELIVER]] + $ext));
+                } else if (is_array($data[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
+                    $this->setMaxVolumeToDeliver(new FHIRSimpleQuantity(array_merge($ext, $data[self::FIELD_MAX_VOLUME_TO_DELIVER])));
+                }
             } else {
                 $this->setMaxVolumeToDeliver(new FHIRSimpleQuantity($data[self::FIELD_MAX_VOLUME_TO_DELIVER]));
             }
@@ -786,11 +820,9 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         if (null !== ($v = $this->getAdditiveProductName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getAdditiveType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getAdministration())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -799,25 +831,22 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getAdministrationInstruction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getBaseFormulaProductName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getBaseFormulaType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCaloricDensity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CALORIC_DENSITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getMaxVolumeToDeliver())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VOLUME_TO_DELIVER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRouteofAdministration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTEOF_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -831,8 +860,15 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdditiveProductName())) {
-            $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $v->getValue();
-            $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getAdditiveType())) {
             $a[self::FIELD_ADDITIVE_TYPE] = $v;
@@ -841,21 +877,51 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             $a[self::FIELD_ADMINISTRATION] = $vs;
         }
         if (null !== ($v = $this->getAdministrationInstruction())) {
-            $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $v->getValue();
-            $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $v;
+            }
         }
         if (null !== ($v = $this->getBaseFormulaProductName())) {
-            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $v->getValue();
-            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $v;
+            }
         }
         if (null !== ($v = $this->getBaseFormulaType())) {
             $a[self::FIELD_BASE_FORMULA_TYPE] = $v;
         }
         if (null !== ($v = $this->getCaloricDensity())) {
-            $a[self::FIELD_CALORIC_DENSITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CALORIC_DENSITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CALORIC_DENSITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CALORIC_DENSITY] = $v;
+            }
         }
         if (null !== ($v = $this->getMaxVolumeToDeliver())) {
-            $a[self::FIELD_MAX_VOLUME_TO_DELIVER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MAX_VOLUME_TO_DELIVER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MAX_VOLUME_TO_DELIVER] = $v;
+            }
         }
         if (null !== ($v = $this->getRouteofAdministration())) {
             $a[self::FIELD_ROUTEOF_ADMINISTRATION] = $v;

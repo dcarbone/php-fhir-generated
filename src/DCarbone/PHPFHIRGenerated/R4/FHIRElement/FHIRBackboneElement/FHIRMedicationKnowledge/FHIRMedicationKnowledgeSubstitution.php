@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_SUBSTITUTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ALLOWED = 'allowed';
     const FIELD_ALLOWED_EXT = '_allowed';
     const FIELD_TYPE = 'type';
@@ -108,6 +104,9 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgeSubstitution Constructor
      * @param null|array $data
@@ -130,8 +129,12 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ALLOWED] instanceof FHIRBoolean) {
                 $this->setAllowed($data[self::FIELD_ALLOWED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ALLOWED])) {
-                $this->setAllowed(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLOWED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ALLOWED])) {
+                    $this->setAllowed(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLOWED]] + $ext));
+                } else if (is_array($data[self::FIELD_ALLOWED])) {
+                    $this->setAllowed(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALLOWED])));
+                }
             } else {
                 $this->setAllowed(new FHIRBoolean($data[self::FIELD_ALLOWED]));
             }
@@ -324,7 +327,6 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement
         if (null !== ($v = $this->getAllowed())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -338,8 +340,15 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllowed())) {
-            $a[self::FIELD_ALLOWED] = $v->getValue();
-            $a[self::FIELD_ALLOWED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ALLOWED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ALLOWED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ALLOWED] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

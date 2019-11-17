@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,13 +79,10 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_DETAIL_1;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADJUDICATION = 'adjudication';
     const FIELD_ADJUDICATION_EXT = '_adjudication';
     const FIELD_FEE = 'fee';
+    const FIELD_FEE_EXT = '_fee';
     const FIELD_SERVICE = 'service';
 
     /**
@@ -116,6 +113,9 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      */
     protected $service = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRClaimResponseDetail1 Constructor
      * @param null|array $data
@@ -138,25 +138,41 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_ADJUDICATION])) {
                 foreach($data[self::FIELD_ADJUDICATION] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRClaimResponseAdjudication4) {
                         $this->addAdjudication($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addAdjudication(new FHIRClaimResponseAdjudication4([FHIRClaimResponseAdjudication4::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addAdjudication(new FHIRClaimResponseAdjudication4([FHIRClaimResponseAdjudication4::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addAdjudication(new FHIRClaimResponseAdjudication4(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addAdjudication(new FHIRClaimResponseAdjudication4($v));
                     }
                 }
             } elseif ($data[self::FIELD_ADJUDICATION] instanceof FHIRClaimResponseAdjudication4) {
                 $this->addAdjudication($data[self::FIELD_ADJUDICATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ADJUDICATION])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_ADJUDICATION])) {
                 $this->addAdjudication(new FHIRClaimResponseAdjudication4([FHIRClaimResponseAdjudication4::FIELD_VALUE => $data[self::FIELD_ADJUDICATION]] + $ext));
             } else {
                 $this->addAdjudication(new FHIRClaimResponseAdjudication4($data[self::FIELD_ADJUDICATION]));
             }
         }
         if (isset($data[self::FIELD_FEE])) {
+            $ext = (isset($data[self::FIELD_FEE_EXT]) && is_array($data[self::FIELD_FEE_EXT]))
+                ? $data[self::FIELD_FEE_EXT]
+                : null;
             if ($data[self::FIELD_FEE] instanceof FHIRMoney) {
                 $this->setFee($data[self::FIELD_FEE]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FEE])) {
+                    $this->setFee(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_FEE]] + $ext));
+                } else if (is_array($data[self::FIELD_FEE])) {
+                    $this->setFee(new FHIRMoney(array_merge($ext, $data[self::FIELD_FEE])));
+                }
             } else {
                 $this->setFee(new FHIRMoney($data[self::FIELD_FEE]));
             }
@@ -385,7 +401,6 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -398,7 +413,6 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
         if (null !== ($v = $this->getFee())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FEE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getService())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -412,10 +426,34 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdjudication())) {
-            $a[self::FIELD_ADJUDICATION] = $vs;
+            $a[self::FIELD_ADJUDICATION] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_ADJUDICATION][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_ADJUDICATION_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_ADJUDICATION_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_ADJUDICATION][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getFee())) {
-            $a[self::FIELD_FEE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FEE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FEE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FEE] = $v;
+            }
         }
         if (null !== ($v = $this->getService())) {
             $a[self::FIELD_SERVICE] = $v;

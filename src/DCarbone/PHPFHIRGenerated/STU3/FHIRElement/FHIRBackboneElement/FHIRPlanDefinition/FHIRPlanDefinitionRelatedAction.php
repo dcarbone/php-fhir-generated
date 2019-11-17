@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,13 +83,10 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_RELATED_ACTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ACTION_ID = 'actionId';
     const FIELD_ACTION_ID_EXT = '_actionId';
     const FIELD_OFFSET_DURATION = 'offsetDuration';
+    const FIELD_OFFSET_DURATION_EXT = '_offsetDuration';
     const FIELD_OFFSET_RANGE = 'offsetRange';
     const FIELD_RELATIONSHIP = 'relationship';
     const FIELD_RELATIONSHIP_EXT = '_relationship';
@@ -142,6 +139,9 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      */
     protected $relationship = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRPlanDefinitionRelatedAction Constructor
      * @param null|array $data
@@ -164,15 +164,28 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ACTION_ID] instanceof FHIRId) {
                 $this->setActionId($data[self::FIELD_ACTION_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ACTION_ID])) {
-                $this->setActionId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_ACTION_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ACTION_ID])) {
+                    $this->setActionId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_ACTION_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_ACTION_ID])) {
+                    $this->setActionId(new FHIRId(array_merge($ext, $data[self::FIELD_ACTION_ID])));
+                }
             } else {
                 $this->setActionId(new FHIRId($data[self::FIELD_ACTION_ID]));
             }
         }
         if (isset($data[self::FIELD_OFFSET_DURATION])) {
+            $ext = (isset($data[self::FIELD_OFFSET_DURATION_EXT]) && is_array($data[self::FIELD_OFFSET_DURATION_EXT]))
+                ? $data[self::FIELD_OFFSET_DURATION_EXT]
+                : null;
             if ($data[self::FIELD_OFFSET_DURATION] instanceof FHIRDuration) {
                 $this->setOffsetDuration($data[self::FIELD_OFFSET_DURATION]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_OFFSET_DURATION])) {
+                    $this->setOffsetDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_OFFSET_DURATION]] + $ext));
+                } else if (is_array($data[self::FIELD_OFFSET_DURATION])) {
+                    $this->setOffsetDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_OFFSET_DURATION])));
+                }
             } else {
                 $this->setOffsetDuration(new FHIRDuration($data[self::FIELD_OFFSET_DURATION]));
             }
@@ -190,8 +203,12 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RELATIONSHIP] instanceof FHIRActionRelationshipType) {
                 $this->setRelationship($data[self::FIELD_RELATIONSHIP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RELATIONSHIP])) {
-                $this->setRelationship(new FHIRActionRelationshipType([FHIRActionRelationshipType::FIELD_VALUE => $data[self::FIELD_RELATIONSHIP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RELATIONSHIP])) {
+                    $this->setRelationship(new FHIRActionRelationshipType([FHIRActionRelationshipType::FIELD_VALUE => $data[self::FIELD_RELATIONSHIP]] + $ext));
+                } else if (is_array($data[self::FIELD_RELATIONSHIP])) {
+                    $this->setRelationship(new FHIRActionRelationshipType(array_merge($ext, $data[self::FIELD_RELATIONSHIP])));
+                }
             } else {
                 $this->setRelationship(new FHIRActionRelationshipType($data[self::FIELD_RELATIONSHIP]));
             }
@@ -448,18 +465,16 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getActionId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_ID, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOffsetDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOffsetRange())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET_RANGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getRelationship())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
         }
@@ -473,17 +488,40 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActionId())) {
-            $a[self::FIELD_ACTION_ID] = $v->getValue();
-            $a[self::FIELD_ACTION_ID_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ACTION_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ACTION_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ACTION_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getOffsetDuration())) {
-            $a[self::FIELD_OFFSET_DURATION] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OFFSET_DURATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_OFFSET_DURATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_OFFSET_DURATION] = $v;
+            }
         }
         if (null !== ($v = $this->getOffsetRange())) {
             $a[self::FIELD_OFFSET_RANGE] = $v;
         }
         if (null !== ($v = $this->getRelationship())) {
-            $a[self::FIELD_RELATIONSHIP] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RELATIONSHIP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RELATIONSHIP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RELATIONSHIP] = $v;
+            }
         }
         return $a;
     }

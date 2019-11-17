@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_EVENT = 'event';
     const FIELD_OBJECT = 'object';
     const FIELD_PARTICIPANT = 'participant';
@@ -137,6 +133,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      */
     protected $source = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRAuditEvent Constructor
      * @param null|array $data
@@ -163,6 +162,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($data[self::FIELD_OBJECT])) {
             if (is_array($data[self::FIELD_OBJECT])) {
                 foreach($data[self::FIELD_OBJECT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAuditEventObject) {
                         $this->addObject($v);
                     } else {
@@ -178,6 +180,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($data[self::FIELD_PARTICIPANT])) {
             if (is_array($data[self::FIELD_PARTICIPANT])) {
                 foreach($data[self::FIELD_PARTICIPANT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRAuditEventParticipant) {
                         $this->addParticipant($v);
                     } else {
@@ -494,11 +499,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEvent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getObject())) {
             foreach($vs as $v) {
                 if (null === $v) {

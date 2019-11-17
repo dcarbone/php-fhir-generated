@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATIFIER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CODE = 'code';
     const FIELD_STRATUM = 'stratum';
     const FIELD_STRATUM_EXT = '_stratum';
@@ -110,6 +106,9 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      */
     protected $stratum = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMeasureReportStratifier Constructor
      * @param null|array $data
@@ -129,6 +128,9 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
         if (isset($data[self::FIELD_CODE])) {
             if (is_array($data[self::FIELD_CODE])) {
                 foreach($data[self::FIELD_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addCode($v);
                     } else {
@@ -147,17 +149,24 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_STRATUM])) {
                 foreach($data[self::FIELD_STRATUM] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMeasureReportStratum) {
                         $this->addStratum($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addStratum(new FHIRMeasureReportStratum([FHIRMeasureReportStratum::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addStratum(new FHIRMeasureReportStratum([FHIRMeasureReportStratum::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addStratum(new FHIRMeasureReportStratum(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addStratum(new FHIRMeasureReportStratum($v));
                     }
                 }
             } elseif ($data[self::FIELD_STRATUM] instanceof FHIRMeasureReportStratum) {
                 $this->addStratum($data[self::FIELD_STRATUM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_STRATUM])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_STRATUM])) {
                 $this->addStratum(new FHIRMeasureReportStratum([FHIRMeasureReportStratum::FIELD_VALUE => $data[self::FIELD_STRATUM]] + $ext));
             } else {
                 $this->addStratum(new FHIRMeasureReportStratum($data[self::FIELD_STRATUM]));
@@ -392,7 +401,6 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -410,6 +418,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_STRATUM, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -423,7 +432,23 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $vs;
         }
         if ([] !== ($vs = $this->getStratum())) {
-            $a[self::FIELD_STRATUM] = $vs;
+            $a[self::FIELD_STRATUM] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_STRATUM][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_STRATUM_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_STRATUM_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_STRATUM][] = $v;
+                }
+            }
         }
         return $a;
     }

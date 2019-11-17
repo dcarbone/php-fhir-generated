@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DOCUMENT_TYPE = 'documentType';
     const FIELD_DOCUMENT_TYPE_EXT = '_documentType';
     const FIELD_PRESENTATION_DATE = 'presentationDate';
@@ -144,6 +140,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      */
     protected $reference = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRImmunizationEducation Constructor
      * @param null|array $data
@@ -166,8 +165,12 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DOCUMENT_TYPE] instanceof FHIRString) {
                 $this->setDocumentType($data[self::FIELD_DOCUMENT_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DOCUMENT_TYPE])) {
-                $this->setDocumentType(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENT_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DOCUMENT_TYPE])) {
+                    $this->setDocumentType(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENT_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_DOCUMENT_TYPE])) {
+                    $this->setDocumentType(new FHIRString(array_merge($ext, $data[self::FIELD_DOCUMENT_TYPE])));
+                }
             } else {
                 $this->setDocumentType(new FHIRString($data[self::FIELD_DOCUMENT_TYPE]));
             }
@@ -178,8 +181,12 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PRESENTATION_DATE] instanceof FHIRDateTime) {
                 $this->setPresentationDate($data[self::FIELD_PRESENTATION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PRESENTATION_DATE])) {
-                $this->setPresentationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PRESENTATION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PRESENTATION_DATE])) {
+                    $this->setPresentationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PRESENTATION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_PRESENTATION_DATE])) {
+                    $this->setPresentationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_PRESENTATION_DATE])));
+                }
             } else {
                 $this->setPresentationDate(new FHIRDateTime($data[self::FIELD_PRESENTATION_DATE]));
             }
@@ -190,8 +197,12 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PUBLICATION_DATE] instanceof FHIRDateTime) {
                 $this->setPublicationDate($data[self::FIELD_PUBLICATION_DATE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PUBLICATION_DATE])) {
-                $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PUBLICATION_DATE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PUBLICATION_DATE])) {
+                    $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_PUBLICATION_DATE]] + $ext));
+                } else if (is_array($data[self::FIELD_PUBLICATION_DATE])) {
+                    $this->setPublicationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_PUBLICATION_DATE])));
+                }
             } else {
                 $this->setPublicationDate(new FHIRDateTime($data[self::FIELD_PUBLICATION_DATE]));
             }
@@ -202,8 +213,12 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_REFERENCE] instanceof FHIRUri) {
                 $this->setReference($data[self::FIELD_REFERENCE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_REFERENCE])) {
-                $this->setReference(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_REFERENCE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_REFERENCE])) {
+                    $this->setReference(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_REFERENCE]] + $ext));
+                } else if (is_array($data[self::FIELD_REFERENCE])) {
+                    $this->setReference(new FHIRUri(array_merge($ext, $data[self::FIELD_REFERENCE])));
+                }
             } else {
                 $this->setReference(new FHIRUri($data[self::FIELD_REFERENCE]));
             }
@@ -521,20 +536,48 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentType())) {
-            $a[self::FIELD_DOCUMENT_TYPE] = $v->getValue();
-            $a[self::FIELD_DOCUMENT_TYPE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOCUMENT_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DOCUMENT_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DOCUMENT_TYPE] = $v;
+            }
         }
         if (null !== ($v = $this->getPresentationDate())) {
-            $a[self::FIELD_PRESENTATION_DATE] = $v->getValue();
-            $a[self::FIELD_PRESENTATION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRESENTATION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PRESENTATION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PRESENTATION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getPublicationDate())) {
-            $a[self::FIELD_PUBLICATION_DATE] = $v->getValue();
-            $a[self::FIELD_PUBLICATION_DATE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PUBLICATION_DATE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PUBLICATION_DATE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PUBLICATION_DATE] = $v;
+            }
         }
         if (null !== ($v = $this->getReference())) {
-            $a[self::FIELD_REFERENCE] = $v->getValue();
-            $a[self::FIELD_REFERENCE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REFERENCE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_REFERENCE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_REFERENCE] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRConsentPolicy extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_POLICY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTHORITY = 'authority';
     const FIELD_AUTHORITY_EXT = '_authority';
     const FIELD_URI = 'uri';
@@ -112,6 +108,9 @@ class FHIRConsentPolicy extends FHIRBackboneElement
      */
     protected $uri = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConsentPolicy Constructor
      * @param null|array $data
@@ -134,8 +133,12 @@ class FHIRConsentPolicy extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AUTHORITY] instanceof FHIRUri) {
                 $this->setAuthority($data[self::FIELD_AUTHORITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AUTHORITY])) {
-                $this->setAuthority(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_AUTHORITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AUTHORITY])) {
+                    $this->setAuthority(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_AUTHORITY]] + $ext));
+                } else if (is_array($data[self::FIELD_AUTHORITY])) {
+                    $this->setAuthority(new FHIRUri(array_merge($ext, $data[self::FIELD_AUTHORITY])));
+                }
             } else {
                 $this->setAuthority(new FHIRUri($data[self::FIELD_AUTHORITY]));
             }
@@ -146,8 +149,12 @@ class FHIRConsentPolicy extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_URI] instanceof FHIRUri) {
                 $this->setUri($data[self::FIELD_URI]);
-            } elseif ($ext && is_scalar($data[self::FIELD_URI])) {
-                $this->setUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URI]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_URI])) {
+                    $this->setUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URI]] + $ext));
+                } else if (is_array($data[self::FIELD_URI])) {
+                    $this->setUri(new FHIRUri(array_merge($ext, $data[self::FIELD_URI])));
+                }
             } else {
                 $this->setUri(new FHIRUri($data[self::FIELD_URI]));
             }
@@ -345,6 +352,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAuthority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -361,12 +369,26 @@ class FHIRConsentPolicy extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthority())) {
-            $a[self::FIELD_AUTHORITY] = $v->getValue();
-            $a[self::FIELD_AUTHORITY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AUTHORITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AUTHORITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AUTHORITY] = $v;
+            }
         }
         if (null !== ($v = $this->getUri())) {
-            $a[self::FIELD_URI] = $v->getValue();
-            $a[self::FIELD_URI_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URI] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_URI_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_URI] = $v;
+            }
         }
         return $a;
     }

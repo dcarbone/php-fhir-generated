@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRMedicationPackage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_PACKAGE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_BATCH = 'batch';
     const FIELD_CONTAINER = 'container';
     const FIELD_CONTENT = 'content';
@@ -119,6 +115,9 @@ class FHIRMedicationPackage extends FHIRBackboneElement
      */
     protected $content = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationPackage Constructor
      * @param null|array $data
@@ -138,6 +137,9 @@ class FHIRMedicationPackage extends FHIRBackboneElement
         if (isset($data[self::FIELD_BATCH])) {
             if (is_array($data[self::FIELD_BATCH])) {
                 foreach($data[self::FIELD_BATCH] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationBatch) {
                         $this->addBatch($v);
                     } else {
@@ -160,6 +162,9 @@ class FHIRMedicationPackage extends FHIRBackboneElement
         if (isset($data[self::FIELD_CONTENT])) {
             if (is_array($data[self::FIELD_CONTENT])) {
                 foreach($data[self::FIELD_CONTENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicationContent) {
                         $this->addContent($v);
                     } else {
@@ -436,11 +441,9 @@ class FHIRMedicationPackage extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_BATCH, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getContainer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getContent())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,10 +78,6 @@ class FHIRHumanName extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_HUMAN_NAME;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_FAMILY = 'family';
     const FIELD_FAMILY_EXT = '_family';
     const FIELD_GIVEN = 'given';
@@ -176,6 +172,9 @@ class FHIRHumanName extends FHIRElement
      */
     protected $use = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRHumanName Constructor
      * @param null|array $data
@@ -198,8 +197,12 @@ class FHIRHumanName extends FHIRElement
                 : null;
             if ($data[self::FIELD_FAMILY] instanceof FHIRString) {
                 $this->setFamily($data[self::FIELD_FAMILY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FAMILY])) {
-                $this->setFamily(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_FAMILY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FAMILY])) {
+                    $this->setFamily(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_FAMILY]] + $ext));
+                } else if (is_array($data[self::FIELD_FAMILY])) {
+                    $this->setFamily(new FHIRString(array_merge($ext, $data[self::FIELD_FAMILY])));
+                }
             } else {
                 $this->setFamily(new FHIRString($data[self::FIELD_FAMILY]));
             }
@@ -210,17 +213,24 @@ class FHIRHumanName extends FHIRElement
                 : null;
             if (is_array($data[self::FIELD_GIVEN])) {
                 foreach($data[self::FIELD_GIVEN] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addGiven($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addGiven(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addGiven(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addGiven(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addGiven(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_GIVEN] instanceof FHIRString) {
                 $this->addGiven($data[self::FIELD_GIVEN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_GIVEN])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_GIVEN])) {
                 $this->addGiven(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_GIVEN]] + $ext));
             } else {
                 $this->addGiven(new FHIRString($data[self::FIELD_GIVEN]));
@@ -239,17 +249,24 @@ class FHIRHumanName extends FHIRElement
                 : null;
             if (is_array($data[self::FIELD_PREFIX])) {
                 foreach($data[self::FIELD_PREFIX] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addPrefix($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addPrefix(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addPrefix(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addPrefix(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addPrefix(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_PREFIX] instanceof FHIRString) {
                 $this->addPrefix($data[self::FIELD_PREFIX]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PREFIX])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_PREFIX])) {
                 $this->addPrefix(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PREFIX]] + $ext));
             } else {
                 $this->addPrefix(new FHIRString($data[self::FIELD_PREFIX]));
@@ -261,17 +278,24 @@ class FHIRHumanName extends FHIRElement
                 : null;
             if (is_array($data[self::FIELD_SUFFIX])) {
                 foreach($data[self::FIELD_SUFFIX] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addSuffix($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addSuffix(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addSuffix(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addSuffix(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addSuffix(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_SUFFIX] instanceof FHIRString) {
                 $this->addSuffix($data[self::FIELD_SUFFIX]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SUFFIX])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_SUFFIX])) {
                 $this->addSuffix(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SUFFIX]] + $ext));
             } else {
                 $this->addSuffix(new FHIRString($data[self::FIELD_SUFFIX]));
@@ -283,8 +307,12 @@ class FHIRHumanName extends FHIRElement
                 : null;
             if ($data[self::FIELD_TEXT] instanceof FHIRString) {
                 $this->setText($data[self::FIELD_TEXT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TEXT])) {
-                $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
+                } else if (is_array($data[self::FIELD_TEXT])) {
+                    $this->setText(new FHIRString(array_merge($ext, $data[self::FIELD_TEXT])));
+                }
             } else {
                 $this->setText(new FHIRString($data[self::FIELD_TEXT]));
             }
@@ -295,8 +323,12 @@ class FHIRHumanName extends FHIRElement
                 : null;
             if ($data[self::FIELD_USE] instanceof FHIRNameUse) {
                 $this->setUse($data[self::FIELD_USE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_USE])) {
-                $this->setUse(new FHIRNameUse([FHIRNameUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_USE])) {
+                    $this->setUse(new FHIRNameUse([FHIRNameUse::FIELD_VALUE => $data[self::FIELD_USE]] + $ext));
+                } else if (is_array($data[self::FIELD_USE])) {
+                    $this->setUse(new FHIRNameUse(array_merge($ext, $data[self::FIELD_USE])));
+                }
             } else {
                 $this->setUse(new FHIRNameUse($data[self::FIELD_USE]));
             }
@@ -803,6 +835,7 @@ class FHIRHumanName extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PREFIX, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if ([] !== ($vs = $this->getSuffix())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -811,10 +844,10 @@ class FHIRHumanName extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUFFIX, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getText())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -828,8 +861,15 @@ class FHIRHumanName extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFamily())) {
-            $a[self::FIELD_FAMILY] = $v->getValue();
-            $a[self::FIELD_FAMILY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FAMILY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FAMILY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FAMILY] = $v;
+            }
         }
         if ([] !== ($vs = $this->getGiven())) {
             $a[self::FIELD_GIVEN] = [];
@@ -837,8 +877,17 @@ class FHIRHumanName extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_GIVEN][] = $v->getValue();
-                $a[self::FIELD_GIVEN_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_GIVEN][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_GIVEN_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_GIVEN_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_GIVEN][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getPeriod())) {
@@ -850,8 +899,17 @@ class FHIRHumanName extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PREFIX][] = $v->getValue();
-                $a[self::FIELD_PREFIX_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_PREFIX][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_PREFIX_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_PREFIX_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_PREFIX][] = $v;
+                }
             }
         }
         if ([] !== ($vs = $this->getSuffix())) {
@@ -860,16 +918,40 @@ class FHIRHumanName extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_SUFFIX][] = $v->getValue();
-                $a[self::FIELD_SUFFIX_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_SUFFIX][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_SUFFIX_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_SUFFIX_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_SUFFIX][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $a[self::FIELD_TEXT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TEXT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TEXT] = $v;
+            }
         }
         if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_USE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_USE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_USE] = $v;
+            }
         }
         return $a;
     }

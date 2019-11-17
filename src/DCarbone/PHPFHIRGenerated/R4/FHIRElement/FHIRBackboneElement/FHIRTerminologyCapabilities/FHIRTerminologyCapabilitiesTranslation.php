@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_TRANSLATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_NEEDS_MAP = 'needsMap';
     const FIELD_NEEDS_MAP_EXT = '_needsMap';
 
@@ -95,6 +91,9 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected $needsMap = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRTerminologyCapabilitiesTranslation Constructor
@@ -118,8 +117,12 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_NEEDS_MAP] instanceof FHIRBoolean) {
                 $this->setNeedsMap($data[self::FIELD_NEEDS_MAP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_NEEDS_MAP])) {
-                $this->setNeedsMap(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_NEEDS_MAP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_NEEDS_MAP])) {
+                    $this->setNeedsMap(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_NEEDS_MAP]] + $ext));
+                } else if (is_array($data[self::FIELD_NEEDS_MAP])) {
+                    $this->setNeedsMap(new FHIRBoolean(array_merge($ext, $data[self::FIELD_NEEDS_MAP])));
+                }
             } else {
                 $this->setNeedsMap(new FHIRBoolean($data[self::FIELD_NEEDS_MAP]));
             }
@@ -280,8 +283,15 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getNeedsMap())) {
-            $a[self::FIELD_NEEDS_MAP] = $v->getValue();
-            $a[self::FIELD_NEEDS_MAP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NEEDS_MAP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NEEDS_MAP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_NEEDS_MAP] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ALLERGENIC_INDICATOR = 'allergenicIndicator';
     const FIELD_ALLERGENIC_INDICATOR_EXT = '_allergenicIndicator';
     const FIELD_IDENTIFIER = 'identifier';
@@ -162,6 +158,9 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      */
     protected $substance = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicinalProductIngredient Constructor
      * @param null|array $data
@@ -184,8 +183,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 : null;
             if ($data[self::FIELD_ALLERGENIC_INDICATOR] instanceof FHIRBoolean) {
                 $this->setAllergenicIndicator($data[self::FIELD_ALLERGENIC_INDICATOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ALLERGENIC_INDICATOR])) {
-                $this->setAllergenicIndicator(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLERGENIC_INDICATOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ALLERGENIC_INDICATOR])) {
+                    $this->setAllergenicIndicator(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLERGENIC_INDICATOR]] + $ext));
+                } else if (is_array($data[self::FIELD_ALLERGENIC_INDICATOR])) {
+                    $this->setAllergenicIndicator(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALLERGENIC_INDICATOR])));
+                }
             } else {
                 $this->setAllergenicIndicator(new FHIRBoolean($data[self::FIELD_ALLERGENIC_INDICATOR]));
             }
@@ -196,8 +199,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -205,6 +212,9 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
         if (isset($data[self::FIELD_MANUFACTURER])) {
             if (is_array($data[self::FIELD_MANUFACTURER])) {
                 foreach($data[self::FIELD_MANUFACTURER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addManufacturer($v);
                     } else {
@@ -227,6 +237,9 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
         if (isset($data[self::FIELD_SPECIFIED_SUBSTANCE])) {
             if (is_array($data[self::FIELD_SPECIFIED_SUBSTANCE])) {
                 foreach($data[self::FIELD_SPECIFIED_SUBSTANCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMedicinalProductIngredientSpecifiedSubstance) {
                         $this->addSpecifiedSubstance($v);
                     } else {
@@ -619,11 +632,9 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
         if (null !== ($v = $this->getAllergenicIndicator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLERGENIC_INDICATOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getManufacturer())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -636,7 +647,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
         if (null !== ($v = $this->getRole())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSpecifiedSubstance())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -659,11 +669,26 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllergenicIndicator())) {
-            $a[self::FIELD_ALLERGENIC_INDICATOR] = $v->getValue();
-            $a[self::FIELD_ALLERGENIC_INDICATOR_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ALLERGENIC_INDICATOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ALLERGENIC_INDICATOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ALLERGENIC_INDICATOR] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if ([] !== ($vs = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $vs;

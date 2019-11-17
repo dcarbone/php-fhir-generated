@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,10 +84,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION_DOT_FINDING;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CAUSE = 'cause';
     const FIELD_CAUSE_EXT = '_cause';
     const FIELD_ITEM = 'item';
@@ -115,6 +111,9 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      */
     protected $item = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRClinicalImpressionFinding Constructor
      * @param null|array $data
@@ -137,8 +136,12 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CAUSE] instanceof FHIRString) {
                 $this->setCause($data[self::FIELD_CAUSE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CAUSE])) {
-                $this->setCause(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CAUSE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CAUSE])) {
+                    $this->setCause(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CAUSE]] + $ext));
+                } else if (is_array($data[self::FIELD_CAUSE])) {
+                    $this->setCause(new FHIRString(array_merge($ext, $data[self::FIELD_CAUSE])));
+                }
             } else {
                 $this->setCause(new FHIRString($data[self::FIELD_CAUSE]));
             }
@@ -333,7 +336,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         if (null !== ($v = $this->getCause())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getItem())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
         }
@@ -347,8 +349,15 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCause())) {
-            $a[self::FIELD_CAUSE] = $v->getValue();
-            $a[self::FIELD_CAUSE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CAUSE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CAUSE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CAUSE] = $v;
+            }
         }
         if (null !== ($v = $this->getItem())) {
             $a[self::FIELD_ITEM] = $v;

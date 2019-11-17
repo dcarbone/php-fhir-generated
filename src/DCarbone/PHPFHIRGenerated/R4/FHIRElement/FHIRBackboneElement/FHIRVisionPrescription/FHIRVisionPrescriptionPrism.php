@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_PRISM;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AMOUNT = 'amount';
     const FIELD_AMOUNT_EXT = '_amount';
     const FIELD_BASE = 'base';
@@ -110,6 +106,9 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
      */
     protected $base = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRVisionPrescriptionPrism Constructor
      * @param null|array $data
@@ -132,8 +131,12 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AMOUNT] instanceof FHIRDecimal) {
                 $this->setAmount($data[self::FIELD_AMOUNT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT])) {
-                $this->setAmount(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AMOUNT])) {
+                    $this->setAmount(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
+                } else if (is_array($data[self::FIELD_AMOUNT])) {
+                    $this->setAmount(new FHIRDecimal(array_merge($ext, $data[self::FIELD_AMOUNT])));
+                }
             } else {
                 $this->setAmount(new FHIRDecimal($data[self::FIELD_AMOUNT]));
             }
@@ -144,8 +147,12 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_BASE] instanceof FHIRVisionBase) {
                 $this->setBase($data[self::FIELD_BASE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_BASE])) {
-                $this->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $data[self::FIELD_BASE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_BASE])) {
+                    $this->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $data[self::FIELD_BASE]] + $ext));
+                } else if (is_array($data[self::FIELD_BASE])) {
+                    $this->setBase(new FHIRVisionBase(array_merge($ext, $data[self::FIELD_BASE])));
+                }
             } else {
                 $this->setBase(new FHIRVisionBase($data[self::FIELD_BASE]));
             }
@@ -331,7 +338,6 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getBase())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BASE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -345,11 +351,26 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmount())) {
-            $a[self::FIELD_AMOUNT] = $v->getValue();
-            $a[self::FIELD_AMOUNT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AMOUNT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AMOUNT] = $v;
+            }
         }
         if (null !== ($v = $this->getBase())) {
-            $a[self::FIELD_BASE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BASE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_BASE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_BASE] = $v;
+            }
         }
         return $a;
     }

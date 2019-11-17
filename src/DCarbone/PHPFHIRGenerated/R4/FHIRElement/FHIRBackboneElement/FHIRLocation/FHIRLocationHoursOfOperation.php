@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_HOURS_OF_OPERATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ALL_DAY = 'allDay';
     const FIELD_ALL_DAY_EXT = '_allDay';
     const FIELD_CLOSING_TIME = 'closingTime';
@@ -134,6 +130,9 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      */
     protected $openingTime = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRLocationHoursOfOperation Constructor
      * @param null|array $data
@@ -156,8 +155,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ALL_DAY] instanceof FHIRBoolean) {
                 $this->setAllDay($data[self::FIELD_ALL_DAY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ALL_DAY])) {
-                $this->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALL_DAY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ALL_DAY])) {
+                    $this->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALL_DAY]] + $ext));
+                } else if (is_array($data[self::FIELD_ALL_DAY])) {
+                    $this->setAllDay(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALL_DAY])));
+                }
             } else {
                 $this->setAllDay(new FHIRBoolean($data[self::FIELD_ALL_DAY]));
             }
@@ -168,8 +171,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CLOSING_TIME] instanceof FHIRTime) {
                 $this->setClosingTime($data[self::FIELD_CLOSING_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CLOSING_TIME])) {
-                $this->setClosingTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_CLOSING_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CLOSING_TIME])) {
+                    $this->setClosingTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_CLOSING_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_CLOSING_TIME])) {
+                    $this->setClosingTime(new FHIRTime(array_merge($ext, $data[self::FIELD_CLOSING_TIME])));
+                }
             } else {
                 $this->setClosingTime(new FHIRTime($data[self::FIELD_CLOSING_TIME]));
             }
@@ -180,17 +187,24 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_DAYS_OF_WEEK])) {
                 foreach($data[self::FIELD_DAYS_OF_WEEK] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRDaysOfWeek) {
                         $this->addDaysOfWeek($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addDaysOfWeek(new FHIRDaysOfWeek(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addDaysOfWeek(new FHIRDaysOfWeek($v));
                     }
                 }
             } elseif ($data[self::FIELD_DAYS_OF_WEEK] instanceof FHIRDaysOfWeek) {
                 $this->addDaysOfWeek($data[self::FIELD_DAYS_OF_WEEK]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DAYS_OF_WEEK])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_DAYS_OF_WEEK])) {
                 $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $data[self::FIELD_DAYS_OF_WEEK]] + $ext));
             } else {
                 $this->addDaysOfWeek(new FHIRDaysOfWeek($data[self::FIELD_DAYS_OF_WEEK]));
@@ -202,8 +216,12 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_OPENING_TIME] instanceof FHIRTime) {
                 $this->setOpeningTime($data[self::FIELD_OPENING_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_OPENING_TIME])) {
-                $this->setOpeningTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_OPENING_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_OPENING_TIME])) {
+                    $this->setOpeningTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_OPENING_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_OPENING_TIME])) {
+                    $this->setOpeningTime(new FHIRTime(array_merge($ext, $data[self::FIELD_OPENING_TIME])));
+                }
             } else {
                 $this->setOpeningTime(new FHIRTime($data[self::FIELD_OPENING_TIME]));
             }
@@ -499,7 +517,6 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
         if (null !== ($v = $this->getClosingTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLOSING_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDaysOfWeek())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -508,6 +525,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DAYS_OF_WEEK, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getOpeningTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OPENING_TIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -521,19 +539,56 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllDay())) {
-            $a[self::FIELD_ALL_DAY] = $v->getValue();
-            $a[self::FIELD_ALL_DAY_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ALL_DAY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ALL_DAY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ALL_DAY] = $v;
+            }
         }
         if (null !== ($v = $this->getClosingTime())) {
-            $a[self::FIELD_CLOSING_TIME] = $v->getValue();
-            $a[self::FIELD_CLOSING_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CLOSING_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CLOSING_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CLOSING_TIME] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDaysOfWeek())) {
-            $a[self::FIELD_DAYS_OF_WEEK] = $vs;
+            $a[self::FIELD_DAYS_OF_WEEK] = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_DAYS_OF_WEEK][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_DAYS_OF_WEEK_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_DAYS_OF_WEEK_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_DAYS_OF_WEEK][] = $v;
+                }
+            }
         }
         if (null !== ($v = $this->getOpeningTime())) {
-            $a[self::FIELD_OPENING_TIME] = $v->getValue();
-            $a[self::FIELD_OPENING_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OPENING_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_OPENING_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_OPENING_TIME] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ALTERNATIVE = 'alternative';
     const FIELD_OPERATION = 'operation';
     const FIELD_PAUSE = 'pause';
@@ -125,6 +121,9 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      */
     protected $process = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRExampleScenarioStep Constructor
      * @param null|array $data
@@ -144,6 +143,9 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         if (isset($data[self::FIELD_ALTERNATIVE])) {
             if (is_array($data[self::FIELD_ALTERNATIVE])) {
                 foreach($data[self::FIELD_ALTERNATIVE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExampleScenarioAlternative) {
                         $this->addAlternative($v);
                     } else {
@@ -169,8 +171,12 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PAUSE] instanceof FHIRBoolean) {
                 $this->setPause($data[self::FIELD_PAUSE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PAUSE])) {
-                $this->setPause(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PAUSE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PAUSE])) {
+                    $this->setPause(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PAUSE]] + $ext));
+                } else if (is_array($data[self::FIELD_PAUSE])) {
+                    $this->setPause(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PAUSE])));
+                }
             } else {
                 $this->setPause(new FHIRBoolean($data[self::FIELD_PAUSE]));
             }
@@ -178,6 +184,9 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         if (isset($data[self::FIELD_PROCESS])) {
             if (is_array($data[self::FIELD_PROCESS])) {
                 foreach($data[self::FIELD_PROCESS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRExampleScenarioProcess) {
                         $this->addProcess($v);
                     } else {
@@ -475,7 +484,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAlternative())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -491,7 +499,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         if (null !== ($v = $this->getPause())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PAUSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getProcess())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -500,6 +507,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESS, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -516,8 +524,15 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             $a[self::FIELD_OPERATION] = $v;
         }
         if (null !== ($v = $this->getPause())) {
-            $a[self::FIELD_PAUSE] = $v->getValue();
-            $a[self::FIELD_PAUSE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PAUSE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PAUSE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PAUSE] = $v;
+            }
         }
         if ([] !== ($vs = $this->getProcess())) {
             $a[self::FIELD_PROCESS] = $vs;

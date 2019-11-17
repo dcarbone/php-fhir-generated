@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRConditionStage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONDITION_DOT_STAGE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ASSESSMENT = 'assessment';
     const FIELD_SUMMARY = 'summary';
 
@@ -111,6 +107,9 @@ class FHIRConditionStage extends FHIRBackboneElement
      */
     protected $summary = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRConditionStage Constructor
      * @param null|array $data
@@ -130,6 +129,9 @@ class FHIRConditionStage extends FHIRBackboneElement
         if (isset($data[self::FIELD_ASSESSMENT])) {
             if (is_array($data[self::FIELD_ASSESSMENT])) {
                 foreach($data[self::FIELD_ASSESSMENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addAssessment($v);
                     } else {
@@ -360,7 +362,6 @@ class FHIRConditionStage extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSummary())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUMMARY, null, $v->_getFHIRXMLNamespace()));
         }

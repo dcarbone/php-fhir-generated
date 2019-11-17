@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,10 +89,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM_GENERAL;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CLASS = 'class';
     const FIELD_KINGDOM = 'kingdom';
     const FIELD_ORDER = 'order';
@@ -145,6 +141,9 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $phylum = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRSubstanceSourceMaterialOrganismGeneral Constructor
@@ -431,19 +430,15 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getKingdom())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_KINGDOM, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOrder())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPhylum())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PHYLUM, null, $v->_getFHIRXMLNamespace()));
         }

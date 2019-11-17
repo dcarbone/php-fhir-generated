@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_REPORT_DOT_ASSERT;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DETAIL = 'detail';
     const FIELD_DETAIL_EXT = '_detail';
     const FIELD_MESSAGE = 'message';
@@ -126,6 +122,9 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      */
     protected $result = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRTestReportAssert Constructor
      * @param null|array $data
@@ -148,8 +147,12 @@ class FHIRTestReportAssert extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DETAIL] instanceof FHIRString) {
                 $this->setDetail($data[self::FIELD_DETAIL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DETAIL])) {
-                $this->setDetail(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DETAIL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DETAIL])) {
+                    $this->setDetail(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DETAIL]] + $ext));
+                } else if (is_array($data[self::FIELD_DETAIL])) {
+                    $this->setDetail(new FHIRString(array_merge($ext, $data[self::FIELD_DETAIL])));
+                }
             } else {
                 $this->setDetail(new FHIRString($data[self::FIELD_DETAIL]));
             }
@@ -160,8 +163,12 @@ class FHIRTestReportAssert extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_MESSAGE] instanceof FHIRMarkdown) {
                 $this->setMessage($data[self::FIELD_MESSAGE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_MESSAGE])) {
-                $this->setMessage(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_MESSAGE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_MESSAGE])) {
+                    $this->setMessage(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_MESSAGE]] + $ext));
+                } else if (is_array($data[self::FIELD_MESSAGE])) {
+                    $this->setMessage(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_MESSAGE])));
+                }
             } else {
                 $this->setMessage(new FHIRMarkdown($data[self::FIELD_MESSAGE]));
             }
@@ -172,8 +179,12 @@ class FHIRTestReportAssert extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_RESULT] instanceof FHIRTestReportActionResult) {
                 $this->setResult($data[self::FIELD_RESULT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_RESULT])) {
-                $this->setResult(new FHIRTestReportActionResult([FHIRTestReportActionResult::FIELD_VALUE => $data[self::FIELD_RESULT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_RESULT])) {
+                    $this->setResult(new FHIRTestReportActionResult([FHIRTestReportActionResult::FIELD_VALUE => $data[self::FIELD_RESULT]] + $ext));
+                } else if (is_array($data[self::FIELD_RESULT])) {
+                    $this->setResult(new FHIRTestReportActionResult(array_merge($ext, $data[self::FIELD_RESULT])));
+                }
             } else {
                 $this->setResult(new FHIRTestReportActionResult($data[self::FIELD_RESULT]));
             }
@@ -412,7 +423,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
         if (null !== ($v = $this->getMessage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MESSAGE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResult())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -426,15 +436,37 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDetail())) {
-            $a[self::FIELD_DETAIL] = $v->getValue();
-            $a[self::FIELD_DETAIL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DETAIL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DETAIL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DETAIL] = $v;
+            }
         }
         if (null !== ($v = $this->getMessage())) {
-            $a[self::FIELD_MESSAGE] = $v->getValue();
-            $a[self::FIELD_MESSAGE_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MESSAGE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MESSAGE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_MESSAGE] = $v;
+            }
         }
         if (null !== ($v = $this->getResult())) {
-            $a[self::FIELD_RESULT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RESULT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_RESULT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_RESULT] = $v;
+            }
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COLLECTED_DATE_TIME = 'collectedDateTime';
     const FIELD_COLLECTED_DATE_TIME_EXT = '_collectedDateTime';
     const FIELD_COLLECTED_PERIOD = 'collectedPeriod';
@@ -179,6 +175,9 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      */
     protected $sourceSite = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSpecimenCollection Constructor
      * @param null|array $data
@@ -201,8 +200,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COLLECTED_DATE_TIME] instanceof FHIRDateTime) {
                 $this->setCollectedDateTime($data[self::FIELD_COLLECTED_DATE_TIME]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COLLECTED_DATE_TIME])) {
-                $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_COLLECTED_DATE_TIME]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COLLECTED_DATE_TIME])) {
+                    $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_COLLECTED_DATE_TIME]] + $ext));
+                } else if (is_array($data[self::FIELD_COLLECTED_DATE_TIME])) {
+                    $this->setCollectedDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_COLLECTED_DATE_TIME])));
+                }
             } else {
                 $this->setCollectedDateTime(new FHIRDateTime($data[self::FIELD_COLLECTED_DATE_TIME]));
             }
@@ -227,17 +230,24 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_COMMENT])) {
                 foreach($data[self::FIELD_COMMENT] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addComment($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addComment(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addComment(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addComment(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addComment(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_COMMENT] instanceof FHIRString) {
                 $this->addComment($data[self::FIELD_COMMENT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMMENT])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_COMMENT])) {
                 $this->addComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
             } else {
                 $this->addComment(new FHIRString($data[self::FIELD_COMMENT]));
@@ -256,8 +266,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_QUANTITY])) {
-                $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_QUANTITY])) {
+                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
+                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -674,11 +688,9 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         if (null !== ($v = $this->getCollectedDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCollectedPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCollector())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -694,11 +706,9 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         if (null !== ($v = $this->getMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSourceSite())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_SITE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -712,8 +722,15 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCollectedDateTime())) {
-            $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
-            $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COLLECTED_DATE_TIME] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COLLECTED_DATE_TIME] = $v;
+            }
         }
         if (null !== ($v = $this->getCollectedPeriod())) {
             $a[self::FIELD_COLLECTED_PERIOD] = $v;
@@ -727,15 +744,32 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_COMMENT][] = $v->getValue();
-                $a[self::FIELD_COMMENT_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_COMMENT][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_COMMENT_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_COMMENT_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_COMMENT][] = $v;
+                }
             }
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getSourceSite())) {
             $a[self::FIELD_SOURCE_SITE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT_DOT_SECURITY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CERTIFICATE = 'certificate';
     const FIELD_CORS = 'cors';
     const FIELD_CORS_EXT = '_cors';
@@ -137,6 +133,9 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      */
     protected $service = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRCapabilityStatementSecurity Constructor
      * @param null|array $data
@@ -156,6 +155,9 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
         if (isset($data[self::FIELD_CERTIFICATE])) {
             if (is_array($data[self::FIELD_CERTIFICATE])) {
                 foreach($data[self::FIELD_CERTIFICATE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCapabilityStatementCertificate) {
                         $this->addCertificate($v);
                     } else {
@@ -174,8 +176,12 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CORS] instanceof FHIRBoolean) {
                 $this->setCors($data[self::FIELD_CORS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CORS])) {
-                $this->setCors(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_CORS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CORS])) {
+                    $this->setCors(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_CORS]] + $ext));
+                } else if (is_array($data[self::FIELD_CORS])) {
+                    $this->setCors(new FHIRBoolean(array_merge($ext, $data[self::FIELD_CORS])));
+                }
             } else {
                 $this->setCors(new FHIRBoolean($data[self::FIELD_CORS]));
             }
@@ -186,8 +192,12 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DESCRIPTION])) {
-                $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
+                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
+                }
             } else {
                 $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
             }
@@ -195,6 +205,9 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
         if (isset($data[self::FIELD_SERVICE])) {
             if (is_array($data[self::FIELD_SERVICE])) {
                 foreach($data[self::FIELD_SERVICE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addService($v);
                     } else {
@@ -536,7 +549,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
         if (null !== ($v = $this->getDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getService())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -558,12 +570,26 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
             $a[self::FIELD_CERTIFICATE] = $vs;
         }
         if (null !== ($v = $this->getCors())) {
-            $a[self::FIELD_CORS] = $v->getValue();
-            $a[self::FIELD_CORS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CORS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CORS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CORS] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $a[self::FIELD_DESCRIPTION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DESCRIPTION] = $v;
+            }
         }
         if ([] !== ($vs = $this->getService())) {
             $a[self::FIELD_SERVICE] = $vs;

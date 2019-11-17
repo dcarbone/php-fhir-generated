@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_FROM = 'from';
     const FIELD_FROM_EXT = '_from';
     const FIELD_LEVEL = 'level';
@@ -140,6 +136,9 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIREffectEvidenceSynthesisPrecisionEstimate Constructor
      * @param null|array $data
@@ -162,8 +161,12 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_FROM] instanceof FHIRDecimal) {
                 $this->setFrom($data[self::FIELD_FROM]);
-            } elseif ($ext && is_scalar($data[self::FIELD_FROM])) {
-                $this->setFrom(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_FROM]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_FROM])) {
+                    $this->setFrom(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_FROM]] + $ext));
+                } else if (is_array($data[self::FIELD_FROM])) {
+                    $this->setFrom(new FHIRDecimal(array_merge($ext, $data[self::FIELD_FROM])));
+                }
             } else {
                 $this->setFrom(new FHIRDecimal($data[self::FIELD_FROM]));
             }
@@ -174,8 +177,12 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_LEVEL] instanceof FHIRDecimal) {
                 $this->setLevel($data[self::FIELD_LEVEL]);
-            } elseif ($ext && is_scalar($data[self::FIELD_LEVEL])) {
-                $this->setLevel(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_LEVEL]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_LEVEL])) {
+                    $this->setLevel(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_LEVEL]] + $ext));
+                } else if (is_array($data[self::FIELD_LEVEL])) {
+                    $this->setLevel(new FHIRDecimal(array_merge($ext, $data[self::FIELD_LEVEL])));
+                }
             } else {
                 $this->setLevel(new FHIRDecimal($data[self::FIELD_LEVEL]));
             }
@@ -186,8 +193,12 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TO] instanceof FHIRDecimal) {
                 $this->setTo($data[self::FIELD_TO]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TO])) {
-                $this->setTo(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_TO]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TO])) {
+                    $this->setTo(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_TO]] + $ext));
+                } else if (is_array($data[self::FIELD_TO])) {
+                    $this->setTo(new FHIRDecimal(array_merge($ext, $data[self::FIELD_TO])));
+                }
             } else {
                 $this->setTo(new FHIRDecimal($data[self::FIELD_TO]));
             }
@@ -482,7 +493,6 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
         if (null !== ($v = $this->getTo())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TO, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -496,16 +506,37 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFrom())) {
-            $a[self::FIELD_FROM] = $v->getValue();
-            $a[self::FIELD_FROM_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FROM] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_FROM_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_FROM] = $v;
+            }
         }
         if (null !== ($v = $this->getLevel())) {
-            $a[self::FIELD_LEVEL] = $v->getValue();
-            $a[self::FIELD_LEVEL_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LEVEL] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_LEVEL_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_LEVEL] = $v;
+            }
         }
         if (null !== ($v = $this->getTo())) {
-            $a[self::FIELD_TO] = $v->getValue();
-            $a[self::FIELD_TO_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TO] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TO_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TO] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRelat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RELATED_PERSON_DOT_COMMUNICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_LANGUAGE = 'language';
     const FIELD_PREFERRED = 'preferred';
     const FIELD_PREFERRED_EXT = '_preferred';
@@ -114,6 +110,9 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
      */
     protected $preferred = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRRelatedPersonCommunication Constructor
      * @param null|array $data
@@ -143,8 +142,12 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PREFERRED] instanceof FHIRBoolean) {
                 $this->setPreferred($data[self::FIELD_PREFERRED]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PREFERRED])) {
-                $this->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PREFERRED]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PREFERRED])) {
+                    $this->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PREFERRED]] + $ext));
+                } else if (is_array($data[self::FIELD_PREFERRED])) {
+                    $this->setPreferred(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PREFERRED])));
+                }
             } else {
                 $this->setPreferred(new FHIRBoolean($data[self::FIELD_PREFERRED]));
             }
@@ -335,7 +338,6 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getLanguage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -355,8 +357,15 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
             $a[self::FIELD_LANGUAGE] = $v;
         }
         if (null !== ($v = $this->getPreferred())) {
-            $a[self::FIELD_PREFERRED] = $v->getValue();
-            $a[self::FIELD_PREFERRED_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PREFERRED] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PREFERRED_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PREFERRED] = $v;
+            }
         }
         return $a;
     }

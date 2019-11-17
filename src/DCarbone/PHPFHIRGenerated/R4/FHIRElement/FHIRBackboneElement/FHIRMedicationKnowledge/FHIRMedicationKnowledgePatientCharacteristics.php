@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_PATIENT_CHARACTERISTICS;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CHARACTERISTIC_CODEABLE_CONCEPT = 'characteristicCodeableConcept';
     const FIELD_CHARACTERISTIC_QUANTITY = 'characteristicQuantity';
     const FIELD_CHARACTERISTIC_QUANTITY_EXT = '_characteristicQuantity';
@@ -127,6 +123,9 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      */
     protected $value = [];
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMedicationKnowledgePatientCharacteristics Constructor
      * @param null|array $data
@@ -160,8 +159,12 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CHARACTERISTIC_QUANTITY] instanceof FHIRQuantity) {
                 $this->setCharacteristicQuantity($data[self::FIELD_CHARACTERISTIC_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CHARACTERISTIC_QUANTITY])) {
-                $this->setCharacteristicQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_CHARACTERISTIC_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CHARACTERISTIC_QUANTITY])) {
+                    $this->setCharacteristicQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_CHARACTERISTIC_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_CHARACTERISTIC_QUANTITY])) {
+                    $this->setCharacteristicQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_CHARACTERISTIC_QUANTITY])));
+                }
             } else {
                 $this->setCharacteristicQuantity(new FHIRQuantity($data[self::FIELD_CHARACTERISTIC_QUANTITY]));
             }
@@ -172,17 +175,24 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
                 : null;
             if (is_array($data[self::FIELD_VALUE])) {
                 foreach($data[self::FIELD_VALUE] as $i => $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRString) {
                         $this->addValue($v);
-                    } elseif ($ext && is_scalar($v) && isset($ext[$i]) && is_array($ext[$i])) {
-                        $this->addValue(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
+                        if (is_scalar($v)) {
+                            $this->addValue(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
+                        } elseif (is_array($v)) {
+                            $this->addValue(new FHIRString(array_merge($v, $ext[$i])));
+                        }
                     } else {
                         $this->addValue(new FHIRString($v));
                     }
                 }
             } elseif ($data[self::FIELD_VALUE] instanceof FHIRString) {
                 $this->addValue($data[self::FIELD_VALUE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_VALUE])) {
+            } elseif (null !== $ext && is_scalar($data[self::FIELD_VALUE])) {
                 $this->addValue(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
             } else {
                 $this->addValue(new FHIRString($data[self::FIELD_VALUE]));
@@ -437,11 +447,9 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCharacteristicCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCharacteristicQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CHARACTERISTIC_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -453,6 +461,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         return $sxe;
     }
 
@@ -466,7 +475,15 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
             $a[self::FIELD_CHARACTERISTIC_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getCharacteristicQuantity())) {
-            $a[self::FIELD_CHARACTERISTIC_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CHARACTERISTIC_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CHARACTERISTIC_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CHARACTERISTIC_QUANTITY] = $v;
+            }
         }
         if ([] !== ($vs = $this->getValue())) {
             $a[self::FIELD_VALUE] = [];
@@ -474,8 +491,17 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_VALUE][] = $v->getValue();
-                $a[self::FIELD_VALUE_EXT][] = $v;
+                if (null !== ($val = $v->getValue())) {
+                    $a[self::FIELD_VALUE][] = $val;
+                    if (1 < count($enc = $v->jsonSerialize())) {
+                        unset($enc[$v::FIELD_VALUE]);
+                        $a[self::FIELD_VALUE_EXT][] = $enc;
+                    } else {
+                        $a[self::FIELD_VALUE_EXT][] = null;
+                    }
+                } else {
+                    $a[self::FIELD_VALUE][] = $v;
+                }
             }
         }
         return $a;

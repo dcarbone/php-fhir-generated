@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUANTITATIVE_DETAILS;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_CONVERSION_FACTOR = 'conversionFactor';
     const FIELD_CONVERSION_FACTOR_EXT = '_conversionFactor';
     const FIELD_CUSTOMARY_UNIT = 'customaryUnit';
@@ -142,6 +138,9 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      */
     protected $unit = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRObservationDefinitionQuantitativeDetails Constructor
      * @param null|array $data
@@ -164,8 +163,12 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_CONVERSION_FACTOR] instanceof FHIRDecimal) {
                 $this->setConversionFactor($data[self::FIELD_CONVERSION_FACTOR]);
-            } elseif ($ext && is_scalar($data[self::FIELD_CONVERSION_FACTOR])) {
-                $this->setConversionFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_CONVERSION_FACTOR]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CONVERSION_FACTOR])) {
+                    $this->setConversionFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_CONVERSION_FACTOR]] + $ext));
+                } else if (is_array($data[self::FIELD_CONVERSION_FACTOR])) {
+                    $this->setConversionFactor(new FHIRDecimal(array_merge($ext, $data[self::FIELD_CONVERSION_FACTOR])));
+                }
             } else {
                 $this->setConversionFactor(new FHIRDecimal($data[self::FIELD_CONVERSION_FACTOR]));
             }
@@ -183,8 +186,12 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_DECIMAL_PRECISION] instanceof FHIRInteger) {
                 $this->setDecimalPrecision($data[self::FIELD_DECIMAL_PRECISION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DECIMAL_PRECISION])) {
-                $this->setDecimalPrecision(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_DECIMAL_PRECISION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DECIMAL_PRECISION])) {
+                    $this->setDecimalPrecision(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_DECIMAL_PRECISION]] + $ext));
+                } else if (is_array($data[self::FIELD_DECIMAL_PRECISION])) {
+                    $this->setDecimalPrecision(new FHIRInteger(array_merge($ext, $data[self::FIELD_DECIMAL_PRECISION])));
+                }
             } else {
                 $this->setDecimalPrecision(new FHIRInteger($data[self::FIELD_DECIMAL_PRECISION]));
             }
@@ -468,14 +475,12 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         if (null !== ($v = $this->getConversionFactor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONVERSION_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCustomaryUnit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CUSTOMARY_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DECIMAL_PRECISION, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getUnit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -489,15 +494,29 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getConversionFactor())) {
-            $a[self::FIELD_CONVERSION_FACTOR] = $v->getValue();
-            $a[self::FIELD_CONVERSION_FACTOR_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CONVERSION_FACTOR] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_CONVERSION_FACTOR_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_CONVERSION_FACTOR] = $v;
+            }
         }
         if (null !== ($v = $this->getCustomaryUnit())) {
             $a[self::FIELD_CUSTOMARY_UNIT] = $v;
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
-            $a[self::FIELD_DECIMAL_PRECISION] = $v->getValue();
-            $a[self::FIELD_DECIMAL_PRECISION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DECIMAL_PRECISION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DECIMAL_PRECISION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DECIMAL_PRECISION] = $v;
+            }
         }
         if (null !== ($v = $this->getUnit())) {
             $a[self::FIELD_UNIT] = $v;

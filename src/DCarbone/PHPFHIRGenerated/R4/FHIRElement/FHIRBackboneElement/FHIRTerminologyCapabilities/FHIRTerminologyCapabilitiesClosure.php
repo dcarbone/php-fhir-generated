@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,6 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_CLOSURE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_TRANSLATION = 'translation';
     const FIELD_TRANSLATION_EXT = '_translation';
 
@@ -95,6 +91,9 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected $translation = null;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * FHIRTerminologyCapabilitiesClosure Constructor
@@ -118,8 +117,12 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TRANSLATION] instanceof FHIRBoolean) {
                 $this->setTranslation($data[self::FIELD_TRANSLATION]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TRANSLATION])) {
-                $this->setTranslation(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_TRANSLATION]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TRANSLATION])) {
+                    $this->setTranslation(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_TRANSLATION]] + $ext));
+                } else if (is_array($data[self::FIELD_TRANSLATION])) {
+                    $this->setTranslation(new FHIRBoolean(array_merge($ext, $data[self::FIELD_TRANSLATION])));
+                }
             } else {
                 $this->setTranslation(new FHIRBoolean($data[self::FIELD_TRANSLATION]));
             }
@@ -280,8 +283,15 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getTranslation())) {
-            $a[self::FIELD_TRANSLATION] = $v->getValue();
-            $a[self::FIELD_TRANSLATION_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TRANSLATION] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TRANSLATION_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TRANSLATION] = $v;
+            }
         }
         return $a;
     }

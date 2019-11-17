@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRSignature extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SIGNATURE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_DATA = 'data';
     const FIELD_DATA_EXT = '_data';
     const FIELD_ON_BEHALF_OF = 'onBehalfOf';
@@ -188,6 +184,9 @@ class FHIRSignature extends FHIRElement
      */
     protected $who = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSignature Constructor
      * @param null|array $data
@@ -210,8 +209,12 @@ class FHIRSignature extends FHIRElement
                 : null;
             if ($data[self::FIELD_DATA] instanceof FHIRBase64Binary) {
                 $this->setData($data[self::FIELD_DATA]);
-            } elseif ($ext && is_scalar($data[self::FIELD_DATA])) {
-                $this->setData(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_DATA]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_DATA])) {
+                    $this->setData(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $data[self::FIELD_DATA]] + $ext));
+                } else if (is_array($data[self::FIELD_DATA])) {
+                    $this->setData(new FHIRBase64Binary(array_merge($ext, $data[self::FIELD_DATA])));
+                }
             } else {
                 $this->setData(new FHIRBase64Binary($data[self::FIELD_DATA]));
             }
@@ -229,8 +232,12 @@ class FHIRSignature extends FHIRElement
                 : null;
             if ($data[self::FIELD_SIG_FORMAT] instanceof FHIRCode) {
                 $this->setSigFormat($data[self::FIELD_SIG_FORMAT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_SIG_FORMAT])) {
-                $this->setSigFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_SIG_FORMAT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_SIG_FORMAT])) {
+                    $this->setSigFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_SIG_FORMAT]] + $ext));
+                } else if (is_array($data[self::FIELD_SIG_FORMAT])) {
+                    $this->setSigFormat(new FHIRCode(array_merge($ext, $data[self::FIELD_SIG_FORMAT])));
+                }
             } else {
                 $this->setSigFormat(new FHIRCode($data[self::FIELD_SIG_FORMAT]));
             }
@@ -241,8 +248,12 @@ class FHIRSignature extends FHIRElement
                 : null;
             if ($data[self::FIELD_TARGET_FORMAT] instanceof FHIRCode) {
                 $this->setTargetFormat($data[self::FIELD_TARGET_FORMAT]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TARGET_FORMAT])) {
-                $this->setTargetFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TARGET_FORMAT]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TARGET_FORMAT])) {
+                    $this->setTargetFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_TARGET_FORMAT]] + $ext));
+                } else if (is_array($data[self::FIELD_TARGET_FORMAT])) {
+                    $this->setTargetFormat(new FHIRCode(array_merge($ext, $data[self::FIELD_TARGET_FORMAT])));
+                }
             } else {
                 $this->setTargetFormat(new FHIRCode($data[self::FIELD_TARGET_FORMAT]));
             }
@@ -250,6 +261,9 @@ class FHIRSignature extends FHIRElement
         if (isset($data[self::FIELD_TYPE])) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addType($v);
                     } else {
@@ -268,8 +282,12 @@ class FHIRSignature extends FHIRElement
                 : null;
             if ($data[self::FIELD_WHEN] instanceof FHIRInstant) {
                 $this->setWhen($data[self::FIELD_WHEN]);
-            } elseif ($ext && is_scalar($data[self::FIELD_WHEN])) {
-                $this->setWhen(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_WHEN]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_WHEN])) {
+                    $this->setWhen(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_WHEN]] + $ext));
+                } else if (is_array($data[self::FIELD_WHEN])) {
+                    $this->setWhen(new FHIRInstant(array_merge($ext, $data[self::FIELD_WHEN])));
+                }
             } else {
                 $this->setWhen(new FHIRInstant($data[self::FIELD_WHEN]));
             }
@@ -716,7 +734,6 @@ class FHIRSignature extends FHIRElement
         if (null !== ($v = $this->getData())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getOnBehalfOf())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF, null, $v->_getFHIRXMLNamespace()));
         }
@@ -726,7 +743,6 @@ class FHIRSignature extends FHIRElement
         if (null !== ($v = $this->getTargetFormat())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_FORMAT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getType())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -735,10 +751,10 @@ class FHIRSignature extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
+
         if (null !== ($v = $this->getWhen())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getWho())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_WHO, null, $v->_getFHIRXMLNamespace()));
         }
@@ -752,26 +768,54 @@ class FHIRSignature extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getData())) {
-            $a[self::FIELD_DATA] = $v->getValue();
-            $a[self::FIELD_DATA_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATA] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DATA_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_DATA] = $v;
+            }
         }
         if (null !== ($v = $this->getOnBehalfOf())) {
             $a[self::FIELD_ON_BEHALF_OF] = $v;
         }
         if (null !== ($v = $this->getSigFormat())) {
-            $a[self::FIELD_SIG_FORMAT] = $v->getValue();
-            $a[self::FIELD_SIG_FORMAT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SIG_FORMAT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SIG_FORMAT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_SIG_FORMAT] = $v;
+            }
         }
         if (null !== ($v = $this->getTargetFormat())) {
-            $a[self::FIELD_TARGET_FORMAT] = $v->getValue();
-            $a[self::FIELD_TARGET_FORMAT_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TARGET_FORMAT] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TARGET_FORMAT_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TARGET_FORMAT] = $v;
+            }
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;
         }
         if (null !== ($v = $this->getWhen())) {
-            $a[self::FIELD_WHEN] = $v->getValue();
-            $a[self::FIELD_WHEN_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHEN] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_WHEN_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_WHEN] = $v;
+            }
         }
         if (null !== ($v = $this->getWho())) {
             $a[self::FIELD_WHO] = $v;

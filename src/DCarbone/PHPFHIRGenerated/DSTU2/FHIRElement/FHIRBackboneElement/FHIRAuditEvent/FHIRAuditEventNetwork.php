@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_DOT_NETWORK;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_ADDRESS = 'address';
     const FIELD_ADDRESS_EXT = '_address';
     const FIELD_TYPE = 'type';
@@ -112,6 +108,9 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRAuditEventNetwork Constructor
      * @param null|array $data
@@ -134,8 +133,12 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_ADDRESS] instanceof FHIRString) {
                 $this->setAddress($data[self::FIELD_ADDRESS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_ADDRESS])) {
-                $this->setAddress(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADDRESS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_ADDRESS])) {
+                    $this->setAddress(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADDRESS]] + $ext));
+                } else if (is_array($data[self::FIELD_ADDRESS])) {
+                    $this->setAddress(new FHIRString(array_merge($ext, $data[self::FIELD_ADDRESS])));
+                }
             } else {
                 $this->setAddress(new FHIRString($data[self::FIELD_ADDRESS]));
             }
@@ -146,8 +149,12 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_TYPE] instanceof FHIRAuditEventParticipantNetworkType) {
                 $this->setType($data[self::FIELD_TYPE]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TYPE])) {
-                $this->setType(new FHIRAuditEventParticipantNetworkType([FHIRAuditEventParticipantNetworkType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRAuditEventParticipantNetworkType([FHIRAuditEventParticipantNetworkType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRAuditEventParticipantNetworkType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
             } else {
                 $this->setType(new FHIRAuditEventParticipantNetworkType($data[self::FIELD_TYPE]));
             }
@@ -335,7 +342,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
         if (null !== ($v = $this->getAddress())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -349,11 +355,26 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAddress())) {
-            $a[self::FIELD_ADDRESS] = $v->getValue();
-            $a[self::FIELD_ADDRESS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ADDRESS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_ADDRESS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_ADDRESS] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TYPE_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TYPE] = $v;
+            }
         }
         return $a;
     }

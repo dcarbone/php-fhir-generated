@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PRODUCT_SHELF_LIFE;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_PERIOD = 'period';
@@ -152,6 +148,9 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      */
     protected $type = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRProductShelfLife Constructor
      * @param null|array $data
@@ -174,8 +173,12 @@ class FHIRProductShelfLife extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif ($ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
+                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
+                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
+                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -186,8 +189,12 @@ class FHIRProductShelfLife extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PERIOD] instanceof FHIRQuantity) {
                 $this->setPeriod($data[self::FIELD_PERIOD]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PERIOD])) {
-                $this->setPeriod(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_PERIOD]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PERIOD])) {
+                    $this->setPeriod(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_PERIOD]] + $ext));
+                } else if (is_array($data[self::FIELD_PERIOD])) {
+                    $this->setPeriod(new FHIRQuantity(array_merge($ext, $data[self::FIELD_PERIOD])));
+                }
             } else {
                 $this->setPeriod(new FHIRQuantity($data[self::FIELD_PERIOD]));
             }
@@ -195,6 +202,9 @@ class FHIRProductShelfLife extends FHIRBackboneElement
         if (isset($data[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE])) {
             if (is_array($data[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE])) {
                 foreach($data[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addSpecialPrecautionsForStorage($v);
                     } else {
@@ -508,15 +518,12 @@ class FHIRProductShelfLife extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getSpecialPrecautionsForStorage())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -539,10 +546,26 @@ class FHIRProductShelfLife extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_IDENTIFIER] = $v;
+            }
         }
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PERIOD_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PERIOD] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSpecialPrecautionsForStorage())) {
             $a[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE] = $vs;

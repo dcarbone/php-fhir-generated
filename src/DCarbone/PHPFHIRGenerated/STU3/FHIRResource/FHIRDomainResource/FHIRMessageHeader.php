@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,10 +88,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AUTHOR = 'author';
     const FIELD_DESTINATION = 'destination';
     const FIELD_ENTERER = 'enterer';
@@ -256,6 +252,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     protected $timestamp = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRMessageHeader Constructor
      * @param null|array $data
@@ -282,6 +281,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($data[self::FIELD_DESTINATION])) {
             if (is_array($data[self::FIELD_DESTINATION])) {
                 foreach($data[self::FIELD_DESTINATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRMessageHeaderDestination) {
                         $this->addDestination($v);
                     } else {
@@ -311,6 +313,9 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($data[self::FIELD_FOCUS])) {
             if (is_array($data[self::FIELD_FOCUS])) {
                 foreach($data[self::FIELD_FOCUS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
                     if ($v instanceof FHIRReference) {
                         $this->addFocus($v);
                     } else {
@@ -371,8 +376,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 : null;
             if ($data[self::FIELD_TIMESTAMP] instanceof FHIRInstant) {
                 $this->setTimestamp($data[self::FIELD_TIMESTAMP]);
-            } elseif ($ext && is_scalar($data[self::FIELD_TIMESTAMP])) {
-                $this->setTimestamp(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_TIMESTAMP]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TIMESTAMP])) {
+                    $this->setTimestamp(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_TIMESTAMP]] + $ext));
+                } else if (is_array($data[self::FIELD_TIMESTAMP])) {
+                    $this->setTimestamp(new FHIRInstant(array_merge($ext, $data[self::FIELD_TIMESTAMP])));
+                }
             } else {
                 $this->setTimestamp(new FHIRInstant($data[self::FIELD_TIMESTAMP]));
             }
@@ -991,7 +1000,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (null !== ($v = $this->getAuthor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getDestination())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1000,15 +1008,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getEnterer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getEvent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if ([] !== ($vs = $this->getFocus())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1017,27 +1022,21 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
                 $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getReceiver())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RECEIVER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResponse())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getResponsible())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSender())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SENDER, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1087,8 +1086,15 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $a[self::FIELD_SOURCE] = $v;
         }
         if (null !== ($v = $this->getTimestamp())) {
-            $a[self::FIELD_TIMESTAMP] = $v->getValue();
-            $a[self::FIELD_TIMESTAMP_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIMESTAMP] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TIMESTAMP_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_TIMESTAMP] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDev
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,10 +80,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_COMPONENT_DOT_PRODUCTION_SPECIFICATION;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_COMPONENT_ID = 'componentId';
     const FIELD_COMPONENT_ID_EXT = '_componentId';
     const FIELD_PRODUCTION_SPEC = 'productionSpec';
@@ -127,6 +123,9 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      */
     protected $specType = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRDeviceComponentProductionSpecification Constructor
      * @param null|array $data
@@ -149,8 +148,12 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_COMPONENT_ID] instanceof FHIRIdentifier) {
                 $this->setComponentId($data[self::FIELD_COMPONENT_ID]);
-            } elseif ($ext && is_scalar($data[self::FIELD_COMPONENT_ID])) {
-                $this->setComponentId(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_COMPONENT_ID]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_COMPONENT_ID])) {
+                    $this->setComponentId(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_COMPONENT_ID]] + $ext));
+                } else if (is_array($data[self::FIELD_COMPONENT_ID])) {
+                    $this->setComponentId(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_COMPONENT_ID])));
+                }
             } else {
                 $this->setComponentId(new FHIRIdentifier($data[self::FIELD_COMPONENT_ID]));
             }
@@ -161,8 +164,12 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PRODUCTION_SPEC] instanceof FHIRString) {
                 $this->setProductionSpec($data[self::FIELD_PRODUCTION_SPEC]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PRODUCTION_SPEC])) {
-                $this->setProductionSpec(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRODUCTION_SPEC]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PRODUCTION_SPEC])) {
+                    $this->setProductionSpec(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRODUCTION_SPEC]] + $ext));
+                } else if (is_array($data[self::FIELD_PRODUCTION_SPEC])) {
+                    $this->setProductionSpec(new FHIRString(array_merge($ext, $data[self::FIELD_PRODUCTION_SPEC])));
+                }
             } else {
                 $this->setProductionSpec(new FHIRString($data[self::FIELD_PRODUCTION_SPEC]));
             }
@@ -400,7 +407,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         if (null !== ($v = $this->getProductionSpec())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCTION_SPEC, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getSpecType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SPEC_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -414,11 +420,26 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComponentId())) {
-            $a[self::FIELD_COMPONENT_ID] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COMPONENT_ID] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COMPONENT_ID_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_COMPONENT_ID] = $v;
+            }
         }
         if (null !== ($v = $this->getProductionSpec())) {
-            $a[self::FIELD_PRODUCTION_SPEC] = $v->getValue();
-            $a[self::FIELD_PRODUCTION_SPEC_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRODUCTION_SPEC] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PRODUCTION_SPEC_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PRODUCTION_SPEC] = $v;
+            }
         }
         if (null !== ($v = $this->getSpecType())) {
             $a[self::FIELD_SPEC_TYPE] = $v;

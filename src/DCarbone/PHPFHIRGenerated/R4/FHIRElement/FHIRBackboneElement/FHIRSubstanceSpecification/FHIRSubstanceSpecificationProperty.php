@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 10th, 2019 18:12+0000
+ * Class creation date: November 17th, 2019 04:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_PROPERTY;
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
-
     const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
     const FIELD_AMOUNT_QUANTITY_EXT = '_amountQuantity';
     const FIELD_AMOUNT_STRING = 'amountString';
@@ -181,6 +177,9 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      */
     protected $parameters = null;
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * FHIRSubstanceSpecificationProperty Constructor
      * @param null|array $data
@@ -203,8 +202,12 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AMOUNT_QUANTITY] instanceof FHIRQuantity) {
                 $this->setAmountQuantity($data[self::FIELD_AMOUNT_QUANTITY]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT_QUANTITY])) {
-                $this->setAmountQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT_QUANTITY]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AMOUNT_QUANTITY])) {
+                    $this->setAmountQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT_QUANTITY]] + $ext));
+                } else if (is_array($data[self::FIELD_AMOUNT_QUANTITY])) {
+                    $this->setAmountQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_AMOUNT_QUANTITY])));
+                }
             } else {
                 $this->setAmountQuantity(new FHIRQuantity($data[self::FIELD_AMOUNT_QUANTITY]));
             }
@@ -215,8 +218,12 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_AMOUNT_STRING] instanceof FHIRString) {
                 $this->setAmountString($data[self::FIELD_AMOUNT_STRING]);
-            } elseif ($ext && is_scalar($data[self::FIELD_AMOUNT_STRING])) {
-                $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AMOUNT_STRING]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_AMOUNT_STRING])) {
+                    $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AMOUNT_STRING]] + $ext));
+                } else if (is_array($data[self::FIELD_AMOUNT_STRING])) {
+                    $this->setAmountString(new FHIRString(array_merge($ext, $data[self::FIELD_AMOUNT_STRING])));
+                }
             } else {
                 $this->setAmountString(new FHIRString($data[self::FIELD_AMOUNT_STRING]));
             }
@@ -255,8 +262,12 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
                 : null;
             if ($data[self::FIELD_PARAMETERS] instanceof FHIRString) {
                 $this->setParameters($data[self::FIELD_PARAMETERS]);
-            } elseif ($ext && is_scalar($data[self::FIELD_PARAMETERS])) {
-                $this->setParameters(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARAMETERS]] + $ext));
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_PARAMETERS])) {
+                    $this->setParameters(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PARAMETERS]] + $ext));
+                } else if (is_array($data[self::FIELD_PARAMETERS])) {
+                    $this->setParameters(new FHIRString(array_merge($ext, $data[self::FIELD_PARAMETERS])));
+                }
             } else {
                 $this->setParameters(new FHIRString($data[self::FIELD_PARAMETERS]));
             }
@@ -631,26 +642,21 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getAmountString())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefiningSubstanceCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINING_SUBSTANCE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
-
         if (null !== ($v = $this->getDefiningSubstanceReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINING_SUBSTANCE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -667,11 +673,26 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmountQuantity())) {
-            $a[self::FIELD_AMOUNT_QUANTITY] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT_QUANTITY] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AMOUNT_QUANTITY_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AMOUNT_QUANTITY] = $v;
+            }
         }
         if (null !== ($v = $this->getAmountString())) {
-            $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
-            $a[self::FIELD_AMOUNT_STRING_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT_STRING] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_AMOUNT_STRING] = $v;
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
@@ -686,8 +707,15 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
             $a[self::FIELD_DEFINING_SUBSTANCE_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getParameters())) {
-            $a[self::FIELD_PARAMETERS] = $v->getValue();
-            $a[self::FIELD_PARAMETERS_EXT] = $v;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARAMETERS] = $val;
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARAMETERS_EXT] = $enc;
+                }
+            } else {
+                $a[self::FIELD_PARAMETERS] = $v;
+            }
         }
         return $a;
     }
