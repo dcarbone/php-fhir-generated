@@ -1,15 +1,7 @@
 # php-fhir-generated
 Pre-generated classes from dcarbone/php-fhir
 
-# VERSION: feature/refactor
-
-- Homepage: [https://build.fhir.org/](https://build.fhir.org/)
-- Resources: [https://build.fhir.org/resourcelist.html](https://build.fhir.org/resourcelist.html)
-
-
-
 This lib can either be used with [Composer](https://getcomposer.org) or on it's own.
-
 
 ### Inclusion with Composer
 
