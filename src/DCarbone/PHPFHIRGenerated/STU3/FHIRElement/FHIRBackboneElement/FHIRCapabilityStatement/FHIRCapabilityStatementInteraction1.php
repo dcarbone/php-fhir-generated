@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Operations supported by REST at the system level.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -108,8 +111,11 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      */
     protected $documentation = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type CapabilityStatement.Interaction1
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRCapabilityStatementInteraction1 Constructor
@@ -170,30 +176,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -204,7 +186,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
         }
         return "<CapabilityStatementInteraction1{$xmlns}></CapabilityStatementInteraction1>";
     }
-
 
     /**
      * Operations supported by REST at the system level.
@@ -274,6 +255,15 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
         }
         $this->documentation = new FHIRString($documentation);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -356,25 +346,17 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CODE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CODE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CODE] = $v;
+            $a[self::FIELD_CODE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CODE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOCUMENTATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOCUMENTATION] = $v;
+            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
             }
         }
         return $a;

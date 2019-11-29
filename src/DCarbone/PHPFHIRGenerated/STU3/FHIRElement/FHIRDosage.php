@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,18 +83,14 @@ class FHIRDosage extends FHIRElement
     const FIELD_AS_NEEDED_BOOLEAN_EXT = '_asNeededBoolean';
     const FIELD_AS_NEEDED_CODEABLE_CONCEPT = 'asNeededCodeableConcept';
     const FIELD_DOSE_QUANTITY = 'doseQuantity';
-    const FIELD_DOSE_QUANTITY_EXT = '_doseQuantity';
     const FIELD_DOSE_RANGE = 'doseRange';
     const FIELD_MAX_DOSE_PER_ADMINISTRATION = 'maxDosePerAdministration';
-    const FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT = '_maxDosePerAdministration';
     const FIELD_MAX_DOSE_PER_LIFETIME = 'maxDosePerLifetime';
-    const FIELD_MAX_DOSE_PER_LIFETIME_EXT = '_maxDosePerLifetime';
     const FIELD_MAX_DOSE_PER_PERIOD = 'maxDosePerPeriod';
     const FIELD_METHOD = 'method';
     const FIELD_PATIENT_INSTRUCTION = 'patientInstruction';
     const FIELD_PATIENT_INSTRUCTION_EXT = '_patientInstruction';
     const FIELD_RATE_QUANTITY = 'rateQuantity';
-    const FIELD_RATE_QUANTITY_EXT = '_rateQuantity';
     const FIELD_RATE_RANGE = 'rateRange';
     const FIELD_RATE_RATIO = 'rateRatio';
     const FIELD_ROUTE = 'route';
@@ -104,6 +100,9 @@ class FHIRDosage extends FHIRElement
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
     const FIELD_TIMING = 'timing';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -326,8 +325,11 @@ class FHIRDosage extends FHIRElement
      */
     protected $timing = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Dosage
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDosage Constructor
@@ -387,17 +389,8 @@ class FHIRDosage extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_DOSE_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_DOSE_QUANTITY_EXT]) && is_array($data[self::FIELD_DOSE_QUANTITY_EXT]))
-                ? $data[self::FIELD_DOSE_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_DOSE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setDoseQuantity($data[self::FIELD_DOSE_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DOSE_QUANTITY])) {
-                    $this->setDoseQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DOSE_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_DOSE_QUANTITY])) {
-                    $this->setDoseQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DOSE_QUANTITY])));
-                }
             } else {
                 $this->setDoseQuantity(new FHIRQuantity($data[self::FIELD_DOSE_QUANTITY]));
             }
@@ -410,33 +403,15 @@ class FHIRDosage extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
-            $ext = (isset($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT]) && is_array($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT]))
-                ? $data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT]
-                : null;
             if ($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] instanceof FHIRQuantity) {
                 $this->setMaxDosePerAdministration($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
-                    $this->setMaxDosePerAdministration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]] + $ext));
-                } else if (is_array($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
-                    $this->setMaxDosePerAdministration(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])));
-                }
             } else {
                 $this->setMaxDosePerAdministration(new FHIRQuantity($data[self::FIELD_MAX_DOSE_PER_ADMINISTRATION]));
             }
         }
         if (isset($data[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
-            $ext = (isset($data[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT]) && is_array($data[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT]))
-                ? $data[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT]
-                : null;
             if ($data[self::FIELD_MAX_DOSE_PER_LIFETIME] instanceof FHIRQuantity) {
                 $this->setMaxDosePerLifetime($data[self::FIELD_MAX_DOSE_PER_LIFETIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
-                    $this->setMaxDosePerLifetime(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MAX_DOSE_PER_LIFETIME]] + $ext));
-                } else if (is_array($data[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
-                    $this->setMaxDosePerLifetime(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MAX_DOSE_PER_LIFETIME])));
-                }
             } else {
                 $this->setMaxDosePerLifetime(new FHIRQuantity($data[self::FIELD_MAX_DOSE_PER_LIFETIME]));
             }
@@ -472,17 +447,8 @@ class FHIRDosage extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_RATE_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_RATE_QUANTITY_EXT]) && is_array($data[self::FIELD_RATE_QUANTITY_EXT]))
-                ? $data[self::FIELD_RATE_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RATE_QUANTITY])) {
-                    $this->setRateQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_RATE_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_RATE_QUANTITY])) {
-                    $this->setRateQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_RATE_QUANTITY])));
-                }
             } else {
                 $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
             }
@@ -565,30 +531,6 @@ class FHIRDosage extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -599,7 +541,6 @@ class FHIRDosage extends FHIRElement
         }
         return "<Dosage{$xmlns}></Dosage>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -1247,6 +1188,15 @@ class FHIRDosage extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDosage $type
      * @param null|int $libxmlOpts
@@ -1441,54 +1391,26 @@ class FHIRDosage extends FHIRElement
             $a[self::FIELD_ADDITIONAL_INSTRUCTION] = $vs;
         }
         if (null !== ($v = $this->getAsNeededBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v;
+            $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getDoseQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOSE_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOSE_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOSE_QUANTITY] = $v;
-            }
+            $a[self::FIELD_DOSE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDoseRange())) {
             $a[self::FIELD_DOSE_RANGE] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerAdministration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerLifetime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MAX_DOSE_PER_LIFETIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v;
-            }
+            $a[self::FIELD_MAX_DOSE_PER_LIFETIME] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_PERIOD] = $v;
@@ -1497,26 +1419,14 @@ class FHIRDosage extends FHIRElement
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getPatientInstruction())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PATIENT_INSTRUCTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PATIENT_INSTRUCTION] = $v;
+            $a[self::FIELD_PATIENT_INSTRUCTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PATIENT_INSTRUCTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RATE_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RATE_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RATE_QUANTITY] = $v;
-            }
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRange())) {
             $a[self::FIELD_RATE_RANGE] = $v;
@@ -1528,28 +1438,20 @@ class FHIRDosage extends FHIRElement
             $a[self::FIELD_ROUTE] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SEQUENCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SEQUENCE] = $v;
+            $a[self::FIELD_SEQUENCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SEQUENCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSite())) {
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getText())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TEXT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TEXT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TEXT] = $v;
+            $a[self::FIELD_TEXT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TEXT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTiming())) {

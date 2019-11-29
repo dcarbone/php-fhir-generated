@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
     const FIELD_EFFECTIVE_PERIOD = 'effectivePeriod';
     const FIELD_ENCOUNTER = 'encounter';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_IMAGING_STUDY = 'imagingStudy';
     const FIELD_ISSUED = 'issued';
     const FIELD_ISSUED_EXT = '_issued';
@@ -116,6 +115,9 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
     const FIELD_SUBJECT = 'subject';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -358,8 +360,11 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      */
     protected $subject = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type DiagnosticReport
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDiagnosticReport Constructor
@@ -485,30 +490,19 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_IDENTIFIER_EXT]
-                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -689,30 +683,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -723,7 +693,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         return "<DiagnosticReport{$xmlns}></DiagnosticReport>";
     }
-
     /**
      * @return string
      */
@@ -1693,6 +1662,15 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport $type
      * @param null|int $libxmlOpts
@@ -1834,6 +1812,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getBasedOn())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1842,7 +1821,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_BASED_ON, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getCategory())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1851,7 +1829,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1866,7 +1843,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONCLUSION_CODE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getEffectiveDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1884,7 +1860,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getImagingStudy())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1893,7 +1868,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGING_STUDY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getIssued())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUED, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1905,7 +1879,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MEDIA, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getPerformer())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1914,7 +1887,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getPresentedForm())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1923,7 +1895,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRESENTED_FORM, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getResult())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1932,7 +1903,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getResultsInterpreter())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1941,7 +1911,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RESULTS_INTERPRETER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSpecimen())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1950,7 +1919,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIMEN, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1976,28 +1944,20 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
             $a[self::FIELD_CODE] = $v;
         }
         if (null !== ($v = $this->getConclusion())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CONCLUSION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CONCLUSION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CONCLUSION] = $v;
+            $a[self::FIELD_CONCLUSION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CONCLUSION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getConclusionCode())) {
             $a[self::FIELD_CONCLUSION_CODE] = $vs;
         }
         if (null !== ($v = $this->getEffectiveDateTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EFFECTIVE_DATE_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EFFECTIVE_DATE_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EFFECTIVE_DATE_TIME] = $v;
+            $a[self::FIELD_EFFECTIVE_DATE_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_EFFECTIVE_DATE_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getEffectivePeriod())) {
@@ -2007,36 +1967,16 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_IDENTIFIER][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_IDENTIFIER][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getImagingStudy())) {
             $a[self::FIELD_IMAGING_STUDY] = $vs;
         }
         if (null !== ($v = $this->getIssued())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ISSUED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ISSUED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ISSUED] = $v;
+            $a[self::FIELD_ISSUED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ISSUED_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getMedia())) {
@@ -2058,14 +1998,10 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
             $a[self::FIELD_SPECIMEN] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STATUS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STATUS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubject())) {

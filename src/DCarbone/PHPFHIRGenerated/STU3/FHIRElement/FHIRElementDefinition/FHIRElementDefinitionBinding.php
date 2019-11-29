@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ class FHIRElementDefinitionBinding extends FHIRElement
     const FIELD_VALUE_SET_URI = 'valueSetUri';
     const FIELD_VALUE_SET_URI_EXT = '_valueSetUri';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -145,8 +148,11 @@ class FHIRElementDefinitionBinding extends FHIRElement
      */
     protected $valueSetUri = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ElementDefinition.Binding
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRElementDefinitionBinding Constructor
@@ -230,30 +236,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -264,7 +246,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
         }
         return "<ElementDefinitionBinding{$xmlns}></ElementDefinitionBinding>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -425,6 +406,15 @@ class FHIRElementDefinitionBinding extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding $type
      * @param null|int $libxmlOpts
@@ -519,39 +509,27 @@ class FHIRElementDefinitionBinding extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DESCRIPTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DESCRIPTION] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getStrength())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STRENGTH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STRENGTH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STRENGTH] = $v;
+            $a[self::FIELD_STRENGTH] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STRENGTH_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getValueSetReference())) {
             $a[self::FIELD_VALUE_SET_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getValueSetUri())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_VALUE_SET_URI] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_VALUE_SET_URI_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_VALUE_SET_URI] = $v;
+            $a[self::FIELD_VALUE_SET_URI] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_VALUE_SET_URI_EXT] = $enc;
             }
         }
         return $a;

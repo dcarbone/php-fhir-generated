@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,14 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPARTMENT_DEFINITION_DOT_RESOURCE;
     const FIELD_CODE = 'code';
+    const FIELD_CODE_EXT = '_code';
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
     const FIELD_PARAM = 'param';
     const FIELD_PARAM_EXT = '_param';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The kind of activity the definition is describing
@@ -118,8 +122,11 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      */
     protected $param = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type CompartmentDefinition.Resource
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRCompartmentDefinitionResource Constructor
@@ -138,7 +145,20 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_CODE])) {
-            $this->setCode($data[self::FIELD_CODE]);
+            $ext = (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT]))
+                ? $data[self::FIELD_CODE_EXT]
+                : null;
+            if ($data[self::FIELD_CODE] instanceof FHIRResourceType) {
+                $this->setCode($data[self::FIELD_CODE]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRResourceType([FHIRResourceType::FIELD_VALUE => $data[self::FIELD_CODE]] + $ext));
+                } else if (is_array($data[self::FIELD_CODE])) {
+                    $this->setCode(new FHIRResourceType(array_merge($ext, $data[self::FIELD_CODE])));
+                }
+            } else {
+                $this->setCode(new FHIRResourceType($data[self::FIELD_CODE]));
+            }
         }
         if (isset($data[self::FIELD_DOCUMENTATION])) {
             $ext = (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT]))
@@ -196,30 +216,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -230,7 +226,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
         }
         return "<CompartmentDefinitionResource{$xmlns}></CompartmentDefinitionResource>";
     }
-
 
     /**
      * The kind of activity the definition is describing
@@ -254,17 +249,9 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $code
      * @return static
      */
-    public function setCode($code = null)
+    public function setCode(FHIRResourceType $code = null)
     {
-        if (null === $code) {
-            $this->code = null;
-            return $this;
-        }
-        if ($code instanceof FHIRResourceType) {
-            $this->code = $code;
-            return $this;
-        }
-        $this->code = new FHIRResourceType($code);
+        $this->code = $code;
         return $this;
     }
 
@@ -377,6 +364,15 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource $type
      * @param null|int $libxmlOpts
@@ -416,9 +412,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->code)) {
-            $type->setCode((string)$attributes->code);
-        }
         if (isset($children->code)) {
             $type->setCode(FHIRResourceType::xmlUnserialize($children->code));
         }
@@ -450,8 +443,9 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCode())) {
-            $sxe->addAttribute(self::FIELD_CODE, (string)$v);
+            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getDocumentation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
@@ -474,17 +468,17 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v;
+            $a[self::FIELD_CODE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CODE_EXT] = $enc;
+            }
         }
         if (null !== ($v = $this->getDocumentation())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOCUMENTATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOCUMENTATION] = $v;
+            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getParam())) {
@@ -493,16 +487,12 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PARAM][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PARAM_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PARAM_EXT][] = null;
-                    }
+                $a[self::FIELD_PARAM][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PARAM_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_PARAM][] = $v;
+                    $a[self::FIELD_PARAM_EXT][] = null;
                 }
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,15 +85,16 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE;
     const FIELD_DOSE = 'dose';
-    const FIELD_DOSE_EXT = '_dose';
     const FIELD_METHOD = 'method';
     const FIELD_RATE_QUANTITY = 'rateQuantity';
-    const FIELD_RATE_QUANTITY_EXT = '_rateQuantity';
     const FIELD_RATE_RATIO = 'rateRatio';
     const FIELD_ROUTE = 'route';
     const FIELD_SITE = 'site';
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -197,8 +198,11 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      */
     protected $text = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicationAdministration.Dosage
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicationAdministrationDosage Constructor
@@ -217,17 +221,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_DOSE])) {
-            $ext = (isset($data[self::FIELD_DOSE_EXT]) && is_array($data[self::FIELD_DOSE_EXT]))
-                ? $data[self::FIELD_DOSE_EXT]
-                : null;
             if ($data[self::FIELD_DOSE] instanceof FHIRQuantity) {
                 $this->setDose($data[self::FIELD_DOSE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DOSE])) {
-                    $this->setDose(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DOSE]] + $ext));
-                } else if (is_array($data[self::FIELD_DOSE])) {
-                    $this->setDose(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DOSE])));
-                }
             } else {
                 $this->setDose(new FHIRQuantity($data[self::FIELD_DOSE]));
             }
@@ -240,17 +235,8 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_RATE_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_RATE_QUANTITY_EXT]) && is_array($data[self::FIELD_RATE_QUANTITY_EXT]))
-                ? $data[self::FIELD_RATE_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RATE_QUANTITY])) {
-                    $this->setRateQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_RATE_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_RATE_QUANTITY])) {
-                    $this->setRateQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_RATE_QUANTITY])));
-                }
             } else {
                 $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
             }
@@ -303,30 +289,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -337,7 +299,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
         }
         return "<MedicationAdministrationDosage{$xmlns}></MedicationAdministrationDosage>";
     }
-
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -608,6 +569,15 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $type
      * @param null|int $libxmlOpts
@@ -717,29 +687,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDose())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOSE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOSE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOSE] = $v;
-            }
+            $a[self::FIELD_DOSE] = $v;
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RATE_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RATE_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RATE_QUANTITY] = $v;
-            }
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRatio())) {
             $a[self::FIELD_RATE_RATIO] = $v;
@@ -751,14 +705,10 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getText())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TEXT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TEXT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TEXT] = $v;
+            $a[self::FIELD_TEXT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TEXT_EXT] = $enc;
             }
         }
         return $a;

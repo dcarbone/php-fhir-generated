@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRDomainResource extends FHIRResource
     const FIELD_MODIFIER_EXTENSION = 'modifierExtension';
     const FIELD_TEXT = 'text';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
@@ -144,8 +147,11 @@ class FHIRDomainResource extends FHIRResource
      */
     protected $text = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type DomainResource
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDomainResource Constructor
@@ -235,30 +241,6 @@ class FHIRDomainResource extends FHIRResource
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -269,7 +251,6 @@ class FHIRDomainResource extends FHIRResource
         }
         return "<DomainResource{$xmlns}></DomainResource>";
     }
-
 
     /**
      * These resources do not have an independent existence apart from the resource
@@ -529,6 +510,15 @@ class FHIRDomainResource extends FHIRResource
     {
         $this->text = $text;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

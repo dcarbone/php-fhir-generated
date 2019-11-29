@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRBundleEntry extends FHIRBackboneElement
     const FIELD_RESPONSE = 'response';
     const FIELD_SEARCH = 'search';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -148,8 +151,11 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     protected $search = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Bundle.Entry
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRBundleEntry Constructor
@@ -259,30 +265,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -293,7 +275,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
         }
         return "<BundleEntry{$xmlns}></BundleEntry>";
     }
-
 
     /**
      * String of characters used to identify a name or a resource
@@ -498,6 +479,15 @@ class FHIRBundleEntry extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $type
      * @param null|int $libxmlOpts
@@ -614,14 +604,10 @@ class FHIRBundleEntry extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFullUrl())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_FULL_URL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_FULL_URL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_FULL_URL] = $v;
+            $a[self::FIELD_FULL_URL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_FULL_URL_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getLink())) {

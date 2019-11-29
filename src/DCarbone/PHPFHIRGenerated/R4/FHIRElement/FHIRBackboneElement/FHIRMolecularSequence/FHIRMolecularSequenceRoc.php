@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,9 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     const FIELD_SENSITIVITY = 'sensitivity';
     const FIELD_SENSITIVITY_EXT = '_sensitivity';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -176,8 +179,11 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      */
     protected $sensitivity = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MolecularSequence.Roc
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMolecularSequenceRoc Constructor
@@ -409,30 +415,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -443,7 +425,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         }
         return "<MolecularSequenceRoc{$xmlns}></MolecularSequenceRoc>";
     }
-
 
     /**
      * A rational number with implicit precision
@@ -912,6 +893,15 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
      * @param null|int $libxmlOpts
@@ -1021,6 +1011,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getFMeasure())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1029,7 +1020,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_F_MEASURE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getNumFN())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1038,7 +1028,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NUM_FN, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getNumFP())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1047,7 +1036,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NUM_FP, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getNumTP())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1056,7 +1044,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NUM_TP, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getPrecision())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1065,7 +1052,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRECISION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getScore())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1074,7 +1060,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SCORE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSensitivity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1083,7 +1068,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SENSITIVITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -1099,16 +1083,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_F_MEASURE][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_F_MEASURE_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_F_MEASURE_EXT][] = null;
-                    }
+                $a[self::FIELD_F_MEASURE][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_F_MEASURE_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_F_MEASURE][] = $v;
+                    $a[self::FIELD_F_MEASURE_EXT][] = null;
                 }
             }
         }
@@ -1118,16 +1098,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_NUM_FN][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_NUM_FN_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_NUM_FN_EXT][] = null;
-                    }
+                $a[self::FIELD_NUM_FN][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUM_FN_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_NUM_FN][] = $v;
+                    $a[self::FIELD_NUM_FN_EXT][] = null;
                 }
             }
         }
@@ -1137,16 +1113,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_NUM_FP][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_NUM_FP_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_NUM_FP_EXT][] = null;
-                    }
+                $a[self::FIELD_NUM_FP][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUM_FP_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_NUM_FP][] = $v;
+                    $a[self::FIELD_NUM_FP_EXT][] = null;
                 }
             }
         }
@@ -1156,16 +1128,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_NUM_TP][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_NUM_TP_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_NUM_TP_EXT][] = null;
-                    }
+                $a[self::FIELD_NUM_TP][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_NUM_TP_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_NUM_TP][] = $v;
+                    $a[self::FIELD_NUM_TP_EXT][] = null;
                 }
             }
         }
@@ -1175,16 +1143,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PRECISION][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PRECISION_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PRECISION_EXT][] = null;
-                    }
+                $a[self::FIELD_PRECISION][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PRECISION_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_PRECISION][] = $v;
+                    $a[self::FIELD_PRECISION_EXT][] = null;
                 }
             }
         }
@@ -1194,16 +1158,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_SCORE][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_SCORE_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_SCORE_EXT][] = null;
-                    }
+                $a[self::FIELD_SCORE][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SCORE_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_SCORE][] = $v;
+                    $a[self::FIELD_SCORE_EXT][] = null;
                 }
             }
         }
@@ -1213,16 +1173,12 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_SENSITIVITY][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_SENSITIVITY_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_SENSITIVITY_EXT][] = null;
-                    }
+                $a[self::FIELD_SENSITIVITY][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SENSITIVITY_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_SENSITIVITY][] = $v;
+                    $a[self::FIELD_SENSITIVITY_EXT][] = null;
                 }
             }
         }

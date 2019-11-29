@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraph
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A formal computable definition of a graph of resources - that is, a coherent set
      * of resources that form a graph by following references. The Graph Definition
@@ -147,8 +150,11 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type GraphDefinition.Target
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRGraphDefinitionTarget Constructor
@@ -261,30 +267,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -295,7 +277,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         }
         return "<GraphDefinitionTarget{$xmlns}></GraphDefinitionTarget>";
     }
-
 
     /**
      * A formal computable definition of a graph of resources - that is, a coherent set
@@ -528,6 +509,15 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget $type
      * @param null|int $libxmlOpts
@@ -609,6 +599,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getCompartment())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -617,7 +608,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COMPARTMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -626,7 +616,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getParams())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -652,36 +641,24 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
             $a[self::FIELD_LINK] = $vs;
         }
         if (null !== ($v = $this->getParams())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PARAMS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PARAMS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PARAMS] = $v;
+            $a[self::FIELD_PARAMS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PARAMS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProfile())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PROFILE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PROFILE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PROFILE] = $v;
+            $a[self::FIELD_PROFILE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PROFILE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TYPE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TYPE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TYPE_EXT] = $enc;
             }
         }
         return $a;

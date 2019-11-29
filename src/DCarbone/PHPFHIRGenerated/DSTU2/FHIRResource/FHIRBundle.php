@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A container for a collection of resources.
      *
@@ -146,8 +149,11 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Bundle
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRBundle Constructor
@@ -251,30 +257,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -285,7 +267,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         return "<Bundle{$xmlns}></Bundle>";
     }
-
     /**
      * @return string
      */
@@ -503,6 +484,15 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRBundle $type
      * @param null|int $libxmlOpts
@@ -578,6 +568,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getEntry())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -586,7 +577,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ENTRY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -595,7 +585,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSignature())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -624,25 +613,17 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $a[self::FIELD_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getTotal())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TOTAL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TOTAL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TOTAL] = $v;
+            $a[self::FIELD_TOTAL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TOTAL_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TYPE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TYPE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TYPE_EXT] = $enc;
             }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;

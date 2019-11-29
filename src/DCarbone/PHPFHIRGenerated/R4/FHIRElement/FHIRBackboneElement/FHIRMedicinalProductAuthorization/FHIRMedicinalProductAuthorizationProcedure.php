@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,8 +85,10 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     const FIELD_DATE_DATE_TIME_EXT = '_dateDateTime';
     const FIELD_DATE_PERIOD = 'datePeriod';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_TYPE = 'type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The regulatory authorization of a medicinal product.
@@ -146,8 +148,11 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicinalProductAuthorization.Procedure
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicinalProductAuthorizationProcedure Constructor
@@ -207,17 +212,8 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_IDENTIFIER_EXT]
-                : null;
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
-                    $this->setIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
-                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
-                    $this->setIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
-                }
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -240,30 +236,6 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -274,7 +246,6 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
         }
         return "<MedicinalProductAuthorizationProcedure{$xmlns}></MedicinalProductAuthorizationProcedure>";
     }
-
 
     /**
      * The regulatory authorization of a medicinal product.
@@ -465,6 +436,15 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $type
      * @param null|int $libxmlOpts
@@ -538,6 +518,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getApplication())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -546,7 +527,6 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_APPLICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDateDateTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -572,29 +552,17 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             $a[self::FIELD_APPLICATION] = $vs;
         }
         if (null !== ($v = $this->getDateDateTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DATE_DATE_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DATE_DATE_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DATE_DATE_TIME] = $v;
+            $a[self::FIELD_DATE_DATE_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DATE_DATE_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDatePeriod())) {
             $a[self::FIELD_DATE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_IDENTIFIER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_IDENTIFIER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_IDENTIFIER] = $v;
-            }
+            $a[self::FIELD_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

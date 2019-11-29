@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,71 +70,33 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_UNSIGNED_INT_HYPHEN_PRIMITIVE;
-
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = '';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
-    /** @var null|string */
+    /**
+     * @var null|string
+     */
     protected $value = null;
 
     /**
+     * Validation map for fields in type unsignedInt-primitive
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_VALUE => [
+            PHPFHIRConstants::VALIDATE_PATTERN => '/^[0]|([1-9][0-9]*)$/',
+        ],
+    ];
+
+    /**
      * FHIRUnsignedIntPrimitive Constructor
-     * @param null| $value
+     * @param null|string $value
      */
     public function __construct($value = null)
     {
         $this->setValue($value);
-    }
-    /**
-     * @param null|integer|float|string
-     * @return static
-     */
-    public function setValue($value)
-    {
-        if (null === $value) {
-            $this->value = null;
-            return $this;
-        }
-        if (is_float($value) || is_string($value)) {
-            $value = intval($value, 10);
-        }
-        if (is_int($value)) {
-            if (0 > $value) {
-                throw new \OutOfBoundsException(sprintf('Value must be >= 0, %d seen.', $value));
-            }
-            $value = strval($value);
-        }
-        if (!is_string($value) || !ctype_digit($value)) {
-            throw new \InvalidArgumentException(sprintf('Value must be null, positive integer, or string representation of positive integer, "%s" seen.', gettype($value)));
-        }
-        if ('' === $value) {
-            $value = '0';
-        }
-        $this->value = $value;
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        $value = $this->getValue();
-        if (null === $value) {
-            return true;
-        }
-        return is_string($value) && ctype_digit($value);
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -179,6 +141,52 @@ class FHIRUnsignedIntPrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<unsignedInt_primitive{$xmlns}></unsignedInt_primitive>";
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|integer|float|string
+     * @return static
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            $this->value = null;
+            return $this;
+        }
+        if (is_float($value) || is_string($value)) {
+            $value = intval($value, 10);
+        }
+        if (is_int($value)) {
+            if (0 > $value) {
+                throw new \OutOfBoundsException(sprintf('Value must be >= 0, %d seen.', $value));
+            }
+            $value = strval($value);
+        }
+        if (!is_string($value) || !ctype_digit($value)) {
+            throw new \InvalidArgumentException(sprintf('Value must be null, positive integer, or string representation of positive integer, "%s" seen.', gettype($value)));
+        }
+        if ('' === $value) {
+            $value = '0';
+        }
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

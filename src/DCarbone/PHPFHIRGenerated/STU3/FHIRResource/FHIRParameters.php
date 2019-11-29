@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,9 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PARAMETERS;
     const FIELD_PARAMETER = 'parameter';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * This special resource type is used to represent an operation request and
      * response (operations.html). It has no other use, and there is no RESTful
@@ -94,8 +97,11 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
      */
     protected $parameter = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Parameters
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRParameters Constructor
@@ -142,30 +148,6 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -176,7 +158,6 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
         }
         return "<Parameters{$xmlns}></Parameters>";
     }
-
     /**
      * @return string
      */
@@ -240,6 +221,15 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
             }
         }
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

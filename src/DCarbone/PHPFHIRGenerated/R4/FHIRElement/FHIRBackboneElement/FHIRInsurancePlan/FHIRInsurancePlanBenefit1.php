@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,8 +78,10 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_BENEFIT_1;
     const FIELD_COST = 'cost';
-    const FIELD_COST_EXT = '_cost';
     const FIELD_TYPE = 'type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Details of a Health Insurance product/plan provided by an organization.
@@ -103,8 +105,11 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type InsurancePlan.Benefit1
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRInsurancePlanBenefit1 Constructor
@@ -123,30 +128,19 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_COST])) {
-            $ext = (isset($data[self::FIELD_COST_EXT]) && is_array($data[self::FIELD_COST_EXT]))
-                ? $data[self::FIELD_COST_EXT]
-                : null;
             if (is_array($data[self::FIELD_COST])) {
-                foreach($data[self::FIELD_COST] as $i => $v) {
+                foreach($data[self::FIELD_COST] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRInsurancePlanCost) {
                         $this->addCost($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addCost(new FHIRInsurancePlanCost([FHIRInsurancePlanCost::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addCost(new FHIRInsurancePlanCost(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addCost(new FHIRInsurancePlanCost($v));
                     }
                 }
-            } elseif ($data[self::FIELD_COST] instanceof FHIRInsurancePlanCost) {
+            } else if ($data[self::FIELD_COST] instanceof FHIRInsurancePlanCost) {
                 $this->addCost($data[self::FIELD_COST]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_COST])) {
-                $this->addCost(new FHIRInsurancePlanCost([FHIRInsurancePlanCost::FIELD_VALUE => $data[self::FIELD_COST]] + $ext));
             } else {
                 $this->addCost(new FHIRInsurancePlanCost($data[self::FIELD_COST]));
             }
@@ -169,30 +163,6 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -203,7 +173,6 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
         }
         return "<InsurancePlanBenefit1{$xmlns}></InsurancePlanBenefit1>";
     }
-
 
     /**
      * Details of a Health Insurance product/plan provided by an organization.
@@ -290,6 +259,15 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit1 $type
      * @param null|int $libxmlOpts
@@ -351,6 +329,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getCost())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -359,7 +338,6 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COST, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -373,23 +351,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getCost())) {
-            $a[self::FIELD_COST] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_COST][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_COST_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_COST_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_COST][] = $v;
-                }
-            }
+            $a[self::FIELD_COST] = $vs;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

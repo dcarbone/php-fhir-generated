@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPract
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,9 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     const FIELD_DAYS_OF_WEEK = 'daysOfWeek';
     const FIELD_DAYS_OF_WEEK_EXT = '_daysOfWeek';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -131,8 +134,11 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      */
     protected $daysOfWeek = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type PractitionerRole.AvailableTime
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRPractitionerRoleAvailableTime Constructor
@@ -238,30 +244,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -272,7 +254,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         }
         return "<PractitionerRoleAvailableTime{$xmlns}></PractitionerRoleAvailableTime>";
     }
-
 
     /**
      * Value of "true" or "false"
@@ -440,6 +421,15 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime $type
      * @param null|int $libxmlOpts
@@ -516,6 +506,7 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAllDay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALL_DAY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -533,7 +524,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DAYS_OF_WEEK, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -544,36 +534,24 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllDay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ALL_DAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ALL_DAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ALL_DAY] = $v;
+            $a[self::FIELD_ALL_DAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ALL_DAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAvailableEndTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AVAILABLE_END_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AVAILABLE_END_TIME] = $v;
+            $a[self::FIELD_AVAILABLE_END_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAvailableStartTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AVAILABLE_START_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AVAILABLE_START_TIME] = $v;
+            $a[self::FIELD_AVAILABLE_START_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getDaysOfWeek())) {
@@ -582,16 +560,12 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_DAYS_OF_WEEK][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_DAYS_OF_WEEK_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_DAYS_OF_WEEK_EXT][] = null;
-                    }
+                $a[self::FIELD_DAYS_OF_WEEK][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_DAYS_OF_WEEK_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_DAYS_OF_WEEK][] = $v;
+                    $a[self::FIELD_DAYS_OF_WEEK_EXT][] = null;
                 }
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,9 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     const FIELD_URL = 'url';
     const FIELD_URL_EXT = '_url';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The
      * referenced SOP Instances (images or other content) are for a single patient, and
@@ -148,8 +151,11 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
      */
     protected $url = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ImagingObjectSelection.Instance
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRImagingObjectSelectionInstance Constructor
@@ -244,30 +250,6 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -278,7 +260,6 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
         }
         return "<ImagingObjectSelectionInstance{$xmlns}></ImagingObjectSelectionInstance>";
     }
-
 
     /**
      * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The
@@ -476,6 +457,15 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance $type
      * @param null|int $libxmlOpts
@@ -552,6 +542,7 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getFrames())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -560,7 +551,6 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_FRAMES, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSopClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOP_CLASS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -583,36 +573,24 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement
             $a[self::FIELD_FRAMES] = $vs;
         }
         if (null !== ($v = $this->getSopClass())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SOP_CLASS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SOP_CLASS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SOP_CLASS] = $v;
+            $a[self::FIELD_SOP_CLASS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SOP_CLASS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getUid())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_UID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_UID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_UID] = $v;
+            $a[self::FIELD_UID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_UID_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getUrl())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_URL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_URL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_URL] = $v;
+            $a[self::FIELD_URL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_URL_EXT] = $enc;
             }
         }
         return $a;

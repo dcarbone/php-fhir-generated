@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE;
     const FIELD_ADMINISTRATION_GUIDELINES = 'administrationGuidelines';
     const FIELD_AMOUNT = 'amount';
-    const FIELD_AMOUNT_EXT = '_amount';
     const FIELD_ASSOCIATED_MEDICATION = 'associatedMedication';
     const FIELD_CODE = 'code';
     const FIELD_CONTRAINDICATION = 'contraindication';
@@ -121,6 +120,9 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     const FIELD_STATUS_EXT = '_status';
     const FIELD_SYNONYM = 'synonym';
     const FIELD_SYNONYM_EXT = '_synonym';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Information about a medication that is used to support knowledge.
@@ -371,8 +373,11 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      */
     protected $synonym = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicationKnowledge
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicationKnowledge Constructor
@@ -409,17 +414,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
             }
         }
         if (isset($data[self::FIELD_AMOUNT])) {
-            $ext = (isset($data[self::FIELD_AMOUNT_EXT]) && is_array($data[self::FIELD_AMOUNT_EXT]))
-                ? $data[self::FIELD_AMOUNT_EXT]
-                : null;
             if ($data[self::FIELD_AMOUNT] instanceof FHIRQuantity) {
                 $this->setAmount($data[self::FIELD_AMOUNT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AMOUNT])) {
-                    $this->setAmount(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
-                } else if (is_array($data[self::FIELD_AMOUNT])) {
-                    $this->setAmount(new FHIRQuantity(array_merge($ext, $data[self::FIELD_AMOUNT])));
-                }
             } else {
                 $this->setAmount(new FHIRQuantity($data[self::FIELD_AMOUNT]));
             }
@@ -758,30 +754,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -792,7 +764,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         }
         return "<MedicationKnowledge{$xmlns}></MedicationKnowledge>";
     }
-
     /**
      * @return string
      */
@@ -1882,6 +1853,15 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge $type
      * @param null|int $libxmlOpts
@@ -2040,6 +2020,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAdministrationGuidelines())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2048,7 +2029,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION_GUIDELINES, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2060,7 +2040,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ASSOCIATED_MEDICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2072,7 +2051,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONTRAINDICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getCost())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2081,7 +2059,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COST, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDoseForm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_FORM, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2093,7 +2070,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DRUG_CHARACTERISTIC, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getIngredient())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2102,7 +2078,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INGREDIENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getIntendedRoute())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2111,7 +2086,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INTENDED_ROUTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getKinetics())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2120,7 +2094,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_KINETICS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getManufacturer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2132,7 +2105,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICINE_CLASSIFICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getMonitoringProgram())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2141,7 +2113,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MONITORING_PROGRAM, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getMonograph())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2150,7 +2121,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MONOGRAPH, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getPackaging())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGING, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2165,7 +2135,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_TYPE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getRegulatory())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2174,7 +2143,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REGULATORY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getRelatedMedicationKnowledge())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -2183,7 +2151,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_MEDICATION_KNOWLEDGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -2195,7 +2162,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SYNONYM, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -2209,15 +2175,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
             $a[self::FIELD_ADMINISTRATION_GUIDELINES] = $vs;
         }
         if (null !== ($v = $this->getAmount())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AMOUNT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AMOUNT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AMOUNT] = $v;
-            }
+            $a[self::FIELD_AMOUNT] = $v;
         }
         if ([] !== ($vs = $this->getAssociatedMedication())) {
             $a[self::FIELD_ASSOCIATED_MEDICATION] = $vs;
@@ -2262,14 +2220,10 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
             $a[self::FIELD_PACKAGING] = $v;
         }
         if (null !== ($v = $this->getPreparationInstruction())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PREPARATION_INSTRUCTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PREPARATION_INSTRUCTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PREPARATION_INSTRUCTION] = $v;
+            $a[self::FIELD_PREPARATION_INSTRUCTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PREPARATION_INSTRUCTION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getProductType())) {
@@ -2282,14 +2236,10 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
             $a[self::FIELD_RELATED_MEDICATION_KNOWLEDGE] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STATUS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STATUS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSynonym())) {
@@ -2298,16 +2248,12 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_SYNONYM][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_SYNONYM_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_SYNONYM_EXT][] = null;
-                    }
+                $a[self::FIELD_SYNONYM][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_SYNONYM_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_SYNONYM][] = $v;
+                    $a[self::FIELD_SYNONYM_EXT][] = null;
                 }
             }
         }

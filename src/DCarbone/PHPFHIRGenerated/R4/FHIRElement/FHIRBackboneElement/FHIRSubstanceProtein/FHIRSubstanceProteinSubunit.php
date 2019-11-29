@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,18 +90,19 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     const FIELD_C_TERMINAL_MODIFICATION = 'cTerminalModification';
     const FIELD_C_TERMINAL_MODIFICATION_EXT = '_cTerminalModification';
     const FIELD_C_TERMINAL_MODIFICATION_ID = 'cTerminalModificationId';
-    const FIELD_C_TERMINAL_MODIFICATION_ID_EXT = '_cTerminalModificationId';
     const FIELD_LENGTH = 'length';
     const FIELD_LENGTH_EXT = '_length';
     const FIELD_N_TERMINAL_MODIFICATION = 'nTerminalModification';
     const FIELD_N_TERMINAL_MODIFICATION_EXT = '_nTerminalModification';
     const FIELD_N_TERMINAL_MODIFICATION_ID = 'nTerminalModificationId';
-    const FIELD_N_TERMINAL_MODIFICATION_ID_EXT = '_nTerminalModificationId';
     const FIELD_SEQUENCE = 'sequence';
     const FIELD_SEQUENCE_EXT = '_sequence';
     const FIELD_SEQUENCE_ATTACHMENT = 'sequenceAttachment';
     const FIELD_SUBUNIT = 'subunit';
     const FIELD_SUBUNIT_EXT = '_subunit';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -211,8 +212,11 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      */
     protected $subunit = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstanceProtein.Subunit
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstanceProteinSubunit Constructor
@@ -247,17 +251,8 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-            $ext = (isset($data[self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT]) && is_array($data[self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT]))
-                ? $data[self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT]
-                : null;
             if ($data[self::FIELD_C_TERMINAL_MODIFICATION_ID] instanceof FHIRIdentifier) {
                 $this->setCTerminalModificationId($data[self::FIELD_C_TERMINAL_MODIFICATION_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-                    $this->setCTerminalModificationId(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_C_TERMINAL_MODIFICATION_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-                    $this->setCTerminalModificationId(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_C_TERMINAL_MODIFICATION_ID])));
-                }
             } else {
                 $this->setCTerminalModificationId(new FHIRIdentifier($data[self::FIELD_C_TERMINAL_MODIFICATION_ID]));
             }
@@ -295,17 +290,8 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-            $ext = (isset($data[self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT]) && is_array($data[self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT]))
-                ? $data[self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT]
-                : null;
             if ($data[self::FIELD_N_TERMINAL_MODIFICATION_ID] instanceof FHIRIdentifier) {
                 $this->setNTerminalModificationId($data[self::FIELD_N_TERMINAL_MODIFICATION_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-                    $this->setNTerminalModificationId(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_N_TERMINAL_MODIFICATION_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-                    $this->setNTerminalModificationId(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_N_TERMINAL_MODIFICATION_ID])));
-                }
             } else {
                 $this->setNTerminalModificationId(new FHIRIdentifier($data[self::FIELD_N_TERMINAL_MODIFICATION_ID]));
             }
@@ -360,30 +346,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -394,7 +356,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         }
         return "<SubstanceProteinSubunit{$xmlns}></SubstanceProteinSubunit>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -717,6 +678,15 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit $type
      * @param null|int $libxmlOpts
@@ -809,6 +779,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCTerminalModification())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_C_TERMINAL_MODIFICATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -843,83 +814,47 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCTerminalModification())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_C_TERMINAL_MODIFICATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_C_TERMINAL_MODIFICATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_C_TERMINAL_MODIFICATION] = $v;
+            $a[self::FIELD_C_TERMINAL_MODIFICATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_C_TERMINAL_MODIFICATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getCTerminalModificationId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_C_TERMINAL_MODIFICATION_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $v;
-            }
+            $a[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $v;
         }
         if (null !== ($v = $this->getLength())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LENGTH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LENGTH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LENGTH] = $v;
+            $a[self::FIELD_LENGTH] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LENGTH_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNTerminalModification())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_N_TERMINAL_MODIFICATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_N_TERMINAL_MODIFICATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_N_TERMINAL_MODIFICATION] = $v;
+            $a[self::FIELD_N_TERMINAL_MODIFICATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_N_TERMINAL_MODIFICATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNTerminalModificationId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_N_TERMINAL_MODIFICATION_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $v;
-            }
+            $a[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SEQUENCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SEQUENCE] = $v;
+            $a[self::FIELD_SEQUENCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SEQUENCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSequenceAttachment())) {
             $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getSubunit())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUBUNIT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUBUNIT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUBUNIT] = $v;
+            $a[self::FIELD_SUBUNIT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUBUNIT_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
     const FIELD_PARTICIPANT = 'participant';
     const FIELD_SOURCE = 'source';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
@@ -128,8 +131,15 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
      */
     protected $source = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SecurityEvent
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_PARTICIPANT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRSecurityEvent Constructor
@@ -208,30 +218,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -242,7 +228,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
         }
         return "<SecurityEvent{$xmlns}></SecurityEvent>";
     }
-
     /**
      * @return string
      */
@@ -425,6 +410,15 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRSecurityEvent $type
      * @param null|int $libxmlOpts
@@ -494,6 +488,7 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getEvent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -505,7 +500,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
                 $v->xmlSerialize($sxe->addChild(self::FIELD_OBJECT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getParticipant())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -514,7 +508,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }

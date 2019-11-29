@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -221,7 +221,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_CONTAINER;
-    const FIELD_FHIR_COMMENTS = 'fhir_comments';
 
     const FIELD_ACCOUNT = 'Account';
     const FIELD_ACTIVITY_DEFINITION = 'ActivityDefinition';
@@ -369,6 +368,9 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     const FIELD_VALUE_SET = 'ValueSet';
     const FIELD_VERIFICATION_RESULT = 'VerificationResult';
     const FIELD_VISION_PRESCRIPTION = 'VisionPrescription';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A financial tool for tracking value accrued for a particular purpose. In the
@@ -1795,8 +1797,11 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     protected $VisionPrescription = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ResourceContainer
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRResourceContainer Constructor
@@ -1813,11 +1818,11 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
                 gettype($data)
             ));
         }
-        if (isset($data[self::FIELD_FHIR_COMMENTS])) {
-            if (is_array($data[self::FIELD_FHIR_COMMENTS])) {
-                $this->_setFHIRComments($data[self::FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[self::FIELD_FHIR_COMMENTS])) {
-                $this->_addFHIRComment($data[self::FIELD_FHIR_COMMENTS]);
+        if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+            if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+                $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
+            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+                $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
             }
         }
         if (isset($data[self::FIELD_ACCOUNT])) {
@@ -3033,7 +3038,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
         }
         return "<ResourceContainer{$xmlns}></ResourceContainer>";
     }
-
 
     /**
      * A financial tool for tracking value accrued for a particular purpose. In the
@@ -7051,6 +7055,15 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     {
         $this->VisionPrescription = $VisionPrescription;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

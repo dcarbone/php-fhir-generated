@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,10 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     const FIELD_OTHER_CHARACTERISTICS = 'otherCharacteristics';
     const FIELD_PHYSICAL_CHARACTERISTICS = 'physicalCharacteristics';
     const FIELD_QUANTITY = 'quantity';
-    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_UNIT_OF_PRESENTATION = 'unitOfPresentation';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -177,8 +179,11 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      */
     protected $unitOfPresentation = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicinalProductManufactured
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicinalProductManufactured Constructor
@@ -265,17 +270,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
-                ? $data[self::FIELD_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_QUANTITY])) {
-                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_QUANTITY])) {
-                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
-                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -298,30 +294,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -332,7 +304,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
         }
         return "<MedicinalProductManufactured{$xmlns}></MedicinalProductManufactured>";
     }
-
     /**
      * @return string
      */
@@ -651,6 +622,15 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured $type
      * @param null|int $libxmlOpts
@@ -731,6 +711,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getIngredient())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -739,7 +720,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INGREDIENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getManufacturedDoseForm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURED_DOSE_FORM, null, $v->_getFHIRXMLNamespace()));
         }
@@ -751,7 +731,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getOtherCharacteristics())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -760,7 +739,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getPhysicalCharacteristics())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PHYSICAL_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -795,15 +773,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
             $a[self::FIELD_PHYSICAL_CHARACTERISTICS] = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_QUANTITY] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getUnitOfPresentation())) {
             $a[self::FIELD_UNIT_OF_PRESENTATION] = $v;

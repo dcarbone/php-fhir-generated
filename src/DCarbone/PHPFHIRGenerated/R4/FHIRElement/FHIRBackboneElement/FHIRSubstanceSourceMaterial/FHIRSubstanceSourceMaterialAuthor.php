@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,9 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
     const FIELD_AUTHOR_DESCRIPTION_EXT = '_authorDescription';
     const FIELD_AUTHOR_TYPE = 'authorType';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -122,8 +125,11 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
      */
     protected $authorType = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstanceSourceMaterial.Author
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstanceSourceMaterialAuthor Constructor
@@ -175,30 +181,6 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -209,7 +191,6 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
         }
         return "<SubstanceSourceMaterialAuthor{$xmlns}></SubstanceSourceMaterialAuthor>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -292,6 +273,15 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor $type
      * @param null|int $libxmlOpts
@@ -354,6 +344,7 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAuthorDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -370,14 +361,10 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAuthorDescription())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AUTHOR_DESCRIPTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AUTHOR_DESCRIPTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AUTHOR_DESCRIPTION] = $v;
+            $a[self::FIELD_AUTHOR_DESCRIPTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AUTHOR_DESCRIPTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAuthorType())) {

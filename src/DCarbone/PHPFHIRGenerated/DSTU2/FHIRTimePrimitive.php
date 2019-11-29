@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,86 +70,33 @@ class FHIRTimePrimitive implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIME_HYPHEN_PRIMITIVE;
-
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = '';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
-    /** @var null|string */
+    /**
+     * @var null|string
+     */
     protected $value = null;
 
-    /** null|\DateTime */
-    private $_dateTime = null;
-
-    const VALUE_REGEX = // language=RegExp
-        '([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?';
-    const FORMAT_TIME = 'H:i:s';
+    /**
+     * Validation map for fields in type time-primitive
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_VALUE => [
+            PHPFHIRConstants::VALIDATE_PATTERN => '/^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?$/',
+        ],
+    ];
 
     /**
      * FHIRTimePrimitive Constructor
-     * @param null| $value
+     * @param null|string $value
      */
     public function __construct($value = null)
     {
         $this->setValue($value);
-    }
-    /**
-     * @param null|string $value
-     * @return static
-     */
-    public function setValue($value)
-    {
-        $this->_dateTime = null;
-        if (null === $value) {
-            $this->value = null;
-            return $this;
-        }
-        if (is_string($value)) {
-            $this->value = $value;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf('$value must be null or string, %s seen.', gettype($value)));
-    }
-
-    /**
-     * @return null|\DateTime
-     */
-    public function _getDateTime()
-    {
-        if (!isset($this->_dateTime)) {
-            $value = $this->getValue();
-            if (null === $value) {
-                return null;
-            }
-            if (!$this->_isValid()) {
-                throw new \DomainException(sprintf('Cannot convert "%s" to \\DateTime as it does not conform to "%s"', $value, self::VALUE_REGEX));
-            }
-            $parsed = \DateTime::createFromFormat(self::FORMAT_TIME, $value);
-            if (false === $parsed) {
-                throw new \DomainException(sprintf('Value "%s" could not be parsed as time-primitive: %s', $value, implode(', ', \DateTime::getLastErrors())));
-            }
-            $this->_dateTime = $parsed;
-        }
-        return $this->_dateTime;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        $value = $this->getValue();
-        return null === $value || preg_match('/' . self::VALUE_REGEX . '/', $value);
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -194,6 +141,59 @@ class FHIRTimePrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<time_primitive{$xmlns}></time_primitive>";
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|string $value
+     * @return static
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            $this->value = null;
+            return $this;
+        }
+        if (is_string($value)) {
+            $this->value = $value;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf('$value must be null or string, %s seen.', gettype($value)));
+    }
+
+    /**
+     * @return null|\DateTime|false
+     */
+    public function _getDateTime()
+    {
+        $value = $this->getValue();
+        if (null === $value) {
+            return null;
+        }
+        if ([] !== $this->_validationErrors()) {
+            throw new \DomainException(sprintf(
+                'Cannot convert "%s" to \\DateTime as it does not conform to "%s"',
+                $value,
+                self::$_fieldValidation[self::FIELD_VALUE][PHPFHIRConstants::PHPFHIR_VALIDATION_ENUM_NAME]
+            ));
+        }
+        return \DateTime::createFromFormat(PHPFHIRConstants::TIME_FORMAT, $value);
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -256,7 +256,6 @@ class FHIRTimePrimitive implements PHPFHIRTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
-
         return $sxe;
     }
 

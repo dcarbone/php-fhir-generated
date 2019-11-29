@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREn
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,10 +88,12 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     const FIELD_DISCHARGE_DISPOSITION = 'dischargeDisposition';
     const FIELD_ORIGIN = 'origin';
     const FIELD_PRE_ADMISSION_IDENTIFIER = 'preAdmissionIdentifier';
-    const FIELD_PRE_ADMISSION_IDENTIFIER_EXT = '_preAdmissionIdentifier';
     const FIELD_RE_ADMISSION = 'reAdmission';
     const FIELD_SPECIAL_ARRANGEMENT = 'specialArrangement';
     const FIELD_SPECIAL_COURTESY = 'specialCourtesy';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -223,8 +225,11 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     protected $specialCourtesy = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Encounter.Hospitalization
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIREncounterHospitalization Constructor
@@ -325,17 +330,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT]) && is_array($data[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT]
-                : null;
             if ($data[self::FIELD_PRE_ADMISSION_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setPreAdmissionIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-                    $this->setPreAdmissionIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_PRE_ADMISSION_IDENTIFIER]] + $ext));
-                } else if (is_array($data[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-                    $this->setPreAdmissionIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_PRE_ADMISSION_IDENTIFIER])));
-                }
             } else {
                 $this->setPreAdmissionIdentifier(new FHIRIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]));
             }
@@ -394,30 +390,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -428,7 +400,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
         return "<EncounterHospitalization{$xmlns}></EncounterHospitalization>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -915,6 +886,15 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
      * @param null|int $libxmlOpts
@@ -1011,6 +991,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAdmitSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADMIT_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1022,7 +1003,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ADMITTING_DIAGNOSIS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDestination())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1034,7 +1014,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DIET_PREFERENCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getDischargeDiagnosis())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1043,7 +1022,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DISCHARGE_DIAGNOSIS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDischargeDisposition())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISCHARGE_DISPOSITION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1064,7 +1042,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSpecialCourtesy())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1073,7 +1050,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_COURTESY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -1105,15 +1081,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $a[self::FIELD_ORIGIN] = $v;
         }
         if (null !== ($v = $this->getPreAdmissionIdentifier())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $v;
-            }
+            $a[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getReAdmission())) {
             $a[self::FIELD_RE_ADMISSION] = $v;

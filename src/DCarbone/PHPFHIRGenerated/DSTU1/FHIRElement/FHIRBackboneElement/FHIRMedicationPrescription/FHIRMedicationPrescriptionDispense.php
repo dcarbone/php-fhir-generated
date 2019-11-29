@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,13 +78,14 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_PRESCRIPTION_DOT_DISPENSE;
     const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
-    const FIELD_EXPECTED_SUPPLY_DURATION_EXT = '_expectedSupplyDuration';
     const FIELD_MEDICATION = 'medication';
     const FIELD_NUMBER_OF_REPEATS_ALLOWED = 'numberOfRepeatsAllowed';
     const FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT = '_numberOfRepeatsAllowed';
     const FIELD_QUANTITY = 'quantity';
-    const FIELD_QUANTITY_EXT = '_quantity';
     const FIELD_VALIDITY_PERIOD = 'validityPeriod';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Identifies the period time over which the supplied product is expected to be
@@ -158,8 +159,11 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      */
     protected $validityPeriod = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicationPrescription.Dispense
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicationPrescriptionDispense Constructor
@@ -178,17 +182,8 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-            $ext = (isset($data[self::FIELD_EXPECTED_SUPPLY_DURATION_EXT]) && is_array($data[self::FIELD_EXPECTED_SUPPLY_DURATION_EXT]))
-                ? $data[self::FIELD_EXPECTED_SUPPLY_DURATION_EXT]
-                : null;
             if ($data[self::FIELD_EXPECTED_SUPPLY_DURATION] instanceof FHIRDuration) {
                 $this->setExpectedSupplyDuration($data[self::FIELD_EXPECTED_SUPPLY_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-                    $this->setExpectedSupplyDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_EXPECTED_SUPPLY_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-                    $this->setExpectedSupplyDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_EXPECTED_SUPPLY_DURATION])));
-                }
             } else {
                 $this->setExpectedSupplyDuration(new FHIRDuration($data[self::FIELD_EXPECTED_SUPPLY_DURATION]));
             }
@@ -217,17 +212,8 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT]))
-                ? $data[self::FIELD_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_QUANTITY])) {
-                    $this->setQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_QUANTITY])) {
-                    $this->setQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_QUANTITY])));
-                }
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
@@ -250,30 +236,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -284,7 +246,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         }
         return "<MedicationPrescriptionDispense{$xmlns}></MedicationPrescriptionDispense>";
     }
-
 
     /**
      * Identifies the period time over which the supplied product is expected to be
@@ -479,6 +440,15 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense $type
      * @param null|int $libxmlOpts
@@ -550,6 +520,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getExpectedSupplyDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPECTED_SUPPLY_DURATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -575,40 +546,20 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExpectedSupplyDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EXPECTED_SUPPLY_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EXPECTED_SUPPLY_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EXPECTED_SUPPLY_DURATION] = $v;
-            }
+            $a[self::FIELD_EXPECTED_SUPPLY_DURATION] = $v;
         }
         if (null !== ($v = $this->getMedication())) {
             $a[self::FIELD_MEDICATION] = $v;
         }
         if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $v;
+            $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_QUANTITY] = $v;
-            }
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;

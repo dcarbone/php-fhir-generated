@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,9 +83,11 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     const FIELD_INSTRUCTION = 'instruction';
     const FIELD_INSTRUCTION_EXT = '_instruction';
     const FIELD_MAX_DURATION = 'maxDuration';
-    const FIELD_MAX_DURATION_EXT = '_maxDuration';
     const FIELD_TEMPERATURE_QUALIFIER = 'temperatureQualifier';
     const FIELD_TEMPERATURE_RANGE = 'temperatureRange';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -135,8 +137,11 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      */
     protected $temperatureRange = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SpecimenDefinition.Handling
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSpecimenDefinitionHandling Constructor
@@ -171,17 +176,8 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_MAX_DURATION])) {
-            $ext = (isset($data[self::FIELD_MAX_DURATION_EXT]) && is_array($data[self::FIELD_MAX_DURATION_EXT]))
-                ? $data[self::FIELD_MAX_DURATION_EXT]
-                : null;
             if ($data[self::FIELD_MAX_DURATION] instanceof FHIRDuration) {
                 $this->setMaxDuration($data[self::FIELD_MAX_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MAX_DURATION])) {
-                    $this->setMaxDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_MAX_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_MAX_DURATION])) {
-                    $this->setMaxDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_MAX_DURATION])));
-                }
             } else {
                 $this->setMaxDuration(new FHIRDuration($data[self::FIELD_MAX_DURATION]));
             }
@@ -211,30 +207,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -245,7 +217,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         }
         return "<SpecimenDefinitionHandling{$xmlns}></SpecimenDefinitionHandling>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -384,6 +355,15 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $type
      * @param null|int $libxmlOpts
@@ -452,6 +432,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getInstruction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -474,26 +455,14 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getInstruction())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INSTRUCTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INSTRUCTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INSTRUCTION] = $v;
+            $a[self::FIELD_INSTRUCTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INSTRUCTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMaxDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MAX_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MAX_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MAX_DURATION] = $v;
-            }
+            $a[self::FIELD_MAX_DURATION] = $v;
         }
         if (null !== ($v = $this->getTemperatureQualifier())) {
             $a[self::FIELD_TEMPERATURE_QUALIFIER] = $v;

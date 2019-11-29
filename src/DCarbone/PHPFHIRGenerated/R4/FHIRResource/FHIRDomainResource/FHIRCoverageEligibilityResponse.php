@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     const FIELD_ERROR = 'error';
     const FIELD_FORM = 'form';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_INSURANCE = 'insurance';
     const FIELD_INSURER = 'insurer';
     const FIELD_OUTCOME = 'outcome';
@@ -115,6 +114,9 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     const FIELD_SERVICED_PERIOD = 'servicedPeriod';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -302,8 +304,15 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      */
     protected $status = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type CoverageEligibilityResponse
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_PURPOSE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRCoverageEligibilityResponse Constructor
@@ -379,30 +388,19 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_IDENTIFIER_EXT]
-                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -564,30 +562,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -598,7 +572,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
         }
         return "<CoverageEligibilityResponse{$xmlns}></CoverageEligibilityResponse>";
     }
-
     /**
      * @return string
      */
@@ -1248,6 +1221,15 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse $type
      * @param null|int $libxmlOpts
@@ -1369,6 +1351,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCreated())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1383,7 +1366,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ERROR, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getForm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FORM, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1395,7 +1377,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getInsurance())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1404,7 +1385,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getInsurer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INSURER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1425,7 +1405,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getRequest())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1451,25 +1430,17 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCreated())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CREATED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CREATED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CREATED] = $v;
+            $a[self::FIELD_CREATED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CREATED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDisposition())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DISPOSITION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DISPOSITION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DISPOSITION] = $v;
+            $a[self::FIELD_DISPOSITION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DISPOSITION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getError())) {
@@ -1479,23 +1450,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
             $a[self::FIELD_FORM] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_IDENTIFIER][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_IDENTIFIER][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getInsurance())) {
             $a[self::FIELD_INSURANCE] = $vs;
@@ -1504,28 +1459,20 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
             $a[self::FIELD_INSURER] = $v;
         }
         if (null !== ($v = $this->getOutcome())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OUTCOME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OUTCOME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OUTCOME] = $v;
+            $a[self::FIELD_OUTCOME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_OUTCOME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPatient())) {
             $a[self::FIELD_PATIENT] = $v;
         }
         if (null !== ($v = $this->getPreAuthRef())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PRE_AUTH_REF] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PRE_AUTH_REF_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PRE_AUTH_REF] = $v;
+            $a[self::FIELD_PRE_AUTH_REF] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PRE_AUTH_REF_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getPurpose())) {
@@ -1534,16 +1481,12 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PURPOSE][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PURPOSE_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PURPOSE_EXT][] = null;
-                    }
+                $a[self::FIELD_PURPOSE][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PURPOSE_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_PURPOSE][] = $v;
+                    $a[self::FIELD_PURPOSE_EXT][] = null;
                 }
             }
         }
@@ -1554,28 +1497,20 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
             $a[self::FIELD_REQUESTOR] = $v;
         }
         if (null !== ($v = $this->getServicedDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SERVICED_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SERVICED_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SERVICED_DATE] = $v;
+            $a[self::FIELD_SERVICED_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SERVICED_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getServicedPeriod())) {
             $a[self::FIELD_SERVICED_PERIOD] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STATUS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STATUS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;

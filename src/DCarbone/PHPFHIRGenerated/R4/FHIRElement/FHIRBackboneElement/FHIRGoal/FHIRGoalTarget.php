@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
     const FIELD_DETAIL_INTEGER = 'detailInteger';
     const FIELD_DETAIL_INTEGER_EXT = '_detailInteger';
     const FIELD_DETAIL_QUANTITY = 'detailQuantity';
-    const FIELD_DETAIL_QUANTITY_EXT = '_detailQuantity';
     const FIELD_DETAIL_RANGE = 'detailRange';
     const FIELD_DETAIL_RATIO = 'detailRatio';
     const FIELD_DETAIL_STRING = 'detailString';
@@ -101,8 +100,10 @@ class FHIRGoalTarget extends FHIRBackboneElement
     const FIELD_DUE_DATE = 'dueDate';
     const FIELD_DUE_DATE_EXT = '_dueDate';
     const FIELD_DUE_DURATION = 'dueDuration';
-    const FIELD_DUE_DURATION_EXT = '_dueDuration';
     const FIELD_MEASURE = 'measure';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -257,8 +258,11 @@ class FHIRGoalTarget extends FHIRBackboneElement
      */
     protected $measure = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Goal.Target
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRGoalTarget Constructor
@@ -316,17 +320,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DETAIL_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_DETAIL_QUANTITY_EXT]) && is_array($data[self::FIELD_DETAIL_QUANTITY_EXT]))
-                ? $data[self::FIELD_DETAIL_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_DETAIL_QUANTITY] instanceof FHIRQuantity) {
                 $this->setDetailQuantity($data[self::FIELD_DETAIL_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DETAIL_QUANTITY])) {
-                    $this->setDetailQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DETAIL_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_DETAIL_QUANTITY])) {
-                    $this->setDetailQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DETAIL_QUANTITY])));
-                }
             } else {
                 $this->setDetailQuantity(new FHIRQuantity($data[self::FIELD_DETAIL_QUANTITY]));
             }
@@ -378,17 +373,8 @@ class FHIRGoalTarget extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DUE_DURATION])) {
-            $ext = (isset($data[self::FIELD_DUE_DURATION_EXT]) && is_array($data[self::FIELD_DUE_DURATION_EXT]))
-                ? $data[self::FIELD_DUE_DURATION_EXT]
-                : null;
             if ($data[self::FIELD_DUE_DURATION] instanceof FHIRDuration) {
                 $this->setDueDuration($data[self::FIELD_DUE_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DUE_DURATION])) {
-                    $this->setDueDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_DUE_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DUE_DURATION])) {
-                    $this->setDueDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_DUE_DURATION])));
-                }
             } else {
                 $this->setDueDuration(new FHIRDuration($data[self::FIELD_DUE_DURATION]));
             }
@@ -411,30 +397,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -445,7 +407,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
         }
         return "<GoalTarget{$xmlns}></GoalTarget>";
     }
-
 
     /**
      * Value of "true" or "false"
@@ -866,6 +827,15 @@ class FHIRGoalTarget extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget $type
      * @param null|int $libxmlOpts
@@ -961,6 +931,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDetailBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1001,40 +972,24 @@ class FHIRGoalTarget extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDetailBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DETAIL_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DETAIL_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DETAIL_BOOLEAN] = $v;
+            $a[self::FIELD_DETAIL_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DETAIL_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDetailCodeableConcept())) {
             $a[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getDetailInteger())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DETAIL_INTEGER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DETAIL_INTEGER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DETAIL_INTEGER] = $v;
+            $a[self::FIELD_DETAIL_INTEGER] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DETAIL_INTEGER_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDetailQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DETAIL_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DETAIL_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DETAIL_QUANTITY] = $v;
-            }
+            $a[self::FIELD_DETAIL_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDetailRange())) {
             $a[self::FIELD_DETAIL_RANGE] = $v;
@@ -1043,37 +998,21 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $a[self::FIELD_DETAIL_RATIO] = $v;
         }
         if (null !== ($v = $this->getDetailString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DETAIL_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DETAIL_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DETAIL_STRING] = $v;
+            $a[self::FIELD_DETAIL_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DETAIL_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDueDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DUE_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DUE_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DUE_DATE] = $v;
+            $a[self::FIELD_DUE_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DUE_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDueDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DUE_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DUE_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DUE_DURATION] = $v;
-            }
+            $a[self::FIELD_DUE_DURATION] = $v;
         }
         if (null !== ($v = $this->getMeasure())) {
             $a[self::FIELD_MEASURE] = $v;

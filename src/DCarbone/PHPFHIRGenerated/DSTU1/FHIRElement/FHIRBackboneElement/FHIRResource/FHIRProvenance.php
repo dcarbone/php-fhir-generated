@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,6 +97,9 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     const FIELD_RECORDED = 'recorded';
     const FIELD_RECORDED_EXT = '_recorded';
     const FIELD_TARGET = 'target';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Provenance information that describes the activity that led to the creation of a
@@ -210,8 +213,15 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
      */
     protected $target = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Provenance
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_TARGET => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRProvenance Constructor
@@ -376,30 +386,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -410,7 +396,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
         }
         return "<Provenance{$xmlns}></Provenance>";
     }
-
     /**
      * @return string
      */
@@ -855,6 +840,15 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRProvenance $type
      * @param null|int $libxmlOpts
@@ -952,6 +946,7 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getAgent())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -960,7 +955,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                 $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getEntity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -969,7 +963,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getIntegritySignature())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INTEGRITY_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -987,7 +980,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                 $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getReason())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1002,7 +994,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -1019,14 +1010,10 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
             $a[self::FIELD_ENTITY] = $vs;
         }
         if (null !== ($v = $this->getIntegritySignature())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INTEGRITY_SIGNATURE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INTEGRITY_SIGNATURE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INTEGRITY_SIGNATURE] = $v;
+            $a[self::FIELD_INTEGRITY_SIGNATURE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INTEGRITY_SIGNATURE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getLocation())) {
@@ -1041,16 +1028,12 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_POLICY][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_POLICY_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_POLICY_EXT][] = null;
-                    }
+                $a[self::FIELD_POLICY][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_POLICY_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_POLICY][] = $v;
+                    $a[self::FIELD_POLICY_EXT][] = null;
                 }
             }
         }
@@ -1058,14 +1041,10 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
             $a[self::FIELD_REASON] = $v;
         }
         if (null !== ($v = $this->getRecorded())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RECORDED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RECORDED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RECORDED] = $v;
+            $a[self::FIELD_RECORDED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RECORDED_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getTarget())) {

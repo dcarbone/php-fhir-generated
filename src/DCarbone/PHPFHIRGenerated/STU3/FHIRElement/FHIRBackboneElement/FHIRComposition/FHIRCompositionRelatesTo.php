@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,8 +87,10 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
     const FIELD_TARGET_IDENTIFIER = 'targetIdentifier';
-    const FIELD_TARGET_IDENTIFIER_EXT = '_targetIdentifier';
     const FIELD_TARGET_REFERENCE = 'targetReference';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The type of relationship between documents.
@@ -123,8 +125,11 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      */
     protected $targetReference = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Composition.RelatesTo
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRCompositionRelatesTo Constructor
@@ -159,17 +164,8 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_TARGET_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_TARGET_IDENTIFIER_EXT]) && is_array($data[self::FIELD_TARGET_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_TARGET_IDENTIFIER_EXT]
-                : null;
             if ($data[self::FIELD_TARGET_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setTargetIdentifier($data[self::FIELD_TARGET_IDENTIFIER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TARGET_IDENTIFIER])) {
-                    $this->setTargetIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_TARGET_IDENTIFIER]] + $ext));
-                } else if (is_array($data[self::FIELD_TARGET_IDENTIFIER])) {
-                    $this->setTargetIdentifier(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_TARGET_IDENTIFIER])));
-                }
             } else {
                 $this->setTargetIdentifier(new FHIRIdentifier($data[self::FIELD_TARGET_IDENTIFIER]));
             }
@@ -192,30 +188,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -226,7 +198,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
         }
         return "<CompositionRelatesTo{$xmlns}></CompositionRelatesTo>";
     }
-
 
     /**
      * The type of relationship between documents.
@@ -319,6 +290,15 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo $type
      * @param null|int $libxmlOpts
@@ -401,26 +381,14 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CODE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CODE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CODE] = $v;
+            $a[self::FIELD_CODE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CODE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTargetIdentifier())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TARGET_IDENTIFIER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TARGET_IDENTIFIER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TARGET_IDENTIFIER] = $v;
-            }
+            $a[self::FIELD_TARGET_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getTargetReference())) {
             $a[self::FIELD_TARGET_REFERENCE] = $v;

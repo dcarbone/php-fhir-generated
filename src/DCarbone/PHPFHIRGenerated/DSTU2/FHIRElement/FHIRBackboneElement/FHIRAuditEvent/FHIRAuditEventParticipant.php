@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,9 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
     const FIELD_REQUESTOR_EXT = '_requestor';
     const FIELD_ROLE = 'role';
     const FIELD_USER_ID = 'userId';
-    const FIELD_USER_ID_EXT = '_userId';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -233,8 +235,11 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      */
     protected $userId = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type AuditEvent.Participant
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRAuditEventParticipant Constructor
@@ -394,17 +399,8 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_USER_ID])) {
-            $ext = (isset($data[self::FIELD_USER_ID_EXT]) && is_array($data[self::FIELD_USER_ID_EXT]))
-                ? $data[self::FIELD_USER_ID_EXT]
-                : null;
             if ($data[self::FIELD_USER_ID] instanceof FHIRIdentifier) {
                 $this->setUserId($data[self::FIELD_USER_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_USER_ID])) {
-                    $this->setUserId(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_USER_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_USER_ID])) {
-                    $this->setUserId(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_USER_ID])));
-                }
             } else {
                 $this->setUserId(new FHIRIdentifier($data[self::FIELD_USER_ID]));
             }
@@ -420,30 +416,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -454,7 +426,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
         }
         return "<AuditEventParticipant{$xmlns}></AuditEventParticipant>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -923,6 +894,15 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventParticipant $type
      * @param null|int $libxmlOpts
@@ -1027,6 +1007,7 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAltId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALT_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1050,7 +1031,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_POLICY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getPurposeOfUse())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1059,7 +1039,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE_OF_USE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1074,7 +1053,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getUserId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_USER_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1088,14 +1066,10 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAltId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ALT_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ALT_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ALT_ID] = $v;
+            $a[self::FIELD_ALT_ID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ALT_ID_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getLocation())) {
@@ -1105,14 +1079,10 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
             $a[self::FIELD_MEDIA] = $v;
         }
         if (null !== ($v = $this->getName())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NAME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NAME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NAME] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NAME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNetwork())) {
@@ -1124,16 +1094,12 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_POLICY][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_POLICY_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_POLICY_EXT][] = null;
-                    }
+                $a[self::FIELD_POLICY][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_POLICY_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_POLICY][] = $v;
+                    $a[self::FIELD_POLICY_EXT][] = null;
                 }
             }
         }
@@ -1144,29 +1110,17 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
             $a[self::FIELD_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getRequestor())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REQUESTOR] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REQUESTOR_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REQUESTOR] = $v;
+            $a[self::FIELD_REQUESTOR] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REQUESTOR_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getRole())) {
             $a[self::FIELD_ROLE] = $vs;
         }
         if (null !== ($v = $this->getUserId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_USER_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_USER_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_USER_ID] = $v;
-            }
+            $a[self::FIELD_USER_ID] = $v;
         }
         return $a;
     }

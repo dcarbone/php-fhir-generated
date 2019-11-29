@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRGroupMember extends FHIRBackboneElement
     const FIELD_INACTIVE_EXT = '_inactive';
     const FIELD_PERIOD = 'period';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -120,8 +123,11 @@ class FHIRGroupMember extends FHIRBackboneElement
      */
     protected $period = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Group.Member
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRGroupMember Constructor
@@ -180,30 +186,6 @@ class FHIRGroupMember extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -214,7 +196,6 @@ class FHIRGroupMember extends FHIRBackboneElement
         }
         return "<GroupMember{$xmlns}></GroupMember>";
     }
-
 
     /**
      * A reference from one resource to another.
@@ -317,6 +298,15 @@ class FHIRGroupMember extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember $type
      * @param null|int $libxmlOpts
@@ -405,14 +395,10 @@ class FHIRGroupMember extends FHIRBackboneElement
             $a[self::FIELD_ENTITY] = $v;
         }
         if (null !== ($v = $this->getInactive())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INACTIVE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INACTIVE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INACTIVE] = $v;
+            $a[self::FIELD_INACTIVE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INACTIVE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriod())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,6 +103,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FIELD_SOURCE = 'source';
     const FIELD_SUBTYPE = 'subtype';
     const FIELD_TYPE = 'type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Indicator for type of action performed during the event that generated the event
@@ -218,8 +221,15 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type AuditEvent
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_AGENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRAuditEvent Constructor
@@ -398,30 +408,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -432,7 +418,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         return "<AuditEvent{$xmlns}></AuditEvent>";
     }
-
     /**
      * @return string
      */
@@ -872,6 +857,15 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRAuditEvent $type
      * @param null|int $libxmlOpts
@@ -1030,14 +1024,10 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAction())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ACTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ACTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ACTION] = $v;
+            $a[self::FIELD_ACTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ACTION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getAgent())) {
@@ -1047,39 +1037,27 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_ENTITY] = $vs;
         }
         if (null !== ($v = $this->getOutcome())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OUTCOME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OUTCOME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OUTCOME] = $v;
+            $a[self::FIELD_OUTCOME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_OUTCOME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOutcomeDesc())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OUTCOME_DESC] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OUTCOME_DESC_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OUTCOME_DESC] = $v;
+            $a[self::FIELD_OUTCOME_DESC] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_OUTCOME_DESC_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getPurposeOfEvent())) {
             $a[self::FIELD_PURPOSE_OF_EVENT] = $vs;
         }
         if (null !== ($v = $this->getRecorded())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RECORDED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RECORDED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RECORDED] = $v;
+            $a[self::FIELD_RECORDED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RECORDED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSource())) {

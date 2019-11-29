@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,8 +62,8 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\DSTU2\FHIRConditionalDeleteStatusList;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConditionalDeleteStatusList;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -79,14 +79,21 @@ class FHIRConditionalDeleteStatus extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONDITIONAL_DELETE_STATUS;
     const FIELD_VALUE = 'value';
-
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConditionalDeleteStatusList
-     */
-    protected $value = null;
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConditionalDeleteStatusList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type ConditionalDeleteStatus
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRConditionalDeleteStatus Constructor
@@ -122,30 +129,6 @@ class FHIRConditionalDeleteStatus extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -157,9 +140,8 @@ class FHIRConditionalDeleteStatus extends FHIRElement
         return "<ConditionalDeleteStatus{$xmlns}></ConditionalDeleteStatus>";
     }
 
-
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConditionalDeleteStatusList
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConditionalDeleteStatusList
      */
     public function getValue()
     {
@@ -167,7 +149,7 @@ class FHIRConditionalDeleteStatus extends FHIRElement
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConditionalDeleteStatusList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConditionalDeleteStatusList $value
      * @return static
      */
     public function setValue($value = null)
@@ -182,6 +164,15 @@ class FHIRConditionalDeleteStatus extends FHIRElement
         }
         $this->value = new FHIRConditionalDeleteStatusList($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -243,7 +234,8 @@ class FHIRConditionalDeleteStatus extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        parent::xmlSerialize($sxe);        if (null !== ($v = $this->getValue())) {
+        parent::xmlSerialize($sxe);
+        if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;

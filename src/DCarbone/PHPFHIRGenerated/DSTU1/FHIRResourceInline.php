@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_DOT_INLINE;
-    const FIELD_FHIR_COMMENTS = 'fhir_comments';
 
     const FIELD_ADVERSE_REACTION = 'AdverseReaction';
     const FIELD_ALERT = 'Alert';
@@ -167,6 +166,9 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     const FIELD_SUBSTANCE = 'Substance';
     const FIELD_SUPPLY = 'Supply';
     const FIELD_VALUE_SET = 'ValueSet';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Records an unexpected reaction suspected to be related to the exposure of the
@@ -622,8 +624,11 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      */
     protected $ValueSet = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Resource.Inline
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRResourceInline Constructor
@@ -640,11 +645,11 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
                 gettype($data)
             ));
         }
-        if (isset($data[self::FIELD_FHIR_COMMENTS])) {
-            if (is_array($data[self::FIELD_FHIR_COMMENTS])) {
-                $this->_setFHIRComments($data[self::FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[self::FIELD_FHIR_COMMENTS])) {
-                $this->_addFHIRComment($data[self::FIELD_FHIR_COMMENTS]);
+        if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+            if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+                $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
+            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+                $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
             }
         }
         if (isset($data[self::FIELD_ADVERSE_REACTION])) {
@@ -1084,7 +1089,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
         }
         return "<ResourceInline{$xmlns}></ResourceInline>";
     }
-
 
     /**
      * Records an unexpected reaction suspected to be related to the exposure of the
@@ -2384,6 +2388,15 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     {
         $this->ValueSet = $ValueSet;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

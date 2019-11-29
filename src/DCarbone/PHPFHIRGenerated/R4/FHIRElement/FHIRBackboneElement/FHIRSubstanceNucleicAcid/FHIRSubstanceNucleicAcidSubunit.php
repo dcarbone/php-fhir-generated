@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,9 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     const FIELD_SUBUNIT_EXT = '_subunit';
     const FIELD_SUGAR = 'sugar';
     const FIELD_THREE_PRIME = 'threePrime';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -197,8 +200,11 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      */
     protected $threePrime = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstanceNucleicAcid.Subunit
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstanceNucleicAcidSubunit Constructor
@@ -332,30 +338,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -366,7 +348,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         return "<SubstanceNucleicAcidSubunit{$xmlns}></SubstanceNucleicAcidSubunit>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -715,6 +696,15 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit $type
      * @param null|int $libxmlOpts
@@ -805,6 +795,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getFivePrime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIVE_PRIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -819,7 +810,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LINKAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSequence())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -837,7 +827,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUGAR, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getThreePrime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_THREE_PRIME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -854,42 +843,30 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $a[self::FIELD_FIVE_PRIME] = $v;
         }
         if (null !== ($v = $this->getLength())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LENGTH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LENGTH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LENGTH] = $v;
+            $a[self::FIELD_LENGTH] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LENGTH_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getLinkage())) {
             $a[self::FIELD_LINKAGE] = $vs;
         }
         if (null !== ($v = $this->getSequence())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SEQUENCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SEQUENCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SEQUENCE] = $v;
+            $a[self::FIELD_SEQUENCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SEQUENCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSequenceAttachment())) {
             $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getSubunit())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUBUNIT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUBUNIT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUBUNIT] = $v;
+            $a[self::FIELD_SUBUNIT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUBUNIT_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSugar())) {

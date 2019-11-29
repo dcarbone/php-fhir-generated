@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,9 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
     const FIELD_SEQUENCE_TYPE = 'sequenceType';
     const FIELD_SUBUNIT = 'subunit';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -159,8 +162,11 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      */
     protected $subunit = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstanceNucleicAcid
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstanceNucleicAcid Constructor
@@ -253,30 +259,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -287,7 +269,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
         }
         return "<SubstanceNucleicAcid{$xmlns}></SubstanceNucleicAcid>";
     }
-
     /**
      * @return string
      */
@@ -515,6 +496,15 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceNucleicAcid $type
      * @param null|int $libxmlOpts
@@ -591,6 +581,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAreaOfHybridisation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AREA_OF_HYBRIDISATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -611,7 +602,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -622,25 +612,17 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAreaOfHybridisation())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AREA_OF_HYBRIDISATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AREA_OF_HYBRIDISATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AREA_OF_HYBRIDISATION] = $v;
+            $a[self::FIELD_AREA_OF_HYBRIDISATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AREA_OF_HYBRIDISATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNumberOfSubunits())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NUMBER_OF_SUBUNITS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v;
+            $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOligoNucleotideType())) {

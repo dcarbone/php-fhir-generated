@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
     const FIELD_RULESET_ID = 'rulesetId';
     const FIELD_RULESET_ID_EXT = '_rulesetId';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
@@ -106,8 +109,11 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
      */
     protected $rulesetId = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestScript.Ruleset1
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestScriptRuleset1 Constructor
@@ -170,30 +176,6 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -204,7 +186,6 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
         }
         return "<TestScriptRuleset1{$xmlns}></TestScriptRuleset1>";
     }
-
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -304,6 +285,15 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset1 $type
      * @param null|int $libxmlOpts
@@ -393,14 +383,10 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
             $a[self::FIELD_RULE] = $vs;
         }
         if (null !== ($v = $this->getRulesetId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RULESET_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RULESET_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RULESET_ID] = $v;
+            $a[self::FIELD_RULESET_ID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RULESET_ID_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,6 +75,9 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
     const FIELD_CODE = 'code';
     const FIELD_METRIC = 'metric';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -96,8 +99,11 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
      */
     protected $metric = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type DeviceObservationReport.Channel
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDeviceObservationReportChannel Constructor
@@ -151,30 +157,6 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -185,7 +167,6 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
         }
         return "<DeviceObservationReportChannel{$xmlns}></DeviceObservationReportChannel>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -270,6 +251,15 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportChannel $type
      * @param null|int $libxmlOpts
@@ -331,6 +321,7 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -342,7 +333,6 @@ class FHIRDeviceObservationReportChannel extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_METRIC, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 

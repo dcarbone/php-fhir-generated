@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     const FIELD_REPEAT_UNIT_EXT = '_repeatUnit';
     const FIELD_STRUCTURAL_REPRESENTATION = 'structuralRepresentation';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Chemical substances are a single substance type whose primary defining element
      * is the molecular structure. Chemical substances shall be defined on the basis of
@@ -143,8 +146,11 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      */
     protected $structuralRepresentation = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstancePolymer.RepeatUnit
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstancePolymerRepeatUnit Constructor
@@ -239,30 +245,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -273,7 +255,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         }
         return "<SubstancePolymerRepeatUnit{$xmlns}></SubstancePolymerRepeatUnit>";
     }
-
 
     /**
      * Chemical substances are a single substance type whose primary defining element
@@ -486,6 +467,15 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $type
      * @param null|int $libxmlOpts
@@ -561,6 +551,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -572,7 +563,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DEGREE_OF_POLYMERISATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getOrientationOfPolymerisation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORIENTATION_OF_POLYMERISATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -587,7 +577,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_STRUCTURAL_REPRESENTATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -607,14 +596,10 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $a[self::FIELD_ORIENTATION_OF_POLYMERISATION] = $v;
         }
         if (null !== ($v = $this->getRepeatUnit())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REPEAT_UNIT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REPEAT_UNIT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REPEAT_UNIT] = $v;
+            $a[self::FIELD_REPEAT_UNIT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REPEAT_UNIT_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getStructuralRepresentation())) {

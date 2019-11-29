@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,10 +69,11 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_NAMES_PLUS_BINARY;
-    const FIELD_FHIR_COMMENTS = 'fhir_comments';
-
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ResourceNamesPlusBinary
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRResourceNamesPlusBinary Constructor
@@ -90,13 +91,6 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FHIR_COMMENTS])) {
-            if (is_array($data[self::FIELD_FHIR_COMMENTS])) {
-                $this->_setFHIRComments($data[self::FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[self::FIELD_FHIR_COMMENTS])) {
-                $this->_addFHIRComment($data[self::FIELD_FHIR_COMMENTS]);
-            }
-        }
     }
 
     /**
@@ -105,30 +99,6 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
     public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
     }
 
     /**
@@ -143,6 +113,14 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
         return "<ResourceNamesPlusBinary{$xmlns}></ResourceNamesPlusBinary>";
     }
 
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
 
     /**
      * @param \SimpleXMLElement|string|null $sxe
@@ -196,6 +174,7 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         return $sxe;
     }
 
@@ -205,9 +184,6 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[self::FIELD_FHIR_COMMENTS] = $vs;
-        }
         return $a;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,10 +86,12 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     const FIELD_ACTION_ID = 'actionId';
     const FIELD_ACTION_ID_EXT = '_actionId';
     const FIELD_OFFSET_DURATION = 'offsetDuration';
-    const FIELD_OFFSET_DURATION_EXT = '_offsetDuration';
     const FIELD_OFFSET_RANGE = 'offsetRange';
     const FIELD_RELATIONSHIP = 'relationship';
     const FIELD_RELATIONSHIP_EXT = '_relationship';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -139,8 +141,11 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      */
     protected $relationship = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type PlanDefinition.RelatedAction
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRPlanDefinitionRelatedAction Constructor
@@ -175,17 +180,8 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_OFFSET_DURATION])) {
-            $ext = (isset($data[self::FIELD_OFFSET_DURATION_EXT]) && is_array($data[self::FIELD_OFFSET_DURATION_EXT]))
-                ? $data[self::FIELD_OFFSET_DURATION_EXT]
-                : null;
             if ($data[self::FIELD_OFFSET_DURATION] instanceof FHIRDuration) {
                 $this->setOffsetDuration($data[self::FIELD_OFFSET_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OFFSET_DURATION])) {
-                    $this->setOffsetDuration(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_OFFSET_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_OFFSET_DURATION])) {
-                    $this->setOffsetDuration(new FHIRDuration(array_merge($ext, $data[self::FIELD_OFFSET_DURATION])));
-                }
             } else {
                 $this->setOffsetDuration(new FHIRDuration($data[self::FIELD_OFFSET_DURATION]));
             }
@@ -224,30 +220,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -258,7 +230,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         }
         return "<PlanDefinitionRelatedAction{$xmlns}></PlanDefinitionRelatedAction>";
     }
-
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -397,6 +368,15 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $type
      * @param null|int $libxmlOpts
@@ -465,6 +445,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getActionId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -487,39 +468,23 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActionId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ACTION_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ACTION_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ACTION_ID] = $v;
+            $a[self::FIELD_ACTION_ID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ACTION_ID_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOffsetDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OFFSET_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OFFSET_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OFFSET_DURATION] = $v;
-            }
+            $a[self::FIELD_OFFSET_DURATION] = $v;
         }
         if (null !== ($v = $this->getOffsetRange())) {
             $a[self::FIELD_OFFSET_RANGE] = $v;
         }
         if (null !== ($v = $this->getRelationship())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RELATIONSHIP] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RELATIONSHIP_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RELATIONSHIP] = $v;
+            $a[self::FIELD_RELATIONSHIP] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RELATIONSHIP_EXT] = $enc;
             }
         }
         return $a;

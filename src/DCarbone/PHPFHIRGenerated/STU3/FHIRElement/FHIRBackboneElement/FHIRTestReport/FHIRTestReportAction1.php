@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,9 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
     const FIELD_ASSERT = 'assert';
     const FIELD_OPERATION = 'operation';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A summary of information based on the results of executing a TestScript.
      *
@@ -97,8 +100,11 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      */
     protected $operation = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestReport.Action1
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestReportAction1 Constructor
@@ -141,30 +147,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -175,7 +157,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
         }
         return "<TestReportAction1{$xmlns}></TestReportAction1>";
     }
-
 
     /**
      * A summary of information based on the results of executing a TestScript.
@@ -227,6 +208,15 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
     {
         $this->operation = $operation;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

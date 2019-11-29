@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     const FIELD_PRESENTATION = 'presentation';
     const FIELD_PRESENTATION_LOW_LIMIT = 'presentationLowLimit';
     const FIELD_REFERENCE_STRENGTH = 'referenceStrength';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -172,8 +175,11 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      */
     protected $referenceStrength = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicinalProductIngredient.Strength
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicinalProductIngredientStrength Constructor
@@ -282,30 +288,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -316,7 +298,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         }
         return "<MedicinalProductIngredientStrength{$xmlns}></MedicinalProductIngredientStrength>";
     }
-
 
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -602,6 +583,15 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $type
      * @param null|int $libxmlOpts
@@ -683,6 +673,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getConcentration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONCENTRATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -697,7 +688,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COUNTRY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getMeasurementPoint())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEASUREMENT_POINT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -715,7 +705,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_STRENGTH, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -735,14 +724,10 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
             $a[self::FIELD_COUNTRY] = $vs;
         }
         if (null !== ($v = $this->getMeasurementPoint())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MEASUREMENT_POINT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MEASUREMENT_POINT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MEASUREMENT_POINT] = $v;
+            $a[self::FIELD_MEASUREMENT_POINT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_MEASUREMENT_POINT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPresentation())) {

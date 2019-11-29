@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,9 @@ class FHIRSignature extends FHIRElement
     const FIELD_WHO_REFERENCE = 'whoReference';
     const FIELD_WHO_URI = 'whoUri';
     const FIELD_WHO_URI_EXT = '_whoUri';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A stream of bytes
@@ -195,8 +198,15 @@ class FHIRSignature extends FHIRElement
      */
     protected $whoUri = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Signature
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRSignature Constructor
@@ -337,30 +347,6 @@ class FHIRSignature extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -371,7 +357,6 @@ class FHIRSignature extends FHIRElement
         }
         return "<Signature{$xmlns}></Signature>";
     }
-
 
     /**
      * A stream of bytes
@@ -706,6 +691,15 @@ class FHIRSignature extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature $type
      * @param null|int $libxmlOpts
@@ -840,67 +834,47 @@ class FHIRSignature extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBlob())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BLOB] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BLOB_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BLOB] = $v;
+            $a[self::FIELD_BLOB] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BLOB_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getContentType())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CONTENT_TYPE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CONTENT_TYPE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CONTENT_TYPE] = $v;
+            $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CONTENT_TYPE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOnBehalfOfReference())) {
             $a[self::FIELD_ON_BEHALF_OF_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getOnBehalfOfUri())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ON_BEHALF_OF_URI] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ON_BEHALF_OF_URI] = $v;
+            $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getType())) {
             $a[self::FIELD_TYPE] = $vs;
         }
         if (null !== ($v = $this->getWhen())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_WHEN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_WHEN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_WHEN] = $v;
+            $a[self::FIELD_WHEN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_WHEN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhoReference())) {
             $a[self::FIELD_WHO_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhoUri())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_WHO_URI] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_WHO_URI_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_WHO_URI] = $v;
+            $a[self::FIELD_WHO_URI] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_WHO_URI_EXT] = $enc;
             }
         }
         return $a;

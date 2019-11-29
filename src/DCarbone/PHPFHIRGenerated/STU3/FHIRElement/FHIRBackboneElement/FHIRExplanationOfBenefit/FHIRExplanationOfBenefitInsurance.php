@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     const FIELD_PRE_AUTH_REF = 'preAuthRef';
     const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -106,8 +109,11 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      */
     protected $preAuthRef = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ExplanationOfBenefit.Insurance
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRExplanationOfBenefitInsurance Constructor
@@ -172,30 +178,6 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -206,7 +188,6 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
         }
         return "<ExplanationOfBenefitInsurance{$xmlns}></ExplanationOfBenefitInsurance>";
     }
-
 
     /**
      * A reference from one resource to another.
@@ -300,6 +281,15 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
             }
         }
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -397,16 +387,12 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PRE_AUTH_REF][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PRE_AUTH_REF_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PRE_AUTH_REF_EXT][] = null;
-                    }
+                $a[self::FIELD_PRE_AUTH_REF][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PRE_AUTH_REF_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_PRE_AUTH_REF][] = $v;
+                    $a[self::FIELD_PRE_AUTH_REF_EXT][] = null;
                 }
             }
         }

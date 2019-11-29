@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,9 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     const FIELD_RULES = 'rules';
     const FIELD_RULES_EXT = '_rules';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
      * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
@@ -121,8 +124,11 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      */
     protected $rules = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Profile.Slicing
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRProfileSlicing Constructor
@@ -199,30 +205,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -233,7 +215,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         }
         return "<ProfileSlicing{$xmlns}></ProfileSlicing>";
     }
-
 
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
@@ -352,6 +333,15 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing $type
      * @param null|int $libxmlOpts
@@ -420,6 +410,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDiscriminator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISCRIMINATOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -439,36 +430,24 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDiscriminator())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DISCRIMINATOR] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DISCRIMINATOR_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DISCRIMINATOR] = $v;
+            $a[self::FIELD_DISCRIMINATOR] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DISCRIMINATOR_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOrdered())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ORDERED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ORDERED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ORDERED] = $v;
+            $a[self::FIELD_ORDERED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ORDERED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRules())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RULES] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RULES_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RULES] = $v;
+            $a[self::FIELD_RULES] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RULES_EXT] = $enc;
             }
         }
         return $a;

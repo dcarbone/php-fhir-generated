@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,8 +62,8 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRSubscriptionStatusList;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRSubscriptionStatusList;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -79,14 +79,21 @@ class FHIRSubscriptionStatus extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION_STATUS;
     const FIELD_VALUE = 'value';
-
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRSubscriptionStatusList
-     */
-    protected $value = null;
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRSubscriptionStatusList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type SubscriptionStatus
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubscriptionStatus Constructor
@@ -122,30 +129,6 @@ class FHIRSubscriptionStatus extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -157,9 +140,8 @@ class FHIRSubscriptionStatus extends FHIRElement
         return "<SubscriptionStatus{$xmlns}></SubscriptionStatus>";
     }
 
-
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRSubscriptionStatusList
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRSubscriptionStatusList
      */
     public function getValue()
     {
@@ -167,7 +149,7 @@ class FHIRSubscriptionStatus extends FHIRElement
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRSubscriptionStatusList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRSubscriptionStatusList $value
      * @return static
      */
     public function setValue($value = null)
@@ -182,6 +164,15 @@ class FHIRSubscriptionStatus extends FHIRElement
         }
         $this->value = new FHIRSubscriptionStatusList($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,59 +70,33 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA_DATA_TYPE_HYPHEN_PRIMITIVE;
-
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = '';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
-    /** @var null|string */
+    /**
+     * @var null|string
+     */
     protected $value = null;
 
-    const VALUE_REGEX = // language=RegEx
-        '[ \r\n\t\S]+';
-    const MAX_BYTES  = 1048576;
+    /**
+     * Validation map for fields in type SampledDataDataType-primitive
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_VALUE => [
+            PHPFHIRConstants::VALIDATE_PATTERN => '/^((-{0,1}\\d*\\.{0,1}\\d+)|[EUL])( ((-{0,1}\\d*\\.{0,1}\\d+)|[EUL]))*$/',
+        ],
+    ];
 
     /**
      * FHIRSampledDataDataTypePrimitive Constructor
-     * @param null| $value
+     * @param null|string $value
      */
     public function __construct($value = null)
     {
         $this->setValue($value);
-    }
-    /**
-     * @param null|string $value
-     * @return static
-     */
-    public function setValue($value)
-    {
-        if (null === $value) {
-            $this->value = null;
-        } else if (is_string($value)) {
-            $this->value = $value;
-        } else {
-            throw new \InvalidArgumentException(sprintf('Value must be null or string, %s seen', gettype($value)));
-        }
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        $value = $this->getValue();
-        return null === $value || (strlen($value) <= self::MAX_BYTES && preg_match('/'.self::VALUE_REGEX.'/', $value));
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -167,6 +141,39 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SampledDataDataType_primitive{$xmlns}></SampledDataDataType_primitive>";
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|string $value
+     * @return static
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            $this->value = null;
+        } else if (is_string($value)) {
+            $this->value = $value;
+        } else {
+            throw new \InvalidArgumentException(sprintf('Value must be null or string, %s seen', gettype($value)));
+        }
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -229,7 +236,6 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
-
         return $sxe;
     }
 

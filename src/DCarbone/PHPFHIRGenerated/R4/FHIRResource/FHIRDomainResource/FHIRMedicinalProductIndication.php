@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,12 +87,14 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     const FIELD_DISEASE_STATUS = 'diseaseStatus';
     const FIELD_DISEASE_SYMPTOM_PROCEDURE = 'diseaseSymptomProcedure';
     const FIELD_DURATION = 'duration';
-    const FIELD_DURATION_EXT = '_duration';
     const FIELD_INTENDED_EFFECT = 'intendedEffect';
     const FIELD_OTHER_THERAPY = 'otherTherapy';
     const FIELD_POPULATION = 'population';
     const FIELD_SUBJECT = 'subject';
     const FIELD_UNDESIRABLE_EFFECT = 'undesirableEffect';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -198,8 +200,11 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      */
     protected $undesirableEffect = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicinalProductIndication
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicinalProductIndication Constructor
@@ -250,17 +255,8 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
             }
         }
         if (isset($data[self::FIELD_DURATION])) {
-            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT]))
-                ? $data[self::FIELD_DURATION_EXT]
-                : null;
             if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
                 $this->setDuration($data[self::FIELD_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DURATION])));
-                }
             } else {
                 $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
             }
@@ -355,30 +351,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -389,7 +361,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
         }
         return "<MedicinalProductIndication{$xmlns}></MedicinalProductIndication>";
     }
-
     /**
      * @return string
      */
@@ -810,6 +781,15 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication $type
      * @param null|int $libxmlOpts
@@ -900,6 +880,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getComorbidity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -908,7 +889,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COMORBIDITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDiseaseStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISEASE_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -929,7 +909,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER_THERAPY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getPopulation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -938,7 +917,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $v->xmlSerialize($sxe->addChild(self::FIELD_POPULATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSubject())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -947,7 +925,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getUndesirableEffect())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -956,7 +933,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $v->xmlSerialize($sxe->addChild(self::FIELD_UNDESIRABLE_EFFECT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -976,15 +952,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
             $a[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] = $v;
         }
         if (null !== ($v = $this->getDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DURATION] = $v;
-            }
+            $a[self::FIELD_DURATION] = $v;
         }
         if (null !== ($v = $this->getIntendedEffect())) {
             $a[self::FIELD_INTENDED_EFFECT] = $v;

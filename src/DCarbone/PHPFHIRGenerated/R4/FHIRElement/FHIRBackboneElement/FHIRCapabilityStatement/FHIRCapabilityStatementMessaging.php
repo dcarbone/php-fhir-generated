@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,6 +88,9 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     const FIELD_RELIABLE_CACHE_EXT = '_reliableCache';
     const FIELD_SUPPORTED_MESSAGE = 'supportedMessage';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
@@ -142,8 +145,11 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      */
     protected $supportedMessage = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type CapabilityStatement.Messaging
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRCapabilityStatementMessaging Constructor
@@ -240,30 +246,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -274,7 +256,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
         }
         return "<CapabilityStatementMessaging{$xmlns}></CapabilityStatementMessaging>";
     }
-
 
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -488,6 +469,15 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $type
      * @param null|int $libxmlOpts
@@ -563,6 +553,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getDocumentation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -574,7 +565,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ENDPOINT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getReliableCache())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_RELIABLE_CACHE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -586,7 +576,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTED_MESSAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -597,28 +586,20 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentation())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOCUMENTATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOCUMENTATION] = $v;
+            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getEndpoint())) {
             $a[self::FIELD_ENDPOINT] = $vs;
         }
         if (null !== ($v = $this->getReliableCache())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RELIABLE_CACHE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RELIABLE_CACHE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RELIABLE_CACHE] = $v;
+            $a[self::FIELD_RELIABLE_CACHE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RELIABLE_CACHE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSupportedMessage())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,11 +80,12 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_REPORT_DOT_STRATUM;
     const FIELD_COMPONENT = 'component';
-    const FIELD_COMPONENT_EXT = '_component';
     const FIELD_MEASURE_SCORE = 'measureScore';
-    const FIELD_MEASURE_SCORE_EXT = '_measureScore';
     const FIELD_POPULATION = 'population';
     const FIELD_VALUE = 'value';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
@@ -135,8 +136,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      */
     protected $value = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MeasureReport.Stratum
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMeasureReportStratum Constructor
@@ -147,10 +151,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         if (null === $data || [] === $data) {
             return;
         }
-        if (is_scalar($data)) {
-            $this->setValue(new FHIRCodeableConcept($data));
-            return;
-        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRMeasureReportStratum::_construct - $data expected to be null or array, %s seen',
@@ -159,46 +159,26 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_COMPONENT])) {
-            $ext = (isset($data[self::FIELD_COMPONENT_EXT]) && is_array($data[self::FIELD_COMPONENT_EXT]))
-                ? $data[self::FIELD_COMPONENT_EXT]
-                : null;
             if (is_array($data[self::FIELD_COMPONENT])) {
-                foreach($data[self::FIELD_COMPONENT] as $i => $v) {
+                foreach($data[self::FIELD_COMPONENT] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRMeasureReportComponent) {
                         $this->addComponent($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addComponent(new FHIRMeasureReportComponent([FHIRMeasureReportComponent::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addComponent(new FHIRMeasureReportComponent(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addComponent(new FHIRMeasureReportComponent($v));
                     }
                 }
-            } elseif ($data[self::FIELD_COMPONENT] instanceof FHIRMeasureReportComponent) {
+            } else if ($data[self::FIELD_COMPONENT] instanceof FHIRMeasureReportComponent) {
                 $this->addComponent($data[self::FIELD_COMPONENT]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_COMPONENT])) {
-                $this->addComponent(new FHIRMeasureReportComponent([FHIRMeasureReportComponent::FIELD_VALUE => $data[self::FIELD_COMPONENT]] + $ext));
             } else {
                 $this->addComponent(new FHIRMeasureReportComponent($data[self::FIELD_COMPONENT]));
             }
         }
         if (isset($data[self::FIELD_MEASURE_SCORE])) {
-            $ext = (isset($data[self::FIELD_MEASURE_SCORE_EXT]) && is_array($data[self::FIELD_MEASURE_SCORE_EXT]))
-                ? $data[self::FIELD_MEASURE_SCORE_EXT]
-                : null;
             if ($data[self::FIELD_MEASURE_SCORE] instanceof FHIRQuantity) {
                 $this->setMeasureScore($data[self::FIELD_MEASURE_SCORE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MEASURE_SCORE])) {
-                    $this->setMeasureScore(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_MEASURE_SCORE]] + $ext));
-                } else if (is_array($data[self::FIELD_MEASURE_SCORE])) {
-                    $this->setMeasureScore(new FHIRQuantity(array_merge($ext, $data[self::FIELD_MEASURE_SCORE])));
-                }
             } else {
                 $this->setMeasureScore(new FHIRQuantity($data[self::FIELD_MEASURE_SCORE]));
             }
@@ -239,30 +219,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -273,7 +229,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         }
         return "<MeasureReportStratum{$xmlns}></MeasureReportStratum>";
     }
-
 
     /**
      * The MeasureReport resource contains the results of the calculation of a measure;
@@ -457,6 +412,15 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $type
      * @param null|int $libxmlOpts
@@ -526,6 +490,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getComponent())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -534,7 +499,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COMPONENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getMeasureScore())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE_SCORE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -546,7 +510,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_POPULATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
@@ -561,34 +524,10 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getComponent())) {
-            $a[self::FIELD_COMPONENT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_COMPONENT][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_COMPONENT_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_COMPONENT_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_COMPONENT][] = $v;
-                }
-            }
+            $a[self::FIELD_COMPONENT] = $vs;
         }
         if (null !== ($v = $this->getMeasureScore())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MEASURE_SCORE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MEASURE_SCORE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MEASURE_SCORE] = $v;
-            }
+            $a[self::FIELD_MEASURE_SCORE] = $v;
         }
         if ([] !== ($vs = $this->getPopulation())) {
             $a[self::FIELD_POPULATION] = $vs;

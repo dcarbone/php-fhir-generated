@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,8 +91,10 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     const FIELD_REQUIREMENT = 'requirement';
     const FIELD_REQUIREMENT_EXT = '_requirement';
     const FIELD_RETENTION_TIME = 'retentionTime';
-    const FIELD_RETENTION_TIME_EXT = '_retentionTime';
     const FIELD_TYPE = 'type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -181,8 +183,11 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SpecimenDefinition.TypeTested
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSpecimenDefinitionTypeTested Constructor
@@ -292,17 +297,8 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_RETENTION_TIME])) {
-            $ext = (isset($data[self::FIELD_RETENTION_TIME_EXT]) && is_array($data[self::FIELD_RETENTION_TIME_EXT]))
-                ? $data[self::FIELD_RETENTION_TIME_EXT]
-                : null;
             if ($data[self::FIELD_RETENTION_TIME] instanceof FHIRDuration) {
                 $this->setRetentionTime($data[self::FIELD_RETENTION_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RETENTION_TIME])) {
-                    $this->setRetentionTime(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_RETENTION_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_RETENTION_TIME])) {
-                    $this->setRetentionTime(new FHIRDuration(array_merge($ext, $data[self::FIELD_RETENTION_TIME])));
-                }
             } else {
                 $this->setRetentionTime(new FHIRDuration($data[self::FIELD_RETENTION_TIME]));
             }
@@ -325,30 +321,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -359,7 +331,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         }
         return "<SpecimenDefinitionTypeTested{$xmlns}></SpecimenDefinitionTypeTested>";
     }
-
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -668,6 +639,15 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $type
      * @param null|int $libxmlOpts
@@ -755,6 +735,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getContainer())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->_getFHIRXMLNamespace()));
         }
@@ -766,7 +747,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_HANDLING, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getIsDerived())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DERIVED, null, $v->_getFHIRXMLNamespace()));
         }
@@ -781,7 +761,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REJECTION_CRITERION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getRequirement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -807,51 +786,31 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $a[self::FIELD_HANDLING] = $vs;
         }
         if (null !== ($v = $this->getIsDerived())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_IS_DERIVED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_IS_DERIVED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_IS_DERIVED] = $v;
+            $a[self::FIELD_IS_DERIVED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_IS_DERIVED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPreference())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PREFERENCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PREFERENCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PREFERENCE] = $v;
+            $a[self::FIELD_PREFERENCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PREFERENCE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getRejectionCriterion())) {
             $a[self::FIELD_REJECTION_CRITERION] = $vs;
         }
         if (null !== ($v = $this->getRequirement())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REQUIREMENT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REQUIREMENT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REQUIREMENT] = $v;
+            $a[self::FIELD_REQUIREMENT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REQUIREMENT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRetentionTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RETENTION_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RETENTION_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RETENTION_TIME] = $v;
-            }
+            $a[self::FIELD_RETENTION_TIME] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,55 +70,29 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BOOLEAN_HYPHEN_PRIMITIVE;
-
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = '';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
-    /** @var null|boolean */
+    /**
+     * @var null|boolean
+     */
     protected $value = null;
 
     /**
+     * Validation map for fields in type boolean-primitive
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
+
+    /**
      * FHIRBooleanPrimitive Constructor
-     * @param null| $value
+     * @param null|boolean $value
      */
     public function __construct($value = null)
     {
         $this->setValue($value);
-    }
-
-    /**
-     * @param null| $value
-     * @return static
-     */
-    public function setValue($value = null)
-    {
-        if (null === $value) {
-            $this->value = null;
-        } elseif (is_string($value)) {
-            $this->value = PHPFHIRConstants::STRING_TRUE === strtolower($value);
-        } else {
-            $this->value = (bool)$value;
-        }
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        return true;
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -163,6 +137,39 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<boolean_primitive{$xmlns}></boolean_primitive>";
+    }
+
+    /**
+     * @return null|boolean
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|boolean $value
+     * @return static
+     */
+    public function setValue($value = null)
+    {
+        if (null === $value) {
+            $this->value = null;
+        } elseif (is_string($value)) {
+            $this->value = PHPFHIRConstants::STRING_TRUE === strtolower($value);
+        } else {
+            $this->value = (bool)$value;
+        }
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -241,6 +248,6 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
      */
     public function __toString()
     {
-        return $this->getValue() ? 'true' : 'false';
+        return $this->getValue() ? PHPFHIRConstants::STRING_TRUE : PHPFHIRConstants::STRING_FALSE;
     }
 }

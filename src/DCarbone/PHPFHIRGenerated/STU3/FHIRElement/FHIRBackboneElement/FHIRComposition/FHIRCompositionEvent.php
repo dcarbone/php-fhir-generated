@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,6 +88,9 @@ class FHIRCompositionEvent extends FHIRBackboneElement
     const FIELD_DETAIL = 'detail';
     const FIELD_PERIOD = 'period';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -128,8 +131,11 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      */
     protected $period = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Composition.Event
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRCompositionEvent Constructor
@@ -201,30 +207,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -235,7 +217,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
         }
         return "<CompositionEvent{$xmlns}></CompositionEvent>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -396,6 +377,15 @@ class FHIRCompositionEvent extends FHIRBackboneElement
     {
         $this->period = $period;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

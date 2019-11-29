@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,9 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
     const FIELD_SERIES_DOSES = 'seriesDoses';
     const FIELD_SERIES_DOSES_EXT = '_seriesDoses';
     const FIELD_TARGET_DISEASE = 'targetDisease';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -189,8 +192,15 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      */
     protected $targetDisease = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Immunization.VaccinationProtocol
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_TARGET_DISEASE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRImmunizationVaccinationProtocol Constructor
@@ -322,30 +332,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -356,7 +342,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
         }
         return "<ImmunizationVaccinationProtocol{$xmlns}></ImmunizationVaccinationProtocol>";
     }
-
 
     /**
      * A reference from one resource to another.
@@ -670,6 +655,15 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol $type
      * @param null|int $libxmlOpts
@@ -804,25 +798,17 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
             $a[self::FIELD_AUTHORITY] = $v;
         }
         if (null !== ($v = $this->getDescription())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DESCRIPTION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DESCRIPTION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DESCRIPTION] = $v;
+            $a[self::FIELD_DESCRIPTION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDoseSequence())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOSE_SEQUENCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOSE_SEQUENCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOSE_SEQUENCE] = $v;
+            $a[self::FIELD_DOSE_SEQUENCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DOSE_SEQUENCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDoseStatus())) {
@@ -832,25 +818,17 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
             $a[self::FIELD_DOSE_STATUS_REASON] = $v;
         }
         if (null !== ($v = $this->getSeries())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SERIES] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SERIES_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SERIES] = $v;
+            $a[self::FIELD_SERIES] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SERIES_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSeriesDoses())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SERIES_DOSES] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SERIES_DOSES_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SERIES_DOSES] = $v;
+            $a[self::FIELD_SERIES_DOSES] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SERIES_DOSES_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getTargetDisease())) {

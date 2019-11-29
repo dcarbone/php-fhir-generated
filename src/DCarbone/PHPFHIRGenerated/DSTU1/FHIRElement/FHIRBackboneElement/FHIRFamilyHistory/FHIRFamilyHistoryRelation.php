@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     const FIELD_BORN_STRING_EXT = '_bornString';
     const FIELD_CONDITION = 'condition';
     const FIELD_DECEASED_AGE = 'deceasedAge';
-    const FIELD_DECEASED_AGE_EXT = '_deceasedAge';
     const FIELD_DECEASED_BOOLEAN = 'deceasedBoolean';
     const FIELD_DECEASED_BOOLEAN_EXT = '_deceasedBoolean';
     const FIELD_DECEASED_DATE = 'deceasedDate';
@@ -99,6 +98,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     const FIELD_NOTE = 'note';
     const FIELD_NOTE_EXT = '_note';
     const FIELD_RELATIONSHIP = 'relationship';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
@@ -252,8 +254,11 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      */
     protected $relationship = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type FamilyHistory.Relation
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRFamilyHistoryRelation Constructor
@@ -329,17 +334,8 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DECEASED_AGE])) {
-            $ext = (isset($data[self::FIELD_DECEASED_AGE_EXT]) && is_array($data[self::FIELD_DECEASED_AGE_EXT]))
-                ? $data[self::FIELD_DECEASED_AGE_EXT]
-                : null;
             if ($data[self::FIELD_DECEASED_AGE] instanceof FHIRAge) {
                 $this->setDeceasedAge($data[self::FIELD_DECEASED_AGE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DECEASED_AGE])) {
-                    $this->setDeceasedAge(new FHIRAge([FHIRAge::FIELD_VALUE => $data[self::FIELD_DECEASED_AGE]] + $ext));
-                } else if (is_array($data[self::FIELD_DECEASED_AGE])) {
-                    $this->setDeceasedAge(new FHIRAge(array_merge($ext, $data[self::FIELD_DECEASED_AGE])));
-                }
             } else {
                 $this->setDeceasedAge(new FHIRAge($data[self::FIELD_DECEASED_AGE]));
             }
@@ -449,30 +445,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -483,7 +455,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
         return "<FamilyHistoryRelation{$xmlns}></FamilyHistoryRelation>";
     }
-
 
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
@@ -970,6 +941,15 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation $type
      * @param null|int $libxmlOpts
@@ -1082,6 +1062,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getBornDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1099,7 +1080,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDeceasedAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_AGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1134,100 +1114,64 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBornDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BORN_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BORN_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BORN_DATE] = $v;
+            $a[self::FIELD_BORN_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BORN_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBornPeriod())) {
             $a[self::FIELD_BORN_PERIOD] = $v;
         }
         if (null !== ($v = $this->getBornString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BORN_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BORN_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BORN_STRING] = $v;
+            $a[self::FIELD_BORN_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BORN_STRING_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $vs;
         }
         if (null !== ($v = $this->getDeceasedAge())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_AGE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_AGE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_AGE] = $v;
-            }
+            $a[self::FIELD_DECEASED_AGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_BOOLEAN] = $v;
+            $a[self::FIELD_DECEASED_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDeceasedDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_DATE] = $v;
+            $a[self::FIELD_DECEASED_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECEASED_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDeceasedRange())) {
             $a[self::FIELD_DECEASED_RANGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_STRING] = $v;
+            $a[self::FIELD_DECEASED_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECEASED_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getName())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NAME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NAME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NAME] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NAME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNote())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NOTE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NOTE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NOTE] = $v;
+            $a[self::FIELD_NOTE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NOTE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRelationship())) {

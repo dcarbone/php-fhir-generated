@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConce
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,13 +86,14 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
     const FIELD_DEPENDS_ON = 'dependsOn';
-    const FIELD_DEPENDS_ON_EXT = '_dependsOn';
     const FIELD_DISPLAY = 'display';
     const FIELD_DISPLAY_EXT = '_display';
     const FIELD_EQUIVALENCE = 'equivalence';
     const FIELD_EQUIVALENCE_EXT = '_equivalence';
     const FIELD_PRODUCT = 'product';
-    const FIELD_PRODUCT_EXT = '_product';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -168,8 +169,11 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      */
     protected $product = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ConceptMap.Target
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRConceptMapTarget Constructor
@@ -220,30 +224,19 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DEPENDS_ON])) {
-            $ext = (isset($data[self::FIELD_DEPENDS_ON_EXT]) && is_array($data[self::FIELD_DEPENDS_ON_EXT]))
-                ? $data[self::FIELD_DEPENDS_ON_EXT]
-                : null;
             if (is_array($data[self::FIELD_DEPENDS_ON])) {
-                foreach($data[self::FIELD_DEPENDS_ON] as $i => $v) {
+                foreach($data[self::FIELD_DEPENDS_ON] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRConceptMapDependsOn) {
                         $this->addDependsOn($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addDependsOn(new FHIRConceptMapDependsOn([FHIRConceptMapDependsOn::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addDependsOn(new FHIRConceptMapDependsOn(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addDependsOn(new FHIRConceptMapDependsOn($v));
                     }
                 }
-            } elseif ($data[self::FIELD_DEPENDS_ON] instanceof FHIRConceptMapDependsOn) {
+            } else if ($data[self::FIELD_DEPENDS_ON] instanceof FHIRConceptMapDependsOn) {
                 $this->addDependsOn($data[self::FIELD_DEPENDS_ON]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_DEPENDS_ON])) {
-                $this->addDependsOn(new FHIRConceptMapDependsOn([FHIRConceptMapDependsOn::FIELD_VALUE => $data[self::FIELD_DEPENDS_ON]] + $ext));
             } else {
                 $this->addDependsOn(new FHIRConceptMapDependsOn($data[self::FIELD_DEPENDS_ON]));
             }
@@ -281,30 +274,19 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_PRODUCT])) {
-            $ext = (isset($data[self::FIELD_PRODUCT_EXT]) && is_array($data[self::FIELD_PRODUCT_EXT]))
-                ? $data[self::FIELD_PRODUCT_EXT]
-                : null;
             if (is_array($data[self::FIELD_PRODUCT])) {
-                foreach($data[self::FIELD_PRODUCT] as $i => $v) {
+                foreach($data[self::FIELD_PRODUCT] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRConceptMapDependsOn) {
                         $this->addProduct($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addProduct(new FHIRConceptMapDependsOn([FHIRConceptMapDependsOn::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addProduct(new FHIRConceptMapDependsOn(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addProduct(new FHIRConceptMapDependsOn($v));
                     }
                 }
-            } elseif ($data[self::FIELD_PRODUCT] instanceof FHIRConceptMapDependsOn) {
+            } else if ($data[self::FIELD_PRODUCT] instanceof FHIRConceptMapDependsOn) {
                 $this->addProduct($data[self::FIELD_PRODUCT]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_PRODUCT])) {
-                $this->addProduct(new FHIRConceptMapDependsOn([FHIRConceptMapDependsOn::FIELD_VALUE => $data[self::FIELD_PRODUCT]] + $ext));
             } else {
                 $this->addProduct(new FHIRConceptMapDependsOn($data[self::FIELD_PRODUCT]));
             }
@@ -320,30 +302,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -354,7 +312,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         }
         return "<ConceptMapTarget{$xmlns}></ConceptMapTarget>";
     }
-
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -634,6 +591,15 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget $type
      * @param null|int $libxmlOpts
@@ -718,6 +684,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -732,7 +699,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DEPENDS_ON, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDisplay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISPLAY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -747,7 +713,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -758,86 +723,38 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CODE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CODE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CODE] = $v;
+            $a[self::FIELD_CODE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CODE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getComment())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_COMMENT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_COMMENT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_COMMENT] = $v;
+            $a[self::FIELD_COMMENT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_COMMENT_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getDependsOn())) {
-            $a[self::FIELD_DEPENDS_ON] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_DEPENDS_ON][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_DEPENDS_ON_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_DEPENDS_ON_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_DEPENDS_ON][] = $v;
-                }
-            }
+            $a[self::FIELD_DEPENDS_ON] = $vs;
         }
         if (null !== ($v = $this->getDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DISPLAY] = $v;
+            $a[self::FIELD_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DISPLAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getEquivalence())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EQUIVALENCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EQUIVALENCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EQUIVALENCE] = $v;
+            $a[self::FIELD_EQUIVALENCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_EQUIVALENCE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getProduct())) {
-            $a[self::FIELD_PRODUCT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PRODUCT][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PRODUCT_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PRODUCT_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_PRODUCT][] = $v;
-                }
-            }
+            $a[self::FIELD_PRODUCT] = $vs;
         }
         return $a;
     }

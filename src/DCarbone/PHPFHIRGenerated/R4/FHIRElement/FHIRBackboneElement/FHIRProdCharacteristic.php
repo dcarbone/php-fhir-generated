@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,23 +86,20 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     const FIELD_COLOR = 'color';
     const FIELD_COLOR_EXT = '_color';
     const FIELD_DEPTH = 'depth';
-    const FIELD_DEPTH_EXT = '_depth';
     const FIELD_EXTERNAL_DIAMETER = 'externalDiameter';
-    const FIELD_EXTERNAL_DIAMETER_EXT = '_externalDiameter';
     const FIELD_HEIGHT = 'height';
-    const FIELD_HEIGHT_EXT = '_height';
     const FIELD_IMAGE = 'image';
     const FIELD_IMPRINT = 'imprint';
     const FIELD_IMPRINT_EXT = '_imprint';
     const FIELD_NOMINAL_VOLUME = 'nominalVolume';
-    const FIELD_NOMINAL_VOLUME_EXT = '_nominalVolume';
     const FIELD_SCORING = 'scoring';
     const FIELD_SHAPE = 'shape';
     const FIELD_SHAPE_EXT = '_shape';
     const FIELD_WEIGHT = 'weight';
-    const FIELD_WEIGHT_EXT = '_weight';
     const FIELD_WIDTH = 'width';
-    const FIELD_WIDTH_EXT = '_width';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -260,8 +257,11 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      */
     protected $width = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ProdCharacteristic
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRProdCharacteristic Constructor
@@ -309,49 +309,22 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DEPTH])) {
-            $ext = (isset($data[self::FIELD_DEPTH_EXT]) && is_array($data[self::FIELD_DEPTH_EXT]))
-                ? $data[self::FIELD_DEPTH_EXT]
-                : null;
             if ($data[self::FIELD_DEPTH] instanceof FHIRQuantity) {
                 $this->setDepth($data[self::FIELD_DEPTH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DEPTH])) {
-                    $this->setDepth(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DEPTH]] + $ext));
-                } else if (is_array($data[self::FIELD_DEPTH])) {
-                    $this->setDepth(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DEPTH])));
-                }
             } else {
                 $this->setDepth(new FHIRQuantity($data[self::FIELD_DEPTH]));
             }
         }
         if (isset($data[self::FIELD_EXTERNAL_DIAMETER])) {
-            $ext = (isset($data[self::FIELD_EXTERNAL_DIAMETER_EXT]) && is_array($data[self::FIELD_EXTERNAL_DIAMETER_EXT]))
-                ? $data[self::FIELD_EXTERNAL_DIAMETER_EXT]
-                : null;
             if ($data[self::FIELD_EXTERNAL_DIAMETER] instanceof FHIRQuantity) {
                 $this->setExternalDiameter($data[self::FIELD_EXTERNAL_DIAMETER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXTERNAL_DIAMETER])) {
-                    $this->setExternalDiameter(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_EXTERNAL_DIAMETER]] + $ext));
-                } else if (is_array($data[self::FIELD_EXTERNAL_DIAMETER])) {
-                    $this->setExternalDiameter(new FHIRQuantity(array_merge($ext, $data[self::FIELD_EXTERNAL_DIAMETER])));
-                }
             } else {
                 $this->setExternalDiameter(new FHIRQuantity($data[self::FIELD_EXTERNAL_DIAMETER]));
             }
         }
         if (isset($data[self::FIELD_HEIGHT])) {
-            $ext = (isset($data[self::FIELD_HEIGHT_EXT]) && is_array($data[self::FIELD_HEIGHT_EXT]))
-                ? $data[self::FIELD_HEIGHT_EXT]
-                : null;
             if ($data[self::FIELD_HEIGHT] instanceof FHIRQuantity) {
                 $this->setHeight($data[self::FIELD_HEIGHT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_HEIGHT])) {
-                    $this->setHeight(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HEIGHT]] + $ext));
-                } else if (is_array($data[self::FIELD_HEIGHT])) {
-                    $this->setHeight(new FHIRQuantity(array_merge($ext, $data[self::FIELD_HEIGHT])));
-                }
             } else {
                 $this->setHeight(new FHIRQuantity($data[self::FIELD_HEIGHT]));
             }
@@ -404,17 +377,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_NOMINAL_VOLUME])) {
-            $ext = (isset($data[self::FIELD_NOMINAL_VOLUME_EXT]) && is_array($data[self::FIELD_NOMINAL_VOLUME_EXT]))
-                ? $data[self::FIELD_NOMINAL_VOLUME_EXT]
-                : null;
             if ($data[self::FIELD_NOMINAL_VOLUME] instanceof FHIRQuantity) {
                 $this->setNominalVolume($data[self::FIELD_NOMINAL_VOLUME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NOMINAL_VOLUME])) {
-                    $this->setNominalVolume(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_NOMINAL_VOLUME]] + $ext));
-                } else if (is_array($data[self::FIELD_NOMINAL_VOLUME])) {
-                    $this->setNominalVolume(new FHIRQuantity(array_merge($ext, $data[self::FIELD_NOMINAL_VOLUME])));
-                }
             } else {
                 $this->setNominalVolume(new FHIRQuantity($data[self::FIELD_NOMINAL_VOLUME]));
             }
@@ -443,33 +407,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_WEIGHT])) {
-            $ext = (isset($data[self::FIELD_WEIGHT_EXT]) && is_array($data[self::FIELD_WEIGHT_EXT]))
-                ? $data[self::FIELD_WEIGHT_EXT]
-                : null;
             if ($data[self::FIELD_WEIGHT] instanceof FHIRQuantity) {
                 $this->setWeight($data[self::FIELD_WEIGHT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WEIGHT])) {
-                    $this->setWeight(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_WEIGHT]] + $ext));
-                } else if (is_array($data[self::FIELD_WEIGHT])) {
-                    $this->setWeight(new FHIRQuantity(array_merge($ext, $data[self::FIELD_WEIGHT])));
-                }
             } else {
                 $this->setWeight(new FHIRQuantity($data[self::FIELD_WEIGHT]));
             }
         }
         if (isset($data[self::FIELD_WIDTH])) {
-            $ext = (isset($data[self::FIELD_WIDTH_EXT]) && is_array($data[self::FIELD_WIDTH_EXT]))
-                ? $data[self::FIELD_WIDTH_EXT]
-                : null;
             if ($data[self::FIELD_WIDTH] instanceof FHIRQuantity) {
                 $this->setWidth($data[self::FIELD_WIDTH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WIDTH])) {
-                    $this->setWidth(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_WIDTH]] + $ext));
-                } else if (is_array($data[self::FIELD_WIDTH])) {
-                    $this->setWidth(new FHIRQuantity(array_merge($ext, $data[self::FIELD_WIDTH])));
-                }
             } else {
                 $this->setWidth(new FHIRQuantity($data[self::FIELD_WIDTH]));
             }
@@ -485,30 +431,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -519,7 +441,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
         return "<ProdCharacteristic{$xmlns}></ProdCharacteristic>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -1026,6 +947,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $type
      * @param null|int $libxmlOpts
@@ -1127,6 +1057,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getColor())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1135,7 +1066,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDepth())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEPTH, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1153,7 +1083,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getImprint())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1162,7 +1091,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IMPRINT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getNominalVolume())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NOMINAL_VOLUME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1193,51 +1121,23 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_COLOR][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_COLOR_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_COLOR_EXT][] = null;
-                    }
+                $a[self::FIELD_COLOR][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_COLOR_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_COLOR][] = $v;
+                    $a[self::FIELD_COLOR_EXT][] = null;
                 }
             }
         }
         if (null !== ($v = $this->getDepth())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DEPTH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DEPTH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DEPTH] = $v;
-            }
+            $a[self::FIELD_DEPTH] = $v;
         }
         if (null !== ($v = $this->getExternalDiameter())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EXTERNAL_DIAMETER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EXTERNAL_DIAMETER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EXTERNAL_DIAMETER] = $v;
-            }
+            $a[self::FIELD_EXTERNAL_DIAMETER] = $v;
         }
         if (null !== ($v = $this->getHeight())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_HEIGHT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_HEIGHT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_HEIGHT] = $v;
-            }
+            $a[self::FIELD_HEIGHT] = $v;
         }
         if ([] !== ($vs = $this->getImage())) {
             $a[self::FIELD_IMAGE] = $vs;
@@ -1248,65 +1148,33 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_IMPRINT][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_IMPRINT_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_IMPRINT_EXT][] = null;
-                    }
+                $a[self::FIELD_IMPRINT][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_IMPRINT_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_IMPRINT][] = $v;
+                    $a[self::FIELD_IMPRINT_EXT][] = null;
                 }
             }
         }
         if (null !== ($v = $this->getNominalVolume())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NOMINAL_VOLUME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NOMINAL_VOLUME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NOMINAL_VOLUME] = $v;
-            }
+            $a[self::FIELD_NOMINAL_VOLUME] = $v;
         }
         if (null !== ($v = $this->getScoring())) {
             $a[self::FIELD_SCORING] = $v;
         }
         if (null !== ($v = $this->getShape())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SHAPE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SHAPE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SHAPE] = $v;
+            $a[self::FIELD_SHAPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SHAPE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWeight())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_WEIGHT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_WEIGHT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_WEIGHT] = $v;
-            }
+            $a[self::FIELD_WEIGHT] = $v;
         }
         if (null !== ($v = $this->getWidth())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_WIDTH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_WIDTH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_WIDTH] = $v;
-            }
+            $a[self::FIELD_WIDTH] = $v;
         }
         return $a;
     }

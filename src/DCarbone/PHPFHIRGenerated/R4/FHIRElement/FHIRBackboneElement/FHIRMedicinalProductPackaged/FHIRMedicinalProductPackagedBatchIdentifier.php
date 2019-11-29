@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,9 +78,10 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_BATCH_IDENTIFIER;
     const FIELD_IMMEDIATE_PACKAGING = 'immediatePackaging';
-    const FIELD_IMMEDIATE_PACKAGING_EXT = '_immediatePackaging';
     const FIELD_OUTER_PACKAGING = 'outerPackaging';
-    const FIELD_OUTER_PACKAGING_EXT = '_outerPackaging';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -106,8 +107,11 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      */
     protected $outerPackaging = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicinalProductPackaged.BatchIdentifier
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicinalProductPackagedBatchIdentifier Constructor
@@ -126,33 +130,15 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_IMMEDIATE_PACKAGING])) {
-            $ext = (isset($data[self::FIELD_IMMEDIATE_PACKAGING_EXT]) && is_array($data[self::FIELD_IMMEDIATE_PACKAGING_EXT]))
-                ? $data[self::FIELD_IMMEDIATE_PACKAGING_EXT]
-                : null;
             if ($data[self::FIELD_IMMEDIATE_PACKAGING] instanceof FHIRIdentifier) {
                 $this->setImmediatePackaging($data[self::FIELD_IMMEDIATE_PACKAGING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_IMMEDIATE_PACKAGING])) {
-                    $this->setImmediatePackaging(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IMMEDIATE_PACKAGING]] + $ext));
-                } else if (is_array($data[self::FIELD_IMMEDIATE_PACKAGING])) {
-                    $this->setImmediatePackaging(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_IMMEDIATE_PACKAGING])));
-                }
             } else {
                 $this->setImmediatePackaging(new FHIRIdentifier($data[self::FIELD_IMMEDIATE_PACKAGING]));
             }
         }
         if (isset($data[self::FIELD_OUTER_PACKAGING])) {
-            $ext = (isset($data[self::FIELD_OUTER_PACKAGING_EXT]) && is_array($data[self::FIELD_OUTER_PACKAGING_EXT]))
-                ? $data[self::FIELD_OUTER_PACKAGING_EXT]
-                : null;
             if ($data[self::FIELD_OUTER_PACKAGING] instanceof FHIRIdentifier) {
                 $this->setOuterPackaging($data[self::FIELD_OUTER_PACKAGING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OUTER_PACKAGING])) {
-                    $this->setOuterPackaging(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_OUTER_PACKAGING]] + $ext));
-                } else if (is_array($data[self::FIELD_OUTER_PACKAGING])) {
-                    $this->setOuterPackaging(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_OUTER_PACKAGING])));
-                }
             } else {
                 $this->setOuterPackaging(new FHIRIdentifier($data[self::FIELD_OUTER_PACKAGING]));
             }
@@ -168,30 +154,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -202,7 +164,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         }
         return "<MedicinalProductPackagedBatchIdentifier{$xmlns}></MedicinalProductPackagedBatchIdentifier>";
     }
-
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -269,6 +230,15 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $type
      * @param null|int $libxmlOpts
@@ -328,6 +298,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getImmediatePackaging())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IMMEDIATE_PACKAGING, null, $v->_getFHIRXMLNamespace()));
         }
@@ -344,26 +315,10 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getImmediatePackaging())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_IMMEDIATE_PACKAGING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_IMMEDIATE_PACKAGING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_IMMEDIATE_PACKAGING] = $v;
-            }
+            $a[self::FIELD_IMMEDIATE_PACKAGING] = $v;
         }
         if (null !== ($v = $this->getOuterPackaging())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OUTER_PACKAGING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OUTER_PACKAGING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OUTER_PACKAGING] = $v;
-            }
+            $a[self::FIELD_OUTER_PACKAGING] = $v;
         }
         return $a;
     }

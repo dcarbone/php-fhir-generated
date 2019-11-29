@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,9 @@ class FHIRElementDefinitionType extends FHIRElement
     const FIELD_VERSIONING = 'versioning';
     const FIELD_VERSIONING_EXT = '_versioning';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * How resource references can be aggregated.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -162,8 +165,11 @@ class FHIRElementDefinitionType extends FHIRElement
      */
     protected $versioning = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ElementDefinition.Type
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRElementDefinitionType Constructor
@@ -285,30 +291,6 @@ class FHIRElementDefinitionType extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -319,7 +301,6 @@ class FHIRElementDefinitionType extends FHIRElement
         }
         return "<ElementDefinitionType{$xmlns}></ElementDefinitionType>";
     }
-
 
     /**
      * How resource references can be aggregated.
@@ -553,6 +534,15 @@ class FHIRElementDefinitionType extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType $type
      * @param null|int $libxmlOpts
@@ -668,61 +658,41 @@ class FHIRElementDefinitionType extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_AGGREGATION][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_AGGREGATION_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_AGGREGATION_EXT][] = null;
-                    }
+                $a[self::FIELD_AGGREGATION][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_AGGREGATION_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_AGGREGATION][] = $v;
+                    $a[self::FIELD_AGGREGATION_EXT][] = null;
                 }
             }
         }
         if (null !== ($v = $this->getCode())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CODE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CODE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CODE] = $v;
+            $a[self::FIELD_CODE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CODE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProfile())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PROFILE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PROFILE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PROFILE] = $v;
+            $a[self::FIELD_PROFILE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PROFILE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTargetProfile())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TARGET_PROFILE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TARGET_PROFILE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TARGET_PROFILE] = $v;
+            $a[self::FIELD_TARGET_PROFILE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TARGET_PROFILE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getVersioning())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_VERSIONING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_VERSIONING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_VERSIONING] = $v;
+            $a[self::FIELD_VERSIONING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_VERSIONING_EXT] = $enc;
             }
         }
         return $a;

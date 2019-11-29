@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,7 +62,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\STU3\FHIRAdverseEventCategoryList;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRAdverseEventCategoryList;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
@@ -79,14 +79,21 @@ class FHIRAdverseEventCategory extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_CATEGORY;
     const FIELD_VALUE = 'value';
-
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRAdverseEventCategoryList
-     */
-    protected $value = null;
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRAdverseEventCategoryList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type AdverseEventCategory
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRAdverseEventCategory Constructor
@@ -122,30 +129,6 @@ class FHIRAdverseEventCategory extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -157,9 +140,8 @@ class FHIRAdverseEventCategory extends FHIRElement
         return "<AdverseEventCategory{$xmlns}></AdverseEventCategory>";
     }
 
-
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRAdverseEventCategoryList
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRAdverseEventCategoryList
      */
     public function getValue()
     {
@@ -167,7 +149,7 @@ class FHIRAdverseEventCategory extends FHIRElement
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRAdverseEventCategoryList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRAdverseEventCategoryList $value
      * @return static
      */
     public function setValue($value = null)
@@ -182,6 +164,15 @@ class FHIRAdverseEventCategory extends FHIRElement
         }
         $this->value = new FHIRAdverseEventCategoryList($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**

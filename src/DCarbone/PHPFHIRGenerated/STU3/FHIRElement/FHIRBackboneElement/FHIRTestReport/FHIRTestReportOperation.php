@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRTestReportOperation extends FHIRBackboneElement
     const FIELD_RESULT = 'result';
     const FIELD_RESULT_EXT = '_result';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -124,8 +127,11 @@ class FHIRTestReportOperation extends FHIRBackboneElement
      */
     protected $result = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestReport.Operation
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestReportOperation Constructor
@@ -202,30 +208,6 @@ class FHIRTestReportOperation extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -236,7 +218,6 @@ class FHIRTestReportOperation extends FHIRBackboneElement
         }
         return "<TestReportOperation{$xmlns}></TestReportOperation>";
     }
-
 
     /**
      * String of characters used to identify a name or a resource
@@ -355,6 +336,15 @@ class FHIRTestReportOperation extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation $type
      * @param null|int $libxmlOpts
@@ -443,36 +433,24 @@ class FHIRTestReportOperation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDetail())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DETAIL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DETAIL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DETAIL] = $v;
+            $a[self::FIELD_DETAIL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DETAIL_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMessage())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MESSAGE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MESSAGE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MESSAGE] = $v;
+            $a[self::FIELD_MESSAGE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_MESSAGE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getResult())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RESULT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RESULT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RESULT] = $v;
+            $a[self::FIELD_RESULT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RESULT_EXT] = $enc;
             }
         }
         return $a;

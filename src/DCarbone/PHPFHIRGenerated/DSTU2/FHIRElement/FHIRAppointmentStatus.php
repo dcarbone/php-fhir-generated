@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,8 +62,8 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\DSTU2\FHIRAppointmentStatusList;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAppointmentStatusList;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -79,14 +79,21 @@ class FHIRAppointmentStatus extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_APPOINTMENT_STATUS;
     const FIELD_VALUE = 'value';
-
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAppointmentStatusList
-     */
-    protected $value = null;
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAppointmentStatusList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type AppointmentStatus
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRAppointmentStatus Constructor
@@ -122,30 +129,6 @@ class FHIRAppointmentStatus extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -157,9 +140,8 @@ class FHIRAppointmentStatus extends FHIRElement
         return "<AppointmentStatus{$xmlns}></AppointmentStatus>";
     }
 
-
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAppointmentStatusList
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAppointmentStatusList
      */
     public function getValue()
     {
@@ -167,7 +149,7 @@ class FHIRAppointmentStatus extends FHIRElement
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAppointmentStatusList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAppointmentStatusList $value
      * @return static
      */
     public function setValue($value = null)
@@ -182,6 +164,15 @@ class FHIRAppointmentStatus extends FHIRElement
         }
         $this->value = new FHIRAppointmentStatusList($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -243,7 +234,8 @@ class FHIRAppointmentStatus extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        parent::xmlSerialize($sxe);        if (null !== ($v = $this->getValue())) {
+        parent::xmlSerialize($sxe);
+        if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;

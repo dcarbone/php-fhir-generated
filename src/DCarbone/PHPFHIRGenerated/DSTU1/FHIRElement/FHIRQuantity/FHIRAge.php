@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,7 +57,13 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantityCompararator;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -69,8 +75,15 @@ class FHIRAge extends FHIRQuantity
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_AGE;
+
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * Validation map for fields in type Age
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRAge Constructor
@@ -79,10 +92,6 @@ class FHIRAge extends FHIRQuantity
     public function __construct($data = null)
     {
         if (null === $data || [] === $data) {
-            return;
-        }
-        if (is_scalar($data)) {
-            parent::__construct($data);
             return;
         }
         if (!is_array($data)) {
@@ -103,30 +112,6 @@ class FHIRAge extends FHIRQuantity
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -138,6 +123,15 @@ class FHIRAge extends FHIRQuantity
         return "<Age{$xmlns}></Age>";
     }
 
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
 
     /**
      * @param \SimpleXMLElement|string|null $sxe
@@ -177,6 +171,8 @@ class FHIRAge extends FHIRQuantity
                 $type->_xmlns = $ns;
             }
         }
+        $attributes = $sxe->attributes();
+        $children = $sxe->children();
         return $type;
     }
 
@@ -191,6 +187,7 @@ class FHIRAge extends FHIRQuantity
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         return $sxe;
     }
 

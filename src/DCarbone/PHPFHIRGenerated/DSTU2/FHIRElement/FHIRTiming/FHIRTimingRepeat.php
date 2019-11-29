@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,6 @@ class FHIRTimingRepeat extends FHIRElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT;
     const FIELD_BOUNDS_PERIOD = 'boundsPeriod';
     const FIELD_BOUNDS_QUANTITY = 'boundsQuantity';
-    const FIELD_BOUNDS_QUANTITY_EXT = '_boundsQuantity';
     const FIELD_BOUNDS_RANGE = 'boundsRange';
     const FIELD_COUNT = 'count';
     const FIELD_COUNT_EXT = '_count';
@@ -112,6 +111,9 @@ class FHIRTimingRepeat extends FHIRElement
     const FIELD_PERIOD_UNITS_EXT = '_periodUnits';
     const FIELD_WHEN = 'when';
     const FIELD_WHEN_EXT = '_when';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -261,8 +263,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     protected $when = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Timing.Repeat
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTimingRepeat Constructor
@@ -288,17 +293,8 @@ class FHIRTimingRepeat extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_BOUNDS_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_BOUNDS_QUANTITY_EXT]) && is_array($data[self::FIELD_BOUNDS_QUANTITY_EXT]))
-                ? $data[self::FIELD_BOUNDS_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_BOUNDS_QUANTITY] instanceof FHIRDuration) {
                 $this->setBoundsQuantity($data[self::FIELD_BOUNDS_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_BOUNDS_QUANTITY])) {
-                    $this->setBoundsQuantity(new FHIRDuration([FHIRDuration::FIELD_VALUE => $data[self::FIELD_BOUNDS_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_BOUNDS_QUANTITY])) {
-                    $this->setBoundsQuantity(new FHIRDuration(array_merge($ext, $data[self::FIELD_BOUNDS_QUANTITY])));
-                }
             } else {
                 $this->setBoundsQuantity(new FHIRDuration($data[self::FIELD_BOUNDS_QUANTITY]));
             }
@@ -481,30 +477,6 @@ class FHIRTimingRepeat extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -515,7 +487,6 @@ class FHIRTimingRepeat extends FHIRElement
         }
         return "<TimingRepeat{$xmlns}></TimingRepeat>";
     }
-
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -974,6 +945,15 @@ class FHIRTimingRepeat extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming\FHIRTimingRepeat $type
      * @param null|int $libxmlOpts
@@ -1087,6 +1067,7 @@ class FHIRTimingRepeat extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getBoundsPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BOUNDS_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1139,127 +1120,79 @@ class FHIRTimingRepeat extends FHIRElement
             $a[self::FIELD_BOUNDS_PERIOD] = $v;
         }
         if (null !== ($v = $this->getBoundsQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BOUNDS_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BOUNDS_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BOUNDS_QUANTITY] = $v;
-            }
+            $a[self::FIELD_BOUNDS_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getBoundsRange())) {
             $a[self::FIELD_BOUNDS_RANGE] = $v;
         }
         if (null !== ($v = $this->getCount())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_COUNT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_COUNT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_COUNT] = $v;
+            $a[self::FIELD_COUNT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_COUNT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DURATION] = $v;
+            $a[self::FIELD_DURATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DURATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDurationMax())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DURATION_MAX] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DURATION_MAX_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DURATION_MAX] = $v;
+            $a[self::FIELD_DURATION_MAX] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DURATION_MAX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDurationUnits())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DURATION_UNITS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DURATION_UNITS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DURATION_UNITS] = $v;
+            $a[self::FIELD_DURATION_UNITS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DURATION_UNITS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getFrequency())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_FREQUENCY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_FREQUENCY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_FREQUENCY] = $v;
+            $a[self::FIELD_FREQUENCY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_FREQUENCY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getFrequencyMax())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_FREQUENCY_MAX] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_FREQUENCY_MAX_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_FREQUENCY_MAX] = $v;
+            $a[self::FIELD_FREQUENCY_MAX] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_FREQUENCY_MAX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PERIOD] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PERIOD_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PERIOD] = $v;
+            $a[self::FIELD_PERIOD] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PERIOD_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriodMax())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PERIOD_MAX] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PERIOD_MAX_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PERIOD_MAX] = $v;
+            $a[self::FIELD_PERIOD_MAX] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PERIOD_MAX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriodUnits())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PERIOD_UNITS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PERIOD_UNITS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PERIOD_UNITS] = $v;
+            $a[self::FIELD_PERIOD_UNITS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PERIOD_UNITS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhen())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_WHEN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_WHEN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_WHEN] = $v;
+            $a[self::FIELD_WHEN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_WHEN_EXT] = $enc;
             }
         }
         return $a;

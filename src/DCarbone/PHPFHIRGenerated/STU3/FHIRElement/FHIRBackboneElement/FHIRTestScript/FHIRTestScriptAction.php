@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,8 +78,10 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION;
     const FIELD_ASSERT = 'assert';
-    const FIELD_ASSERT_EXT = '_assert';
     const FIELD_OPERATION = 'operation';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -102,8 +104,11 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      */
     protected $operation = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestScript.Action
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestScriptAction Constructor
@@ -122,17 +127,8 @@ class FHIRTestScriptAction extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_ASSERT])) {
-            $ext = (isset($data[self::FIELD_ASSERT_EXT]) && is_array($data[self::FIELD_ASSERT_EXT]))
-                ? $data[self::FIELD_ASSERT_EXT]
-                : null;
             if ($data[self::FIELD_ASSERT] instanceof FHIRTestScriptAssert) {
                 $this->setAssert($data[self::FIELD_ASSERT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ASSERT])) {
-                    $this->setAssert(new FHIRTestScriptAssert([FHIRTestScriptAssert::FIELD_VALUE => $data[self::FIELD_ASSERT]] + $ext));
-                } else if (is_array($data[self::FIELD_ASSERT])) {
-                    $this->setAssert(new FHIRTestScriptAssert(array_merge($ext, $data[self::FIELD_ASSERT])));
-                }
             } else {
                 $this->setAssert(new FHIRTestScriptAssert($data[self::FIELD_ASSERT]));
             }
@@ -155,30 +151,6 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -189,7 +161,6 @@ class FHIRTestScriptAction extends FHIRBackboneElement
         }
         return "<TestScriptAction{$xmlns}></TestScriptAction>";
     }
-
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -247,6 +218,15 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     {
         $this->operation = $operation;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -326,15 +306,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAssert())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ASSERT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ASSERT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ASSERT] = $v;
-            }
+            $a[self::FIELD_ASSERT] = $v;
         }
         if (null !== ($v = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = $v;

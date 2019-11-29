@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     const FIELD_INITIAL_INTEGER = 'initialInteger';
     const FIELD_INITIAL_INTEGER_EXT = '_initialInteger';
     const FIELD_INITIAL_QUANTITY = 'initialQuantity';
-    const FIELD_INITIAL_QUANTITY_EXT = '_initialQuantity';
     const FIELD_INITIAL_REFERENCE = 'initialReference';
     const FIELD_INITIAL_STRING = 'initialString';
     const FIELD_INITIAL_STRING_EXT = '_initialString';
@@ -135,6 +134,9 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     const FIELD_TEXT_EXT = '_text';
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference to a code defined by a terminology system.
@@ -456,8 +458,11 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Questionnaire.Item
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRQuestionnaireItem Constructor
@@ -622,17 +627,8 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_INITIAL_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_INITIAL_QUANTITY_EXT]) && is_array($data[self::FIELD_INITIAL_QUANTITY_EXT]))
-                ? $data[self::FIELD_INITIAL_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_INITIAL_QUANTITY] instanceof FHIRQuantity) {
                 $this->setInitialQuantity($data[self::FIELD_INITIAL_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INITIAL_QUANTITY])) {
-                    $this->setInitialQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_INITIAL_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_INITIAL_QUANTITY])) {
-                    $this->setInitialQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_INITIAL_QUANTITY])));
-                }
             } else {
                 $this->setInitialQuantity(new FHIRQuantity($data[self::FIELD_INITIAL_QUANTITY]));
             }
@@ -874,30 +870,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -908,7 +880,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         }
         return "<QuestionnaireItem{$xmlns}></QuestionnaireItem>";
     }
-
 
     /**
      * A reference to a code defined by a terminology system.
@@ -1993,6 +1964,15 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $type
      * @param null|int $libxmlOpts
@@ -2292,14 +2272,10 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             $a[self::FIELD_CODE] = $vs;
         }
         if (null !== ($v = $this->getDefinition())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DEFINITION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DEFINITION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DEFINITION] = $v;
+            $a[self::FIELD_DEFINITION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DEFINITION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getEnableWhen())) {
@@ -2309,133 +2285,85 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             $a[self::FIELD_INITIAL_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getInitialBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_BOOLEAN] = $v;
+            $a[self::FIELD_INITIAL_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialCoding())) {
             $a[self::FIELD_INITIAL_CODING] = $v;
         }
         if (null !== ($v = $this->getInitialDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_DATE] = $v;
+            $a[self::FIELD_INITIAL_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialDateTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_DATE_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_DATE_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_DATE_TIME] = $v;
+            $a[self::FIELD_INITIAL_DATE_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_DATE_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialDecimal())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_DECIMAL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_DECIMAL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_DECIMAL] = $v;
+            $a[self::FIELD_INITIAL_DECIMAL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_DECIMAL_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialInteger())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_INTEGER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_INTEGER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_INTEGER] = $v;
+            $a[self::FIELD_INITIAL_INTEGER] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_INTEGER_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_QUANTITY] = $v;
-            }
+            $a[self::FIELD_INITIAL_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getInitialReference())) {
             $a[self::FIELD_INITIAL_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getInitialString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_STRING] = $v;
+            $a[self::FIELD_INITIAL_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_TIME] = $v;
+            $a[self::FIELD_INITIAL_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getInitialUri())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INITIAL_URI] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INITIAL_URI_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INITIAL_URI] = $v;
+            $a[self::FIELD_INITIAL_URI] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INITIAL_URI_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getItem())) {
             $a[self::FIELD_ITEM] = $vs;
         }
         if (null !== ($v = $this->getLinkId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LINK_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LINK_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LINK_ID] = $v;
+            $a[self::FIELD_LINK_ID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LINK_ID_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMaxLength())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_MAX_LENGTH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MAX_LENGTH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_MAX_LENGTH] = $v;
+            $a[self::FIELD_MAX_LENGTH] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_MAX_LENGTH_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getOption())) {
@@ -2445,69 +2373,45 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
             $a[self::FIELD_OPTIONS] = $v;
         }
         if (null !== ($v = $this->getPrefix())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PREFIX] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PREFIX_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PREFIX] = $v;
+            $a[self::FIELD_PREFIX] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PREFIX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getReadOnly())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_READ_ONLY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_READ_ONLY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_READ_ONLY] = $v;
+            $a[self::FIELD_READ_ONLY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_READ_ONLY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRepeats())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REPEATS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REPEATS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REPEATS] = $v;
+            $a[self::FIELD_REPEATS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REPEATS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRequired())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REQUIRED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REQUIRED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REQUIRED] = $v;
+            $a[self::FIELD_REQUIRED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REQUIRED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getText())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TEXT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TEXT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TEXT] = $v;
+            $a[self::FIELD_TEXT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TEXT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TYPE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TYPE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TYPE_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConce
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     const FIELD_TARGET_VERSION_EXT = '_targetVersion';
     const FIELD_UNMAPPED = 'unmapped';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A statement of relationships from one set of concepts to one or more other
      * concepts - either concepts in code systems, or data element/data element
@@ -164,8 +167,15 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      */
     protected $unmapped = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ConceptMap.Group
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_ELEMENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /**
      * FHIRConceptMapGroup Constructor
@@ -283,30 +293,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -317,7 +303,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         }
         return "<ConceptMapGroup{$xmlns}></ConceptMapGroup>";
     }
-
 
     /**
      * A statement of relationships from one set of concepts to one or more other
@@ -573,6 +558,15 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup $type
      * @param null|int $libxmlOpts
@@ -658,6 +652,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getElement())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -666,7 +661,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_ELEMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -695,47 +689,31 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             $a[self::FIELD_ELEMENT] = $vs;
         }
         if (null !== ($v = $this->getSource())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SOURCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SOURCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SOURCE] = $v;
+            $a[self::FIELD_SOURCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SOURCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSourceVersion())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SOURCE_VERSION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SOURCE_VERSION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SOURCE_VERSION] = $v;
+            $a[self::FIELD_SOURCE_VERSION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SOURCE_VERSION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTarget())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TARGET] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TARGET_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TARGET] = $v;
+            $a[self::FIELD_TARGET] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TARGET_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTargetVersion())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TARGET_VERSION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TARGET_VERSION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TARGET_VERSION] = $v;
+            $a[self::FIELD_TARGET_VERSION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TARGET_VERSION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getUnmapped())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRSequenceVariant extends FHIRBackboneElement
     const FIELD_START_EXT = '_start';
     const FIELD_VARIANT_POINTER = 'variantPointer';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -173,8 +176,11 @@ class FHIRSequenceVariant extends FHIRBackboneElement
      */
     protected $variantPointer = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Sequence.Variant
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSequenceVariant Constructor
@@ -290,30 +296,6 @@ class FHIRSequenceVariant extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -324,7 +306,6 @@ class FHIRSequenceVariant extends FHIRBackboneElement
         }
         return "<SequenceVariant{$xmlns}></SequenceVariant>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -579,6 +560,15 @@ class FHIRSequenceVariant extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant $type
      * @param null|int $libxmlOpts
@@ -694,58 +684,38 @@ class FHIRSequenceVariant extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCigar())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CIGAR] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CIGAR_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CIGAR] = $v;
+            $a[self::FIELD_CIGAR] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CIGAR_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getEnd())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_END] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_END_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_END] = $v;
+            $a[self::FIELD_END] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_END_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getObservedAllele())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OBSERVED_ALLELE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OBSERVED_ALLELE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OBSERVED_ALLELE] = $v;
+            $a[self::FIELD_OBSERVED_ALLELE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_OBSERVED_ALLELE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getReferenceAllele())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REFERENCE_ALLELE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REFERENCE_ALLELE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REFERENCE_ALLELE] = $v;
+            $a[self::FIELD_REFERENCE_ALLELE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REFERENCE_ALLELE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getStart())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_START] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_START_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_START] = $v;
+            $a[self::FIELD_START] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_START_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getVariantPointer())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,6 +108,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
     const FIELD_VALIDATION_PROCESS = 'validationProcess';
     const FIELD_VALIDATION_TYPE = 'validationType';
     const FIELD_VALIDATOR = 'validator';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Describes validation requirements, source(s), status and dates for one or more
@@ -277,8 +280,11 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      */
     protected $validator = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type VerificationResult
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRVerificationResult Constructor
@@ -507,30 +513,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -541,7 +523,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         }
         return "<VerificationResult{$xmlns}></VerificationResult>";
     }
-
     /**
      * @return string
      */
@@ -1162,6 +1143,15 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRVerificationResult $type
      * @param null|int $libxmlOpts
@@ -1279,6 +1269,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAttestation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1305,7 +1296,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PRIMARY_SOURCE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getStatus())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1320,7 +1310,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getTargetLocation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1329,7 +1318,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_LOCATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getValidationProcess())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1338,7 +1326,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_PROCESS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getValidationType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1350,7 +1337,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATOR, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -1370,53 +1356,37 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $a[self::FIELD_FREQUENCY] = $v;
         }
         if (null !== ($v = $this->getLastPerformed())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LAST_PERFORMED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LAST_PERFORMED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LAST_PERFORMED] = $v;
+            $a[self::FIELD_LAST_PERFORMED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LAST_PERFORMED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNeed())) {
             $a[self::FIELD_NEED] = $v;
         }
         if (null !== ($v = $this->getNextScheduled())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NEXT_SCHEDULED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NEXT_SCHEDULED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NEXT_SCHEDULED] = $v;
+            $a[self::FIELD_NEXT_SCHEDULED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NEXT_SCHEDULED_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getPrimarySource())) {
             $a[self::FIELD_PRIMARY_SOURCE] = $vs;
         }
         if (null !== ($v = $this->getStatus())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STATUS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STATUS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getStatusDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STATUS_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STATUS_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STATUS_DATE] = $v;
+            $a[self::FIELD_STATUS_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STATUS_DATE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getTarget())) {
@@ -1428,16 +1398,12 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_TARGET_LOCATION][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_TARGET_LOCATION_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_TARGET_LOCATION_EXT][] = null;
-                    }
+                $a[self::FIELD_TARGET_LOCATION][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_TARGET_LOCATION_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_TARGET_LOCATION][] = $v;
+                    $a[self::FIELD_TARGET_LOCATION_EXT][] = null;
                 }
             }
         }

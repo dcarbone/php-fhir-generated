@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,9 @@ class FHIRDataRequirement extends FHIRElement
     const FIELD_SUBJECT_REFERENCE = 'subjectReference';
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -217,8 +220,11 @@ class FHIRDataRequirement extends FHIRElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type DataRequirement
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDataRequirement Constructor
@@ -405,30 +411,6 @@ class FHIRDataRequirement extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -439,7 +421,6 @@ class FHIRDataRequirement extends FHIRElement
         }
         return "<DataRequirement{$xmlns}></DataRequirement>";
     }
-
 
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -934,6 +915,15 @@ class FHIRDataRequirement extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $type
      * @param null|int $libxmlOpts
@@ -1036,6 +1026,7 @@ class FHIRDataRequirement extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getCodeFilter())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1044,7 +1035,6 @@ class FHIRDataRequirement extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CODE_FILTER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getDateFilter())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1053,7 +1043,6 @@ class FHIRDataRequirement extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_FILTER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getLimit())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LIMIT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1065,7 +1054,6 @@ class FHIRDataRequirement extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MUST_SUPPORT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getProfile())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1074,7 +1062,6 @@ class FHIRDataRequirement extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSort())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1083,7 +1070,6 @@ class FHIRDataRequirement extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SORT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSubjectCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1109,14 +1095,10 @@ class FHIRDataRequirement extends FHIRElement
             $a[self::FIELD_DATE_FILTER] = $vs;
         }
         if (null !== ($v = $this->getLimit())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LIMIT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LIMIT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LIMIT] = $v;
+            $a[self::FIELD_LIMIT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LIMIT_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getMustSupport())) {
@@ -1125,16 +1107,12 @@ class FHIRDataRequirement extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_MUST_SUPPORT][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_MUST_SUPPORT_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_MUST_SUPPORT_EXT][] = null;
-                    }
+                $a[self::FIELD_MUST_SUPPORT][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MUST_SUPPORT_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_MUST_SUPPORT][] = $v;
+                    $a[self::FIELD_MUST_SUPPORT_EXT][] = null;
                 }
             }
         }
@@ -1144,16 +1122,12 @@ class FHIRDataRequirement extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PROFILE][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PROFILE_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PROFILE_EXT][] = null;
-                    }
+                $a[self::FIELD_PROFILE][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PROFILE_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_PROFILE][] = $v;
+                    $a[self::FIELD_PROFILE_EXT][] = null;
                 }
             }
         }
@@ -1167,14 +1141,10 @@ class FHIRDataRequirement extends FHIRElement
             $a[self::FIELD_SUBJECT_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getType())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TYPE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TYPE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TYPE_EXT] = $enc;
             }
         }
         return $a;

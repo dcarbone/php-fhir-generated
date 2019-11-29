@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,9 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
     const FIELD_INDEX_EXT = '_index';
     const FIELD_PROFILE = 'profile';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -106,8 +109,11 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
      */
     protected $profile = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestScript.Origin
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestScriptOrigin Constructor
@@ -159,30 +165,6 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -193,7 +175,6 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
         }
         return "<TestScriptOrigin{$xmlns}></TestScriptOrigin>";
     }
-
 
     /**
      * A whole number
@@ -263,6 +244,15 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
     {
         $this->profile = $profile;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -345,14 +335,10 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIndex())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_INDEX] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_INDEX_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_INDEX] = $v;
+            $a[self::FIELD_INDEX] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_INDEX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProfile())) {

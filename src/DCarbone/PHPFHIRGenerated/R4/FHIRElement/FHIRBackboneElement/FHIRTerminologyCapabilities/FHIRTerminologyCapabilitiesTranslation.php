@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
     const FIELD_NEEDS_MAP = 'needsMap';
     const FIELD_NEEDS_MAP_EXT = '_needsMap';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -92,8 +95,11 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
      */
     protected $needsMap = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TerminologyCapabilities.Translation
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTerminologyCapabilitiesTranslation Constructor
@@ -138,30 +144,6 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -172,7 +154,6 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
         }
         return "<TerminologyCapabilitiesTranslation{$xmlns}></TerminologyCapabilitiesTranslation>";
     }
-
 
     /**
      * Value of "true" or "false"
@@ -208,6 +189,15 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
         }
         $this->needsMap = new FHIRBoolean($needsMap);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -270,6 +260,7 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getNeedsMap())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NEEDS_MAP, null, $v->_getFHIRXMLNamespace()));
         }
@@ -283,14 +274,10 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getNeedsMap())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NEEDS_MAP] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NEEDS_MAP_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NEEDS_MAP] = $v;
+            $a[self::FIELD_NEEDS_MAP] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NEEDS_MAP_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,54 +70,29 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DECIMAL_HYPHEN_PRIMITIVE;
-
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = '';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
-    /** @var null|float */
+    /**
+     * @var null|double
+     */
     protected $value = null;
 
     /**
+     * Validation map for fields in type decimal-primitive
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
+
+    /**
      * FHIRDecimalPrimitive Constructor
-     * @param null| $value
+     * @param null|double $value
      */
     public function __construct($value = null)
     {
         $this->setValue($value);
-    }
-    /**
-     * @param null|float|string $value
-     * @return static
-     */
-    public function setValue($value)
-    {
-        if (null === $value) {
-            $this->value = null;
-        } elseif (is_scalar($value)) {
-            $this->value = floatval($value);
-        } else {
-            throw new \InvalidArgumentException(sprintf('decimal-primitive value must be null, float, or numeric string, %s seen.', gettype($value)));
-        }
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        return is_float($this->getValue());
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -162,6 +137,39 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<decimal_primitive{$xmlns}></decimal_primitive>";
+    }
+
+    /**
+     * @return null|double
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|float|string $value
+     * @return static
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            $this->value = null;
+        } elseif (is_scalar($value)) {
+            $this->value = floatval($value);
+        } else {
+            throw new \InvalidArgumentException(sprintf('decimal-primitive value must be null, float, or numeric string, %s seen.', gettype($value)));
+        }
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -224,12 +232,11 @@ class FHIRDecimalPrimitive implements PHPFHIRTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
-
         return $sxe;
     }
 
     /**
-     * @return null|float
+     * @return null|double
      */
     public function jsonSerialize()
     {

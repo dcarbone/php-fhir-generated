@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_MEMBER_HISTORY;
     const FIELD_AGE_QUANTITY = 'ageQuantity';
-    const FIELD_AGE_QUANTITY_EXT = '_ageQuantity';
     const FIELD_AGE_RANGE = 'ageRange';
     const FIELD_AGE_STRING = 'ageString';
     const FIELD_AGE_STRING_EXT = '_ageString';
@@ -111,14 +110,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     const FIELD_DECEASED_DATE = 'deceasedDate';
     const FIELD_DECEASED_DATE_EXT = '_deceasedDate';
     const FIELD_DECEASED_QUANTITY = 'deceasedQuantity';
-    const FIELD_DECEASED_QUANTITY_EXT = '_deceasedQuantity';
     const FIELD_DECEASED_RANGE = 'deceasedRange';
     const FIELD_DECEASED_STRING = 'deceasedString';
     const FIELD_DECEASED_STRING_EXT = '_deceasedString';
     const FIELD_GENDER = 'gender';
     const FIELD_GENDER_EXT = '_gender';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
     const FIELD_NOTE = 'note';
@@ -126,6 +123,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     const FIELD_RELATIONSHIP = 'relationship';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The actual or approximate age of the relative at the time the family member
@@ -363,8 +363,11 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      */
     protected $status = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type FamilyMemberHistory
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRFamilyMemberHistory Constructor
@@ -383,17 +386,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_AGE_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_AGE_QUANTITY_EXT]) && is_array($data[self::FIELD_AGE_QUANTITY_EXT]))
-                ? $data[self::FIELD_AGE_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_AGE_QUANTITY] instanceof FHIRAge) {
                 $this->setAgeQuantity($data[self::FIELD_AGE_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AGE_QUANTITY])) {
-                    $this->setAgeQuantity(new FHIRAge([FHIRAge::FIELD_VALUE => $data[self::FIELD_AGE_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_AGE_QUANTITY])) {
-                    $this->setAgeQuantity(new FHIRAge(array_merge($ext, $data[self::FIELD_AGE_QUANTITY])));
-                }
             } else {
                 $this->setAgeQuantity(new FHIRAge($data[self::FIELD_AGE_QUANTITY]));
             }
@@ -527,17 +521,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
             }
         }
         if (isset($data[self::FIELD_DECEASED_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_DECEASED_QUANTITY_EXT]) && is_array($data[self::FIELD_DECEASED_QUANTITY_EXT]))
-                ? $data[self::FIELD_DECEASED_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_DECEASED_QUANTITY] instanceof FHIRAge) {
                 $this->setDeceasedQuantity($data[self::FIELD_DECEASED_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DECEASED_QUANTITY])) {
-                    $this->setDeceasedQuantity(new FHIRAge([FHIRAge::FIELD_VALUE => $data[self::FIELD_DECEASED_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_DECEASED_QUANTITY])) {
-                    $this->setDeceasedQuantity(new FHIRAge(array_merge($ext, $data[self::FIELD_DECEASED_QUANTITY])));
-                }
             } else {
                 $this->setDeceasedQuantity(new FHIRAge($data[self::FIELD_DECEASED_QUANTITY]));
             }
@@ -582,30 +567,19 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_IDENTIFIER_EXT]
-                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -674,30 +648,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -708,7 +658,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         }
         return "<FamilyMemberHistory{$xmlns}></FamilyMemberHistory>";
     }
-
     /**
      * @return string
      */
@@ -1480,6 +1429,15 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory $type
      * @param null|int $libxmlOpts
@@ -1624,6 +1582,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAgeQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1650,7 +1609,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1680,7 +1638,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1706,155 +1663,87 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAgeQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AGE_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AGE_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AGE_QUANTITY] = $v;
-            }
+            $a[self::FIELD_AGE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getAgeRange())) {
             $a[self::FIELD_AGE_RANGE] = $v;
         }
         if (null !== ($v = $this->getAgeString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AGE_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AGE_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AGE_STRING] = $v;
+            $a[self::FIELD_AGE_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AGE_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBornDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BORN_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BORN_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BORN_DATE] = $v;
+            $a[self::FIELD_BORN_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BORN_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBornPeriod())) {
             $a[self::FIELD_BORN_PERIOD] = $v;
         }
         if (null !== ($v = $this->getBornString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BORN_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BORN_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BORN_STRING] = $v;
+            $a[self::FIELD_BORN_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BORN_STRING_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getCondition())) {
             $a[self::FIELD_CONDITION] = $vs;
         }
         if (null !== ($v = $this->getDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DATE] = $v;
+            $a[self::FIELD_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDeceasedBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_BOOLEAN] = $v;
+            $a[self::FIELD_DECEASED_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDeceasedDate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_DATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_DATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_DATE] = $v;
+            $a[self::FIELD_DECEASED_DATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECEASED_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDeceasedQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_QUANTITY] = $v;
-            }
+            $a[self::FIELD_DECEASED_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getDeceasedRange())) {
             $a[self::FIELD_DECEASED_RANGE] = $v;
         }
         if (null !== ($v = $this->getDeceasedString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECEASED_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECEASED_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECEASED_STRING] = $v;
+            $a[self::FIELD_DECEASED_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECEASED_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getGender())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_GENDER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_GENDER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_GENDER] = $v;
+            $a[self::FIELD_GENDER] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_GENDER_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_IDENTIFIER][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_IDENTIFIER][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if (null !== ($v = $this->getName())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_NAME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_NAME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_NAME] = $v;
+            $a[self::FIELD_NAME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_NAME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNote())) {
@@ -1867,14 +1756,10 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
             $a[self::FIELD_RELATIONSHIP] = $v;
         }
         if (null !== ($v = $this->getStatus())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_STATUS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_STATUS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_STATUS] = $v;
+            $a[self::FIELD_STATUS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;

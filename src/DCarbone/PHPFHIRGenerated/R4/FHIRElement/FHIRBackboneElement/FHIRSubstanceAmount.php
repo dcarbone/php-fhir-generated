@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT;
     const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
-    const FIELD_AMOUNT_QUANTITY_EXT = '_amountQuantity';
     const FIELD_AMOUNT_RANGE = 'amountRange';
     const FIELD_AMOUNT_STRING = 'amountString';
     const FIELD_AMOUNT_STRING_EXT = '_amountString';
@@ -97,6 +96,9 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     const FIELD_AMOUNT_TEXT_EXT = '_amountText';
     const FIELD_AMOUNT_TYPE = 'amountType';
     const FIELD_REFERENCE_RANGE = 'referenceRange';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -187,8 +189,11 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      */
     protected $referenceRange = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstanceAmount
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstanceAmount Constructor
@@ -207,17 +212,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_AMOUNT_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_AMOUNT_QUANTITY_EXT]) && is_array($data[self::FIELD_AMOUNT_QUANTITY_EXT]))
-                ? $data[self::FIELD_AMOUNT_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_AMOUNT_QUANTITY] instanceof FHIRQuantity) {
                 $this->setAmountQuantity($data[self::FIELD_AMOUNT_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AMOUNT_QUANTITY])) {
-                    $this->setAmountQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_AMOUNT_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_AMOUNT_QUANTITY])) {
-                    $this->setAmountQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_AMOUNT_QUANTITY])));
-                }
             } else {
                 $this->setAmountQuantity(new FHIRQuantity($data[self::FIELD_AMOUNT_QUANTITY]));
             }
@@ -286,30 +282,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -320,7 +292,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         }
         return "<SubstanceAmount{$xmlns}></SubstanceAmount>";
     }
-
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -565,6 +536,15 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
      * @param null|int $libxmlOpts
@@ -642,6 +622,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -670,39 +651,23 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmountQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AMOUNT_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AMOUNT_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AMOUNT_QUANTITY] = $v;
-            }
+            $a[self::FIELD_AMOUNT_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getAmountRange())) {
             $a[self::FIELD_AMOUNT_RANGE] = $v;
         }
         if (null !== ($v = $this->getAmountString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AMOUNT_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AMOUNT_STRING] = $v;
+            $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAmountText())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AMOUNT_TEXT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AMOUNT_TEXT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AMOUNT_TEXT] = $v;
+            $a[self::FIELD_AMOUNT_TEXT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AMOUNT_TEXT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAmountType())) {

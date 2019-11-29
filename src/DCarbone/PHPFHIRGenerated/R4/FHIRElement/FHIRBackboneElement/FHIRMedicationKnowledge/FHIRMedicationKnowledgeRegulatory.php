@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     const FIELD_SCHEDULE = 'schedule';
     const FIELD_SUBSTITUTION = 'substitution';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Information about a medication that is used to support knowledge.
      *
@@ -121,8 +124,11 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      */
     protected $substitution = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicationKnowledge.Regulatory
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicationKnowledgeRegulatory Constructor
@@ -201,30 +207,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -235,7 +217,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
         }
         return "<MedicationKnowledgeRegulatory{$xmlns}></MedicationKnowledgeRegulatory>";
     }
-
 
     /**
      * Information about a medication that is used to support knowledge.
@@ -397,6 +378,15 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $type
      * @param null|int $libxmlOpts
@@ -466,6 +456,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getMaxDispense())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DISPENSE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -480,7 +471,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSubstitution())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -489,7 +479,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTITUTION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 

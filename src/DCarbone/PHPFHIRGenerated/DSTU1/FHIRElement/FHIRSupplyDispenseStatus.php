@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -58,7 +58,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRSupplyDispenseStatusList;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRSupplyDispenseStatusList;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -74,14 +74,21 @@ class FHIRSupplyDispenseStatus extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUPPLY_DISPENSE_STATUS;
     const FIELD_VALUE = 'value';
-
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRSupplyDispenseStatusList
-     */
-    protected $value = null;
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRSupplyDispenseStatusList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type SupplyDispenseStatus
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSupplyDispenseStatus Constructor
@@ -117,30 +124,6 @@ class FHIRSupplyDispenseStatus extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -152,9 +135,8 @@ class FHIRSupplyDispenseStatus extends FHIRElement
         return "<SupplyDispenseStatus{$xmlns}></SupplyDispenseStatus>";
     }
 
-
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRSupplyDispenseStatusList
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRSupplyDispenseStatusList
      */
     public function getValue()
     {
@@ -162,7 +144,7 @@ class FHIRSupplyDispenseStatus extends FHIRElement
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRSupplyDispenseStatusList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRSupplyDispenseStatusList $value
      * @return static
      */
     public function setValue($value = null)
@@ -177,6 +159,15 @@ class FHIRSupplyDispenseStatus extends FHIRElement
         }
         $this->value = new FHIRSupplyDispenseStatusList($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -238,7 +229,8 @@ class FHIRSupplyDispenseStatus extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        parent::xmlSerialize($sxe);        if (null !== ($v = $this->getValue())) {
+        parent::xmlSerialize($sxe);
+        if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     const FIELD_RELATIVE_PATH = 'relativePath';
     const FIELD_RELATIVE_PATH_EXT = '_relativePath';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -139,8 +142,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      */
     protected $relativePath = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ImplementationGuide.Resource1
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRImplementationGuideResource1 Constructor
@@ -224,30 +230,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -258,7 +240,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         }
         return "<ImplementationGuideResource1{$xmlns}></ImplementationGuideResource1>";
     }
-
 
     /**
      * Value of "true" or "false"
@@ -413,6 +394,15 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1 $type
      * @param null|int $libxmlOpts
@@ -487,6 +477,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getExampleBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }
@@ -509,39 +500,27 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExampleBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EXAMPLE_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EXAMPLE_BOOLEAN] = $v;
+            $a[self::FIELD_EXAMPLE_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getExampleCanonical())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EXAMPLE_CANONICAL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EXAMPLE_CANONICAL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EXAMPLE_CANONICAL] = $v;
+            $a[self::FIELD_EXAMPLE_CANONICAL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_EXAMPLE_CANONICAL_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getRelativePath())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RELATIVE_PATH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RELATIVE_PATH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RELATIVE_PATH] = $v;
+            $a[self::FIELD_RELATIVE_PATH] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RELATIVE_PATH_EXT] = $enc;
             }
         }
         return $a;

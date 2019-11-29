@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -61,81 +61,41 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * Class FHIRResourceType
  * @package \DCarbone\PHPFHIRGenerated\DSTU1
  */
-class FHIRResourceType implements PHPFHIRTypeInterface
+class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterface
 {
+    use PHPFHIRCommentContainerTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE;
 
-    const FIELD_VALUE = 'value';
-
-    /** @var string */
-    protected $_xmlns = '';
-
-    /** @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive */
-    protected $value = null;
-
     /**
-     * The list of values allowed by ResourceType
+     * Validation map for fields in type ResourceType
      * @var array
      */
-    private static $valueList = [
-        'Provenance',
-        'Condition',
-        'CarePlan',
-        'Supply',
-        'Device',
-        'Query',
-        'Order',
-        'Organization',
-        'Procedure',
-        'Substance',
-        'DiagnosticReport',
-        'Group',
-        'ValueSet',
-        'Medication',
-        'MessageHeader',
-        'ImmunizationRecommendation',
-        'DocumentManifest',
-        'MedicationDispense',
-        'MedicationPrescription',
-        'MedicationAdministration',
-        'Encounter',
-        'SecurityEvent',
-        'MedicationStatement',
-        'List',
-        'Questionnaire',
-        'Composition',
-        'DeviceObservationReport',
-        'OperationOutcome',
-        'Conformance',
-        'Media',
-        'FamilyHistory',
-        'Other',
-        'Profile',
-        'Location',
-        'Observation',
-        'AllergyIntolerance',
-        'DocumentReference',
-        'Immunization',
-        'RelatedPerson',
-        'Specimen',
-        'OrderResponse',
-        'Alert',
-        'ConceptMap',
-        'Patient',
-        'Practitioner',
-        'AdverseReaction',
-        'ImagingStudy',
-        'DiagnosticOrder',
-    ];
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRResourceType Constructor
-     * @param null|string $value;
+     * @param null|array $data
      */
-    public function __construct($value = null)
+    public function __construct($data = null)
     {
-        $this->setValue($value);
+        if (null === $data || [] === $data) {
+            return;
+        }
+        if (!is_array($data)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRResourceType::_construct - $data expected to be null or array, %s seen',
+                gettype($data)
+            ));
+        }
+        if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+            if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+                $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
+            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+                $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
+            }
+        }
     }
 
     /**
@@ -182,48 +142,13 @@ class FHIRResourceType implements PHPFHIRTypeInterface
         return "<ResourceType{$xmlns}></ResourceType>";
     }
 
-
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive $value;
-     * @return static
+     * @return array
      */
-    public function setValue($value = null)
+    public function _validationErrors()
     {
-        if (null === $value) {
-            $this->value = null;
-            return $this;
-        }
-        if ($value instanceof FHIRStringPrimitive) {
-            $this->value = $value;
-            return $this;
-        }
-        $this->value = new FHIRStringPrimitive($value);
-        return $this;
-    }
-
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * Returns the list of allowed values for this type
-     * @return string[]
-     */
-    public function _getAllowedValueList()
-    {
-        return self::$valueList;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        $v = $this->getValue();
-        return null === $v || in_array((string)$v, self::$valueList, true);
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -263,15 +188,6 @@ class FHIRResourceType implements PHPFHIRTypeInterface
                 $type->_xmlns = $ns;
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        } elseif (isset($children->value)) {
-            $type->setValue((string)$children->value);
-        } elseif ('' !== ($v = (string)$sxe)) {
-            $type->setValue($v);
-        }
         return $type;
     }
 
@@ -285,17 +201,20 @@ class FHIRResourceType implements PHPFHIRTypeInterface
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
 
         return $sxe;
     }
 
     /**
-     * @return null|string
+     * @return array
      */
     public function jsonSerialize()
     {
-        return $this->getValue();
+        $a = [];
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        }
+        return $a;
     }
 
     /**
@@ -303,6 +222,6 @@ class FHIRResourceType implements PHPFHIRTypeInterface
      */
     public function __toString()
     {
-        return (string)$this->getValue();
+        return self::FHIR_TYPE_NAME;
     }
 }

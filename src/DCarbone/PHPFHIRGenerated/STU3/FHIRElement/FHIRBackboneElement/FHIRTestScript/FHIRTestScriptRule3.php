@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,9 +79,11 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_RULE_3;
     const FIELD_PARAM = 'param';
-    const FIELD_PARAM_EXT = '_param';
     const FIELD_RULE_ID = 'ruleId';
     const FIELD_RULE_ID_EXT = '_ruleId';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -107,8 +109,11 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
      */
     protected $ruleId = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestScript.Rule3
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestScriptRule3 Constructor
@@ -127,30 +132,19 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_PARAM])) {
-            $ext = (isset($data[self::FIELD_PARAM_EXT]) && is_array($data[self::FIELD_PARAM_EXT]))
-                ? $data[self::FIELD_PARAM_EXT]
-                : null;
             if (is_array($data[self::FIELD_PARAM])) {
-                foreach($data[self::FIELD_PARAM] as $i => $v) {
+                foreach($data[self::FIELD_PARAM] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRTestScriptParam3) {
                         $this->addParam($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addParam(new FHIRTestScriptParam3([FHIRTestScriptParam3::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addParam(new FHIRTestScriptParam3(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addParam(new FHIRTestScriptParam3($v));
                     }
                 }
-            } elseif ($data[self::FIELD_PARAM] instanceof FHIRTestScriptParam3) {
+            } else if ($data[self::FIELD_PARAM] instanceof FHIRTestScriptParam3) {
                 $this->addParam($data[self::FIELD_PARAM]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_PARAM])) {
-                $this->addParam(new FHIRTestScriptParam3([FHIRTestScriptParam3::FIELD_VALUE => $data[self::FIELD_PARAM]] + $ext));
             } else {
                 $this->addParam(new FHIRTestScriptParam3($data[self::FIELD_PARAM]));
             }
@@ -182,30 +176,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -216,7 +186,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
         }
         return "<TestScriptRule3{$xmlns}></TestScriptRule3>";
     }
-
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -316,6 +285,15 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule3 $type
      * @param null|int $libxmlOpts
@@ -402,33 +380,13 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getParam())) {
-            $a[self::FIELD_PARAM] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PARAM][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PARAM_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PARAM_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_PARAM][] = $v;
-                }
-            }
+            $a[self::FIELD_PARAM] = $vs;
         }
         if (null !== ($v = $this->getRuleId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RULE_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RULE_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RULE_ID] = $v;
+            $a[self::FIELD_RULE_ID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RULE_ID_EXT] = $enc;
             }
         }
         return $a;

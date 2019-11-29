@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
     const FIELD_ROLE = 'role';
     const FIELD_SPECIALTY = 'specialty';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -157,8 +160,11 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      */
     protected $specialty = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Practitioner.PractitionerRole
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRPractitionerPractitionerRole Constructor
@@ -262,30 +268,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -296,7 +278,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
         }
         return "<PractitionerPractitionerRole{$xmlns}></PractitionerPractitionerRole>";
     }
-
 
     /**
      * A reference from one resource to another.
@@ -567,6 +548,15 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerPractitionerRole $type
      * @param null|int $libxmlOpts
@@ -644,6 +634,7 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getHealthcareService())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -652,7 +643,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_HEALTHCARE_SERVICE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getLocation())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -661,7 +651,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getManagingOrganization())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MANAGING_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -679,7 +668,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 

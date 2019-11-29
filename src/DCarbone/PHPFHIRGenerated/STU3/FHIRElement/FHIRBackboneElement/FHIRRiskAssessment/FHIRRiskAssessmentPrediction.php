@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRis
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,9 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     const FIELD_RELATIVE_RISK_EXT = '_relativeRisk';
     const FIELD_WHEN_PERIOD = 'whenPeriod';
     const FIELD_WHEN_RANGE = 'whenRange';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -193,8 +196,11 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      */
     protected $whenRange = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type RiskAssessment.Prediction
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRRiskAssessmentPrediction Constructor
@@ -306,30 +312,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -340,7 +322,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         }
         return "<RiskAssessmentPrediction{$xmlns}></RiskAssessmentPrediction>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -629,6 +610,15 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $type
      * @param null|int $libxmlOpts
@@ -753,14 +743,10 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $a[self::FIELD_OUTCOME] = $v;
         }
         if (null !== ($v = $this->getProbabilityDecimal())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PROBABILITY_DECIMAL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PROBABILITY_DECIMAL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PROBABILITY_DECIMAL] = $v;
+            $a[self::FIELD_PROBABILITY_DECIMAL] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PROBABILITY_DECIMAL_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProbabilityRange())) {
@@ -770,25 +756,17 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $a[self::FIELD_QUALITATIVE_RISK] = $v;
         }
         if (null !== ($v = $this->getRationale())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RATIONALE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RATIONALE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RATIONALE] = $v;
+            $a[self::FIELD_RATIONALE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RATIONALE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getRelativeRisk())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_RELATIVE_RISK] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_RELATIVE_RISK_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_RELATIVE_RISK] = $v;
+            $a[self::FIELD_RELATIVE_RISK] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_RELATIVE_RISK_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhenPeriod())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCov
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,6 +102,9 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     const FIELD_SUB_PLAN_EXT = '_subPlan';
     const FIELD_SUB_PLAN_DISPLAY = 'subPlanDisplay';
     const FIELD_SUB_PLAN_DISPLAY_EXT = '_subPlanDisplay';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -246,8 +249,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      */
     protected $subPlanDisplay = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Coverage.Grouping
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRCoverageGrouping Constructor
@@ -468,30 +474,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -502,7 +484,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         return "<CoverageGrouping{$xmlns}></CoverageGrouping>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -983,6 +964,15 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping $type
      * @param null|int $libxmlOpts
@@ -1155,135 +1145,87 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getClass())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CLASS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CLASS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CLASS] = $v;
+            $a[self::FIELD_CLASS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CLASS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getClassDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CLASS_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CLASS_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CLASS_DISPLAY] = $v;
+            $a[self::FIELD_CLASS_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CLASS_DISPLAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getGroup())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_GROUP] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_GROUP_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_GROUP] = $v;
+            $a[self::FIELD_GROUP] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_GROUP_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getGroupDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_GROUP_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_GROUP_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_GROUP_DISPLAY] = $v;
+            $a[self::FIELD_GROUP_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_GROUP_DISPLAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPlan())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PLAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PLAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PLAN] = $v;
+            $a[self::FIELD_PLAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PLAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPlanDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PLAN_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PLAN_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PLAN_DISPLAY] = $v;
+            $a[self::FIELD_PLAN_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PLAN_DISPLAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubClass())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUB_CLASS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUB_CLASS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUB_CLASS] = $v;
+            $a[self::FIELD_SUB_CLASS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUB_CLASS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubClassDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUB_CLASS_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUB_CLASS_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUB_CLASS_DISPLAY] = $v;
+            $a[self::FIELD_SUB_CLASS_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUB_CLASS_DISPLAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubGroup())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUB_GROUP] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUB_GROUP_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUB_GROUP] = $v;
+            $a[self::FIELD_SUB_GROUP] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUB_GROUP_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubGroupDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUB_GROUP_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUB_GROUP_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUB_GROUP_DISPLAY] = $v;
+            $a[self::FIELD_SUB_GROUP_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUB_GROUP_DISPLAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubPlan())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUB_PLAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUB_PLAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUB_PLAN] = $v;
+            $a[self::FIELD_SUB_PLAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUB_PLAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubPlanDisplay())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SUB_PLAN_DISPLAY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUB_PLAN_DISPLAY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SUB_PLAN_DISPLAY] = $v;
+            $a[self::FIELD_SUB_PLAN_DISPLAY] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SUB_PLAN_DISPLAY_EXT] = $enc;
             }
         }
         return $a;

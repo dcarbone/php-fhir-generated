@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     const FIELD_IDENTITY_CERTIFICATE_EXT = '_identityCertificate';
     const FIELD_ORGANIZATION = 'organization';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A signature along with supporting context. The signature may be a digital
      * signature that is cryptographic in nature, or some other signature acceptable to
@@ -122,8 +125,11 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      */
     protected $organization = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type VerificationResult.Validator
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRVerificationResultValidator Constructor
@@ -182,30 +188,6 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -216,7 +198,6 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
         }
         return "<VerificationResultValidator{$xmlns}></VerificationResultValidator>";
     }
-
 
     /**
      * A signature along with supporting context. The signature may be a digital
@@ -325,6 +306,15 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator $type
      * @param null|int $libxmlOpts
@@ -390,6 +380,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAttestationSignature())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTATION_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -412,14 +403,10 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $a[self::FIELD_ATTESTATION_SIGNATURE] = $v;
         }
         if (null !== ($v = $this->getIdentityCertificate())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_IDENTITY_CERTIFICATE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_IDENTITY_CERTIFICATE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_IDENTITY_CERTIFICATE] = $v;
+            $a[self::FIELD_IDENTITY_CERTIFICATE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_IDENTITY_CERTIFICATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOrganization())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGra
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,10 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     const FIELD_PROFILE = 'profile';
     const FIELD_PROFILE_EXT = '_profile';
     const FIELD_TYPE = 'type';
+    const FIELD_TYPE_EXT = '_type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A formal computable definition of a graph of resources - that is, a coherent set
@@ -129,8 +133,11 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type GraphDefinition.Target
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRGraphDefinitionTarget Constructor
@@ -201,7 +208,20 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
-            $this->setType($data[self::FIELD_TYPE]);
+            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT]))
+                ? $data[self::FIELD_TYPE_EXT]
+                : null;
+            if ($data[self::FIELD_TYPE] instanceof FHIRResourceType) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } elseif (null !== $ext) {
+                if (is_scalar($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRResourceType([FHIRResourceType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
+                } else if (is_array($data[self::FIELD_TYPE])) {
+                    $this->setType(new FHIRResourceType(array_merge($ext, $data[self::FIELD_TYPE])));
+                }
+            } else {
+                $this->setType(new FHIRResourceType($data[self::FIELD_TYPE]));
+            }
         }
     }
 
@@ -211,30 +231,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
     }
 
     /**
@@ -248,7 +244,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         }
         return "<GraphDefinitionTarget{$xmlns}></GraphDefinitionTarget>";
     }
-
 
     /**
      * A formal computable definition of a graph of resources - that is, a coherent set
@@ -422,18 +417,19 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $type
      * @return static
      */
-    public function setType($type = null)
+    public function setType(FHIRResourceType $type = null)
     {
-        if (null === $type) {
-            $this->type = null;
-            return $this;
-        }
-        if ($type instanceof FHIRResourceType) {
-            $this->type = $type;
-            return $this;
-        }
-        $this->type = new FHIRResourceType($type);
+        $this->type = $type;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -492,9 +488,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         if (isset($children->profile)) {
             $type->setProfile(FHIRUri::xmlUnserialize($children->profile));
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
-        }
         if (isset($children->type)) {
             $type->setType(FHIRResourceType::xmlUnserialize($children->type));
         }
@@ -531,8 +524,9 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getProfile())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
-        }        if (null !== ($v = $this->getType())) {
-            $sxe->addAttribute(self::FIELD_TYPE, (string)$v);
+        }
+        if (null !== ($v = $this->getType())) {
+            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
         return $sxe;
     }
@@ -550,18 +544,18 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
             $a[self::FIELD_LINK] = $vs;
         }
         if (null !== ($v = $this->getProfile())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PROFILE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PROFILE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PROFILE] = $v;
+            $a[self::FIELD_PROFILE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PROFILE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            $a[self::FIELD_TYPE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TYPE_EXT] = $enc;
+            }
         }
         return $a;
     }

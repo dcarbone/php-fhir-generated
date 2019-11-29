@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,11 +89,13 @@ class FHIRSampledData extends FHIRElement
     const FIELD_LOWER_LIMIT = 'lowerLimit';
     const FIELD_LOWER_LIMIT_EXT = '_lowerLimit';
     const FIELD_ORIGIN = 'origin';
-    const FIELD_ORIGIN_EXT = '_origin';
     const FIELD_PERIOD = 'period';
     const FIELD_PERIOD_EXT = '_period';
     const FIELD_UPPER_LIMIT = 'upperLimit';
     const FIELD_UPPER_LIMIT_EXT = '_upperLimit';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A series of data points which are decimal values separated by a single space
@@ -176,8 +178,11 @@ class FHIRSampledData extends FHIRElement
      */
     protected $upperLimit = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SampledData
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSampledData Constructor
@@ -260,17 +265,8 @@ class FHIRSampledData extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_ORIGIN])) {
-            $ext = (isset($data[self::FIELD_ORIGIN_EXT]) && is_array($data[self::FIELD_ORIGIN_EXT]))
-                ? $data[self::FIELD_ORIGIN_EXT]
-                : null;
             if ($data[self::FIELD_ORIGIN] instanceof FHIRSimpleQuantity) {
                 $this->setOrigin($data[self::FIELD_ORIGIN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ORIGIN])) {
-                    $this->setOrigin(new FHIRSimpleQuantity([FHIRSimpleQuantity::FIELD_VALUE => $data[self::FIELD_ORIGIN]] + $ext));
-                } else if (is_array($data[self::FIELD_ORIGIN])) {
-                    $this->setOrigin(new FHIRSimpleQuantity(array_merge($ext, $data[self::FIELD_ORIGIN])));
-                }
             } else {
                 $this->setOrigin(new FHIRSimpleQuantity($data[self::FIELD_ORIGIN]));
             }
@@ -318,30 +314,6 @@ class FHIRSampledData extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -352,7 +324,6 @@ class FHIRSampledData extends FHIRElement
         }
         return "<SampledData{$xmlns}></SampledData>";
     }
-
 
     /**
      * A series of data points which are decimal values separated by a single space
@@ -621,6 +592,15 @@ class FHIRSampledData extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSampledData $type
      * @param null|int $libxmlOpts
@@ -713,6 +693,7 @@ class FHIRSampledData extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getData())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
         }
@@ -744,80 +725,48 @@ class FHIRSampledData extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getData())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DATA] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DATA_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DATA] = $v;
+            $a[self::FIELD_DATA] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DATA_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDimensions())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DIMENSIONS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DIMENSIONS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DIMENSIONS] = $v;
+            $a[self::FIELD_DIMENSIONS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DIMENSIONS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getFactor())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_FACTOR] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_FACTOR_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_FACTOR] = $v;
+            $a[self::FIELD_FACTOR] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_FACTOR_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getLowerLimit())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LOWER_LIMIT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LOWER_LIMIT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LOWER_LIMIT] = $v;
+            $a[self::FIELD_LOWER_LIMIT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LOWER_LIMIT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOrigin())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ORIGIN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ORIGIN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ORIGIN] = $v;
-            }
+            $a[self::FIELD_ORIGIN] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PERIOD] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PERIOD_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PERIOD] = $v;
+            $a[self::FIELD_PERIOD] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PERIOD_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getUpperLimit())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_UPPER_LIMIT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_UPPER_LIMIT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_UPPER_LIMIT] = $v;
+            $a[self::FIELD_UPPER_LIMIT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_UPPER_LIMIT_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,6 +87,9 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     const FIELD_DECIMAL_PRECISION_EXT = '_decimalPrecision';
     const FIELD_UNIT = 'unit';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -138,8 +141,11 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      */
     protected $unit = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type ObservationDefinition.QuantitativeDetails
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRObservationDefinitionQuantitativeDetails Constructor
@@ -214,30 +220,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -248,7 +230,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         }
         return "<ObservationDefinitionQuantitativeDetails{$xmlns}></ObservationDefinitionQuantitativeDetails>";
     }
-
 
     /**
      * A rational number with implicit precision
@@ -401,6 +382,15 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $type
      * @param null|int $libxmlOpts
@@ -472,6 +462,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getConversionFactor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONVERSION_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }
@@ -494,28 +485,20 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getConversionFactor())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CONVERSION_FACTOR] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CONVERSION_FACTOR_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CONVERSION_FACTOR] = $v;
+            $a[self::FIELD_CONVERSION_FACTOR] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CONVERSION_FACTOR_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getCustomaryUnit())) {
             $a[self::FIELD_CUSTOMARY_UNIT] = $v;
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DECIMAL_PRECISION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DECIMAL_PRECISION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DECIMAL_PRECISION] = $v;
+            $a[self::FIELD_DECIMAL_PRECISION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DECIMAL_PRECISION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getUnit())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVis
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     const FIELD_DIAMETER = 'diameter';
     const FIELD_DIAMETER_EXT = '_diameter';
     const FIELD_DURATION = 'duration';
-    const FIELD_DURATION_EXT = '_duration';
     const FIELD_EYE = 'eye';
     const FIELD_EYE_EXT = '_eye';
     const FIELD_NOTE = 'note';
@@ -112,6 +111,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     const FIELD_PRODUCT = 'product';
     const FIELD_SPHERE = 'sphere';
     const FIELD_SPHERE_EXT = '_sphere';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A rational number with implicit precision
@@ -288,8 +290,11 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      */
     protected $sphere = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type VisionPrescription.Dispense
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRVisionPrescriptionDispense Constructor
@@ -436,17 +441,8 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DURATION])) {
-            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT]))
-                ? $data[self::FIELD_DURATION_EXT]
-                : null;
             if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
                 $this->setDuration($data[self::FIELD_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DURATION])));
-                }
             } else {
                 $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
             }
@@ -551,30 +547,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -585,7 +557,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         }
         return "<VisionPrescriptionDispense{$xmlns}></VisionPrescriptionDispense>";
     }
-
 
     /**
      * A rational number with implicit precision
@@ -1165,6 +1136,15 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense $type
      * @param null|int $libxmlOpts
@@ -1356,152 +1336,96 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAdd())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ADD] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ADD_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ADD] = $v;
+            $a[self::FIELD_ADD] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ADD_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAxis())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AXIS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AXIS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AXIS] = $v;
+            $a[self::FIELD_AXIS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AXIS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBackCurve())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BACK_CURVE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BACK_CURVE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BACK_CURVE] = $v;
+            $a[self::FIELD_BACK_CURVE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BACK_CURVE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBase())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BASE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BASE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BASE] = $v;
+            $a[self::FIELD_BASE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BASE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBrand())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_BRAND] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_BRAND_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_BRAND] = $v;
+            $a[self::FIELD_BRAND] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_BRAND_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getColor())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_COLOR] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_COLOR_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_COLOR] = $v;
+            $a[self::FIELD_COLOR] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_COLOR_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getCylinder())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CYLINDER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CYLINDER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CYLINDER] = $v;
+            $a[self::FIELD_CYLINDER] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CYLINDER_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDiameter())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DIAMETER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DIAMETER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DIAMETER] = $v;
+            $a[self::FIELD_DIAMETER] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DIAMETER_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDuration())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DURATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DURATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DURATION] = $v;
-            }
+            $a[self::FIELD_DURATION] = $v;
         }
         if (null !== ($v = $this->getEye())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_EYE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EYE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_EYE] = $v;
+            $a[self::FIELD_EYE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_EYE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
         }
         if (null !== ($v = $this->getPower())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_POWER] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_POWER_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_POWER] = $v;
+            $a[self::FIELD_POWER] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_POWER_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPrism())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PRISM] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PRISM_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PRISM] = $v;
+            $a[self::FIELD_PRISM] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PRISM_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProduct())) {
             $a[self::FIELD_PRODUCT] = $v;
         }
         if (null !== ($v = $this->getSphere())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SPHERE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SPHERE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SPHERE] = $v;
+            $a[self::FIELD_SPHERE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SPHERE_EXT] = $enc;
             }
         }
         return $a;

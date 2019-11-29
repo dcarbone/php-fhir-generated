@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,9 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     const FIELD_VALUE_SET_REFERENCE = 'valueSetReference';
     const FIELD_VALUE_SET_STRING = 'valueSetString';
     const FIELD_VALUE_SET_STRING_EXT = '_valueSetString';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -182,8 +185,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      */
     protected $valueSetString = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type DataRequirement.CodeFilter
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDataRequirementCodeFilter Constructor
@@ -316,30 +322,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -350,7 +332,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         }
         return "<DataRequirementCodeFilter{$xmlns}></DataRequirementCodeFilter>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -690,6 +671,15 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $type
      * @param null|int $libxmlOpts
@@ -820,14 +810,10 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getPath())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_PATH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PATH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_PATH] = $v;
+            $a[self::FIELD_PATH] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_PATH_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getValueCode())) {
@@ -836,16 +822,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_VALUE_CODE][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_VALUE_CODE_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_VALUE_CODE_EXT][] = null;
-                    }
+                $a[self::FIELD_VALUE_CODE][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_VALUE_CODE_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_VALUE_CODE][] = $v;
+                    $a[self::FIELD_VALUE_CODE_EXT][] = null;
                 }
             }
         }
@@ -859,14 +841,10 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             $a[self::FIELD_VALUE_SET_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getValueSetString())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_VALUE_SET_STRING] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_VALUE_SET_STRING_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_VALUE_SET_STRING] = $v;
+            $a[self::FIELD_VALUE_SET_STRING] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_VALUE_SET_STRING_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,101 +70,33 @@ class FHIRDatePrimitive implements PHPFHIRTypeInterface
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATE_HYPHEN_PRIMITIVE;
-
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = '';
+    protected $_xmlns = 'http://hl7.org/fhir';
 
-    /** @var null|string */
+    /**
+     * @var null|string
+     */
     protected $value = null;
 
-    /** null|\DateTime */
-    private $_dateTime = null;
-
-    const VALUE_REGEX           = // language=RegExp
-        '([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1]))?)?';
-    const FORMAT_YEAR           = 'Y';
-    const FORMAT_YEAR_MONTH     = 'Y-m';
-    const FORMAT_YEAR_MONTH_DAY = 'Y-m-d';
+    /**
+     * Validation map for fields in type date-primitive
+     * @var array
+     */
+    private static $_fieldValidation = [
+        self::FIELD_VALUE => [
+            PHPFHIRConstants::VALIDATE_PATTERN => '/^-?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1]))?)?$/',
+        ],
+    ];
 
     /**
      * FHIRDatePrimitive Constructor
-     * @param null| $value
+     * @param null|string $value
      */
     public function __construct($value = null)
     {
         $this->setValue($value);
-    }
-    /**
-     * @param null| $value
-     * @return static
-     */
-    public function setValue($value)
-    {
-        $this->_dateTime = null;
-        if (null === $value) {
-            $this->value = null;
-            return $this;
-        }
-        if (is_string($value)) {
-            $this->value = $value;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf('Value must be null or string, %s seen.', gettype($value)));
-    }
-
-    /**
-     * @return null|\DateTime
-     */
-    public function _getDateTime()
-    {
-        if (!isset($this->_dateTime)) {
-            $value = $this->getValue();
-            if (null === $value) {
-                return null;
-            }
-            if (!$this->_isValid()) {
-                throw new \DomainException(sprintf('Cannot convert "%s" to \\DateTime as it does not conform to "%s"', $value, self::VALUE_REGEX));
-            }
-            switch(strlen($value)) {
-                case 4:
-                    $parsed = \DateTime::createFromFormat(self::FORMAT_YEAR, $value);
-                    break;
-                case 7:
-                    $parsed = \DateTime::createFromFormat(self::FORMAT_YEAR_MONTH, $value);
-                    break;
-                case 10:
-                    $parsed = \DateTime::createFromFormat(self::FORMAT_YEAR_MONTH_DAY, $value);
-                    break;
-
-                default:
-                    throw new \DomainException(sprintf('Value expected to meet %s, %s seen', self::VALUE_REGEX, $value));
-            }
-            if (false === $parsed) {
-                throw new \DomainException(sprintf('Value "%s" could not be parsed as date-primitive: %s', $value, implode(', ', \DateTime::getLastErrors())));
-            }
-            $this->_dateTime = $parsed;
-        }
-        return $this->_dateTime;
-    }
-
-    /**
-     * @return bool
-     */
-    public function _isValid()
-    {
-        $value = $this->getValue();
-        return null === $value || preg_match('/' . self::VALUE_REGEX . '/', $value);
-    }
-
-
-    /**
-     * @return null|
-     */
-    public function getValue()
-    {
-        return $this->value;
     }
 
     /**
@@ -209,6 +141,68 @@ class FHIRDatePrimitive implements PHPFHIRTypeInterface
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<date_primitive{$xmlns}></date_primitive>";
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|string $value
+     * @return static
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            $this->value = null;
+            return $this;
+        }
+        if (is_string($value)) {
+            $this->value = $value;
+            return $this;
+        }
+        throw new \InvalidArgumentException(sprintf('Value must be null or string, %s seen.', gettype($value)));
+    }
+
+    /**
+     * @return null|\DateTime|false
+     */
+    public function _getDateTime()
+    {
+        $value = $this->getValue();
+        if (null === $value) {
+            return null;
+        }
+        if ([] !== $this->_validationErrors()) {
+            throw new \DomainException(sprintf(
+                'Cannot convert "%s" to \\DateTime as it does not conform to "%s"',
+                $value,
+                self::$_fieldValidation[self::FIELD_VALUE][PHPFHIRConstants::VALIDATE_PATTERN]
+            ));
+        }
+        switch(strlen($value)) {
+            case 4:
+                return \DateTime::createFromFormat(PHPFHIRConstants::DATE_FORMAT_YEAR, $value);
+            case 7:
+                return \DateTime::createFromFormat(PHPFHIRConstants::DATE_FORMAT_YEAR_MONTH, $value);
+            case 10:
+                return \DateTime::createFromFormat(PHPFHIRConstants::DATE_FORMAT_YEAR_MONTH_DAY, $value);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -271,7 +265,6 @@ class FHIRDatePrimitive implements PHPFHIRTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
-
         return $sxe;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,9 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
     const FIELD_QUALIFIERS = 'qualifiers';
     const FIELD_TYPE = 'type';
     const FIELD_VALUE = 'value';
-    const FIELD_VALUE_EXT = '_value';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -136,8 +138,11 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
      */
     protected $value = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type InsurancePlan.Cost
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRInsurancePlanCost Constructor
@@ -146,10 +151,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
     public function __construct($data = null)
     {
         if (null === $data || [] === $data) {
-            return;
-        }
-        if (is_scalar($data)) {
-            $this->setValue(new FHIRQuantity($data));
             return;
         }
         if (!is_array($data)) {
@@ -192,17 +193,8 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_VALUE])) {
-            $ext = (isset($data[self::FIELD_VALUE_EXT]) && is_array($data[self::FIELD_VALUE_EXT]))
-                ? $data[self::FIELD_VALUE_EXT]
-                : null;
             if ($data[self::FIELD_VALUE] instanceof FHIRQuantity) {
                 $this->setValue($data[self::FIELD_VALUE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE])) {
-                    $this->setValue(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE])) {
-                    $this->setValue(new FHIRQuantity(array_merge($ext, $data[self::FIELD_VALUE])));
-                }
             } else {
                 $this->setValue(new FHIRQuantity($data[self::FIELD_VALUE]));
             }
@@ -218,30 +210,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -252,7 +220,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
         }
         return "<InsurancePlanCost{$xmlns}></InsurancePlanCost>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -419,6 +386,15 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanCost $type
      * @param null|int $libxmlOpts
@@ -486,6 +462,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getApplicability())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_APPLICABILITY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -497,7 +474,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_QUALIFIERS, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -524,14 +500,9 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_VALUE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_VALUE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_VALUE] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                $a[self::FIELD_VALUE_EXT] = $enc;
             }
         }
         return $a;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,7 +62,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\R4\FHIRBiologicallyDerivedProductCategoryList;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRBiologicallyDerivedProductCategoryList;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
@@ -79,14 +79,21 @@ class FHIRBiologicallyDerivedProductCategory extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_CATEGORY;
     const FIELD_VALUE = 'value';
-
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRBiologicallyDerivedProductCategoryList
-     */
-    protected $value = null;
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
+
+    /**
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRBiologicallyDerivedProductCategoryList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type BiologicallyDerivedProductCategory
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRBiologicallyDerivedProductCategory Constructor
@@ -122,30 +129,6 @@ class FHIRBiologicallyDerivedProductCategory extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -157,9 +140,8 @@ class FHIRBiologicallyDerivedProductCategory extends FHIRElement
         return "<BiologicallyDerivedProductCategory{$xmlns}></BiologicallyDerivedProductCategory>";
     }
 
-
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRBiologicallyDerivedProductCategoryList
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRBiologicallyDerivedProductCategoryList
      */
     public function getValue()
     {
@@ -167,7 +149,7 @@ class FHIRBiologicallyDerivedProductCategory extends FHIRElement
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRBiologicallyDerivedProductCategoryList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRBiologicallyDerivedProductCategoryList $value
      * @return static
      */
     public function setValue($value = null)
@@ -182,6 +164,15 @@ class FHIRBiologicallyDerivedProductCategory extends FHIRElement
         }
         $this->value = new FHIRBiologicallyDerivedProductCategoryList($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -243,7 +234,8 @@ class FHIRBiologicallyDerivedProductCategory extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        parent::xmlSerialize($sxe);        if (null !== ($v = $this->getValue())) {
+        parent::xmlSerialize($sxe);
+        if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAccountStatus', PHPFHIRConstants::TYPE_CLASS_ACCOUNT_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAccountStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAccountStatusList()
     {
         $this->assertEquals('AccountStatus-list', PHPFHIRConstants::TYPE_NAME_ACCOUNT_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAccountStatusList', PHPFHIRConstants::TYPE_CLASS_ACCOUNT_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAccountStatusList', PHPFHIRConstants::TYPE_CLASS_ACCOUNT_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRActionList()
@@ -94,10 +94,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRActionList', PHPFHIRConstants::TYPE_CLASS_ACTION_LIST);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRActionListList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRActionListList()
     {
         $this->assertEquals('ActionList-list', PHPFHIRConstants::TYPE_NAME_ACTION_LIST_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRActionListList', PHPFHIRConstants::TYPE_CLASS_ACTION_LIST_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRActionListList', PHPFHIRConstants::TYPE_CLASS_ACTION_LIST_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAddress()
@@ -112,10 +112,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddressType', PHPFHIRConstants::TYPE_CLASS_ADDRESS_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAddressTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAddressTypeList()
     {
         $this->assertEquals('AddressType-list', PHPFHIRConstants::TYPE_NAME_ADDRESS_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAddressTypeList', PHPFHIRConstants::TYPE_CLASS_ADDRESS_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAddressTypeList', PHPFHIRConstants::TYPE_CLASS_ADDRESS_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAddressUse()
@@ -124,10 +124,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddressUse', PHPFHIRConstants::TYPE_CLASS_ADDRESS_USE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAddressUseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAddressUseList()
     {
         $this->assertEquals('AddressUse-list', PHPFHIRConstants::TYPE_NAME_ADDRESS_USE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAddressUseList', PHPFHIRConstants::TYPE_CLASS_ADDRESS_USE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAddressUseList', PHPFHIRConstants::TYPE_CLASS_ADDRESS_USE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAdministrativeGender()
@@ -136,10 +136,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAdministrativeGender', PHPFHIRConstants::TYPE_CLASS_ADMINISTRATIVE_GENDER);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAdministrativeGenderList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAdministrativeGenderList()
     {
         $this->assertEquals('AdministrativeGender-list', PHPFHIRConstants::TYPE_NAME_ADMINISTRATIVE_GENDER_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAdministrativeGenderList', PHPFHIRConstants::TYPE_CLASS_ADMINISTRATIVE_GENDER_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAdministrativeGenderList', PHPFHIRConstants::TYPE_CLASS_ADMINISTRATIVE_GENDER_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRQuantity_FHIRAge()
@@ -154,10 +154,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode', PHPFHIRConstants::TYPE_CLASS_AGGREGATION_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAggregationModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAggregationModeList()
     {
         $this->assertEquals('AggregationMode-list', PHPFHIRConstants::TYPE_NAME_AGGREGATION_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAggregationModeList', PHPFHIRConstants::TYPE_CLASS_AGGREGATION_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAggregationModeList', PHPFHIRConstants::TYPE_CLASS_AGGREGATION_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRAllergyIntolerance()
@@ -178,10 +178,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCategory', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CATEGORY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAllergyIntoleranceCategoryList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAllergyIntoleranceCategoryList()
     {
         $this->assertEquals('AllergyIntoleranceCategory-list', PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_CATEGORY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAllergyIntoleranceCategoryList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CATEGORY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAllergyIntoleranceCategoryList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CATEGORY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAllergyIntoleranceCertainty()
@@ -190,10 +190,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CERTAINTY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAllergyIntoleranceCertaintyList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAllergyIntoleranceCertaintyList()
     {
         $this->assertEquals('AllergyIntoleranceCertainty-list', PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_CERTAINTY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAllergyIntoleranceCertaintyList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CERTAINTY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAllergyIntoleranceCertaintyList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CERTAINTY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAllergyIntoleranceCriticality()
@@ -202,10 +202,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCriticality', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CRITICALITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAllergyIntoleranceCriticalityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAllergyIntoleranceCriticalityList()
     {
         $this->assertEquals('AllergyIntoleranceCriticality-list', PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_CRITICALITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAllergyIntoleranceCriticalityList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CRITICALITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAllergyIntoleranceCriticalityList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_CRITICALITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAllergyIntoleranceSeverity()
@@ -214,10 +214,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_SEVERITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAllergyIntoleranceSeverityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAllergyIntoleranceSeverityList()
     {
         $this->assertEquals('AllergyIntoleranceSeverity-list', PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_SEVERITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAllergyIntoleranceSeverityList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_SEVERITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAllergyIntoleranceSeverityList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_SEVERITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAllergyIntoleranceStatus()
@@ -226,10 +226,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceStatus', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAllergyIntoleranceStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAllergyIntoleranceStatusList()
     {
         $this->assertEquals('AllergyIntoleranceStatus-list', PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAllergyIntoleranceStatusList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAllergyIntoleranceStatusList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAllergyIntoleranceType()
@@ -238,10 +238,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceType', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAllergyIntoleranceTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAllergyIntoleranceTypeList()
     {
         $this->assertEquals('AllergyIntoleranceType-list', PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAllergyIntoleranceTypeList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAllergyIntoleranceTypeList', PHPFHIRConstants::TYPE_CLASS_ALLERGY_INTOLERANCE_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAnnotation()
@@ -256,10 +256,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnswerFormat', PHPFHIRConstants::TYPE_CLASS_ANSWER_FORMAT);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAnswerFormatList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAnswerFormatList()
     {
         $this->assertEquals('AnswerFormat-list', PHPFHIRConstants::TYPE_NAME_ANSWER_FORMAT_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAnswerFormatList', PHPFHIRConstants::TYPE_CLASS_ANSWER_FORMAT_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAnswerFormatList', PHPFHIRConstants::TYPE_CLASS_ANSWER_FORMAT_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRAppointment()
@@ -286,10 +286,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAppointmentStatus', PHPFHIRConstants::TYPE_CLASS_APPOINTMENT_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAppointmentStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAppointmentStatusList()
     {
         $this->assertEquals('AppointmentStatus-list', PHPFHIRConstants::TYPE_NAME_APPOINTMENT_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAppointmentStatusList', PHPFHIRConstants::TYPE_CLASS_APPOINTMENT_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAppointmentStatusList', PHPFHIRConstants::TYPE_CLASS_APPOINTMENT_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAssertionDirectionType()
@@ -298,10 +298,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAssertionDirectionType', PHPFHIRConstants::TYPE_CLASS_ASSERTION_DIRECTION_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAssertionDirectionTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAssertionDirectionTypeList()
     {
         $this->assertEquals('AssertionDirectionType-list', PHPFHIRConstants::TYPE_NAME_ASSERTION_DIRECTION_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAssertionDirectionTypeList', PHPFHIRConstants::TYPE_CLASS_ASSERTION_DIRECTION_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAssertionDirectionTypeList', PHPFHIRConstants::TYPE_CLASS_ASSERTION_DIRECTION_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAssertionOperatorType()
@@ -310,10 +310,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAssertionOperatorType', PHPFHIRConstants::TYPE_CLASS_ASSERTION_OPERATOR_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAssertionOperatorTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAssertionOperatorTypeList()
     {
         $this->assertEquals('AssertionOperatorType-list', PHPFHIRConstants::TYPE_NAME_ASSERTION_OPERATOR_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAssertionOperatorTypeList', PHPFHIRConstants::TYPE_CLASS_ASSERTION_OPERATOR_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAssertionOperatorTypeList', PHPFHIRConstants::TYPE_CLASS_ASSERTION_OPERATOR_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAssertionResponseTypes()
@@ -322,10 +322,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAssertionResponseTypes', PHPFHIRConstants::TYPE_CLASS_ASSERTION_RESPONSE_TYPES);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAssertionResponseTypesList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAssertionResponseTypesList()
     {
         $this->assertEquals('AssertionResponseTypes-list', PHPFHIRConstants::TYPE_NAME_ASSERTION_RESPONSE_TYPES_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAssertionResponseTypesList', PHPFHIRConstants::TYPE_CLASS_ASSERTION_RESPONSE_TYPES_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAssertionResponseTypesList', PHPFHIRConstants::TYPE_CLASS_ASSERTION_RESPONSE_TYPES_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAttachment()
@@ -382,10 +382,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAuditEventAction', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_ACTION);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAuditEventActionList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAuditEventActionList()
     {
         $this->assertEquals('AuditEventAction-list', PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_ACTION_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAuditEventActionList', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_ACTION_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAuditEventActionList', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_ACTION_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAuditEventOutcome()
@@ -394,10 +394,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAuditEventOutcome', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_OUTCOME);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAuditEventOutcomeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAuditEventOutcomeList()
     {
         $this->assertEquals('AuditEventOutcome-list', PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_OUTCOME_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAuditEventOutcomeList', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_OUTCOME_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAuditEventOutcomeList', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_OUTCOME_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRAuditEventParticipantNetworkType()
@@ -406,10 +406,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAuditEventParticipantNetworkType', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRAuditEventParticipantNetworkTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRAuditEventParticipantNetworkTypeList()
     {
         $this->assertEquals('AuditEventParticipantNetworkType-list', PHPFHIRConstants::TYPE_NAME_AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRAuditEventParticipantNetworkTypeList', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRAuditEventParticipantNetworkTypeList', PHPFHIRConstants::TYPE_CLASS_AUDIT_EVENT_PARTICIPANT_NETWORK_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRBackboneElement()
@@ -448,10 +448,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBindingStrength', PHPFHIRConstants::TYPE_CLASS_BINDING_STRENGTH);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRBindingStrengthList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRBindingStrengthList()
     {
         $this->assertEquals('BindingStrength-list', PHPFHIRConstants::TYPE_NAME_BINDING_STRENGTH_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBindingStrengthList', PHPFHIRConstants::TYPE_CLASS_BINDING_STRENGTH_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRBindingStrengthList', PHPFHIRConstants::TYPE_CLASS_BINDING_STRENGTH_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRBodySite()
@@ -514,10 +514,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBundleType', PHPFHIRConstants::TYPE_CLASS_BUNDLE_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRBundleTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRBundleTypeList()
     {
         $this->assertEquals('BundleType-list', PHPFHIRConstants::TYPE_NAME_BUNDLE_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBundleTypeList', PHPFHIRConstants::TYPE_CLASS_BUNDLE_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRBundleTypeList', PHPFHIRConstants::TYPE_CLASS_BUNDLE_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRCarePlan()
@@ -556,10 +556,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanActivityStatus', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_ACTIVITY_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCarePlanActivityStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCarePlanActivityStatusList()
     {
         $this->assertEquals('CarePlanActivityStatus-list', PHPFHIRConstants::TYPE_NAME_CARE_PLAN_ACTIVITY_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCarePlanActivityStatusList', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_ACTIVITY_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCarePlanActivityStatusList', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_ACTIVITY_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRCarePlanRelationship()
@@ -568,10 +568,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanRelationship', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_RELATIONSHIP);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCarePlanRelationshipList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCarePlanRelationshipList()
     {
         $this->assertEquals('CarePlanRelationship-list', PHPFHIRConstants::TYPE_NAME_CARE_PLAN_RELATIONSHIP_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCarePlanRelationshipList', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_RELATIONSHIP_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCarePlanRelationshipList', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_RELATIONSHIP_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRCarePlanStatus()
@@ -580,10 +580,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanStatus', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCarePlanStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCarePlanStatusList()
     {
         $this->assertEquals('CarePlanStatus-list', PHPFHIRConstants::TYPE_NAME_CARE_PLAN_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCarePlanStatusList', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCarePlanStatusList', PHPFHIRConstants::TYPE_CLASS_CARE_PLAN_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRClaim()
@@ -730,10 +730,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClaimType', PHPFHIRConstants::TYPE_CLASS_CLAIM_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRClaimTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRClaimTypeList()
     {
         $this->assertEquals('ClaimType-list', PHPFHIRConstants::TYPE_NAME_CLAIM_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRClaimTypeList', PHPFHIRConstants::TYPE_CLASS_CLAIM_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRClaimTypeList', PHPFHIRConstants::TYPE_CLASS_CLAIM_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRClinicalImpression()
@@ -766,10 +766,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus', PHPFHIRConstants::TYPE_CLASS_CLINICAL_IMPRESSION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRClinicalImpressionStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRClinicalImpressionStatusList()
     {
         $this->assertEquals('ClinicalImpressionStatus-list', PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRClinicalImpressionStatusList', PHPFHIRConstants::TYPE_CLASS_CLINICAL_IMPRESSION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRClinicalImpressionStatusList', PHPFHIRConstants::TYPE_CLASS_CLINICAL_IMPRESSION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRCode()
@@ -826,10 +826,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCommunicationRequestStatus', PHPFHIRConstants::TYPE_CLASS_COMMUNICATION_REQUEST_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCommunicationRequestStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCommunicationRequestStatusList()
     {
         $this->assertEquals('CommunicationRequestStatus-list', PHPFHIRConstants::TYPE_NAME_COMMUNICATION_REQUEST_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCommunicationRequestStatusList', PHPFHIRConstants::TYPE_CLASS_COMMUNICATION_REQUEST_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCommunicationRequestStatusList', PHPFHIRConstants::TYPE_CLASS_COMMUNICATION_REQUEST_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRCommunicationStatus()
@@ -838,10 +838,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCommunicationStatus', PHPFHIRConstants::TYPE_CLASS_COMMUNICATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCommunicationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCommunicationStatusList()
     {
         $this->assertEquals('CommunicationStatus-list', PHPFHIRConstants::TYPE_NAME_COMMUNICATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCommunicationStatusList', PHPFHIRConstants::TYPE_CLASS_COMMUNICATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCommunicationStatusList', PHPFHIRConstants::TYPE_CLASS_COMMUNICATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRComposition()
@@ -874,10 +874,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionAttestationMode', PHPFHIRConstants::TYPE_CLASS_COMPOSITION_ATTESTATION_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCompositionAttestationModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCompositionAttestationModeList()
     {
         $this->assertEquals('CompositionAttestationMode-list', PHPFHIRConstants::TYPE_NAME_COMPOSITION_ATTESTATION_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCompositionAttestationModeList', PHPFHIRConstants::TYPE_CLASS_COMPOSITION_ATTESTATION_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCompositionAttestationModeList', PHPFHIRConstants::TYPE_CLASS_COMPOSITION_ATTESTATION_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRCompositionStatus()
@@ -886,10 +886,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionStatus', PHPFHIRConstants::TYPE_CLASS_COMPOSITION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRCompositionStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRCompositionStatusList()
     {
         $this->assertEquals('CompositionStatus-list', PHPFHIRConstants::TYPE_NAME_COMPOSITION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRCompositionStatusList', PHPFHIRConstants::TYPE_CLASS_COMPOSITION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRCompositionStatusList', PHPFHIRConstants::TYPE_CLASS_COMPOSITION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRConceptMap()
@@ -928,10 +928,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConceptMapEquivalence', PHPFHIRConstants::TYPE_CLASS_CONCEPT_MAP_EQUIVALENCE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConceptMapEquivalenceList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConceptMapEquivalenceList()
     {
         $this->assertEquals('ConceptMapEquivalence-list', PHPFHIRConstants::TYPE_NAME_CONCEPT_MAP_EQUIVALENCE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConceptMapEquivalenceList', PHPFHIRConstants::TYPE_CLASS_CONCEPT_MAP_EQUIVALENCE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConceptMapEquivalenceList', PHPFHIRConstants::TYPE_CLASS_CONCEPT_MAP_EQUIVALENCE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRCondition()
@@ -958,10 +958,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConditionalDeleteStatus', PHPFHIRConstants::TYPE_CLASS_CONDITIONAL_DELETE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConditionalDeleteStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConditionalDeleteStatusList()
     {
         $this->assertEquals('ConditionalDeleteStatus-list', PHPFHIRConstants::TYPE_NAME_CONDITIONAL_DELETE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConditionalDeleteStatusList', PHPFHIRConstants::TYPE_CLASS_CONDITIONAL_DELETE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConditionalDeleteStatusList', PHPFHIRConstants::TYPE_CLASS_CONDITIONAL_DELETE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRConditionVerificationStatus()
@@ -970,10 +970,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConditionVerificationStatus', PHPFHIRConstants::TYPE_CLASS_CONDITION_VERIFICATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConditionVerificationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConditionVerificationStatusList()
     {
         $this->assertEquals('ConditionVerificationStatus-list', PHPFHIRConstants::TYPE_NAME_CONDITION_VERIFICATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConditionVerificationStatusList', PHPFHIRConstants::TYPE_CLASS_CONDITION_VERIFICATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConditionVerificationStatusList', PHPFHIRConstants::TYPE_CLASS_CONDITION_VERIFICATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRConformance()
@@ -1078,10 +1078,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_EVENT_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConformanceEventModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConformanceEventModeList()
     {
         $this->assertEquals('ConformanceEventMode-list', PHPFHIRConstants::TYPE_NAME_CONFORMANCE_EVENT_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConformanceEventModeList', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_EVENT_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConformanceEventModeList', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_EVENT_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRConformanceResourceStatus()
@@ -1090,10 +1090,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceResourceStatus', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_RESOURCE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConformanceResourceStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConformanceResourceStatusList()
     {
         $this->assertEquals('ConformanceResourceStatus-list', PHPFHIRConstants::TYPE_NAME_CONFORMANCE_RESOURCE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConformanceResourceStatusList', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_RESOURCE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConformanceResourceStatusList', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_RESOURCE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRConformanceStatementKind()
@@ -1102,10 +1102,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceStatementKind', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_STATEMENT_KIND);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConformanceStatementKindList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConformanceStatementKindList()
     {
         $this->assertEquals('ConformanceStatementKind-list', PHPFHIRConstants::TYPE_NAME_CONFORMANCE_STATEMENT_KIND_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConformanceStatementKindList', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_STATEMENT_KIND_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConformanceStatementKindList', PHPFHIRConstants::TYPE_CLASS_CONFORMANCE_STATEMENT_KIND_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRConstraintSeverity()
@@ -1114,10 +1114,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConstraintSeverity', PHPFHIRConstants::TYPE_CLASS_CONSTRAINT_SEVERITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRConstraintSeverityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRConstraintSeverityList()
     {
         $this->assertEquals('ConstraintSeverity-list', PHPFHIRConstants::TYPE_NAME_CONSTRAINT_SEVERITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRConstraintSeverityList', PHPFHIRConstants::TYPE_CLASS_CONSTRAINT_SEVERITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRConstraintSeverityList', PHPFHIRConstants::TYPE_CLASS_CONSTRAINT_SEVERITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRContactPoint()
@@ -1132,10 +1132,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPointSystem', PHPFHIRConstants::TYPE_CLASS_CONTACT_POINT_SYSTEM);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRContactPointSystemList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRContactPointSystemList()
     {
         $this->assertEquals('ContactPointSystem-list', PHPFHIRConstants::TYPE_NAME_CONTACT_POINT_SYSTEM_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRContactPointSystemList', PHPFHIRConstants::TYPE_CLASS_CONTACT_POINT_SYSTEM_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRContactPointSystemList', PHPFHIRConstants::TYPE_CLASS_CONTACT_POINT_SYSTEM_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRContactPointUse()
@@ -1144,10 +1144,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPointUse', PHPFHIRConstants::TYPE_CLASS_CONTACT_POINT_USE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRContactPointUseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRContactPointUseList()
     {
         $this->assertEquals('ContactPointUse-list', PHPFHIRConstants::TYPE_NAME_CONTACT_POINT_USE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRContactPointUseList', PHPFHIRConstants::TYPE_CLASS_CONTACT_POINT_USE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRContactPointUseList', PHPFHIRConstants::TYPE_CLASS_CONTACT_POINT_USE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRContentType()
@@ -1156,10 +1156,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContentType', PHPFHIRConstants::TYPE_CLASS_CONTENT_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRContentTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRContentTypeList()
     {
         $this->assertEquals('ContentType-list', PHPFHIRConstants::TYPE_NAME_CONTENT_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRContentTypeList', PHPFHIRConstants::TYPE_CLASS_CONTENT_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRContentTypeList', PHPFHIRConstants::TYPE_CLASS_CONTENT_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRContract()
@@ -1258,10 +1258,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDataElementStringency', PHPFHIRConstants::TYPE_CLASS_DATA_ELEMENT_STRINGENCY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDataElementStringencyList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDataElementStringencyList()
     {
         $this->assertEquals('DataElementStringency-list', PHPFHIRConstants::TYPE_NAME_DATA_ELEMENT_STRINGENCY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDataElementStringencyList', PHPFHIRConstants::TYPE_CLASS_DATA_ELEMENT_STRINGENCY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDataElementStringencyList', PHPFHIRConstants::TYPE_CLASS_DATA_ELEMENT_STRINGENCY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDate()
@@ -1294,10 +1294,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDaysOfWeek', PHPFHIRConstants::TYPE_CLASS_DAYS_OF_WEEK);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDaysOfWeekList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDaysOfWeekList()
     {
         $this->assertEquals('DaysOfWeek-list', PHPFHIRConstants::TYPE_NAME_DAYS_OF_WEEK_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDaysOfWeekList', PHPFHIRConstants::TYPE_CLASS_DAYS_OF_WEEK_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDaysOfWeekList', PHPFHIRConstants::TYPE_CLASS_DAYS_OF_WEEK_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDecimal()
@@ -1330,10 +1330,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDetectedIssueSeverity', PHPFHIRConstants::TYPE_CLASS_DETECTED_ISSUE_SEVERITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDetectedIssueSeverityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDetectedIssueSeverityList()
     {
         $this->assertEquals('DetectedIssueSeverity-list', PHPFHIRConstants::TYPE_NAME_DETECTED_ISSUE_SEVERITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDetectedIssueSeverityList', PHPFHIRConstants::TYPE_CLASS_DETECTED_ISSUE_SEVERITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDetectedIssueSeverityList', PHPFHIRConstants::TYPE_CLASS_DETECTED_ISSUE_SEVERITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRDevice()
@@ -1372,10 +1372,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceMetricCalibrationState', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CALIBRATION_STATE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceMetricCalibrationStateList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceMetricCalibrationStateList()
     {
         $this->assertEquals('DeviceMetricCalibrationState-list', PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_CALIBRATION_STATE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceMetricCalibrationStateList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CALIBRATION_STATE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceMetricCalibrationStateList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CALIBRATION_STATE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDeviceMetricCalibrationType()
@@ -1384,10 +1384,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceMetricCalibrationType', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CALIBRATION_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceMetricCalibrationTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceMetricCalibrationTypeList()
     {
         $this->assertEquals('DeviceMetricCalibrationType-list', PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_CALIBRATION_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceMetricCalibrationTypeList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CALIBRATION_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceMetricCalibrationTypeList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CALIBRATION_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDeviceMetricCategory()
@@ -1396,10 +1396,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceMetricCategory', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CATEGORY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceMetricCategoryList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceMetricCategoryList()
     {
         $this->assertEquals('DeviceMetricCategory-list', PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_CATEGORY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceMetricCategoryList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CATEGORY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceMetricCategoryList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_CATEGORY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDeviceMetricColor()
@@ -1408,10 +1408,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceMetricColor', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_COLOR);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceMetricColorList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceMetricColorList()
     {
         $this->assertEquals('DeviceMetricColor-list', PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_COLOR_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceMetricColorList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_COLOR_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceMetricColorList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_COLOR_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDeviceMetricOperationalStatus()
@@ -1420,10 +1420,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceMetricOperationalStatus', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_OPERATIONAL_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceMetricOperationalStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceMetricOperationalStatusList()
     {
         $this->assertEquals('DeviceMetricOperationalStatus-list', PHPFHIRConstants::TYPE_NAME_DEVICE_METRIC_OPERATIONAL_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceMetricOperationalStatusList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_OPERATIONAL_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceMetricOperationalStatusList', PHPFHIRConstants::TYPE_CLASS_DEVICE_METRIC_OPERATIONAL_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDeviceStatus()
@@ -1432,10 +1432,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceStatus', PHPFHIRConstants::TYPE_CLASS_DEVICE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceStatusList()
     {
         $this->assertEquals('DeviceStatus-list', PHPFHIRConstants::TYPE_NAME_DEVICE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceStatusList', PHPFHIRConstants::TYPE_CLASS_DEVICE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceStatusList', PHPFHIRConstants::TYPE_CLASS_DEVICE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRDeviceUseRequest()
@@ -1450,10 +1450,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceUseRequestPriority', PHPFHIRConstants::TYPE_CLASS_DEVICE_USE_REQUEST_PRIORITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceUseRequestPriorityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceUseRequestPriorityList()
     {
         $this->assertEquals('DeviceUseRequestPriority-list', PHPFHIRConstants::TYPE_NAME_DEVICE_USE_REQUEST_PRIORITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceUseRequestPriorityList', PHPFHIRConstants::TYPE_CLASS_DEVICE_USE_REQUEST_PRIORITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceUseRequestPriorityList', PHPFHIRConstants::TYPE_CLASS_DEVICE_USE_REQUEST_PRIORITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDeviceUseRequestStatus()
@@ -1462,10 +1462,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceUseRequestStatus', PHPFHIRConstants::TYPE_CLASS_DEVICE_USE_REQUEST_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDeviceUseRequestStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDeviceUseRequestStatusList()
     {
         $this->assertEquals('DeviceUseRequestStatus-list', PHPFHIRConstants::TYPE_NAME_DEVICE_USE_REQUEST_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDeviceUseRequestStatusList', PHPFHIRConstants::TYPE_CLASS_DEVICE_USE_REQUEST_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDeviceUseRequestStatusList', PHPFHIRConstants::TYPE_CLASS_DEVICE_USE_REQUEST_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRDeviceUseStatement()
@@ -1498,10 +1498,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticOrderPriority', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_ORDER_PRIORITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDiagnosticOrderPriorityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDiagnosticOrderPriorityList()
     {
         $this->assertEquals('DiagnosticOrderPriority-list', PHPFHIRConstants::TYPE_NAME_DIAGNOSTIC_ORDER_PRIORITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDiagnosticOrderPriorityList', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_ORDER_PRIORITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDiagnosticOrderPriorityList', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_ORDER_PRIORITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDiagnosticOrderStatus()
@@ -1510,10 +1510,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticOrderStatus', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_ORDER_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDiagnosticOrderStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDiagnosticOrderStatusList()
     {
         $this->assertEquals('DiagnosticOrderStatus-list', PHPFHIRConstants::TYPE_NAME_DIAGNOSTIC_ORDER_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDiagnosticOrderStatusList', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_ORDER_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDiagnosticOrderStatusList', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_ORDER_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRDiagnosticReport()
@@ -1534,10 +1534,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticReportStatus', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_REPORT_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDiagnosticReportStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDiagnosticReportStatusList()
     {
         $this->assertEquals('DiagnosticReportStatus-list', PHPFHIRConstants::TYPE_NAME_DIAGNOSTIC_REPORT_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDiagnosticReportStatusList', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_REPORT_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDiagnosticReportStatusList', PHPFHIRConstants::TYPE_CLASS_DIAGNOSTIC_REPORT_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDigitalMediaType()
@@ -1546,10 +1546,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDigitalMediaType', PHPFHIRConstants::TYPE_CLASS_DIGITAL_MEDIA_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDigitalMediaTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDigitalMediaTypeList()
     {
         $this->assertEquals('DigitalMediaType-list', PHPFHIRConstants::TYPE_NAME_DIGITAL_MEDIA_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDigitalMediaTypeList', PHPFHIRConstants::TYPE_CLASS_DIGITAL_MEDIA_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDigitalMediaTypeList', PHPFHIRConstants::TYPE_CLASS_DIGITAL_MEDIA_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRQuantity_FHIRDistance()
@@ -1582,10 +1582,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDocumentMode', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDocumentModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDocumentModeList()
     {
         $this->assertEquals('DocumentMode-list', PHPFHIRConstants::TYPE_NAME_DOCUMENT_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDocumentModeList', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDocumentModeList', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRDocumentReference()
@@ -1624,10 +1624,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDocumentReferenceStatus', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_REFERENCE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDocumentReferenceStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDocumentReferenceStatusList()
     {
         $this->assertEquals('DocumentReferenceStatus-list', PHPFHIRConstants::TYPE_NAME_DOCUMENT_REFERENCE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDocumentReferenceStatusList', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_REFERENCE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDocumentReferenceStatusList', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_REFERENCE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRDocumentRelationshipType()
@@ -1636,10 +1636,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDocumentRelationshipType', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_RELATIONSHIP_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRDocumentRelationshipTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRDocumentRelationshipTypeList()
     {
         $this->assertEquals('DocumentRelationshipType-list', PHPFHIRConstants::TYPE_NAME_DOCUMENT_RELATIONSHIP_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDocumentRelationshipTypeList', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_RELATIONSHIP_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRDocumentRelationshipTypeList', PHPFHIRConstants::TYPE_CLASS_DOCUMENT_RELATIONSHIP_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource()
@@ -1750,10 +1750,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREncounterClass', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_CLASS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIREncounterClassList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIREncounterClassList()
     {
         $this->assertEquals('EncounterClass-list', PHPFHIRConstants::TYPE_NAME_ENCOUNTER_CLASS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIREncounterClassList', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_CLASS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIREncounterClassList', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_CLASS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIREncounterLocationStatus()
@@ -1762,10 +1762,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREncounterLocationStatus', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_LOCATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIREncounterLocationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIREncounterLocationStatusList()
     {
         $this->assertEquals('EncounterLocationStatus-list', PHPFHIRConstants::TYPE_NAME_ENCOUNTER_LOCATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIREncounterLocationStatusList', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_LOCATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIREncounterLocationStatusList', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_LOCATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIREncounterState()
@@ -1774,10 +1774,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREncounterState', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_STATE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIREncounterStateList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIREncounterStateList()
     {
         $this->assertEquals('EncounterState-list', PHPFHIRConstants::TYPE_NAME_ENCOUNTER_STATE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIREncounterStateList', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_STATE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIREncounterStateList', PHPFHIRConstants::TYPE_CLASS_ENCOUNTER_STATE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIREnrollmentRequest()
@@ -1816,10 +1816,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREpisodeOfCareStatus', PHPFHIRConstants::TYPE_CLASS_EPISODE_OF_CARE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIREpisodeOfCareStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIREpisodeOfCareStatusList()
     {
         $this->assertEquals('EpisodeOfCareStatus-list', PHPFHIRConstants::TYPE_NAME_EPISODE_OF_CARE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIREpisodeOfCareStatusList', PHPFHIRConstants::TYPE_CLASS_EPISODE_OF_CARE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIREpisodeOfCareStatusList', PHPFHIRConstants::TYPE_CLASS_EPISODE_OF_CARE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIREventTiming()
@@ -1828,10 +1828,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREventTiming', PHPFHIRConstants::TYPE_CLASS_EVENT_TIMING);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIREventTimingList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIREventTimingList()
     {
         $this->assertEquals('EventTiming-list', PHPFHIRConstants::TYPE_NAME_EVENT_TIMING_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIREventTimingList', PHPFHIRConstants::TYPE_CLASS_EVENT_TIMING_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIREventTimingList', PHPFHIRConstants::TYPE_CLASS_EVENT_TIMING_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRExplanationOfBenefit()
@@ -1852,10 +1852,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtensionContext', PHPFHIRConstants::TYPE_CLASS_EXTENSION_CONTEXT);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRExtensionContextList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRExtensionContextList()
     {
         $this->assertEquals('ExtensionContext-list', PHPFHIRConstants::TYPE_NAME_EXTENSION_CONTEXT_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRExtensionContextList', PHPFHIRConstants::TYPE_CLASS_EXTENSION_CONTEXT_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRExtensionContextList', PHPFHIRConstants::TYPE_CLASS_EXTENSION_CONTEXT_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRFamilyHistoryStatus()
@@ -1864,10 +1864,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRFamilyHistoryStatus', PHPFHIRConstants::TYPE_CLASS_FAMILY_HISTORY_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRFamilyHistoryStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRFamilyHistoryStatusList()
     {
         $this->assertEquals('FamilyHistoryStatus-list', PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRFamilyHistoryStatusList', PHPFHIRConstants::TYPE_CLASS_FAMILY_HISTORY_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRFamilyHistoryStatusList', PHPFHIRConstants::TYPE_CLASS_FAMILY_HISTORY_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRFamilyMemberHistory()
@@ -1888,10 +1888,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRFilterOperator', PHPFHIRConstants::TYPE_CLASS_FILTER_OPERATOR);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRFilterOperatorList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRFilterOperatorList()
     {
         $this->assertEquals('FilterOperator-list', PHPFHIRConstants::TYPE_NAME_FILTER_OPERATOR_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRFilterOperatorList', PHPFHIRConstants::TYPE_CLASS_FILTER_OPERATOR_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRFilterOperatorList', PHPFHIRConstants::TYPE_CLASS_FILTER_OPERATOR_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRFlag()
@@ -1906,10 +1906,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRFlagStatus', PHPFHIRConstants::TYPE_CLASS_FLAG_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRFlagStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRFlagStatusList()
     {
         $this->assertEquals('FlagStatus-list', PHPFHIRConstants::TYPE_NAME_FLAG_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRFlagStatusList', PHPFHIRConstants::TYPE_CLASS_FLAG_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRFlagStatusList', PHPFHIRConstants::TYPE_CLASS_FLAG_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRGoal()
@@ -1930,10 +1930,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRGoalStatus', PHPFHIRConstants::TYPE_CLASS_GOAL_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRGoalStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRGoalStatusList()
     {
         $this->assertEquals('GoalStatus-list', PHPFHIRConstants::TYPE_NAME_GOAL_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRGoalStatusList', PHPFHIRConstants::TYPE_CLASS_GOAL_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRGoalStatusList', PHPFHIRConstants::TYPE_CLASS_GOAL_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRGroup()
@@ -1960,10 +1960,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRGroupType', PHPFHIRConstants::TYPE_CLASS_GROUP_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRGroupTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRGroupTypeList()
     {
         $this->assertEquals('GroupType-list', PHPFHIRConstants::TYPE_NAME_GROUP_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRGroupTypeList', PHPFHIRConstants::TYPE_CLASS_GROUP_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRGroupTypeList', PHPFHIRConstants::TYPE_CLASS_GROUP_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRGuideDependencyType()
@@ -1972,10 +1972,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRGuideDependencyType', PHPFHIRConstants::TYPE_CLASS_GUIDE_DEPENDENCY_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRGuideDependencyTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRGuideDependencyTypeList()
     {
         $this->assertEquals('GuideDependencyType-list', PHPFHIRConstants::TYPE_NAME_GUIDE_DEPENDENCY_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRGuideDependencyTypeList', PHPFHIRConstants::TYPE_CLASS_GUIDE_DEPENDENCY_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRGuideDependencyTypeList', PHPFHIRConstants::TYPE_CLASS_GUIDE_DEPENDENCY_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRGuidePageKind()
@@ -1984,10 +1984,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRGuidePageKind', PHPFHIRConstants::TYPE_CLASS_GUIDE_PAGE_KIND);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRGuidePageKindList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRGuidePageKindList()
     {
         $this->assertEquals('GuidePageKind-list', PHPFHIRConstants::TYPE_NAME_GUIDE_PAGE_KIND_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRGuidePageKindList', PHPFHIRConstants::TYPE_CLASS_GUIDE_PAGE_KIND_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRGuidePageKindList', PHPFHIRConstants::TYPE_CLASS_GUIDE_PAGE_KIND_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRGuideResourcePurpose()
@@ -1996,10 +1996,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRGuideResourcePurpose', PHPFHIRConstants::TYPE_CLASS_GUIDE_RESOURCE_PURPOSE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRGuideResourcePurposeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRGuideResourcePurposeList()
     {
         $this->assertEquals('GuideResourcePurpose-list', PHPFHIRConstants::TYPE_NAME_GUIDE_RESOURCE_PURPOSE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRGuideResourcePurposeList', PHPFHIRConstants::TYPE_CLASS_GUIDE_RESOURCE_PURPOSE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRGuideResourcePurposeList', PHPFHIRConstants::TYPE_CLASS_GUIDE_RESOURCE_PURPOSE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRHealthcareService()
@@ -2032,10 +2032,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHTTPVerb', PHPFHIRConstants::TYPE_CLASS_HTTPVERB);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRHTTPVerbList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRHTTPVerbList()
     {
         $this->assertEquals('HTTPVerb-list', PHPFHIRConstants::TYPE_NAME_HTTPVERB_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRHTTPVerbList', PHPFHIRConstants::TYPE_CLASS_HTTPVERB_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRHTTPVerbList', PHPFHIRConstants::TYPE_CLASS_HTTPVERB_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRHumanName()
@@ -2068,10 +2068,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifierUse', PHPFHIRConstants::TYPE_CLASS_IDENTIFIER_USE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRIdentifierUseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRIdentifierUseList()
     {
         $this->assertEquals('IdentifierUse-list', PHPFHIRConstants::TYPE_NAME_IDENTIFIER_USE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdentifierUseList', PHPFHIRConstants::TYPE_CLASS_IDENTIFIER_USE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRIdentifierUseList', PHPFHIRConstants::TYPE_CLASS_IDENTIFIER_USE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRIdentityAssuranceLevel()
@@ -2080,10 +2080,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentityAssuranceLevel', PHPFHIRConstants::TYPE_CLASS_IDENTITY_ASSURANCE_LEVEL);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRIdentityAssuranceLevelList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRIdentityAssuranceLevelList()
     {
         $this->assertEquals('IdentityAssuranceLevel-list', PHPFHIRConstants::TYPE_NAME_IDENTITY_ASSURANCE_LEVEL_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdentityAssuranceLevelList', PHPFHIRConstants::TYPE_CLASS_IDENTITY_ASSURANCE_LEVEL_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRIdentityAssuranceLevelList', PHPFHIRConstants::TYPE_CLASS_IDENTITY_ASSURANCE_LEVEL_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRImagingObjectSelection()
@@ -2230,10 +2230,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstanceAvailability', PHPFHIRConstants::TYPE_CLASS_INSTANCE_AVAILABILITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRInstanceAvailabilityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRInstanceAvailabilityList()
     {
         $this->assertEquals('InstanceAvailability-list', PHPFHIRConstants::TYPE_NAME_INSTANCE_AVAILABILITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRInstanceAvailabilityList', PHPFHIRConstants::TYPE_CLASS_INSTANCE_AVAILABILITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRInstanceAvailabilityList', PHPFHIRConstants::TYPE_CLASS_INSTANCE_AVAILABILITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRInstant()
@@ -2266,10 +2266,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIssueSeverity', PHPFHIRConstants::TYPE_CLASS_ISSUE_SEVERITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRIssueSeverityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRIssueSeverityList()
     {
         $this->assertEquals('IssueSeverity-list', PHPFHIRConstants::TYPE_NAME_ISSUE_SEVERITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRIssueSeverityList', PHPFHIRConstants::TYPE_CLASS_ISSUE_SEVERITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRIssueSeverityList', PHPFHIRConstants::TYPE_CLASS_ISSUE_SEVERITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRIssueType()
@@ -2278,10 +2278,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIssueType', PHPFHIRConstants::TYPE_CLASS_ISSUE_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRIssueTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRIssueTypeList()
     {
         $this->assertEquals('IssueType-list', PHPFHIRConstants::TYPE_NAME_ISSUE_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRIssueTypeList', PHPFHIRConstants::TYPE_CLASS_ISSUE_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRIssueTypeList', PHPFHIRConstants::TYPE_CLASS_ISSUE_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRLinkType()
@@ -2290,10 +2290,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRLinkType', PHPFHIRConstants::TYPE_CLASS_LINK_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRLinkTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRLinkTypeList()
     {
         $this->assertEquals('LinkType-list', PHPFHIRConstants::TYPE_NAME_LINK_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRLinkTypeList', PHPFHIRConstants::TYPE_CLASS_LINK_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRLinkTypeList', PHPFHIRConstants::TYPE_CLASS_LINK_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRList()
@@ -2314,10 +2314,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRListMode', PHPFHIRConstants::TYPE_CLASS_LIST_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRListModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRListModeList()
     {
         $this->assertEquals('ListMode-list', PHPFHIRConstants::TYPE_NAME_LIST_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRListModeList', PHPFHIRConstants::TYPE_CLASS_LIST_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRListModeList', PHPFHIRConstants::TYPE_CLASS_LIST_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRListStatus()
@@ -2326,10 +2326,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRListStatus', PHPFHIRConstants::TYPE_CLASS_LIST_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRListStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRListStatusList()
     {
         $this->assertEquals('ListStatus-list', PHPFHIRConstants::TYPE_NAME_LIST_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRListStatusList', PHPFHIRConstants::TYPE_CLASS_LIST_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRListStatusList', PHPFHIRConstants::TYPE_CLASS_LIST_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRLocation()
@@ -2350,10 +2350,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRLocationMode', PHPFHIRConstants::TYPE_CLASS_LOCATION_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRLocationModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRLocationModeList()
     {
         $this->assertEquals('LocationMode-list', PHPFHIRConstants::TYPE_NAME_LOCATION_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRLocationModeList', PHPFHIRConstants::TYPE_CLASS_LOCATION_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRLocationModeList', PHPFHIRConstants::TYPE_CLASS_LOCATION_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRLocationStatus()
@@ -2362,10 +2362,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRLocationStatus', PHPFHIRConstants::TYPE_CLASS_LOCATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRLocationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRLocationStatusList()
     {
         $this->assertEquals('LocationStatus-list', PHPFHIRConstants::TYPE_NAME_LOCATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRLocationStatusList', PHPFHIRConstants::TYPE_CLASS_LOCATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRLocationStatusList', PHPFHIRConstants::TYPE_CLASS_LOCATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRMarkdown()
@@ -2386,10 +2386,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeasmnt_Principle', PHPFHIRConstants::TYPE_CLASS_MEASMNT_HYPHEN_PRINCIPLE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRMeasmnt_PrincipleList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRMeasmnt_PrincipleList()
     {
         $this->assertEquals('Measmnt-Principle-list', PHPFHIRConstants::TYPE_NAME_MEASMNT_HYPHEN_PRINCIPLE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMeasmnt_PrincipleList', PHPFHIRConstants::TYPE_CLASS_MEASMNT_HYPHEN_PRINCIPLE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRMeasmnt_PrincipleList', PHPFHIRConstants::TYPE_CLASS_MEASMNT_HYPHEN_PRINCIPLE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRMedia()
@@ -2452,10 +2452,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationAdministrationStatus', PHPFHIRConstants::TYPE_CLASS_MEDICATION_ADMINISTRATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRMedicationAdministrationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRMedicationAdministrationStatusList()
     {
         $this->assertEquals('MedicationAdministrationStatus-list', PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMedicationAdministrationStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_ADMINISTRATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRMedicationAdministrationStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_ADMINISTRATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRMedicationDispense()
@@ -2482,10 +2482,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationDispenseStatus', PHPFHIRConstants::TYPE_CLASS_MEDICATION_DISPENSE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRMedicationDispenseStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRMedicationDispenseStatusList()
     {
         $this->assertEquals('MedicationDispenseStatus-list', PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMedicationDispenseStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_DISPENSE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRMedicationDispenseStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_DISPENSE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRMedicationOrder()
@@ -2518,10 +2518,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationOrderStatus', PHPFHIRConstants::TYPE_CLASS_MEDICATION_ORDER_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRMedicationOrderStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRMedicationOrderStatusList()
     {
         $this->assertEquals('MedicationOrderStatus-list', PHPFHIRConstants::TYPE_NAME_MEDICATION_ORDER_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMedicationOrderStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_ORDER_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRMedicationOrderStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_ORDER_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRMedicationStatement()
@@ -2542,10 +2542,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationStatementStatus', PHPFHIRConstants::TYPE_CLASS_MEDICATION_STATEMENT_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRMedicationStatementStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRMedicationStatementStatusList()
     {
         $this->assertEquals('MedicationStatementStatus-list', PHPFHIRConstants::TYPE_NAME_MEDICATION_STATEMENT_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMedicationStatementStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_STATEMENT_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRMedicationStatementStatusList', PHPFHIRConstants::TYPE_CLASS_MEDICATION_STATEMENT_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRMessageHeader()
@@ -2578,10 +2578,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory', PHPFHIRConstants::TYPE_CLASS_MESSAGE_SIGNIFICANCE_CATEGORY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRMessageSignificanceCategoryList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRMessageSignificanceCategoryList()
     {
         $this->assertEquals('MessageSignificanceCategory-list', PHPFHIRConstants::TYPE_NAME_MESSAGE_SIGNIFICANCE_CATEGORY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRMessageSignificanceCategoryList', PHPFHIRConstants::TYPE_CLASS_MESSAGE_SIGNIFICANCE_CATEGORY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRMessageSignificanceCategoryList', PHPFHIRConstants::TYPE_CLASS_MESSAGE_SIGNIFICANCE_CATEGORY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRMeta()
@@ -2602,10 +2602,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNameUse', PHPFHIRConstants::TYPE_CLASS_NAME_USE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRNameUseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRNameUseList()
     {
         $this->assertEquals('NameUse-list', PHPFHIRConstants::TYPE_NAME_NAME_USE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRNameUseList', PHPFHIRConstants::TYPE_CLASS_NAME_USE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRNameUseList', PHPFHIRConstants::TYPE_CLASS_NAME_USE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRNamingSystem()
@@ -2632,10 +2632,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNamingSystemIdentifierType', PHPFHIRConstants::TYPE_CLASS_NAMING_SYSTEM_IDENTIFIER_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRNamingSystemIdentifierTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRNamingSystemIdentifierTypeList()
     {
         $this->assertEquals('NamingSystemIdentifierType-list', PHPFHIRConstants::TYPE_NAME_NAMING_SYSTEM_IDENTIFIER_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRNamingSystemIdentifierTypeList', PHPFHIRConstants::TYPE_CLASS_NAMING_SYSTEM_IDENTIFIER_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRNamingSystemIdentifierTypeList', PHPFHIRConstants::TYPE_CLASS_NAMING_SYSTEM_IDENTIFIER_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRNamingSystemType()
@@ -2644,10 +2644,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNamingSystemType', PHPFHIRConstants::TYPE_CLASS_NAMING_SYSTEM_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRNamingSystemTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRNamingSystemTypeList()
     {
         $this->assertEquals('NamingSystemType-list', PHPFHIRConstants::TYPE_NAME_NAMING_SYSTEM_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRNamingSystemTypeList', PHPFHIRConstants::TYPE_CLASS_NAMING_SYSTEM_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRNamingSystemTypeList', PHPFHIRConstants::TYPE_CLASS_NAMING_SYSTEM_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRNarrative()
@@ -2662,10 +2662,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrativeStatus', PHPFHIRConstants::TYPE_CLASS_NARRATIVE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRNarrativeStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRNarrativeStatusList()
     {
         $this->assertEquals('NarrativeStatus-list', PHPFHIRConstants::TYPE_NAME_NARRATIVE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRNarrativeStatusList', PHPFHIRConstants::TYPE_CLASS_NARRATIVE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRNarrativeStatusList', PHPFHIRConstants::TYPE_CLASS_NARRATIVE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRNoteType()
@@ -2674,10 +2674,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNoteType', PHPFHIRConstants::TYPE_CLASS_NOTE_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRNoteTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRNoteTypeList()
     {
         $this->assertEquals('NoteType-list', PHPFHIRConstants::TYPE_NAME_NOTE_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRNoteTypeList', PHPFHIRConstants::TYPE_CLASS_NOTE_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRNoteTypeList', PHPFHIRConstants::TYPE_CLASS_NOTE_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRNutritionOrder()
@@ -2728,10 +2728,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNutritionOrderStatus', PHPFHIRConstants::TYPE_CLASS_NUTRITION_ORDER_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRNutritionOrderStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRNutritionOrderStatusList()
     {
         $this->assertEquals('NutritionOrderStatus-list', PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRNutritionOrderStatusList', PHPFHIRConstants::TYPE_CLASS_NUTRITION_ORDER_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRNutritionOrderStatusList', PHPFHIRConstants::TYPE_CLASS_NUTRITION_ORDER_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRObservation()
@@ -2764,10 +2764,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRObservationRelationshipType', PHPFHIRConstants::TYPE_CLASS_OBSERVATION_RELATIONSHIP_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRObservationRelationshipTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRObservationRelationshipTypeList()
     {
         $this->assertEquals('ObservationRelationshipType-list', PHPFHIRConstants::TYPE_NAME_OBSERVATION_RELATIONSHIP_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRObservationRelationshipTypeList', PHPFHIRConstants::TYPE_CLASS_OBSERVATION_RELATIONSHIP_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRObservationRelationshipTypeList', PHPFHIRConstants::TYPE_CLASS_OBSERVATION_RELATIONSHIP_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRObservationStatus()
@@ -2776,10 +2776,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRObservationStatus', PHPFHIRConstants::TYPE_CLASS_OBSERVATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRObservationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRObservationStatusList()
     {
         $this->assertEquals('ObservationStatus-list', PHPFHIRConstants::TYPE_NAME_OBSERVATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRObservationStatusList', PHPFHIRConstants::TYPE_CLASS_OBSERVATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRObservationStatusList', PHPFHIRConstants::TYPE_CLASS_OBSERVATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIROid()
@@ -2824,10 +2824,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROperationKind', PHPFHIRConstants::TYPE_CLASS_OPERATION_KIND);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIROperationKindList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIROperationKindList()
     {
         $this->assertEquals('OperationKind-list', PHPFHIRConstants::TYPE_NAME_OPERATION_KIND_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIROperationKindList', PHPFHIRConstants::TYPE_CLASS_OPERATION_KIND_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIROperationKindList', PHPFHIRConstants::TYPE_CLASS_OPERATION_KIND_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIROperationOutcome()
@@ -2848,10 +2848,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROperationParameterUse', PHPFHIRConstants::TYPE_CLASS_OPERATION_PARAMETER_USE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIROperationParameterUseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIROperationParameterUseList()
     {
         $this->assertEquals('OperationParameterUse-list', PHPFHIRConstants::TYPE_NAME_OPERATION_PARAMETER_USE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIROperationParameterUseList', PHPFHIRConstants::TYPE_CLASS_OPERATION_PARAMETER_USE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIROperationParameterUseList', PHPFHIRConstants::TYPE_CLASS_OPERATION_PARAMETER_USE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIROrder()
@@ -2878,10 +2878,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROrderStatus', PHPFHIRConstants::TYPE_CLASS_ORDER_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIROrderStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIROrderStatusList()
     {
         $this->assertEquals('OrderStatus-list', PHPFHIRConstants::TYPE_NAME_ORDER_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIROrderStatusList', PHPFHIRConstants::TYPE_CLASS_ORDER_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIROrderStatusList', PHPFHIRConstants::TYPE_CLASS_ORDER_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIROrganization()
@@ -2914,10 +2914,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRParticipantRequired', PHPFHIRConstants::TYPE_CLASS_PARTICIPANT_REQUIRED);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRParticipantRequiredList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRParticipantRequiredList()
     {
         $this->assertEquals('ParticipantRequired-list', PHPFHIRConstants::TYPE_NAME_PARTICIPANT_REQUIRED_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRParticipantRequiredList', PHPFHIRConstants::TYPE_CLASS_PARTICIPANT_REQUIRED_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRParticipantRequiredList', PHPFHIRConstants::TYPE_CLASS_PARTICIPANT_REQUIRED_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRParticipantStatus()
@@ -2926,10 +2926,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRParticipantStatus', PHPFHIRConstants::TYPE_CLASS_PARTICIPANT_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRParticipantStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRParticipantStatusList()
     {
         $this->assertEquals('ParticipantStatus-list', PHPFHIRConstants::TYPE_NAME_PARTICIPANT_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRParticipantStatusList', PHPFHIRConstants::TYPE_CLASS_PARTICIPANT_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRParticipantStatusList', PHPFHIRConstants::TYPE_CLASS_PARTICIPANT_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRParticipationStatus()
@@ -2938,10 +2938,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRParticipationStatus', PHPFHIRConstants::TYPE_CLASS_PARTICIPATION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRParticipationStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRParticipationStatusList()
     {
         $this->assertEquals('ParticipationStatus-list', PHPFHIRConstants::TYPE_NAME_PARTICIPATION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRParticipationStatusList', PHPFHIRConstants::TYPE_CLASS_PARTICIPATION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRParticipationStatusList', PHPFHIRConstants::TYPE_CLASS_PARTICIPATION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRPatient()
@@ -3076,10 +3076,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestPriority', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_REQUEST_PRIORITY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRProcedureRequestPriorityList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRProcedureRequestPriorityList()
     {
         $this->assertEquals('ProcedureRequestPriority-list', PHPFHIRConstants::TYPE_NAME_PROCEDURE_REQUEST_PRIORITY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRProcedureRequestPriorityList', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_REQUEST_PRIORITY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRProcedureRequestPriorityList', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_REQUEST_PRIORITY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRProcedureRequestStatus()
@@ -3088,10 +3088,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestStatus', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_REQUEST_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRProcedureRequestStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRProcedureRequestStatusList()
     {
         $this->assertEquals('ProcedureRequestStatus-list', PHPFHIRConstants::TYPE_NAME_PROCEDURE_REQUEST_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRProcedureRequestStatusList', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_REQUEST_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRProcedureRequestStatusList', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_REQUEST_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRProcedureStatus()
@@ -3100,10 +3100,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureStatus', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRProcedureStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRProcedureStatusList()
     {
         $this->assertEquals('ProcedureStatus-list', PHPFHIRConstants::TYPE_NAME_PROCEDURE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRProcedureStatusList', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRProcedureStatusList', PHPFHIRConstants::TYPE_CLASS_PROCEDURE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRProcessRequest()
@@ -3136,10 +3136,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPropertyRepresentation', PHPFHIRConstants::TYPE_CLASS_PROPERTY_REPRESENTATION);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRPropertyRepresentationList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRPropertyRepresentationList()
     {
         $this->assertEquals('PropertyRepresentation-list', PHPFHIRConstants::TYPE_NAME_PROPERTY_REPRESENTATION_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRPropertyRepresentationList', PHPFHIRConstants::TYPE_CLASS_PROPERTY_REPRESENTATION_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRPropertyRepresentationList', PHPFHIRConstants::TYPE_CLASS_PROPERTY_REPRESENTATION_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRProvenance()
@@ -3172,10 +3172,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProvenanceEntityRole', PHPFHIRConstants::TYPE_CLASS_PROVENANCE_ENTITY_ROLE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRProvenanceEntityRoleList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRProvenanceEntityRoleList()
     {
         $this->assertEquals('ProvenanceEntityRole-list', PHPFHIRConstants::TYPE_NAME_PROVENANCE_ENTITY_ROLE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRProvenanceEntityRoleList', PHPFHIRConstants::TYPE_CLASS_PROVENANCE_ENTITY_ROLE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRProvenanceEntityRoleList', PHPFHIRConstants::TYPE_CLASS_PROVENANCE_ENTITY_ROLE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRQuantity()
@@ -3190,10 +3190,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantityComparator', PHPFHIRConstants::TYPE_CLASS_QUANTITY_COMPARATOR);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRQuantityComparatorList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRQuantityComparatorList()
     {
         $this->assertEquals('QuantityComparator-list', PHPFHIRConstants::TYPE_NAME_QUANTITY_COMPARATOR_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRQuantityComparatorList', PHPFHIRConstants::TYPE_CLASS_QUANTITY_COMPARATOR_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRQuantityComparatorList', PHPFHIRConstants::TYPE_CLASS_QUANTITY_COMPARATOR_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRQuestionnaire()
@@ -3244,10 +3244,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuestionnaireResponseStatus', PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_RESPONSE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRQuestionnaireResponseStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRQuestionnaireResponseStatusList()
     {
         $this->assertEquals('QuestionnaireResponseStatus-list', PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_RESPONSE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRQuestionnaireResponseStatusList', PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_RESPONSE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRQuestionnaireResponseStatusList', PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_RESPONSE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRQuestionnaireStatus()
@@ -3256,10 +3256,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuestionnaireStatus', PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRQuestionnaireStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRQuestionnaireStatusList()
     {
         $this->assertEquals('QuestionnaireStatus-list', PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRQuestionnaireStatusList', PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRQuestionnaireStatusList', PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRRange()
@@ -3292,10 +3292,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReferralStatus', PHPFHIRConstants::TYPE_CLASS_REFERRAL_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRReferralStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRReferralStatusList()
     {
         $this->assertEquals('ReferralStatus-list', PHPFHIRConstants::TYPE_NAME_REFERRAL_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRReferralStatusList', PHPFHIRConstants::TYPE_CLASS_REFERRAL_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRReferralStatusList', PHPFHIRConstants::TYPE_CLASS_REFERRAL_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRRelatedPerson()
@@ -3310,10 +3310,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRemittanceOutcome', PHPFHIRConstants::TYPE_CLASS_REMITTANCE_OUTCOME);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRRemittanceOutcomeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRRemittanceOutcomeList()
     {
         $this->assertEquals('RemittanceOutcome-list', PHPFHIRConstants::TYPE_NAME_REMITTANCE_OUTCOME_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRRemittanceOutcomeList', PHPFHIRConstants::TYPE_CLASS_REMITTANCE_OUTCOME_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRRemittanceOutcomeList', PHPFHIRConstants::TYPE_CLASS_REMITTANCE_OUTCOME_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource()
@@ -3334,10 +3334,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRResourceVersionPolicy', PHPFHIRConstants::TYPE_CLASS_RESOURCE_VERSION_POLICY);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResourceVersionPolicyList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRResourceVersionPolicyList()
     {
         $this->assertEquals('ResourceVersionPolicy-list', PHPFHIRConstants::TYPE_NAME_RESOURCE_VERSION_POLICY_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResourceVersionPolicyList', PHPFHIRConstants::TYPE_CLASS_RESOURCE_VERSION_POLICY_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRResourceVersionPolicyList', PHPFHIRConstants::TYPE_CLASS_RESOURCE_VERSION_POLICY_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRResponseType()
@@ -3346,10 +3346,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRResponseType', PHPFHIRConstants::TYPE_CLASS_RESPONSE_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResponseTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRResponseTypeList()
     {
         $this->assertEquals('ResponseType-list', PHPFHIRConstants::TYPE_NAME_RESPONSE_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResponseTypeList', PHPFHIRConstants::TYPE_CLASS_RESPONSE_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRResponseTypeList', PHPFHIRConstants::TYPE_CLASS_RESPONSE_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRRestfulConformanceMode()
@@ -3358,10 +3358,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRestfulConformanceMode', PHPFHIRConstants::TYPE_CLASS_RESTFUL_CONFORMANCE_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRRestfulConformanceModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRRestfulConformanceModeList()
     {
         $this->assertEquals('RestfulConformanceMode-list', PHPFHIRConstants::TYPE_NAME_RESTFUL_CONFORMANCE_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRRestfulConformanceModeList', PHPFHIRConstants::TYPE_CLASS_RESTFUL_CONFORMANCE_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRRestfulConformanceModeList', PHPFHIRConstants::TYPE_CLASS_RESTFUL_CONFORMANCE_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRRiskAssessment()
@@ -3406,10 +3406,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSearchEntryMode', PHPFHIRConstants::TYPE_CLASS_SEARCH_ENTRY_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSearchEntryModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSearchEntryModeList()
     {
         $this->assertEquals('SearchEntryMode-list', PHPFHIRConstants::TYPE_NAME_SEARCH_ENTRY_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSearchEntryModeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_ENTRY_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSearchEntryModeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_ENTRY_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRSearchModifierCode()
@@ -3418,10 +3418,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSearchModifierCode', PHPFHIRConstants::TYPE_CLASS_SEARCH_MODIFIER_CODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSearchModifierCodeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSearchModifierCodeList()
     {
         $this->assertEquals('SearchModifierCode-list', PHPFHIRConstants::TYPE_NAME_SEARCH_MODIFIER_CODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSearchModifierCodeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_MODIFIER_CODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSearchModifierCodeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_MODIFIER_CODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRSearchParameter()
@@ -3442,10 +3442,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSearchParamType', PHPFHIRConstants::TYPE_CLASS_SEARCH_PARAM_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSearchParamTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSearchParamTypeList()
     {
         $this->assertEquals('SearchParamType-list', PHPFHIRConstants::TYPE_NAME_SEARCH_PARAM_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSearchParamTypeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_PARAM_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSearchParamTypeList', PHPFHIRConstants::TYPE_CLASS_SEARCH_PARAM_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRSignature()
@@ -3466,10 +3466,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSlicingRules', PHPFHIRConstants::TYPE_CLASS_SLICING_RULES);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSlicingRulesList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSlicingRulesList()
     {
         $this->assertEquals('SlicingRules-list', PHPFHIRConstants::TYPE_NAME_SLICING_RULES_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSlicingRulesList', PHPFHIRConstants::TYPE_CLASS_SLICING_RULES_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSlicingRulesList', PHPFHIRConstants::TYPE_CLASS_SLICING_RULES_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRSlot()
@@ -3484,10 +3484,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSlotStatus', PHPFHIRConstants::TYPE_CLASS_SLOT_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSlotStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSlotStatusList()
     {
         $this->assertEquals('SlotStatus-list', PHPFHIRConstants::TYPE_NAME_SLOT_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSlotStatusList', PHPFHIRConstants::TYPE_CLASS_SLOT_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSlotStatusList', PHPFHIRConstants::TYPE_CLASS_SLOT_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRSpecimen()
@@ -3520,10 +3520,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus', PHPFHIRConstants::TYPE_CLASS_SPECIMEN_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSpecimenStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSpecimenStatusList()
     {
         $this->assertEquals('SpecimenStatus-list', PHPFHIRConstants::TYPE_NAME_SPECIMEN_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSpecimenStatusList', PHPFHIRConstants::TYPE_CLASS_SPECIMEN_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSpecimenStatusList', PHPFHIRConstants::TYPE_CLASS_SPECIMEN_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRString()
@@ -3574,10 +3574,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRStructureDefinitionKind', PHPFHIRConstants::TYPE_CLASS_STRUCTURE_DEFINITION_KIND);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStructureDefinitionKindList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRStructureDefinitionKindList()
     {
         $this->assertEquals('StructureDefinitionKind-list', PHPFHIRConstants::TYPE_NAME_STRUCTURE_DEFINITION_KIND_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStructureDefinitionKindList', PHPFHIRConstants::TYPE_CLASS_STRUCTURE_DEFINITION_KIND_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRStructureDefinitionKindList', PHPFHIRConstants::TYPE_CLASS_STRUCTURE_DEFINITION_KIND_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRSubscription()
@@ -3598,10 +3598,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionChannelType', PHPFHIRConstants::TYPE_CLASS_SUBSCRIPTION_CHANNEL_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSubscriptionChannelTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSubscriptionChannelTypeList()
     {
         $this->assertEquals('SubscriptionChannelType-list', PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION_CHANNEL_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSubscriptionChannelTypeList', PHPFHIRConstants::TYPE_CLASS_SUBSCRIPTION_CHANNEL_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSubscriptionChannelTypeList', PHPFHIRConstants::TYPE_CLASS_SUBSCRIPTION_CHANNEL_TYPE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRSubscriptionStatus()
@@ -3610,10 +3610,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus', PHPFHIRConstants::TYPE_CLASS_SUBSCRIPTION_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSubscriptionStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSubscriptionStatusList()
     {
         $this->assertEquals('SubscriptionStatus-list', PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSubscriptionStatusList', PHPFHIRConstants::TYPE_CLASS_SUBSCRIPTION_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSubscriptionStatusList', PHPFHIRConstants::TYPE_CLASS_SUBSCRIPTION_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRSubstance()
@@ -3646,10 +3646,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSupplyDeliveryStatus', PHPFHIRConstants::TYPE_CLASS_SUPPLY_DELIVERY_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSupplyDeliveryStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSupplyDeliveryStatusList()
     {
         $this->assertEquals('SupplyDeliveryStatus-list', PHPFHIRConstants::TYPE_NAME_SUPPLY_DELIVERY_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSupplyDeliveryStatusList', PHPFHIRConstants::TYPE_CLASS_SUPPLY_DELIVERY_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSupplyDeliveryStatusList', PHPFHIRConstants::TYPE_CLASS_SUPPLY_DELIVERY_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRSupplyRequest()
@@ -3670,10 +3670,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSupplyRequestStatus', PHPFHIRConstants::TYPE_CLASS_SUPPLY_REQUEST_STATUS);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSupplyRequestStatusList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSupplyRequestStatusList()
     {
         $this->assertEquals('SupplyRequestStatus-list', PHPFHIRConstants::TYPE_NAME_SUPPLY_REQUEST_STATUS_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSupplyRequestStatusList', PHPFHIRConstants::TYPE_CLASS_SUPPLY_REQUEST_STATUS_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSupplyRequestStatusList', PHPFHIRConstants::TYPE_CLASS_SUPPLY_REQUEST_STATUS_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRSystemRestfulInteraction()
@@ -3682,10 +3682,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSystemRestfulInteraction', PHPFHIRConstants::TYPE_CLASS_SYSTEM_RESTFUL_INTERACTION);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRSystemRestfulInteractionList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRSystemRestfulInteractionList()
     {
         $this->assertEquals('SystemRestfulInteraction-list', PHPFHIRConstants::TYPE_NAME_SYSTEM_RESTFUL_INTERACTION_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRSystemRestfulInteractionList', PHPFHIRConstants::TYPE_CLASS_SYSTEM_RESTFUL_INTERACTION_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRSystemRestfulInteractionList', PHPFHIRConstants::TYPE_CLASS_SYSTEM_RESTFUL_INTERACTION_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRTestScript()
@@ -3814,10 +3814,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTransactionMode', PHPFHIRConstants::TYPE_CLASS_TRANSACTION_MODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRTransactionModeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRTransactionModeList()
     {
         $this->assertEquals('TransactionMode-list', PHPFHIRConstants::TYPE_NAME_TRANSACTION_MODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRTransactionModeList', PHPFHIRConstants::TYPE_CLASS_TRANSACTION_MODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRTransactionModeList', PHPFHIRConstants::TYPE_CLASS_TRANSACTION_MODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRTypeRestfulInteraction()
@@ -3826,10 +3826,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTypeRestfulInteraction', PHPFHIRConstants::TYPE_CLASS_TYPE_RESTFUL_INTERACTION);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRTypeRestfulInteractionList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRTypeRestfulInteractionList()
     {
         $this->assertEquals('TypeRestfulInteraction-list', PHPFHIRConstants::TYPE_NAME_TYPE_RESTFUL_INTERACTION_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRTypeRestfulInteractionList', PHPFHIRConstants::TYPE_CLASS_TYPE_RESTFUL_INTERACTION_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRTypeRestfulInteractionList', PHPFHIRConstants::TYPE_CLASS_TYPE_RESTFUL_INTERACTION_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRUnitsOfTime()
@@ -3838,10 +3838,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnitsOfTime', PHPFHIRConstants::TYPE_CLASS_UNITS_OF_TIME);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRUnitsOfTimeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRUnitsOfTimeList()
     {
         $this->assertEquals('UnitsOfTime-list', PHPFHIRConstants::TYPE_NAME_UNITS_OF_TIME_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRUnitsOfTimeList', PHPFHIRConstants::TYPE_CLASS_UNITS_OF_TIME_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRUnitsOfTimeList', PHPFHIRConstants::TYPE_CLASS_UNITS_OF_TIME_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRUnknownContentCode()
@@ -3850,10 +3850,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnknownContentCode', PHPFHIRConstants::TYPE_CLASS_UNKNOWN_CONTENT_CODE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRUnknownContentCodeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRUnknownContentCodeList()
     {
         $this->assertEquals('UnknownContentCode-list', PHPFHIRConstants::TYPE_NAME_UNKNOWN_CONTENT_CODE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRUnknownContentCodeList', PHPFHIRConstants::TYPE_CLASS_UNKNOWN_CONTENT_CODE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRUnknownContentCodeList', PHPFHIRConstants::TYPE_CLASS_UNKNOWN_CONTENT_CODE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRUnsignedInt()
@@ -3886,10 +3886,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUse', PHPFHIRConstants::TYPE_CLASS_USE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRUseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRUseList()
     {
         $this->assertEquals('Use-list', PHPFHIRConstants::TYPE_NAME_USE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRUseList', PHPFHIRConstants::TYPE_CLASS_USE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRUseList', PHPFHIRConstants::TYPE_CLASS_USE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRUuid()
@@ -3982,10 +3982,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRVisionBase', PHPFHIRConstants::TYPE_CLASS_VISION_BASE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRVisionBaseList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRVisionBaseList()
     {
         $this->assertEquals('VisionBase-list', PHPFHIRConstants::TYPE_NAME_VISION_BASE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRVisionBaseList', PHPFHIRConstants::TYPE_CLASS_VISION_BASE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRVisionBaseList', PHPFHIRConstants::TYPE_CLASS_VISION_BASE_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRElement_FHIRVisionEyes()
@@ -3994,10 +3994,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRVisionEyes', PHPFHIRConstants::TYPE_CLASS_VISION_EYES);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRVisionEyesList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRVisionEyesList()
     {
         $this->assertEquals('VisionEyes-list', PHPFHIRConstants::TYPE_NAME_VISION_EYES_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRVisionEyesList', PHPFHIRConstants::TYPE_CLASS_VISION_EYES_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRVisionEyesList', PHPFHIRConstants::TYPE_CLASS_VISION_EYES_HYPHEN_LIST);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRResource_FHIRDomainResource_FHIRVisionPrescription()
@@ -4018,10 +4018,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRXPathUsageType', PHPFHIRConstants::TYPE_CLASS_XPATH_USAGE_TYPE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRXPathUsageTypeList()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU2_FHIRStringPrimitive_FHIRXPathUsageTypeList()
     {
         $this->assertEquals('XPathUsageType-list', PHPFHIRConstants::TYPE_NAME_XPATH_USAGE_TYPE_HYPHEN_LIST);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRXPathUsageTypeList', PHPFHIRConstants::TYPE_CLASS_XPATH_USAGE_TYPE_HYPHEN_LIST);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRXPathUsageTypeList', PHPFHIRConstants::TYPE_CLASS_XPATH_USAGE_TYPE_HYPHEN_LIST);
     }
 
 }

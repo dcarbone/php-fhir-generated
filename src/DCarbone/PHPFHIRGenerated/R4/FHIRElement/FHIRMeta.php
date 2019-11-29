@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,9 @@ class FHIRMeta extends FHIRElement
     const FIELD_VERSION_ID = 'versionId';
     const FIELD_VERSION_ID_EXT = '_versionId';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for where precisely observed times are required,
@@ -173,8 +176,11 @@ class FHIRMeta extends FHIRElement
      */
     protected $versionId = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Meta
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMeta Constructor
@@ -316,30 +322,6 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -350,7 +332,6 @@ class FHIRMeta extends FHIRElement
         }
         return "<Meta{$xmlns}></Meta>";
     }
-
 
     /**
      * An instant in time - known at least to the second
@@ -681,6 +662,15 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta $type
      * @param null|int $libxmlOpts
@@ -770,6 +760,7 @@ class FHIRMeta extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getLastUpdated())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_UPDATED, null, $v->_getFHIRXMLNamespace()));
         }
@@ -781,7 +772,6 @@ class FHIRMeta extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getSecurity())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -790,7 +780,6 @@ class FHIRMeta extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getSource())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -802,7 +791,6 @@ class FHIRMeta extends FHIRElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_TAG, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getVersionId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION_ID, null, $v->_getFHIRXMLNamespace()));
         }
@@ -816,14 +804,10 @@ class FHIRMeta extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getLastUpdated())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LAST_UPDATED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LAST_UPDATED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LAST_UPDATED] = $v;
+            $a[self::FIELD_LAST_UPDATED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LAST_UPDATED_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getProfile())) {
@@ -832,16 +816,12 @@ class FHIRMeta extends FHIRElement
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PROFILE][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PROFILE_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PROFILE_EXT][] = null;
-                    }
+                $a[self::FIELD_PROFILE][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_PROFILE_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_PROFILE][] = $v;
+                    $a[self::FIELD_PROFILE_EXT][] = null;
                 }
             }
         }
@@ -849,28 +829,20 @@ class FHIRMeta extends FHIRElement
             $a[self::FIELD_SECURITY] = $vs;
         }
         if (null !== ($v = $this->getSource())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_SOURCE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SOURCE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_SOURCE] = $v;
+            $a[self::FIELD_SOURCE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_SOURCE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getTag())) {
             $a[self::FIELD_TAG] = $vs;
         }
         if (null !== ($v = $this->getVersionId())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_VERSION_ID] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_VERSION_ID_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_VERSION_ID] = $v;
+            $a[self::FIELD_VERSION_ID] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_VERSION_ID_EXT] = $enc;
             }
         }
         return $a;

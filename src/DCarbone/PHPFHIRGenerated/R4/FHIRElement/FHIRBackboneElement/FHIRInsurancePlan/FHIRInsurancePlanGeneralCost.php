@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,10 +83,12 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
     const FIELD_COST = 'cost';
-    const FIELD_COST_EXT = '_cost';
     const FIELD_GROUP_SIZE = 'groupSize';
     const FIELD_GROUP_SIZE_EXT = '_groupSize';
     const FIELD_TYPE = 'type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -133,8 +135,11 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type InsurancePlan.GeneralCost
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRInsurancePlanGeneralCost Constructor
@@ -169,17 +174,8 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_COST])) {
-            $ext = (isset($data[self::FIELD_COST_EXT]) && is_array($data[self::FIELD_COST_EXT]))
-                ? $data[self::FIELD_COST_EXT]
-                : null;
             if ($data[self::FIELD_COST] instanceof FHIRMoney) {
                 $this->setCost($data[self::FIELD_COST]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_COST])) {
-                    $this->setCost(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_COST]] + $ext));
-                } else if (is_array($data[self::FIELD_COST])) {
-                    $this->setCost(new FHIRMoney(array_merge($ext, $data[self::FIELD_COST])));
-                }
             } else {
                 $this->setCost(new FHIRMoney($data[self::FIELD_COST]));
             }
@@ -218,30 +214,6 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -252,7 +224,6 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         }
         return "<InsurancePlanGeneralCost{$xmlns}></InsurancePlanGeneralCost>";
     }
-
 
     /**
      * A sequence of Unicode characters
@@ -393,6 +364,15 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost $type
      * @param null|int $libxmlOpts
@@ -464,6 +444,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getComment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -486,36 +467,20 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComment())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_COMMENT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_COMMENT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_COMMENT] = $v;
+            $a[self::FIELD_COMMENT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_COMMENT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getCost())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_COST] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_COST_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_COST] = $v;
-            }
+            $a[self::FIELD_COST] = $v;
         }
         if (null !== ($v = $this->getGroupSize())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_GROUP_SIZE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_GROUP_SIZE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_GROUP_SIZE] = $v;
+            $a[self::FIELD_GROUP_SIZE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_GROUP_SIZE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {

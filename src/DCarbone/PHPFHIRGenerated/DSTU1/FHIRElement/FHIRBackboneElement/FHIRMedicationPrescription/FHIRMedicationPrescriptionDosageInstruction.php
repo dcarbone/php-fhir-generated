@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
     const FIELD_AS_NEEDED_BOOLEAN_EXT = '_asNeededBoolean';
     const FIELD_AS_NEEDED_CODEABLE_CONCEPT = 'asNeededCodeableConcept';
     const FIELD_DOSE_QUANTITY = 'doseQuantity';
-    const FIELD_DOSE_QUANTITY_EXT = '_doseQuantity';
     const FIELD_MAX_DOSE_PER_PERIOD = 'maxDosePerPeriod';
     const FIELD_METHOD = 'method';
     const FIELD_RATE = 'rate';
@@ -97,6 +96,9 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
     const FIELD_TIMING_DATE_TIME_EXT = '_timingDateTime';
     const FIELD_TIMING_PERIOD = 'timingPeriod';
     const FIELD_TIMING_SCHEDULE = 'timingSchedule';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -275,8 +277,11 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      */
     protected $timingSchedule = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type MedicationPrescription.DosageInstruction
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRMedicationPrescriptionDosageInstruction Constructor
@@ -325,17 +330,8 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_DOSE_QUANTITY])) {
-            $ext = (isset($data[self::FIELD_DOSE_QUANTITY_EXT]) && is_array($data[self::FIELD_DOSE_QUANTITY_EXT]))
-                ? $data[self::FIELD_DOSE_QUANTITY_EXT]
-                : null;
             if ($data[self::FIELD_DOSE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setDoseQuantity($data[self::FIELD_DOSE_QUANTITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DOSE_QUANTITY])) {
-                    $this->setDoseQuantity(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_DOSE_QUANTITY]] + $ext));
-                } else if (is_array($data[self::FIELD_DOSE_QUANTITY])) {
-                    $this->setDoseQuantity(new FHIRQuantity(array_merge($ext, $data[self::FIELD_DOSE_QUANTITY])));
-                }
             } else {
                 $this->setDoseQuantity(new FHIRQuantity($data[self::FIELD_DOSE_QUANTITY]));
             }
@@ -432,30 +428,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -466,7 +438,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
         }
         return "<MedicationPrescriptionDosageInstruction{$xmlns}></MedicationPrescriptionDosageInstruction>";
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -951,6 +922,15 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDosageInstruction $type
      * @param null|int $libxmlOpts
@@ -1052,6 +1032,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAdditionalInstructions())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIONAL_INSTRUCTIONS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1104,29 +1085,17 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             $a[self::FIELD_ADDITIONAL_INSTRUCTIONS] = $v;
         }
         if (null !== ($v = $this->getAsNeededBoolean())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v;
+            $a[self::FIELD_AS_NEEDED_BOOLEAN] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_AS_NEEDED_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAsNeededCodeableConcept())) {
             $a[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getDoseQuantity())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DOSE_QUANTITY] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOSE_QUANTITY_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DOSE_QUANTITY] = $v;
-            }
+            $a[self::FIELD_DOSE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getMaxDosePerPeriod())) {
             $a[self::FIELD_MAX_DOSE_PER_PERIOD] = $v;
@@ -1144,25 +1113,17 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
             $a[self::FIELD_SITE] = $v;
         }
         if (null !== ($v = $this->getText())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TEXT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TEXT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TEXT] = $v;
+            $a[self::FIELD_TEXT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TEXT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTimingDateTime())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TIMING_DATE_TIME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TIMING_DATE_TIME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TIMING_DATE_TIME] = $v;
+            $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTimingPeriod())) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:38+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,8 +79,10 @@ class FHIRTestScriptRule extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_RULE;
     const FIELD_PARAM = 'param';
-    const FIELD_PARAM_EXT = '_param';
     const FIELD_RESOURCE = 'resource';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -104,8 +106,11 @@ class FHIRTestScriptRule extends FHIRBackboneElement
      */
     protected $resource = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type TestScript.Rule
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTestScriptRule Constructor
@@ -124,30 +129,19 @@ class FHIRTestScriptRule extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_PARAM])) {
-            $ext = (isset($data[self::FIELD_PARAM_EXT]) && is_array($data[self::FIELD_PARAM_EXT]))
-                ? $data[self::FIELD_PARAM_EXT]
-                : null;
             if (is_array($data[self::FIELD_PARAM])) {
-                foreach($data[self::FIELD_PARAM] as $i => $v) {
+                foreach($data[self::FIELD_PARAM] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRTestScriptParam) {
                         $this->addParam($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addParam(new FHIRTestScriptParam([FHIRTestScriptParam::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addParam(new FHIRTestScriptParam(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addParam(new FHIRTestScriptParam($v));
                     }
                 }
-            } elseif ($data[self::FIELD_PARAM] instanceof FHIRTestScriptParam) {
+            } else if ($data[self::FIELD_PARAM] instanceof FHIRTestScriptParam) {
                 $this->addParam($data[self::FIELD_PARAM]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_PARAM])) {
-                $this->addParam(new FHIRTestScriptParam([FHIRTestScriptParam::FIELD_VALUE => $data[self::FIELD_PARAM]] + $ext));
             } else {
                 $this->addParam(new FHIRTestScriptParam($data[self::FIELD_PARAM]));
             }
@@ -170,30 +164,6 @@ class FHIRTestScriptRule extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -204,7 +174,6 @@ class FHIRTestScriptRule extends FHIRBackboneElement
         }
         return "<TestScriptRule{$xmlns}></TestScriptRule>";
     }
-
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -292,6 +261,15 @@ class FHIRTestScriptRule extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule $type
      * @param null|int $libxmlOpts
@@ -375,23 +353,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getParam())) {
-            $a[self::FIELD_PARAM] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_PARAM][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_PARAM_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_PARAM_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_PARAM][] = $v;
-                }
-            }
+            $a[self::FIELD_PARAM] = $vs;
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;

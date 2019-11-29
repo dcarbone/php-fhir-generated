@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROb
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,10 +77,11 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE;
     const FIELD_AGE = 'age';
     const FIELD_HIGH = 'high';
-    const FIELD_HIGH_EXT = '_high';
     const FIELD_LOW = 'low';
-    const FIELD_LOW_EXT = '_low';
     const FIELD_MEANING = 'meaning';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -134,8 +135,11 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      */
     protected $meaning = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Observation.ReferenceRange
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRObservationReferenceRange Constructor
@@ -161,33 +165,15 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_HIGH])) {
-            $ext = (isset($data[self::FIELD_HIGH_EXT]) && is_array($data[self::FIELD_HIGH_EXT]))
-                ? $data[self::FIELD_HIGH_EXT]
-                : null;
             if ($data[self::FIELD_HIGH] instanceof FHIRQuantity) {
                 $this->setHigh($data[self::FIELD_HIGH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_HIGH])) {
-                    $this->setHigh(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_HIGH]] + $ext));
-                } else if (is_array($data[self::FIELD_HIGH])) {
-                    $this->setHigh(new FHIRQuantity(array_merge($ext, $data[self::FIELD_HIGH])));
-                }
             } else {
                 $this->setHigh(new FHIRQuantity($data[self::FIELD_HIGH]));
             }
         }
         if (isset($data[self::FIELD_LOW])) {
-            $ext = (isset($data[self::FIELD_LOW_EXT]) && is_array($data[self::FIELD_LOW_EXT]))
-                ? $data[self::FIELD_LOW_EXT]
-                : null;
             if ($data[self::FIELD_LOW] instanceof FHIRQuantity) {
                 $this->setLow($data[self::FIELD_LOW]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_LOW])) {
-                    $this->setLow(new FHIRQuantity([FHIRQuantity::FIELD_VALUE => $data[self::FIELD_LOW]] + $ext));
-                } else if (is_array($data[self::FIELD_LOW])) {
-                    $this->setLow(new FHIRQuantity(array_merge($ext, $data[self::FIELD_LOW])));
-                }
             } else {
                 $this->setLow(new FHIRQuantity($data[self::FIELD_LOW]));
             }
@@ -210,30 +196,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -244,7 +206,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         }
         return "<ObservationReferenceRange{$xmlns}></ObservationReferenceRange>";
     }
-
 
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -383,6 +344,15 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
      * @param null|int $libxmlOpts
@@ -448,6 +418,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -473,26 +444,10 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
             $a[self::FIELD_AGE] = $v;
         }
         if (null !== ($v = $this->getHigh())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_HIGH] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_HIGH_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_HIGH] = $v;
-            }
+            $a[self::FIELD_HIGH] = $v;
         }
         if (null !== ($v = $this->getLow())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LOW] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LOW_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LOW] = $v;
-            }
+            $a[self::FIELD_LOW] = $v;
         }
         if (null !== ($v = $this->getMeaning())) {
             $a[self::FIELD_MEANING] = $v;

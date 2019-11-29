@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRLo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,6 +86,9 @@ class FHIRLocationPosition extends FHIRBackboneElement
     const FIELD_LONGITUDE = 'longitude';
     const FIELD_LONGITUDE_EXT = '_longitude';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
@@ -125,8 +128,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
      */
     protected $longitude = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Location.Position
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRLocationPosition Constructor
@@ -203,30 +209,6 @@ class FHIRLocationPosition extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -237,7 +219,6 @@ class FHIRLocationPosition extends FHIRBackboneElement
         }
         return "<LocationPosition{$xmlns}></LocationPosition>";
     }
-
 
     /**
      * A rational number with implicit precision
@@ -366,6 +347,15 @@ class FHIRLocationPosition extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $type
      * @param null|int $libxmlOpts
@@ -437,6 +427,7 @@ class FHIRLocationPosition extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAltitude())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALTITUDE, null, $v->_getFHIRXMLNamespace()));
         }
@@ -456,36 +447,24 @@ class FHIRLocationPosition extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAltitude())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ALTITUDE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ALTITUDE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ALTITUDE] = $v;
+            $a[self::FIELD_ALTITUDE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ALTITUDE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getLatitude())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LATITUDE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LATITUDE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LATITUDE] = $v;
+            $a[self::FIELD_LATITUDE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LATITUDE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getLongitude())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_LONGITUDE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_LONGITUDE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_LONGITUDE] = $v;
+            $a[self::FIELD_LONGITUDE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_LONGITUDE_EXT] = $enc;
             }
         }
         return $a;

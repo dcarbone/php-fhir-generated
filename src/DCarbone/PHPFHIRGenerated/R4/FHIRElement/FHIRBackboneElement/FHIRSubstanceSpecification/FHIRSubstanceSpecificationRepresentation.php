@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,6 +85,9 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
     const FIELD_REPRESENTATION_EXT = '_representation';
     const FIELD_TYPE = 'type';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
@@ -120,8 +123,11 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstanceSpecification.Representation
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstanceSpecificationRepresentation Constructor
@@ -180,30 +186,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -214,7 +196,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
         }
         return "<SubstanceSpecificationRepresentation{$xmlns}></SubstanceSpecificationRepresentation>";
     }
-
 
     /**
      * For referring to data content defined in other formats.
@@ -319,6 +300,15 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation $type
      * @param null|int $libxmlOpts
@@ -384,6 +374,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAttachment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -406,14 +397,10 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
             $a[self::FIELD_ATTACHMENT] = $v;
         }
         if (null !== ($v = $this->getRepresentation())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REPRESENTATION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REPRESENTATION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REPRESENTATION] = $v;
+            $a[self::FIELD_REPRESENTATION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REPRESENTATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {

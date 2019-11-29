@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,10 +79,12 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INSURANCE_PLAN_DOT_BENEFIT;
     const FIELD_LIMIT = 'limit';
-    const FIELD_LIMIT_EXT = '_limit';
     const FIELD_REQUIREMENT = 'requirement';
     const FIELD_REQUIREMENT_EXT = '_requirement';
     const FIELD_TYPE = 'type';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Details of a Health Insurance product/plan provided by an organization.
@@ -116,8 +118,11 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      */
     protected $type = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type InsurancePlan.Benefit
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRInsurancePlanBenefit Constructor
@@ -136,30 +141,19 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_LIMIT])) {
-            $ext = (isset($data[self::FIELD_LIMIT_EXT]) && is_array($data[self::FIELD_LIMIT_EXT]))
-                ? $data[self::FIELD_LIMIT_EXT]
-                : null;
             if (is_array($data[self::FIELD_LIMIT])) {
-                foreach($data[self::FIELD_LIMIT] as $i => $v) {
+                foreach($data[self::FIELD_LIMIT] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRInsurancePlanLimit) {
                         $this->addLimit($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addLimit(new FHIRInsurancePlanLimit([FHIRInsurancePlanLimit::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addLimit(new FHIRInsurancePlanLimit(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addLimit(new FHIRInsurancePlanLimit($v));
                     }
                 }
-            } elseif ($data[self::FIELD_LIMIT] instanceof FHIRInsurancePlanLimit) {
+            } else if ($data[self::FIELD_LIMIT] instanceof FHIRInsurancePlanLimit) {
                 $this->addLimit($data[self::FIELD_LIMIT]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_LIMIT])) {
-                $this->addLimit(new FHIRInsurancePlanLimit([FHIRInsurancePlanLimit::FIELD_VALUE => $data[self::FIELD_LIMIT]] + $ext));
             } else {
                 $this->addLimit(new FHIRInsurancePlanLimit($data[self::FIELD_LIMIT]));
             }
@@ -198,30 +192,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -232,7 +202,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
         }
         return "<InsurancePlanBenefit{$xmlns}></InsurancePlanBenefit>";
     }
-
 
     /**
      * Details of a Health Insurance product/plan provided by an organization.
@@ -355,6 +324,15 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit $type
      * @param null|int $libxmlOpts
@@ -422,6 +400,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if ([] !== ($vs = $this->getLimit())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -430,7 +409,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 $v->xmlSerialize($sxe->addChild(self::FIELD_LIMIT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getRequirement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -447,33 +425,13 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getLimit())) {
-            $a[self::FIELD_LIMIT] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_LIMIT][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_LIMIT_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_LIMIT_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_LIMIT][] = $v;
-                }
-            }
+            $a[self::FIELD_LIMIT] = $vs;
         }
         if (null !== ($v = $this->getRequirement())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_REQUIREMENT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_REQUIREMENT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_REQUIREMENT] = $v;
+            $a[self::FIELD_REQUIREMENT] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_REQUIREMENT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {

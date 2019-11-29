@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     const FIELD_MONOMER_SET = 'monomerSet';
     const FIELD_REPEAT = 'repeat';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -155,8 +158,11 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      */
     protected $repeat = [];
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type SubstancePolymer
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRSubstancePolymer Constructor
@@ -282,30 +288,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -316,7 +298,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
         }
         return "<SubstancePolymer{$xmlns}></SubstancePolymer>";
     }
-
     /**
      * @return string
      */
@@ -614,6 +595,15 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer $type
      * @param null|int $libxmlOpts
@@ -696,6 +686,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -707,7 +698,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_COPOLYMER_CONNECTIVITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getGeometry())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GEOMETRY, null, $v->_getFHIRXMLNamespace()));
         }
@@ -719,7 +709,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getMonomerSet())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -728,7 +717,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_MONOMER_SET, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getRepeat())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -737,7 +725,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $v->xmlSerialize($sxe->addChild(self::FIELD_REPEAT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         return $sxe;
     }
 
@@ -762,16 +749,12 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_MODIFICATION][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_MODIFICATION_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_MODIFICATION_EXT][] = null;
-                    }
+                $a[self::FIELD_MODIFICATION][] = $v->getValue();
+                if (1 < count($enc = $v->jsonSerialize())) {
+                    unset($enc[$v::FIELD_VALUE]);
+                    $a[self::FIELD_MODIFICATION_EXT][] = $enc;
                 } else {
-                    $a[self::FIELD_MODIFICATION][] = $v;
+                    $a[self::FIELD_MODIFICATION_EXT][] = null;
                 }
             }
         }

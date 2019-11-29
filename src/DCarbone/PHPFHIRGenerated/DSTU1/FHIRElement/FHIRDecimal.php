@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +74,7 @@ class FHIRDecimal extends FHIRElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DECIMAL;
     const FIELD_VALUE = 'value';
+    const FIELD_VALUE_EXT = '_value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive
@@ -85,7 +86,7 @@ class FHIRDecimal extends FHIRElement
 
     /**
      * FHIRDecimal Constructor
-     * @param null|array|float|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive $data
+     * @param null|array|double|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive $data
      */
     public function __construct($data = null)
     {
@@ -102,7 +103,7 @@ class FHIRDecimal extends FHIRElement
         }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
-                '$data must be null, float, instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive, or array.  %s seen.',
+                '$data must be null, double, instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive, or array.  %s seen.',
                 gettype($data)
             ));
         }
@@ -120,30 +121,6 @@ class FHIRDecimal extends FHIRElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -154,7 +131,6 @@ class FHIRDecimal extends FHIRElement
         }
         return "<decimal{$xmlns}></decimal>";
     }
-
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDecimalPrimitive
      */
@@ -239,7 +215,8 @@ class FHIRDecimal extends FHIRElement
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-        parent::xmlSerialize($sxe);        if (null !== ($v = $this->getValue())) {
+        parent::xmlSerialize($sxe);
+        if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
         return $sxe;

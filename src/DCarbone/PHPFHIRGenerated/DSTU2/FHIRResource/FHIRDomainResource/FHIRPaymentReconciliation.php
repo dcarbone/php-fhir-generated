@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     const FIELD_DISPOSITION_EXT = '_disposition';
     const FIELD_FORM = 'form';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_NOTE = 'note';
     const FIELD_ORGANIZATION = 'organization';
     const FIELD_ORIGINAL_RULESET = 'originalRuleset';
@@ -108,7 +107,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     const FIELD_REQUEST_PROVIDER = 'requestProvider';
     const FIELD_RULESET = 'ruleset';
     const FIELD_TOTAL = 'total';
-    const FIELD_TOTAL_EXT = '_total';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -276,8 +277,11 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      */
     protected $total = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type PaymentReconciliation
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRPaymentReconciliation Constructor
@@ -353,30 +357,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_IDENTIFIER_EXT]
-                : null;
             if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $i => $v) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
                     if (null === $v) {
                         continue;
                     }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addIdentifier(new FHIRIdentifier(array_merge($v, $ext[$i])));
-                        }
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_IDENTIFIER])) {
-                $this->addIdentifier(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
@@ -465,17 +458,8 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             }
         }
         if (isset($data[self::FIELD_TOTAL])) {
-            $ext = (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT]))
-                ? $data[self::FIELD_TOTAL_EXT]
-                : null;
             if ($data[self::FIELD_TOTAL] instanceof FHIRMoney) {
                 $this->setTotal($data[self::FIELD_TOTAL]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TOTAL])) {
-                    $this->setTotal(new FHIRMoney([FHIRMoney::FIELD_VALUE => $data[self::FIELD_TOTAL]] + $ext));
-                } else if (is_array($data[self::FIELD_TOTAL])) {
-                    $this->setTotal(new FHIRMoney(array_merge($ext, $data[self::FIELD_TOTAL])));
-                }
             } else {
                 $this->setTotal(new FHIRMoney($data[self::FIELD_TOTAL]));
             }
@@ -491,30 +475,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -525,7 +485,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
         }
         return "<PaymentReconciliation{$xmlns}></PaymentReconciliation>";
     }
-
     /**
      * @return string
      */
@@ -1088,6 +1047,15 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation $type
      * @param null|int $libxmlOpts
@@ -1201,6 +1169,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getCreated())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1212,7 +1181,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getDisposition())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1227,7 +1195,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if ([] !== ($vs = $this->getNote())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -1236,7 +1203,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-
         if (null !== ($v = $this->getOrganization())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
         }
@@ -1274,51 +1240,27 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCreated())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_CREATED] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_CREATED_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_CREATED] = $v;
+            $a[self::FIELD_CREATED] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_CREATED_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getDetail())) {
             $a[self::FIELD_DETAIL] = $vs;
         }
         if (null !== ($v = $this->getDisposition())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_DISPOSITION] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DISPOSITION_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_DISPOSITION] = $v;
+            $a[self::FIELD_DISPOSITION] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_DISPOSITION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getForm())) {
             $a[self::FIELD_FORM] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                if (null !== ($val = $v->getValue())) {
-                    $a[self::FIELD_IDENTIFIER][] = $val;
-                    if (1 < count($enc = $v->jsonSerialize())) {
-                        unset($enc[$v::FIELD_VALUE]);
-                        $a[self::FIELD_IDENTIFIER_EXT][] = $enc;
-                    } else {
-                        $a[self::FIELD_IDENTIFIER_EXT][] = null;
-                    }
-                } else {
-                    $a[self::FIELD_IDENTIFIER][] = $v;
-                }
-            }
+            $a[self::FIELD_IDENTIFIER] = $vs;
         }
         if ([] !== ($vs = $this->getNote())) {
             $a[self::FIELD_NOTE] = $vs;
@@ -1330,14 +1272,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_ORIGINAL_RULESET] = $v;
         }
         if (null !== ($v = $this->getOutcome())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_OUTCOME] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_OUTCOME_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_OUTCOME] = $v;
+            $a[self::FIELD_OUTCOME] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_OUTCOME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
@@ -1356,15 +1294,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_RULESET] = $v;
         }
         if (null !== ($v = $this->getTotal())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_TOTAL] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TOTAL_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_TOTAL] = $v;
-            }
+            $a[self::FIELD_TOTAL] = $v;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

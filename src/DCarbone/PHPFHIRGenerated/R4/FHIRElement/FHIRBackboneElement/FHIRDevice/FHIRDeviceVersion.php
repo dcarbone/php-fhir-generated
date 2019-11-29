@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,12 @@ class FHIRDeviceVersion extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_VERSION;
     const FIELD_COMPONENT = 'component';
-    const FIELD_COMPONENT_EXT = '_component';
     const FIELD_TYPE = 'type';
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -122,8 +124,11 @@ class FHIRDeviceVersion extends FHIRBackboneElement
      */
     protected $value = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Device.Version
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRDeviceVersion Constructor
@@ -134,10 +139,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement
         if (null === $data || [] === $data) {
             return;
         }
-        if (is_scalar($data)) {
-            $this->setValue(new FHIRString($data));
-            return;
-        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
                 'FHIRDeviceVersion::_construct - $data expected to be null or array, %s seen',
@@ -146,17 +147,8 @@ class FHIRDeviceVersion extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_COMPONENT])) {
-            $ext = (isset($data[self::FIELD_COMPONENT_EXT]) && is_array($data[self::FIELD_COMPONENT_EXT]))
-                ? $data[self::FIELD_COMPONENT_EXT]
-                : null;
             if ($data[self::FIELD_COMPONENT] instanceof FHIRIdentifier) {
                 $this->setComponent($data[self::FIELD_COMPONENT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_COMPONENT])) {
-                    $this->setComponent(new FHIRIdentifier([FHIRIdentifier::FIELD_VALUE => $data[self::FIELD_COMPONENT]] + $ext));
-                } else if (is_array($data[self::FIELD_COMPONENT])) {
-                    $this->setComponent(new FHIRIdentifier(array_merge($ext, $data[self::FIELD_COMPONENT])));
-                }
             } else {
                 $this->setComponent(new FHIRIdentifier($data[self::FIELD_COMPONENT]));
             }
@@ -195,30 +187,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -229,7 +197,6 @@ class FHIRDeviceVersion extends FHIRBackboneElement
         }
         return "<DeviceVersion{$xmlns}></DeviceVersion>";
     }
-
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -334,6 +301,15 @@ class FHIRDeviceVersion extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion $type
      * @param null|int $libxmlOpts
@@ -399,6 +375,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getComponent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMPONENT, null, $v->_getFHIRXMLNamespace()));
         }
@@ -419,28 +396,16 @@ class FHIRDeviceVersion extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComponent())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_COMPONENT] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_COMPONENT_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_COMPONENT] = $v;
-            }
+            $a[self::FIELD_COMPONENT] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_VALUE] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_VALUE_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_VALUE] = $v;
+            $a[self::FIELD_VALUE] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_VALUE_EXT] = $enc;
             }
         }
         return $a;

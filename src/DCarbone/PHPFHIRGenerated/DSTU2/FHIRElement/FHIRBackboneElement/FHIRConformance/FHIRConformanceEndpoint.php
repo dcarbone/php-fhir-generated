@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 17th, 2019 04:21+0000
+ * Class creation date: November 29th, 2019 23:10+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,9 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
     const FIELD_ADDRESS_EXT = '_address';
     const FIELD_PROTOCOL = 'protocol';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -108,8 +111,11 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
      */
     protected $protocol = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type Conformance.Endpoint
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRConformanceEndpoint Constructor
@@ -161,30 +167,6 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -195,7 +177,6 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
         }
         return "<ConformanceEndpoint{$xmlns}></ConformanceEndpoint>";
     }
-
 
     /**
      * String of characters used to identify a name or a resource
@@ -270,6 +251,15 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
     }
 
     /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
+    }
+
+    /**
      * @param \SimpleXMLElement|string|null $sxe
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEndpoint $type
      * @param null|int $libxmlOpts
@@ -332,6 +322,7 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+
         if (null !== ($v = $this->getAddress())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }
@@ -348,14 +339,10 @@ class FHIRConformanceEndpoint extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAddress())) {
-            if (null !== ($val = $v->getValue())) {
-                $a[self::FIELD_ADDRESS] = $val;
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_ADDRESS_EXT] = $enc;
-                }
-            } else {
-                $a[self::FIELD_ADDRESS] = $v;
+            $a[self::FIELD_ADDRESS] = $v->getValue();
+            if (1 < count($enc = $v->jsonSerialize())) {
+                unset($enc[$v::FIELD_VALUE]);
+                $a[self::FIELD_ADDRESS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProtocol())) {
