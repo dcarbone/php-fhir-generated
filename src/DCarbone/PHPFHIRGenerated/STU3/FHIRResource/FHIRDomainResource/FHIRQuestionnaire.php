@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,10 +73,10 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface;
@@ -358,7 +358,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     protected $subjectType = [];
 
@@ -1602,7 +1602,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     public function getSubjectType()
     {
@@ -1616,7 +1616,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $subjectType
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $subjectType
      * @return static
      */
     public function addSubjectType(FHIRResourceType $subjectType = null)
@@ -1632,7 +1632,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * The types of subjects that can be the subject of responses created for the
      * questionnaire.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[] $subjectType
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[] $subjectType
      * @return static
      */
     public function setSubjectType(array $subjectType = [])
@@ -2328,6 +2328,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
+
 
     /**
      * @return string

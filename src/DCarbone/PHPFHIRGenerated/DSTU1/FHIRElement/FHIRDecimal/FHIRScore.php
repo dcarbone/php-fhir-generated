@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:21+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -192,15 +192,6 @@ class FHIRScore extends FHIRDecimal
         }
         parent::xmlSerialize($sxe);
         return $sxe;
-    }
-
-    /**
-     * @return array
-     */
-    public function jsonSerialize()
-    {
-        $a = parent::jsonSerialize();
-        return $a;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ abstract class PHPFHIRConstants
     const SOURCE_GENERATION_DATE = 'Fri, Nov 1, 2019 09:29+1100';
 
     // PHPFHIR
-    const CODE_GENERATION_DATE = 'November 30th, 2019 21:22+0000';
+    const CODE_GENERATION_DATE = 'November 30th, 2019 23:38+0000';
 
     // Common
     const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
@@ -2084,7 +2084,7 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_RESEARCH_SUBJECT_STATUS_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRCodePrimitive\\FHIRResearchSubjectStatusList';
     const TYPE_CLASS_RESOURCE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResource';
     const TYPE_CLASS_RESOURCE_CONTAINER = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResourceContainer';
-    const TYPE_CLASS_RESOURCE_TYPE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRResourceType';
+    const TYPE_CLASS_RESOURCE_TYPE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRResourceType';
     const TYPE_CLASS_RESOURCE_TYPE_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRCodePrimitive\\FHIRResourceTypeList';
     const TYPE_CLASS_RESOURCE_VERSION_POLICY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRResourceVersionPolicy';
     const TYPE_CLASS_RESOURCE_VERSION_POLICY_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRCodePrimitive\\FHIRResourceVersionPolicyList';

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,11 +79,11 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface;
@@ -361,7 +361,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest.
      * Typically, but not always, this is a Request resource.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected $kind = null;
 
@@ -2005,7 +2005,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest.
      * Typically, but not always, this is a Request resource.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     public function getKind()
     {
@@ -2020,7 +2020,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest.
      * Typically, but not always, this is a Request resource.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $kind
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $kind
      * @return static
      */
     public function setKind(FHIRResourceType $kind = null)
@@ -3706,6 +3706,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
+
 
     /**
      * @return string

@@ -1,12 +1,12 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\STU3;
+namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -54,7 +54,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,22 +62,22 @@ namespace DCarbone\PHPFHIRGenerated\STU3;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
 /**
- * The kind of activity the definition is describing
+ * The type of resource.
  * If the element is present, it must have either a \@value, an \@id, or extensions
  *
  * Class FHIRResourceType
- * @package \DCarbone\PHPFHIRGenerated\STU3
+ * @package \DCarbone\PHPFHIRGenerated\R4\FHIRElement
  */
-class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterface
+class FHIRResourceType extends FHIRElement
 {
-    use PHPFHIRCommentContainerTrait;
-
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE;
-
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
 
@@ -85,7 +85,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
     protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList
      */
     protected $value = null;
 
@@ -114,6 +114,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
                 gettype($data)
             ));
         }
+        parent::__construct($data);
         if (isset($data[self::FIELD_VALUE])) {
             $this->setValue($data[self::FIELD_VALUE]);
         }
@@ -125,30 +126,6 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
     public function _getFHIRTypeName()
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
     }
 
     /**
@@ -164,7 +141,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
     }
 
     /**
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList
      */
     public function getValue()
     {
@@ -172,7 +149,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList $value
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList $value
      * @return static
      */
     public function setValue($value = null)
@@ -200,9 +177,9 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
 
     /**
      * @param \SimpleXMLElement|string|null $sxe
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $type
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType $type
      * @param null|int $libxmlOpts
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType
      */
     public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
@@ -224,10 +201,11 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
             $type = new FHIRResourceType;
         } elseif (!is_object($type) || !($type instanceof FHIRResourceType)) {
             throw new \RuntimeException(sprintf(
-                'FHIRResourceType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType or null, %s seen.',
+                'FHIRResourceType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -261,6 +239,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
+        parent::xmlSerialize($sxe);
         if (null !== ($v = $this->getValue())) {
             $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
         }
@@ -272,15 +251,13 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
      */
     public function jsonSerialize()
     {
-        $a = [];
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
+        $a = parent::jsonSerialize();
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v;
         }
         return $a;
     }
+
 
     /**
      * @return string

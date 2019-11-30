@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -5242,10 +5242,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer', PHPFHIRConstants::TYPE_CLASS_RESOURCE_CONTAINER);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRResourceType()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRElement_FHIRResourceType()
     {
         $this->assertEquals('ResourceType', PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResourceType', PHPFHIRConstants::TYPE_CLASS_RESOURCE_TYPE);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType', PHPFHIRConstants::TYPE_CLASS_RESOURCE_TYPE);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_R4_FHIRCodePrimitive_FHIRResourceTypeList()

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2433,8 +2433,8 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\STU3\FHIRResourceContainer'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceContainer'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType'));
-        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType'));
+        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType'));
+        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceVersionPolicy'));
@@ -5177,7 +5177,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceContainer;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
-        $type = new \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
+        $type = new \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
@@ -6292,6 +6292,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus', PHPFHIRTypeMap::getTypeClass('RequestStatus'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchStudyStatus', PHPFHIRTypeMap::getTypeClass('ResearchStudyStatus'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus', PHPFHIRTypeMap::getTypeClass('ResearchSubjectStatus'));
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType', PHPFHIRTypeMap::getTypeClass('ResourceType'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceVersionPolicy', PHPFHIRTypeMap::getTypeClass('ResourceVersionPolicy'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType', PHPFHIRTypeMap::getTypeClass('ResponseType'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRestfulCapabilityMode', PHPFHIRTypeMap::getTypeClass('RestfulCapabilityMode'));
@@ -6352,7 +6353,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRPositiveIntPrimitive', PHPFHIRTypeMap::getTypeClass('positiveInt-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource', PHPFHIRTypeMap::getTypeClass('Resource'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceContainer', PHPFHIRTypeMap::getTypeClass('ResourceContainer'));
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType', PHPFHIRTypeMap::getTypeClass('ResourceType'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRBinary', PHPFHIRTypeMap::getTypeClass('Binary'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRBundle', PHPFHIRTypeMap::getTypeClass('Bundle'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource', PHPFHIRTypeMap::getTypeClass('DomainResource'));

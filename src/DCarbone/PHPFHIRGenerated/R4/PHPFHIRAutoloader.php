@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1005,6 +1005,7 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResearchElementType' => 'FHIRElement/FHIRResearchElementType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResearchStudyStatus' => 'FHIRElement/FHIRResearchStudyStatus.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResearchSubjectStatus' => 'FHIRElement/FHIRResearchSubjectStatus.php',
+        'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType' => 'FHIRElement/FHIRResourceType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceVersionPolicy' => 'FHIRElement/FHIRResourceVersionPolicy.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResponseType' => 'FHIRElement/FHIRResponseType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRestfulCapabilityMode' => 'FHIRElement/FHIRRestfulCapabilityMode.php',
@@ -1071,7 +1072,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive' => 'FHIRPositiveIntPrimitive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource' => 'FHIRResource.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer' => 'FHIRResourceContainer.php',
-        'DCarbone\PHPFHIRGenerated\R4\FHIRResourceType' => 'FHIRResourceType.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary' => 'FHIRResource/FHIRBinary.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBundle' => 'FHIRResource/FHIRBundle.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource' => 'FHIRResource/FHIRDomainResource.php',

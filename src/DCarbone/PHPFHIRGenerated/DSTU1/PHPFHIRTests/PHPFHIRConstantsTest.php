@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:21+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1919,10 +1919,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline', PHPFHIRConstants::TYPE_CLASS_RESOURCE_DOT_INLINE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRResourceType_FHIRResourceNamesPlusBinary()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRStringPrimitive_FHIRResourceType_FHIRResourceNamesPlusBinary()
     {
         $this->assertEquals('ResourceNamesPlusBinary', PHPFHIRConstants::TYPE_NAME_RESOURCE_NAMES_PLUS_BINARY);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary', PHPFHIRConstants::TYPE_CLASS_RESOURCE_NAMES_PLUS_BINARY);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary', PHPFHIRConstants::TYPE_CLASS_RESOURCE_NAMES_PLUS_BINARY);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRElement_FHIRResourceProfileStatus()
@@ -1943,10 +1943,10 @@ class PHPFHIRConstantsTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference', PHPFHIRConstants::TYPE_CLASS_RESOURCE_REFERENCE);
     }
 
-    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRResourceType()
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRStringPrimitive_FHIRResourceType()
     {
         $this->assertEquals('ResourceType', PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE);
-        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType', PHPFHIRConstants::TYPE_CLASS_RESOURCE_TYPE);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType', PHPFHIRConstants::TYPE_CLASS_RESOURCE_TYPE);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRElement_FHIRResponseType()

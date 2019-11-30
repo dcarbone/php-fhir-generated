@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,10 +73,10 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROperationKind;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface;
@@ -348,7 +348,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The types on which this operation can be executed.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     protected $resource = [];
 
@@ -1596,7 +1596,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The types on which this operation can be executed.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     public function getResource()
     {
@@ -1609,7 +1609,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The types on which this operation can be executed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $resource
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $resource
      * @return static
      */
     public function addResource(FHIRResourceType $resource = null)
@@ -1624,7 +1624,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The types on which this operation can be executed.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[] $resource
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[] $resource
      * @return static
      */
     public function setResource(array $resource = [])
@@ -2427,6 +2427,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
+
 
     /**
      * @return string

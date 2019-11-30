@@ -1,11 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
+namespace DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTests\FHIRStringPrimitive\FHIRResourceType;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,7 +26,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  *
  * FHIR Copyright Notice:
  *
- *   Copyright (c) 2011+, HL7, Inc.
+ *   Copyright (c) 2011-2013, HL7, Inc.
  *   All rights reserved.
  * 
  *   Redistribution and use in source and binary forms, with or without modification,
@@ -53,26 +53,21 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
- * 
- *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
- *   valid. Implementers will still need to be familiar with the content of the specification and with
- *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
 use PHPUnit\Framework\TestCase;
-use DCarbone\PHPFHIRGenerated\R4\FHIRResourceType;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary;
 
 /**
- * Class FHIRResourceTypeTest
- * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests
+ * Class FHIRResourceNamesPlusBinaryTest
+ * @package \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTests\FHIRStringPrimitive\FHIRResourceType
  */
-class FHIRResourceTypeTest extends TestCase
+class FHIRResourceNamesPlusBinaryTest extends TestCase
 {
     public function testCanConstructTypeNoArgs()
     {
-        $type = new FHIRResourceType();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRResourceType', $type);
+        $type = new FHIRResourceNamesPlusBinary();
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary', $type);
     }
 }

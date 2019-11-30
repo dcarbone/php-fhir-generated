@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,10 +69,10 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface;
@@ -263,7 +263,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The type of FHIR resource at which instances of this graph start.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected $start = null;
 
@@ -1120,7 +1120,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The type of FHIR resource at which instances of this graph start.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     public function getStart()
     {
@@ -1133,7 +1133,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The type of FHIR resource at which instances of this graph start.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $start
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $start
      * @return static
      */
     public function setStart(FHIRResourceType $start = null)
@@ -1690,6 +1690,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
+
 
     /**
      * @return string

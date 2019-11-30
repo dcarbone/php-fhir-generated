@@ -1,11 +1,11 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests;
+namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -53,7 +53,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -62,17 +62,17 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests;
  */
 
 use PHPUnit\Framework\TestCase;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType;
 
 /**
  * Class FHIRResourceTypeTest
- * @package \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests
+ * @package \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests\FHIRElement
  */
 class FHIRResourceTypeTest extends TestCase
 {
     public function testCanConstructTypeNoArgs()
     {
         $type = new FHIRResourceType();
-        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType', $type);
+        $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType', $type);
     }
 }

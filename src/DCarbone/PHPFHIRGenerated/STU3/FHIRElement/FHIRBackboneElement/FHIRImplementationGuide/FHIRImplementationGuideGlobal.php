@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImp
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -104,7 +104,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
      *
      * The type of resource that all instances must conform to.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected $type = null;
 
@@ -211,7 +211,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
      *
      * The type of resource that all instances must conform to.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     public function getType()
     {
@@ -224,7 +224,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
      *
      * The type of resource that all instances must conform to.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $type
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $type
      * @return static
      */
     public function setType(FHIRResourceType $type = null)
@@ -329,6 +329,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement
         }
         return $a;
     }
+
 
     /**
      * @return string

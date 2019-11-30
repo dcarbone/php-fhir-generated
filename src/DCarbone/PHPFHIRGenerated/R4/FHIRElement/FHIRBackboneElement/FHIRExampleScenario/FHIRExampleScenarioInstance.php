@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,8 +64,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
-use DCarbone\PHPFHIRGenerated\R4\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -146,7 +146,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * The type of the resource.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRResourceType
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType
      */
     protected $resourceType = null;
 
@@ -484,7 +484,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * The type of the resource.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType
      */
     public function getResourceType()
     {
@@ -497,7 +497,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * The type of the resource.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResourceType $resourceType
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType $resourceType
      * @return static
      */
     public function setResourceType(FHIRResourceType $resourceType = null)
@@ -738,6 +738,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         }
         return $a;
     }
+
 
     /**
      * @return string

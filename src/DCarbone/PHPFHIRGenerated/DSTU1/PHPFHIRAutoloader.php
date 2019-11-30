@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:21+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -404,8 +404,6 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRIntegerPrimitive' => 'FHIRIntegerPrimitive.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIROidPrimitive' => 'FHIROidPrimitive.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceInline' => 'FHIRResourceInline.php',
-        'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType' => 'FHIRResourceType.php',
-        'DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary' => 'FHIRResourceType/FHIRResourceNamesPlusBinary.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRSampledDataDataTypePrimitive' => 'FHIRSampledDataDataTypePrimitive.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive' => 'FHIRStringPrimitive.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRAddressUseList' => 'FHIRStringPrimitive/FHIRAddressUseList.php',
@@ -471,6 +469,8 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRQuestionnaireStatusList' => 'FHIRStringPrimitive/FHIRQuestionnaireStatusList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRReactionSeverityList' => 'FHIRStringPrimitive/FHIRReactionSeverityList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceProfileStatusList' => 'FHIRStringPrimitive/FHIRResourceProfileStatusList.php',
+        'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType' => 'FHIRStringPrimitive/FHIRResourceType.php',
+        'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary' => 'FHIRStringPrimitive/FHIRResourceType/FHIRResourceNamesPlusBinary.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResponseTypeList' => 'FHIRStringPrimitive/FHIRResponseTypeList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRRestfulConformanceModeList' => 'FHIRStringPrimitive/FHIRRestfulConformanceModeList.php',
         'DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRRestfulOperationSystemList' => 'FHIRStringPrimitive/FHIRRestfulOperationSystemList.php',

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchComparator;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchModifierCode;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchParamType;
@@ -77,7 +78,6 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRXPathUsageType;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface;
@@ -149,7 +149,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The base resource type(s) that this search parameter can be used against.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     protected $base = [];
 
@@ -368,7 +368,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * Types of resource (if a resource is referenced).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     protected $target = [];
 
@@ -972,7 +972,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The base resource type(s) that this search parameter can be used against.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     public function getBase()
     {
@@ -985,7 +985,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The base resource type(s) that this search parameter can be used against.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $base
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $base
      * @return static
      */
     public function addBase(FHIRResourceType $base = null)
@@ -1000,7 +1000,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The base resource type(s) that this search parameter can be used against.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[] $base
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[] $base
      * @return static
      */
     public function setBase(array $base = [])
@@ -1812,7 +1812,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * Types of resource (if a resource is referenced).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     public function getTarget()
     {
@@ -1825,7 +1825,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * Types of resource (if a resource is referenced).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $target
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $target
      * @return static
      */
     public function addTarget(FHIRResourceType $target = null)
@@ -1840,7 +1840,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * Types of resource (if a resource is referenced).
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType[] $target
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[] $target
      * @return static
      */
     public function setTarget(array $target = [])
@@ -2693,6 +2693,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
+
 
     /**
      * @return string

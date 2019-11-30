@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,9 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -99,7 +99,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * The kind of resource that must be the focus for this message.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected $code = null;
 
@@ -244,7 +244,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * The kind of resource that must be the focus for this message.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     public function getCode()
     {
@@ -257,7 +257,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * The kind of resource that must be the focus for this message.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $code
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $code
      * @return static
      */
     public function setCode(FHIRResourceType $code = null)
@@ -516,6 +516,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         }
         return $a;
     }
+
 
     /**
      * @return string

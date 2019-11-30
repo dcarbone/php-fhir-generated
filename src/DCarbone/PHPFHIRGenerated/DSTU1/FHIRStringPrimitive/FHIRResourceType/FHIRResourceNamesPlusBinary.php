@@ -1,12 +1,12 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\DSTU1;
+namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:21+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,49 +57,40 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+
 /**
- * Class FHIRResourceType
- * @package \DCarbone\PHPFHIRGenerated\DSTU1
+ * Class FHIRResourceNamesPlusBinary
+ * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType
  */
-class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterface
+class FHIRResourceNamesPlusBinary extends FHIRResourceType
 {
-    use PHPFHIRCommentContainerTrait;
-
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE;
-
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_NAMES_PLUS_BINARY;
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
-     * Validation map for fields in type ResourceType
+     * Validation map for fields in type ResourceNamesPlusBinary
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_fieldValidation = [
+        self::FIELD_VALUE => [
+            PHPFHIRConstants::VALIDATE_ENUM => ['Binary',],
+        ],
+    ];
 
     /**
-     * FHIRResourceType Constructor
-     * @param null|array $data
+     * FHIRResourceNamesPlusBinary Constructor
+     * @param null|string $value
      */
-    public function __construct($data = null)
+    public function __construct($value = null)
     {
-        if (null === $data || [] === $data) {
-            return;
-        }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRResourceType::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
-        if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
-            if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
-                $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
-                $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
-            }
-        }
+        parent::__construct($value);
     }
 
     /**
@@ -111,30 +102,6 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
     public function _getFHIRXMLElementDefinition()
@@ -143,7 +110,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
-        return "<ResourceType{$xmlns}></ResourceType>";
+        return "<ResourceNamesPlusBinary{$xmlns}></ResourceNamesPlusBinary>";
     }
 
     /**
@@ -157,9 +124,9 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
 
     /**
      * @param \SimpleXMLElement|string|null $sxe
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType $type
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary $type
      * @param null|int $libxmlOpts
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary
      */
     public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
@@ -170,21 +137,22 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
             libxml_use_internal_errors(true);
             $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRResourceType::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
+                throw new \DomainException(sprintf('FHIRResourceNamesPlusBinary::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
         }
         if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRResourceType::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+            throw new \InvalidArgumentException(sprintf('FHIRResourceNamesPlusBinary::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new FHIRResourceType;
-        } elseif (!is_object($type) || !($type instanceof FHIRResourceType)) {
+            $type = new FHIRResourceNamesPlusBinary;
+        } elseif (!is_object($type) || !($type instanceof FHIRResourceNamesPlusBinary)) {
             throw new \RuntimeException(sprintf(
-                'FHIRResourceType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType or null, %s seen.',
+                'FHIRResourceNamesPlusBinary::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRResourceType\FHIRResourceNamesPlusBinary or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
+        FHIRResourceType::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
@@ -205,26 +173,7 @@ class FHIRResourceType implements PHPFHIRCommentContainerInterface, PHPFHIRTypeI
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
+        parent::xmlSerialize($sxe);
         return $sxe;
-    }
-
-    /**
-     * @return array
-     */
-    public function jsonSerialize()
-    {
-        $a = [];
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return self::FHIR_TYPE_NAME;
     }
 }

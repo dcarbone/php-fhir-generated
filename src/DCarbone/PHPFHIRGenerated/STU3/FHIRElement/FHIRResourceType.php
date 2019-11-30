@@ -1,12 +1,12 @@
 <?php
 
-namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType;
+namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:21+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -27,7 +27,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType;
  *
  * FHIR Copyright Notice:
  *
- *   Copyright (c) 2011-2013, HL7, Inc.
+ *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
  * 
  *   Redistribution and use in source and binary forms, with or without modification,
@@ -54,33 +54,49 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType;
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
  */
 
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
-use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
 /**
- * Class FHIRResourceNamesPlusBinary
- * @package \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType
+ * The kind of activity the definition is describing
+ * If the element is present, it must have either a \@value, an \@id, or extensions
+ *
+ * Class FHIRResourceType
+ * @package \DCarbone\PHPFHIRGenerated\STU3\FHIRElement
  */
-class FHIRResourceNamesPlusBinary extends FHIRResourceType
+class FHIRResourceType extends FHIRElement
 {
     // name of FHIR type this class describes
-    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_NAMES_PLUS_BINARY;
+    const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE;
+    const FIELD_VALUE = 'value';
+    const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
     protected $_xmlns = 'http://hl7.org/fhir';
 
     /**
-     * Validation map for fields in type ResourceNamesPlusBinary
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList
+     */
+    protected $value = null;
+
+    /**
+     * Validation map for fields in type ResourceType
      * @var array
      */
     private static $_fieldValidation = [    ];
 
     /**
-     * FHIRResourceNamesPlusBinary Constructor
+     * FHIRResourceType Constructor
      * @param null|array $data
      */
     public function __construct($data = null)
@@ -88,13 +104,20 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
         if (null === $data || [] === $data) {
             return;
         }
+        if (is_scalar($data)) {
+            $this->setValue(new FHIRResourceTypeList($data));
+            return;
+        }
         if (!is_array($data)) {
             throw new \InvalidArgumentException(sprintf(
-                'FHIRResourceNamesPlusBinary::_construct - $data expected to be null or array, %s seen',
+                'FHIRResourceType::_construct - $data expected to be null or array, %s seen',
                 gettype($data)
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_VALUE])) {
+            $this->setValue($data[self::FIELD_VALUE]);
+        }
     }
 
     /**
@@ -114,7 +137,33 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
         if (null !== $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
-        return "<ResourceNamesPlusBinary{$xmlns}></ResourceNamesPlusBinary>";
+        return "<ResourceType{$xmlns}></ResourceType>";
+    }
+
+    /**
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive\FHIRResourceTypeList $value
+     * @return static
+     */
+    public function setValue($value = null)
+    {
+        if (null === $value) {
+            $this->value = null;
+            return $this;
+        }
+        if ($value instanceof FHIRResourceTypeList) {
+            $this->value = $value;
+            return $this;
+        }
+        $this->value = new FHIRResourceTypeList($value);
+        return $this;
     }
 
     /**
@@ -128,9 +177,9 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
 
     /**
      * @param \SimpleXMLElement|string|null $sxe
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary $type
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $type
      * @param null|int $libxmlOpts
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
@@ -141,27 +190,40 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
             libxml_use_internal_errors(true);
             $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
             if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRResourceNamesPlusBinary::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
+                throw new \DomainException(sprintf('FHIRResourceType::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
         }
         if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRResourceNamesPlusBinary::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+            throw new \InvalidArgumentException(sprintf('FHIRResourceType::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
         }
         if (null === $type) {
-            $type = new FHIRResourceNamesPlusBinary;
-        } elseif (!is_object($type) || !($type instanceof FHIRResourceNamesPlusBinary)) {
+            $type = new FHIRResourceType;
+        } elseif (!is_object($type) || !($type instanceof FHIRResourceType)) {
             throw new \RuntimeException(sprintf(
-                'FHIRResourceNamesPlusBinary::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRResourceType\FHIRResourceNamesPlusBinary or null, %s seen.',
+                'FHIRResourceType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRResourceType::xmlUnserialize($sxe, $type);
+        FHIRElement::xmlUnserialize($sxe, $type);
         $xmlNamespaces = $sxe->getDocNamespaces(false, false);
         if ([] !== $xmlNamespaces) {
             $ns = reset($xmlNamespaces);
             if (false !== $ns && '' !== $ns) {
                 $type->_xmlns = $ns;
+            }
+        }
+        $attributes = $sxe->attributes();
+        $children = $sxe->children();
+        if (isset($children->value)) {
+            $type->setValue(FHIRResourceTypeList::xmlUnserialize($children->value));
+        }
+        if (isset($attributes->value)) {
+            $pt = $type->getValue();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->value);
+            } else {
+                $type->setValue((string)$attributes->value);
             }
         }
         return $type;
@@ -178,6 +240,9 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
+        if (null !== ($v = $this->getValue())) {
+            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
+        }
         return $sxe;
     }
 
@@ -187,8 +252,12 @@ class FHIRResourceNamesPlusBinary extends FHIRResourceType
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getValue())) {
+            $a[self::FIELD_VALUE] = $v;
+        }
         return $a;
     }
+
 
     /**
      * @return string

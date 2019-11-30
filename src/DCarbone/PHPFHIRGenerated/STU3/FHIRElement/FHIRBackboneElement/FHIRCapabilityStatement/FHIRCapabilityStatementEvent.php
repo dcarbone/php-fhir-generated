@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 21:22+0000
+ * Class creation date: November 30th, 2019 23:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,8 +67,8 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREventCapabilityMode;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMessageSignificanceCategory;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
-use DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -139,7 +139,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * A resource associated with the event. This is the resource that defines the
      * event.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected $focus = null;
 
@@ -410,7 +410,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * A resource associated with the event. This is the resource that defines the
      * event.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     public function getFocus()
     {
@@ -424,7 +424,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * A resource associated with the event. This is the resource that defines the
      * event.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResourceType $focus
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType $focus
      * @return static
      */
     public function setFocus(FHIRResourceType $focus = null)
@@ -684,6 +684,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
         }
         return $a;
     }
+
 
     /**
      * @return string
