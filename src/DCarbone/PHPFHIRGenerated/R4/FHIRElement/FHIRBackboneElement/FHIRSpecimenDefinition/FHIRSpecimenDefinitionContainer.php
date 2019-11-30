@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -745,11 +745,16 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         if (isset($children->capacity)) {
             $type->setCapacity(FHIRQuantity::xmlUnserialize($children->capacity));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->material)) {
             $type->setMaterial(FHIRCodeableConcept::xmlUnserialize($children->material));
@@ -757,17 +762,27 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         if (isset($children->minimumVolumeQuantity)) {
             $type->setMinimumVolumeQuantity(FHIRQuantity::xmlUnserialize($children->minimumVolumeQuantity));
         }
-        if (isset($attributes->minimumVolumeString)) {
-            $type->setMinimumVolumeString((string)$attributes->minimumVolumeString);
-        }
         if (isset($children->minimumVolumeString)) {
             $type->setMinimumVolumeString(FHIRString::xmlUnserialize($children->minimumVolumeString));
         }
-        if (isset($attributes->preparation)) {
-            $type->setPreparation((string)$attributes->preparation);
+        if (isset($attributes->minimumVolumeString)) {
+            $pt = $type->getMinimumVolumeString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->minimumVolumeString);
+            } else {
+                $type->setMinimumVolumeString((string)$attributes->minimumVolumeString);
+            }
         }
         if (isset($children->preparation)) {
             $type->setPreparation(FHIRString::xmlUnserialize($children->preparation));
+        }
+        if (isset($attributes->preparation)) {
+            $pt = $type->getPreparation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->preparation);
+            } else {
+                $type->setPreparation((string)$attributes->preparation);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -786,7 +801,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdditive())) {
             foreach($vs as $v) {
                 if (null === $v) {

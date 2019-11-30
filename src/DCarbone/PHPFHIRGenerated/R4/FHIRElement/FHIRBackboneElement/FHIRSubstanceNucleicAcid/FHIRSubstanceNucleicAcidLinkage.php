@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -446,26 +446,41 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->connectivity)) {
-            $type->setConnectivity((string)$attributes->connectivity);
-        }
         if (isset($children->connectivity)) {
             $type->setConnectivity(FHIRString::xmlUnserialize($children->connectivity));
+        }
+        if (isset($attributes->connectivity)) {
+            $pt = $type->getConnectivity();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->connectivity);
+            } else {
+                $type->setConnectivity((string)$attributes->connectivity);
+            }
         }
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->residueSite)) {
-            $type->setResidueSite((string)$attributes->residueSite);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->residueSite)) {
             $type->setResidueSite(FHIRString::xmlUnserialize($children->residueSite));
+        }
+        if (isset($attributes->residueSite)) {
+            $pt = $type->getResidueSite();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->residueSite);
+            } else {
+                $type->setResidueSite((string)$attributes->residueSite);
+            }
         }
         return $type;
     }
@@ -481,7 +496,6 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getConnectivity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONNECTIVITY, null, $v->_getFHIRXMLNamespace()));
         }

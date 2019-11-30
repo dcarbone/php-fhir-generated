@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -977,11 +977,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->outcome)) {
             $type->setOutcome(FHIRAuditEventOutcome::xmlUnserialize($children->outcome));
         }
-        if (isset($attributes->outcomeDesc)) {
-            $type->setOutcomeDesc((string)$attributes->outcomeDesc);
-        }
         if (isset($children->outcomeDesc)) {
             $type->setOutcomeDesc(FHIRString::xmlUnserialize($children->outcomeDesc));
+        }
+        if (isset($attributes->outcomeDesc)) {
+            $pt = $type->getOutcomeDesc();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->outcomeDesc);
+            } else {
+                $type->setOutcomeDesc((string)$attributes->outcomeDesc);
+            }
         }
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
@@ -991,11 +996,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $type->addPurposeOfEvent(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->recorded)) {
-            $type->setRecorded((string)$attributes->recorded);
-        }
         if (isset($children->recorded)) {
             $type->setRecorded(FHIRInstant::xmlUnserialize($children->recorded));
+        }
+        if (isset($attributes->recorded)) {
+            $pt = $type->getRecorded();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recorded);
+            } else {
+                $type->setRecorded((string)$attributes->recorded);
+            }
         }
         if (isset($children->source)) {
             $type->setSource(FHIRAuditEventSource::xmlUnserialize($children->source));
@@ -1022,7 +1032,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
         }

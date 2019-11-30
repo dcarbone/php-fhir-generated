@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -804,47 +804,82 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
         }
-        if (isset($attributes->initiator)) {
-            $type->setInitiator((string)$attributes->initiator);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->initiator)) {
             $type->setInitiator(FHIRString::xmlUnserialize($children->initiator));
         }
-        if (isset($attributes->initiatorActive)) {
-            $type->setInitiatorActive((string)$attributes->initiatorActive);
+        if (isset($attributes->initiator)) {
+            $pt = $type->getInitiator();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->initiator);
+            } else {
+                $type->setInitiator((string)$attributes->initiator);
+            }
         }
         if (isset($children->initiatorActive)) {
             $type->setInitiatorActive(FHIRBoolean::xmlUnserialize($children->initiatorActive));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->initiatorActive)) {
+            $pt = $type->getInitiatorActive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->initiatorActive);
+            } else {
+                $type->setInitiatorActive((string)$attributes->initiatorActive);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->number)) {
-            $type->setNumber((string)$attributes->number);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->number)) {
             $type->setNumber(FHIRString::xmlUnserialize($children->number));
         }
-        if (isset($attributes->receiver)) {
-            $type->setReceiver((string)$attributes->receiver);
+        if (isset($attributes->number)) {
+            $pt = $type->getNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->number);
+            } else {
+                $type->setNumber((string)$attributes->number);
+            }
         }
         if (isset($children->receiver)) {
             $type->setReceiver(FHIRString::xmlUnserialize($children->receiver));
         }
-        if (isset($attributes->receiverActive)) {
-            $type->setReceiverActive((string)$attributes->receiverActive);
+        if (isset($attributes->receiver)) {
+            $pt = $type->getReceiver();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->receiver);
+            } else {
+                $type->setReceiver((string)$attributes->receiver);
+            }
         }
         if (isset($children->receiverActive)) {
             $type->setReceiverActive(FHIRBoolean::xmlUnserialize($children->receiverActive));
+        }
+        if (isset($attributes->receiverActive)) {
+            $pt = $type->getReceiverActive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->receiverActive);
+            } else {
+                $type->setReceiverActive((string)$attributes->receiverActive);
+            }
         }
         if (isset($children->request)) {
             $type->setRequest(FHIRExampleScenarioContainedInstance::xmlUnserialize($children->request));
@@ -852,11 +887,16 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
         if (isset($children->response)) {
             $type->setResponse(FHIRExampleScenarioContainedInstance::xmlUnserialize($children->response));
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
-        }
         if (isset($children->type)) {
             $type->setType(FHIRString::xmlUnserialize($children->type));
+        }
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         return $type;
     }
@@ -872,7 +912,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDescription())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }

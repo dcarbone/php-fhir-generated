@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1065,33 +1065,48 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->active)) {
-            $type->setActive((string)$attributes->active);
-        }
         if (isset($children->active)) {
             $type->setActive(FHIRBoolean::xmlUnserialize($children->active));
+        }
+        if (isset($attributes->active)) {
+            $pt = $type->getActive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->active);
+            } else {
+                $type->setActive((string)$attributes->active);
+            }
         }
         if (isset($children->address)) {
             foreach($children->address as $child) {
                 $type->addAddress(FHIRAddress::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->birthDate)) {
-            $type->setBirthDate((string)$attributes->birthDate);
-        }
         if (isset($children->birthDate)) {
             $type->setBirthDate(FHIRDate::xmlUnserialize($children->birthDate));
+        }
+        if (isset($attributes->birthDate)) {
+            $pt = $type->getBirthDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->birthDate);
+            } else {
+                $type->setBirthDate((string)$attributes->birthDate);
+            }
         }
         if (isset($children->communication)) {
             foreach($children->communication as $child) {
                 $type->addCommunication(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->gender)) {
-            $type->setGender((string)$attributes->gender);
-        }
         if (isset($children->gender)) {
             $type->setGender(FHIRCode::xmlUnserialize($children->gender));
+        }
+        if (isset($attributes->gender)) {
+            $pt = $type->getGender();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->gender);
+            } else {
+                $type->setGender((string)$attributes->gender);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -1135,7 +1150,6 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActive())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE, null, $v->_getFHIRXMLNamespace()));
         }

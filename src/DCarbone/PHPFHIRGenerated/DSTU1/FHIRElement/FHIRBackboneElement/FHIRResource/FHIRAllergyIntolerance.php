@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -856,11 +856,16 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
                 $type->addReaction(FHIRResourceReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->recordedDate)) {
-            $type->setRecordedDate((string)$attributes->recordedDate);
-        }
         if (isset($children->recordedDate)) {
             $type->setRecordedDate(FHIRDateTime::xmlUnserialize($children->recordedDate));
+        }
+        if (isset($attributes->recordedDate)) {
+            $pt = $type->getRecordedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recordedDate);
+            } else {
+                $type->setRecordedDate((string)$attributes->recordedDate);
+            }
         }
         if (isset($children->recorder)) {
             $type->setRecorder(FHIRResourceReference::xmlUnserialize($children->recorder));
@@ -896,7 +901,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCriticality())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CRITICALITY, null, $v->_getFHIRXMLNamespace()));
         }

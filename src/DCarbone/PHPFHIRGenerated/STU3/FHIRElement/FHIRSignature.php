@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -739,46 +739,71 @@ class FHIRSignature extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->blob)) {
-            $type->setBlob((string)$attributes->blob);
-        }
         if (isset($children->blob)) {
             $type->setBlob(FHIRBase64Binary::xmlUnserialize($children->blob));
         }
-        if (isset($attributes->contentType)) {
-            $type->setContentType((string)$attributes->contentType);
+        if (isset($attributes->blob)) {
+            $pt = $type->getBlob();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->blob);
+            } else {
+                $type->setBlob((string)$attributes->blob);
+            }
         }
         if (isset($children->contentType)) {
             $type->setContentType(FHIRCode::xmlUnserialize($children->contentType));
         }
+        if (isset($attributes->contentType)) {
+            $pt = $type->getContentType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->contentType);
+            } else {
+                $type->setContentType((string)$attributes->contentType);
+            }
+        }
         if (isset($children->onBehalfOfReference)) {
             $type->setOnBehalfOfReference(FHIRReference::xmlUnserialize($children->onBehalfOfReference));
         }
-        if (isset($attributes->onBehalfOfUri)) {
-            $type->setOnBehalfOfUri((string)$attributes->onBehalfOfUri);
-        }
         if (isset($children->onBehalfOfUri)) {
             $type->setOnBehalfOfUri(FHIRUri::xmlUnserialize($children->onBehalfOfUri));
+        }
+        if (isset($attributes->onBehalfOfUri)) {
+            $pt = $type->getOnBehalfOfUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onBehalfOfUri);
+            } else {
+                $type->setOnBehalfOfUri((string)$attributes->onBehalfOfUri);
+            }
         }
         if (isset($children->type)) {
             foreach($children->type as $child) {
                 $type->addType(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->when)) {
-            $type->setWhen((string)$attributes->when);
-        }
         if (isset($children->when)) {
             $type->setWhen(FHIRInstant::xmlUnserialize($children->when));
+        }
+        if (isset($attributes->when)) {
+            $pt = $type->getWhen();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->when);
+            } else {
+                $type->setWhen((string)$attributes->when);
+            }
         }
         if (isset($children->whoReference)) {
             $type->setWhoReference(FHIRReference::xmlUnserialize($children->whoReference));
         }
-        if (isset($attributes->whoUri)) {
-            $type->setWhoUri((string)$attributes->whoUri);
-        }
         if (isset($children->whoUri)) {
             $type->setWhoUri(FHIRUri::xmlUnserialize($children->whoUri));
+        }
+        if (isset($attributes->whoUri)) {
+            $pt = $type->getWhoUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->whoUri);
+            } else {
+                $type->setWhoUri((string)$attributes->whoUri);
+            }
         }
         return $type;
     }
@@ -794,7 +819,6 @@ class FHIRSignature extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBlob())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BLOB, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1095,17 +1095,27 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addContract(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->dependent)) {
-            $type->setDependent((string)$attributes->dependent);
-        }
         if (isset($children->dependent)) {
             $type->setDependent(FHIRPositiveInt::xmlUnserialize($children->dependent));
         }
-        if (isset($attributes->group)) {
-            $type->setGroup((string)$attributes->group);
+        if (isset($attributes->dependent)) {
+            $pt = $type->getDependent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dependent);
+            } else {
+                $type->setDependent((string)$attributes->dependent);
+            }
         }
         if (isset($children->group)) {
             $type->setGroup(FHIRString::xmlUnserialize($children->group));
+        }
+        if (isset($attributes->group)) {
+            $pt = $type->getGroup();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->group);
+            } else {
+                $type->setGroup((string)$attributes->group);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -1121,23 +1131,38 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
         }
-        if (isset($attributes->plan)) {
-            $type->setPlan((string)$attributes->plan);
-        }
         if (isset($children->plan)) {
             $type->setPlan(FHIRString::xmlUnserialize($children->plan));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
+        if (isset($attributes->plan)) {
+            $pt = $type->getPlan();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->plan);
+            } else {
+                $type->setPlan((string)$attributes->plan);
+            }
         }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
         }
-        if (isset($attributes->subPlan)) {
-            $type->setSubPlan((string)$attributes->subPlan);
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         if (isset($children->subPlan)) {
             $type->setSubPlan(FHIRString::xmlUnserialize($children->subPlan));
+        }
+        if (isset($attributes->subPlan)) {
+            $pt = $type->getSubPlan();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subPlan);
+            } else {
+                $type->setSubPlan((string)$attributes->subPlan);
+            }
         }
         if (isset($children->subscriber)) {
             $type->setSubscriber(FHIRReference::xmlUnserialize($children->subscriber));
@@ -1162,7 +1187,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBin())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BIN, null, $v->_getFHIRXMLNamespace()));
         }

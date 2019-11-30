@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRReque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1811,11 +1811,16 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
                 $type->addCondition(FHIRRequestGroupCondition::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->documentation)) {
             foreach($children->documentation as $child) {
@@ -1833,11 +1838,16 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         if (isset($children->precheckBehavior)) {
             $type->setPrecheckBehavior(FHIRActionPrecheckBehavior::xmlUnserialize($children->precheckBehavior));
         }
-        if (isset($attributes->prefix)) {
-            $type->setPrefix((string)$attributes->prefix);
-        }
         if (isset($children->prefix)) {
             $type->setPrefix(FHIRString::xmlUnserialize($children->prefix));
+        }
+        if (isset($attributes->prefix)) {
+            $pt = $type->getPrefix();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->prefix);
+            } else {
+                $type->setPrefix((string)$attributes->prefix);
+            }
         }
         if (isset($children->priority)) {
             $type->setPriority(FHIRRequestPriority::xmlUnserialize($children->priority));
@@ -1856,20 +1866,30 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         if (isset($children->selectionBehavior)) {
             $type->setSelectionBehavior(FHIRActionSelectionBehavior::xmlUnserialize($children->selectionBehavior));
         }
-        if (isset($attributes->textEquivalent)) {
-            $type->setTextEquivalent((string)$attributes->textEquivalent);
-        }
         if (isset($children->textEquivalent)) {
             $type->setTextEquivalent(FHIRString::xmlUnserialize($children->textEquivalent));
+        }
+        if (isset($attributes->textEquivalent)) {
+            $pt = $type->getTextEquivalent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->textEquivalent);
+            } else {
+                $type->setTextEquivalent((string)$attributes->textEquivalent);
+            }
         }
         if (isset($children->timingAge)) {
             $type->setTimingAge(FHIRAge::xmlUnserialize($children->timingAge));
         }
-        if (isset($attributes->timingDateTime)) {
-            $type->setTimingDateTime((string)$attributes->timingDateTime);
-        }
         if (isset($children->timingDateTime)) {
             $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($children->timingDateTime));
+        }
+        if (isset($attributes->timingDateTime)) {
+            $pt = $type->getTimingDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timingDateTime);
+            } else {
+                $type->setTimingDateTime((string)$attributes->timingDateTime);
+            }
         }
         if (isset($children->timingDuration)) {
             $type->setTimingDuration(FHIRDuration::xmlUnserialize($children->timingDuration));
@@ -1883,11 +1903,16 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
         if (isset($children->timingTiming)) {
             $type->setTimingTiming(FHIRTiming::xmlUnserialize($children->timingTiming));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -1906,7 +1931,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -995,9 +995,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->color)) {
-            $type->addColor((string)$attributes->color);
-        }
         if (isset($children->color)) {
             foreach($children->color as $child) {
                 $type->addColor(FHIRString::xmlUnserialize($child));
@@ -1017,9 +1014,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $type->addImage(FHIRAttachment::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->imprint)) {
-            $type->addImprint((string)$attributes->imprint);
-        }
         if (isset($children->imprint)) {
             foreach($children->imprint as $child) {
                 $type->addImprint(FHIRString::xmlUnserialize($child));
@@ -1031,11 +1025,16 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         if (isset($children->scoring)) {
             $type->setScoring(FHIRCodeableConcept::xmlUnserialize($children->scoring));
         }
-        if (isset($attributes->shape)) {
-            $type->setShape((string)$attributes->shape);
-        }
         if (isset($children->shape)) {
             $type->setShape(FHIRString::xmlUnserialize($children->shape));
+        }
+        if (isset($attributes->shape)) {
+            $pt = $type->getShape();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->shape);
+            } else {
+                $type->setShape((string)$attributes->shape);
+            }
         }
         if (isset($children->weight)) {
             $type->setWeight(FHIRQuantity::xmlUnserialize($children->weight));
@@ -1057,7 +1056,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getColor())) {
             foreach($vs as $v) {
                 if (null === $v) {

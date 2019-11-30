@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -315,17 +315,27 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->sopClass)) {
-            $type->setSopClass((string)$attributes->sopClass);
-        }
         if (isset($children->sopClass)) {
             $type->setSopClass(FHIROid::xmlUnserialize($children->sopClass));
         }
-        if (isset($attributes->uid)) {
-            $type->setUid((string)$attributes->uid);
+        if (isset($attributes->sopClass)) {
+            $pt = $type->getSopClass();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sopClass);
+            } else {
+                $type->setSopClass((string)$attributes->sopClass);
+            }
         }
         if (isset($children->uid)) {
             $type->setUid(FHIROid::xmlUnserialize($children->uid));
+        }
+        if (isset($attributes->uid)) {
+            $pt = $type->getUid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->uid);
+            } else {
+                $type->setUid((string)$attributes->uid);
+            }
         }
         return $type;
     }
@@ -341,7 +351,6 @@ class FHIRImagingManifestInstance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getSopClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SOP_CLASS, null, $v->_getFHIRXMLNamespace()));
         }

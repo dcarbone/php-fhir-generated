@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1177,17 +1177,27 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->lastUpdated)) {
-            $type->setLastUpdated((string)$attributes->lastUpdated);
-        }
         if (isset($children->lastUpdated)) {
             $type->setLastUpdated(FHIRDateTime::xmlUnserialize($children->lastUpdated));
         }
-        if (isset($attributes->orderable)) {
-            $type->setOrderable((string)$attributes->orderable);
+        if (isset($attributes->lastUpdated)) {
+            $pt = $type->getLastUpdated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastUpdated);
+            } else {
+                $type->setLastUpdated((string)$attributes->lastUpdated);
+            }
         }
         if (isset($children->orderable)) {
             $type->setOrderable(FHIRBoolean::xmlUnserialize($children->orderable));
+        }
+        if (isset($attributes->orderable)) {
+            $pt = $type->getOrderable();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->orderable);
+            } else {
+                $type->setOrderable((string)$attributes->orderable);
+            }
         }
         if (isset($children->referencedItem)) {
             $type->setReferencedItem(FHIRReference::xmlUnserialize($children->referencedItem));
@@ -1203,11 +1213,16 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
         }
-        if (isset($attributes->validTo)) {
-            $type->setValidTo((string)$attributes->validTo);
-        }
         if (isset($children->validTo)) {
             $type->setValidTo(FHIRDateTime::xmlUnserialize($children->validTo));
+        }
+        if (isset($attributes->validTo)) {
+            $pt = $type->getValidTo();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->validTo);
+            } else {
+                $type->setValidTo((string)$attributes->validTo);
+            }
         }
         if (isset($children->validityPeriod)) {
             $type->setValidityPeriod(FHIRPeriod::xmlUnserialize($children->validityPeriod));
@@ -1226,7 +1241,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdditionalCharacteristic())) {
             foreach($vs as $v) {
                 if (null === $v) {

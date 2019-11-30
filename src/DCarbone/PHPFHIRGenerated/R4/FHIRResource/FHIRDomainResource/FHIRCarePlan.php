@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2077,17 +2077,27 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addContributor(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->created)) {
-            $type->setCreated((string)$attributes->created);
-        }
         if (isset($children->created)) {
             $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->created)) {
+            $pt = $type->getCreated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->created);
+            } else {
+                $type->setCreated((string)$attributes->created);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
@@ -2102,16 +2112,10 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->instantiatesCanonical)) {
-            $type->addInstantiatesCanonical((string)$attributes->instantiatesCanonical);
-        }
         if (isset($children->instantiatesCanonical)) {
             foreach($children->instantiatesCanonical as $child) {
                 $type->addInstantiatesCanonical(FHIRCanonical::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->instantiatesUri)) {
-            $type->addInstantiatesUri((string)$attributes->instantiatesUri);
         }
         if (isset($children->instantiatesUri)) {
             foreach($children->instantiatesUri as $child) {
@@ -2150,11 +2154,16 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addSupportingInfo(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         return $type;
     }
@@ -2170,7 +2179,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getActivity())) {
             foreach($vs as $v) {
                 if (null === $v) {

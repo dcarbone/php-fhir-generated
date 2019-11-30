@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -363,17 +363,27 @@ class FHIRClaimResponseNote extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->number)) {
-            $type->setNumber((string)$attributes->number);
-        }
         if (isset($children->number)) {
             $type->setNumber(FHIRPositiveInt::xmlUnserialize($children->number));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
+        if (isset($attributes->number)) {
+            $pt = $type->getNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->number);
+            } else {
+                $type->setNumber((string)$attributes->number);
+            }
         }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCoding::xmlUnserialize($children->type));
@@ -392,7 +402,6 @@ class FHIRClaimResponseNote extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getNumber())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER, null, $v->_getFHIRXMLNamespace()));
         }

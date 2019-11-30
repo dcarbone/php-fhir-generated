@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -474,20 +474,30 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->criteria)) {
-            $type->setCriteria((string)$attributes->criteria);
-        }
         if (isset($children->criteria)) {
             $type->setCriteria(FHIRString::xmlUnserialize($children->criteria));
+        }
+        if (isset($attributes->criteria)) {
+            $pt = $type->getCriteria();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->criteria);
+            } else {
+                $type->setCriteria((string)$attributes->criteria);
+            }
         }
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->path)) {
-            $type->setPath((string)$attributes->path);
-        }
         if (isset($children->path)) {
             $type->setPath(FHIRString::xmlUnserialize($children->path));
+        }
+        if (isset($attributes->path)) {
+            $pt = $type->getPath();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->path);
+            } else {
+                $type->setPath((string)$attributes->path);
+            }
         }
         if (isset($children->usage)) {
             foreach($children->usage as $child) {
@@ -508,7 +518,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCriteria())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CRITERIA, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -456,23 +456,38 @@ class FHIRAnnotation extends FHIRElement
         if (isset($children->authorReference)) {
             $type->setAuthorReference(FHIRReference::xmlUnserialize($children->authorReference));
         }
-        if (isset($attributes->authorString)) {
-            $type->setAuthorString((string)$attributes->authorString);
-        }
         if (isset($children->authorString)) {
             $type->setAuthorString(FHIRString::xmlUnserialize($children->authorString));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
+        if (isset($attributes->authorString)) {
+            $pt = $type->getAuthorString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authorString);
+            } else {
+                $type->setAuthorString((string)$attributes->authorString);
+            }
         }
         if (isset($children->text)) {
             $type->setText(FHIRMarkdown::xmlUnserialize($children->text));
         }
-        if (isset($attributes->time)) {
-            $type->setTime((string)$attributes->time);
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->time)) {
             $type->setTime(FHIRDateTime::xmlUnserialize($children->time));
+        }
+        if (isset($attributes->time)) {
+            $pt = $type->getTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->time);
+            } else {
+                $type->setTime((string)$attributes->time);
+            }
         }
         return $type;
     }
@@ -488,7 +503,6 @@ class FHIRAnnotation extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthorReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }

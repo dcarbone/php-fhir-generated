@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1376,20 +1376,30 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         if (isset($children->context)) {
             $type->setContext(FHIRDocumentReferenceContext::xmlUnserialize($children->context));
         }
-        if (isset($attributes->created)) {
-            $type->setCreated((string)$attributes->created);
-        }
         if (isset($children->created)) {
             $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
+        }
+        if (isset($attributes->created)) {
+            $pt = $type->getCreated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->created);
+            } else {
+                $type->setCreated((string)$attributes->created);
+            }
         }
         if (isset($children->custodian)) {
             $type->setCustodian(FHIRReference::xmlUnserialize($children->custodian));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->docStatus)) {
             $type->setDocStatus(FHIRCodeableConcept::xmlUnserialize($children->docStatus));
@@ -1399,11 +1409,16 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->indexed)) {
-            $type->setIndexed((string)$attributes->indexed);
-        }
         if (isset($children->indexed)) {
             $type->setIndexed(FHIRInstant::xmlUnserialize($children->indexed));
+        }
+        if (isset($attributes->indexed)) {
+            $pt = $type->getIndexed();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->indexed);
+            } else {
+                $type->setIndexed((string)$attributes->indexed);
+            }
         }
         if (isset($children->masterIdentifier)) {
             $type->setMasterIdentifier(FHIRIdentifier::xmlUnserialize($children->masterIdentifier));
@@ -1418,11 +1433,16 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
                 $type->addSecurityLabel(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->status)) {
-            $type->setStatus((string)$attributes->status);
-        }
         if (isset($children->status)) {
             $type->setStatus(FHIRCode::xmlUnserialize($children->status));
+        }
+        if (isset($attributes->status)) {
+            $pt = $type->getStatus();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->status);
+            } else {
+                $type->setStatus((string)$attributes->status);
+            }
         }
         if (isset($children->subject)) {
             $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
@@ -1444,7 +1464,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthenticator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHENTICATOR, null, $v->_getFHIRXMLNamespace()));
         }

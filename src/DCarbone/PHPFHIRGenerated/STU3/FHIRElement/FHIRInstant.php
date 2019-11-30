@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,13 +84,19 @@ class FHIRInstant extends FHIRElement
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRInstantPrimitive
      */
     protected $value = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type instant
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRInstant Constructor
@@ -120,6 +126,7 @@ class FHIRInstant extends FHIRElement
             $this->setValue($data[self::FIELD_VALUE]);
         }
     }
+
     /**
      * @return string
      */
@@ -139,6 +146,7 @@ class FHIRInstant extends FHIRElement
         }
         return "<instant{$xmlns}></instant>";
     }
+
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRInstantPrimitive
      */
@@ -163,6 +171,15 @@ class FHIRInstant extends FHIRElement
         }
         $this->value = new FHIRInstantPrimitive($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -205,10 +222,16 @@ class FHIRInstant extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
+        if (isset($children->value)) {
+            $type->setValue(FHIRInstantPrimitive::xmlUnserialize($children->value));
+        }
         if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        } elseif (isset($children->value)) {
-            $type->setValue((string)$children->value);
+            $pt = $type->getValue();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->value);
+            } else {
+                $type->setValue((string)$attributes->value);
+            }
         }
         return $type;
     }

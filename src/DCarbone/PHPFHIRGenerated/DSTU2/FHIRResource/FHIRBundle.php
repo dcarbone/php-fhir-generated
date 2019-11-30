@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -545,11 +545,16 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (isset($children->signature)) {
             $type->setSignature(FHIRSignature::xmlUnserialize($children->signature));
         }
-        if (isset($attributes->total)) {
-            $type->setTotal((string)$attributes->total);
-        }
         if (isset($children->total)) {
             $type->setTotal(FHIRUnsignedInt::xmlUnserialize($children->total));
+        }
+        if (isset($attributes->total)) {
+            $pt = $type->getTotal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->total);
+            } else {
+                $type->setTotal((string)$attributes->total);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRBundleType::xmlUnserialize($children->type));
@@ -568,7 +573,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getEntry())) {
             foreach($vs as $v) {
                 if (null === $v) {

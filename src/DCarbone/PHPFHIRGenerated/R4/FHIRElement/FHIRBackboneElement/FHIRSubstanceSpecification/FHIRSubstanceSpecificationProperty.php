@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -584,11 +584,16 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
         if (isset($children->amountQuantity)) {
             $type->setAmountQuantity(FHIRQuantity::xmlUnserialize($children->amountQuantity));
         }
-        if (isset($attributes->amountString)) {
-            $type->setAmountString((string)$attributes->amountString);
-        }
         if (isset($children->amountString)) {
             $type->setAmountString(FHIRString::xmlUnserialize($children->amountString));
+        }
+        if (isset($attributes->amountString)) {
+            $pt = $type->getAmountString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->amountString);
+            } else {
+                $type->setAmountString((string)$attributes->amountString);
+            }
         }
         if (isset($children->category)) {
             $type->setCategory(FHIRCodeableConcept::xmlUnserialize($children->category));
@@ -602,11 +607,16 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
         if (isset($children->definingSubstanceReference)) {
             $type->setDefiningSubstanceReference(FHIRReference::xmlUnserialize($children->definingSubstanceReference));
         }
-        if (isset($attributes->parameters)) {
-            $type->setParameters((string)$attributes->parameters);
-        }
         if (isset($children->parameters)) {
             $type->setParameters(FHIRString::xmlUnserialize($children->parameters));
+        }
+        if (isset($attributes->parameters)) {
+            $pt = $type->getParameters();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->parameters);
+            } else {
+                $type->setParameters((string)$attributes->parameters);
+            }
         }
         return $type;
     }
@@ -622,7 +632,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }

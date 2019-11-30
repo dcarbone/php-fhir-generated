@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1991,32 +1991,52 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
                 $type->addContact(FHIRContactDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->copyright)) {
-            $type->setCopyright((string)$attributes->copyright);
-        }
         if (isset($children->copyright)) {
             $type->setCopyright(FHIRMarkdown::xmlUnserialize($children->copyright));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
+        if (isset($attributes->copyright)) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->copyright);
+            } else {
+                $type->setCopyright((string)$attributes->copyright);
+            }
         }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
         }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
+        }
         if (isset($children->event)) {
             $type->setEvent(FHIRCoding::xmlUnserialize($children->event));
         }
-        if (isset($attributes->experimental)) {
-            $type->setExperimental((string)$attributes->experimental);
-        }
         if (isset($children->experimental)) {
             $type->setExperimental(FHIRBoolean::xmlUnserialize($children->experimental));
+        }
+        if (isset($attributes->experimental)) {
+            $pt = $type->getExperimental();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->experimental);
+            } else {
+                $type->setExperimental((string)$attributes->experimental);
+            }
         }
         if (isset($children->focus)) {
             foreach($children->focus as $child) {
@@ -2031,65 +2051,100 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
                 $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->parent)) {
             foreach($children->parent as $child) {
                 $type->addParent(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->publisher)) {
-            $type->setPublisher((string)$attributes->publisher);
-        }
         if (isset($children->publisher)) {
             $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
         }
-        if (isset($attributes->purpose)) {
-            $type->setPurpose((string)$attributes->purpose);
+        if (isset($attributes->publisher)) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publisher);
+            } else {
+                $type->setPublisher((string)$attributes->publisher);
+            }
         }
         if (isset($children->purpose)) {
             $type->setPurpose(FHIRMarkdown::xmlUnserialize($children->purpose));
+        }
+        if (isset($attributes->purpose)) {
+            $pt = $type->getPurpose();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->purpose);
+            } else {
+                $type->setPurpose((string)$attributes->purpose);
+            }
         }
         if (isset($children->replaces)) {
             foreach($children->replaces as $child) {
                 $type->addReplaces(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->responseRequired)) {
-            $type->setResponseRequired((string)$attributes->responseRequired);
-        }
         if (isset($children->responseRequired)) {
             $type->setResponseRequired(FHIRBoolean::xmlUnserialize($children->responseRequired));
+        }
+        if (isset($attributes->responseRequired)) {
+            $pt = $type->getResponseRequired();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->responseRequired);
+            } else {
+                $type->setResponseRequired((string)$attributes->responseRequired);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRPublicationStatus::xmlUnserialize($children->status));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->useContext)) {
             foreach($children->useContext as $child) {
                 $type->addUseContext(FHIRUsageContext::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
-        }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -2105,7 +2160,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAllowedResponse())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPract
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -469,23 +469,38 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->allDay)) {
-            $type->setAllDay((string)$attributes->allDay);
-        }
         if (isset($children->allDay)) {
             $type->setAllDay(FHIRBoolean::xmlUnserialize($children->allDay));
         }
-        if (isset($attributes->availableEndTime)) {
-            $type->setAvailableEndTime((string)$attributes->availableEndTime);
+        if (isset($attributes->allDay)) {
+            $pt = $type->getAllDay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->allDay);
+            } else {
+                $type->setAllDay((string)$attributes->allDay);
+            }
         }
         if (isset($children->availableEndTime)) {
             $type->setAvailableEndTime(FHIRTime::xmlUnserialize($children->availableEndTime));
         }
-        if (isset($attributes->availableStartTime)) {
-            $type->setAvailableStartTime((string)$attributes->availableStartTime);
+        if (isset($attributes->availableEndTime)) {
+            $pt = $type->getAvailableEndTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->availableEndTime);
+            } else {
+                $type->setAvailableEndTime((string)$attributes->availableEndTime);
+            }
         }
         if (isset($children->availableStartTime)) {
             $type->setAvailableStartTime(FHIRTime::xmlUnserialize($children->availableStartTime));
+        }
+        if (isset($attributes->availableStartTime)) {
+            $pt = $type->getAvailableStartTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->availableStartTime);
+            } else {
+                $type->setAvailableStartTime((string)$attributes->availableStartTime);
+            }
         }
         if (isset($children->daysOfWeek)) {
             foreach($children->daysOfWeek as $child) {
@@ -506,7 +521,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAllDay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALL_DAY, null, $v->_getFHIRXMLNamespace()));
         }

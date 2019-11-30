@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -566,20 +566,30 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
         if (isset($children->action)) {
             $type->setAction(FHIRSecurityEventAction::xmlUnserialize($children->action));
         }
-        if (isset($attributes->dateTime)) {
-            $type->setDateTime((string)$attributes->dateTime);
-        }
         if (isset($children->dateTime)) {
             $type->setDateTime(FHIRInstant::xmlUnserialize($children->dateTime));
+        }
+        if (isset($attributes->dateTime)) {
+            $pt = $type->getDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dateTime);
+            } else {
+                $type->setDateTime((string)$attributes->dateTime);
+            }
         }
         if (isset($children->outcome)) {
             $type->setOutcome(FHIRSecurityEventOutcome::xmlUnserialize($children->outcome));
         }
-        if (isset($attributes->outcomeDesc)) {
-            $type->setOutcomeDesc((string)$attributes->outcomeDesc);
-        }
         if (isset($children->outcomeDesc)) {
             $type->setOutcomeDesc(FHIRString::xmlUnserialize($children->outcomeDesc));
+        }
+        if (isset($attributes->outcomeDesc)) {
+            $pt = $type->getOutcomeDesc();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->outcomeDesc);
+            } else {
+                $type->setOutcomeDesc((string)$attributes->outcomeDesc);
+            }
         }
         if (isset($children->subtype)) {
             foreach($children->subtype as $child) {
@@ -603,7 +613,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
         }

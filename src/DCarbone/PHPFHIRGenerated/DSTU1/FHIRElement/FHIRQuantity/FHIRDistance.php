@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,13 +57,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantityCompararator;
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri;
-use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -123,7 +117,6 @@ class FHIRDistance extends FHIRQuantity
         return "<Distance{$xmlns}></Distance>";
     }
 
-
     /**
      * @return array
      */
@@ -171,8 +164,6 @@ class FHIRDistance extends FHIRQuantity
                 $type->_xmlns = $ns;
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
         return $type;
     }
 
@@ -187,7 +178,6 @@ class FHIRDistance extends FHIRQuantity
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         return $sxe;
     }
 

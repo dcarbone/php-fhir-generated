@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -387,23 +387,38 @@ class FHIRElementDefinitionBase extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->max)) {
-            $type->setMax((string)$attributes->max);
-        }
         if (isset($children->max)) {
             $type->setMax(FHIRString::xmlUnserialize($children->max));
         }
-        if (isset($attributes->min)) {
-            $type->setMin((string)$attributes->min);
+        if (isset($attributes->max)) {
+            $pt = $type->getMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->max);
+            } else {
+                $type->setMax((string)$attributes->max);
+            }
         }
         if (isset($children->min)) {
             $type->setMin(FHIRUnsignedInt::xmlUnserialize($children->min));
         }
-        if (isset($attributes->path)) {
-            $type->setPath((string)$attributes->path);
+        if (isset($attributes->min)) {
+            $pt = $type->getMin();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->min);
+            } else {
+                $type->setMin((string)$attributes->min);
+            }
         }
         if (isset($children->path)) {
             $type->setPath(FHIRString::xmlUnserialize($children->path));
+        }
+        if (isset($attributes->path)) {
+            $pt = $type->getPath();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->path);
+            } else {
+                $type->setPath((string)$attributes->path);
+            }
         }
         return $type;
     }
@@ -419,7 +434,6 @@ class FHIRElementDefinitionBase extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getMax())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->_getFHIRXMLNamespace()));
         }

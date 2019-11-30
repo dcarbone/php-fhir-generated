@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1168,26 +1168,41 @@ class FHIRObservationComponent extends FHIRBackboneElement
                 $type->addReferenceRange(FHIRObservationReferenceRange::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->valueBoolean)) {
-            $type->setValueBoolean((string)$attributes->valueBoolean);
-        }
         if (isset($children->valueBoolean)) {
             $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
+        }
+        if (isset($attributes->valueBoolean)) {
+            $pt = $type->getValueBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBoolean);
+            } else {
+                $type->setValueBoolean((string)$attributes->valueBoolean);
+            }
         }
         if (isset($children->valueCodeableConcept)) {
             $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->valueCodeableConcept));
         }
-        if (isset($attributes->valueDateTime)) {
-            $type->setValueDateTime((string)$attributes->valueDateTime);
-        }
         if (isset($children->valueDateTime)) {
             $type->setValueDateTime(FHIRDateTime::xmlUnserialize($children->valueDateTime));
         }
-        if (isset($attributes->valueInteger)) {
-            $type->setValueInteger((string)$attributes->valueInteger);
+        if (isset($attributes->valueDateTime)) {
+            $pt = $type->getValueDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDateTime);
+            } else {
+                $type->setValueDateTime((string)$attributes->valueDateTime);
+            }
         }
         if (isset($children->valueInteger)) {
             $type->setValueInteger(FHIRInteger::xmlUnserialize($children->valueInteger));
+        }
+        if (isset($attributes->valueInteger)) {
+            $pt = $type->getValueInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueInteger);
+            } else {
+                $type->setValueInteger((string)$attributes->valueInteger);
+            }
         }
         if (isset($children->valuePeriod)) {
             $type->setValuePeriod(FHIRPeriod::xmlUnserialize($children->valuePeriod));
@@ -1204,17 +1219,27 @@ class FHIRObservationComponent extends FHIRBackboneElement
         if (isset($children->valueSampledData)) {
             $type->setValueSampledData(FHIRSampledData::xmlUnserialize($children->valueSampledData));
         }
-        if (isset($attributes->valueString)) {
-            $type->setValueString((string)$attributes->valueString);
-        }
         if (isset($children->valueString)) {
             $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
         }
-        if (isset($attributes->valueTime)) {
-            $type->setValueTime((string)$attributes->valueTime);
+        if (isset($attributes->valueString)) {
+            $pt = $type->getValueString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueString);
+            } else {
+                $type->setValueString((string)$attributes->valueString);
+            }
         }
         if (isset($children->valueTime)) {
             $type->setValueTime(FHIRTime::xmlUnserialize($children->valueTime));
+        }
+        if (isset($attributes->valueTime)) {
+            $pt = $type->getValueTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueTime);
+            } else {
+                $type->setValueTime((string)$attributes->valueTime);
+            }
         }
         return $type;
     }
@@ -1230,7 +1255,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }

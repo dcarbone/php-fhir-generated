@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -958,29 +958,49 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (isset($children->content)) {
             $type->setContent(FHIRAttachment::xmlUnserialize($children->content));
         }
-        if (isset($attributes->deviceName)) {
-            $type->setDeviceName((string)$attributes->deviceName);
-        }
         if (isset($children->deviceName)) {
             $type->setDeviceName(FHIRString::xmlUnserialize($children->deviceName));
         }
-        if (isset($attributes->duration)) {
-            $type->setDuration((string)$attributes->duration);
+        if (isset($attributes->deviceName)) {
+            $pt = $type->getDeviceName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->deviceName);
+            } else {
+                $type->setDeviceName((string)$attributes->deviceName);
+            }
         }
         if (isset($children->duration)) {
             $type->setDuration(FHIRUnsignedInt::xmlUnserialize($children->duration));
         }
-        if (isset($attributes->frames)) {
-            $type->setFrames((string)$attributes->frames);
+        if (isset($attributes->duration)) {
+            $pt = $type->getDuration();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->duration);
+            } else {
+                $type->setDuration((string)$attributes->duration);
+            }
         }
         if (isset($children->frames)) {
             $type->setFrames(FHIRPositiveInt::xmlUnserialize($children->frames));
         }
-        if (isset($attributes->height)) {
-            $type->setHeight((string)$attributes->height);
+        if (isset($attributes->frames)) {
+            $pt = $type->getFrames();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->frames);
+            } else {
+                $type->setFrames((string)$attributes->frames);
+            }
         }
         if (isset($children->height)) {
             $type->setHeight(FHIRPositiveInt::xmlUnserialize($children->height));
+        }
+        if (isset($attributes->height)) {
+            $pt = $type->getHeight();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->height);
+            } else {
+                $type->setHeight((string)$attributes->height);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -1002,11 +1022,16 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (isset($children->view)) {
             $type->setView(FHIRCodeableConcept::xmlUnserialize($children->view));
         }
-        if (isset($attributes->width)) {
-            $type->setWidth((string)$attributes->width);
-        }
         if (isset($children->width)) {
             $type->setWidth(FHIRPositiveInt::xmlUnserialize($children->width));
+        }
+        if (isset($attributes->width)) {
+            $pt = $type->getWidth();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->width);
+            } else {
+                $type->setWidth((string)$attributes->width);
+            }
         }
         return $type;
     }
@@ -1022,7 +1047,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT, null, $v->_getFHIRXMLNamespace()));
         }

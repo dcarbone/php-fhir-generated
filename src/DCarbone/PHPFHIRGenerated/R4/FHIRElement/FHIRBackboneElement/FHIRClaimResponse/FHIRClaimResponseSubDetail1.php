@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -767,11 +767,16 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
                 $type->addAdjudication(FHIRClaimResponseAdjudication::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->factor)) {
-            $type->setFactor((string)$attributes->factor);
-        }
         if (isset($children->factor)) {
             $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
+        }
+        if (isset($attributes->factor)) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->factor);
+            } else {
+                $type->setFactor((string)$attributes->factor);
+            }
         }
         if (isset($children->modifier)) {
             foreach($children->modifier as $child) {
@@ -780,9 +785,6 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
         }
         if (isset($children->net)) {
             $type->setNet(FHIRMoney::xmlUnserialize($children->net));
-        }
-        if (isset($attributes->noteNumber)) {
-            $type->addNoteNumber((string)$attributes->noteNumber);
         }
         if (isset($children->noteNumber)) {
             foreach($children->noteNumber as $child) {
@@ -812,7 +814,6 @@ class FHIRClaimResponseSubDetail1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {

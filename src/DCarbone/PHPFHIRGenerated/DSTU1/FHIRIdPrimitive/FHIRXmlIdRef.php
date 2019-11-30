@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,12 +70,37 @@ class FHIRXmlIdRef extends FHIRIdPrimitive
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_XML_ID_REF;
 
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Validation map for fields in type xmlIdRef
      * @var array
      */
     private static $_fieldValidation = [    ];
 
+    /**
+     * FHIRXmlIdRef Constructor
+     * @param null|array $data
+     */
+    public function __construct($data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        if (is_scalar($data)) {
+            parent::__construct($data);
+            return;
+        }
+        if (!is_array($data)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRXmlIdRef::_construct - $data expected to be null or array, %s seen',
+                gettype($data)
+            ));
+        }
+        parent::__construct($data);
+    }
 
     /**
      * @return string
@@ -158,7 +183,6 @@ class FHIRXmlIdRef extends FHIRIdPrimitive
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         return $sxe;
     }
 

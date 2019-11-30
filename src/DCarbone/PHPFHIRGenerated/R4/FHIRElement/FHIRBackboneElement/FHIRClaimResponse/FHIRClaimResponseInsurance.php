@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -492,11 +492,16 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->businessArrangement)) {
-            $type->setBusinessArrangement((string)$attributes->businessArrangement);
-        }
         if (isset($children->businessArrangement)) {
             $type->setBusinessArrangement(FHIRString::xmlUnserialize($children->businessArrangement));
+        }
+        if (isset($attributes->businessArrangement)) {
+            $pt = $type->getBusinessArrangement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->businessArrangement);
+            } else {
+                $type->setBusinessArrangement((string)$attributes->businessArrangement);
+            }
         }
         if (isset($children->claimResponse)) {
             $type->setClaimResponse(FHIRReference::xmlUnserialize($children->claimResponse));
@@ -504,17 +509,27 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
         if (isset($children->coverage)) {
             $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
         }
-        if (isset($attributes->focal)) {
-            $type->setFocal((string)$attributes->focal);
-        }
         if (isset($children->focal)) {
             $type->setFocal(FHIRBoolean::xmlUnserialize($children->focal));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
+        if (isset($attributes->focal)) {
+            $pt = $type->getFocal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->focal);
+            } else {
+                $type->setFocal((string)$attributes->focal);
+            }
         }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         return $type;
     }
@@ -530,7 +545,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBusinessArrangement())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BUSINESS_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
         }

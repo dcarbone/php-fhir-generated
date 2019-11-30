@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -575,11 +575,16 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         if (isset($children->causalityMethod)) {
             $type->setCausalityMethod(FHIRCodeableConcept::xmlUnserialize($children->causalityMethod));
         }
-        if (isset($attributes->causalityProductRelatedness)) {
-            $type->setCausalityProductRelatedness((string)$attributes->causalityProductRelatedness);
-        }
         if (isset($children->causalityProductRelatedness)) {
             $type->setCausalityProductRelatedness(FHIRString::xmlUnserialize($children->causalityProductRelatedness));
+        }
+        if (isset($attributes->causalityProductRelatedness)) {
+            $pt = $type->getCausalityProductRelatedness();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->causalityProductRelatedness);
+            } else {
+                $type->setCausalityProductRelatedness((string)$attributes->causalityProductRelatedness);
+            }
         }
         if (isset($children->causalityResult)) {
             $type->setCausalityResult(FHIRCodeableConcept::xmlUnserialize($children->causalityResult));
@@ -601,7 +606,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCausality())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY, null, $v->_getFHIRXMLNamespace()));
         }

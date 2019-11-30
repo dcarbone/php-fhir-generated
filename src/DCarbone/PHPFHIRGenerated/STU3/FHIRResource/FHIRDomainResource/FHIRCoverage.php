@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1261,11 +1261,16 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addContract(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->dependent)) {
-            $type->setDependent((string)$attributes->dependent);
-        }
         if (isset($children->dependent)) {
             $type->setDependent(FHIRString::xmlUnserialize($children->dependent));
+        }
+        if (isset($attributes->dependent)) {
+            $pt = $type->getDependent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dependent);
+            } else {
+                $type->setDependent((string)$attributes->dependent);
+            }
         }
         if (isset($children->grouping)) {
             $type->setGrouping(FHIRCoverageGrouping::xmlUnserialize($children->grouping));
@@ -1275,17 +1280,27 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->network)) {
-            $type->setNetwork((string)$attributes->network);
-        }
         if (isset($children->network)) {
             $type->setNetwork(FHIRString::xmlUnserialize($children->network));
         }
-        if (isset($attributes->order)) {
-            $type->setOrder((string)$attributes->order);
+        if (isset($attributes->network)) {
+            $pt = $type->getNetwork();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->network);
+            } else {
+                $type->setNetwork((string)$attributes->network);
+            }
         }
         if (isset($children->order)) {
             $type->setOrder(FHIRPositiveInt::xmlUnserialize($children->order));
+        }
+        if (isset($attributes->order)) {
+            $pt = $type->getOrder();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->order);
+            } else {
+                $type->setOrder((string)$attributes->order);
+            }
         }
         if (isset($children->payor)) {
             foreach($children->payor as $child) {
@@ -1301,11 +1316,16 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->relationship)) {
             $type->setRelationship(FHIRCodeableConcept::xmlUnserialize($children->relationship));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
-        }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRString::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRFinancialResourceStatusCodes::xmlUnserialize($children->status));
@@ -1313,11 +1333,16 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->subscriber)) {
             $type->setSubscriber(FHIRReference::xmlUnserialize($children->subscriber));
         }
-        if (isset($attributes->subscriberId)) {
-            $type->setSubscriberId((string)$attributes->subscriberId);
-        }
         if (isset($children->subscriberId)) {
             $type->setSubscriberId(FHIRString::xmlUnserialize($children->subscriberId));
+        }
+        if (isset($attributes->subscriberId)) {
+            $pt = $type->getSubscriberId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subscriberId);
+            } else {
+                $type->setSubscriberId((string)$attributes->subscriberId);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -1336,7 +1361,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBeneficiary())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFICIARY, null, $v->_getFHIRXMLNamespace()));
         }

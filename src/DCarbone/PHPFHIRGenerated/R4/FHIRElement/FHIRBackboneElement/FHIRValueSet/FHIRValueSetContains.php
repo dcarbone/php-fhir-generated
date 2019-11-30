@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -800,17 +800,27 @@ class FHIRValueSetContains extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->abstract)) {
-            $type->setAbstract((string)$attributes->abstract);
-        }
         if (isset($children->abstract)) {
             $type->setAbstract(FHIRBoolean::xmlUnserialize($children->abstract));
         }
-        if (isset($attributes->code)) {
-            $type->setCode((string)$attributes->code);
+        if (isset($attributes->abstract)) {
+            $pt = $type->getAbstract();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->abstract);
+            } else {
+                $type->setAbstract((string)$attributes->abstract);
+            }
         }
         if (isset($children->code)) {
             $type->setCode(FHIRCode::xmlUnserialize($children->code));
+        }
+        if (isset($attributes->code)) {
+            $pt = $type->getCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->code);
+            } else {
+                $type->setCode((string)$attributes->code);
+            }
         }
         if (isset($children->contains)) {
             foreach($children->contains as $child) {
@@ -822,29 +832,49 @@ class FHIRValueSetContains extends FHIRBackboneElement
                 $type->addDesignation(FHIRValueSetDesignation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->display)) {
-            $type->setDisplay((string)$attributes->display);
-        }
         if (isset($children->display)) {
             $type->setDisplay(FHIRString::xmlUnserialize($children->display));
         }
-        if (isset($attributes->inactive)) {
-            $type->setInactive((string)$attributes->inactive);
+        if (isset($attributes->display)) {
+            $pt = $type->getDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->display);
+            } else {
+                $type->setDisplay((string)$attributes->display);
+            }
         }
         if (isset($children->inactive)) {
             $type->setInactive(FHIRBoolean::xmlUnserialize($children->inactive));
         }
-        if (isset($attributes->system)) {
-            $type->setSystem((string)$attributes->system);
+        if (isset($attributes->inactive)) {
+            $pt = $type->getInactive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->inactive);
+            } else {
+                $type->setInactive((string)$attributes->inactive);
+            }
         }
         if (isset($children->system)) {
             $type->setSystem(FHIRUri::xmlUnserialize($children->system));
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
+        if (isset($attributes->system)) {
+            $pt = $type->getSystem();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->system);
+            } else {
+                $type->setSystem((string)$attributes->system);
+            }
         }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -860,7 +890,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAbstract())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ABSTRACT, null, $v->_getFHIRXMLNamespace()));
         }

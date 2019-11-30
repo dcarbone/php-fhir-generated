@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1256,11 +1256,16 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->created)) {
-            $type->setCreated((string)$attributes->created);
-        }
         if (isset($children->created)) {
             $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
+        }
+        if (isset($attributes->created)) {
+            $pt = $type->getCreated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->created);
+            } else {
+                $type->setCreated((string)$attributes->created);
+            }
         }
         if (isset($children->enterer)) {
             $type->setEnterer(FHIRReference::xmlUnserialize($children->enterer));
@@ -1300,11 +1305,16 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
                 $type->addPurpose(FHIREligibilityRequestPurpose::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->servicedDate)) {
-            $type->setServicedDate((string)$attributes->servicedDate);
-        }
         if (isset($children->servicedDate)) {
             $type->setServicedDate(FHIRDate::xmlUnserialize($children->servicedDate));
+        }
+        if (isset($attributes->servicedDate)) {
+            $pt = $type->getServicedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->servicedDate);
+            } else {
+                $type->setServicedDate((string)$attributes->servicedDate);
+            }
         }
         if (isset($children->servicedPeriod)) {
             $type->setServicedPeriod(FHIRPeriod::xmlUnserialize($children->servicedPeriod));
@@ -1331,7 +1341,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCreated())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->_getFHIRXMLNamespace()));
         }

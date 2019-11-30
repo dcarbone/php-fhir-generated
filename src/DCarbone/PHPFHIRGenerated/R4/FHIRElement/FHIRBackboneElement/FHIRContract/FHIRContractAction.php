@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2050,25 +2050,24 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($children->context)) {
             $type->setContext(FHIRReference::xmlUnserialize($children->context));
         }
-        if (isset($attributes->contextLinkId)) {
-            $type->addContextLinkId((string)$attributes->contextLinkId);
-        }
         if (isset($children->contextLinkId)) {
             foreach($children->contextLinkId as $child) {
                 $type->addContextLinkId(FHIRString::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->doNotPerform)) {
-            $type->setDoNotPerform((string)$attributes->doNotPerform);
-        }
         if (isset($children->doNotPerform)) {
             $type->setDoNotPerform(FHIRBoolean::xmlUnserialize($children->doNotPerform));
         }
+        if (isset($attributes->doNotPerform)) {
+            $pt = $type->getDoNotPerform();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->doNotPerform);
+            } else {
+                $type->setDoNotPerform((string)$attributes->doNotPerform);
+            }
+        }
         if (isset($children->intent)) {
             $type->setIntent(FHIRCodeableConcept::xmlUnserialize($children->intent));
-        }
-        if (isset($attributes->linkId)) {
-            $type->addLinkId((string)$attributes->linkId);
         }
         if (isset($children->linkId)) {
             foreach($children->linkId as $child) {
@@ -2080,11 +2079,16 @@ class FHIRContractAction extends FHIRBackboneElement
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
-        }
         if (isset($children->occurrenceDateTime)) {
             $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
+        }
+        if (isset($attributes->occurrenceDateTime)) {
+            $pt = $type->getOccurrenceDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceDateTime);
+            } else {
+                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+            }
         }
         if (isset($children->occurrencePeriod)) {
             $type->setOccurrencePeriod(FHIRPeriod::xmlUnserialize($children->occurrencePeriod));
@@ -2094,9 +2098,6 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($children->performer)) {
             $type->setPerformer(FHIRReference::xmlUnserialize($children->performer));
-        }
-        if (isset($attributes->performerLinkId)) {
-            $type->addPerformerLinkId((string)$attributes->performerLinkId);
         }
         if (isset($children->performerLinkId)) {
             foreach($children->performerLinkId as $child) {
@@ -2111,9 +2112,6 @@ class FHIRContractAction extends FHIRBackboneElement
                 $type->addPerformerType(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->reason)) {
-            $type->addReason((string)$attributes->reason);
-        }
         if (isset($children->reason)) {
             foreach($children->reason as $child) {
                 $type->addReason(FHIRString::xmlUnserialize($child));
@@ -2123,9 +2121,6 @@ class FHIRContractAction extends FHIRBackboneElement
             foreach($children->reasonCode as $child) {
                 $type->addReasonCode(FHIRCodeableConcept::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->reasonLinkId)) {
-            $type->addReasonLinkId((string)$attributes->reasonLinkId);
         }
         if (isset($children->reasonLinkId)) {
             foreach($children->reasonLinkId as $child) {
@@ -2142,16 +2137,10 @@ class FHIRContractAction extends FHIRBackboneElement
                 $type->addRequester(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->requesterLinkId)) {
-            $type->addRequesterLinkId((string)$attributes->requesterLinkId);
-        }
         if (isset($children->requesterLinkId)) {
             foreach($children->requesterLinkId as $child) {
                 $type->addRequesterLinkId(FHIRString::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->securityLabelNumber)) {
-            $type->addSecurityLabelNumber((string)$attributes->securityLabelNumber);
         }
         if (isset($children->securityLabelNumber)) {
             foreach($children->securityLabelNumber as $child) {
@@ -2183,7 +2172,6 @@ class FHIRContractAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }

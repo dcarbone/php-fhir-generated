@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -725,17 +725,27 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->comment)) {
-            $type->setComment((string)$attributes->comment);
-        }
         if (isset($children->comment)) {
             $type->setComment(FHIRString::xmlUnserialize($children->comment));
         }
-        if (isset($attributes->end)) {
-            $type->setEnd((string)$attributes->end);
+        if (isset($attributes->comment)) {
+            $pt = $type->getComment();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->comment);
+            } else {
+                $type->setComment((string)$attributes->comment);
+            }
         }
         if (isset($children->end)) {
             $type->setEnd(FHIRInstant::xmlUnserialize($children->end));
+        }
+        if (isset($attributes->end)) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->end);
+            } else {
+                $type->setEnd((string)$attributes->end);
+            }
         }
         if (isset($children->freeBusyType)) {
             $type->setFreeBusyType(FHIRSlotStatus::xmlUnserialize($children->freeBusyType));
@@ -745,20 +755,30 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->overbooked)) {
-            $type->setOverbooked((string)$attributes->overbooked);
-        }
         if (isset($children->overbooked)) {
             $type->setOverbooked(FHIRBoolean::xmlUnserialize($children->overbooked));
+        }
+        if (isset($attributes->overbooked)) {
+            $pt = $type->getOverbooked();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->overbooked);
+            } else {
+                $type->setOverbooked((string)$attributes->overbooked);
+            }
         }
         if (isset($children->schedule)) {
             $type->setSchedule(FHIRReference::xmlUnserialize($children->schedule));
         }
-        if (isset($attributes->start)) {
-            $type->setStart((string)$attributes->start);
-        }
         if (isset($children->start)) {
             $type->setStart(FHIRInstant::xmlUnserialize($children->start));
+        }
+        if (isset($attributes->start)) {
+            $pt = $type->getStart();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->start);
+            } else {
+                $type->setStart((string)$attributes->start);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -777,7 +797,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getComment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
         }

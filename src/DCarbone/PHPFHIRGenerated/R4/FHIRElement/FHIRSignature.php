@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -676,37 +676,57 @@ class FHIRSignature extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->data)) {
-            $type->setData((string)$attributes->data);
-        }
         if (isset($children->data)) {
             $type->setData(FHIRBase64Binary::xmlUnserialize($children->data));
+        }
+        if (isset($attributes->data)) {
+            $pt = $type->getData();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->data);
+            } else {
+                $type->setData((string)$attributes->data);
+            }
         }
         if (isset($children->onBehalfOf)) {
             $type->setOnBehalfOf(FHIRReference::xmlUnserialize($children->onBehalfOf));
         }
-        if (isset($attributes->sigFormat)) {
-            $type->setSigFormat((string)$attributes->sigFormat);
-        }
         if (isset($children->sigFormat)) {
             $type->setSigFormat(FHIRCode::xmlUnserialize($children->sigFormat));
         }
-        if (isset($attributes->targetFormat)) {
-            $type->setTargetFormat((string)$attributes->targetFormat);
+        if (isset($attributes->sigFormat)) {
+            $pt = $type->getSigFormat();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sigFormat);
+            } else {
+                $type->setSigFormat((string)$attributes->sigFormat);
+            }
         }
         if (isset($children->targetFormat)) {
             $type->setTargetFormat(FHIRCode::xmlUnserialize($children->targetFormat));
+        }
+        if (isset($attributes->targetFormat)) {
+            $pt = $type->getTargetFormat();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->targetFormat);
+            } else {
+                $type->setTargetFormat((string)$attributes->targetFormat);
+            }
         }
         if (isset($children->type)) {
             foreach($children->type as $child) {
                 $type->addType(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->when)) {
-            $type->setWhen((string)$attributes->when);
-        }
         if (isset($children->when)) {
             $type->setWhen(FHIRInstant::xmlUnserialize($children->when));
+        }
+        if (isset($attributes->when)) {
+            $pt = $type->getWhen();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->when);
+            } else {
+                $type->setWhen((string)$attributes->when);
+            }
         }
         if (isset($children->who)) {
             $type->setWho(FHIRReference::xmlUnserialize($children->who));
@@ -725,7 +745,6 @@ class FHIRSignature extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getData())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
         }

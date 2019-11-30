@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1985,33 +1985,48 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($children->manufacturerReference)) {
             $type->setManufacturerReference(FHIRReference::xmlUnserialize($children->manufacturerReference));
         }
-        if (isset($attributes->manufacturerString)) {
-            $type->setManufacturerString((string)$attributes->manufacturerString);
-        }
         if (isset($children->manufacturerString)) {
             $type->setManufacturerString(FHIRString::xmlUnserialize($children->manufacturerString));
+        }
+        if (isset($attributes->manufacturerString)) {
+            $pt = $type->getManufacturerString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->manufacturerString);
+            } else {
+                $type->setManufacturerString((string)$attributes->manufacturerString);
+            }
         }
         if (isset($children->material)) {
             foreach($children->material as $child) {
                 $type->addMaterial(FHIRDeviceDefinitionMaterial::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->modelNumber)) {
-            $type->setModelNumber((string)$attributes->modelNumber);
-        }
         if (isset($children->modelNumber)) {
             $type->setModelNumber(FHIRString::xmlUnserialize($children->modelNumber));
+        }
+        if (isset($attributes->modelNumber)) {
+            $pt = $type->getModelNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->modelNumber);
+            } else {
+                $type->setModelNumber((string)$attributes->modelNumber);
+            }
         }
         if (isset($children->note)) {
             foreach($children->note as $child) {
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->onlineInformation)) {
-            $type->setOnlineInformation((string)$attributes->onlineInformation);
-        }
         if (isset($children->onlineInformation)) {
             $type->setOnlineInformation(FHIRUri::xmlUnserialize($children->onlineInformation));
+        }
+        if (isset($attributes->onlineInformation)) {
+            $pt = $type->getOnlineInformation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onlineInformation);
+            } else {
+                $type->setOnlineInformation((string)$attributes->onlineInformation);
+            }
         }
         if (isset($children->owner)) {
             $type->setOwner(FHIRReference::xmlUnserialize($children->owner));
@@ -2053,14 +2068,16 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
                 $type->addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
         }
-        if (isset($attributes->version)) {
-            $type->addVersion((string)$attributes->version);
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->version)) {
             foreach($children->version as $child) {
@@ -2081,7 +2098,6 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCapability())) {
             foreach($vs as $v) {
                 if (null === $v) {

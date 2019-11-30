@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -682,39 +682,48 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->code)) {
-            $type->setCode((string)$attributes->code);
-        }
         if (isset($children->code)) {
             $type->setCode(FHIRString::xmlUnserialize($children->code));
         }
-        if (isset($attributes->compositional)) {
-            $type->setCompositional((string)$attributes->compositional);
+        if (isset($attributes->code)) {
+            $pt = $type->getCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->code);
+            } else {
+                $type->setCode((string)$attributes->code);
+            }
         }
         if (isset($children->compositional)) {
             $type->setCompositional(FHIRBoolean::xmlUnserialize($children->compositional));
+        }
+        if (isset($attributes->compositional)) {
+            $pt = $type->getCompositional();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->compositional);
+            } else {
+                $type->setCompositional((string)$attributes->compositional);
+            }
         }
         if (isset($children->filter)) {
             foreach($children->filter as $child) {
                 $type->addFilter(FHIRTerminologyCapabilitiesFilter::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->isDefault)) {
-            $type->setIsDefault((string)$attributes->isDefault);
-        }
         if (isset($children->isDefault)) {
             $type->setIsDefault(FHIRBoolean::xmlUnserialize($children->isDefault));
         }
-        if (isset($attributes->language)) {
-            $type->addLanguage((string)$attributes->language);
+        if (isset($attributes->isDefault)) {
+            $pt = $type->getIsDefault();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isDefault);
+            } else {
+                $type->setIsDefault((string)$attributes->isDefault);
+            }
         }
         if (isset($children->language)) {
             foreach($children->language as $child) {
                 $type->addLanguage(FHIRCode::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->property)) {
-            $type->addProperty((string)$attributes->property);
         }
         if (isset($children->property)) {
             foreach($children->property as $child) {
@@ -735,7 +744,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }

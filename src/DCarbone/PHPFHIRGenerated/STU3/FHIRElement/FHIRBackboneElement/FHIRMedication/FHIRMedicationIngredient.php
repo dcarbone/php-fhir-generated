@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -413,11 +413,16 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         if (isset($children->amount)) {
             $type->setAmount(FHIRRatio::xmlUnserialize($children->amount));
         }
-        if (isset($attributes->isActive)) {
-            $type->setIsActive((string)$attributes->isActive);
-        }
         if (isset($children->isActive)) {
             $type->setIsActive(FHIRBoolean::xmlUnserialize($children->isActive));
+        }
+        if (isset($attributes->isActive)) {
+            $pt = $type->getIsActive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isActive);
+            } else {
+                $type->setIsActive((string)$attributes->isActive);
+            }
         }
         if (isset($children->itemCodeableConcept)) {
             $type->setItemCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->itemCodeableConcept));
@@ -439,7 +444,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }

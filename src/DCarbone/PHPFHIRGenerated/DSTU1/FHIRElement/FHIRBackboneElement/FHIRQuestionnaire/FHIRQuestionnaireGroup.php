@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -602,11 +602,16 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
                 $type->addGroup(FHIRQuestionnaireGroup::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->header)) {
-            $type->setHeader((string)$attributes->header);
-        }
         if (isset($children->header)) {
             $type->setHeader(FHIRString::xmlUnserialize($children->header));
+        }
+        if (isset($attributes->header)) {
+            $pt = $type->getHeader();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->header);
+            } else {
+                $type->setHeader((string)$attributes->header);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRCodeableConcept::xmlUnserialize($children->name));
@@ -619,11 +624,16 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
         if (isset($children->subject)) {
             $type->setSubject(FHIRResourceReference::xmlUnserialize($children->subject));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
-        }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         return $type;
     }
@@ -639,7 +649,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getGroup())) {
             foreach($vs as $v) {
                 if (null === $v) {

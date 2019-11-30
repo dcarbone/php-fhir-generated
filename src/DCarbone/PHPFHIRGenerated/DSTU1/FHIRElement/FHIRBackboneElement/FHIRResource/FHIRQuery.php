@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -378,11 +378,16 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->identifier)) {
-            $type->setIdentifier((string)$attributes->identifier);
-        }
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRUri::xmlUnserialize($children->identifier));
+        }
+        if (isset($attributes->identifier)) {
+            $pt = $type->getIdentifier();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->identifier);
+            } else {
+                $type->setIdentifier((string)$attributes->identifier);
+            }
         }
         if (isset($children->parameter)) {
             foreach($children->parameter as $child) {
@@ -406,7 +411,6 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }

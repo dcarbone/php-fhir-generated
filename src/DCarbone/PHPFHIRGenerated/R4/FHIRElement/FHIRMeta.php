@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -710,14 +710,16 @@ class FHIRMeta extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->lastUpdated)) {
-            $type->setLastUpdated((string)$attributes->lastUpdated);
-        }
         if (isset($children->lastUpdated)) {
             $type->setLastUpdated(FHIRInstant::xmlUnserialize($children->lastUpdated));
         }
-        if (isset($attributes->profile)) {
-            $type->addProfile((string)$attributes->profile);
+        if (isset($attributes->lastUpdated)) {
+            $pt = $type->getLastUpdated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastUpdated);
+            } else {
+                $type->setLastUpdated((string)$attributes->lastUpdated);
+            }
         }
         if (isset($children->profile)) {
             foreach($children->profile as $child) {
@@ -729,22 +731,32 @@ class FHIRMeta extends FHIRElement
                 $type->addSecurity(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->source)) {
-            $type->setSource((string)$attributes->source);
-        }
         if (isset($children->source)) {
             $type->setSource(FHIRUri::xmlUnserialize($children->source));
+        }
+        if (isset($attributes->source)) {
+            $pt = $type->getSource();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->source);
+            } else {
+                $type->setSource((string)$attributes->source);
+            }
         }
         if (isset($children->tag)) {
             foreach($children->tag as $child) {
                 $type->addTag(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->versionId)) {
-            $type->setVersionId((string)$attributes->versionId);
-        }
         if (isset($children->versionId)) {
             $type->setVersionId(FHIRId::xmlUnserialize($children->versionId));
+        }
+        if (isset($attributes->versionId)) {
+            $pt = $type->getVersionId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->versionId);
+            } else {
+                $type->setVersionId((string)$attributes->versionId);
+            }
         }
         return $type;
     }
@@ -760,7 +772,6 @@ class FHIRMeta extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getLastUpdated())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LAST_UPDATED, null, $v->_getFHIRXMLNamespace()));
         }

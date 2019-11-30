@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2786,9 +2786,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->alias)) {
-            $type->addAlias((string)$attributes->alias);
-        }
         if (isset($children->alias)) {
             foreach($children->alias as $child) {
                 $type->addAlias(FHIRString::xmlUnserialize($child));
@@ -2832,17 +2829,27 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->instantiatesCanonical)) {
             $type->setInstantiatesCanonical(FHIRReference::xmlUnserialize($children->instantiatesCanonical));
         }
-        if (isset($attributes->instantiatesUri)) {
-            $type->setInstantiatesUri((string)$attributes->instantiatesUri);
-        }
         if (isset($children->instantiatesUri)) {
             $type->setInstantiatesUri(FHIRUri::xmlUnserialize($children->instantiatesUri));
         }
-        if (isset($attributes->issued)) {
-            $type->setIssued((string)$attributes->issued);
+        if (isset($attributes->instantiatesUri)) {
+            $pt = $type->getInstantiatesUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->instantiatesUri);
+            } else {
+                $type->setInstantiatesUri((string)$attributes->instantiatesUri);
+            }
         }
         if (isset($children->issued)) {
             $type->setIssued(FHIRDateTime::xmlUnserialize($children->issued));
+        }
+        if (isset($attributes->issued)) {
+            $pt = $type->getIssued();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->issued);
+            } else {
+                $type->setIssued((string)$attributes->issued);
+            }
         }
         if (isset($children->legal)) {
             foreach($children->legal as $child) {
@@ -2858,11 +2865,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->legallyBindingReference)) {
             $type->setLegallyBindingReference(FHIRReference::xmlUnserialize($children->legallyBindingReference));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->relevantHistory)) {
             foreach($children->relevantHistory as $child) {
@@ -2900,11 +2912,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addSubject(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->subtitle)) {
-            $type->setSubtitle((string)$attributes->subtitle);
-        }
         if (isset($children->subtitle)) {
             $type->setSubtitle(FHIRString::xmlUnserialize($children->subtitle));
+        }
+        if (isset($attributes->subtitle)) {
+            $pt = $type->getSubtitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subtitle);
+            } else {
+                $type->setSubtitle((string)$attributes->subtitle);
+            }
         }
         if (isset($children->supportingInfo)) {
             foreach($children->supportingInfo as $child) {
@@ -2916,11 +2933,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addTerm(FHIRContractTerm::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->topicCodeableConcept)) {
             $type->setTopicCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->topicCodeableConcept));
@@ -2931,17 +2953,27 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -2957,7 +2989,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAlias())) {
             foreach($vs as $v) {
                 if (null === $v) {

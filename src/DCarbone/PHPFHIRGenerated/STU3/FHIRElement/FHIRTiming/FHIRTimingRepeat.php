@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1415,76 +1415,115 @@ class FHIRTimingRepeat extends FHIRElement
         if (isset($children->boundsRange)) {
             $type->setBoundsRange(FHIRRange::xmlUnserialize($children->boundsRange));
         }
-        if (isset($attributes->count)) {
-            $type->setCount((string)$attributes->count);
-        }
         if (isset($children->count)) {
             $type->setCount(FHIRInteger::xmlUnserialize($children->count));
         }
-        if (isset($attributes->countMax)) {
-            $type->setCountMax((string)$attributes->countMax);
+        if (isset($attributes->count)) {
+            $pt = $type->getCount();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->count);
+            } else {
+                $type->setCount((string)$attributes->count);
+            }
         }
         if (isset($children->countMax)) {
             $type->setCountMax(FHIRInteger::xmlUnserialize($children->countMax));
         }
-        if (isset($attributes->dayOfWeek)) {
-            $type->addDayOfWeek((string)$attributes->dayOfWeek);
+        if (isset($attributes->countMax)) {
+            $pt = $type->getCountMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->countMax);
+            } else {
+                $type->setCountMax((string)$attributes->countMax);
+            }
         }
         if (isset($children->dayOfWeek)) {
             foreach($children->dayOfWeek as $child) {
                 $type->addDayOfWeek(FHIRCode::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->duration)) {
-            $type->setDuration((string)$attributes->duration);
-        }
         if (isset($children->duration)) {
             $type->setDuration(FHIRDecimal::xmlUnserialize($children->duration));
         }
-        if (isset($attributes->durationMax)) {
-            $type->setDurationMax((string)$attributes->durationMax);
+        if (isset($attributes->duration)) {
+            $pt = $type->getDuration();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->duration);
+            } else {
+                $type->setDuration((string)$attributes->duration);
+            }
         }
         if (isset($children->durationMax)) {
             $type->setDurationMax(FHIRDecimal::xmlUnserialize($children->durationMax));
         }
+        if (isset($attributes->durationMax)) {
+            $pt = $type->getDurationMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->durationMax);
+            } else {
+                $type->setDurationMax((string)$attributes->durationMax);
+            }
+        }
         if (isset($children->durationUnit)) {
             $type->setDurationUnit(FHIRUnitsOfTime::xmlUnserialize($children->durationUnit));
-        }
-        if (isset($attributes->frequency)) {
-            $type->setFrequency((string)$attributes->frequency);
         }
         if (isset($children->frequency)) {
             $type->setFrequency(FHIRInteger::xmlUnserialize($children->frequency));
         }
-        if (isset($attributes->frequencyMax)) {
-            $type->setFrequencyMax((string)$attributes->frequencyMax);
+        if (isset($attributes->frequency)) {
+            $pt = $type->getFrequency();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->frequency);
+            } else {
+                $type->setFrequency((string)$attributes->frequency);
+            }
         }
         if (isset($children->frequencyMax)) {
             $type->setFrequencyMax(FHIRInteger::xmlUnserialize($children->frequencyMax));
         }
-        if (isset($attributes->offset)) {
-            $type->setOffset((string)$attributes->offset);
+        if (isset($attributes->frequencyMax)) {
+            $pt = $type->getFrequencyMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->frequencyMax);
+            } else {
+                $type->setFrequencyMax((string)$attributes->frequencyMax);
+            }
         }
         if (isset($children->offset)) {
             $type->setOffset(FHIRUnsignedInt::xmlUnserialize($children->offset));
         }
-        if (isset($attributes->period)) {
-            $type->setPeriod((string)$attributes->period);
+        if (isset($attributes->offset)) {
+            $pt = $type->getOffset();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->offset);
+            } else {
+                $type->setOffset((string)$attributes->offset);
+            }
         }
         if (isset($children->period)) {
             $type->setPeriod(FHIRDecimal::xmlUnserialize($children->period));
         }
-        if (isset($attributes->periodMax)) {
-            $type->setPeriodMax((string)$attributes->periodMax);
+        if (isset($attributes->period)) {
+            $pt = $type->getPeriod();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->period);
+            } else {
+                $type->setPeriod((string)$attributes->period);
+            }
         }
         if (isset($children->periodMax)) {
             $type->setPeriodMax(FHIRDecimal::xmlUnserialize($children->periodMax));
         }
+        if (isset($attributes->periodMax)) {
+            $pt = $type->getPeriodMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->periodMax);
+            } else {
+                $type->setPeriodMax((string)$attributes->periodMax);
+            }
+        }
         if (isset($children->periodUnit)) {
             $type->setPeriodUnit(FHIRUnitsOfTime::xmlUnserialize($children->periodUnit));
-        }
-        if (isset($attributes->timeOfDay)) {
-            $type->addTimeOfDay((string)$attributes->timeOfDay);
         }
         if (isset($children->timeOfDay)) {
             foreach($children->timeOfDay as $child) {
@@ -1510,7 +1549,6 @@ class FHIRTimingRepeat extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBoundsDuration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BOUNDS_DURATION, null, $v->_getFHIRXMLNamespace()));
         }

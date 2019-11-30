@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -738,53 +738,93 @@ class FHIRAttachment extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->contentType)) {
-            $type->setContentType((string)$attributes->contentType);
-        }
         if (isset($children->contentType)) {
             $type->setContentType(FHIRCode::xmlUnserialize($children->contentType));
         }
-        if (isset($attributes->creation)) {
-            $type->setCreation((string)$attributes->creation);
+        if (isset($attributes->contentType)) {
+            $pt = $type->getContentType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->contentType);
+            } else {
+                $type->setContentType((string)$attributes->contentType);
+            }
         }
         if (isset($children->creation)) {
             $type->setCreation(FHIRDateTime::xmlUnserialize($children->creation));
         }
-        if (isset($attributes->data)) {
-            $type->setData((string)$attributes->data);
+        if (isset($attributes->creation)) {
+            $pt = $type->getCreation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->creation);
+            } else {
+                $type->setCreation((string)$attributes->creation);
+            }
         }
         if (isset($children->data)) {
             $type->setData(FHIRBase64Binary::xmlUnserialize($children->data));
         }
-        if (isset($attributes->hash)) {
-            $type->setHash((string)$attributes->hash);
+        if (isset($attributes->data)) {
+            $pt = $type->getData();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->data);
+            } else {
+                $type->setData((string)$attributes->data);
+            }
         }
         if (isset($children->hash)) {
             $type->setHash(FHIRBase64Binary::xmlUnserialize($children->hash));
         }
-        if (isset($attributes->language)) {
-            $type->setLanguage((string)$attributes->language);
+        if (isset($attributes->hash)) {
+            $pt = $type->getHash();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->hash);
+            } else {
+                $type->setHash((string)$attributes->hash);
+            }
         }
         if (isset($children->language)) {
             $type->setLanguage(FHIRCode::xmlUnserialize($children->language));
         }
-        if (isset($attributes->size)) {
-            $type->setSize((string)$attributes->size);
+        if (isset($attributes->language)) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->language);
+            } else {
+                $type->setLanguage((string)$attributes->language);
+            }
         }
         if (isset($children->size)) {
             $type->setSize(FHIRUnsignedInt::xmlUnserialize($children->size));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
+        if (isset($attributes->size)) {
+            $pt = $type->getSize();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->size);
+            } else {
+                $type->setSize((string)$attributes->size);
+            }
         }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->url)) {
             $type->setUrl(FHIRUrl::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         return $type;
     }
@@ -800,7 +840,6 @@ class FHIRAttachment extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContentType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }

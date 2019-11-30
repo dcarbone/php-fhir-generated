@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -625,44 +625,74 @@ class FHIRSampledData extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->data)) {
-            $type->setData((string)$attributes->data);
-        }
         if (isset($children->data)) {
             $type->setData(FHIRSampledDataDataType::xmlUnserialize($children->data));
         }
-        if (isset($attributes->dimensions)) {
-            $type->setDimensions((string)$attributes->dimensions);
+        if (isset($attributes->data)) {
+            $pt = $type->getData();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->data);
+            } else {
+                $type->setData((string)$attributes->data);
+            }
         }
         if (isset($children->dimensions)) {
             $type->setDimensions(FHIRInteger::xmlUnserialize($children->dimensions));
         }
-        if (isset($attributes->factor)) {
-            $type->setFactor((string)$attributes->factor);
+        if (isset($attributes->dimensions)) {
+            $pt = $type->getDimensions();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dimensions);
+            } else {
+                $type->setDimensions((string)$attributes->dimensions);
+            }
         }
         if (isset($children->factor)) {
             $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
         }
-        if (isset($attributes->lowerLimit)) {
-            $type->setLowerLimit((string)$attributes->lowerLimit);
+        if (isset($attributes->factor)) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->factor);
+            } else {
+                $type->setFactor((string)$attributes->factor);
+            }
         }
         if (isset($children->lowerLimit)) {
             $type->setLowerLimit(FHIRDecimal::xmlUnserialize($children->lowerLimit));
         }
+        if (isset($attributes->lowerLimit)) {
+            $pt = $type->getLowerLimit();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lowerLimit);
+            } else {
+                $type->setLowerLimit((string)$attributes->lowerLimit);
+            }
+        }
         if (isset($children->origin)) {
             $type->setOrigin(FHIRQuantity::xmlUnserialize($children->origin));
-        }
-        if (isset($attributes->period)) {
-            $type->setPeriod((string)$attributes->period);
         }
         if (isset($children->period)) {
             $type->setPeriod(FHIRDecimal::xmlUnserialize($children->period));
         }
-        if (isset($attributes->upperLimit)) {
-            $type->setUpperLimit((string)$attributes->upperLimit);
+        if (isset($attributes->period)) {
+            $pt = $type->getPeriod();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->period);
+            } else {
+                $type->setPeriod((string)$attributes->period);
+            }
         }
         if (isset($children->upperLimit)) {
             $type->setUpperLimit(FHIRDecimal::xmlUnserialize($children->upperLimit));
+        }
+        if (isset($attributes->upperLimit)) {
+            $pt = $type->getUpperLimit();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->upperLimit);
+            } else {
+                $type->setUpperLimit((string)$attributes->upperLimit);
+            }
         }
         return $type;
     }
@@ -678,7 +708,6 @@ class FHIRSampledData extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getData())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
         }

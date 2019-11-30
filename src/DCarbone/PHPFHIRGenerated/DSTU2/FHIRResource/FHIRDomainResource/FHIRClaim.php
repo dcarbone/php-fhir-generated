@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2052,11 +2052,16 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->accident)) {
-            $type->setAccident((string)$attributes->accident);
-        }
         if (isset($children->accident)) {
             $type->setAccident(FHIRDate::xmlUnserialize($children->accident));
+        }
+        if (isset($attributes->accident)) {
+            $pt = $type->getAccident();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->accident);
+            } else {
+                $type->setAccident((string)$attributes->accident);
+            }
         }
         if (isset($children->accidentType)) {
             $type->setAccidentType(FHIRCoding::xmlUnserialize($children->accidentType));
@@ -2076,11 +2081,16 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $type->addCoverage(FHIRClaimCoverage::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->created)) {
-            $type->setCreated((string)$attributes->created);
-        }
         if (isset($children->created)) {
             $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
+        }
+        if (isset($attributes->created)) {
+            $pt = $type->getCreated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->created);
+            } else {
+                $type->setCreated((string)$attributes->created);
+            }
         }
         if (isset($children->diagnosis)) {
             foreach($children->diagnosis as $child) {
@@ -2151,11 +2161,16 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         if (isset($children->ruleset)) {
             $type->setRuleset(FHIRCoding::xmlUnserialize($children->ruleset));
         }
-        if (isset($attributes->school)) {
-            $type->setSchool((string)$attributes->school);
-        }
         if (isset($children->school)) {
             $type->setSchool(FHIRString::xmlUnserialize($children->school));
+        }
+        if (isset($attributes->school)) {
+            $pt = $type->getSchool();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->school);
+            } else {
+                $type->setSchool((string)$attributes->school);
+            }
         }
         if (isset($children->target)) {
             $type->setTarget(FHIRReference::xmlUnserialize($children->target));
@@ -2180,7 +2195,6 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAccident())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACCIDENT, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2076,36 +2076,48 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->abstract)) {
-            $type->setAbstract((string)$attributes->abstract);
-        }
         if (isset($children->abstract)) {
             $type->setAbstract(FHIRBoolean::xmlUnserialize($children->abstract));
         }
-        if (isset($attributes->base)) {
-            $type->setBase((string)$attributes->base);
+        if (isset($attributes->abstract)) {
+            $pt = $type->getAbstract();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->abstract);
+            } else {
+                $type->setAbstract((string)$attributes->abstract);
+            }
         }
         if (isset($children->base)) {
             $type->setBase(FHIRUri::xmlUnserialize($children->base));
+        }
+        if (isset($attributes->base)) {
+            $pt = $type->getBase();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->base);
+            } else {
+                $type->setBase((string)$attributes->base);
+            }
         }
         if (isset($children->code)) {
             foreach($children->code as $child) {
                 $type->addCode(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->constrainedType)) {
-            $type->setConstrainedType((string)$attributes->constrainedType);
-        }
         if (isset($children->constrainedType)) {
             $type->setConstrainedType(FHIRCode::xmlUnserialize($children->constrainedType));
+        }
+        if (isset($attributes->constrainedType)) {
+            $pt = $type->getConstrainedType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->constrainedType);
+            } else {
+                $type->setConstrainedType((string)$attributes->constrainedType);
+            }
         }
         if (isset($children->contact)) {
             foreach($children->contact as $child) {
                 $type->addContact(FHIRStructureDefinitionContact::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->context)) {
-            $type->addContext((string)$attributes->context);
         }
         if (isset($children->context)) {
             foreach($children->context as $child) {
@@ -2115,44 +2127,74 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
         if (isset($children->contextType)) {
             $type->setContextType(FHIRExtensionContext::xmlUnserialize($children->contextType));
         }
-        if (isset($attributes->copyright)) {
-            $type->setCopyright((string)$attributes->copyright);
-        }
         if (isset($children->copyright)) {
             $type->setCopyright(FHIRString::xmlUnserialize($children->copyright));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
+        if (isset($attributes->copyright)) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->copyright);
+            } else {
+                $type->setCopyright((string)$attributes->copyright);
+            }
         }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
+        }
         if (isset($children->differential)) {
             $type->setDifferential(FHIRStructureDefinitionDifferential::xmlUnserialize($children->differential));
-        }
-        if (isset($attributes->display)) {
-            $type->setDisplay((string)$attributes->display);
         }
         if (isset($children->display)) {
             $type->setDisplay(FHIRString::xmlUnserialize($children->display));
         }
-        if (isset($attributes->experimental)) {
-            $type->setExperimental((string)$attributes->experimental);
+        if (isset($attributes->display)) {
+            $pt = $type->getDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->display);
+            } else {
+                $type->setDisplay((string)$attributes->display);
+            }
         }
         if (isset($children->experimental)) {
             $type->setExperimental(FHIRBoolean::xmlUnserialize($children->experimental));
         }
-        if (isset($attributes->fhirVersion)) {
-            $type->setFhirVersion((string)$attributes->fhirVersion);
+        if (isset($attributes->experimental)) {
+            $pt = $type->getExperimental();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->experimental);
+            } else {
+                $type->setExperimental((string)$attributes->experimental);
+            }
         }
         if (isset($children->fhirVersion)) {
             $type->setFhirVersion(FHIRId::xmlUnserialize($children->fhirVersion));
+        }
+        if (isset($attributes->fhirVersion)) {
+            $pt = $type->getFhirVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->fhirVersion);
+            } else {
+                $type->setFhirVersion((string)$attributes->fhirVersion);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -2167,49 +2209,79 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
                 $type->addMapping(FHIRStructureDefinitionMapping::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->publisher)) {
-            $type->setPublisher((string)$attributes->publisher);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->publisher)) {
             $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
         }
-        if (isset($attributes->requirements)) {
-            $type->setRequirements((string)$attributes->requirements);
+        if (isset($attributes->publisher)) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publisher);
+            } else {
+                $type->setPublisher((string)$attributes->publisher);
+            }
         }
         if (isset($children->requirements)) {
             $type->setRequirements(FHIRString::xmlUnserialize($children->requirements));
         }
+        if (isset($attributes->requirements)) {
+            $pt = $type->getRequirements();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requirements);
+            } else {
+                $type->setRequirements((string)$attributes->requirements);
+            }
+        }
         if (isset($children->snapshot)) {
             $type->setSnapshot(FHIRStructureDefinitionSnapshot::xmlUnserialize($children->snapshot));
-        }
-        if (isset($attributes->status)) {
-            $type->setStatus((string)$attributes->status);
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRCode::xmlUnserialize($children->status));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
+        if (isset($attributes->status)) {
+            $pt = $type->getStatus();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->status);
+            } else {
+                $type->setStatus((string)$attributes->status);
+            }
         }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->useContext)) {
             foreach($children->useContext as $child) {
                 $type->addUseContext(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
-        }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -2225,7 +2297,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAbstract())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ABSTRACT, null, $v->_getFHIRXMLNamespace()));
         }

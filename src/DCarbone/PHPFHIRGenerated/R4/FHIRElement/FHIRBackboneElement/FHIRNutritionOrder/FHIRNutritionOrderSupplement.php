@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -538,17 +538,27 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->instruction)) {
-            $type->setInstruction((string)$attributes->instruction);
-        }
         if (isset($children->instruction)) {
             $type->setInstruction(FHIRString::xmlUnserialize($children->instruction));
         }
-        if (isset($attributes->productName)) {
-            $type->setProductName((string)$attributes->productName);
+        if (isset($attributes->instruction)) {
+            $pt = $type->getInstruction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->instruction);
+            } else {
+                $type->setInstruction((string)$attributes->instruction);
+            }
         }
         if (isset($children->productName)) {
             $type->setProductName(FHIRString::xmlUnserialize($children->productName));
+        }
+        if (isset($attributes->productName)) {
+            $pt = $type->getProductName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->productName);
+            } else {
+                $type->setProductName((string)$attributes->productName);
+            }
         }
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
@@ -575,7 +585,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getInstruction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -482,17 +482,27 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         if (isset($children->agent)) {
             $type->setAgent(FHIRProvenanceAgent::xmlUnserialize($children->agent));
         }
-        if (isset($attributes->display)) {
-            $type->setDisplay((string)$attributes->display);
-        }
         if (isset($children->display)) {
             $type->setDisplay(FHIRString::xmlUnserialize($children->display));
         }
-        if (isset($attributes->reference)) {
-            $type->setReference((string)$attributes->reference);
+        if (isset($attributes->display)) {
+            $pt = $type->getDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->display);
+            } else {
+                $type->setDisplay((string)$attributes->display);
+            }
         }
         if (isset($children->reference)) {
             $type->setReference(FHIRUri::xmlUnserialize($children->reference));
+        }
+        if (isset($attributes->reference)) {
+            $pt = $type->getReference();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->reference);
+            } else {
+                $type->setReference((string)$attributes->reference);
+            }
         }
         if (isset($children->role)) {
             $type->setRole(FHIRProvenanceEntityRole::xmlUnserialize($children->role));
@@ -514,7 +524,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAgent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->_getFHIRXMLNamespace()));
         }

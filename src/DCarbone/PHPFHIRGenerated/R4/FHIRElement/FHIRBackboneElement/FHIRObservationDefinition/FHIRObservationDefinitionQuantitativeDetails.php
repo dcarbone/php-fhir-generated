@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -430,20 +430,30 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->conversionFactor)) {
-            $type->setConversionFactor((string)$attributes->conversionFactor);
-        }
         if (isset($children->conversionFactor)) {
             $type->setConversionFactor(FHIRDecimal::xmlUnserialize($children->conversionFactor));
+        }
+        if (isset($attributes->conversionFactor)) {
+            $pt = $type->getConversionFactor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->conversionFactor);
+            } else {
+                $type->setConversionFactor((string)$attributes->conversionFactor);
+            }
         }
         if (isset($children->customaryUnit)) {
             $type->setCustomaryUnit(FHIRCodeableConcept::xmlUnserialize($children->customaryUnit));
         }
-        if (isset($attributes->decimalPrecision)) {
-            $type->setDecimalPrecision((string)$attributes->decimalPrecision);
-        }
         if (isset($children->decimalPrecision)) {
             $type->setDecimalPrecision(FHIRInteger::xmlUnserialize($children->decimalPrecision));
+        }
+        if (isset($attributes->decimalPrecision)) {
+            $pt = $type->getDecimalPrecision();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->decimalPrecision);
+            } else {
+                $type->setDecimalPrecision((string)$attributes->decimalPrecision);
+            }
         }
         if (isset($children->unit)) {
             $type->setUnit(FHIRCodeableConcept::xmlUnserialize($children->unit));
@@ -462,7 +472,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getConversionFactor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONVERSION_FACTOR, null, $v->_getFHIRXMLNamespace()));
         }

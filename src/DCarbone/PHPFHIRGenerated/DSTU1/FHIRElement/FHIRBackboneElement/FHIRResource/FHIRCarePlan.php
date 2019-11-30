@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -960,17 +960,27 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->modified)) {
-            $type->setModified((string)$attributes->modified);
-        }
         if (isset($children->modified)) {
             $type->setModified(FHIRDateTime::xmlUnserialize($children->modified));
         }
-        if (isset($attributes->notes)) {
-            $type->setNotes((string)$attributes->notes);
+        if (isset($attributes->modified)) {
+            $pt = $type->getModified();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->modified);
+            } else {
+                $type->setModified((string)$attributes->modified);
+            }
         }
         if (isset($children->notes)) {
             $type->setNotes(FHIRString::xmlUnserialize($children->notes));
+        }
+        if (isset($attributes->notes)) {
+            $pt = $type->getNotes();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->notes);
+            } else {
+                $type->setNotes((string)$attributes->notes);
+            }
         }
         if (isset($children->participant)) {
             foreach($children->participant as $child) {
@@ -1000,7 +1010,6 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getActivity())) {
             foreach($vs as $v) {
                 if (null === $v) {

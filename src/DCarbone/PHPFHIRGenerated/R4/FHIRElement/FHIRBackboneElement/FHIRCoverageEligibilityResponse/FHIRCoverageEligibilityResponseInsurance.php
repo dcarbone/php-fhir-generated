@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -440,11 +440,16 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         if (isset($children->coverage)) {
             $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
         }
-        if (isset($attributes->inforce)) {
-            $type->setInforce((string)$attributes->inforce);
-        }
         if (isset($children->inforce)) {
             $type->setInforce(FHIRBoolean::xmlUnserialize($children->inforce));
+        }
+        if (isset($attributes->inforce)) {
+            $pt = $type->getInforce();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->inforce);
+            } else {
+                $type->setInforce((string)$attributes->inforce);
+            }
         }
         if (isset($children->item)) {
             foreach($children->item as $child) {
@@ -465,7 +470,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBenefitPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFIT_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }

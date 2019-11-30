@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -771,11 +771,16 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->additiveProductName)) {
-            $type->setAdditiveProductName((string)$attributes->additiveProductName);
-        }
         if (isset($children->additiveProductName)) {
             $type->setAdditiveProductName(FHIRString::xmlUnserialize($children->additiveProductName));
+        }
+        if (isset($attributes->additiveProductName)) {
+            $pt = $type->getAdditiveProductName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->additiveProductName);
+            } else {
+                $type->setAdditiveProductName((string)$attributes->additiveProductName);
+            }
         }
         if (isset($children->additiveType)) {
             $type->setAdditiveType(FHIRCodeableConcept::xmlUnserialize($children->additiveType));
@@ -785,17 +790,27 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 $type->addAdministration(FHIRNutritionOrderAdministration::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->administrationInstruction)) {
-            $type->setAdministrationInstruction((string)$attributes->administrationInstruction);
-        }
         if (isset($children->administrationInstruction)) {
             $type->setAdministrationInstruction(FHIRString::xmlUnserialize($children->administrationInstruction));
         }
-        if (isset($attributes->baseFormulaProductName)) {
-            $type->setBaseFormulaProductName((string)$attributes->baseFormulaProductName);
+        if (isset($attributes->administrationInstruction)) {
+            $pt = $type->getAdministrationInstruction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->administrationInstruction);
+            } else {
+                $type->setAdministrationInstruction((string)$attributes->administrationInstruction);
+            }
         }
         if (isset($children->baseFormulaProductName)) {
             $type->setBaseFormulaProductName(FHIRString::xmlUnserialize($children->baseFormulaProductName));
+        }
+        if (isset($attributes->baseFormulaProductName)) {
+            $pt = $type->getBaseFormulaProductName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->baseFormulaProductName);
+            } else {
+                $type->setBaseFormulaProductName((string)$attributes->baseFormulaProductName);
+            }
         }
         if (isset($children->baseFormulaType)) {
             $type->setBaseFormulaType(FHIRCodeableConcept::xmlUnserialize($children->baseFormulaType));
@@ -823,7 +838,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAdditiveProductName())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -664,44 +664,74 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->expression)) {
-            $type->setExpression((string)$attributes->expression);
-        }
         if (isset($children->expression)) {
             $type->setExpression(FHIRString::xmlUnserialize($children->expression));
         }
-        if (isset($attributes->human)) {
-            $type->setHuman((string)$attributes->human);
+        if (isset($attributes->expression)) {
+            $pt = $type->getExpression();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->expression);
+            } else {
+                $type->setExpression((string)$attributes->expression);
+            }
         }
         if (isset($children->human)) {
             $type->setHuman(FHIRString::xmlUnserialize($children->human));
         }
-        if (isset($attributes->key)) {
-            $type->setKey((string)$attributes->key);
+        if (isset($attributes->human)) {
+            $pt = $type->getHuman();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->human);
+            } else {
+                $type->setHuman((string)$attributes->human);
+            }
         }
         if (isset($children->key)) {
             $type->setKey(FHIRId::xmlUnserialize($children->key));
         }
-        if (isset($attributes->requirements)) {
-            $type->setRequirements((string)$attributes->requirements);
+        if (isset($attributes->key)) {
+            $pt = $type->getKey();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->key);
+            } else {
+                $type->setKey((string)$attributes->key);
+            }
         }
         if (isset($children->requirements)) {
             $type->setRequirements(FHIRString::xmlUnserialize($children->requirements));
         }
+        if (isset($attributes->requirements)) {
+            $pt = $type->getRequirements();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requirements);
+            } else {
+                $type->setRequirements((string)$attributes->requirements);
+            }
+        }
         if (isset($children->severity)) {
             $type->setSeverity(FHIRConstraintSeverity::xmlUnserialize($children->severity));
-        }
-        if (isset($attributes->source)) {
-            $type->setSource((string)$attributes->source);
         }
         if (isset($children->source)) {
             $type->setSource(FHIRUri::xmlUnserialize($children->source));
         }
-        if (isset($attributes->xpath)) {
-            $type->setXpath((string)$attributes->xpath);
+        if (isset($attributes->source)) {
+            $pt = $type->getSource();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->source);
+            } else {
+                $type->setSource((string)$attributes->source);
+            }
         }
         if (isset($children->xpath)) {
             $type->setXpath(FHIRString::xmlUnserialize($children->xpath));
+        }
+        if (isset($attributes->xpath)) {
+            $pt = $type->getXpath();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->xpath);
+            } else {
+                $type->setXpath((string)$attributes->xpath);
+            }
         }
         return $type;
     }
@@ -717,7 +747,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getExpression())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
         }

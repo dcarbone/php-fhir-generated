@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1072,9 +1072,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
         }
-        if (isset($attributes->policy)) {
-            $type->addPolicy((string)$attributes->policy);
-        }
         if (isset($children->policy)) {
             foreach($children->policy as $child) {
                 $type->addPolicy(FHIRUri::xmlUnserialize($child));
@@ -1085,11 +1082,16 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $type->addReason(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->recorded)) {
-            $type->setRecorded((string)$attributes->recorded);
-        }
         if (isset($children->recorded)) {
             $type->setRecorded(FHIRInstant::xmlUnserialize($children->recorded));
+        }
+        if (isset($attributes->recorded)) {
+            $pt = $type->getRecorded();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recorded);
+            } else {
+                $type->setRecorded((string)$attributes->recorded);
+            }
         }
         if (isset($children->signature)) {
             foreach($children->signature as $child) {
@@ -1115,7 +1117,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActivity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVITY, null, $v->_getFHIRXMLNamespace()));
         }

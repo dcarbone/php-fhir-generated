@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -483,11 +483,16 @@ class FHIRContactPoint extends FHIRElement
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
         }
-        if (isset($attributes->rank)) {
-            $type->setRank((string)$attributes->rank);
-        }
         if (isset($children->rank)) {
             $type->setRank(FHIRPositiveInt::xmlUnserialize($children->rank));
+        }
+        if (isset($attributes->rank)) {
+            $pt = $type->getRank();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->rank);
+            } else {
+                $type->setRank((string)$attributes->rank);
+            }
         }
         if (isset($children->system)) {
             $type->setSystem(FHIRContactPointSystem::xmlUnserialize($children->system));
@@ -495,11 +500,16 @@ class FHIRContactPoint extends FHIRElement
         if (isset($children->use)) {
             $type->setUse(FHIRContactPointUse::xmlUnserialize($children->use));
         }
-        if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        }
         if (isset($children->value)) {
             $type->setValue(FHIRString::xmlUnserialize($children->value));
+        }
+        if (isset($attributes->value)) {
+            $pt = $type->getValue();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->value);
+            } else {
+                $type->setValue((string)$attributes->value);
+            }
         }
         return $type;
     }
@@ -515,7 +525,6 @@ class FHIRContactPoint extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getPeriod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
         }

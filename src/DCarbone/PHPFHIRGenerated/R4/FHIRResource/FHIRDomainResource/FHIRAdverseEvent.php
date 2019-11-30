@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1603,17 +1603,27 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addContributor(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->detected)) {
-            $type->setDetected((string)$attributes->detected);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->detected)) {
             $type->setDetected(FHIRDateTime::xmlUnserialize($children->detected));
+        }
+        if (isset($attributes->detected)) {
+            $pt = $type->getDetected();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->detected);
+            } else {
+                $type->setDetected((string)$attributes->detected);
+            }
         }
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
@@ -1630,11 +1640,16 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (isset($children->outcome)) {
             $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($children->outcome));
         }
-        if (isset($attributes->recordedDate)) {
-            $type->setRecordedDate((string)$attributes->recordedDate);
-        }
         if (isset($children->recordedDate)) {
             $type->setRecordedDate(FHIRDateTime::xmlUnserialize($children->recordedDate));
+        }
+        if (isset($attributes->recordedDate)) {
+            $pt = $type->getRecordedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recordedDate);
+            } else {
+                $type->setRecordedDate((string)$attributes->recordedDate);
+            }
         }
         if (isset($children->recorder)) {
             $type->setRecorder(FHIRReference::xmlUnserialize($children->recorder));
@@ -1687,7 +1702,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActuality())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTUALITY, null, $v->_getFHIRXMLNamespace()));
         }

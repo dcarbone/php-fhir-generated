@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -378,17 +378,27 @@ class FHIRTestReportAssert extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->detail)) {
-            $type->setDetail((string)$attributes->detail);
-        }
         if (isset($children->detail)) {
             $type->setDetail(FHIRString::xmlUnserialize($children->detail));
         }
-        if (isset($attributes->message)) {
-            $type->setMessage((string)$attributes->message);
+        if (isset($attributes->detail)) {
+            $pt = $type->getDetail();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->detail);
+            } else {
+                $type->setDetail((string)$attributes->detail);
+            }
         }
         if (isset($children->message)) {
             $type->setMessage(FHIRMarkdown::xmlUnserialize($children->message));
+        }
+        if (isset($attributes->message)) {
+            $pt = $type->getMessage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->message);
+            } else {
+                $type->setMessage((string)$attributes->message);
+            }
         }
         if (isset($children->result)) {
             $type->setResult(FHIRTestReportActionResult::xmlUnserialize($children->result));
@@ -407,7 +417,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDetail())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
         }

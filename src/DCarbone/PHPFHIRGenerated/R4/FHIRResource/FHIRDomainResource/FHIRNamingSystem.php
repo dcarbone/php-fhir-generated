@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1207,17 +1207,27 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addContact(FHIRContactDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->jurisdiction)) {
             foreach($children->jurisdiction as $child) {
@@ -1227,23 +1237,38 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (isset($children->kind)) {
             $type->setKind(FHIRNamingSystemType::xmlUnserialize($children->kind));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->publisher)) {
-            $type->setPublisher((string)$attributes->publisher);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->publisher)) {
             $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
         }
-        if (isset($attributes->responsible)) {
-            $type->setResponsible((string)$attributes->responsible);
+        if (isset($attributes->publisher)) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publisher);
+            } else {
+                $type->setPublisher((string)$attributes->publisher);
+            }
         }
         if (isset($children->responsible)) {
             $type->setResponsible(FHIRString::xmlUnserialize($children->responsible));
+        }
+        if (isset($attributes->responsible)) {
+            $pt = $type->getResponsible();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->responsible);
+            } else {
+                $type->setResponsible((string)$attributes->responsible);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRPublicationStatus::xmlUnserialize($children->status));
@@ -1256,11 +1281,16 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addUniqueId(FHIRNamingSystemUniqueId::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->usage)) {
-            $type->setUsage((string)$attributes->usage);
-        }
         if (isset($children->usage)) {
             $type->setUsage(FHIRString::xmlUnserialize($children->usage));
+        }
+        if (isset($attributes->usage)) {
+            $pt = $type->getUsage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->usage);
+            } else {
+                $type->setUsage((string)$attributes->usage);
+            }
         }
         if (isset($children->useContext)) {
             foreach($children->useContext as $child) {
@@ -1281,7 +1311,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {
                 if (null === $v) {

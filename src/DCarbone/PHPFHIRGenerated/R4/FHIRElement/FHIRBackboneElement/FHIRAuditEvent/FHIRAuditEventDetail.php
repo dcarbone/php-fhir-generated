@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAudit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -378,23 +378,38 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
-        }
         if (isset($children->type)) {
             $type->setType(FHIRString::xmlUnserialize($children->type));
         }
-        if (isset($attributes->valueBase64Binary)) {
-            $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         if (isset($children->valueBase64Binary)) {
             $type->setValueBase64Binary(FHIRBase64Binary::xmlUnserialize($children->valueBase64Binary));
         }
-        if (isset($attributes->valueString)) {
-            $type->setValueString((string)$attributes->valueString);
+        if (isset($attributes->valueBase64Binary)) {
+            $pt = $type->getValueBase64Binary();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBase64Binary);
+            } else {
+                $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
+            }
         }
         if (isset($children->valueString)) {
             $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
+        }
+        if (isset($attributes->valueString)) {
+            $pt = $type->getValueString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueString);
+            } else {
+                $type->setValueString((string)$attributes->valueString);
+            }
         }
         return $type;
     }
@@ -410,7 +425,6 @@ class FHIRAuditEventDetail extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
         }

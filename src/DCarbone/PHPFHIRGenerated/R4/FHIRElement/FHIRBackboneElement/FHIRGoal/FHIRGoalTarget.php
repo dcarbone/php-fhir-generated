@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -875,20 +875,30 @@ class FHIRGoalTarget extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->detailBoolean)) {
-            $type->setDetailBoolean((string)$attributes->detailBoolean);
-        }
         if (isset($children->detailBoolean)) {
             $type->setDetailBoolean(FHIRBoolean::xmlUnserialize($children->detailBoolean));
+        }
+        if (isset($attributes->detailBoolean)) {
+            $pt = $type->getDetailBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->detailBoolean);
+            } else {
+                $type->setDetailBoolean((string)$attributes->detailBoolean);
+            }
         }
         if (isset($children->detailCodeableConcept)) {
             $type->setDetailCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->detailCodeableConcept));
         }
-        if (isset($attributes->detailInteger)) {
-            $type->setDetailInteger((string)$attributes->detailInteger);
-        }
         if (isset($children->detailInteger)) {
             $type->setDetailInteger(FHIRInteger::xmlUnserialize($children->detailInteger));
+        }
+        if (isset($attributes->detailInteger)) {
+            $pt = $type->getDetailInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->detailInteger);
+            } else {
+                $type->setDetailInteger((string)$attributes->detailInteger);
+            }
         }
         if (isset($children->detailQuantity)) {
             $type->setDetailQuantity(FHIRQuantity::xmlUnserialize($children->detailQuantity));
@@ -899,17 +909,27 @@ class FHIRGoalTarget extends FHIRBackboneElement
         if (isset($children->detailRatio)) {
             $type->setDetailRatio(FHIRRatio::xmlUnserialize($children->detailRatio));
         }
-        if (isset($attributes->detailString)) {
-            $type->setDetailString((string)$attributes->detailString);
-        }
         if (isset($children->detailString)) {
             $type->setDetailString(FHIRString::xmlUnserialize($children->detailString));
         }
-        if (isset($attributes->dueDate)) {
-            $type->setDueDate((string)$attributes->dueDate);
+        if (isset($attributes->detailString)) {
+            $pt = $type->getDetailString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->detailString);
+            } else {
+                $type->setDetailString((string)$attributes->detailString);
+            }
         }
         if (isset($children->dueDate)) {
             $type->setDueDate(FHIRDate::xmlUnserialize($children->dueDate));
+        }
+        if (isset($attributes->dueDate)) {
+            $pt = $type->getDueDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dueDate);
+            } else {
+                $type->setDueDate((string)$attributes->dueDate);
+            }
         }
         if (isset($children->dueDuration)) {
             $type->setDueDuration(FHIRDuration::xmlUnserialize($children->dueDuration));
@@ -931,7 +951,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDetailBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

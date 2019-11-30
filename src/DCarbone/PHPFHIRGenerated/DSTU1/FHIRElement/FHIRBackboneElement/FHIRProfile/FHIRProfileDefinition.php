@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -4570,14 +4570,16 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->binding)) {
             $type->setBinding(FHIRProfileBinding::xmlUnserialize($children->binding));
         }
-        if (isset($attributes->comments)) {
-            $type->setComments((string)$attributes->comments);
-        }
         if (isset($children->comments)) {
             $type->setComments(FHIRString::xmlUnserialize($children->comments));
         }
-        if (isset($attributes->condition)) {
-            $type->addCondition((string)$attributes->condition);
+        if (isset($attributes->comments)) {
+            $pt = $type->getComments();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->comments);
+            } else {
+                $type->setComments((string)$attributes->comments);
+            }
         }
         if (isset($children->condition)) {
             foreach($children->condition as $child) {
@@ -4595,23 +4597,38 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->exampleAttachment)) {
             $type->setExampleAttachment(FHIRAttachment::xmlUnserialize($children->exampleAttachment));
         }
-        if (isset($attributes->exampleBase64Binary)) {
-            $type->setExampleBase64Binary((string)$attributes->exampleBase64Binary);
-        }
         if (isset($children->exampleBase64Binary)) {
             $type->setExampleBase64Binary(FHIRBase64Binary::xmlUnserialize($children->exampleBase64Binary));
         }
-        if (isset($attributes->exampleBoolean)) {
-            $type->setExampleBoolean((string)$attributes->exampleBoolean);
+        if (isset($attributes->exampleBase64Binary)) {
+            $pt = $type->getExampleBase64Binary();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleBase64Binary);
+            } else {
+                $type->setExampleBase64Binary((string)$attributes->exampleBase64Binary);
+            }
         }
         if (isset($children->exampleBoolean)) {
             $type->setExampleBoolean(FHIRBoolean::xmlUnserialize($children->exampleBoolean));
         }
-        if (isset($attributes->exampleCode)) {
-            $type->setExampleCode((string)$attributes->exampleCode);
+        if (isset($attributes->exampleBoolean)) {
+            $pt = $type->getExampleBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleBoolean);
+            } else {
+                $type->setExampleBoolean((string)$attributes->exampleBoolean);
+            }
         }
         if (isset($children->exampleCode)) {
             $type->setExampleCode(FHIRCode::xmlUnserialize($children->exampleCode));
+        }
+        if (isset($attributes->exampleCode)) {
+            $pt = $type->getExampleCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleCode);
+            } else {
+                $type->setExampleCode((string)$attributes->exampleCode);
+            }
         }
         if (isset($children->exampleCodeableConcept)) {
             $type->setExampleCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->exampleCodeableConcept));
@@ -4622,53 +4639,88 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->exampleContact)) {
             $type->setExampleContact(FHIRContact::xmlUnserialize($children->exampleContact));
         }
-        if (isset($attributes->exampleDate)) {
-            $type->setExampleDate((string)$attributes->exampleDate);
-        }
         if (isset($children->exampleDate)) {
             $type->setExampleDate(FHIRDate::xmlUnserialize($children->exampleDate));
         }
-        if (isset($attributes->exampleDateTime)) {
-            $type->setExampleDateTime((string)$attributes->exampleDateTime);
+        if (isset($attributes->exampleDate)) {
+            $pt = $type->getExampleDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleDate);
+            } else {
+                $type->setExampleDate((string)$attributes->exampleDate);
+            }
         }
         if (isset($children->exampleDateTime)) {
             $type->setExampleDateTime(FHIRDateTime::xmlUnserialize($children->exampleDateTime));
         }
-        if (isset($attributes->exampleDecimal)) {
-            $type->setExampleDecimal((string)$attributes->exampleDecimal);
+        if (isset($attributes->exampleDateTime)) {
+            $pt = $type->getExampleDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleDateTime);
+            } else {
+                $type->setExampleDateTime((string)$attributes->exampleDateTime);
+            }
         }
         if (isset($children->exampleDecimal)) {
             $type->setExampleDecimal(FHIRDecimal::xmlUnserialize($children->exampleDecimal));
         }
+        if (isset($attributes->exampleDecimal)) {
+            $pt = $type->getExampleDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleDecimal);
+            } else {
+                $type->setExampleDecimal((string)$attributes->exampleDecimal);
+            }
+        }
         if (isset($children->exampleHumanName)) {
             $type->setExampleHumanName(FHIRHumanName::xmlUnserialize($children->exampleHumanName));
-        }
-        if (isset($attributes->exampleId)) {
-            $type->setExampleId((string)$attributes->exampleId);
         }
         if (isset($children->exampleId)) {
             $type->setExampleId(FHIRId::xmlUnserialize($children->exampleId));
         }
+        if (isset($attributes->exampleId)) {
+            $pt = $type->getExampleId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleId);
+            } else {
+                $type->setExampleId((string)$attributes->exampleId);
+            }
+        }
         if (isset($children->exampleIdentifier)) {
             $type->setExampleIdentifier(FHIRIdentifier::xmlUnserialize($children->exampleIdentifier));
-        }
-        if (isset($attributes->exampleInstant)) {
-            $type->setExampleInstant((string)$attributes->exampleInstant);
         }
         if (isset($children->exampleInstant)) {
             $type->setExampleInstant(FHIRInstant::xmlUnserialize($children->exampleInstant));
         }
-        if (isset($attributes->exampleInteger)) {
-            $type->setExampleInteger((string)$attributes->exampleInteger);
+        if (isset($attributes->exampleInstant)) {
+            $pt = $type->getExampleInstant();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleInstant);
+            } else {
+                $type->setExampleInstant((string)$attributes->exampleInstant);
+            }
         }
         if (isset($children->exampleInteger)) {
             $type->setExampleInteger(FHIRInteger::xmlUnserialize($children->exampleInteger));
         }
-        if (isset($attributes->exampleOid)) {
-            $type->setExampleOid((string)$attributes->exampleOid);
+        if (isset($attributes->exampleInteger)) {
+            $pt = $type->getExampleInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleInteger);
+            } else {
+                $type->setExampleInteger((string)$attributes->exampleInteger);
+            }
         }
         if (isset($children->exampleOid)) {
             $type->setExampleOid(FHIROid::xmlUnserialize($children->exampleOid));
+        }
+        if (isset($attributes->exampleOid)) {
+            $pt = $type->getExampleOid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleOid);
+            } else {
+                $type->setExampleOid((string)$attributes->exampleOid);
+            }
         }
         if (isset($children->examplePeriod)) {
             $type->setExamplePeriod(FHIRPeriod::xmlUnserialize($children->examplePeriod));
@@ -4691,85 +4743,142 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->exampleSchedule)) {
             $type->setExampleSchedule(FHIRSchedule::xmlUnserialize($children->exampleSchedule));
         }
-        if (isset($attributes->exampleString)) {
-            $type->setExampleString((string)$attributes->exampleString);
-        }
         if (isset($children->exampleString)) {
             $type->setExampleString(FHIRString::xmlUnserialize($children->exampleString));
         }
-        if (isset($attributes->exampleUri)) {
-            $type->setExampleUri((string)$attributes->exampleUri);
+        if (isset($attributes->exampleString)) {
+            $pt = $type->getExampleString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleString);
+            } else {
+                $type->setExampleString((string)$attributes->exampleString);
+            }
         }
         if (isset($children->exampleUri)) {
             $type->setExampleUri(FHIRUri::xmlUnserialize($children->exampleUri));
         }
-        if (isset($attributes->exampleUuid)) {
-            $type->setExampleUuid((string)$attributes->exampleUuid);
+        if (isset($attributes->exampleUri)) {
+            $pt = $type->getExampleUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleUri);
+            } else {
+                $type->setExampleUri((string)$attributes->exampleUri);
+            }
         }
         if (isset($children->exampleUuid)) {
             $type->setExampleUuid(FHIRUuid::xmlUnserialize($children->exampleUuid));
         }
-        if (isset($attributes->formal)) {
-            $type->setFormal((string)$attributes->formal);
+        if (isset($attributes->exampleUuid)) {
+            $pt = $type->getExampleUuid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleUuid);
+            } else {
+                $type->setExampleUuid((string)$attributes->exampleUuid);
+            }
         }
         if (isset($children->formal)) {
             $type->setFormal(FHIRString::xmlUnserialize($children->formal));
         }
-        if (isset($attributes->isModifier)) {
-            $type->setIsModifier((string)$attributes->isModifier);
+        if (isset($attributes->formal)) {
+            $pt = $type->getFormal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->formal);
+            } else {
+                $type->setFormal((string)$attributes->formal);
+            }
         }
         if (isset($children->isModifier)) {
             $type->setIsModifier(FHIRBoolean::xmlUnserialize($children->isModifier));
+        }
+        if (isset($attributes->isModifier)) {
+            $pt = $type->getIsModifier();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isModifier);
+            } else {
+                $type->setIsModifier((string)$attributes->isModifier);
+            }
         }
         if (isset($children->mapping)) {
             foreach($children->mapping as $child) {
                 $type->addMapping(FHIRProfileMapping1::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->max)) {
-            $type->setMax((string)$attributes->max);
-        }
         if (isset($children->max)) {
             $type->setMax(FHIRString::xmlUnserialize($children->max));
         }
-        if (isset($attributes->maxLength)) {
-            $type->setMaxLength((string)$attributes->maxLength);
+        if (isset($attributes->max)) {
+            $pt = $type->getMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->max);
+            } else {
+                $type->setMax((string)$attributes->max);
+            }
         }
         if (isset($children->maxLength)) {
             $type->setMaxLength(FHIRInteger::xmlUnserialize($children->maxLength));
         }
-        if (isset($attributes->min)) {
-            $type->setMin((string)$attributes->min);
+        if (isset($attributes->maxLength)) {
+            $pt = $type->getMaxLength();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->maxLength);
+            } else {
+                $type->setMaxLength((string)$attributes->maxLength);
+            }
         }
         if (isset($children->min)) {
             $type->setMin(FHIRInteger::xmlUnserialize($children->min));
         }
-        if (isset($attributes->mustSupport)) {
-            $type->setMustSupport((string)$attributes->mustSupport);
+        if (isset($attributes->min)) {
+            $pt = $type->getMin();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->min);
+            } else {
+                $type->setMin((string)$attributes->min);
+            }
         }
         if (isset($children->mustSupport)) {
             $type->setMustSupport(FHIRBoolean::xmlUnserialize($children->mustSupport));
         }
-        if (isset($attributes->nameReference)) {
-            $type->setNameReference((string)$attributes->nameReference);
+        if (isset($attributes->mustSupport)) {
+            $pt = $type->getMustSupport();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->mustSupport);
+            } else {
+                $type->setMustSupport((string)$attributes->mustSupport);
+            }
         }
         if (isset($children->nameReference)) {
             $type->setNameReference(FHIRString::xmlUnserialize($children->nameReference));
         }
-        if (isset($attributes->requirements)) {
-            $type->setRequirements((string)$attributes->requirements);
+        if (isset($attributes->nameReference)) {
+            $pt = $type->getNameReference();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->nameReference);
+            } else {
+                $type->setNameReference((string)$attributes->nameReference);
+            }
         }
         if (isset($children->requirements)) {
             $type->setRequirements(FHIRString::xmlUnserialize($children->requirements));
         }
-        if (isset($attributes->short)) {
-            $type->setShort((string)$attributes->short);
+        if (isset($attributes->requirements)) {
+            $pt = $type->getRequirements();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requirements);
+            } else {
+                $type->setRequirements((string)$attributes->requirements);
+            }
         }
         if (isset($children->short)) {
             $type->setShort(FHIRString::xmlUnserialize($children->short));
         }
-        if (isset($attributes->synonym)) {
-            $type->addSynonym((string)$attributes->synonym);
+        if (isset($attributes->short)) {
+            $pt = $type->getShort();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->short);
+            } else {
+                $type->setShort((string)$attributes->short);
+            }
         }
         if (isset($children->synonym)) {
             foreach($children->synonym as $child) {
@@ -4787,23 +4896,38 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->valueAttachment)) {
             $type->setValueAttachment(FHIRAttachment::xmlUnserialize($children->valueAttachment));
         }
-        if (isset($attributes->valueBase64Binary)) {
-            $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
-        }
         if (isset($children->valueBase64Binary)) {
             $type->setValueBase64Binary(FHIRBase64Binary::xmlUnserialize($children->valueBase64Binary));
         }
-        if (isset($attributes->valueBoolean)) {
-            $type->setValueBoolean((string)$attributes->valueBoolean);
+        if (isset($attributes->valueBase64Binary)) {
+            $pt = $type->getValueBase64Binary();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBase64Binary);
+            } else {
+                $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
+            }
         }
         if (isset($children->valueBoolean)) {
             $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
         }
-        if (isset($attributes->valueCode)) {
-            $type->setValueCode((string)$attributes->valueCode);
+        if (isset($attributes->valueBoolean)) {
+            $pt = $type->getValueBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBoolean);
+            } else {
+                $type->setValueBoolean((string)$attributes->valueBoolean);
+            }
         }
         if (isset($children->valueCode)) {
             $type->setValueCode(FHIRCode::xmlUnserialize($children->valueCode));
+        }
+        if (isset($attributes->valueCode)) {
+            $pt = $type->getValueCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueCode);
+            } else {
+                $type->setValueCode((string)$attributes->valueCode);
+            }
         }
         if (isset($children->valueCodeableConcept)) {
             $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->valueCodeableConcept));
@@ -4814,53 +4938,88 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->valueContact)) {
             $type->setValueContact(FHIRContact::xmlUnserialize($children->valueContact));
         }
-        if (isset($attributes->valueDate)) {
-            $type->setValueDate((string)$attributes->valueDate);
-        }
         if (isset($children->valueDate)) {
             $type->setValueDate(FHIRDate::xmlUnserialize($children->valueDate));
         }
-        if (isset($attributes->valueDateTime)) {
-            $type->setValueDateTime((string)$attributes->valueDateTime);
+        if (isset($attributes->valueDate)) {
+            $pt = $type->getValueDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDate);
+            } else {
+                $type->setValueDate((string)$attributes->valueDate);
+            }
         }
         if (isset($children->valueDateTime)) {
             $type->setValueDateTime(FHIRDateTime::xmlUnserialize($children->valueDateTime));
         }
-        if (isset($attributes->valueDecimal)) {
-            $type->setValueDecimal((string)$attributes->valueDecimal);
+        if (isset($attributes->valueDateTime)) {
+            $pt = $type->getValueDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDateTime);
+            } else {
+                $type->setValueDateTime((string)$attributes->valueDateTime);
+            }
         }
         if (isset($children->valueDecimal)) {
             $type->setValueDecimal(FHIRDecimal::xmlUnserialize($children->valueDecimal));
         }
+        if (isset($attributes->valueDecimal)) {
+            $pt = $type->getValueDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDecimal);
+            } else {
+                $type->setValueDecimal((string)$attributes->valueDecimal);
+            }
+        }
         if (isset($children->valueHumanName)) {
             $type->setValueHumanName(FHIRHumanName::xmlUnserialize($children->valueHumanName));
-        }
-        if (isset($attributes->valueId)) {
-            $type->setValueId((string)$attributes->valueId);
         }
         if (isset($children->valueId)) {
             $type->setValueId(FHIRId::xmlUnserialize($children->valueId));
         }
+        if (isset($attributes->valueId)) {
+            $pt = $type->getValueId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueId);
+            } else {
+                $type->setValueId((string)$attributes->valueId);
+            }
+        }
         if (isset($children->valueIdentifier)) {
             $type->setValueIdentifier(FHIRIdentifier::xmlUnserialize($children->valueIdentifier));
-        }
-        if (isset($attributes->valueInstant)) {
-            $type->setValueInstant((string)$attributes->valueInstant);
         }
         if (isset($children->valueInstant)) {
             $type->setValueInstant(FHIRInstant::xmlUnserialize($children->valueInstant));
         }
-        if (isset($attributes->valueInteger)) {
-            $type->setValueInteger((string)$attributes->valueInteger);
+        if (isset($attributes->valueInstant)) {
+            $pt = $type->getValueInstant();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueInstant);
+            } else {
+                $type->setValueInstant((string)$attributes->valueInstant);
+            }
         }
         if (isset($children->valueInteger)) {
             $type->setValueInteger(FHIRInteger::xmlUnserialize($children->valueInteger));
         }
-        if (isset($attributes->valueOid)) {
-            $type->setValueOid((string)$attributes->valueOid);
+        if (isset($attributes->valueInteger)) {
+            $pt = $type->getValueInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueInteger);
+            } else {
+                $type->setValueInteger((string)$attributes->valueInteger);
+            }
         }
         if (isset($children->valueOid)) {
             $type->setValueOid(FHIROid::xmlUnserialize($children->valueOid));
+        }
+        if (isset($attributes->valueOid)) {
+            $pt = $type->getValueOid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueOid);
+            } else {
+                $type->setValueOid((string)$attributes->valueOid);
+            }
         }
         if (isset($children->valuePeriod)) {
             $type->setValuePeriod(FHIRPeriod::xmlUnserialize($children->valuePeriod));
@@ -4883,23 +5042,38 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         if (isset($children->valueSchedule)) {
             $type->setValueSchedule(FHIRSchedule::xmlUnserialize($children->valueSchedule));
         }
-        if (isset($attributes->valueString)) {
-            $type->setValueString((string)$attributes->valueString);
-        }
         if (isset($children->valueString)) {
             $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
         }
-        if (isset($attributes->valueUri)) {
-            $type->setValueUri((string)$attributes->valueUri);
+        if (isset($attributes->valueString)) {
+            $pt = $type->getValueString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueString);
+            } else {
+                $type->setValueString((string)$attributes->valueString);
+            }
         }
         if (isset($children->valueUri)) {
             $type->setValueUri(FHIRUri::xmlUnserialize($children->valueUri));
         }
-        if (isset($attributes->valueUuid)) {
-            $type->setValueUuid((string)$attributes->valueUuid);
+        if (isset($attributes->valueUri)) {
+            $pt = $type->getValueUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueUri);
+            } else {
+                $type->setValueUri((string)$attributes->valueUri);
+            }
         }
         if (isset($children->valueUuid)) {
             $type->setValueUuid(FHIRUuid::xmlUnserialize($children->valueUuid));
+        }
+        if (isset($attributes->valueUuid)) {
+            $pt = $type->getValueUuid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueUuid);
+            } else {
+                $type->setValueUuid((string)$attributes->valueUuid);
+            }
         }
         return $type;
     }
@@ -4915,7 +5089,6 @@ class FHIRProfileDefinition extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBinding())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BINDING, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -691,20 +691,30 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->altId)) {
-            $type->setAltId((string)$attributes->altId);
-        }
         if (isset($children->altId)) {
             $type->setAltId(FHIRString::xmlUnserialize($children->altId));
+        }
+        if (isset($attributes->altId)) {
+            $pt = $type->getAltId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->altId);
+            } else {
+                $type->setAltId((string)$attributes->altId);
+            }
         }
         if (isset($children->media)) {
             $type->setMedia(FHIRCoding::xmlUnserialize($children->media));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->network)) {
             $type->setNetwork(FHIRSecurityEventNetwork::xmlUnserialize($children->network));
@@ -712,22 +722,32 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
         if (isset($children->reference)) {
             $type->setReference(FHIRResourceReference::xmlUnserialize($children->reference));
         }
-        if (isset($attributes->requestor)) {
-            $type->setRequestor((string)$attributes->requestor);
-        }
         if (isset($children->requestor)) {
             $type->setRequestor(FHIRBoolean::xmlUnserialize($children->requestor));
+        }
+        if (isset($attributes->requestor)) {
+            $pt = $type->getRequestor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requestor);
+            } else {
+                $type->setRequestor((string)$attributes->requestor);
+            }
         }
         if (isset($children->role)) {
             foreach($children->role as $child) {
                 $type->addRole(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->userId)) {
-            $type->setUserId((string)$attributes->userId);
-        }
         if (isset($children->userId)) {
             $type->setUserId(FHIRString::xmlUnserialize($children->userId));
+        }
+        if (isset($attributes->userId)) {
+            $pt = $type->getUserId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->userId);
+            } else {
+                $type->setUserId((string)$attributes->userId);
+            }
         }
         return $type;
     }
@@ -743,7 +763,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAltId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALT_ID, null, $v->_getFHIRXMLNamespace()));
         }

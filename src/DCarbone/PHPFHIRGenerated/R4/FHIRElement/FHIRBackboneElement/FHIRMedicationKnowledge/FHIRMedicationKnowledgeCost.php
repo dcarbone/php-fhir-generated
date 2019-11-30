@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -350,11 +350,16 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         if (isset($children->cost)) {
             $type->setCost(FHIRMoney::xmlUnserialize($children->cost));
         }
-        if (isset($attributes->source)) {
-            $type->setSource((string)$attributes->source);
-        }
         if (isset($children->source)) {
             $type->setSource(FHIRString::xmlUnserialize($children->source));
+        }
+        if (isset($attributes->source)) {
+            $pt = $type->getSource();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->source);
+            } else {
+                $type->setSource((string)$attributes->source);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -373,7 +378,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCost())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COST, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -951,17 +951,27 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->issued)) {
-            $type->setIssued((string)$attributes->issued);
-        }
         if (isset($children->issued)) {
             $type->setIssued(FHIRDateTime::xmlUnserialize($children->issued));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->issued)) {
+            $pt = $type->getIssued();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->issued);
+            } else {
+                $type->setIssued((string)$attributes->issued);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->participant)) {
             foreach($children->participant as $child) {
@@ -971,11 +981,16 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->result)) {
             $type->setResult(FHIRTestReportResult::xmlUnserialize($children->result));
         }
-        if (isset($attributes->score)) {
-            $type->setScore((string)$attributes->score);
-        }
         if (isset($children->score)) {
             $type->setScore(FHIRDecimal::xmlUnserialize($children->score));
+        }
+        if (isset($attributes->score)) {
+            $pt = $type->getScore();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->score);
+            } else {
+                $type->setScore((string)$attributes->score);
+            }
         }
         if (isset($children->setup)) {
             $type->setSetup(FHIRTestReportSetup::xmlUnserialize($children->setup));
@@ -994,11 +1009,16 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->testScript)) {
             $type->setTestScript(FHIRReference::xmlUnserialize($children->testScript));
         }
-        if (isset($attributes->tester)) {
-            $type->setTester((string)$attributes->tester);
-        }
         if (isset($children->tester)) {
             $type->setTester(FHIRString::xmlUnserialize($children->tester));
+        }
+        if (isset($attributes->tester)) {
+            $pt = $type->getTester();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->tester);
+            } else {
+                $type->setTester((string)$attributes->tester);
+            }
         }
         return $type;
     }
@@ -1014,7 +1034,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }

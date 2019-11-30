@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -859,20 +859,30 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
         if (isset($children->amountRatioLowLimit)) {
             $type->setAmountRatioLowLimit(FHIRRatio::xmlUnserialize($children->amountRatioLowLimit));
         }
-        if (isset($attributes->amountString)) {
-            $type->setAmountString((string)$attributes->amountString);
-        }
         if (isset($children->amountString)) {
             $type->setAmountString(FHIRString::xmlUnserialize($children->amountString));
+        }
+        if (isset($attributes->amountString)) {
+            $pt = $type->getAmountString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->amountString);
+            } else {
+                $type->setAmountString((string)$attributes->amountString);
+            }
         }
         if (isset($children->amountType)) {
             $type->setAmountType(FHIRCodeableConcept::xmlUnserialize($children->amountType));
         }
-        if (isset($attributes->isDefining)) {
-            $type->setIsDefining((string)$attributes->isDefining);
-        }
         if (isset($children->isDefining)) {
             $type->setIsDefining(FHIRBoolean::xmlUnserialize($children->isDefining));
+        }
+        if (isset($attributes->isDefining)) {
+            $pt = $type->getIsDefining();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isDefining);
+            } else {
+                $type->setIsDefining((string)$attributes->isDefining);
+            }
         }
         if (isset($children->relationship)) {
             $type->setRelationship(FHIRCodeableConcept::xmlUnserialize($children->relationship));
@@ -902,7 +912,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }

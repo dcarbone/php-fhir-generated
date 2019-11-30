@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -377,11 +377,16 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 $type->addLimit(FHIRInsurancePlanLimit::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->requirement)) {
-            $type->setRequirement((string)$attributes->requirement);
-        }
         if (isset($children->requirement)) {
             $type->setRequirement(FHIRString::xmlUnserialize($children->requirement));
+        }
+        if (isset($attributes->requirement)) {
+            $pt = $type->getRequirement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requirement);
+            } else {
+                $type->setRequirement((string)$attributes->requirement);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -400,7 +405,6 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getLimit())) {
             foreach($vs as $v) {
                 if (null === $v) {

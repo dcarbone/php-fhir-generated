@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -526,23 +526,38 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 $type->addCode(FHIRCoding::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->path)) {
-            $type->setPath((string)$attributes->path);
-        }
         if (isset($children->path)) {
             $type->setPath(FHIRString::xmlUnserialize($children->path));
         }
-        if (isset($attributes->searchParam)) {
-            $type->setSearchParam((string)$attributes->searchParam);
+        if (isset($attributes->path)) {
+            $pt = $type->getPath();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->path);
+            } else {
+                $type->setPath((string)$attributes->path);
+            }
         }
         if (isset($children->searchParam)) {
             $type->setSearchParam(FHIRString::xmlUnserialize($children->searchParam));
         }
-        if (isset($attributes->valueSet)) {
-            $type->setValueSet((string)$attributes->valueSet);
+        if (isset($attributes->searchParam)) {
+            $pt = $type->getSearchParam();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->searchParam);
+            } else {
+                $type->setSearchParam((string)$attributes->searchParam);
+            }
         }
         if (isset($children->valueSet)) {
             $type->setValueSet(FHIRCanonical::xmlUnserialize($children->valueSet));
+        }
+        if (isset($attributes->valueSet)) {
+            $pt = $type->getValueSet();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueSet);
+            } else {
+                $type->setValueSet((string)$attributes->valueSet);
+            }
         }
         return $type;
     }
@@ -558,7 +573,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {

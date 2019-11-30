@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1262,19 +1262,21 @@ class FHIRClaimItem extends FHIRBackboneElement
                 $type->addDetail(FHIRClaimDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->diagnosisLinkId)) {
-            $type->addDiagnosisLinkId((string)$attributes->diagnosisLinkId);
-        }
         if (isset($children->diagnosisLinkId)) {
             foreach($children->diagnosisLinkId as $child) {
                 $type->addDiagnosisLinkId(FHIRPositiveInt::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->factor)) {
-            $type->setFactor((string)$attributes->factor);
-        }
         if (isset($children->factor)) {
             $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
+        }
+        if (isset($attributes->factor)) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->factor);
+            } else {
+                $type->setFactor((string)$attributes->factor);
+            }
         }
         if (isset($children->modifier)) {
             foreach($children->modifier as $child) {
@@ -1284,11 +1286,16 @@ class FHIRClaimItem extends FHIRBackboneElement
         if (isset($children->net)) {
             $type->setNet(FHIRMoney::xmlUnserialize($children->net));
         }
-        if (isset($attributes->points)) {
-            $type->setPoints((string)$attributes->points);
-        }
         if (isset($children->points)) {
             $type->setPoints(FHIRDecimal::xmlUnserialize($children->points));
+        }
+        if (isset($attributes->points)) {
+            $pt = $type->getPoints();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->points);
+            } else {
+                $type->setPoints((string)$attributes->points);
+            }
         }
         if (isset($children->prosthesis)) {
             $type->setProsthesis(FHIRClaimProsthesis::xmlUnserialize($children->prosthesis));
@@ -1299,20 +1306,30 @@ class FHIRClaimItem extends FHIRBackboneElement
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($children->quantity));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
-        }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         if (isset($children->service)) {
             $type->setService(FHIRCoding::xmlUnserialize($children->service));
         }
-        if (isset($attributes->serviceDate)) {
-            $type->setServiceDate((string)$attributes->serviceDate);
-        }
         if (isset($children->serviceDate)) {
             $type->setServiceDate(FHIRDate::xmlUnserialize($children->serviceDate));
+        }
+        if (isset($attributes->serviceDate)) {
+            $pt = $type->getServiceDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->serviceDate);
+            } else {
+                $type->setServiceDate((string)$attributes->serviceDate);
+            }
         }
         if (isset($children->subSite)) {
             foreach($children->subSite as $child) {
@@ -1342,7 +1359,6 @@ class FHIRClaimItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBodySite())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BODY_SITE, null, $v->_getFHIRXMLNamespace()));
         }

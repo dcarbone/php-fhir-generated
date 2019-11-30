@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -652,16 +652,10 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
         if (isset($children->fee)) {
             $type->setFee(FHIRMoney::xmlUnserialize($children->fee));
         }
-        if (isset($attributes->noteNumberLinkId)) {
-            $type->addNoteNumberLinkId((string)$attributes->noteNumberLinkId);
-        }
         if (isset($children->noteNumberLinkId)) {
             foreach($children->noteNumberLinkId as $child) {
                 $type->addNoteNumberLinkId(FHIRPositiveInt::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->sequenceLinkId)) {
-            $type->addSequenceLinkId((string)$attributes->sequenceLinkId);
         }
         if (isset($children->sequenceLinkId)) {
             foreach($children->sequenceLinkId as $child) {
@@ -685,7 +679,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {

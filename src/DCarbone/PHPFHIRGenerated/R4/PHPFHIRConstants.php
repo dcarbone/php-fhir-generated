@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ abstract class PHPFHIRConstants
     const SOURCE_GENERATION_DATE = 'Fri, Nov 1, 2019 09:29+1100';
 
     // PHPFHIR
-    const CODE_GENERATION_DATE = 'November 29th, 2019 23:11+0000';
+    const CODE_GENERATION_DATE = 'November 30th, 2019 21:22+0000';
 
     // Common
     const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
@@ -93,12 +93,12 @@ abstract class PHPFHIRConstants
     const INT_MIN = -2147483648;
 
     // Validation
-    const VALIDATE_ENUM = 0x0;
-    const VALIDATE_MIN_LENGTH = 0x1;
-    const VALIDATE_MAX_LENGTH = 0x2;
-    const VALIDATE_PATTERN = 0x4;
-    const VALIDATE_MIN_OCCURS = 0x8;
-    const VALIDATE_MAX_OCCURS = 0x10;
+    const VALIDATE_ENUM = 0x1;
+    const VALIDATE_MIN_LENGTH = 0x2;
+    const VALIDATE_MAX_LENGTH = 0x4;
+    const VALIDATE_PATTERN = 0x8;
+    const VALIDATE_MIN_OCCURS = 0x10;
+    const VALIDATE_MAX_OCCURS = 0x20;
 
     // Type names
     const TYPE_NAME_ACCOUNT = 'Account';

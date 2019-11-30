@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1260,11 +1260,16 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
         if (isset($children->dataExclusivityPeriod)) {
             $type->setDataExclusivityPeriod(FHIRPeriod::xmlUnserialize($children->dataExclusivityPeriod));
         }
-        if (isset($attributes->dateOfFirstAuthorization)) {
-            $type->setDateOfFirstAuthorization((string)$attributes->dateOfFirstAuthorization);
-        }
         if (isset($children->dateOfFirstAuthorization)) {
             $type->setDateOfFirstAuthorization(FHIRDateTime::xmlUnserialize($children->dateOfFirstAuthorization));
+        }
+        if (isset($attributes->dateOfFirstAuthorization)) {
+            $pt = $type->getDateOfFirstAuthorization();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dateOfFirstAuthorization);
+            } else {
+                $type->setDateOfFirstAuthorization((string)$attributes->dateOfFirstAuthorization);
+            }
         }
         if (isset($children->holder)) {
             $type->setHolder(FHIRReference::xmlUnserialize($children->holder));
@@ -1274,11 +1279,16 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->internationalBirthDate)) {
-            $type->setInternationalBirthDate((string)$attributes->internationalBirthDate);
-        }
         if (isset($children->internationalBirthDate)) {
             $type->setInternationalBirthDate(FHIRDateTime::xmlUnserialize($children->internationalBirthDate));
+        }
+        if (isset($attributes->internationalBirthDate)) {
+            $pt = $type->getInternationalBirthDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->internationalBirthDate);
+            } else {
+                $type->setInternationalBirthDate((string)$attributes->internationalBirthDate);
+            }
         }
         if (isset($children->jurisdiction)) {
             foreach($children->jurisdiction as $child) {
@@ -1299,20 +1309,30 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
         if (isset($children->regulator)) {
             $type->setRegulator(FHIRReference::xmlUnserialize($children->regulator));
         }
-        if (isset($attributes->restoreDate)) {
-            $type->setRestoreDate((string)$attributes->restoreDate);
-        }
         if (isset($children->restoreDate)) {
             $type->setRestoreDate(FHIRDateTime::xmlUnserialize($children->restoreDate));
+        }
+        if (isset($attributes->restoreDate)) {
+            $pt = $type->getRestoreDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->restoreDate);
+            } else {
+                $type->setRestoreDate((string)$attributes->restoreDate);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRCodeableConcept::xmlUnserialize($children->status));
         }
-        if (isset($attributes->statusDate)) {
-            $type->setStatusDate((string)$attributes->statusDate);
-        }
         if (isset($children->statusDate)) {
             $type->setStatusDate(FHIRDateTime::xmlUnserialize($children->statusDate));
+        }
+        if (isset($attributes->statusDate)) {
+            $pt = $type->getStatusDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->statusDate);
+            } else {
+                $type->setStatusDate((string)$attributes->statusDate);
+            }
         }
         if (isset($children->subject)) {
             $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
@@ -1334,7 +1354,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCountry())) {
             foreach($vs as $v) {
                 if (null === $v) {

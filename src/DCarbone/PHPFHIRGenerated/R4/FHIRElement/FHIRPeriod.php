@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -336,17 +336,27 @@ class FHIRPeriod extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->end)) {
-            $type->setEnd((string)$attributes->end);
-        }
         if (isset($children->end)) {
             $type->setEnd(FHIRDateTime::xmlUnserialize($children->end));
         }
-        if (isset($attributes->start)) {
-            $type->setStart((string)$attributes->start);
+        if (isset($attributes->end)) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->end);
+            } else {
+                $type->setEnd((string)$attributes->end);
+            }
         }
         if (isset($children->start)) {
             $type->setStart(FHIRDateTime::xmlUnserialize($children->start));
+        }
+        if (isset($attributes->start)) {
+            $pt = $type->getStart();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->start);
+            } else {
+                $type->setStart((string)$attributes->start);
+            }
         }
         return $type;
     }
@@ -362,7 +372,6 @@ class FHIRPeriod extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEnd())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_END, null, $v->_getFHIRXMLNamespace()));
         }

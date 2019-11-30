@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -356,11 +356,16 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->allowedBoolean)) {
-            $type->setAllowedBoolean((string)$attributes->allowedBoolean);
-        }
         if (isset($children->allowedBoolean)) {
             $type->setAllowedBoolean(FHIRBoolean::xmlUnserialize($children->allowedBoolean));
+        }
+        if (isset($attributes->allowedBoolean)) {
+            $pt = $type->getAllowedBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->allowedBoolean);
+            } else {
+                $type->setAllowedBoolean((string)$attributes->allowedBoolean);
+            }
         }
         if (isset($children->allowedCodeableConcept)) {
             $type->setAllowedCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->allowedCodeableConcept));
@@ -382,7 +387,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAllowedBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

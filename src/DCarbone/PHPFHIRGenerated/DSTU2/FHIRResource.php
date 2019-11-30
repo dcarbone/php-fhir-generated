@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -486,23 +486,38 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->id)) {
-            $type->setId((string)$attributes->id);
-        }
         if (isset($children->id)) {
             $type->setId(FHIRId::xmlUnserialize($children->id));
         }
-        if (isset($attributes->implicitRules)) {
-            $type->setImplicitRules((string)$attributes->implicitRules);
+        if (isset($attributes->id)) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->id);
+            } else {
+                $type->setId((string)$attributes->id);
+            }
         }
         if (isset($children->implicitRules)) {
             $type->setImplicitRules(FHIRUri::xmlUnserialize($children->implicitRules));
         }
-        if (isset($attributes->language)) {
-            $type->setLanguage((string)$attributes->language);
+        if (isset($attributes->implicitRules)) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->implicitRules);
+            } else {
+                $type->setImplicitRules((string)$attributes->implicitRules);
+            }
         }
         if (isset($children->language)) {
             $type->setLanguage(FHIRCode::xmlUnserialize($children->language));
+        }
+        if (isset($attributes->language)) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->language);
+            } else {
+                $type->setLanguage((string)$attributes->language);
+            }
         }
         if (isset($children->meta)) {
             $type->setMeta(FHIRMeta::xmlUnserialize($children->meta));
@@ -520,7 +535,6 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-
         if (null !== ($v = $this->getId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ID, null, $v->_getFHIRXMLNamespace()));
         }

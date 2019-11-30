@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -634,17 +634,27 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->actualArm)) {
-            $type->setActualArm((string)$attributes->actualArm);
-        }
         if (isset($children->actualArm)) {
             $type->setActualArm(FHIRString::xmlUnserialize($children->actualArm));
         }
-        if (isset($attributes->assignedArm)) {
-            $type->setAssignedArm((string)$attributes->assignedArm);
+        if (isset($attributes->actualArm)) {
+            $pt = $type->getActualArm();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->actualArm);
+            } else {
+                $type->setActualArm((string)$attributes->actualArm);
+            }
         }
         if (isset($children->assignedArm)) {
             $type->setAssignedArm(FHIRString::xmlUnserialize($children->assignedArm));
+        }
+        if (isset($attributes->assignedArm)) {
+            $pt = $type->getAssignedArm();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->assignedArm);
+            } else {
+                $type->setAssignedArm((string)$attributes->assignedArm);
+            }
         }
         if (isset($children->consent)) {
             $type->setConsent(FHIRReference::xmlUnserialize($children->consent));
@@ -678,7 +688,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActualArm())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTUAL_ARM, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -726,44 +726,69 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->cTerminalModification)) {
-            $type->setCTerminalModification((string)$attributes->cTerminalModification);
-        }
         if (isset($children->cTerminalModification)) {
             $type->setCTerminalModification(FHIRString::xmlUnserialize($children->cTerminalModification));
+        }
+        if (isset($attributes->cTerminalModification)) {
+            $pt = $type->getCTerminalModification();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->cTerminalModification);
+            } else {
+                $type->setCTerminalModification((string)$attributes->cTerminalModification);
+            }
         }
         if (isset($children->cTerminalModificationId)) {
             $type->setCTerminalModificationId(FHIRIdentifier::xmlUnserialize($children->cTerminalModificationId));
         }
-        if (isset($attributes->length)) {
-            $type->setLength((string)$attributes->length);
-        }
         if (isset($children->length)) {
             $type->setLength(FHIRInteger::xmlUnserialize($children->length));
         }
-        if (isset($attributes->nTerminalModification)) {
-            $type->setNTerminalModification((string)$attributes->nTerminalModification);
+        if (isset($attributes->length)) {
+            $pt = $type->getLength();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->length);
+            } else {
+                $type->setLength((string)$attributes->length);
+            }
         }
         if (isset($children->nTerminalModification)) {
             $type->setNTerminalModification(FHIRString::xmlUnserialize($children->nTerminalModification));
         }
+        if (isset($attributes->nTerminalModification)) {
+            $pt = $type->getNTerminalModification();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->nTerminalModification);
+            } else {
+                $type->setNTerminalModification((string)$attributes->nTerminalModification);
+            }
+        }
         if (isset($children->nTerminalModificationId)) {
             $type->setNTerminalModificationId(FHIRIdentifier::xmlUnserialize($children->nTerminalModificationId));
-        }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
         }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRString::xmlUnserialize($children->sequence));
         }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
+        }
         if (isset($children->sequenceAttachment)) {
             $type->setSequenceAttachment(FHIRAttachment::xmlUnserialize($children->sequenceAttachment));
         }
-        if (isset($attributes->subunit)) {
-            $type->setSubunit((string)$attributes->subunit);
-        }
         if (isset($children->subunit)) {
             $type->setSubunit(FHIRInteger::xmlUnserialize($children->subunit));
+        }
+        if (isset($attributes->subunit)) {
+            $pt = $type->getSubunit();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subunit);
+            } else {
+                $type->setSubunit((string)$attributes->subunit);
+            }
         }
         return $type;
     }
@@ -779,7 +804,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCTerminalModification())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_C_TERMINAL_MODIFICATION, null, $v->_getFHIRXMLNamespace()));
         }

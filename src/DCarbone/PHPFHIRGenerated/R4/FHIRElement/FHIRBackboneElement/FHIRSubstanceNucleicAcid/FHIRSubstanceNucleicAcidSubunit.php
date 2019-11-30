@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -747,31 +747,46 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         if (isset($children->fivePrime)) {
             $type->setFivePrime(FHIRCodeableConcept::xmlUnserialize($children->fivePrime));
         }
-        if (isset($attributes->length)) {
-            $type->setLength((string)$attributes->length);
-        }
         if (isset($children->length)) {
             $type->setLength(FHIRInteger::xmlUnserialize($children->length));
+        }
+        if (isset($attributes->length)) {
+            $pt = $type->getLength();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->length);
+            } else {
+                $type->setLength((string)$attributes->length);
+            }
         }
         if (isset($children->linkage)) {
             foreach($children->linkage as $child) {
                 $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
-        }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRString::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         if (isset($children->sequenceAttachment)) {
             $type->setSequenceAttachment(FHIRAttachment::xmlUnserialize($children->sequenceAttachment));
         }
-        if (isset($attributes->subunit)) {
-            $type->setSubunit((string)$attributes->subunit);
-        }
         if (isset($children->subunit)) {
             $type->setSubunit(FHIRInteger::xmlUnserialize($children->subunit));
+        }
+        if (isset($attributes->subunit)) {
+            $pt = $type->getSubunit();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subunit);
+            } else {
+                $type->setSubunit((string)$attributes->subunit);
+            }
         }
         if (isset($children->sugar)) {
             foreach($children->sugar as $child) {
@@ -795,7 +810,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getFivePrime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FIVE_PRIME, null, $v->_getFHIRXMLNamespace()));
         }

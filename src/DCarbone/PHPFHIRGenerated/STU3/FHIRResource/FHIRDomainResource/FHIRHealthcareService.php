@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2054,23 +2054,38 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->active)) {
-            $type->setActive((string)$attributes->active);
-        }
         if (isset($children->active)) {
             $type->setActive(FHIRBoolean::xmlUnserialize($children->active));
         }
-        if (isset($attributes->appointmentRequired)) {
-            $type->setAppointmentRequired((string)$attributes->appointmentRequired);
+        if (isset($attributes->active)) {
+            $pt = $type->getActive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->active);
+            } else {
+                $type->setActive((string)$attributes->active);
+            }
         }
         if (isset($children->appointmentRequired)) {
             $type->setAppointmentRequired(FHIRBoolean::xmlUnserialize($children->appointmentRequired));
         }
-        if (isset($attributes->availabilityExceptions)) {
-            $type->setAvailabilityExceptions((string)$attributes->availabilityExceptions);
+        if (isset($attributes->appointmentRequired)) {
+            $pt = $type->getAppointmentRequired();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->appointmentRequired);
+            } else {
+                $type->setAppointmentRequired((string)$attributes->appointmentRequired);
+            }
         }
         if (isset($children->availabilityExceptions)) {
             $type->setAvailabilityExceptions(FHIRString::xmlUnserialize($children->availabilityExceptions));
+        }
+        if (isset($attributes->availabilityExceptions)) {
+            $pt = $type->getAvailabilityExceptions();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->availabilityExceptions);
+            } else {
+                $type->setAvailabilityExceptions((string)$attributes->availabilityExceptions);
+            }
         }
         if (isset($children->availableTime)) {
             foreach($children->availableTime as $child) {
@@ -2085,11 +2100,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
                 $type->addCharacteristic(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->comment)) {
-            $type->setComment((string)$attributes->comment);
-        }
         if (isset($children->comment)) {
             $type->setComment(FHIRString::xmlUnserialize($children->comment));
+        }
+        if (isset($attributes->comment)) {
+            $pt = $type->getComment();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->comment);
+            } else {
+                $type->setComment((string)$attributes->comment);
+            }
         }
         if (isset($children->coverageArea)) {
             foreach($children->coverageArea as $child) {
@@ -2099,22 +2119,32 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         if (isset($children->eligibility)) {
             $type->setEligibility(FHIRCodeableConcept::xmlUnserialize($children->eligibility));
         }
-        if (isset($attributes->eligibilityNote)) {
-            $type->setEligibilityNote((string)$attributes->eligibilityNote);
-        }
         if (isset($children->eligibilityNote)) {
             $type->setEligibilityNote(FHIRString::xmlUnserialize($children->eligibilityNote));
+        }
+        if (isset($attributes->eligibilityNote)) {
+            $pt = $type->getEligibilityNote();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->eligibilityNote);
+            } else {
+                $type->setEligibilityNote((string)$attributes->eligibilityNote);
+            }
         }
         if (isset($children->endpoint)) {
             foreach($children->endpoint as $child) {
                 $type->addEndpoint(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->extraDetails)) {
-            $type->setExtraDetails((string)$attributes->extraDetails);
-        }
         if (isset($children->extraDetails)) {
             $type->setExtraDetails(FHIRString::xmlUnserialize($children->extraDetails));
+        }
+        if (isset($attributes->extraDetails)) {
+            $pt = $type->getExtraDetails();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->extraDetails);
+            } else {
+                $type->setExtraDetails((string)$attributes->extraDetails);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -2126,11 +2156,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
                 $type->addLocation(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->notAvailable)) {
             foreach($children->notAvailable as $child) {
@@ -2139,9 +2174,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         if (isset($children->photo)) {
             $type->setPhoto(FHIRAttachment::xmlUnserialize($children->photo));
-        }
-        if (isset($attributes->programName)) {
-            $type->addProgramName((string)$attributes->programName);
         }
         if (isset($children->programName)) {
             foreach($children->programName as $child) {
@@ -2190,7 +2222,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActive())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE, null, $v->_getFHIRXMLNamespace()));
         }

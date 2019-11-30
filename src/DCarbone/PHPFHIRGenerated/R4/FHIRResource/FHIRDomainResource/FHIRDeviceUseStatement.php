@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1298,11 +1298,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
                 $type->addReasonReference(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->recordedOn)) {
-            $type->setRecordedOn((string)$attributes->recordedOn);
-        }
         if (isset($children->recordedOn)) {
             $type->setRecordedOn(FHIRDateTime::xmlUnserialize($children->recordedOn));
+        }
+        if (isset($attributes->recordedOn)) {
+            $pt = $type->getRecordedOn();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recordedOn);
+            } else {
+                $type->setRecordedOn((string)$attributes->recordedOn);
+            }
         }
         if (isset($children->source)) {
             $type->setSource(FHIRReference::xmlUnserialize($children->source));
@@ -1313,11 +1318,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->subject)) {
             $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
         }
-        if (isset($attributes->timingDateTime)) {
-            $type->setTimingDateTime((string)$attributes->timingDateTime);
-        }
         if (isset($children->timingDateTime)) {
             $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($children->timingDateTime));
+        }
+        if (isset($attributes->timingDateTime)) {
+            $pt = $type->getTimingDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timingDateTime);
+            } else {
+                $type->setTimingDateTime((string)$attributes->timingDateTime);
+            }
         }
         if (isset($children->timingPeriod)) {
             $type->setTimingPeriod(FHIRPeriod::xmlUnserialize($children->timingPeriod));
@@ -1339,7 +1349,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getBasedOn())) {
             foreach($vs as $v) {
                 if (null === $v) {

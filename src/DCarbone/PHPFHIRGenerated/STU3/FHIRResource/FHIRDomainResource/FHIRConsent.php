@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1710,11 +1710,16 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (isset($children->dataPeriod)) {
             $type->setDataPeriod(FHIRPeriod::xmlUnserialize($children->dataPeriod));
         }
-        if (isset($attributes->dateTime)) {
-            $type->setDateTime((string)$attributes->dateTime);
-        }
         if (isset($children->dateTime)) {
             $type->setDateTime(FHIRDateTime::xmlUnserialize($children->dateTime));
+        }
+        if (isset($attributes->dateTime)) {
+            $pt = $type->getDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dateTime);
+            } else {
+                $type->setDateTime((string)$attributes->dateTime);
+            }
         }
         if (isset($children->except)) {
             foreach($children->except as $child) {
@@ -1740,11 +1745,16 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $type->addPolicy(FHIRConsentPolicy::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->policyRule)) {
-            $type->setPolicyRule((string)$attributes->policyRule);
-        }
         if (isset($children->policyRule)) {
             $type->setPolicyRule(FHIRUri::xmlUnserialize($children->policyRule));
+        }
+        if (isset($attributes->policyRule)) {
+            $pt = $type->getPolicyRule();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->policyRule);
+            } else {
+                $type->setPolicyRule((string)$attributes->policyRule);
+            }
         }
         if (isset($children->purpose)) {
             foreach($children->purpose as $child) {
@@ -1782,7 +1792,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {
                 if (null === $v) {

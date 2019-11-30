@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -608,35 +608,60 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->cigar)) {
-            $type->setCigar((string)$attributes->cigar);
-        }
         if (isset($children->cigar)) {
             $type->setCigar(FHIRString::xmlUnserialize($children->cigar));
         }
-        if (isset($attributes->end)) {
-            $type->setEnd((string)$attributes->end);
+        if (isset($attributes->cigar)) {
+            $pt = $type->getCigar();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->cigar);
+            } else {
+                $type->setCigar((string)$attributes->cigar);
+            }
         }
         if (isset($children->end)) {
             $type->setEnd(FHIRInteger::xmlUnserialize($children->end));
         }
-        if (isset($attributes->observedAllele)) {
-            $type->setObservedAllele((string)$attributes->observedAllele);
+        if (isset($attributes->end)) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->end);
+            } else {
+                $type->setEnd((string)$attributes->end);
+            }
         }
         if (isset($children->observedAllele)) {
             $type->setObservedAllele(FHIRString::xmlUnserialize($children->observedAllele));
         }
-        if (isset($attributes->referenceAllele)) {
-            $type->setReferenceAllele((string)$attributes->referenceAllele);
+        if (isset($attributes->observedAllele)) {
+            $pt = $type->getObservedAllele();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->observedAllele);
+            } else {
+                $type->setObservedAllele((string)$attributes->observedAllele);
+            }
         }
         if (isset($children->referenceAllele)) {
             $type->setReferenceAllele(FHIRString::xmlUnserialize($children->referenceAllele));
         }
-        if (isset($attributes->start)) {
-            $type->setStart((string)$attributes->start);
+        if (isset($attributes->referenceAllele)) {
+            $pt = $type->getReferenceAllele();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->referenceAllele);
+            } else {
+                $type->setReferenceAllele((string)$attributes->referenceAllele);
+            }
         }
         if (isset($children->start)) {
             $type->setStart(FHIRInteger::xmlUnserialize($children->start));
+        }
+        if (isset($attributes->start)) {
+            $pt = $type->getStart();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->start);
+            } else {
+                $type->setStart((string)$attributes->start);
+            }
         }
         if (isset($children->variantPointer)) {
             $type->setVariantPointer(FHIRReference::xmlUnserialize($children->variantPointer));
@@ -655,7 +680,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCigar())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CIGAR, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1552,17 +1552,27 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $type->addCodedDiagnosis(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->conclusion)) {
-            $type->setConclusion((string)$attributes->conclusion);
-        }
         if (isset($children->conclusion)) {
             $type->setConclusion(FHIRString::xmlUnserialize($children->conclusion));
         }
-        if (isset($attributes->effectiveDateTime)) {
-            $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
+        if (isset($attributes->conclusion)) {
+            $pt = $type->getConclusion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->conclusion);
+            } else {
+                $type->setConclusion((string)$attributes->conclusion);
+            }
         }
         if (isset($children->effectiveDateTime)) {
             $type->setEffectiveDateTime(FHIRDateTime::xmlUnserialize($children->effectiveDateTime));
+        }
+        if (isset($attributes->effectiveDateTime)) {
+            $pt = $type->getEffectiveDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->effectiveDateTime);
+            } else {
+                $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
+            }
         }
         if (isset($children->effectivePeriod)) {
             $type->setEffectivePeriod(FHIRPeriod::xmlUnserialize($children->effectivePeriod));
@@ -1585,11 +1595,16 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
                 $type->addImagingStudy(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->issued)) {
-            $type->setIssued((string)$attributes->issued);
-        }
         if (isset($children->issued)) {
             $type->setIssued(FHIRInstant::xmlUnserialize($children->issued));
+        }
+        if (isset($attributes->issued)) {
+            $pt = $type->getIssued();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->issued);
+            } else {
+                $type->setIssued((string)$attributes->issued);
+            }
         }
         if (isset($children->performer)) {
             $type->setPerformer(FHIRReference::xmlUnserialize($children->performer));
@@ -1634,7 +1649,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

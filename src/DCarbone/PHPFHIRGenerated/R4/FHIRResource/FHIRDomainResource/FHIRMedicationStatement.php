@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1643,11 +1643,16 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
         if (isset($children->context)) {
             $type->setContext(FHIRReference::xmlUnserialize($children->context));
         }
-        if (isset($attributes->dateAsserted)) {
-            $type->setDateAsserted((string)$attributes->dateAsserted);
-        }
         if (isset($children->dateAsserted)) {
             $type->setDateAsserted(FHIRDateTime::xmlUnserialize($children->dateAsserted));
+        }
+        if (isset($attributes->dateAsserted)) {
+            $pt = $type->getDateAsserted();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dateAsserted);
+            } else {
+                $type->setDateAsserted((string)$attributes->dateAsserted);
+            }
         }
         if (isset($children->derivedFrom)) {
             foreach($children->derivedFrom as $child) {
@@ -1659,11 +1664,16 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
                 $type->addDosage(FHIRDosage::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->effectiveDateTime)) {
-            $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
-        }
         if (isset($children->effectiveDateTime)) {
             $type->setEffectiveDateTime(FHIRDateTime::xmlUnserialize($children->effectiveDateTime));
+        }
+        if (isset($attributes->effectiveDateTime)) {
+            $pt = $type->getEffectiveDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->effectiveDateTime);
+            } else {
+                $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
+            }
         }
         if (isset($children->effectivePeriod)) {
             $type->setEffectivePeriod(FHIRPeriod::xmlUnserialize($children->effectivePeriod));
@@ -1727,7 +1737,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getBasedOn())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -597,29 +597,49 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
                 $type->addElement(FHIRConceptMapElement::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->source)) {
-            $type->setSource((string)$attributes->source);
-        }
         if (isset($children->source)) {
             $type->setSource(FHIRUri::xmlUnserialize($children->source));
         }
-        if (isset($attributes->sourceVersion)) {
-            $type->setSourceVersion((string)$attributes->sourceVersion);
+        if (isset($attributes->source)) {
+            $pt = $type->getSource();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->source);
+            } else {
+                $type->setSource((string)$attributes->source);
+            }
         }
         if (isset($children->sourceVersion)) {
             $type->setSourceVersion(FHIRString::xmlUnserialize($children->sourceVersion));
         }
-        if (isset($attributes->target)) {
-            $type->setTarget((string)$attributes->target);
+        if (isset($attributes->sourceVersion)) {
+            $pt = $type->getSourceVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sourceVersion);
+            } else {
+                $type->setSourceVersion((string)$attributes->sourceVersion);
+            }
         }
         if (isset($children->target)) {
             $type->setTarget(FHIRUri::xmlUnserialize($children->target));
         }
-        if (isset($attributes->targetVersion)) {
-            $type->setTargetVersion((string)$attributes->targetVersion);
+        if (isset($attributes->target)) {
+            $pt = $type->getTarget();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->target);
+            } else {
+                $type->setTarget((string)$attributes->target);
+            }
         }
         if (isset($children->targetVersion)) {
             $type->setTargetVersion(FHIRString::xmlUnserialize($children->targetVersion));
+        }
+        if (isset($attributes->targetVersion)) {
+            $pt = $type->getTargetVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->targetVersion);
+            } else {
+                $type->setTargetVersion((string)$attributes->targetVersion);
+            }
         }
         if (isset($children->unmapped)) {
             $type->setUnmapped(FHIRConceptMapUnmapped::xmlUnserialize($children->unmapped));
@@ -638,7 +658,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getElement())) {
             foreach($vs as $v) {
                 if (null === $v) {

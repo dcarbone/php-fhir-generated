@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -320,11 +320,16 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         if (isset($children->message)) {
             $type->setMessage(FHIRReference::xmlUnserialize($children->message));
         }
-        if (isset($attributes->situation)) {
-            $type->setSituation((string)$attributes->situation);
-        }
         if (isset($children->situation)) {
             $type->setSituation(FHIRMarkdown::xmlUnserialize($children->situation));
+        }
+        if (isset($attributes->situation)) {
+            $pt = $type->getSituation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->situation);
+            } else {
+                $type->setSituation((string)$attributes->situation);
+            }
         }
         return $type;
     }
@@ -340,7 +345,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getMessage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_MESSAGE, null, $v->_getFHIRXMLNamespace()));
         }

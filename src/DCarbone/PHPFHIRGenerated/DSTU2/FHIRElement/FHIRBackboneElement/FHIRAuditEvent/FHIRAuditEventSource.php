@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -386,11 +386,16 @@ class FHIRAuditEventSource extends FHIRBackboneElement
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->site)) {
-            $type->setSite((string)$attributes->site);
-        }
         if (isset($children->site)) {
             $type->setSite(FHIRString::xmlUnserialize($children->site));
+        }
+        if (isset($attributes->site)) {
+            $pt = $type->getSite();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->site);
+            } else {
+                $type->setSite((string)$attributes->site);
+            }
         }
         if (isset($children->type)) {
             foreach($children->type as $child) {
@@ -411,7 +416,6 @@ class FHIRAuditEventSource extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }

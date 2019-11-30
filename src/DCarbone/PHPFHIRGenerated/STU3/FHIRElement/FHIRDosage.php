@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1241,11 +1241,16 @@ class FHIRDosage extends FHIRElement
                 $type->addAdditionalInstruction(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->asNeededBoolean)) {
-            $type->setAsNeededBoolean((string)$attributes->asNeededBoolean);
-        }
         if (isset($children->asNeededBoolean)) {
             $type->setAsNeededBoolean(FHIRBoolean::xmlUnserialize($children->asNeededBoolean));
+        }
+        if (isset($attributes->asNeededBoolean)) {
+            $pt = $type->getAsNeededBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->asNeededBoolean);
+            } else {
+                $type->setAsNeededBoolean((string)$attributes->asNeededBoolean);
+            }
         }
         if (isset($children->asNeededCodeableConcept)) {
             $type->setAsNeededCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->asNeededCodeableConcept));
@@ -1268,11 +1273,16 @@ class FHIRDosage extends FHIRElement
         if (isset($children->method)) {
             $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
         }
-        if (isset($attributes->patientInstruction)) {
-            $type->setPatientInstruction((string)$attributes->patientInstruction);
-        }
         if (isset($children->patientInstruction)) {
             $type->setPatientInstruction(FHIRString::xmlUnserialize($children->patientInstruction));
+        }
+        if (isset($attributes->patientInstruction)) {
+            $pt = $type->getPatientInstruction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->patientInstruction);
+            } else {
+                $type->setPatientInstruction((string)$attributes->patientInstruction);
+            }
         }
         if (isset($children->rateQuantity)) {
             $type->setRateQuantity(FHIRQuantity::xmlUnserialize($children->rateQuantity));
@@ -1286,20 +1296,30 @@ class FHIRDosage extends FHIRElement
         if (isset($children->route)) {
             $type->setRoute(FHIRCodeableConcept::xmlUnserialize($children->route));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
-        }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRInteger::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         if (isset($children->site)) {
             $type->setSite(FHIRCodeableConcept::xmlUnserialize($children->site));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
-        }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->timing)) {
             $type->setTiming(FHIRTiming::xmlUnserialize($children->timing));
@@ -1318,7 +1338,6 @@ class FHIRDosage extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdditionalInstruction())) {
             foreach($vs as $v) {
                 if (null === $v) {

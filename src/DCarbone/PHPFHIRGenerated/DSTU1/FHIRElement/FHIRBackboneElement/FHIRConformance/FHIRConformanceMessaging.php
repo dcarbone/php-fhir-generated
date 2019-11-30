@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -464,28 +464,43 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->documentation)) {
-            $type->setDocumentation((string)$attributes->documentation);
-        }
         if (isset($children->documentation)) {
             $type->setDocumentation(FHIRString::xmlUnserialize($children->documentation));
         }
-        if (isset($attributes->endpoint)) {
-            $type->setEndpoint((string)$attributes->endpoint);
+        if (isset($attributes->documentation)) {
+            $pt = $type->getDocumentation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->documentation);
+            } else {
+                $type->setDocumentation((string)$attributes->documentation);
+            }
         }
         if (isset($children->endpoint)) {
             $type->setEndpoint(FHIRUri::xmlUnserialize($children->endpoint));
+        }
+        if (isset($attributes->endpoint)) {
+            $pt = $type->getEndpoint();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->endpoint);
+            } else {
+                $type->setEndpoint((string)$attributes->endpoint);
+            }
         }
         if (isset($children->event)) {
             foreach($children->event as $child) {
                 $type->addEvent(FHIRConformanceEvent::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->reliableCache)) {
-            $type->setReliableCache((string)$attributes->reliableCache);
-        }
         if (isset($children->reliableCache)) {
             $type->setReliableCache(FHIRInteger::xmlUnserialize($children->reliableCache));
+        }
+        if (isset($attributes->reliableCache)) {
+            $pt = $type->getReliableCache();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->reliableCache);
+            } else {
+                $type->setReliableCache((string)$attributes->reliableCache);
+            }
         }
         return $type;
     }
@@ -501,7 +516,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDocumentation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
         }

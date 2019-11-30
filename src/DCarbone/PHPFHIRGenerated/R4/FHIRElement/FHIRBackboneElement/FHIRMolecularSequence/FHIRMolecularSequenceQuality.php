@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1187,50 +1187,85 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->end)) {
-            $type->setEnd((string)$attributes->end);
-        }
         if (isset($children->end)) {
             $type->setEnd(FHIRInteger::xmlUnserialize($children->end));
         }
-        if (isset($attributes->fScore)) {
-            $type->setFScore((string)$attributes->fScore);
+        if (isset($attributes->end)) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->end);
+            } else {
+                $type->setEnd((string)$attributes->end);
+            }
         }
         if (isset($children->fScore)) {
             $type->setFScore(FHIRDecimal::xmlUnserialize($children->fScore));
         }
-        if (isset($attributes->gtFP)) {
-            $type->setGtFP((string)$attributes->gtFP);
+        if (isset($attributes->fScore)) {
+            $pt = $type->getFScore();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->fScore);
+            } else {
+                $type->setFScore((string)$attributes->fScore);
+            }
         }
         if (isset($children->gtFP)) {
             $type->setGtFP(FHIRDecimal::xmlUnserialize($children->gtFP));
         }
+        if (isset($attributes->gtFP)) {
+            $pt = $type->getGtFP();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->gtFP);
+            } else {
+                $type->setGtFP((string)$attributes->gtFP);
+            }
+        }
         if (isset($children->method)) {
             $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
-        }
-        if (isset($attributes->precision)) {
-            $type->setPrecision((string)$attributes->precision);
         }
         if (isset($children->precision)) {
             $type->setPrecision(FHIRDecimal::xmlUnserialize($children->precision));
         }
-        if (isset($attributes->queryFP)) {
-            $type->setQueryFP((string)$attributes->queryFP);
+        if (isset($attributes->precision)) {
+            $pt = $type->getPrecision();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->precision);
+            } else {
+                $type->setPrecision((string)$attributes->precision);
+            }
         }
         if (isset($children->queryFP)) {
             $type->setQueryFP(FHIRDecimal::xmlUnserialize($children->queryFP));
         }
-        if (isset($attributes->queryTP)) {
-            $type->setQueryTP((string)$attributes->queryTP);
+        if (isset($attributes->queryFP)) {
+            $pt = $type->getQueryFP();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->queryFP);
+            } else {
+                $type->setQueryFP((string)$attributes->queryFP);
+            }
         }
         if (isset($children->queryTP)) {
             $type->setQueryTP(FHIRDecimal::xmlUnserialize($children->queryTP));
         }
-        if (isset($attributes->recall)) {
-            $type->setRecall((string)$attributes->recall);
+        if (isset($attributes->queryTP)) {
+            $pt = $type->getQueryTP();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->queryTP);
+            } else {
+                $type->setQueryTP((string)$attributes->queryTP);
+            }
         }
         if (isset($children->recall)) {
             $type->setRecall(FHIRDecimal::xmlUnserialize($children->recall));
+        }
+        if (isset($attributes->recall)) {
+            $pt = $type->getRecall();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recall);
+            } else {
+                $type->setRecall((string)$attributes->recall);
+            }
         }
         if (isset($children->roc)) {
             $type->setRoc(FHIRMolecularSequenceRoc::xmlUnserialize($children->roc));
@@ -1241,23 +1276,38 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
         if (isset($children->standardSequence)) {
             $type->setStandardSequence(FHIRCodeableConcept::xmlUnserialize($children->standardSequence));
         }
-        if (isset($attributes->start)) {
-            $type->setStart((string)$attributes->start);
-        }
         if (isset($children->start)) {
             $type->setStart(FHIRInteger::xmlUnserialize($children->start));
         }
-        if (isset($attributes->truthFN)) {
-            $type->setTruthFN((string)$attributes->truthFN);
+        if (isset($attributes->start)) {
+            $pt = $type->getStart();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->start);
+            } else {
+                $type->setStart((string)$attributes->start);
+            }
         }
         if (isset($children->truthFN)) {
             $type->setTruthFN(FHIRDecimal::xmlUnserialize($children->truthFN));
         }
-        if (isset($attributes->truthTP)) {
-            $type->setTruthTP((string)$attributes->truthTP);
+        if (isset($attributes->truthFN)) {
+            $pt = $type->getTruthFN();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->truthFN);
+            } else {
+                $type->setTruthFN((string)$attributes->truthFN);
+            }
         }
         if (isset($children->truthTP)) {
             $type->setTruthTP(FHIRDecimal::xmlUnserialize($children->truthTP));
+        }
+        if (isset($attributes->truthTP)) {
+            $pt = $type->getTruthTP();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->truthTP);
+            } else {
+                $type->setTruthTP((string)$attributes->truthTP);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRQualityType::xmlUnserialize($children->type));
@@ -1276,7 +1326,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEnd())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_END, null, $v->_getFHIRXMLNamespace()));
         }

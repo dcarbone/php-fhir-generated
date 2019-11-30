@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1214,11 +1214,16 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->coordinateSystem)) {
-            $type->setCoordinateSystem((string)$attributes->coordinateSystem);
-        }
         if (isset($children->coordinateSystem)) {
             $type->setCoordinateSystem(FHIRInteger::xmlUnserialize($children->coordinateSystem));
+        }
+        if (isset($attributes->coordinateSystem)) {
+            $pt = $type->getCoordinateSystem();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->coordinateSystem);
+            } else {
+                $type->setCoordinateSystem((string)$attributes->coordinateSystem);
+            }
         }
         if (isset($children->device)) {
             $type->setDevice(FHIRReference::xmlUnserialize($children->device));
@@ -1228,11 +1233,16 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->observedSeq)) {
-            $type->setObservedSeq((string)$attributes->observedSeq);
-        }
         if (isset($children->observedSeq)) {
             $type->setObservedSeq(FHIRString::xmlUnserialize($children->observedSeq));
+        }
+        if (isset($attributes->observedSeq)) {
+            $pt = $type->getObservedSeq();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->observedSeq);
+            } else {
+                $type->setObservedSeq((string)$attributes->observedSeq);
+            }
         }
         if (isset($children->patient)) {
             $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
@@ -1253,11 +1263,16 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
         }
-        if (isset($attributes->readCoverage)) {
-            $type->setReadCoverage((string)$attributes->readCoverage);
-        }
         if (isset($children->readCoverage)) {
             $type->setReadCoverage(FHIRInteger::xmlUnserialize($children->readCoverage));
+        }
+        if (isset($attributes->readCoverage)) {
+            $pt = $type->getReadCoverage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->readCoverage);
+            } else {
+                $type->setReadCoverage((string)$attributes->readCoverage);
+            }
         }
         if (isset($children->referenceSeq)) {
             $type->setReferenceSeq(FHIRSequenceReferenceSeq::xmlUnserialize($children->referenceSeq));
@@ -1270,11 +1285,16 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         if (isset($children->specimen)) {
             $type->setSpecimen(FHIRReference::xmlUnserialize($children->specimen));
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
-        }
         if (isset($children->type)) {
             $type->setType(FHIRCode::xmlUnserialize($children->type));
+        }
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         if (isset($children->variant)) {
             foreach($children->variant as $child) {
@@ -1295,7 +1315,6 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCoordinateSystem())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COORDINATE_SYSTEM, null, $v->_getFHIRXMLNamespace()));
         }

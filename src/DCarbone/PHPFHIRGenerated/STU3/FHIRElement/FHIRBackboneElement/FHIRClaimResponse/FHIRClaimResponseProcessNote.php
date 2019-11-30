@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -430,17 +430,27 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
         if (isset($children->language)) {
             $type->setLanguage(FHIRCodeableConcept::xmlUnserialize($children->language));
         }
-        if (isset($attributes->number)) {
-            $type->setNumber((string)$attributes->number);
-        }
         if (isset($children->number)) {
             $type->setNumber(FHIRPositiveInt::xmlUnserialize($children->number));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
+        if (isset($attributes->number)) {
+            $pt = $type->getNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->number);
+            } else {
+                $type->setNumber((string)$attributes->number);
+            }
         }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -459,7 +469,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getLanguage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->_getFHIRXMLNamespace()));
         }

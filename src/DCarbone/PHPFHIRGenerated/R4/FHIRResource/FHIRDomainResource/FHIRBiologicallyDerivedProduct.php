@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -999,11 +999,16 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
         if (isset($children->productCode)) {
             $type->setProductCode(FHIRCodeableConcept::xmlUnserialize($children->productCode));
         }
-        if (isset($attributes->quantity)) {
-            $type->setQuantity((string)$attributes->quantity);
-        }
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRInteger::xmlUnserialize($children->quantity));
+        }
+        if (isset($attributes->quantity)) {
+            $pt = $type->getQuantity();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->quantity);
+            } else {
+                $type->setQuantity((string)$attributes->quantity);
+            }
         }
         if (isset($children->request)) {
             foreach($children->request as $child) {
@@ -1032,7 +1037,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCollection())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTION, null, $v->_getFHIRXMLNamespace()));
         }

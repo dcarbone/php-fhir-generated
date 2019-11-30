@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -292,11 +292,16 @@ class FHIRConditionLocation extends FHIRBackboneElement
         if (isset($children->code)) {
             $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
         }
-        if (isset($attributes->detail)) {
-            $type->setDetail((string)$attributes->detail);
-        }
         if (isset($children->detail)) {
             $type->setDetail(FHIRString::xmlUnserialize($children->detail));
+        }
+        if (isset($attributes->detail)) {
+            $pt = $type->getDetail();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->detail);
+            } else {
+                $type->setDetail((string)$attributes->detail);
+            }
         }
         return $type;
     }
@@ -312,7 +317,6 @@ class FHIRConditionLocation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }

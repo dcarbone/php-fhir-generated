@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -670,29 +670,44 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         if (isset($children->communicationMethod)) {
             $type->setCommunicationMethod(FHIRCodeableConcept::xmlUnserialize($children->communicationMethod));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDate::xmlUnserialize($children->date));
+        }
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->onBehalfOf)) {
             $type->setOnBehalfOf(FHIRReference::xmlUnserialize($children->onBehalfOf));
         }
-        if (isset($attributes->proxyIdentityCertificate)) {
-            $type->setProxyIdentityCertificate((string)$attributes->proxyIdentityCertificate);
-        }
         if (isset($children->proxyIdentityCertificate)) {
             $type->setProxyIdentityCertificate(FHIRString::xmlUnserialize($children->proxyIdentityCertificate));
+        }
+        if (isset($attributes->proxyIdentityCertificate)) {
+            $pt = $type->getProxyIdentityCertificate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->proxyIdentityCertificate);
+            } else {
+                $type->setProxyIdentityCertificate((string)$attributes->proxyIdentityCertificate);
+            }
         }
         if (isset($children->proxySignature)) {
             $type->setProxySignature(FHIRSignature::xmlUnserialize($children->proxySignature));
         }
-        if (isset($attributes->sourceIdentityCertificate)) {
-            $type->setSourceIdentityCertificate((string)$attributes->sourceIdentityCertificate);
-        }
         if (isset($children->sourceIdentityCertificate)) {
             $type->setSourceIdentityCertificate(FHIRString::xmlUnserialize($children->sourceIdentityCertificate));
+        }
+        if (isset($attributes->sourceIdentityCertificate)) {
+            $pt = $type->getSourceIdentityCertificate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sourceIdentityCertificate);
+            } else {
+                $type->setSourceIdentityCertificate((string)$attributes->sourceIdentityCertificate);
+            }
         }
         if (isset($children->sourceSignature)) {
             $type->setSourceSignature(FHIRSignature::xmlUnserialize($children->sourceSignature));
@@ -714,7 +729,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCommunicationMethod())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -725,14 +725,16 @@ class FHIRConformanceResource extends FHIRBackboneElement
         if (isset($children->profile)) {
             $type->setProfile(FHIRResourceReference::xmlUnserialize($children->profile));
         }
-        if (isset($attributes->readHistory)) {
-            $type->setReadHistory((string)$attributes->readHistory);
-        }
         if (isset($children->readHistory)) {
             $type->setReadHistory(FHIRBoolean::xmlUnserialize($children->readHistory));
         }
-        if (isset($attributes->searchInclude)) {
-            $type->addSearchInclude((string)$attributes->searchInclude);
+        if (isset($attributes->readHistory)) {
+            $pt = $type->getReadHistory();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->readHistory);
+            } else {
+                $type->setReadHistory((string)$attributes->readHistory);
+            }
         }
         if (isset($children->searchInclude)) {
             foreach($children->searchInclude as $child) {
@@ -744,17 +746,27 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $type->addSearchParam(FHIRConformanceSearchParam::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
-        }
         if (isset($children->type)) {
             $type->setType(FHIRCode::xmlUnserialize($children->type));
         }
-        if (isset($attributes->updateCreate)) {
-            $type->setUpdateCreate((string)$attributes->updateCreate);
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         if (isset($children->updateCreate)) {
             $type->setUpdateCreate(FHIRBoolean::xmlUnserialize($children->updateCreate));
+        }
+        if (isset($attributes->updateCreate)) {
+            $pt = $type->getUpdateCreate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->updateCreate);
+            } else {
+                $type->setUpdateCreate((string)$attributes->updateCreate);
+            }
         }
         return $type;
     }
@@ -770,7 +782,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getOperation())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -973,38 +973,63 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->answerBoolean)) {
-            $type->setAnswerBoolean((string)$attributes->answerBoolean);
-        }
         if (isset($children->answerBoolean)) {
             $type->setAnswerBoolean(FHIRBoolean::xmlUnserialize($children->answerBoolean));
+        }
+        if (isset($attributes->answerBoolean)) {
+            $pt = $type->getAnswerBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerBoolean);
+            } else {
+                $type->setAnswerBoolean((string)$attributes->answerBoolean);
+            }
         }
         if (isset($children->answerCoding)) {
             $type->setAnswerCoding(FHIRCoding::xmlUnserialize($children->answerCoding));
         }
-        if (isset($attributes->answerDate)) {
-            $type->setAnswerDate((string)$attributes->answerDate);
-        }
         if (isset($children->answerDate)) {
             $type->setAnswerDate(FHIRDate::xmlUnserialize($children->answerDate));
         }
-        if (isset($attributes->answerDateTime)) {
-            $type->setAnswerDateTime((string)$attributes->answerDateTime);
+        if (isset($attributes->answerDate)) {
+            $pt = $type->getAnswerDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerDate);
+            } else {
+                $type->setAnswerDate((string)$attributes->answerDate);
+            }
         }
         if (isset($children->answerDateTime)) {
             $type->setAnswerDateTime(FHIRDateTime::xmlUnserialize($children->answerDateTime));
         }
-        if (isset($attributes->answerDecimal)) {
-            $type->setAnswerDecimal((string)$attributes->answerDecimal);
+        if (isset($attributes->answerDateTime)) {
+            $pt = $type->getAnswerDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerDateTime);
+            } else {
+                $type->setAnswerDateTime((string)$attributes->answerDateTime);
+            }
         }
         if (isset($children->answerDecimal)) {
             $type->setAnswerDecimal(FHIRDecimal::xmlUnserialize($children->answerDecimal));
         }
-        if (isset($attributes->answerInteger)) {
-            $type->setAnswerInteger((string)$attributes->answerInteger);
+        if (isset($attributes->answerDecimal)) {
+            $pt = $type->getAnswerDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerDecimal);
+            } else {
+                $type->setAnswerDecimal((string)$attributes->answerDecimal);
+            }
         }
         if (isset($children->answerInteger)) {
             $type->setAnswerInteger(FHIRInteger::xmlUnserialize($children->answerInteger));
+        }
+        if (isset($attributes->answerInteger)) {
+            $pt = $type->getAnswerInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerInteger);
+            } else {
+                $type->setAnswerInteger((string)$attributes->answerInteger);
+            }
         }
         if (isset($children->answerQuantity)) {
             $type->setAnswerQuantity(FHIRQuantity::xmlUnserialize($children->answerQuantity));
@@ -1012,26 +1037,41 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         if (isset($children->answerReference)) {
             $type->setAnswerReference(FHIRReference::xmlUnserialize($children->answerReference));
         }
-        if (isset($attributes->answerString)) {
-            $type->setAnswerString((string)$attributes->answerString);
-        }
         if (isset($children->answerString)) {
             $type->setAnswerString(FHIRString::xmlUnserialize($children->answerString));
         }
-        if (isset($attributes->answerTime)) {
-            $type->setAnswerTime((string)$attributes->answerTime);
+        if (isset($attributes->answerString)) {
+            $pt = $type->getAnswerString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerString);
+            } else {
+                $type->setAnswerString((string)$attributes->answerString);
+            }
         }
         if (isset($children->answerTime)) {
             $type->setAnswerTime(FHIRTime::xmlUnserialize($children->answerTime));
         }
+        if (isset($attributes->answerTime)) {
+            $pt = $type->getAnswerTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->answerTime);
+            } else {
+                $type->setAnswerTime((string)$attributes->answerTime);
+            }
+        }
         if (isset($children->operator)) {
             $type->setOperator(FHIRQuestionnaireItemOperator::xmlUnserialize($children->operator));
         }
-        if (isset($attributes->question)) {
-            $type->setQuestion((string)$attributes->question);
-        }
         if (isset($children->question)) {
             $type->setQuestion(FHIRString::xmlUnserialize($children->question));
+        }
+        if (isset($attributes->question)) {
+            $pt = $type->getQuestion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->question);
+            } else {
+                $type->setQuestion((string)$attributes->question);
+            }
         }
         return $type;
     }
@@ -1047,7 +1087,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAnswerBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

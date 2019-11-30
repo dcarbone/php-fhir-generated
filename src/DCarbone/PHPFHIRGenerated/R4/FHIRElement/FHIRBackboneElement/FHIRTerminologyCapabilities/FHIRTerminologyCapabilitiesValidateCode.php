@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -240,11 +240,16 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->translations)) {
-            $type->setTranslations((string)$attributes->translations);
-        }
         if (isset($children->translations)) {
             $type->setTranslations(FHIRBoolean::xmlUnserialize($children->translations));
+        }
+        if (isset($attributes->translations)) {
+            $pt = $type->getTranslations();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->translations);
+            } else {
+                $type->setTranslations((string)$attributes->translations);
+            }
         }
         return $type;
     }
@@ -260,7 +265,6 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getTranslations())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_TRANSLATIONS, null, $v->_getFHIRXMLNamespace()));
         }

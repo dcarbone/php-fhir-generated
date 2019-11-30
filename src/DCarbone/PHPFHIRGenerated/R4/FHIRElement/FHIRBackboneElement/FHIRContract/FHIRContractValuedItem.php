@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1202,11 +1202,16 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->effectiveTime)) {
-            $type->setEffectiveTime((string)$attributes->effectiveTime);
-        }
         if (isset($children->effectiveTime)) {
             $type->setEffectiveTime(FHIRDateTime::xmlUnserialize($children->effectiveTime));
+        }
+        if (isset($attributes->effectiveTime)) {
+            $pt = $type->getEffectiveTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->effectiveTime);
+            } else {
+                $type->setEffectiveTime((string)$attributes->effectiveTime);
+            }
         }
         if (isset($children->entityCodeableConcept)) {
             $type->setEntityCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->entityCodeableConcept));
@@ -1214,17 +1219,19 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         if (isset($children->entityReference)) {
             $type->setEntityReference(FHIRReference::xmlUnserialize($children->entityReference));
         }
-        if (isset($attributes->factor)) {
-            $type->setFactor((string)$attributes->factor);
-        }
         if (isset($children->factor)) {
             $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
         }
+        if (isset($attributes->factor)) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->factor);
+            } else {
+                $type->setFactor((string)$attributes->factor);
+            }
+        }
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($attributes->linkId)) {
-            $type->addLinkId((string)$attributes->linkId);
         }
         if (isset($children->linkId)) {
             foreach($children->linkId as $child) {
@@ -1234,23 +1241,38 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         if (isset($children->net)) {
             $type->setNet(FHIRMoney::xmlUnserialize($children->net));
         }
-        if (isset($attributes->payment)) {
-            $type->setPayment((string)$attributes->payment);
-        }
         if (isset($children->payment)) {
             $type->setPayment(FHIRString::xmlUnserialize($children->payment));
         }
-        if (isset($attributes->paymentDate)) {
-            $type->setPaymentDate((string)$attributes->paymentDate);
+        if (isset($attributes->payment)) {
+            $pt = $type->getPayment();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->payment);
+            } else {
+                $type->setPayment((string)$attributes->payment);
+            }
         }
         if (isset($children->paymentDate)) {
             $type->setPaymentDate(FHIRDateTime::xmlUnserialize($children->paymentDate));
         }
-        if (isset($attributes->points)) {
-            $type->setPoints((string)$attributes->points);
+        if (isset($attributes->paymentDate)) {
+            $pt = $type->getPaymentDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->paymentDate);
+            } else {
+                $type->setPaymentDate((string)$attributes->paymentDate);
+            }
         }
         if (isset($children->points)) {
             $type->setPoints(FHIRDecimal::xmlUnserialize($children->points));
+        }
+        if (isset($attributes->points)) {
+            $pt = $type->getPoints();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->points);
+            } else {
+                $type->setPoints((string)$attributes->points);
+            }
         }
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
@@ -1260,9 +1282,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         }
         if (isset($children->responsible)) {
             $type->setResponsible(FHIRReference::xmlUnserialize($children->responsible));
-        }
-        if (isset($attributes->securityLabelNumber)) {
-            $type->addSecurityLabelNumber((string)$attributes->securityLabelNumber);
         }
         if (isset($children->securityLabelNumber)) {
             foreach($children->securityLabelNumber as $child) {
@@ -1286,7 +1305,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEffectiveTime())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME, null, $v->_getFHIRXMLNamespace()));
         }

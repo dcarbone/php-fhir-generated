@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -466,29 +466,49 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->documentType)) {
-            $type->setDocumentType((string)$attributes->documentType);
-        }
         if (isset($children->documentType)) {
             $type->setDocumentType(FHIRString::xmlUnserialize($children->documentType));
         }
-        if (isset($attributes->presentationDate)) {
-            $type->setPresentationDate((string)$attributes->presentationDate);
+        if (isset($attributes->documentType)) {
+            $pt = $type->getDocumentType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->documentType);
+            } else {
+                $type->setDocumentType((string)$attributes->documentType);
+            }
         }
         if (isset($children->presentationDate)) {
             $type->setPresentationDate(FHIRDateTime::xmlUnserialize($children->presentationDate));
         }
-        if (isset($attributes->publicationDate)) {
-            $type->setPublicationDate((string)$attributes->publicationDate);
+        if (isset($attributes->presentationDate)) {
+            $pt = $type->getPresentationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->presentationDate);
+            } else {
+                $type->setPresentationDate((string)$attributes->presentationDate);
+            }
         }
         if (isset($children->publicationDate)) {
             $type->setPublicationDate(FHIRDateTime::xmlUnserialize($children->publicationDate));
         }
-        if (isset($attributes->reference)) {
-            $type->setReference((string)$attributes->reference);
+        if (isset($attributes->publicationDate)) {
+            $pt = $type->getPublicationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publicationDate);
+            } else {
+                $type->setPublicationDate((string)$attributes->publicationDate);
+            }
         }
         if (isset($children->reference)) {
             $type->setReference(FHIRUri::xmlUnserialize($children->reference));
+        }
+        if (isset($attributes->reference)) {
+            $pt = $type->getReference();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->reference);
+            } else {
+                $type->setReference((string)$attributes->reference);
+            }
         }
         return $type;
     }
@@ -504,7 +524,6 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDocumentType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT_TYPE, null, $v->_getFHIRXMLNamespace()));
         }

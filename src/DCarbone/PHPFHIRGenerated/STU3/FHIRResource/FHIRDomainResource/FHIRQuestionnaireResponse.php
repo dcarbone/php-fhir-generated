@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -915,11 +915,16 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         if (isset($children->author)) {
             $type->setAuthor(FHIRReference::xmlUnserialize($children->author));
         }
-        if (isset($attributes->authored)) {
-            $type->setAuthored((string)$attributes->authored);
-        }
         if (isset($children->authored)) {
             $type->setAuthored(FHIRDateTime::xmlUnserialize($children->authored));
+        }
+        if (isset($attributes->authored)) {
+            $pt = $type->getAuthored();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authored);
+            } else {
+                $type->setAuthored((string)$attributes->authored);
+            }
         }
         if (isset($children->basedOn)) {
             foreach($children->basedOn as $child) {
@@ -968,7 +973,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }

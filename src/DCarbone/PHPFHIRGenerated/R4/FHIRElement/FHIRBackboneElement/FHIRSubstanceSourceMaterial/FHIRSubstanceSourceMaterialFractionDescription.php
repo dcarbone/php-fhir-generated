@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -315,11 +315,16 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->fraction)) {
-            $type->setFraction((string)$attributes->fraction);
-        }
         if (isset($children->fraction)) {
             $type->setFraction(FHIRString::xmlUnserialize($children->fraction));
+        }
+        if (isset($attributes->fraction)) {
+            $pt = $type->getFraction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->fraction);
+            } else {
+                $type->setFraction((string)$attributes->fraction);
+            }
         }
         if (isset($children->materialType)) {
             $type->setMaterialType(FHIRCodeableConcept::xmlUnserialize($children->materialType));
@@ -338,7 +343,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getFraction())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FRACTION, null, $v->_getFHIRXMLNamespace()));
         }

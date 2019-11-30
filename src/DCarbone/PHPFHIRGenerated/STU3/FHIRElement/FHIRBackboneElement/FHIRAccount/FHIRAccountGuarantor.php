@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAcc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,11 +342,16 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->onHold)) {
-            $type->setOnHold((string)$attributes->onHold);
-        }
         if (isset($children->onHold)) {
             $type->setOnHold(FHIRBoolean::xmlUnserialize($children->onHold));
+        }
+        if (isset($attributes->onHold)) {
+            $pt = $type->getOnHold();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onHold);
+            } else {
+                $type->setOnHold((string)$attributes->onHold);
+            }
         }
         if (isset($children->party)) {
             $type->setParty(FHIRReference::xmlUnserialize($children->party));
@@ -368,7 +373,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getOnHold())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ON_HOLD, null, $v->_getFHIRXMLNamespace()));
         }

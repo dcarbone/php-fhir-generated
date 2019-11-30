@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -689,27 +689,26 @@ class FHIRDataRequirement extends FHIRElement
                 $type->addDateFilter(FHIRDataRequirementDateFilter::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->mustSupport)) {
-            $type->addMustSupport((string)$attributes->mustSupport);
-        }
         if (isset($children->mustSupport)) {
             foreach($children->mustSupport as $child) {
                 $type->addMustSupport(FHIRString::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->profile)) {
-            $type->addProfile((string)$attributes->profile);
         }
         if (isset($children->profile)) {
             foreach($children->profile as $child) {
                 $type->addProfile(FHIRUri::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
-        }
         if (isset($children->type)) {
             $type->setType(FHIRCode::xmlUnserialize($children->type));
+        }
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         return $type;
     }
@@ -725,7 +724,6 @@ class FHIRDataRequirement extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCodeFilter())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1572,11 +1572,16 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->lastOccurrence)) {
-            $type->setLastOccurrence((string)$attributes->lastOccurrence);
-        }
         if (isset($children->lastOccurrence)) {
             $type->setLastOccurrence(FHIRDateTime::xmlUnserialize($children->lastOccurrence));
+        }
+        if (isset($attributes->lastOccurrence)) {
+            $pt = $type->getLastOccurrence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastOccurrence);
+            } else {
+                $type->setLastOccurrence((string)$attributes->lastOccurrence);
+            }
         }
         if (isset($children->note)) {
             foreach($children->note as $child) {
@@ -1586,11 +1591,16 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->onsetAge)) {
             $type->setOnsetAge(FHIRAge::xmlUnserialize($children->onsetAge));
         }
-        if (isset($attributes->onsetDateTime)) {
-            $type->setOnsetDateTime((string)$attributes->onsetDateTime);
-        }
         if (isset($children->onsetDateTime)) {
             $type->setOnsetDateTime(FHIRDateTime::xmlUnserialize($children->onsetDateTime));
+        }
+        if (isset($attributes->onsetDateTime)) {
+            $pt = $type->getOnsetDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onsetDateTime);
+            } else {
+                $type->setOnsetDateTime((string)$attributes->onsetDateTime);
+            }
         }
         if (isset($children->onsetPeriod)) {
             $type->setOnsetPeriod(FHIRPeriod::xmlUnserialize($children->onsetPeriod));
@@ -1598,11 +1608,16 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->onsetRange)) {
             $type->setOnsetRange(FHIRRange::xmlUnserialize($children->onsetRange));
         }
-        if (isset($attributes->onsetString)) {
-            $type->setOnsetString((string)$attributes->onsetString);
-        }
         if (isset($children->onsetString)) {
             $type->setOnsetString(FHIRString::xmlUnserialize($children->onsetString));
+        }
+        if (isset($attributes->onsetString)) {
+            $pt = $type->getOnsetString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onsetString);
+            } else {
+                $type->setOnsetString((string)$attributes->onsetString);
+            }
         }
         if (isset($children->patient)) {
             $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
@@ -1612,11 +1627,16 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
                 $type->addReaction(FHIRAllergyIntoleranceReaction::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->recordedDate)) {
-            $type->setRecordedDate((string)$attributes->recordedDate);
-        }
         if (isset($children->recordedDate)) {
             $type->setRecordedDate(FHIRDateTime::xmlUnserialize($children->recordedDate));
+        }
+        if (isset($attributes->recordedDate)) {
+            $pt = $type->getRecordedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recordedDate);
+            } else {
+                $type->setRecordedDate((string)$attributes->recordedDate);
+            }
         }
         if (isset($children->recorder)) {
             $type->setRecorder(FHIRReference::xmlUnserialize($children->recorder));
@@ -1641,7 +1661,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAsserter())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERTER, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -907,11 +907,16 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
         if (isset($children->bodySite)) {
             $type->setBodySite(FHIRCoding::xmlUnserialize($children->bodySite));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->instance)) {
             foreach($children->instance as $child) {
@@ -924,35 +929,60 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
         if (isset($children->modality)) {
             $type->setModality(FHIRCoding::xmlUnserialize($children->modality));
         }
-        if (isset($attributes->number)) {
-            $type->setNumber((string)$attributes->number);
-        }
         if (isset($children->number)) {
             $type->setNumber(FHIRUnsignedInt::xmlUnserialize($children->number));
         }
-        if (isset($attributes->numberOfInstances)) {
-            $type->setNumberOfInstances((string)$attributes->numberOfInstances);
+        if (isset($attributes->number)) {
+            $pt = $type->getNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->number);
+            } else {
+                $type->setNumber((string)$attributes->number);
+            }
         }
         if (isset($children->numberOfInstances)) {
             $type->setNumberOfInstances(FHIRUnsignedInt::xmlUnserialize($children->numberOfInstances));
         }
-        if (isset($attributes->started)) {
-            $type->setStarted((string)$attributes->started);
+        if (isset($attributes->numberOfInstances)) {
+            $pt = $type->getNumberOfInstances();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->numberOfInstances);
+            } else {
+                $type->setNumberOfInstances((string)$attributes->numberOfInstances);
+            }
         }
         if (isset($children->started)) {
             $type->setStarted(FHIRDateTime::xmlUnserialize($children->started));
         }
-        if (isset($attributes->uid)) {
-            $type->setUid((string)$attributes->uid);
+        if (isset($attributes->started)) {
+            $pt = $type->getStarted();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->started);
+            } else {
+                $type->setStarted((string)$attributes->started);
+            }
         }
         if (isset($children->uid)) {
             $type->setUid(FHIROid::xmlUnserialize($children->uid));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
+        if (isset($attributes->uid)) {
+            $pt = $type->getUid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->uid);
+            } else {
+                $type->setUid((string)$attributes->uid);
+            }
         }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         return $type;
     }
@@ -968,7 +998,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAvailability())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AVAILABILITY, null, $v->_getFHIRXMLNamespace()));
         }

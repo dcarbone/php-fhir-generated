@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -941,56 +941,35 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->fMeasure)) {
-            $type->addFMeasure((string)$attributes->fMeasure);
-        }
         if (isset($children->fMeasure)) {
             foreach($children->fMeasure as $child) {
                 $type->addFMeasure(FHIRDecimal::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->numFN)) {
-            $type->addNumFN((string)$attributes->numFN);
         }
         if (isset($children->numFN)) {
             foreach($children->numFN as $child) {
                 $type->addNumFN(FHIRInteger::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->numFP)) {
-            $type->addNumFP((string)$attributes->numFP);
-        }
         if (isset($children->numFP)) {
             foreach($children->numFP as $child) {
                 $type->addNumFP(FHIRInteger::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->numTP)) {
-            $type->addNumTP((string)$attributes->numTP);
         }
         if (isset($children->numTP)) {
             foreach($children->numTP as $child) {
                 $type->addNumTP(FHIRInteger::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->precision)) {
-            $type->addPrecision((string)$attributes->precision);
-        }
         if (isset($children->precision)) {
             foreach($children->precision as $child) {
                 $type->addPrecision(FHIRDecimal::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->score)) {
-            $type->addScore((string)$attributes->score);
-        }
         if (isset($children->score)) {
             foreach($children->score as $child) {
                 $type->addScore(FHIRInteger::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->sensitivity)) {
-            $type->addSensitivity((string)$attributes->sensitivity);
         }
         if (isset($children->sensitivity)) {
             foreach($children->sensitivity as $child) {
@@ -1011,7 +990,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getFMeasure())) {
             foreach($vs as $v) {
                 if (null === $v) {

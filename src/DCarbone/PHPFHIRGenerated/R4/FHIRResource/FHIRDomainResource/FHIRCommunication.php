@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2063,16 +2063,10 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
                 $type->addInResponseTo(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->instantiatesCanonical)) {
-            $type->addInstantiatesCanonical((string)$attributes->instantiatesCanonical);
-        }
         if (isset($children->instantiatesCanonical)) {
             foreach($children->instantiatesCanonical as $child) {
                 $type->addInstantiatesCanonical(FHIRCanonical::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->instantiatesUri)) {
-            $type->addInstantiatesUri((string)$attributes->instantiatesUri);
         }
         if (isset($children->instantiatesUri)) {
             foreach($children->instantiatesUri as $child) {
@@ -2112,11 +2106,16 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
                 $type->addReasonReference(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->received)) {
-            $type->setReceived((string)$attributes->received);
-        }
         if (isset($children->received)) {
             $type->setReceived(FHIRDateTime::xmlUnserialize($children->received));
+        }
+        if (isset($attributes->received)) {
+            $pt = $type->getReceived();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->received);
+            } else {
+                $type->setReceived((string)$attributes->received);
+            }
         }
         if (isset($children->recipient)) {
             foreach($children->recipient as $child) {
@@ -2126,11 +2125,16 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->sender)) {
             $type->setSender(FHIRReference::xmlUnserialize($children->sender));
         }
-        if (isset($attributes->sent)) {
-            $type->setSent((string)$attributes->sent);
-        }
         if (isset($children->sent)) {
             $type->setSent(FHIRDateTime::xmlUnserialize($children->sent));
+        }
+        if (isset($attributes->sent)) {
+            $pt = $type->getSent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sent);
+            } else {
+                $type->setSent((string)$attributes->sent);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIREventStatus::xmlUnserialize($children->status));
@@ -2158,7 +2162,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAbout())) {
             foreach($vs as $v) {
                 if (null === $v) {

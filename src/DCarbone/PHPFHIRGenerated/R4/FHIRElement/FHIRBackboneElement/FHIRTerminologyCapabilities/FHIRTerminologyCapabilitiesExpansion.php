@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -534,34 +534,54 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->hierarchical)) {
-            $type->setHierarchical((string)$attributes->hierarchical);
-        }
         if (isset($children->hierarchical)) {
             $type->setHierarchical(FHIRBoolean::xmlUnserialize($children->hierarchical));
         }
-        if (isset($attributes->incomplete)) {
-            $type->setIncomplete((string)$attributes->incomplete);
+        if (isset($attributes->hierarchical)) {
+            $pt = $type->getHierarchical();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->hierarchical);
+            } else {
+                $type->setHierarchical((string)$attributes->hierarchical);
+            }
         }
         if (isset($children->incomplete)) {
             $type->setIncomplete(FHIRBoolean::xmlUnserialize($children->incomplete));
         }
-        if (isset($attributes->paging)) {
-            $type->setPaging((string)$attributes->paging);
+        if (isset($attributes->incomplete)) {
+            $pt = $type->getIncomplete();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->incomplete);
+            } else {
+                $type->setIncomplete((string)$attributes->incomplete);
+            }
         }
         if (isset($children->paging)) {
             $type->setPaging(FHIRBoolean::xmlUnserialize($children->paging));
+        }
+        if (isset($attributes->paging)) {
+            $pt = $type->getPaging();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->paging);
+            } else {
+                $type->setPaging((string)$attributes->paging);
+            }
         }
         if (isset($children->parameter)) {
             foreach($children->parameter as $child) {
                 $type->addParameter(FHIRTerminologyCapabilitiesParameter::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->textFilter)) {
-            $type->setTextFilter((string)$attributes->textFilter);
-        }
         if (isset($children->textFilter)) {
             $type->setTextFilter(FHIRMarkdown::xmlUnserialize($children->textFilter));
+        }
+        if (isset($attributes->textFilter)) {
+            $pt = $type->getTextFilter();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->textFilter);
+            } else {
+                $type->setTextFilter((string)$attributes->textFilter);
+            }
         }
         return $type;
     }
@@ -577,7 +597,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getHierarchical())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HIERARCHICAL, null, $v->_getFHIRXMLNamespace()));
         }

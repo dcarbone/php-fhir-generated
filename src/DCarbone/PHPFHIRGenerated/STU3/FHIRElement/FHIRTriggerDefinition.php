@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -609,23 +609,38 @@ class FHIRTriggerDefinition extends FHIRElement
         if (isset($children->eventData)) {
             $type->setEventData(FHIRDataRequirement::xmlUnserialize($children->eventData));
         }
-        if (isset($attributes->eventName)) {
-            $type->setEventName((string)$attributes->eventName);
-        }
         if (isset($children->eventName)) {
             $type->setEventName(FHIRString::xmlUnserialize($children->eventName));
         }
-        if (isset($attributes->eventTimingDate)) {
-            $type->setEventTimingDate((string)$attributes->eventTimingDate);
+        if (isset($attributes->eventName)) {
+            $pt = $type->getEventName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->eventName);
+            } else {
+                $type->setEventName((string)$attributes->eventName);
+            }
         }
         if (isset($children->eventTimingDate)) {
             $type->setEventTimingDate(FHIRDate::xmlUnserialize($children->eventTimingDate));
         }
-        if (isset($attributes->eventTimingDateTime)) {
-            $type->setEventTimingDateTime((string)$attributes->eventTimingDateTime);
+        if (isset($attributes->eventTimingDate)) {
+            $pt = $type->getEventTimingDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->eventTimingDate);
+            } else {
+                $type->setEventTimingDate((string)$attributes->eventTimingDate);
+            }
         }
         if (isset($children->eventTimingDateTime)) {
             $type->setEventTimingDateTime(FHIRDateTime::xmlUnserialize($children->eventTimingDateTime));
+        }
+        if (isset($attributes->eventTimingDateTime)) {
+            $pt = $type->getEventTimingDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->eventTimingDateTime);
+            } else {
+                $type->setEventTimingDateTime((string)$attributes->eventTimingDateTime);
+            }
         }
         if (isset($children->eventTimingReference)) {
             $type->setEventTimingReference(FHIRReference::xmlUnserialize($children->eventTimingReference));
@@ -650,7 +665,6 @@ class FHIRTriggerDefinition extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEventData())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT_DATA, null, $v->_getFHIRXMLNamespace()));
         }

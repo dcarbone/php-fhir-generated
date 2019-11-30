@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -629,35 +629,60 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
                 $type->addContent(FHIRAttachment::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->number)) {
-            $type->setNumber((string)$attributes->number);
-        }
         if (isset($children->number)) {
             $type->setNumber(FHIRUnsignedInt::xmlUnserialize($children->number));
         }
-        if (isset($attributes->sopClass)) {
-            $type->setSopClass((string)$attributes->sopClass);
+        if (isset($attributes->number)) {
+            $pt = $type->getNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->number);
+            } else {
+                $type->setNumber((string)$attributes->number);
+            }
         }
         if (isset($children->sopClass)) {
             $type->setSopClass(FHIROid::xmlUnserialize($children->sopClass));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
+        if (isset($attributes->sopClass)) {
+            $pt = $type->getSopClass();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sopClass);
+            } else {
+                $type->setSopClass((string)$attributes->sopClass);
+            }
         }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRString::xmlUnserialize($children->type));
         }
-        if (isset($attributes->uid)) {
-            $type->setUid((string)$attributes->uid);
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         if (isset($children->uid)) {
             $type->setUid(FHIROid::xmlUnserialize($children->uid));
+        }
+        if (isset($attributes->uid)) {
+            $pt = $type->getUid();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->uid);
+            } else {
+                $type->setUid((string)$attributes->uid);
+            }
         }
         return $type;
     }
@@ -673,7 +698,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContent())) {
             foreach($vs as $v) {
                 if (null === $v) {

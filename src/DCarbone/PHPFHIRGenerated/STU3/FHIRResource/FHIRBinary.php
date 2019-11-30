@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -373,17 +373,27 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->content)) {
-            $type->setContent((string)$attributes->content);
-        }
         if (isset($children->content)) {
             $type->setContent(FHIRBase64Binary::xmlUnserialize($children->content));
         }
-        if (isset($attributes->contentType)) {
-            $type->setContentType((string)$attributes->contentType);
+        if (isset($attributes->content)) {
+            $pt = $type->getContent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->content);
+            } else {
+                $type->setContent((string)$attributes->content);
+            }
         }
         if (isset($children->contentType)) {
             $type->setContentType(FHIRCode::xmlUnserialize($children->contentType));
+        }
+        if (isset($attributes->contentType)) {
+            $pt = $type->getContentType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->contentType);
+            } else {
+                $type->setContentType((string)$attributes->contentType);
+            }
         }
         if (isset($children->securityContext)) {
             $type->setSecurityContext(FHIRReference::xmlUnserialize($children->securityContext));
@@ -402,7 +412,6 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContent())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1034,22 +1034,32 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
                 $type->addLanguage(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->official)) {
             foreach($children->official as $child) {
                 $type->addOfficial(FHIRSubstanceSpecificationOfficial::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->preferred)) {
-            $type->setPreferred((string)$attributes->preferred);
-        }
         if (isset($children->preferred)) {
             $type->setPreferred(FHIRBoolean::xmlUnserialize($children->preferred));
+        }
+        if (isset($attributes->preferred)) {
+            $pt = $type->getPreferred();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->preferred);
+            } else {
+                $type->setPreferred((string)$attributes->preferred);
+            }
         }
         if (isset($children->source)) {
             foreach($children->source as $child) {
@@ -1086,7 +1096,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getDomain())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -590,17 +590,27 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
         if (isset($children->amountRange)) {
             $type->setAmountRange(FHIRRange::xmlUnserialize($children->amountRange));
         }
-        if (isset($attributes->amountString)) {
-            $type->setAmountString((string)$attributes->amountString);
-        }
         if (isset($children->amountString)) {
             $type->setAmountString(FHIRString::xmlUnserialize($children->amountString));
         }
-        if (isset($attributes->amountText)) {
-            $type->setAmountText((string)$attributes->amountText);
+        if (isset($attributes->amountString)) {
+            $pt = $type->getAmountString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->amountString);
+            } else {
+                $type->setAmountString((string)$attributes->amountString);
+            }
         }
         if (isset($children->amountText)) {
             $type->setAmountText(FHIRString::xmlUnserialize($children->amountText));
+        }
+        if (isset($attributes->amountText)) {
+            $pt = $type->getAmountText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->amountText);
+            } else {
+                $type->setAmountText((string)$attributes->amountText);
+            }
         }
         if (isset($children->amountType)) {
             $type->setAmountType(FHIRCodeableConcept::xmlUnserialize($children->amountType));
@@ -622,7 +632,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmountQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }

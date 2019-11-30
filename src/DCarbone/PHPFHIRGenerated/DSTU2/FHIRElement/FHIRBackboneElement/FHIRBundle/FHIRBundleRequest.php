@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -598,38 +598,63 @@ class FHIRBundleRequest extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->ifMatch)) {
-            $type->setIfMatch((string)$attributes->ifMatch);
-        }
         if (isset($children->ifMatch)) {
             $type->setIfMatch(FHIRString::xmlUnserialize($children->ifMatch));
         }
-        if (isset($attributes->ifModifiedSince)) {
-            $type->setIfModifiedSince((string)$attributes->ifModifiedSince);
+        if (isset($attributes->ifMatch)) {
+            $pt = $type->getIfMatch();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->ifMatch);
+            } else {
+                $type->setIfMatch((string)$attributes->ifMatch);
+            }
         }
         if (isset($children->ifModifiedSince)) {
             $type->setIfModifiedSince(FHIRInstant::xmlUnserialize($children->ifModifiedSince));
         }
-        if (isset($attributes->ifNoneExist)) {
-            $type->setIfNoneExist((string)$attributes->ifNoneExist);
+        if (isset($attributes->ifModifiedSince)) {
+            $pt = $type->getIfModifiedSince();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->ifModifiedSince);
+            } else {
+                $type->setIfModifiedSince((string)$attributes->ifModifiedSince);
+            }
         }
         if (isset($children->ifNoneExist)) {
             $type->setIfNoneExist(FHIRString::xmlUnserialize($children->ifNoneExist));
         }
-        if (isset($attributes->ifNoneMatch)) {
-            $type->setIfNoneMatch((string)$attributes->ifNoneMatch);
+        if (isset($attributes->ifNoneExist)) {
+            $pt = $type->getIfNoneExist();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->ifNoneExist);
+            } else {
+                $type->setIfNoneExist((string)$attributes->ifNoneExist);
+            }
         }
         if (isset($children->ifNoneMatch)) {
             $type->setIfNoneMatch(FHIRString::xmlUnserialize($children->ifNoneMatch));
         }
+        if (isset($attributes->ifNoneMatch)) {
+            $pt = $type->getIfNoneMatch();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->ifNoneMatch);
+            } else {
+                $type->setIfNoneMatch((string)$attributes->ifNoneMatch);
+            }
+        }
         if (isset($children->method)) {
             $type->setMethod(FHIRHTTPVerb::xmlUnserialize($children->method));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         return $type;
     }
@@ -645,7 +670,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIfMatch())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IF_MATCH, null, $v->_getFHIRXMLNamespace()));
         }

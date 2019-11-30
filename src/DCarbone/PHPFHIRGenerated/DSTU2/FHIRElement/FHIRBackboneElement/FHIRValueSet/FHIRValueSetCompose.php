@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -445,9 +445,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $type->addExclude(FHIRValueSetInclude::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->import)) {
-            $type->addImport((string)$attributes->import);
-        }
         if (isset($children->import)) {
             foreach($children->import as $child) {
                 $type->addImport(FHIRUri::xmlUnserialize($child));
@@ -472,7 +469,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getExclude())) {
             foreach($vs as $v) {
                 if (null === $v) {

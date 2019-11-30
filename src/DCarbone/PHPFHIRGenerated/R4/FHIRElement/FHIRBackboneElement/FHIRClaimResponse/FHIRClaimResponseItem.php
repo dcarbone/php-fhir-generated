@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -542,14 +542,16 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
                 $type->addDetail(FHIRClaimResponseDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->itemSequence)) {
-            $type->setItemSequence((string)$attributes->itemSequence);
-        }
         if (isset($children->itemSequence)) {
             $type->setItemSequence(FHIRPositiveInt::xmlUnserialize($children->itemSequence));
         }
-        if (isset($attributes->noteNumber)) {
-            $type->addNoteNumber((string)$attributes->noteNumber);
+        if (isset($attributes->itemSequence)) {
+            $pt = $type->getItemSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->itemSequence);
+            } else {
+                $type->setItemSequence((string)$attributes->itemSequence);
+            }
         }
         if (isset($children->noteNumber)) {
             foreach($children->noteNumber as $child) {
@@ -570,7 +572,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {

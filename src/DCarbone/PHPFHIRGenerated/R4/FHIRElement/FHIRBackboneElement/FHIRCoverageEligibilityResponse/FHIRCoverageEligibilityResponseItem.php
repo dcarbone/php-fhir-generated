@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1105,22 +1105,32 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->authorizationRequired)) {
-            $type->setAuthorizationRequired((string)$attributes->authorizationRequired);
-        }
         if (isset($children->authorizationRequired)) {
             $type->setAuthorizationRequired(FHIRBoolean::xmlUnserialize($children->authorizationRequired));
+        }
+        if (isset($attributes->authorizationRequired)) {
+            $pt = $type->getAuthorizationRequired();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authorizationRequired);
+            } else {
+                $type->setAuthorizationRequired((string)$attributes->authorizationRequired);
+            }
         }
         if (isset($children->authorizationSupporting)) {
             foreach($children->authorizationSupporting as $child) {
                 $type->addAuthorizationSupporting(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->authorizationUrl)) {
-            $type->setAuthorizationUrl((string)$attributes->authorizationUrl);
-        }
         if (isset($children->authorizationUrl)) {
             $type->setAuthorizationUrl(FHIRUri::xmlUnserialize($children->authorizationUrl));
+        }
+        if (isset($attributes->authorizationUrl)) {
+            $pt = $type->getAuthorizationUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authorizationUrl);
+            } else {
+                $type->setAuthorizationUrl((string)$attributes->authorizationUrl);
+            }
         }
         if (isset($children->benefit)) {
             foreach($children->benefit as $child) {
@@ -1130,28 +1140,43 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         if (isset($children->category)) {
             $type->setCategory(FHIRCodeableConcept::xmlUnserialize($children->category));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
-        if (isset($attributes->excluded)) {
-            $type->setExcluded((string)$attributes->excluded);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->excluded)) {
             $type->setExcluded(FHIRBoolean::xmlUnserialize($children->excluded));
+        }
+        if (isset($attributes->excluded)) {
+            $pt = $type->getExcluded();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->excluded);
+            } else {
+                $type->setExcluded((string)$attributes->excluded);
+            }
         }
         if (isset($children->modifier)) {
             foreach($children->modifier as $child) {
                 $type->addModifier(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->network)) {
             $type->setNetwork(FHIRCodeableConcept::xmlUnserialize($children->network));
@@ -1182,7 +1207,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthorizationRequired())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZATION_REQUIRED, null, $v->_getFHIRXMLNamespace()));
         }

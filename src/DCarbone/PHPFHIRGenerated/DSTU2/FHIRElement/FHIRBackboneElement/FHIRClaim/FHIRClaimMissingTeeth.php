@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -347,11 +347,16 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->extractionDate)) {
-            $type->setExtractionDate((string)$attributes->extractionDate);
-        }
         if (isset($children->extractionDate)) {
             $type->setExtractionDate(FHIRDate::xmlUnserialize($children->extractionDate));
+        }
+        if (isset($attributes->extractionDate)) {
+            $pt = $type->getExtractionDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->extractionDate);
+            } else {
+                $type->setExtractionDate((string)$attributes->extractionDate);
+            }
         }
         if (isset($children->reason)) {
             $type->setReason(FHIRCoding::xmlUnserialize($children->reason));
@@ -373,7 +378,6 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getExtractionDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXTRACTION_DATE, null, $v->_getFHIRXMLNamespace()));
         }

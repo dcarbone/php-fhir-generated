@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1792,23 +1792,38 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->code)) {
             $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
-        if (isset($attributes->effectiveDateTime)) {
-            $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->effectiveDateTime)) {
             $type->setEffectiveDateTime(FHIRDateTime::xmlUnserialize($children->effectiveDateTime));
+        }
+        if (isset($attributes->effectiveDateTime)) {
+            $pt = $type->getEffectiveDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->effectiveDateTime);
+            } else {
+                $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
+            }
         }
         if (isset($children->effectivePeriod)) {
             $type->setEffectivePeriod(FHIRPeriod::xmlUnserialize($children->effectivePeriod));
@@ -1854,9 +1869,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 $type->addPrognosisReference(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->protocol)) {
-            $type->addProtocol((string)$attributes->protocol);
-        }
         if (isset($children->protocol)) {
             foreach($children->protocol as $child) {
                 $type->addProtocol(FHIRUri::xmlUnserialize($child));
@@ -1871,11 +1883,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->subject)) {
             $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
         }
-        if (isset($attributes->summary)) {
-            $type->setSummary((string)$attributes->summary);
-        }
         if (isset($children->summary)) {
             $type->setSummary(FHIRString::xmlUnserialize($children->summary));
+        }
+        if (isset($attributes->summary)) {
+            $pt = $type->getSummary();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->summary);
+            } else {
+                $type->setSummary((string)$attributes->summary);
+            }
         }
         if (isset($children->supportingInfo)) {
             foreach($children->supportingInfo as $child) {
@@ -1896,7 +1913,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAssessor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSOR, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRis
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -661,11 +661,16 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         if (isset($children->outcome)) {
             $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($children->outcome));
         }
-        if (isset($attributes->probabilityDecimal)) {
-            $type->setProbabilityDecimal((string)$attributes->probabilityDecimal);
-        }
         if (isset($children->probabilityDecimal)) {
             $type->setProbabilityDecimal(FHIRDecimal::xmlUnserialize($children->probabilityDecimal));
+        }
+        if (isset($attributes->probabilityDecimal)) {
+            $pt = $type->getProbabilityDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->probabilityDecimal);
+            } else {
+                $type->setProbabilityDecimal((string)$attributes->probabilityDecimal);
+            }
         }
         if (isset($children->probabilityRange)) {
             $type->setProbabilityRange(FHIRRange::xmlUnserialize($children->probabilityRange));
@@ -673,17 +678,27 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         if (isset($children->qualitativeRisk)) {
             $type->setQualitativeRisk(FHIRCodeableConcept::xmlUnserialize($children->qualitativeRisk));
         }
-        if (isset($attributes->rationale)) {
-            $type->setRationale((string)$attributes->rationale);
-        }
         if (isset($children->rationale)) {
             $type->setRationale(FHIRString::xmlUnserialize($children->rationale));
         }
-        if (isset($attributes->relativeRisk)) {
-            $type->setRelativeRisk((string)$attributes->relativeRisk);
+        if (isset($attributes->rationale)) {
+            $pt = $type->getRationale();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->rationale);
+            } else {
+                $type->setRationale((string)$attributes->rationale);
+            }
         }
         if (isset($children->relativeRisk)) {
             $type->setRelativeRisk(FHIRDecimal::xmlUnserialize($children->relativeRisk));
+        }
+        if (isset($attributes->relativeRisk)) {
+            $pt = $type->getRelativeRisk();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->relativeRisk);
+            } else {
+                $type->setRelativeRisk((string)$attributes->relativeRisk);
+            }
         }
         if (isset($children->whenPeriod)) {
             $type->setWhenPeriod(FHIRPeriod::xmlUnserialize($children->whenPeriod));
@@ -705,7 +720,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getOutcome())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
         }

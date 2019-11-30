@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -957,11 +957,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->author)) {
             $type->setAuthor(FHIRReference::xmlUnserialize($children->author));
         }
-        if (isset($attributes->definition)) {
-            $type->setDefinition((string)$attributes->definition);
-        }
         if (isset($children->definition)) {
             $type->setDefinition(FHIRCanonical::xmlUnserialize($children->definition));
+        }
+        if (isset($attributes->definition)) {
+            $pt = $type->getDefinition();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->definition);
+            } else {
+                $type->setDefinition((string)$attributes->definition);
+            }
         }
         if (isset($children->destination)) {
             foreach($children->destination as $child) {
@@ -974,11 +979,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->eventCoding)) {
             $type->setEventCoding(FHIRCoding::xmlUnserialize($children->eventCoding));
         }
-        if (isset($attributes->eventUri)) {
-            $type->setEventUri((string)$attributes->eventUri);
-        }
         if (isset($children->eventUri)) {
             $type->setEventUri(FHIRUri::xmlUnserialize($children->eventUri));
+        }
+        if (isset($attributes->eventUri)) {
+            $pt = $type->getEventUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->eventUri);
+            } else {
+                $type->setEventUri((string)$attributes->eventUri);
+            }
         }
         if (isset($children->focus)) {
             foreach($children->focus as $child) {
@@ -1014,7 +1024,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }

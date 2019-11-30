@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -3215,17 +3215,27 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->approvalDate)) {
-            $type->setApprovalDate((string)$attributes->approvalDate);
-        }
         if (isset($children->approvalDate)) {
             $type->setApprovalDate(FHIRDate::xmlUnserialize($children->approvalDate));
         }
-        if (isset($attributes->clinicalRecommendationStatement)) {
-            $type->setClinicalRecommendationStatement((string)$attributes->clinicalRecommendationStatement);
+        if (isset($attributes->approvalDate)) {
+            $pt = $type->getApprovalDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->approvalDate);
+            } else {
+                $type->setApprovalDate((string)$attributes->approvalDate);
+            }
         }
         if (isset($children->clinicalRecommendationStatement)) {
             $type->setClinicalRecommendationStatement(FHIRMarkdown::xmlUnserialize($children->clinicalRecommendationStatement));
+        }
+        if (isset($attributes->clinicalRecommendationStatement)) {
+            $pt = $type->getClinicalRecommendationStatement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->clinicalRecommendationStatement);
+            } else {
+                $type->setClinicalRecommendationStatement((string)$attributes->clinicalRecommendationStatement);
+            }
         }
         if (isset($children->compositeScoring)) {
             $type->setCompositeScoring(FHIRCodeableConcept::xmlUnserialize($children->compositeScoring));
@@ -3240,134 +3250,206 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $type->addContributor(FHIRContributor::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->copyright)) {
-            $type->setCopyright((string)$attributes->copyright);
-        }
         if (isset($children->copyright)) {
             $type->setCopyright(FHIRMarkdown::xmlUnserialize($children->copyright));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
+        if (isset($attributes->copyright)) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->copyright);
+            } else {
+                $type->setCopyright((string)$attributes->copyright);
+            }
         }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->definition)) {
-            $type->addDefinition((string)$attributes->definition);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->definition)) {
             foreach($children->definition as $child) {
                 $type->addDefinition(FHIRMarkdown::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
         }
-        if (isset($attributes->disclaimer)) {
-            $type->setDisclaimer((string)$attributes->disclaimer);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->disclaimer)) {
             $type->setDisclaimer(FHIRMarkdown::xmlUnserialize($children->disclaimer));
         }
+        if (isset($attributes->disclaimer)) {
+            $pt = $type->getDisclaimer();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->disclaimer);
+            } else {
+                $type->setDisclaimer((string)$attributes->disclaimer);
+            }
+        }
         if (isset($children->effectivePeriod)) {
             $type->setEffectivePeriod(FHIRPeriod::xmlUnserialize($children->effectivePeriod));
         }
-        if (isset($attributes->experimental)) {
-            $type->setExperimental((string)$attributes->experimental);
-        }
         if (isset($children->experimental)) {
             $type->setExperimental(FHIRBoolean::xmlUnserialize($children->experimental));
+        }
+        if (isset($attributes->experimental)) {
+            $pt = $type->getExperimental();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->experimental);
+            } else {
+                $type->setExperimental((string)$attributes->experimental);
+            }
         }
         if (isset($children->group)) {
             foreach($children->group as $child) {
                 $type->addGroup(FHIRMeasureGroup::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->guidance)) {
-            $type->setGuidance((string)$attributes->guidance);
-        }
         if (isset($children->guidance)) {
             $type->setGuidance(FHIRMarkdown::xmlUnserialize($children->guidance));
+        }
+        if (isset($attributes->guidance)) {
+            $pt = $type->getGuidance();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->guidance);
+            } else {
+                $type->setGuidance((string)$attributes->guidance);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->improvementNotation)) {
-            $type->setImprovementNotation((string)$attributes->improvementNotation);
-        }
         if (isset($children->improvementNotation)) {
             $type->setImprovementNotation(FHIRString::xmlUnserialize($children->improvementNotation));
+        }
+        if (isset($attributes->improvementNotation)) {
+            $pt = $type->getImprovementNotation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->improvementNotation);
+            } else {
+                $type->setImprovementNotation((string)$attributes->improvementNotation);
+            }
         }
         if (isset($children->jurisdiction)) {
             foreach($children->jurisdiction as $child) {
                 $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->lastReviewDate)) {
-            $type->setLastReviewDate((string)$attributes->lastReviewDate);
-        }
         if (isset($children->lastReviewDate)) {
             $type->setLastReviewDate(FHIRDate::xmlUnserialize($children->lastReviewDate));
+        }
+        if (isset($attributes->lastReviewDate)) {
+            $pt = $type->getLastReviewDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastReviewDate);
+            } else {
+                $type->setLastReviewDate((string)$attributes->lastReviewDate);
+            }
         }
         if (isset($children->library)) {
             foreach($children->library as $child) {
                 $type->addLibrary(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->publisher)) {
-            $type->setPublisher((string)$attributes->publisher);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->publisher)) {
             $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
         }
-        if (isset($attributes->purpose)) {
-            $type->setPurpose((string)$attributes->purpose);
+        if (isset($attributes->publisher)) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publisher);
+            } else {
+                $type->setPublisher((string)$attributes->publisher);
+            }
         }
         if (isset($children->purpose)) {
             $type->setPurpose(FHIRMarkdown::xmlUnserialize($children->purpose));
         }
-        if (isset($attributes->rateAggregation)) {
-            $type->setRateAggregation((string)$attributes->rateAggregation);
+        if (isset($attributes->purpose)) {
+            $pt = $type->getPurpose();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->purpose);
+            } else {
+                $type->setPurpose((string)$attributes->purpose);
+            }
         }
         if (isset($children->rateAggregation)) {
             $type->setRateAggregation(FHIRString::xmlUnserialize($children->rateAggregation));
         }
-        if (isset($attributes->rationale)) {
-            $type->setRationale((string)$attributes->rationale);
+        if (isset($attributes->rateAggregation)) {
+            $pt = $type->getRateAggregation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->rateAggregation);
+            } else {
+                $type->setRateAggregation((string)$attributes->rateAggregation);
+            }
         }
         if (isset($children->rationale)) {
             $type->setRationale(FHIRMarkdown::xmlUnserialize($children->rationale));
+        }
+        if (isset($attributes->rationale)) {
+            $pt = $type->getRationale();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->rationale);
+            } else {
+                $type->setRationale((string)$attributes->rationale);
+            }
         }
         if (isset($children->relatedArtifact)) {
             foreach($children->relatedArtifact as $child) {
                 $type->addRelatedArtifact(FHIRRelatedArtifact::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->riskAdjustment)) {
-            $type->setRiskAdjustment((string)$attributes->riskAdjustment);
-        }
         if (isset($children->riskAdjustment)) {
             $type->setRiskAdjustment(FHIRString::xmlUnserialize($children->riskAdjustment));
+        }
+        if (isset($attributes->riskAdjustment)) {
+            $pt = $type->getRiskAdjustment();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->riskAdjustment);
+            } else {
+                $type->setRiskAdjustment((string)$attributes->riskAdjustment);
+            }
         }
         if (isset($children->scoring)) {
             $type->setScoring(FHIRCodeableConcept::xmlUnserialize($children->scoring));
         }
-        if (isset($attributes->set)) {
-            $type->setSet((string)$attributes->set);
-        }
         if (isset($children->set)) {
             $type->setSet(FHIRString::xmlUnserialize($children->set));
+        }
+        if (isset($attributes->set)) {
+            $pt = $type->getSet();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->set);
+            } else {
+                $type->setSet((string)$attributes->set);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRPublicationStatus::xmlUnserialize($children->status));
@@ -3377,11 +3459,16 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $type->addSupplementalData(FHIRMeasureSupplementalData::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->topic)) {
             foreach($children->topic as $child) {
@@ -3393,28 +3480,43 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $type->addType(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
         }
-        if (isset($attributes->usage)) {
-            $type->setUsage((string)$attributes->usage);
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->usage)) {
             $type->setUsage(FHIRString::xmlUnserialize($children->usage));
+        }
+        if (isset($attributes->usage)) {
+            $pt = $type->getUsage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->usage);
+            } else {
+                $type->setUsage((string)$attributes->usage);
+            }
         }
         if (isset($children->useContext)) {
             foreach($children->useContext as $child) {
                 $type->addUseContext(FHIRUsageContext::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
-        }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -3430,7 +3532,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getApprovalDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_APPROVAL_DATE, null, $v->_getFHIRXMLNamespace()));
         }

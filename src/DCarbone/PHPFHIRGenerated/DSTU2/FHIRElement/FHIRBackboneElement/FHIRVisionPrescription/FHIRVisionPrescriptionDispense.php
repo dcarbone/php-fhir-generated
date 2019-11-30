@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1139,50 +1139,85 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->add)) {
-            $type->setAdd((string)$attributes->add);
-        }
         if (isset($children->add)) {
             $type->setAdd(FHIRDecimal::xmlUnserialize($children->add));
         }
-        if (isset($attributes->axis)) {
-            $type->setAxis((string)$attributes->axis);
+        if (isset($attributes->add)) {
+            $pt = $type->getAdd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->add);
+            } else {
+                $type->setAdd((string)$attributes->add);
+            }
         }
         if (isset($children->axis)) {
             $type->setAxis(FHIRInteger::xmlUnserialize($children->axis));
         }
-        if (isset($attributes->backCurve)) {
-            $type->setBackCurve((string)$attributes->backCurve);
+        if (isset($attributes->axis)) {
+            $pt = $type->getAxis();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->axis);
+            } else {
+                $type->setAxis((string)$attributes->axis);
+            }
         }
         if (isset($children->backCurve)) {
             $type->setBackCurve(FHIRDecimal::xmlUnserialize($children->backCurve));
         }
+        if (isset($attributes->backCurve)) {
+            $pt = $type->getBackCurve();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->backCurve);
+            } else {
+                $type->setBackCurve((string)$attributes->backCurve);
+            }
+        }
         if (isset($children->base)) {
             $type->setBase(FHIRVisionBase::xmlUnserialize($children->base));
-        }
-        if (isset($attributes->brand)) {
-            $type->setBrand((string)$attributes->brand);
         }
         if (isset($children->brand)) {
             $type->setBrand(FHIRString::xmlUnserialize($children->brand));
         }
-        if (isset($attributes->color)) {
-            $type->setColor((string)$attributes->color);
+        if (isset($attributes->brand)) {
+            $pt = $type->getBrand();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->brand);
+            } else {
+                $type->setBrand((string)$attributes->brand);
+            }
         }
         if (isset($children->color)) {
             $type->setColor(FHIRString::xmlUnserialize($children->color));
         }
-        if (isset($attributes->cylinder)) {
-            $type->setCylinder((string)$attributes->cylinder);
+        if (isset($attributes->color)) {
+            $pt = $type->getColor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->color);
+            } else {
+                $type->setColor((string)$attributes->color);
+            }
         }
         if (isset($children->cylinder)) {
             $type->setCylinder(FHIRDecimal::xmlUnserialize($children->cylinder));
         }
-        if (isset($attributes->diameter)) {
-            $type->setDiameter((string)$attributes->diameter);
+        if (isset($attributes->cylinder)) {
+            $pt = $type->getCylinder();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->cylinder);
+            } else {
+                $type->setCylinder((string)$attributes->cylinder);
+            }
         }
         if (isset($children->diameter)) {
             $type->setDiameter(FHIRDecimal::xmlUnserialize($children->diameter));
+        }
+        if (isset($attributes->diameter)) {
+            $pt = $type->getDiameter();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->diameter);
+            } else {
+                $type->setDiameter((string)$attributes->diameter);
+            }
         }
         if (isset($children->duration)) {
             $type->setDuration(FHIRSimpleQuantity::xmlUnserialize($children->duration));
@@ -1190,32 +1225,52 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
         if (isset($children->eye)) {
             $type->setEye(FHIRVisionEyes::xmlUnserialize($children->eye));
         }
-        if (isset($attributes->notes)) {
-            $type->setNotes((string)$attributes->notes);
-        }
         if (isset($children->notes)) {
             $type->setNotes(FHIRString::xmlUnserialize($children->notes));
         }
-        if (isset($attributes->power)) {
-            $type->setPower((string)$attributes->power);
+        if (isset($attributes->notes)) {
+            $pt = $type->getNotes();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->notes);
+            } else {
+                $type->setNotes((string)$attributes->notes);
+            }
         }
         if (isset($children->power)) {
             $type->setPower(FHIRDecimal::xmlUnserialize($children->power));
         }
-        if (isset($attributes->prism)) {
-            $type->setPrism((string)$attributes->prism);
+        if (isset($attributes->power)) {
+            $pt = $type->getPower();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->power);
+            } else {
+                $type->setPower((string)$attributes->power);
+            }
         }
         if (isset($children->prism)) {
             $type->setPrism(FHIRDecimal::xmlUnserialize($children->prism));
         }
+        if (isset($attributes->prism)) {
+            $pt = $type->getPrism();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->prism);
+            } else {
+                $type->setPrism((string)$attributes->prism);
+            }
+        }
         if (isset($children->product)) {
             $type->setProduct(FHIRCoding::xmlUnserialize($children->product));
         }
-        if (isset($attributes->sphere)) {
-            $type->setSphere((string)$attributes->sphere);
-        }
         if (isset($children->sphere)) {
             $type->setSphere(FHIRDecimal::xmlUnserialize($children->sphere));
+        }
+        if (isset($attributes->sphere)) {
+            $pt = $type->getSphere();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sphere);
+            } else {
+                $type->setSphere((string)$attributes->sphere);
+            }
         }
         return $type;
     }
@@ -1231,7 +1286,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAdd())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADD, null, $v->_getFHIRXMLNamespace()));
         }

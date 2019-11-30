@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2338,11 +2338,16 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($children->location)) {
             $type->setLocation(FHIRReference::xmlUnserialize($children->location));
         }
-        if (isset($attributes->notDone)) {
-            $type->setNotDone((string)$attributes->notDone);
-        }
         if (isset($children->notDone)) {
             $type->setNotDone(FHIRBoolean::xmlUnserialize($children->notDone));
+        }
+        if (isset($attributes->notDone)) {
+            $pt = $type->getNotDone();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->notDone);
+            } else {
+                $type->setNotDone((string)$attributes->notDone);
+            }
         }
         if (isset($children->notDoneReason)) {
             $type->setNotDoneReason(FHIRCodeableConcept::xmlUnserialize($children->notDoneReason));
@@ -2360,11 +2365,16 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $type->addPartOf(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->performedDateTime)) {
-            $type->setPerformedDateTime((string)$attributes->performedDateTime);
-        }
         if (isset($children->performedDateTime)) {
             $type->setPerformedDateTime(FHIRDateTime::xmlUnserialize($children->performedDateTime));
+        }
+        if (isset($attributes->performedDateTime)) {
+            $pt = $type->getPerformedDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->performedDateTime);
+            } else {
+                $type->setPerformedDateTime((string)$attributes->performedDateTime);
+            }
         }
         if (isset($children->performedPeriod)) {
             $type->setPerformedPeriod(FHIRPeriod::xmlUnserialize($children->performedPeriod));
@@ -2419,7 +2429,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getBasedOn())) {
             foreach($vs as $v) {
                 if (null === $v) {

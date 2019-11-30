@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -518,11 +518,16 @@ class FHIRBundleEntry extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->fullUrl)) {
-            $type->setFullUrl((string)$attributes->fullUrl);
-        }
         if (isset($children->fullUrl)) {
             $type->setFullUrl(FHIRUri::xmlUnserialize($children->fullUrl));
+        }
+        if (isset($attributes->fullUrl)) {
+            $pt = $type->getFullUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->fullUrl);
+            } else {
+                $type->setFullUrl((string)$attributes->fullUrl);
+            }
         }
         if (isset($children->link)) {
             foreach($children->link as $child) {
@@ -560,7 +565,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getFullUrl())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FULL_URL, null, $v->_getFHIRXMLNamespace()));
         }

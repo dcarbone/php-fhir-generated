@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCov
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1012,77 +1012,137 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->class)) {
-            $type->setClass((string)$attributes->class);
-        }
         if (isset($children->class)) {
             $type->setClass(FHIRString::xmlUnserialize($children->class));
         }
-        if (isset($attributes->classDisplay)) {
-            $type->setClassDisplay((string)$attributes->classDisplay);
+        if (isset($attributes->class)) {
+            $pt = $type->getClass();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->class);
+            } else {
+                $type->setClass((string)$attributes->class);
+            }
         }
         if (isset($children->classDisplay)) {
             $type->setClassDisplay(FHIRString::xmlUnserialize($children->classDisplay));
         }
-        if (isset($attributes->group)) {
-            $type->setGroup((string)$attributes->group);
+        if (isset($attributes->classDisplay)) {
+            $pt = $type->getClassDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->classDisplay);
+            } else {
+                $type->setClassDisplay((string)$attributes->classDisplay);
+            }
         }
         if (isset($children->group)) {
             $type->setGroup(FHIRString::xmlUnserialize($children->group));
         }
-        if (isset($attributes->groupDisplay)) {
-            $type->setGroupDisplay((string)$attributes->groupDisplay);
+        if (isset($attributes->group)) {
+            $pt = $type->getGroup();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->group);
+            } else {
+                $type->setGroup((string)$attributes->group);
+            }
         }
         if (isset($children->groupDisplay)) {
             $type->setGroupDisplay(FHIRString::xmlUnserialize($children->groupDisplay));
         }
-        if (isset($attributes->plan)) {
-            $type->setPlan((string)$attributes->plan);
+        if (isset($attributes->groupDisplay)) {
+            $pt = $type->getGroupDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->groupDisplay);
+            } else {
+                $type->setGroupDisplay((string)$attributes->groupDisplay);
+            }
         }
         if (isset($children->plan)) {
             $type->setPlan(FHIRString::xmlUnserialize($children->plan));
         }
-        if (isset($attributes->planDisplay)) {
-            $type->setPlanDisplay((string)$attributes->planDisplay);
+        if (isset($attributes->plan)) {
+            $pt = $type->getPlan();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->plan);
+            } else {
+                $type->setPlan((string)$attributes->plan);
+            }
         }
         if (isset($children->planDisplay)) {
             $type->setPlanDisplay(FHIRString::xmlUnserialize($children->planDisplay));
         }
-        if (isset($attributes->subClass)) {
-            $type->setSubClass((string)$attributes->subClass);
+        if (isset($attributes->planDisplay)) {
+            $pt = $type->getPlanDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->planDisplay);
+            } else {
+                $type->setPlanDisplay((string)$attributes->planDisplay);
+            }
         }
         if (isset($children->subClass)) {
             $type->setSubClass(FHIRString::xmlUnserialize($children->subClass));
         }
-        if (isset($attributes->subClassDisplay)) {
-            $type->setSubClassDisplay((string)$attributes->subClassDisplay);
+        if (isset($attributes->subClass)) {
+            $pt = $type->getSubClass();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subClass);
+            } else {
+                $type->setSubClass((string)$attributes->subClass);
+            }
         }
         if (isset($children->subClassDisplay)) {
             $type->setSubClassDisplay(FHIRString::xmlUnserialize($children->subClassDisplay));
         }
-        if (isset($attributes->subGroup)) {
-            $type->setSubGroup((string)$attributes->subGroup);
+        if (isset($attributes->subClassDisplay)) {
+            $pt = $type->getSubClassDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subClassDisplay);
+            } else {
+                $type->setSubClassDisplay((string)$attributes->subClassDisplay);
+            }
         }
         if (isset($children->subGroup)) {
             $type->setSubGroup(FHIRString::xmlUnserialize($children->subGroup));
         }
-        if (isset($attributes->subGroupDisplay)) {
-            $type->setSubGroupDisplay((string)$attributes->subGroupDisplay);
+        if (isset($attributes->subGroup)) {
+            $pt = $type->getSubGroup();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subGroup);
+            } else {
+                $type->setSubGroup((string)$attributes->subGroup);
+            }
         }
         if (isset($children->subGroupDisplay)) {
             $type->setSubGroupDisplay(FHIRString::xmlUnserialize($children->subGroupDisplay));
         }
-        if (isset($attributes->subPlan)) {
-            $type->setSubPlan((string)$attributes->subPlan);
+        if (isset($attributes->subGroupDisplay)) {
+            $pt = $type->getSubGroupDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subGroupDisplay);
+            } else {
+                $type->setSubGroupDisplay((string)$attributes->subGroupDisplay);
+            }
         }
         if (isset($children->subPlan)) {
             $type->setSubPlan(FHIRString::xmlUnserialize($children->subPlan));
         }
-        if (isset($attributes->subPlanDisplay)) {
-            $type->setSubPlanDisplay((string)$attributes->subPlanDisplay);
+        if (isset($attributes->subPlan)) {
+            $pt = $type->getSubPlan();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subPlan);
+            } else {
+                $type->setSubPlan((string)$attributes->subPlan);
+            }
         }
         if (isset($children->subPlanDisplay)) {
             $type->setSubPlanDisplay(FHIRString::xmlUnserialize($children->subPlanDisplay));
+        }
+        if (isset($attributes->subPlanDisplay)) {
+            $pt = $type->getSubPlanDisplay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subPlanDisplay);
+            } else {
+                $type->setSubPlanDisplay((string)$attributes->subPlanDisplay);
+            }
         }
         return $type;
     }
@@ -1098,7 +1158,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getClass())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
         }

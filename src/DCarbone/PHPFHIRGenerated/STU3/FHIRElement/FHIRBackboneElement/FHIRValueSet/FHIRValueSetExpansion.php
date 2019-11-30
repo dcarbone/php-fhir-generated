@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVal
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -640,34 +640,54 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 $type->addContains(FHIRValueSetContains::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->identifier)) {
-            $type->setIdentifier((string)$attributes->identifier);
-        }
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRUri::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->offset)) {
-            $type->setOffset((string)$attributes->offset);
+        if (isset($attributes->identifier)) {
+            $pt = $type->getIdentifier();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->identifier);
+            } else {
+                $type->setIdentifier((string)$attributes->identifier);
+            }
         }
         if (isset($children->offset)) {
             $type->setOffset(FHIRInteger::xmlUnserialize($children->offset));
+        }
+        if (isset($attributes->offset)) {
+            $pt = $type->getOffset();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->offset);
+            } else {
+                $type->setOffset((string)$attributes->offset);
+            }
         }
         if (isset($children->parameter)) {
             foreach($children->parameter as $child) {
                 $type->addParameter(FHIRValueSetParameter::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->timestamp)) {
-            $type->setTimestamp((string)$attributes->timestamp);
-        }
         if (isset($children->timestamp)) {
             $type->setTimestamp(FHIRDateTime::xmlUnserialize($children->timestamp));
         }
-        if (isset($attributes->total)) {
-            $type->setTotal((string)$attributes->total);
+        if (isset($attributes->timestamp)) {
+            $pt = $type->getTimestamp();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timestamp);
+            } else {
+                $type->setTimestamp((string)$attributes->timestamp);
+            }
         }
         if (isset($children->total)) {
             $type->setTotal(FHIRInteger::xmlUnserialize($children->total));
+        }
+        if (isset($attributes->total)) {
+            $pt = $type->getTotal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->total);
+            } else {
+                $type->setTotal((string)$attributes->total);
+            }
         }
         return $type;
     }
@@ -683,7 +703,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContains())) {
             foreach($vs as $v) {
                 if (null === $v) {

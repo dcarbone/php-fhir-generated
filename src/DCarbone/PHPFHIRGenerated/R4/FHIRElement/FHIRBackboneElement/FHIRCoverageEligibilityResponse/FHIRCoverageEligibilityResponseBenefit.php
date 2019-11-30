@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -617,17 +617,27 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         if (isset($children->allowedMoney)) {
             $type->setAllowedMoney(FHIRMoney::xmlUnserialize($children->allowedMoney));
         }
-        if (isset($attributes->allowedString)) {
-            $type->setAllowedString((string)$attributes->allowedString);
-        }
         if (isset($children->allowedString)) {
             $type->setAllowedString(FHIRString::xmlUnserialize($children->allowedString));
         }
-        if (isset($attributes->allowedUnsignedInt)) {
-            $type->setAllowedUnsignedInt((string)$attributes->allowedUnsignedInt);
+        if (isset($attributes->allowedString)) {
+            $pt = $type->getAllowedString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->allowedString);
+            } else {
+                $type->setAllowedString((string)$attributes->allowedString);
+            }
         }
         if (isset($children->allowedUnsignedInt)) {
             $type->setAllowedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($children->allowedUnsignedInt));
+        }
+        if (isset($attributes->allowedUnsignedInt)) {
+            $pt = $type->getAllowedUnsignedInt();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->allowedUnsignedInt);
+            } else {
+                $type->setAllowedUnsignedInt((string)$attributes->allowedUnsignedInt);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -635,17 +645,27 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         if (isset($children->usedMoney)) {
             $type->setUsedMoney(FHIRMoney::xmlUnserialize($children->usedMoney));
         }
-        if (isset($attributes->usedString)) {
-            $type->setUsedString((string)$attributes->usedString);
-        }
         if (isset($children->usedString)) {
             $type->setUsedString(FHIRString::xmlUnserialize($children->usedString));
         }
-        if (isset($attributes->usedUnsignedInt)) {
-            $type->setUsedUnsignedInt((string)$attributes->usedUnsignedInt);
+        if (isset($attributes->usedString)) {
+            $pt = $type->getUsedString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->usedString);
+            } else {
+                $type->setUsedString((string)$attributes->usedString);
+            }
         }
         if (isset($children->usedUnsignedInt)) {
             $type->setUsedUnsignedInt(FHIRUnsignedInt::xmlUnserialize($children->usedUnsignedInt));
+        }
+        if (isset($attributes->usedUnsignedInt)) {
+            $pt = $type->getUsedUnsignedInt();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->usedUnsignedInt);
+            } else {
+                $type->setUsedUnsignedInt((string)$attributes->usedUnsignedInt);
+            }
         }
         return $type;
     }
@@ -661,7 +681,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAllowedMoney())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_MONEY, null, $v->_getFHIRXMLNamespace()));
         }

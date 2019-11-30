@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -531,29 +531,49 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         if (isset($children->hybridType)) {
             $type->setHybridType(FHIRCodeableConcept::xmlUnserialize($children->hybridType));
         }
-        if (isset($attributes->maternalOrganismId)) {
-            $type->setMaternalOrganismId((string)$attributes->maternalOrganismId);
-        }
         if (isset($children->maternalOrganismId)) {
             $type->setMaternalOrganismId(FHIRString::xmlUnserialize($children->maternalOrganismId));
         }
-        if (isset($attributes->maternalOrganismName)) {
-            $type->setMaternalOrganismName((string)$attributes->maternalOrganismName);
+        if (isset($attributes->maternalOrganismId)) {
+            $pt = $type->getMaternalOrganismId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->maternalOrganismId);
+            } else {
+                $type->setMaternalOrganismId((string)$attributes->maternalOrganismId);
+            }
         }
         if (isset($children->maternalOrganismName)) {
             $type->setMaternalOrganismName(FHIRString::xmlUnserialize($children->maternalOrganismName));
         }
-        if (isset($attributes->paternalOrganismId)) {
-            $type->setPaternalOrganismId((string)$attributes->paternalOrganismId);
+        if (isset($attributes->maternalOrganismName)) {
+            $pt = $type->getMaternalOrganismName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->maternalOrganismName);
+            } else {
+                $type->setMaternalOrganismName((string)$attributes->maternalOrganismName);
+            }
         }
         if (isset($children->paternalOrganismId)) {
             $type->setPaternalOrganismId(FHIRString::xmlUnserialize($children->paternalOrganismId));
         }
-        if (isset($attributes->paternalOrganismName)) {
-            $type->setPaternalOrganismName((string)$attributes->paternalOrganismName);
+        if (isset($attributes->paternalOrganismId)) {
+            $pt = $type->getPaternalOrganismId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->paternalOrganismId);
+            } else {
+                $type->setPaternalOrganismId((string)$attributes->paternalOrganismId);
+            }
         }
         if (isset($children->paternalOrganismName)) {
             $type->setPaternalOrganismName(FHIRString::xmlUnserialize($children->paternalOrganismName));
+        }
+        if (isset($attributes->paternalOrganismName)) {
+            $pt = $type->getPaternalOrganismName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->paternalOrganismName);
+            } else {
+                $type->setPaternalOrganismName((string)$attributes->paternalOrganismName);
+            }
         }
         return $type;
     }
@@ -569,7 +589,6 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getHybridType())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_HYBRID_TYPE, null, $v->_getFHIRXMLNamespace()));
         }

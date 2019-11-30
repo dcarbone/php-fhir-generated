@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2114,11 +2114,16 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
                 $type->addReceiver(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->status)) {
-            $type->setStatus((string)$attributes->status);
-        }
         if (isset($children->status)) {
             $type->setStatus(FHIRCode::xmlUnserialize($children->status));
+        }
+        if (isset($attributes->status)) {
+            $pt = $type->getStatus();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->status);
+            } else {
+                $type->setStatus((string)$attributes->status);
+            }
         }
         if (isset($children->statusReasonCodeableConcept)) {
             $type->setStatusReasonCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->statusReasonCodeableConcept));
@@ -2140,17 +2145,27 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
         }
-        if (isset($attributes->whenHandedOver)) {
-            $type->setWhenHandedOver((string)$attributes->whenHandedOver);
-        }
         if (isset($children->whenHandedOver)) {
             $type->setWhenHandedOver(FHIRDateTime::xmlUnserialize($children->whenHandedOver));
         }
-        if (isset($attributes->whenPrepared)) {
-            $type->setWhenPrepared((string)$attributes->whenPrepared);
+        if (isset($attributes->whenHandedOver)) {
+            $pt = $type->getWhenHandedOver();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->whenHandedOver);
+            } else {
+                $type->setWhenHandedOver((string)$attributes->whenHandedOver);
+            }
         }
         if (isset($children->whenPrepared)) {
             $type->setWhenPrepared(FHIRDateTime::xmlUnserialize($children->whenPrepared));
+        }
+        if (isset($attributes->whenPrepared)) {
+            $pt = $type->getWhenPrepared();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->whenPrepared);
+            } else {
+                $type->setWhenPrepared((string)$attributes->whenPrepared);
+            }
         }
         return $type;
     }
@@ -2166,7 +2181,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAuthorizingPrescription())) {
             foreach($vs as $v) {
                 if (null === $v) {

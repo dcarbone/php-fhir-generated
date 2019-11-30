@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -739,17 +739,19 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->format)) {
-            $type->setFormat((string)$attributes->format);
-        }
         if (isset($children->format)) {
             $type->setFormat(FHIRCode::xmlUnserialize($children->format));
         }
+        if (isset($attributes->format)) {
+            $pt = $type->getFormat();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->format);
+            } else {
+                $type->setFormat((string)$attributes->format);
+            }
+        }
         if (isset($children->kind)) {
             $type->setKind(FHIRGuidePageKind::xmlUnserialize($children->kind));
-        }
-        if (isset($attributes->package)) {
-            $type->addPackage((string)$attributes->package);
         }
         if (isset($children->package)) {
             foreach($children->package as $child) {
@@ -761,17 +763,27 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 $type->addPage(FHIRImplementationGuidePage::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->source)) {
-            $type->setSource((string)$attributes->source);
-        }
         if (isset($children->source)) {
             $type->setSource(FHIRUri::xmlUnserialize($children->source));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
+        if (isset($attributes->source)) {
+            $pt = $type->getSource();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->source);
+            } else {
+                $type->setSource((string)$attributes->source);
+            }
         }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->type)) {
             foreach($children->type as $child) {
@@ -792,7 +804,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getFormat())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_FORMAT, null, $v->_getFHIRXMLNamespace()));
         }

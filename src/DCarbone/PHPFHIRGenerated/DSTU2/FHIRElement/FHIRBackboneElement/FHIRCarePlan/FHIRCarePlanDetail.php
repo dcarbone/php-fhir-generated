@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1323,11 +1323,16 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (isset($children->dailyAmount)) {
             $type->setDailyAmount(FHIRSimpleQuantity::xmlUnserialize($children->dailyAmount));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->goal)) {
             foreach($children->goal as $child) {
@@ -1348,11 +1353,16 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (isset($children->productReference)) {
             $type->setProductReference(FHIRReference::xmlUnserialize($children->productReference));
         }
-        if (isset($attributes->prohibited)) {
-            $type->setProhibited((string)$attributes->prohibited);
-        }
         if (isset($children->prohibited)) {
             $type->setProhibited(FHIRBoolean::xmlUnserialize($children->prohibited));
+        }
+        if (isset($attributes->prohibited)) {
+            $pt = $type->getProhibited();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->prohibited);
+            } else {
+                $type->setProhibited((string)$attributes->prohibited);
+            }
         }
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($children->quantity));
@@ -1370,11 +1380,16 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (isset($children->scheduledPeriod)) {
             $type->setScheduledPeriod(FHIRPeriod::xmlUnserialize($children->scheduledPeriod));
         }
-        if (isset($attributes->scheduledString)) {
-            $type->setScheduledString((string)$attributes->scheduledString);
-        }
         if (isset($children->scheduledString)) {
             $type->setScheduledString(FHIRString::xmlUnserialize($children->scheduledString));
+        }
+        if (isset($attributes->scheduledString)) {
+            $pt = $type->getScheduledString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->scheduledString);
+            } else {
+                $type->setScheduledString((string)$attributes->scheduledString);
+            }
         }
         if (isset($children->scheduledTiming)) {
             $type->setScheduledTiming(FHIRTiming::xmlUnserialize($children->scheduledTiming));
@@ -1399,7 +1414,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

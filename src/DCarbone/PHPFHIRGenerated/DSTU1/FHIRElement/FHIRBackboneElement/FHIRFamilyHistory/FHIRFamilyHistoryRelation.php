@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -989,20 +989,30 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->bornDate)) {
-            $type->setBornDate((string)$attributes->bornDate);
-        }
         if (isset($children->bornDate)) {
             $type->setBornDate(FHIRDate::xmlUnserialize($children->bornDate));
+        }
+        if (isset($attributes->bornDate)) {
+            $pt = $type->getBornDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->bornDate);
+            } else {
+                $type->setBornDate((string)$attributes->bornDate);
+            }
         }
         if (isset($children->bornPeriod)) {
             $type->setBornPeriod(FHIRPeriod::xmlUnserialize($children->bornPeriod));
         }
-        if (isset($attributes->bornString)) {
-            $type->setBornString((string)$attributes->bornString);
-        }
         if (isset($children->bornString)) {
             $type->setBornString(FHIRString::xmlUnserialize($children->bornString));
+        }
+        if (isset($attributes->bornString)) {
+            $pt = $type->getBornString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->bornString);
+            } else {
+                $type->setBornString((string)$attributes->bornString);
+            }
         }
         if (isset($children->condition)) {
             foreach($children->condition as $child) {
@@ -1012,38 +1022,63 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         if (isset($children->deceasedAge)) {
             $type->setDeceasedAge(FHIRAge::xmlUnserialize($children->deceasedAge));
         }
-        if (isset($attributes->deceasedBoolean)) {
-            $type->setDeceasedBoolean((string)$attributes->deceasedBoolean);
-        }
         if (isset($children->deceasedBoolean)) {
             $type->setDeceasedBoolean(FHIRBoolean::xmlUnserialize($children->deceasedBoolean));
         }
-        if (isset($attributes->deceasedDate)) {
-            $type->setDeceasedDate((string)$attributes->deceasedDate);
+        if (isset($attributes->deceasedBoolean)) {
+            $pt = $type->getDeceasedBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->deceasedBoolean);
+            } else {
+                $type->setDeceasedBoolean((string)$attributes->deceasedBoolean);
+            }
         }
         if (isset($children->deceasedDate)) {
             $type->setDeceasedDate(FHIRDate::xmlUnserialize($children->deceasedDate));
         }
+        if (isset($attributes->deceasedDate)) {
+            $pt = $type->getDeceasedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->deceasedDate);
+            } else {
+                $type->setDeceasedDate((string)$attributes->deceasedDate);
+            }
+        }
         if (isset($children->deceasedRange)) {
             $type->setDeceasedRange(FHIRRange::xmlUnserialize($children->deceasedRange));
-        }
-        if (isset($attributes->deceasedString)) {
-            $type->setDeceasedString((string)$attributes->deceasedString);
         }
         if (isset($children->deceasedString)) {
             $type->setDeceasedString(FHIRString::xmlUnserialize($children->deceasedString));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->deceasedString)) {
+            $pt = $type->getDeceasedString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->deceasedString);
+            } else {
+                $type->setDeceasedString((string)$attributes->deceasedString);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->note)) {
-            $type->setNote((string)$attributes->note);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->note)) {
             $type->setNote(FHIRString::xmlUnserialize($children->note));
+        }
+        if (isset($attributes->note)) {
+            $pt = $type->getNote();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->note);
+            } else {
+                $type->setNote((string)$attributes->note);
+            }
         }
         if (isset($children->relationship)) {
             $type->setRelationship(FHIRCodeableConcept::xmlUnserialize($children->relationship));
@@ -1062,7 +1097,6 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBornDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE, null, $v->_getFHIRXMLNamespace()));
         }

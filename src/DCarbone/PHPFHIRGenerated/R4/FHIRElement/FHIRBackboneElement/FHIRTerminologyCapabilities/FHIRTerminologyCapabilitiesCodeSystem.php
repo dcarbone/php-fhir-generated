@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -397,17 +397,27 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->subsumption)) {
-            $type->setSubsumption((string)$attributes->subsumption);
-        }
         if (isset($children->subsumption)) {
             $type->setSubsumption(FHIRBoolean::xmlUnserialize($children->subsumption));
         }
-        if (isset($attributes->uri)) {
-            $type->setUri((string)$attributes->uri);
+        if (isset($attributes->subsumption)) {
+            $pt = $type->getSubsumption();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subsumption);
+            } else {
+                $type->setSubsumption((string)$attributes->subsumption);
+            }
         }
         if (isset($children->uri)) {
             $type->setUri(FHIRCanonical::xmlUnserialize($children->uri));
+        }
+        if (isset($attributes->uri)) {
+            $pt = $type->getUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->uri);
+            } else {
+                $type->setUri((string)$attributes->uri);
+            }
         }
         if (isset($children->version)) {
             foreach($children->version as $child) {
@@ -428,7 +438,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getSubsumption())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSUMPTION, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2123,17 +2123,27 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
                 $type->addDeviceName(FHIRDeviceDeviceName::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->distinctIdentifier)) {
-            $type->setDistinctIdentifier((string)$attributes->distinctIdentifier);
-        }
         if (isset($children->distinctIdentifier)) {
             $type->setDistinctIdentifier(FHIRString::xmlUnserialize($children->distinctIdentifier));
         }
-        if (isset($attributes->expirationDate)) {
-            $type->setExpirationDate((string)$attributes->expirationDate);
+        if (isset($attributes->distinctIdentifier)) {
+            $pt = $type->getDistinctIdentifier();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->distinctIdentifier);
+            } else {
+                $type->setDistinctIdentifier((string)$attributes->distinctIdentifier);
+            }
         }
         if (isset($children->expirationDate)) {
             $type->setExpirationDate(FHIRDateTime::xmlUnserialize($children->expirationDate));
+        }
+        if (isset($attributes->expirationDate)) {
+            $pt = $type->getExpirationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->expirationDate);
+            } else {
+                $type->setExpirationDate((string)$attributes->expirationDate);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -2143,29 +2153,49 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         if (isset($children->location)) {
             $type->setLocation(FHIRReference::xmlUnserialize($children->location));
         }
-        if (isset($attributes->lotNumber)) {
-            $type->setLotNumber((string)$attributes->lotNumber);
-        }
         if (isset($children->lotNumber)) {
             $type->setLotNumber(FHIRString::xmlUnserialize($children->lotNumber));
         }
-        if (isset($attributes->manufactureDate)) {
-            $type->setManufactureDate((string)$attributes->manufactureDate);
+        if (isset($attributes->lotNumber)) {
+            $pt = $type->getLotNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lotNumber);
+            } else {
+                $type->setLotNumber((string)$attributes->lotNumber);
+            }
         }
         if (isset($children->manufactureDate)) {
             $type->setManufactureDate(FHIRDateTime::xmlUnserialize($children->manufactureDate));
         }
-        if (isset($attributes->manufacturer)) {
-            $type->setManufacturer((string)$attributes->manufacturer);
+        if (isset($attributes->manufactureDate)) {
+            $pt = $type->getManufactureDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->manufactureDate);
+            } else {
+                $type->setManufactureDate((string)$attributes->manufactureDate);
+            }
         }
         if (isset($children->manufacturer)) {
             $type->setManufacturer(FHIRString::xmlUnserialize($children->manufacturer));
         }
-        if (isset($attributes->modelNumber)) {
-            $type->setModelNumber((string)$attributes->modelNumber);
+        if (isset($attributes->manufacturer)) {
+            $pt = $type->getManufacturer();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->manufacturer);
+            } else {
+                $type->setManufacturer((string)$attributes->manufacturer);
+            }
         }
         if (isset($children->modelNumber)) {
             $type->setModelNumber(FHIRString::xmlUnserialize($children->modelNumber));
+        }
+        if (isset($attributes->modelNumber)) {
+            $pt = $type->getModelNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->modelNumber);
+            } else {
+                $type->setModelNumber((string)$attributes->modelNumber);
+            }
         }
         if (isset($children->note)) {
             foreach($children->note as $child) {
@@ -2178,11 +2208,16 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         if (isset($children->parent)) {
             $type->setParent(FHIRReference::xmlUnserialize($children->parent));
         }
-        if (isset($attributes->partNumber)) {
-            $type->setPartNumber((string)$attributes->partNumber);
-        }
         if (isset($children->partNumber)) {
             $type->setPartNumber(FHIRString::xmlUnserialize($children->partNumber));
+        }
+        if (isset($attributes->partNumber)) {
+            $pt = $type->getPartNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->partNumber);
+            } else {
+                $type->setPartNumber((string)$attributes->partNumber);
+            }
         }
         if (isset($children->patient)) {
             $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
@@ -2197,11 +2232,16 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
                 $type->addSafety(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->serialNumber)) {
-            $type->setSerialNumber((string)$attributes->serialNumber);
-        }
         if (isset($children->serialNumber)) {
             $type->setSerialNumber(FHIRString::xmlUnserialize($children->serialNumber));
+        }
+        if (isset($attributes->serialNumber)) {
+            $pt = $type->getSerialNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->serialNumber);
+            } else {
+                $type->setSerialNumber((string)$attributes->serialNumber);
+            }
         }
         if (isset($children->specialization)) {
             foreach($children->specialization as $child) {
@@ -2224,11 +2264,16 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
                 $type->addUdiCarrier(FHIRDeviceUdiCarrier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->version)) {
             foreach($children->version as $child) {
@@ -2249,7 +2294,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContact())) {
             foreach($vs as $v) {
                 if (null === $v) {

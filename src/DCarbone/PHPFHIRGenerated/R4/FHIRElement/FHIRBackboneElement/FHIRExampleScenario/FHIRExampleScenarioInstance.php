@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -610,23 +610,38 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
                 $type->addContainedInstance(FHIRExampleScenarioContainedInstance::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->resourceId)) {
-            $type->setResourceId((string)$attributes->resourceId);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->resourceId)) {
             $type->setResourceId(FHIRString::xmlUnserialize($children->resourceId));
+        }
+        if (isset($attributes->resourceId)) {
+            $pt = $type->getResourceId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->resourceId);
+            } else {
+                $type->setResourceId((string)$attributes->resourceId);
+            }
         }
         if (isset($children->resourceType)) {
             $type->setResourceType(FHIRResourceType::xmlUnserialize($children->resourceType));
@@ -650,7 +665,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContainedInstance())) {
             foreach($vs as $v) {
                 if (null === $v) {

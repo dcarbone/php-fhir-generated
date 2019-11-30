@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRLoc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -395,23 +395,38 @@ class FHIRLocationPosition extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->altitude)) {
-            $type->setAltitude((string)$attributes->altitude);
-        }
         if (isset($children->altitude)) {
             $type->setAltitude(FHIRDecimal::xmlUnserialize($children->altitude));
         }
-        if (isset($attributes->latitude)) {
-            $type->setLatitude((string)$attributes->latitude);
+        if (isset($attributes->altitude)) {
+            $pt = $type->getAltitude();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->altitude);
+            } else {
+                $type->setAltitude((string)$attributes->altitude);
+            }
         }
         if (isset($children->latitude)) {
             $type->setLatitude(FHIRDecimal::xmlUnserialize($children->latitude));
         }
-        if (isset($attributes->longitude)) {
-            $type->setLongitude((string)$attributes->longitude);
+        if (isset($attributes->latitude)) {
+            $pt = $type->getLatitude();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->latitude);
+            } else {
+                $type->setLatitude((string)$attributes->latitude);
+            }
         }
         if (isset($children->longitude)) {
             $type->setLongitude(FHIRDecimal::xmlUnserialize($children->longitude));
+        }
+        if (isset($attributes->longitude)) {
+            $pt = $type->getLongitude();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->longitude);
+            } else {
+                $type->setLongitude((string)$attributes->longitude);
+            }
         }
         return $type;
     }
@@ -427,7 +442,6 @@ class FHIRLocationPosition extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAltitude())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALTITUDE, null, $v->_getFHIRXMLNamespace()));
         }

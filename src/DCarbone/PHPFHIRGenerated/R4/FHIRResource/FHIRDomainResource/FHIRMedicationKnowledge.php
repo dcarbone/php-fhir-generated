@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1971,11 +1971,16 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         if (isset($children->packaging)) {
             $type->setPackaging(FHIRMedicationKnowledgePackaging::xmlUnserialize($children->packaging));
         }
-        if (isset($attributes->preparationInstruction)) {
-            $type->setPreparationInstruction((string)$attributes->preparationInstruction);
-        }
         if (isset($children->preparationInstruction)) {
             $type->setPreparationInstruction(FHIRMarkdown::xmlUnserialize($children->preparationInstruction));
+        }
+        if (isset($attributes->preparationInstruction)) {
+            $pt = $type->getPreparationInstruction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->preparationInstruction);
+            } else {
+                $type->setPreparationInstruction((string)$attributes->preparationInstruction);
+            }
         }
         if (isset($children->productType)) {
             foreach($children->productType as $child) {
@@ -1992,14 +1997,16 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $type->addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->status)) {
-            $type->setStatus((string)$attributes->status);
-        }
         if (isset($children->status)) {
             $type->setStatus(FHIRCode::xmlUnserialize($children->status));
         }
-        if (isset($attributes->synonym)) {
-            $type->addSynonym((string)$attributes->synonym);
+        if (isset($attributes->status)) {
+            $pt = $type->getStatus();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->status);
+            } else {
+                $type->setStatus((string)$attributes->status);
+            }
         }
         if (isset($children->synonym)) {
             foreach($children->synonym as $child) {
@@ -2020,7 +2027,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdministrationGuidelines())) {
             foreach($vs as $v) {
                 if (null === $v) {

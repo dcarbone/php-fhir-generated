@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2367,11 +2367,16 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         if (isset($children->definition)) {
             $type->setDefinition(FHIRReference::xmlUnserialize($children->definition));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->documentation)) {
             foreach($children->documentation as $child) {
@@ -2382,9 +2387,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             foreach($children->dynamicValue as $child) {
                 $type->addDynamicValue(FHIRPlanDefinitionDynamicValue::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->goalId)) {
-            $type->addGoalId((string)$attributes->goalId);
         }
         if (isset($children->goalId)) {
             foreach($children->goalId as $child) {
@@ -2399,11 +2401,16 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $type->addInput(FHIRDataRequirement::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->label)) {
-            $type->setLabel((string)$attributes->label);
-        }
         if (isset($children->label)) {
             $type->setLabel(FHIRString::xmlUnserialize($children->label));
+        }
+        if (isset($attributes->label)) {
+            $pt = $type->getLabel();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->label);
+            } else {
+                $type->setLabel((string)$attributes->label);
+            }
         }
         if (isset($children->output)) {
             foreach($children->output as $child) {
@@ -2434,17 +2441,27 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         if (isset($children->selectionBehavior)) {
             $type->setSelectionBehavior(FHIRActionSelectionBehavior::xmlUnserialize($children->selectionBehavior));
         }
-        if (isset($attributes->textEquivalent)) {
-            $type->setTextEquivalent((string)$attributes->textEquivalent);
-        }
         if (isset($children->textEquivalent)) {
             $type->setTextEquivalent(FHIRString::xmlUnserialize($children->textEquivalent));
         }
-        if (isset($attributes->timingDateTime)) {
-            $type->setTimingDateTime((string)$attributes->timingDateTime);
+        if (isset($attributes->textEquivalent)) {
+            $pt = $type->getTextEquivalent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->textEquivalent);
+            } else {
+                $type->setTextEquivalent((string)$attributes->textEquivalent);
+            }
         }
         if (isset($children->timingDateTime)) {
             $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($children->timingDateTime));
+        }
+        if (isset($attributes->timingDateTime)) {
+            $pt = $type->getTimingDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timingDateTime);
+            } else {
+                $type->setTimingDateTime((string)$attributes->timingDateTime);
+            }
         }
         if (isset($children->timingDuration)) {
             $type->setTimingDuration(FHIRDuration::xmlUnserialize($children->timingDuration));
@@ -2458,11 +2475,16 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         if (isset($children->timingTiming)) {
             $type->setTimingTiming(FHIRTiming::xmlUnserialize($children->timingTiming));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->transform)) {
             $type->setTransform(FHIRReference::xmlUnserialize($children->transform));
@@ -2489,7 +2511,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {
                 if (null === $v) {

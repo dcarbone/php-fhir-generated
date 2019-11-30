@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -570,17 +570,27 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->copyright)) {
-            $type->setCopyright((string)$attributes->copyright);
-        }
         if (isset($children->copyright)) {
             $type->setCopyright(FHIRMarkdown::xmlUnserialize($children->copyright));
         }
-        if (isset($attributes->publicationDate)) {
-            $type->setPublicationDate((string)$attributes->publicationDate);
+        if (isset($attributes->copyright)) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->copyright);
+            } else {
+                $type->setCopyright((string)$attributes->copyright);
+            }
         }
         if (isset($children->publicationDate)) {
             $type->setPublicationDate(FHIRDateTime::xmlUnserialize($children->publicationDate));
+        }
+        if (isset($attributes->publicationDate)) {
+            $pt = $type->getPublicationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publicationDate);
+            } else {
+                $type->setPublicationDate((string)$attributes->publicationDate);
+            }
         }
         if (isset($children->publicationStatus)) {
             $type->setPublicationStatus(FHIRContractResourcePublicationStatusCodes::xmlUnserialize($children->publicationStatus));
@@ -608,7 +618,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCopyright())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COPYRIGHT, null, $v->_getFHIRXMLNamespace()));
         }

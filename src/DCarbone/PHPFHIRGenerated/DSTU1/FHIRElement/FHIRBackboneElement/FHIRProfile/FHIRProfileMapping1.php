@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -309,17 +309,27 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->identity)) {
-            $type->setIdentity((string)$attributes->identity);
-        }
         if (isset($children->identity)) {
             $type->setIdentity(FHIRId::xmlUnserialize($children->identity));
         }
-        if (isset($attributes->map)) {
-            $type->setMap((string)$attributes->map);
+        if (isset($attributes->identity)) {
+            $pt = $type->getIdentity();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->identity);
+            } else {
+                $type->setIdentity((string)$attributes->identity);
+            }
         }
         if (isset($children->map)) {
             $type->setMap(FHIRString::xmlUnserialize($children->map));
+        }
+        if (isset($attributes->map)) {
+            $pt = $type->getMap();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->map);
+            } else {
+                $type->setMap((string)$attributes->map);
+            }
         }
         return $type;
     }
@@ -335,7 +345,6 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTITY, null, $v->_getFHIRXMLNamespace()));
         }

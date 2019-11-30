@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -570,11 +570,16 @@ class FHIRGoalTarget extends FHIRBackboneElement
         if (isset($children->detailRange)) {
             $type->setDetailRange(FHIRRange::xmlUnserialize($children->detailRange));
         }
-        if (isset($attributes->dueDate)) {
-            $type->setDueDate((string)$attributes->dueDate);
-        }
         if (isset($children->dueDate)) {
             $type->setDueDate(FHIRDate::xmlUnserialize($children->dueDate));
+        }
+        if (isset($attributes->dueDate)) {
+            $pt = $type->getDueDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dueDate);
+            } else {
+                $type->setDueDate((string)$attributes->dueDate);
+            }
         }
         if (isset($children->dueDuration)) {
             $type->setDueDuration(FHIRDuration::xmlUnserialize($children->dueDuration));
@@ -596,7 +601,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDetailCodeableConcept())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }

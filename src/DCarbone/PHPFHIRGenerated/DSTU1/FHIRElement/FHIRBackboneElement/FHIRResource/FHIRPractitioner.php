@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1229,11 +1229,16 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
         if (isset($children->address)) {
             $type->setAddress(FHIRAddress::xmlUnserialize($children->address));
         }
-        if (isset($attributes->birthDate)) {
-            $type->setBirthDate((string)$attributes->birthDate);
-        }
         if (isset($children->birthDate)) {
             $type->setBirthDate(FHIRDateTime::xmlUnserialize($children->birthDate));
+        }
+        if (isset($attributes->birthDate)) {
+            $pt = $type->getBirthDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->birthDate);
+            } else {
+                $type->setBirthDate((string)$attributes->birthDate);
+            }
         }
         if (isset($children->communication)) {
             foreach($children->communication as $child) {
@@ -1301,7 +1306,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAddress())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
         }

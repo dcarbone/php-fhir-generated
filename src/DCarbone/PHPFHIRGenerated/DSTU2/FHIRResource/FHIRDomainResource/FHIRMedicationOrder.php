@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1273,17 +1273,27 @@ class FHIRMedicationOrder extends FHIRDomainResource implements PHPFHIRContained
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->dateEnded)) {
-            $type->setDateEnded((string)$attributes->dateEnded);
-        }
         if (isset($children->dateEnded)) {
             $type->setDateEnded(FHIRDateTime::xmlUnserialize($children->dateEnded));
         }
-        if (isset($attributes->dateWritten)) {
-            $type->setDateWritten((string)$attributes->dateWritten);
+        if (isset($attributes->dateEnded)) {
+            $pt = $type->getDateEnded();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dateEnded);
+            } else {
+                $type->setDateEnded((string)$attributes->dateEnded);
+            }
         }
         if (isset($children->dateWritten)) {
             $type->setDateWritten(FHIRDateTime::xmlUnserialize($children->dateWritten));
+        }
+        if (isset($attributes->dateWritten)) {
+            $pt = $type->getDateWritten();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->dateWritten);
+            } else {
+                $type->setDateWritten((string)$attributes->dateWritten);
+            }
         }
         if (isset($children->dispenseRequest)) {
             $type->setDispenseRequest(FHIRMedicationOrderDispenseRequest::xmlUnserialize($children->dispenseRequest));
@@ -1307,11 +1317,16 @@ class FHIRMedicationOrder extends FHIRDomainResource implements PHPFHIRContained
         if (isset($children->medicationReference)) {
             $type->setMedicationReference(FHIRReference::xmlUnserialize($children->medicationReference));
         }
-        if (isset($attributes->note)) {
-            $type->setNote((string)$attributes->note);
-        }
         if (isset($children->note)) {
             $type->setNote(FHIRString::xmlUnserialize($children->note));
+        }
+        if (isset($attributes->note)) {
+            $pt = $type->getNote();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->note);
+            } else {
+                $type->setNote((string)$attributes->note);
+            }
         }
         if (isset($children->patient)) {
             $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
@@ -1351,7 +1366,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements PHPFHIRContained
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDateEnded())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_ENDED, null, $v->_getFHIRXMLNamespace()));
         }

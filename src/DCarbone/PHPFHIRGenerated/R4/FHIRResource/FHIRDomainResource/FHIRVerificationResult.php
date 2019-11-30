@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1200,20 +1200,30 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->frequency)) {
             $type->setFrequency(FHIRTiming::xmlUnserialize($children->frequency));
         }
-        if (isset($attributes->lastPerformed)) {
-            $type->setLastPerformed((string)$attributes->lastPerformed);
-        }
         if (isset($children->lastPerformed)) {
             $type->setLastPerformed(FHIRDateTime::xmlUnserialize($children->lastPerformed));
+        }
+        if (isset($attributes->lastPerformed)) {
+            $pt = $type->getLastPerformed();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastPerformed);
+            } else {
+                $type->setLastPerformed((string)$attributes->lastPerformed);
+            }
         }
         if (isset($children->need)) {
             $type->setNeed(FHIRCodeableConcept::xmlUnserialize($children->need));
         }
-        if (isset($attributes->nextScheduled)) {
-            $type->setNextScheduled((string)$attributes->nextScheduled);
-        }
         if (isset($children->nextScheduled)) {
             $type->setNextScheduled(FHIRDate::xmlUnserialize($children->nextScheduled));
+        }
+        if (isset($attributes->nextScheduled)) {
+            $pt = $type->getNextScheduled();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->nextScheduled);
+            } else {
+                $type->setNextScheduled((string)$attributes->nextScheduled);
+            }
         }
         if (isset($children->primarySource)) {
             foreach($children->primarySource as $child) {
@@ -1223,19 +1233,21 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->status)) {
             $type->setStatus(FHIRStatus::xmlUnserialize($children->status));
         }
-        if (isset($attributes->statusDate)) {
-            $type->setStatusDate((string)$attributes->statusDate);
-        }
         if (isset($children->statusDate)) {
             $type->setStatusDate(FHIRDateTime::xmlUnserialize($children->statusDate));
+        }
+        if (isset($attributes->statusDate)) {
+            $pt = $type->getStatusDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->statusDate);
+            } else {
+                $type->setStatusDate((string)$attributes->statusDate);
+            }
         }
         if (isset($children->target)) {
             foreach($children->target as $child) {
                 $type->addTarget(FHIRReference::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->targetLocation)) {
-            $type->addTargetLocation((string)$attributes->targetLocation);
         }
         if (isset($children->targetLocation)) {
             foreach($children->targetLocation as $child) {
@@ -1269,7 +1281,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAttestation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTATION, null, $v->_getFHIRXMLNamespace()));
         }

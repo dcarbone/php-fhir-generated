@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -757,31 +757,46 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->context)) {
-            $type->setContext((string)$attributes->context);
-        }
         if (isset($children->context)) {
             $type->setContext(FHIRId::xmlUnserialize($children->context));
+        }
+        if (isset($attributes->context)) {
+            $pt = $type->getContext();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->context);
+            } else {
+                $type->setContext((string)$attributes->context);
+            }
         }
         if (isset($children->contextType)) {
             $type->setContextType(FHIRStructureMapContextType::xmlUnserialize($children->contextType));
         }
-        if (isset($attributes->element)) {
-            $type->setElement((string)$attributes->element);
-        }
         if (isset($children->element)) {
             $type->setElement(FHIRString::xmlUnserialize($children->element));
+        }
+        if (isset($attributes->element)) {
+            $pt = $type->getElement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->element);
+            } else {
+                $type->setElement((string)$attributes->element);
+            }
         }
         if (isset($children->listMode)) {
             foreach($children->listMode as $child) {
                 $type->addListMode(FHIRStructureMapTargetListMode::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->listRuleId)) {
-            $type->setListRuleId((string)$attributes->listRuleId);
-        }
         if (isset($children->listRuleId)) {
             $type->setListRuleId(FHIRId::xmlUnserialize($children->listRuleId));
+        }
+        if (isset($attributes->listRuleId)) {
+            $pt = $type->getListRuleId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->listRuleId);
+            } else {
+                $type->setListRuleId((string)$attributes->listRuleId);
+            }
         }
         if (isset($children->parameter)) {
             foreach($children->parameter as $child) {
@@ -791,11 +806,16 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         if (isset($children->transform)) {
             $type->setTransform(FHIRStructureMapTransform::xmlUnserialize($children->transform));
         }
-        if (isset($attributes->variable)) {
-            $type->setVariable((string)$attributes->variable);
-        }
         if (isset($children->variable)) {
             $type->setVariable(FHIRId::xmlUnserialize($children->variable));
+        }
+        if (isset($attributes->variable)) {
+            $pt = $type->getVariable();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->variable);
+            } else {
+                $type->setVariable((string)$attributes->variable);
+            }
         }
         return $type;
     }
@@ -811,7 +831,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }

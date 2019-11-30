@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2187,11 +2187,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->authoredOn)) {
-            $type->setAuthoredOn((string)$attributes->authoredOn);
-        }
         if (isset($children->authoredOn)) {
             $type->setAuthoredOn(FHIRDateTime::xmlUnserialize($children->authoredOn));
+        }
+        if (isset($attributes->authoredOn)) {
+            $pt = $type->getAuthoredOn();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authoredOn);
+            } else {
+                $type->setAuthoredOn((string)$attributes->authoredOn);
+            }
         }
         if (isset($children->basedOn)) {
             foreach($children->basedOn as $child) {
@@ -2215,16 +2220,10 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->instantiatesCanonical)) {
-            $type->addInstantiatesCanonical((string)$attributes->instantiatesCanonical);
-        }
         if (isset($children->instantiatesCanonical)) {
             foreach($children->instantiatesCanonical as $child) {
                 $type->addInstantiatesCanonical(FHIRCanonical::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->instantiatesUri)) {
-            $type->addInstantiatesUri((string)$attributes->instantiatesUri);
         }
         if (isset($children->instantiatesUri)) {
             foreach($children->instantiatesUri as $child) {
@@ -2244,11 +2243,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
-        }
         if (isset($children->occurrenceDateTime)) {
             $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
+        }
+        if (isset($attributes->occurrenceDateTime)) {
+            $pt = $type->getOccurrenceDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceDateTime);
+            } else {
+                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+            }
         }
         if (isset($children->occurrencePeriod)) {
             $type->setOccurrencePeriod(FHIRPeriod::xmlUnserialize($children->occurrencePeriod));
@@ -2318,7 +2322,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthoredOn())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED_ON, null, $v->_getFHIRXMLNamespace()));
         }

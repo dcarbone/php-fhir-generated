@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1112,20 +1112,30 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->benefitSubCategory)) {
             $type->setBenefitSubCategory(FHIRCodeableConcept::xmlUnserialize($children->benefitSubCategory));
         }
-        if (isset($attributes->businessArrangement)) {
-            $type->setBusinessArrangement((string)$attributes->businessArrangement);
-        }
         if (isset($children->businessArrangement)) {
             $type->setBusinessArrangement(FHIRString::xmlUnserialize($children->businessArrangement));
+        }
+        if (isset($attributes->businessArrangement)) {
+            $pt = $type->getBusinessArrangement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->businessArrangement);
+            } else {
+                $type->setBusinessArrangement((string)$attributes->businessArrangement);
+            }
         }
         if (isset($children->coverage)) {
             $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
         }
-        if (isset($attributes->created)) {
-            $type->setCreated((string)$attributes->created);
-        }
         if (isset($children->created)) {
             $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
+        }
+        if (isset($attributes->created)) {
+            $pt = $type->getCreated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->created);
+            } else {
+                $type->setCreated((string)$attributes->created);
+            }
         }
         if (isset($children->enterer)) {
             $type->setEnterer(FHIRReference::xmlUnserialize($children->enterer));
@@ -1153,11 +1163,16 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
         if (isset($children->provider)) {
             $type->setProvider(FHIRReference::xmlUnserialize($children->provider));
         }
-        if (isset($attributes->servicedDate)) {
-            $type->setServicedDate((string)$attributes->servicedDate);
-        }
         if (isset($children->servicedDate)) {
             $type->setServicedDate(FHIRDate::xmlUnserialize($children->servicedDate));
+        }
+        if (isset($attributes->servicedDate)) {
+            $pt = $type->getServicedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->servicedDate);
+            } else {
+                $type->setServicedDate((string)$attributes->servicedDate);
+            }
         }
         if (isset($children->servicedPeriod)) {
             $type->setServicedPeriod(FHIRPeriod::xmlUnserialize($children->servicedPeriod));
@@ -1179,7 +1194,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBenefitCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFIT_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

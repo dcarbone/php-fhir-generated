@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -565,11 +565,16 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         if (isset($children->onBehalfOfReference)) {
             $type->setOnBehalfOfReference(FHIRReference::xmlUnserialize($children->onBehalfOfReference));
         }
-        if (isset($attributes->onBehalfOfUri)) {
-            $type->setOnBehalfOfUri((string)$attributes->onBehalfOfUri);
-        }
         if (isset($children->onBehalfOfUri)) {
             $type->setOnBehalfOfUri(FHIRUri::xmlUnserialize($children->onBehalfOfUri));
+        }
+        if (isset($attributes->onBehalfOfUri)) {
+            $pt = $type->getOnBehalfOfUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onBehalfOfUri);
+            } else {
+                $type->setOnBehalfOfUri((string)$attributes->onBehalfOfUri);
+            }
         }
         if (isset($children->relatedAgentType)) {
             $type->setRelatedAgentType(FHIRCodeableConcept::xmlUnserialize($children->relatedAgentType));
@@ -582,11 +587,16 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         if (isset($children->whoReference)) {
             $type->setWhoReference(FHIRReference::xmlUnserialize($children->whoReference));
         }
-        if (isset($attributes->whoUri)) {
-            $type->setWhoUri((string)$attributes->whoUri);
-        }
         if (isset($children->whoUri)) {
             $type->setWhoUri(FHIRUri::xmlUnserialize($children->whoUri));
+        }
+        if (isset($attributes->whoUri)) {
+            $pt = $type->getWhoUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->whoUri);
+            } else {
+                $type->setWhoUri((string)$attributes->whoUri);
+            }
         }
         return $type;
     }
@@ -602,7 +612,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getOnBehalfOfReference())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF_REFERENCE, null, $v->_getFHIRXMLNamespace()));
         }

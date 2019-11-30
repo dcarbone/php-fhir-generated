@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -842,11 +842,16 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
                 $type->addGroup(FHIRQuestionnaireGroup::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->linkId)) {
-            $type->setLinkId((string)$attributes->linkId);
-        }
         if (isset($children->linkId)) {
             $type->setLinkId(FHIRString::xmlUnserialize($children->linkId));
+        }
+        if (isset($attributes->linkId)) {
+            $pt = $type->getLinkId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->linkId);
+            } else {
+                $type->setLinkId((string)$attributes->linkId);
+            }
         }
         if (isset($children->option)) {
             foreach($children->option as $child) {
@@ -856,23 +861,38 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         if (isset($children->options)) {
             $type->setOptions(FHIRReference::xmlUnserialize($children->options));
         }
-        if (isset($attributes->repeats)) {
-            $type->setRepeats((string)$attributes->repeats);
-        }
         if (isset($children->repeats)) {
             $type->setRepeats(FHIRBoolean::xmlUnserialize($children->repeats));
         }
-        if (isset($attributes->required)) {
-            $type->setRequired((string)$attributes->required);
+        if (isset($attributes->repeats)) {
+            $pt = $type->getRepeats();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->repeats);
+            } else {
+                $type->setRepeats((string)$attributes->repeats);
+            }
         }
         if (isset($children->required)) {
             $type->setRequired(FHIRBoolean::xmlUnserialize($children->required));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
+        if (isset($attributes->required)) {
+            $pt = $type->getRequired();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->required);
+            } else {
+                $type->setRequired((string)$attributes->required);
+            }
         }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRAnswerFormat::xmlUnserialize($children->type));
@@ -891,7 +911,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getConcept())) {
             foreach($vs as $v) {
                 if (null === $v) {

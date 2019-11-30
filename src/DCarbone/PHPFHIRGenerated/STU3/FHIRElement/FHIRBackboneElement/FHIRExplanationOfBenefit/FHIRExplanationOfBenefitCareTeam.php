@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -475,20 +475,30 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
         if (isset($children->qualification)) {
             $type->setQualification(FHIRCodeableConcept::xmlUnserialize($children->qualification));
         }
-        if (isset($attributes->responsible)) {
-            $type->setResponsible((string)$attributes->responsible);
-        }
         if (isset($children->responsible)) {
             $type->setResponsible(FHIRBoolean::xmlUnserialize($children->responsible));
+        }
+        if (isset($attributes->responsible)) {
+            $pt = $type->getResponsible();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->responsible);
+            } else {
+                $type->setResponsible((string)$attributes->responsible);
+            }
         }
         if (isset($children->role)) {
             $type->setRole(FHIRCodeableConcept::xmlUnserialize($children->role));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
-        }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         return $type;
     }
@@ -504,7 +514,6 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getProvider())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PROVIDER, null, $v->_getFHIRXMLNamespace()));
         }

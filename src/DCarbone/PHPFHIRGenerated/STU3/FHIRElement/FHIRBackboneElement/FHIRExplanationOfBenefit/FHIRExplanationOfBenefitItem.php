@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2167,9 +2167,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         if (isset($children->bodySite)) {
             $type->setBodySite(FHIRCodeableConcept::xmlUnserialize($children->bodySite));
         }
-        if (isset($attributes->careTeamLinkId)) {
-            $type->addCareTeamLinkId((string)$attributes->careTeamLinkId);
-        }
         if (isset($children->careTeamLinkId)) {
             foreach($children->careTeamLinkId as $child) {
                 $type->addCareTeamLinkId(FHIRPositiveInt::xmlUnserialize($child));
@@ -2183,9 +2180,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $type->addDetail(FHIRExplanationOfBenefitDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->diagnosisLinkId)) {
-            $type->addDiagnosisLinkId((string)$attributes->diagnosisLinkId);
-        }
         if (isset($children->diagnosisLinkId)) {
             foreach($children->diagnosisLinkId as $child) {
                 $type->addDiagnosisLinkId(FHIRPositiveInt::xmlUnserialize($child));
@@ -2196,14 +2190,16 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 $type->addEncounter(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->factor)) {
-            $type->setFactor((string)$attributes->factor);
-        }
         if (isset($children->factor)) {
             $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
         }
-        if (isset($attributes->informationLinkId)) {
-            $type->addInformationLinkId((string)$attributes->informationLinkId);
+        if (isset($attributes->factor)) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->factor);
+            } else {
+                $type->setFactor((string)$attributes->factor);
+            }
         }
         if (isset($children->informationLinkId)) {
             foreach($children->informationLinkId as $child) {
@@ -2227,16 +2223,10 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         if (isset($children->net)) {
             $type->setNet(FHIRMoney::xmlUnserialize($children->net));
         }
-        if (isset($attributes->noteNumber)) {
-            $type->addNoteNumber((string)$attributes->noteNumber);
-        }
         if (isset($children->noteNumber)) {
             foreach($children->noteNumber as $child) {
                 $type->addNoteNumber(FHIRPositiveInt::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->procedureLinkId)) {
-            $type->addProcedureLinkId((string)$attributes->procedureLinkId);
         }
         if (isset($children->procedureLinkId)) {
             foreach($children->procedureLinkId as $child) {
@@ -2254,20 +2244,30 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         if (isset($children->revenue)) {
             $type->setRevenue(FHIRCodeableConcept::xmlUnserialize($children->revenue));
         }
-        if (isset($attributes->sequence)) {
-            $type->setSequence((string)$attributes->sequence);
-        }
         if (isset($children->sequence)) {
             $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
+        }
+        if (isset($attributes->sequence)) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->sequence);
+            } else {
+                $type->setSequence((string)$attributes->sequence);
+            }
         }
         if (isset($children->service)) {
             $type->setService(FHIRCodeableConcept::xmlUnserialize($children->service));
         }
-        if (isset($attributes->servicedDate)) {
-            $type->setServicedDate((string)$attributes->servicedDate);
-        }
         if (isset($children->servicedDate)) {
             $type->setServicedDate(FHIRDate::xmlUnserialize($children->servicedDate));
+        }
+        if (isset($attributes->servicedDate)) {
+            $pt = $type->getServicedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->servicedDate);
+            } else {
+                $type->setServicedDate((string)$attributes->servicedDate);
+            }
         }
         if (isset($children->servicedPeriod)) {
             $type->setServicedPeriod(FHIRPeriod::xmlUnserialize($children->servicedPeriod));
@@ -2299,7 +2299,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAdjudication())) {
             foreach($vs as $v) {
                 if (null === $v) {

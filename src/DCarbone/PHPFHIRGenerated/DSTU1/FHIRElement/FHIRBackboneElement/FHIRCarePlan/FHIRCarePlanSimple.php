@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -835,11 +835,16 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         if (isset($children->dailyAmount)) {
             $type->setDailyAmount(FHIRQuantity::xmlUnserialize($children->dailyAmount));
         }
-        if (isset($attributes->details)) {
-            $type->setDetails((string)$attributes->details);
-        }
         if (isset($children->details)) {
             $type->setDetails(FHIRString::xmlUnserialize($children->details));
+        }
+        if (isset($attributes->details)) {
+            $pt = $type->getDetails();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->details);
+            } else {
+                $type->setDetails((string)$attributes->details);
+            }
         }
         if (isset($children->location)) {
             $type->setLocation(FHIRResourceReference::xmlUnserialize($children->location));
@@ -861,11 +866,16 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         if (isset($children->timingSchedule)) {
             $type->setTimingSchedule(FHIRSchedule::xmlUnserialize($children->timingSchedule));
         }
-        if (isset($attributes->timingString)) {
-            $type->setTimingString((string)$attributes->timingString);
-        }
         if (isset($children->timingString)) {
             $type->setTimingString(FHIRString::xmlUnserialize($children->timingString));
+        }
+        if (isset($attributes->timingString)) {
+            $pt = $type->getTimingString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timingString);
+            } else {
+                $type->setTimingString((string)$attributes->timingString);
+            }
         }
         return $type;
     }
@@ -881,7 +891,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

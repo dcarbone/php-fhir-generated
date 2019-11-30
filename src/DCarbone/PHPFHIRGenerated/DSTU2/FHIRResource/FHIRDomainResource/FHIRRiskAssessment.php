@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -813,11 +813,16 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
         if (isset($children->condition)) {
             $type->setCondition(FHIRReference::xmlUnserialize($children->condition));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
+        }
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
@@ -828,11 +833,16 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
         if (isset($children->method)) {
             $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
         }
-        if (isset($attributes->mitigation)) {
-            $type->setMitigation((string)$attributes->mitigation);
-        }
         if (isset($children->mitigation)) {
             $type->setMitigation(FHIRString::xmlUnserialize($children->mitigation));
+        }
+        if (isset($attributes->mitigation)) {
+            $pt = $type->getMitigation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->mitigation);
+            } else {
+                $type->setMitigation((string)$attributes->mitigation);
+            }
         }
         if (isset($children->performer)) {
             $type->setPerformer(FHIRReference::xmlUnserialize($children->performer));
@@ -859,7 +869,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getBasis())) {
             foreach($vs as $v) {
                 if (null === $v) {

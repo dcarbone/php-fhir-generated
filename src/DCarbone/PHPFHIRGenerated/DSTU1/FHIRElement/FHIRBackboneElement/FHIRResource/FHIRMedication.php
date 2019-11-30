@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -587,11 +587,16 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
         if (isset($children->code)) {
             $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
         }
-        if (isset($attributes->isBrand)) {
-            $type->setIsBrand((string)$attributes->isBrand);
-        }
         if (isset($children->isBrand)) {
             $type->setIsBrand(FHIRBoolean::xmlUnserialize($children->isBrand));
+        }
+        if (isset($attributes->isBrand)) {
+            $pt = $type->getIsBrand();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isBrand);
+            } else {
+                $type->setIsBrand((string)$attributes->isBrand);
+            }
         }
         if (isset($children->kind)) {
             $type->setKind(FHIRMedicationKind::xmlUnserialize($children->kind));
@@ -599,11 +604,16 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
         if (isset($children->manufacturer)) {
             $type->setManufacturer(FHIRResourceReference::xmlUnserialize($children->manufacturer));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->package)) {
             $type->setPackage(FHIRMedicationPackage::xmlUnserialize($children->package));
@@ -625,7 +635,6 @@ class FHIRMedication extends FHIRResource implements PHPFHIRContainedTypeInterfa
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }

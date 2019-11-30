@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -696,22 +696,21 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
                 $type->addAggregation(FHIRAggregationMode::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->code)) {
-            $type->setCode((string)$attributes->code);
-        }
         if (isset($children->code)) {
             $type->setCode(FHIRUri::xmlUnserialize($children->code));
         }
-        if (isset($attributes->profile)) {
-            $type->addProfile((string)$attributes->profile);
+        if (isset($attributes->code)) {
+            $pt = $type->getCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->code);
+            } else {
+                $type->setCode((string)$attributes->code);
+            }
         }
         if (isset($children->profile)) {
             foreach($children->profile as $child) {
                 $type->addProfile(FHIRCanonical::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->targetProfile)) {
-            $type->addTargetProfile((string)$attributes->targetProfile);
         }
         if (isset($children->targetProfile)) {
             foreach($children->targetProfile as $child) {
@@ -735,7 +734,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAggregation())) {
             foreach($vs as $v) {
                 if (null === $v) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -314,17 +314,27 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->blob)) {
-            $type->setBlob((string)$attributes->blob);
-        }
         if (isset($children->blob)) {
             $type->setBlob(FHIRBase64Binary::xmlUnserialize($children->blob));
         }
-        if (isset($attributes->type)) {
-            $type->setType((string)$attributes->type);
+        if (isset($attributes->blob)) {
+            $pt = $type->getBlob();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->blob);
+            } else {
+                $type->setBlob((string)$attributes->blob);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCode::xmlUnserialize($children->type));
+        }
+        if (isset($attributes->type)) {
+            $pt = $type->getType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->type);
+            } else {
+                $type->setType((string)$attributes->type);
+            }
         }
         return $type;
     }
@@ -340,7 +350,6 @@ class FHIRConformanceCertificate extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getBlob())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_BLOB, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -3130,20 +3130,30 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->asNeededBoolean)) {
-            $type->setAsNeededBoolean((string)$attributes->asNeededBoolean);
-        }
         if (isset($children->asNeededBoolean)) {
             $type->setAsNeededBoolean(FHIRBoolean::xmlUnserialize($children->asNeededBoolean));
+        }
+        if (isset($attributes->asNeededBoolean)) {
+            $pt = $type->getAsNeededBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->asNeededBoolean);
+            } else {
+                $type->setAsNeededBoolean((string)$attributes->asNeededBoolean);
+            }
         }
         if (isset($children->asNeededCodeableConcept)) {
             $type->setAsNeededCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->asNeededCodeableConcept));
         }
-        if (isset($attributes->authoredOn)) {
-            $type->setAuthoredOn((string)$attributes->authoredOn);
-        }
         if (isset($children->authoredOn)) {
             $type->setAuthoredOn(FHIRDateTime::xmlUnserialize($children->authoredOn));
+        }
+        if (isset($attributes->authoredOn)) {
+            $pt = $type->getAuthoredOn();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authoredOn);
+            } else {
+                $type->setAuthoredOn((string)$attributes->authoredOn);
+            }
         }
         if (isset($children->basedOn)) {
             foreach($children->basedOn as $child) {
@@ -3163,11 +3173,16 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
         if (isset($children->code)) {
             $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
         }
-        if (isset($attributes->doNotPerform)) {
-            $type->setDoNotPerform((string)$attributes->doNotPerform);
-        }
         if (isset($children->doNotPerform)) {
             $type->setDoNotPerform(FHIRBoolean::xmlUnserialize($children->doNotPerform));
+        }
+        if (isset($attributes->doNotPerform)) {
+            $pt = $type->getDoNotPerform();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->doNotPerform);
+            } else {
+                $type->setDoNotPerform((string)$attributes->doNotPerform);
+            }
         }
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
@@ -3177,16 +3192,10 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->instantiatesCanonical)) {
-            $type->addInstantiatesCanonical((string)$attributes->instantiatesCanonical);
-        }
         if (isset($children->instantiatesCanonical)) {
             foreach($children->instantiatesCanonical as $child) {
                 $type->addInstantiatesCanonical(FHIRCanonical::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->instantiatesUri)) {
-            $type->addInstantiatesUri((string)$attributes->instantiatesUri);
         }
         if (isset($children->instantiatesUri)) {
             foreach($children->instantiatesUri as $child) {
@@ -3216,11 +3225,16 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
-        }
         if (isset($children->occurrenceDateTime)) {
             $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
+        }
+        if (isset($attributes->occurrenceDateTime)) {
+            $pt = $type->getOccurrenceDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceDateTime);
+            } else {
+                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+            }
         }
         if (isset($children->occurrencePeriod)) {
             $type->setOccurrencePeriod(FHIRPeriod::xmlUnserialize($children->occurrencePeriod));
@@ -3233,11 +3247,16 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
                 $type->addOrderDetail(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->patientInstruction)) {
-            $type->setPatientInstruction((string)$attributes->patientInstruction);
-        }
         if (isset($children->patientInstruction)) {
             $type->setPatientInstruction(FHIRString::xmlUnserialize($children->patientInstruction));
+        }
+        if (isset($attributes->patientInstruction)) {
+            $pt = $type->getPatientInstruction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->patientInstruction);
+            } else {
+                $type->setPatientInstruction((string)$attributes->patientInstruction);
+            }
         }
         if (isset($children->performer)) {
             foreach($children->performer as $child) {
@@ -3315,7 +3334,6 @@ class FHIRServiceRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

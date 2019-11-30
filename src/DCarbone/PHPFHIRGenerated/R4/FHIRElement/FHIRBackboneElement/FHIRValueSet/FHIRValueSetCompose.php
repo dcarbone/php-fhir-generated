@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -526,22 +526,32 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $type->addExclude(FHIRValueSetInclude::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->inactive)) {
-            $type->setInactive((string)$attributes->inactive);
-        }
         if (isset($children->inactive)) {
             $type->setInactive(FHIRBoolean::xmlUnserialize($children->inactive));
+        }
+        if (isset($attributes->inactive)) {
+            $pt = $type->getInactive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->inactive);
+            } else {
+                $type->setInactive((string)$attributes->inactive);
+            }
         }
         if (isset($children->include)) {
             foreach($children->include as $child) {
                 $type->addInclude(FHIRValueSetInclude::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->lockedDate)) {
-            $type->setLockedDate((string)$attributes->lockedDate);
-        }
         if (isset($children->lockedDate)) {
             $type->setLockedDate(FHIRDate::xmlUnserialize($children->lockedDate));
+        }
+        if (isset($attributes->lockedDate)) {
+            $pt = $type->getLockedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lockedDate);
+            } else {
+                $type->setLockedDate((string)$attributes->lockedDate);
+            }
         }
         return $type;
     }
@@ -557,7 +567,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getExclude())) {
             foreach($vs as $v) {
                 if (null === $v) {

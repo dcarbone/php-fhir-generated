@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -326,11 +326,16 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
                 $type->addExtension(FHIRExtension::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->id)) {
-            $type->setId((string)$attributes->id);
-        }
         if (isset($children->id)) {
             $type->setId(FHIRIdPrimitive::xmlUnserialize($children->id));
+        }
+        if (isset($attributes->id)) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->id);
+            } else {
+                $type->setId((string)$attributes->id);
+            }
         }
         return $type;
     }
@@ -345,7 +350,6 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
         if (null === $sxe) {
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
-
         if ([] !== ($vs = $this->getExtension())) {
             foreach($vs as $v) {
                 if (null === $v) {
@@ -353,7 +357,8 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
                 }
                 $v->xmlSerialize($sxe->addChild(self::FIELD_EXTENSION, null, $v->_getFHIRXMLNamespace()));
             }
-        }        if (null !== ($v = $this->getId())) {
+        }
+        if (null !== ($v = $this->getId())) {
             $sxe->addAttribute(self::FIELD_ID, (string)$v);
         }
         return $sxe;

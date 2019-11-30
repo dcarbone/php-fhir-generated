@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -381,17 +381,27 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->discriminator)) {
-            $type->setDiscriminator((string)$attributes->discriminator);
-        }
         if (isset($children->discriminator)) {
             $type->setDiscriminator(FHIRId::xmlUnserialize($children->discriminator));
         }
-        if (isset($attributes->ordered)) {
-            $type->setOrdered((string)$attributes->ordered);
+        if (isset($attributes->discriminator)) {
+            $pt = $type->getDiscriminator();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->discriminator);
+            } else {
+                $type->setDiscriminator((string)$attributes->discriminator);
+            }
         }
         if (isset($children->ordered)) {
             $type->setOrdered(FHIRBoolean::xmlUnserialize($children->ordered));
+        }
+        if (isset($attributes->ordered)) {
+            $pt = $type->getOrdered();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->ordered);
+            } else {
+                $type->setOrdered((string)$attributes->ordered);
+            }
         }
         if (isset($children->rules)) {
             $type->setRules(FHIRSlicingRules::xmlUnserialize($children->rules));
@@ -410,7 +420,6 @@ class FHIRProfileSlicing extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDiscriminator())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DISCRIMINATOR, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2256,11 +2256,16 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->authoredOn)) {
-            $type->setAuthoredOn((string)$attributes->authoredOn);
-        }
         if (isset($children->authoredOn)) {
             $type->setAuthoredOn(FHIRDateTime::xmlUnserialize($children->authoredOn));
+        }
+        if (isset($attributes->authoredOn)) {
+            $pt = $type->getAuthoredOn();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authoredOn);
+            } else {
+                $type->setAuthoredOn((string)$attributes->authoredOn);
+            }
         }
         if (isset($children->basedOn)) {
             foreach($children->basedOn as $child) {
@@ -2273,11 +2278,16 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         if (isset($children->code)) {
             $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
@@ -2304,17 +2314,27 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
                 $type->addInput(FHIRTaskInput::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->instantiatesCanonical)) {
-            $type->setInstantiatesCanonical((string)$attributes->instantiatesCanonical);
-        }
         if (isset($children->instantiatesCanonical)) {
             $type->setInstantiatesCanonical(FHIRCanonical::xmlUnserialize($children->instantiatesCanonical));
         }
-        if (isset($attributes->instantiatesUri)) {
-            $type->setInstantiatesUri((string)$attributes->instantiatesUri);
+        if (isset($attributes->instantiatesCanonical)) {
+            $pt = $type->getInstantiatesCanonical();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->instantiatesCanonical);
+            } else {
+                $type->setInstantiatesCanonical((string)$attributes->instantiatesCanonical);
+            }
         }
         if (isset($children->instantiatesUri)) {
             $type->setInstantiatesUri(FHIRUri::xmlUnserialize($children->instantiatesUri));
+        }
+        if (isset($attributes->instantiatesUri)) {
+            $pt = $type->getInstantiatesUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->instantiatesUri);
+            } else {
+                $type->setInstantiatesUri((string)$attributes->instantiatesUri);
+            }
         }
         if (isset($children->insurance)) {
             foreach($children->insurance as $child) {
@@ -2324,11 +2344,16 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         if (isset($children->intent)) {
             $type->setIntent(FHIRTaskIntent::xmlUnserialize($children->intent));
         }
-        if (isset($attributes->lastModified)) {
-            $type->setLastModified((string)$attributes->lastModified);
-        }
         if (isset($children->lastModified)) {
             $type->setLastModified(FHIRDateTime::xmlUnserialize($children->lastModified));
+        }
+        if (isset($attributes->lastModified)) {
+            $pt = $type->getLastModified();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastModified);
+            } else {
+                $type->setLastModified((string)$attributes->lastModified);
+            }
         }
         if (isset($children->location)) {
             $type->setLocation(FHIRReference::xmlUnserialize($children->location));
@@ -2396,7 +2421,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthoredOn())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORED_ON, null, $v->_getFHIRXMLNamespace()));
         }

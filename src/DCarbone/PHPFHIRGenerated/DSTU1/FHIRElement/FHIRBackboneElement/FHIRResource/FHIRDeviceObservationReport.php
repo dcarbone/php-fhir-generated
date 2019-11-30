@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -477,11 +477,16 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->instant)) {
-            $type->setInstant((string)$attributes->instant);
-        }
         if (isset($children->instant)) {
             $type->setInstant(FHIRInstant::xmlUnserialize($children->instant));
+        }
+        if (isset($attributes->instant)) {
+            $pt = $type->getInstant();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->instant);
+            } else {
+                $type->setInstant((string)$attributes->instant);
+            }
         }
         if (isset($children->source)) {
             $type->setSource(FHIRResourceReference::xmlUnserialize($children->source));
@@ -508,7 +513,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }

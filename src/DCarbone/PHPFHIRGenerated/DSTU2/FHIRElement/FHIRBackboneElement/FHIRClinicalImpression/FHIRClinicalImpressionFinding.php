@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -300,11 +300,16 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->cause)) {
-            $type->setCause((string)$attributes->cause);
-        }
         if (isset($children->cause)) {
             $type->setCause(FHIRString::xmlUnserialize($children->cause));
+        }
+        if (isset($attributes->cause)) {
+            $pt = $type->getCause();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->cause);
+            } else {
+                $type->setCause((string)$attributes->cause);
+            }
         }
         if (isset($children->item)) {
             $type->setItem(FHIRCodeableConcept::xmlUnserialize($children->item));
@@ -323,7 +328,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCause())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSE, null, $v->_getFHIRXMLNamespace()));
         }

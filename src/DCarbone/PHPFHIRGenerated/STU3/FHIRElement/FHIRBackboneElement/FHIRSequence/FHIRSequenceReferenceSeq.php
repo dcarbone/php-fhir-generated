@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -710,11 +710,16 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
         if (isset($children->chromosome)) {
             $type->setChromosome(FHIRCodeableConcept::xmlUnserialize($children->chromosome));
         }
-        if (isset($attributes->genomeBuild)) {
-            $type->setGenomeBuild((string)$attributes->genomeBuild);
-        }
         if (isset($children->genomeBuild)) {
             $type->setGenomeBuild(FHIRString::xmlUnserialize($children->genomeBuild));
+        }
+        if (isset($attributes->genomeBuild)) {
+            $pt = $type->getGenomeBuild();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->genomeBuild);
+            } else {
+                $type->setGenomeBuild((string)$attributes->genomeBuild);
+            }
         }
         if (isset($children->referenceSeqId)) {
             $type->setReferenceSeqId(FHIRCodeableConcept::xmlUnserialize($children->referenceSeqId));
@@ -722,29 +727,49 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
         if (isset($children->referenceSeqPointer)) {
             $type->setReferenceSeqPointer(FHIRReference::xmlUnserialize($children->referenceSeqPointer));
         }
-        if (isset($attributes->referenceSeqString)) {
-            $type->setReferenceSeqString((string)$attributes->referenceSeqString);
-        }
         if (isset($children->referenceSeqString)) {
             $type->setReferenceSeqString(FHIRString::xmlUnserialize($children->referenceSeqString));
         }
-        if (isset($attributes->strand)) {
-            $type->setStrand((string)$attributes->strand);
+        if (isset($attributes->referenceSeqString)) {
+            $pt = $type->getReferenceSeqString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->referenceSeqString);
+            } else {
+                $type->setReferenceSeqString((string)$attributes->referenceSeqString);
+            }
         }
         if (isset($children->strand)) {
             $type->setStrand(FHIRInteger::xmlUnserialize($children->strand));
         }
-        if (isset($attributes->windowEnd)) {
-            $type->setWindowEnd((string)$attributes->windowEnd);
+        if (isset($attributes->strand)) {
+            $pt = $type->getStrand();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->strand);
+            } else {
+                $type->setStrand((string)$attributes->strand);
+            }
         }
         if (isset($children->windowEnd)) {
             $type->setWindowEnd(FHIRInteger::xmlUnserialize($children->windowEnd));
         }
-        if (isset($attributes->windowStart)) {
-            $type->setWindowStart((string)$attributes->windowStart);
+        if (isset($attributes->windowEnd)) {
+            $pt = $type->getWindowEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->windowEnd);
+            } else {
+                $type->setWindowEnd((string)$attributes->windowEnd);
+            }
         }
         if (isset($children->windowStart)) {
             $type->setWindowStart(FHIRInteger::xmlUnserialize($children->windowStart));
+        }
+        if (isset($attributes->windowStart)) {
+            $pt = $type->getWindowStart();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->windowStart);
+            } else {
+                $type->setWindowStart((string)$attributes->windowStart);
+            }
         }
         return $type;
     }
@@ -760,7 +785,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getChromosome())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CHROMOSOME, null, $v->_getFHIRXMLNamespace()));
         }

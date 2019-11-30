@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1208,20 +1208,30 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($children->class)) {
             $type->setClass(FHIRCodeableConcept::xmlUnserialize($children->class));
         }
-        if (isset($attributes->confidentiality)) {
-            $type->setConfidentiality((string)$attributes->confidentiality);
-        }
         if (isset($children->confidentiality)) {
             $type->setConfidentiality(FHIRCode::xmlUnserialize($children->confidentiality));
+        }
+        if (isset($attributes->confidentiality)) {
+            $pt = $type->getConfidentiality();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->confidentiality);
+            } else {
+                $type->setConfidentiality((string)$attributes->confidentiality);
+            }
         }
         if (isset($children->custodian)) {
             $type->setCustodian(FHIRReference::xmlUnserialize($children->custodian));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
+        }
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
@@ -1245,11 +1255,16 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
         if (isset($children->subject)) {
             $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
@@ -1268,7 +1283,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAttester())) {
             foreach($vs as $v) {
                 if (null === $v) {

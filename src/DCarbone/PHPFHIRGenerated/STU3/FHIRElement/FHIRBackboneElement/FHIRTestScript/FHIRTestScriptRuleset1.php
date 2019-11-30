@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -338,11 +338,16 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
                 $type->addRule(FHIRTestScriptRule3::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->rulesetId)) {
-            $type->setRulesetId((string)$attributes->rulesetId);
-        }
         if (isset($children->rulesetId)) {
             $type->setRulesetId(FHIRId::xmlUnserialize($children->rulesetId));
+        }
+        if (isset($attributes->rulesetId)) {
+            $pt = $type->getRulesetId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->rulesetId);
+            } else {
+                $type->setRulesetId((string)$attributes->rulesetId);
+            }
         }
         return $type;
     }
@@ -358,7 +363,6 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getRule())) {
             foreach($vs as $v) {
                 if (null === $v) {

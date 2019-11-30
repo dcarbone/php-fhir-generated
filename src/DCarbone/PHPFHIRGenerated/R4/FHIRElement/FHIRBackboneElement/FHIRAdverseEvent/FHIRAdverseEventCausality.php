@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdver
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -408,11 +408,16 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
         if (isset($children->method)) {
             $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
         }
-        if (isset($attributes->productRelatedness)) {
-            $type->setProductRelatedness((string)$attributes->productRelatedness);
-        }
         if (isset($children->productRelatedness)) {
             $type->setProductRelatedness(FHIRString::xmlUnserialize($children->productRelatedness));
+        }
+        if (isset($attributes->productRelatedness)) {
+            $pt = $type->getProductRelatedness();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->productRelatedness);
+            } else {
+                $type->setProductRelatedness((string)$attributes->productRelatedness);
+            }
         }
         return $type;
     }
@@ -428,7 +433,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAssessment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSMENT, null, $v->_getFHIRXMLNamespace()));
         }

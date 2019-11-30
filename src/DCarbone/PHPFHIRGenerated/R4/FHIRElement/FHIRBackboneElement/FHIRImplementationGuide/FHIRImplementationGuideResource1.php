@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -442,26 +442,41 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->exampleBoolean)) {
-            $type->setExampleBoolean((string)$attributes->exampleBoolean);
-        }
         if (isset($children->exampleBoolean)) {
             $type->setExampleBoolean(FHIRBoolean::xmlUnserialize($children->exampleBoolean));
         }
-        if (isset($attributes->exampleCanonical)) {
-            $type->setExampleCanonical((string)$attributes->exampleCanonical);
+        if (isset($attributes->exampleBoolean)) {
+            $pt = $type->getExampleBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleBoolean);
+            } else {
+                $type->setExampleBoolean((string)$attributes->exampleBoolean);
+            }
         }
         if (isset($children->exampleCanonical)) {
             $type->setExampleCanonical(FHIRCanonical::xmlUnserialize($children->exampleCanonical));
         }
+        if (isset($attributes->exampleCanonical)) {
+            $pt = $type->getExampleCanonical();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exampleCanonical);
+            } else {
+                $type->setExampleCanonical((string)$attributes->exampleCanonical);
+            }
+        }
         if (isset($children->reference)) {
             $type->setReference(FHIRReference::xmlUnserialize($children->reference));
         }
-        if (isset($attributes->relativePath)) {
-            $type->setRelativePath((string)$attributes->relativePath);
-        }
         if (isset($children->relativePath)) {
             $type->setRelativePath(FHIRUrl::xmlUnserialize($children->relativePath));
+        }
+        if (isset($attributes->relativePath)) {
+            $pt = $type->getRelativePath();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->relativePath);
+            } else {
+                $type->setRelativePath((string)$attributes->relativePath);
+            }
         }
         return $type;
     }
@@ -477,7 +492,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getExampleBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

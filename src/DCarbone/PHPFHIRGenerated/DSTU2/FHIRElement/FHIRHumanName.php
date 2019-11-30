@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -783,16 +783,10 @@ class FHIRHumanName extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->family)) {
-            $type->addFamily((string)$attributes->family);
-        }
         if (isset($children->family)) {
             foreach($children->family as $child) {
                 $type->addFamily(FHIRString::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->given)) {
-            $type->addGiven((string)$attributes->given);
         }
         if (isset($children->given)) {
             foreach($children->given as $child) {
@@ -802,27 +796,26 @@ class FHIRHumanName extends FHIRElement
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
         }
-        if (isset($attributes->prefix)) {
-            $type->addPrefix((string)$attributes->prefix);
-        }
         if (isset($children->prefix)) {
             foreach($children->prefix as $child) {
                 $type->addPrefix(FHIRString::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->suffix)) {
-            $type->addSuffix((string)$attributes->suffix);
         }
         if (isset($children->suffix)) {
             foreach($children->suffix as $child) {
                 $type->addSuffix(FHIRString::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
-        }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->use)) {
             $type->setUse(FHIRNameUse::xmlUnserialize($children->use));
@@ -841,7 +834,6 @@ class FHIRHumanName extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getFamily())) {
             foreach($vs as $v) {
                 if (null === $v) {

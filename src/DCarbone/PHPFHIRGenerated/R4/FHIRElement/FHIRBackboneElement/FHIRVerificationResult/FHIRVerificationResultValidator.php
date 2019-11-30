@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -357,11 +357,16 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
         if (isset($children->attestationSignature)) {
             $type->setAttestationSignature(FHIRSignature::xmlUnserialize($children->attestationSignature));
         }
-        if (isset($attributes->identityCertificate)) {
-            $type->setIdentityCertificate((string)$attributes->identityCertificate);
-        }
         if (isset($children->identityCertificate)) {
             $type->setIdentityCertificate(FHIRString::xmlUnserialize($children->identityCertificate));
+        }
+        if (isset($attributes->identityCertificate)) {
+            $pt = $type->getIdentityCertificate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->identityCertificate);
+            } else {
+                $type->setIdentityCertificate((string)$attributes->identityCertificate);
+            }
         }
         if (isset($children->organization)) {
             $type->setOrganization(FHIRReference::xmlUnserialize($children->organization));
@@ -380,7 +385,6 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAttestationSignature())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ATTESTATION_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
         }

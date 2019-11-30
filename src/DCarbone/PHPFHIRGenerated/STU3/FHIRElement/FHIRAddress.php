@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -858,26 +858,38 @@ class FHIRAddress extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->city)) {
-            $type->setCity((string)$attributes->city);
-        }
         if (isset($children->city)) {
             $type->setCity(FHIRString::xmlUnserialize($children->city));
         }
-        if (isset($attributes->country)) {
-            $type->setCountry((string)$attributes->country);
+        if (isset($attributes->city)) {
+            $pt = $type->getCity();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->city);
+            } else {
+                $type->setCity((string)$attributes->city);
+            }
         }
         if (isset($children->country)) {
             $type->setCountry(FHIRString::xmlUnserialize($children->country));
         }
-        if (isset($attributes->district)) {
-            $type->setDistrict((string)$attributes->district);
+        if (isset($attributes->country)) {
+            $pt = $type->getCountry();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->country);
+            } else {
+                $type->setCountry((string)$attributes->country);
+            }
         }
         if (isset($children->district)) {
             $type->setDistrict(FHIRString::xmlUnserialize($children->district));
         }
-        if (isset($attributes->line)) {
-            $type->addLine((string)$attributes->line);
+        if (isset($attributes->district)) {
+            $pt = $type->getDistrict();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->district);
+            } else {
+                $type->setDistrict((string)$attributes->district);
+            }
         }
         if (isset($children->line)) {
             foreach($children->line as $child) {
@@ -887,23 +899,38 @@ class FHIRAddress extends FHIRElement
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
         }
-        if (isset($attributes->postalCode)) {
-            $type->setPostalCode((string)$attributes->postalCode);
-        }
         if (isset($children->postalCode)) {
             $type->setPostalCode(FHIRString::xmlUnserialize($children->postalCode));
         }
-        if (isset($attributes->state)) {
-            $type->setState((string)$attributes->state);
+        if (isset($attributes->postalCode)) {
+            $pt = $type->getPostalCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->postalCode);
+            } else {
+                $type->setPostalCode((string)$attributes->postalCode);
+            }
         }
         if (isset($children->state)) {
             $type->setState(FHIRString::xmlUnserialize($children->state));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
+        if (isset($attributes->state)) {
+            $pt = $type->getState();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->state);
+            } else {
+                $type->setState((string)$attributes->state);
+            }
         }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRAddressType::xmlUnserialize($children->type));
@@ -925,7 +952,6 @@ class FHIRAddress extends FHIRElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CITY, null, $v->_getFHIRXMLNamespace()));
         }

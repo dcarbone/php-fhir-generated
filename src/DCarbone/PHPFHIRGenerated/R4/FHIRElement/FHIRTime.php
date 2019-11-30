@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,13 +81,19 @@ class FHIRTime extends FHIRElement
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRTimePrimitive
      */
     protected $value = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type time
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRTime Constructor
@@ -117,6 +123,7 @@ class FHIRTime extends FHIRElement
             $this->setValue($data[self::FIELD_VALUE]);
         }
     }
+
     /**
      * @return string
      */
@@ -136,6 +143,7 @@ class FHIRTime extends FHIRElement
         }
         return "<time{$xmlns}></time>";
     }
+
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRTimePrimitive
      */
@@ -160,6 +168,15 @@ class FHIRTime extends FHIRElement
         }
         $this->value = new FHIRTimePrimitive($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -202,10 +219,16 @@ class FHIRTime extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
+        if (isset($children->value)) {
+            $type->setValue(FHIRTimePrimitive::xmlUnserialize($children->value));
+        }
         if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        } elseif (isset($children->value)) {
-            $type->setValue((string)$children->value);
+            $pt = $type->getValue();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->value);
+            } else {
+                $type->setValue((string)$attributes->value);
+            }
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -975,11 +975,16 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->asNeededBoolean)) {
-            $type->setAsNeededBoolean((string)$attributes->asNeededBoolean);
-        }
         if (isset($children->asNeededBoolean)) {
             $type->setAsNeededBoolean(FHIRBoolean::xmlUnserialize($children->asNeededBoolean));
+        }
+        if (isset($attributes->asNeededBoolean)) {
+            $pt = $type->getAsNeededBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->asNeededBoolean);
+            } else {
+                $type->setAsNeededBoolean((string)$attributes->asNeededBoolean);
+            }
         }
         if (isset($children->asNeededCodeableConcept)) {
             $type->setAsNeededCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->asNeededCodeableConcept));
@@ -1011,11 +1016,16 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement
         if (isset($children->siteReference)) {
             $type->setSiteReference(FHIRReference::xmlUnserialize($children->siteReference));
         }
-        if (isset($attributes->text)) {
-            $type->setText((string)$attributes->text);
-        }
         if (isset($children->text)) {
             $type->setText(FHIRString::xmlUnserialize($children->text));
+        }
+        if (isset($attributes->text)) {
+            $pt = $type->getText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->text);
+            } else {
+                $type->setText((string)$attributes->text);
+            }
         }
         if (isset($children->timing)) {
             $type->setTiming(FHIRTiming::xmlUnserialize($children->timing));
@@ -1034,7 +1044,6 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAsNeededBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AS_NEEDED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

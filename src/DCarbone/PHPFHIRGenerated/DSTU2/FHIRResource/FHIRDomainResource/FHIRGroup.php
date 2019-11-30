@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -763,11 +763,16 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->actual)) {
-            $type->setActual((string)$attributes->actual);
-        }
         if (isset($children->actual)) {
             $type->setActual(FHIRBoolean::xmlUnserialize($children->actual));
+        }
+        if (isset($attributes->actual)) {
+            $pt = $type->getActual();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->actual);
+            } else {
+                $type->setActual((string)$attributes->actual);
+            }
         }
         if (isset($children->characteristic)) {
             foreach($children->characteristic as $child) {
@@ -787,17 +792,27 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $type->addMember(FHIRGroupMember::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->quantity)) {
-            $type->setQuantity((string)$attributes->quantity);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRUnsignedInt::xmlUnserialize($children->quantity));
+        }
+        if (isset($attributes->quantity)) {
+            $pt = $type->getQuantity();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->quantity);
+            } else {
+                $type->setQuantity((string)$attributes->quantity);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRGroupType::xmlUnserialize($children->type));
@@ -816,7 +831,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActual())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTUAL, null, $v->_getFHIRXMLNamespace()));
         }

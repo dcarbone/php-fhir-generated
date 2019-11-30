@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1076,11 +1076,16 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
         if (isset($children->method)) {
             $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
         }
-        if (isset($attributes->multipleResultsAllowed)) {
-            $type->setMultipleResultsAllowed((string)$attributes->multipleResultsAllowed);
-        }
         if (isset($children->multipleResultsAllowed)) {
             $type->setMultipleResultsAllowed(FHIRBoolean::xmlUnserialize($children->multipleResultsAllowed));
+        }
+        if (isset($attributes->multipleResultsAllowed)) {
+            $pt = $type->getMultipleResultsAllowed();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->multipleResultsAllowed);
+            } else {
+                $type->setMultipleResultsAllowed((string)$attributes->multipleResultsAllowed);
+            }
         }
         if (isset($children->normalCodedValueSet)) {
             $type->setNormalCodedValueSet(FHIRReference::xmlUnserialize($children->normalCodedValueSet));
@@ -1090,11 +1095,16 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
                 $type->addPermittedDataType(FHIRObservationDataType::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->preferredReportName)) {
-            $type->setPreferredReportName((string)$attributes->preferredReportName);
-        }
         if (isset($children->preferredReportName)) {
             $type->setPreferredReportName(FHIRString::xmlUnserialize($children->preferredReportName));
+        }
+        if (isset($attributes->preferredReportName)) {
+            $pt = $type->getPreferredReportName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->preferredReportName);
+            } else {
+                $type->setPreferredReportName((string)$attributes->preferredReportName);
+            }
         }
         if (isset($children->qualifiedInterval)) {
             foreach($children->qualifiedInterval as $child) {
@@ -1121,7 +1131,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAbnormalCodedValueSet())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ABNORMAL_CODED_VALUE_SET, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -522,35 +522,60 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->valueBoolean)) {
-            $type->setValueBoolean((string)$attributes->valueBoolean);
-        }
         if (isset($children->valueBoolean)) {
             $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
         }
-        if (isset($attributes->valueDecimal)) {
-            $type->setValueDecimal((string)$attributes->valueDecimal);
+        if (isset($attributes->valueBoolean)) {
+            $pt = $type->getValueBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBoolean);
+            } else {
+                $type->setValueBoolean((string)$attributes->valueBoolean);
+            }
         }
         if (isset($children->valueDecimal)) {
             $type->setValueDecimal(FHIRDecimal::xmlUnserialize($children->valueDecimal));
         }
-        if (isset($attributes->valueId)) {
-            $type->setValueId((string)$attributes->valueId);
+        if (isset($attributes->valueDecimal)) {
+            $pt = $type->getValueDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDecimal);
+            } else {
+                $type->setValueDecimal((string)$attributes->valueDecimal);
+            }
         }
         if (isset($children->valueId)) {
             $type->setValueId(FHIRId::xmlUnserialize($children->valueId));
         }
-        if (isset($attributes->valueInteger)) {
-            $type->setValueInteger((string)$attributes->valueInteger);
+        if (isset($attributes->valueId)) {
+            $pt = $type->getValueId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueId);
+            } else {
+                $type->setValueId((string)$attributes->valueId);
+            }
         }
         if (isset($children->valueInteger)) {
             $type->setValueInteger(FHIRInteger::xmlUnserialize($children->valueInteger));
         }
-        if (isset($attributes->valueString)) {
-            $type->setValueString((string)$attributes->valueString);
+        if (isset($attributes->valueInteger)) {
+            $pt = $type->getValueInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueInteger);
+            } else {
+                $type->setValueInteger((string)$attributes->valueInteger);
+            }
         }
         if (isset($children->valueString)) {
             $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
+        }
+        if (isset($attributes->valueString)) {
+            $pt = $type->getValueString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueString);
+            } else {
+                $type->setValueString((string)$attributes->valueString);
+            }
         }
         return $type;
     }
@@ -566,7 +591,6 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getValueBoolean())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
         }

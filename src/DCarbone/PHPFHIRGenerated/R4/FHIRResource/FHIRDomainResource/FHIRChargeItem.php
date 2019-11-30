@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2270,36 +2270,40 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->costCenter)) {
             $type->setCostCenter(FHIRReference::xmlUnserialize($children->costCenter));
         }
-        if (isset($attributes->definitionCanonical)) {
-            $type->addDefinitionCanonical((string)$attributes->definitionCanonical);
-        }
         if (isset($children->definitionCanonical)) {
             foreach($children->definitionCanonical as $child) {
                 $type->addDefinitionCanonical(FHIRCanonical::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->definitionUri)) {
-            $type->addDefinitionUri((string)$attributes->definitionUri);
         }
         if (isset($children->definitionUri)) {
             foreach($children->definitionUri as $child) {
                 $type->addDefinitionUri(FHIRUri::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->enteredDate)) {
-            $type->setEnteredDate((string)$attributes->enteredDate);
-        }
         if (isset($children->enteredDate)) {
             $type->setEnteredDate(FHIRDateTime::xmlUnserialize($children->enteredDate));
+        }
+        if (isset($attributes->enteredDate)) {
+            $pt = $type->getEnteredDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->enteredDate);
+            } else {
+                $type->setEnteredDate((string)$attributes->enteredDate);
+            }
         }
         if (isset($children->enterer)) {
             $type->setEnterer(FHIRReference::xmlUnserialize($children->enterer));
         }
-        if (isset($attributes->factorOverride)) {
-            $type->setFactorOverride((string)$attributes->factorOverride);
-        }
         if (isset($children->factorOverride)) {
             $type->setFactorOverride(FHIRDecimal::xmlUnserialize($children->factorOverride));
+        }
+        if (isset($attributes->factorOverride)) {
+            $pt = $type->getFactorOverride();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->factorOverride);
+            } else {
+                $type->setFactorOverride((string)$attributes->factorOverride);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -2311,11 +2315,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
-        }
         if (isset($children->occurrenceDateTime)) {
             $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
+        }
+        if (isset($attributes->occurrenceDateTime)) {
+            $pt = $type->getOccurrenceDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceDateTime);
+            } else {
+                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+            }
         }
         if (isset($children->occurrencePeriod)) {
             $type->setOccurrencePeriod(FHIRPeriod::xmlUnserialize($children->occurrencePeriod));
@@ -2323,11 +2332,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
         if (isset($children->occurrenceTiming)) {
             $type->setOccurrenceTiming(FHIRTiming::xmlUnserialize($children->occurrenceTiming));
         }
-        if (isset($attributes->overrideReason)) {
-            $type->setOverrideReason((string)$attributes->overrideReason);
-        }
         if (isset($children->overrideReason)) {
             $type->setOverrideReason(FHIRString::xmlUnserialize($children->overrideReason));
+        }
+        if (isset($attributes->overrideReason)) {
+            $pt = $type->getOverrideReason();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->overrideReason);
+            } else {
+                $type->setOverrideReason((string)$attributes->overrideReason);
+            }
         }
         if (isset($children->partOf)) {
             foreach($children->partOf as $child) {
@@ -2392,7 +2406,6 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAccount())) {
             foreach($vs as $v) {
                 if (null === $v) {

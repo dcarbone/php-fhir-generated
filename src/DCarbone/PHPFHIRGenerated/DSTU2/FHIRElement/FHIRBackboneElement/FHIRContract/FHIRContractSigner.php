@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -345,11 +345,16 @@ class FHIRContractSigner extends FHIRBackboneElement
         if (isset($children->party)) {
             $type->setParty(FHIRReference::xmlUnserialize($children->party));
         }
-        if (isset($attributes->signature)) {
-            $type->setSignature((string)$attributes->signature);
-        }
         if (isset($children->signature)) {
             $type->setSignature(FHIRString::xmlUnserialize($children->signature));
+        }
+        if (isset($attributes->signature)) {
+            $pt = $type->getSignature();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->signature);
+            } else {
+                $type->setSignature((string)$attributes->signature);
+            }
         }
         if (isset($children->type)) {
             $type->setType(FHIRCoding::xmlUnserialize($children->type));
@@ -368,7 +373,6 @@ class FHIRContractSigner extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getParty())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PARTY, null, $v->_getFHIRXMLNamespace()));
         }

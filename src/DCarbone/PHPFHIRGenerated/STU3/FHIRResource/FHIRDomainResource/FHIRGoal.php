@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1364,26 +1364,41 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         if (isset($children->startCodeableConcept)) {
             $type->setStartCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->startCodeableConcept));
         }
-        if (isset($attributes->startDate)) {
-            $type->setStartDate((string)$attributes->startDate);
-        }
         if (isset($children->startDate)) {
             $type->setStartDate(FHIRDate::xmlUnserialize($children->startDate));
+        }
+        if (isset($attributes->startDate)) {
+            $pt = $type->getStartDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->startDate);
+            } else {
+                $type->setStartDate((string)$attributes->startDate);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRGoalStatus::xmlUnserialize($children->status));
         }
-        if (isset($attributes->statusDate)) {
-            $type->setStatusDate((string)$attributes->statusDate);
-        }
         if (isset($children->statusDate)) {
             $type->setStatusDate(FHIRDate::xmlUnserialize($children->statusDate));
         }
-        if (isset($attributes->statusReason)) {
-            $type->setStatusReason((string)$attributes->statusReason);
+        if (isset($attributes->statusDate)) {
+            $pt = $type->getStatusDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->statusDate);
+            } else {
+                $type->setStatusDate((string)$attributes->statusDate);
+            }
         }
         if (isset($children->statusReason)) {
             $type->setStatusReason(FHIRString::xmlUnserialize($children->statusReason));
+        }
+        if (isset($attributes->statusReason)) {
+            $pt = $type->getStatusReason();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->statusReason);
+            } else {
+                $type->setStatusReason((string)$attributes->statusReason);
+            }
         }
         if (isset($children->subject)) {
             $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
@@ -1405,7 +1420,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAddresses())) {
             foreach($vs as $v) {
                 if (null === $v) {

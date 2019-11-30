@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -449,11 +449,16 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         if (isset($children->operation)) {
             $type->setOperation(FHIRExampleScenarioOperation::xmlUnserialize($children->operation));
         }
-        if (isset($attributes->pause)) {
-            $type->setPause((string)$attributes->pause);
-        }
         if (isset($children->pause)) {
             $type->setPause(FHIRBoolean::xmlUnserialize($children->pause));
+        }
+        if (isset($attributes->pause)) {
+            $pt = $type->getPause();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->pause);
+            } else {
+                $type->setPause((string)$attributes->pause);
+            }
         }
         if (isset($children->process)) {
             foreach($children->process as $child) {
@@ -474,7 +479,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAlternative())) {
             foreach($vs as $v) {
                 if (null === $v) {

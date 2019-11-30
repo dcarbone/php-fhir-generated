@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -908,9 +908,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         if (isset($children->quantity)) {
             $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
         }
-        if (isset($attributes->supportingInfoSequence)) {
-            $type->addSupportingInfoSequence((string)$attributes->supportingInfoSequence);
-        }
         if (isset($children->supportingInfoSequence)) {
             foreach($children->supportingInfoSequence as $child) {
                 $type->addSupportingInfoSequence(FHIRPositiveInt::xmlUnserialize($child));
@@ -933,7 +930,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

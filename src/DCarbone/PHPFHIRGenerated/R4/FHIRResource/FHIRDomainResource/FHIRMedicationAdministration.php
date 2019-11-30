@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1842,11 +1842,16 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
         if (isset($children->dosage)) {
             $type->setDosage(FHIRMedicationAdministrationDosage::xmlUnserialize($children->dosage));
         }
-        if (isset($attributes->effectiveDateTime)) {
-            $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
-        }
         if (isset($children->effectiveDateTime)) {
             $type->setEffectiveDateTime(FHIRDateTime::xmlUnserialize($children->effectiveDateTime));
+        }
+        if (isset($attributes->effectiveDateTime)) {
+            $pt = $type->getEffectiveDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->effectiveDateTime);
+            } else {
+                $type->setEffectiveDateTime((string)$attributes->effectiveDateTime);
+            }
         }
         if (isset($children->effectivePeriod)) {
             $type->setEffectivePeriod(FHIRPeriod::xmlUnserialize($children->effectivePeriod));
@@ -1860,9 +1865,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
             foreach($children->identifier as $child) {
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->instantiates)) {
-            $type->addInstantiates((string)$attributes->instantiates);
         }
         if (isset($children->instantiates)) {
             foreach($children->instantiates as $child) {
@@ -1903,11 +1905,16 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
         if (isset($children->request)) {
             $type->setRequest(FHIRReference::xmlUnserialize($children->request));
         }
-        if (isset($attributes->status)) {
-            $type->setStatus((string)$attributes->status);
-        }
         if (isset($children->status)) {
             $type->setStatus(FHIRCode::xmlUnserialize($children->status));
+        }
+        if (isset($attributes->status)) {
+            $pt = $type->getStatus();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->status);
+            } else {
+                $type->setStatus((string)$attributes->status);
+            }
         }
         if (isset($children->statusReason)) {
             foreach($children->statusReason as $child) {
@@ -1936,7 +1943,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

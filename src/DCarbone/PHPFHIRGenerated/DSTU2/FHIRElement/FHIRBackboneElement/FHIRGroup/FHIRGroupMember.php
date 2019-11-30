@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRGr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -349,11 +349,16 @@ class FHIRGroupMember extends FHIRBackboneElement
         if (isset($children->entity)) {
             $type->setEntity(FHIRReference::xmlUnserialize($children->entity));
         }
-        if (isset($attributes->inactive)) {
-            $type->setInactive((string)$attributes->inactive);
-        }
         if (isset($children->inactive)) {
             $type->setInactive(FHIRBoolean::xmlUnserialize($children->inactive));
+        }
+        if (isset($attributes->inactive)) {
+            $pt = $type->getInactive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->inactive);
+            } else {
+                $type->setInactive((string)$attributes->inactive);
+            }
         }
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
@@ -372,7 +377,6 @@ class FHIRGroupMember extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEntity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY, null, $v->_getFHIRXMLNamespace()));
         }

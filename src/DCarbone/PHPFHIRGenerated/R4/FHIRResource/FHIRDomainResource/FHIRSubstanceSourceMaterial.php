@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1346,9 +1346,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 $type->addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->geographicalLocation)) {
-            $type->addGeographicalLocation((string)$attributes->geographicalLocation);
-        }
         if (isset($children->geographicalLocation)) {
             foreach($children->geographicalLocation as $child) {
                 $type->addGeographicalLocation(FHIRString::xmlUnserialize($child));
@@ -1360,19 +1357,21 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
         if (isset($children->organismId)) {
             $type->setOrganismId(FHIRIdentifier::xmlUnserialize($children->organismId));
         }
-        if (isset($attributes->organismName)) {
-            $type->setOrganismName((string)$attributes->organismName);
-        }
         if (isset($children->organismName)) {
             $type->setOrganismName(FHIRString::xmlUnserialize($children->organismName));
+        }
+        if (isset($attributes->organismName)) {
+            $pt = $type->getOrganismName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->organismName);
+            } else {
+                $type->setOrganismName((string)$attributes->organismName);
+            }
         }
         if (isset($children->parentSubstanceId)) {
             foreach($children->parentSubstanceId as $child) {
                 $type->addParentSubstanceId(FHIRIdentifier::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->parentSubstanceName)) {
-            $type->addParentSubstanceName((string)$attributes->parentSubstanceName);
         }
         if (isset($children->parentSubstanceName)) {
             foreach($children->parentSubstanceName as $child) {
@@ -1407,7 +1406,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCountryOfOrigin())) {
             foreach($vs as $v) {
                 if (null === $v) {

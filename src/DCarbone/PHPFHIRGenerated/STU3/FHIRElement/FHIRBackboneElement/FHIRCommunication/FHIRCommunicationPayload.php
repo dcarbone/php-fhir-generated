@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -358,11 +358,16 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
         if (isset($children->contentReference)) {
             $type->setContentReference(FHIRReference::xmlUnserialize($children->contentReference));
         }
-        if (isset($attributes->contentString)) {
-            $type->setContentString((string)$attributes->contentString);
-        }
         if (isset($children->contentString)) {
             $type->setContentString(FHIRString::xmlUnserialize($children->contentString));
+        }
+        if (isset($attributes->contentString)) {
+            $pt = $type->getContentString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->contentString);
+            } else {
+                $type->setContentString((string)$attributes->contentString);
+            }
         }
         return $type;
     }
@@ -378,7 +383,6 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContentAttachment())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
         }

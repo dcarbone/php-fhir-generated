@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2954,11 +2954,16 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->approvalDate)) {
-            $type->setApprovalDate((string)$attributes->approvalDate);
-        }
         if (isset($children->approvalDate)) {
             $type->setApprovalDate(FHIRDate::xmlUnserialize($children->approvalDate));
+        }
+        if (isset($attributes->approvalDate)) {
+            $pt = $type->getApprovalDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->approvalDate);
+            } else {
+                $type->setApprovalDate((string)$attributes->approvalDate);
+            }
         }
         if (isset($children->author)) {
             foreach($children->author as $child) {
@@ -2970,9 +2975,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $type->addCharacteristic(FHIRResearchElementDefinitionCharacteristic::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->comment)) {
-            $type->addComment((string)$attributes->comment);
-        }
         if (isset($children->comment)) {
             foreach($children->comment as $child) {
                 $type->addComment(FHIRString::xmlUnserialize($child));
@@ -2983,23 +2985,38 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $type->addContact(FHIRContactDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->copyright)) {
-            $type->setCopyright((string)$attributes->copyright);
-        }
         if (isset($children->copyright)) {
             $type->setCopyright(FHIRMarkdown::xmlUnserialize($children->copyright));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
+        if (isset($attributes->copyright)) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->copyright);
+            } else {
+                $type->setCopyright((string)$attributes->copyright);
+            }
         }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
+        }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->editor)) {
             foreach($children->editor as $child) {
@@ -3014,11 +3031,16 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $type->addEndorser(FHIRContactDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->experimental)) {
-            $type->setExperimental((string)$attributes->experimental);
-        }
         if (isset($children->experimental)) {
             $type->setExperimental(FHIRBoolean::xmlUnserialize($children->experimental));
+        }
+        if (isset($attributes->experimental)) {
+            $pt = $type->getExperimental();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->experimental);
+            } else {
+                $type->setExperimental((string)$attributes->experimental);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -3030,37 +3052,54 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->lastReviewDate)) {
-            $type->setLastReviewDate((string)$attributes->lastReviewDate);
-        }
         if (isset($children->lastReviewDate)) {
             $type->setLastReviewDate(FHIRDate::xmlUnserialize($children->lastReviewDate));
         }
-        if (isset($attributes->library)) {
-            $type->addLibrary((string)$attributes->library);
+        if (isset($attributes->lastReviewDate)) {
+            $pt = $type->getLastReviewDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastReviewDate);
+            } else {
+                $type->setLastReviewDate((string)$attributes->lastReviewDate);
+            }
         }
         if (isset($children->library)) {
             foreach($children->library as $child) {
                 $type->addLibrary(FHIRCanonical::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->publisher)) {
-            $type->setPublisher((string)$attributes->publisher);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->publisher)) {
             $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
         }
-        if (isset($attributes->purpose)) {
-            $type->setPurpose((string)$attributes->purpose);
+        if (isset($attributes->publisher)) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publisher);
+            } else {
+                $type->setPublisher((string)$attributes->publisher);
+            }
         }
         if (isset($children->purpose)) {
             $type->setPurpose(FHIRMarkdown::xmlUnserialize($children->purpose));
+        }
+        if (isset($attributes->purpose)) {
+            $pt = $type->getPurpose();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->purpose);
+            } else {
+                $type->setPurpose((string)$attributes->purpose);
+            }
         }
         if (isset($children->relatedArtifact)) {
             foreach($children->relatedArtifact as $child) {
@@ -3072,11 +3111,16 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
                 $type->addReviewer(FHIRContactDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->shortTitle)) {
-            $type->setShortTitle((string)$attributes->shortTitle);
-        }
         if (isset($children->shortTitle)) {
             $type->setShortTitle(FHIRString::xmlUnserialize($children->shortTitle));
+        }
+        if (isset($attributes->shortTitle)) {
+            $pt = $type->getShortTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->shortTitle);
+            } else {
+                $type->setShortTitle((string)$attributes->shortTitle);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRPublicationStatus::xmlUnserialize($children->status));
@@ -3087,17 +3131,27 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         if (isset($children->subjectReference)) {
             $type->setSubjectReference(FHIRReference::xmlUnserialize($children->subjectReference));
         }
-        if (isset($attributes->subtitle)) {
-            $type->setSubtitle((string)$attributes->subtitle);
-        }
         if (isset($children->subtitle)) {
             $type->setSubtitle(FHIRString::xmlUnserialize($children->subtitle));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
+        if (isset($attributes->subtitle)) {
+            $pt = $type->getSubtitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->subtitle);
+            } else {
+                $type->setSubtitle((string)$attributes->subtitle);
+            }
         }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         if (isset($children->topic)) {
             foreach($children->topic as $child) {
@@ -3107,17 +3161,27 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         if (isset($children->type)) {
             $type->setType(FHIRResearchElementType::xmlUnserialize($children->type));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
         }
-        if (isset($attributes->usage)) {
-            $type->setUsage((string)$attributes->usage);
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->usage)) {
             $type->setUsage(FHIRString::xmlUnserialize($children->usage));
+        }
+        if (isset($attributes->usage)) {
+            $pt = $type->getUsage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->usage);
+            } else {
+                $type->setUsage((string)$attributes->usage);
+            }
         }
         if (isset($children->useContext)) {
             foreach($children->useContext as $child) {
@@ -3127,11 +3191,16 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
         if (isset($children->variableType)) {
             $type->setVariableType(FHIRVariableType::xmlUnserialize($children->variableType));
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
-        }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -3147,7 +3216,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getApprovalDate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_APPROVAL_DATE, null, $v->_getFHIRXMLNamespace()));
         }

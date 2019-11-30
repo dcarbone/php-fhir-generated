@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -544,17 +544,27 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->areaOfHybridisation)) {
-            $type->setAreaOfHybridisation((string)$attributes->areaOfHybridisation);
-        }
         if (isset($children->areaOfHybridisation)) {
             $type->setAreaOfHybridisation(FHIRString::xmlUnserialize($children->areaOfHybridisation));
         }
-        if (isset($attributes->numberOfSubunits)) {
-            $type->setNumberOfSubunits((string)$attributes->numberOfSubunits);
+        if (isset($attributes->areaOfHybridisation)) {
+            $pt = $type->getAreaOfHybridisation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->areaOfHybridisation);
+            } else {
+                $type->setAreaOfHybridisation((string)$attributes->areaOfHybridisation);
+            }
         }
         if (isset($children->numberOfSubunits)) {
             $type->setNumberOfSubunits(FHIRInteger::xmlUnserialize($children->numberOfSubunits));
+        }
+        if (isset($attributes->numberOfSubunits)) {
+            $pt = $type->getNumberOfSubunits();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->numberOfSubunits);
+            } else {
+                $type->setNumberOfSubunits((string)$attributes->numberOfSubunits);
+            }
         }
         if (isset($children->oligoNucleotideType)) {
             $type->setOligoNucleotideType(FHIRCodeableConcept::xmlUnserialize($children->oligoNucleotideType));
@@ -581,7 +591,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAreaOfHybridisation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AREA_OF_HYBRIDISATION, null, $v->_getFHIRXMLNamespace()));
         }

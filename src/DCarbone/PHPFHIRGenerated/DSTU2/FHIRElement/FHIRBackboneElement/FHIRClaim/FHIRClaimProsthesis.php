@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -360,17 +360,27 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->initial)) {
-            $type->setInitial((string)$attributes->initial);
-        }
         if (isset($children->initial)) {
             $type->setInitial(FHIRBoolean::xmlUnserialize($children->initial));
         }
-        if (isset($attributes->priorDate)) {
-            $type->setPriorDate((string)$attributes->priorDate);
+        if (isset($attributes->initial)) {
+            $pt = $type->getInitial();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->initial);
+            } else {
+                $type->setInitial((string)$attributes->initial);
+            }
         }
         if (isset($children->priorDate)) {
             $type->setPriorDate(FHIRDate::xmlUnserialize($children->priorDate));
+        }
+        if (isset($attributes->priorDate)) {
+            $pt = $type->getPriorDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->priorDate);
+            } else {
+                $type->setPriorDate((string)$attributes->priorDate);
+            }
         }
         if (isset($children->priorMaterial)) {
             $type->setPriorMaterial(FHIRCoding::xmlUnserialize($children->priorMaterial));
@@ -389,7 +399,6 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getInitial())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL, null, $v->_getFHIRXMLNamespace()));
         }

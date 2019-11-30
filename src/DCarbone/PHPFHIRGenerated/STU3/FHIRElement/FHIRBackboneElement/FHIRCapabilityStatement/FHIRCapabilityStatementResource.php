@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1324,11 +1324,16 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->conditionalCreate)) {
-            $type->setConditionalCreate((string)$attributes->conditionalCreate);
-        }
         if (isset($children->conditionalCreate)) {
             $type->setConditionalCreate(FHIRBoolean::xmlUnserialize($children->conditionalCreate));
+        }
+        if (isset($attributes->conditionalCreate)) {
+            $pt = $type->getConditionalCreate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->conditionalCreate);
+            } else {
+                $type->setConditionalCreate((string)$attributes->conditionalCreate);
+            }
         }
         if (isset($children->conditionalDelete)) {
             $type->setConditionalDelete(FHIRConditionalDeleteStatus::xmlUnserialize($children->conditionalDelete));
@@ -1336,17 +1341,27 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (isset($children->conditionalRead)) {
             $type->setConditionalRead(FHIRConditionalReadStatus::xmlUnserialize($children->conditionalRead));
         }
-        if (isset($attributes->conditionalUpdate)) {
-            $type->setConditionalUpdate((string)$attributes->conditionalUpdate);
-        }
         if (isset($children->conditionalUpdate)) {
             $type->setConditionalUpdate(FHIRBoolean::xmlUnserialize($children->conditionalUpdate));
         }
-        if (isset($attributes->documentation)) {
-            $type->setDocumentation((string)$attributes->documentation);
+        if (isset($attributes->conditionalUpdate)) {
+            $pt = $type->getConditionalUpdate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->conditionalUpdate);
+            } else {
+                $type->setConditionalUpdate((string)$attributes->conditionalUpdate);
+            }
         }
         if (isset($children->documentation)) {
             $type->setDocumentation(FHIRMarkdown::xmlUnserialize($children->documentation));
+        }
+        if (isset($attributes->documentation)) {
+            $pt = $type->getDocumentation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->documentation);
+            } else {
+                $type->setDocumentation((string)$attributes->documentation);
+            }
         }
         if (isset($children->interaction)) {
             foreach($children->interaction as $child) {
@@ -1356,19 +1371,21 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (isset($children->profile)) {
             $type->setProfile(FHIRReference::xmlUnserialize($children->profile));
         }
-        if (isset($attributes->readHistory)) {
-            $type->setReadHistory((string)$attributes->readHistory);
-        }
         if (isset($children->readHistory)) {
             $type->setReadHistory(FHIRBoolean::xmlUnserialize($children->readHistory));
+        }
+        if (isset($attributes->readHistory)) {
+            $pt = $type->getReadHistory();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->readHistory);
+            } else {
+                $type->setReadHistory((string)$attributes->readHistory);
+            }
         }
         if (isset($children->referencePolicy)) {
             foreach($children->referencePolicy as $child) {
                 $type->addReferencePolicy(FHIRReferenceHandlingPolicy::xmlUnserialize($child));
             }
-        }
-        if (isset($attributes->searchInclude)) {
-            $type->addSearchInclude((string)$attributes->searchInclude);
         }
         if (isset($children->searchInclude)) {
             foreach($children->searchInclude as $child) {
@@ -1380,9 +1397,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $type->addSearchParam(FHIRCapabilityStatementSearchParam::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->searchRevInclude)) {
-            $type->addSearchRevInclude((string)$attributes->searchRevInclude);
-        }
         if (isset($children->searchRevInclude)) {
             foreach($children->searchRevInclude as $child) {
                 $type->addSearchRevInclude(FHIRString::xmlUnserialize($child));
@@ -1391,11 +1405,16 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         if (isset($children->type)) {
             $type->setType(FHIRResourceType::xmlUnserialize($children->type));
         }
-        if (isset($attributes->updateCreate)) {
-            $type->setUpdateCreate((string)$attributes->updateCreate);
-        }
         if (isset($children->updateCreate)) {
             $type->setUpdateCreate(FHIRBoolean::xmlUnserialize($children->updateCreate));
+        }
+        if (isset($attributes->updateCreate)) {
+            $pt = $type->getUpdateCreate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->updateCreate);
+            } else {
+                $type->setUpdateCreate((string)$attributes->updateCreate);
+            }
         }
         if (isset($children->versioning)) {
             $type->setVersioning(FHIRResourceVersionPolicy::xmlUnserialize($children->versioning));
@@ -1414,7 +1433,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getConditionalCreate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITIONAL_CREATE, null, $v->_getFHIRXMLNamespace()));
         }

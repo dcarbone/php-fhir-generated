@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,10 @@ class FHIRCount extends FHIRQuantity
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COUNT;
+
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * Validation map for fields in type Count
      * @var array
@@ -185,7 +189,6 @@ class FHIRCount extends FHIRQuantity
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         return $sxe;
     }
 

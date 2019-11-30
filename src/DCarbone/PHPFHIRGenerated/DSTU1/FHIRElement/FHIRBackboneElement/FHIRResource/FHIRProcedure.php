@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1257,11 +1257,16 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRResourceReference::xmlUnserialize($children->encounter));
         }
-        if (isset($attributes->followUp)) {
-            $type->setFollowUp((string)$attributes->followUp);
-        }
         if (isset($children->followUp)) {
             $type->setFollowUp(FHIRString::xmlUnserialize($children->followUp));
+        }
+        if (isset($attributes->followUp)) {
+            $pt = $type->getFollowUp();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->followUp);
+            } else {
+                $type->setFollowUp((string)$attributes->followUp);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -1273,17 +1278,27 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
                 $type->addIndication(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->notes)) {
-            $type->setNotes((string)$attributes->notes);
-        }
         if (isset($children->notes)) {
             $type->setNotes(FHIRString::xmlUnserialize($children->notes));
         }
-        if (isset($attributes->outcome)) {
-            $type->setOutcome((string)$attributes->outcome);
+        if (isset($attributes->notes)) {
+            $pt = $type->getNotes();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->notes);
+            } else {
+                $type->setNotes((string)$attributes->notes);
+            }
         }
         if (isset($children->outcome)) {
             $type->setOutcome(FHIRString::xmlUnserialize($children->outcome));
+        }
+        if (isset($attributes->outcome)) {
+            $pt = $type->getOutcome();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->outcome);
+            } else {
+                $type->setOutcome((string)$attributes->outcome);
+            }
         }
         if (isset($children->performer)) {
             foreach($children->performer as $child) {
@@ -1320,7 +1335,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getBodySite())) {
             foreach($vs as $v) {
                 if (null === $v) {

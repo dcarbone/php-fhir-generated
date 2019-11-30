@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -440,17 +440,27 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->averageMolecularFormula)) {
-            $type->setAverageMolecularFormula((string)$attributes->averageMolecularFormula);
-        }
         if (isset($children->averageMolecularFormula)) {
             $type->setAverageMolecularFormula(FHIRString::xmlUnserialize($children->averageMolecularFormula));
         }
-        if (isset($attributes->numberOfUnits)) {
-            $type->setNumberOfUnits((string)$attributes->numberOfUnits);
+        if (isset($attributes->averageMolecularFormula)) {
+            $pt = $type->getAverageMolecularFormula();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->averageMolecularFormula);
+            } else {
+                $type->setAverageMolecularFormula((string)$attributes->averageMolecularFormula);
+            }
         }
         if (isset($children->numberOfUnits)) {
             $type->setNumberOfUnits(FHIRInteger::xmlUnserialize($children->numberOfUnits));
+        }
+        if (isset($attributes->numberOfUnits)) {
+            $pt = $type->getNumberOfUnits();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->numberOfUnits);
+            } else {
+                $type->setNumberOfUnits((string)$attributes->numberOfUnits);
+            }
         }
         if (isset($children->repeatUnit)) {
             foreach($children->repeatUnit as $child) {
@@ -474,7 +484,6 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAverageMolecularFormula())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AVERAGE_MOLECULAR_FORMULA, null, $v->_getFHIRXMLNamespace()));
         }

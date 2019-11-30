@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -451,14 +451,16 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->details)) {
-            $type->setDetails((string)$attributes->details);
-        }
         if (isset($children->details)) {
             $type->setDetails(FHIRString::xmlUnserialize($children->details));
         }
-        if (isset($attributes->location)) {
-            $type->addLocation((string)$attributes->location);
+        if (isset($attributes->details)) {
+            $pt = $type->getDetails();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->details);
+            } else {
+                $type->setDetails((string)$attributes->details);
+            }
         }
         if (isset($children->location)) {
             foreach($children->location as $child) {
@@ -485,7 +487,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDetails())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DETAILS, null, $v->_getFHIRXMLNamespace()));
         }

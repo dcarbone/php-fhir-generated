@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -629,11 +629,16 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $type->addPatientPreparation(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->timeAspect)) {
-            $type->setTimeAspect((string)$attributes->timeAspect);
-        }
         if (isset($children->timeAspect)) {
             $type->setTimeAspect(FHIRString::xmlUnserialize($children->timeAspect));
+        }
+        if (isset($attributes->timeAspect)) {
+            $pt = $type->getTimeAspect();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timeAspect);
+            } else {
+                $type->setTimeAspect((string)$attributes->timeAspect);
+            }
         }
         if (isset($children->typeCollected)) {
             $type->setTypeCollected(FHIRCodeableConcept::xmlUnserialize($children->typeCollected));
@@ -657,7 +662,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getCollection())) {
             foreach($vs as $v) {
                 if (null === $v) {

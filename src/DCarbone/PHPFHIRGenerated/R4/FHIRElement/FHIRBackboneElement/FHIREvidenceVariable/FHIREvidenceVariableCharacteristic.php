@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvide
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1160,11 +1160,16 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->definitionCanonical)) {
-            $type->setDefinitionCanonical((string)$attributes->definitionCanonical);
-        }
         if (isset($children->definitionCanonical)) {
             $type->setDefinitionCanonical(FHIRCanonical::xmlUnserialize($children->definitionCanonical));
+        }
+        if (isset($attributes->definitionCanonical)) {
+            $pt = $type->getDefinitionCanonical();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->definitionCanonical);
+            } else {
+                $type->setDefinitionCanonical((string)$attributes->definitionCanonical);
+            }
         }
         if (isset($children->definitionCodeableConcept)) {
             $type->setDefinitionCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->definitionCodeableConcept));
@@ -1181,26 +1186,41 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         if (isset($children->definitionTriggerDefinition)) {
             $type->setDefinitionTriggerDefinition(FHIRTriggerDefinition::xmlUnserialize($children->definitionTriggerDefinition));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
-        if (isset($attributes->exclude)) {
-            $type->setExclude((string)$attributes->exclude);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->exclude)) {
             $type->setExclude(FHIRBoolean::xmlUnserialize($children->exclude));
         }
+        if (isset($attributes->exclude)) {
+            $pt = $type->getExclude();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exclude);
+            } else {
+                $type->setExclude((string)$attributes->exclude);
+            }
+        }
         if (isset($children->groupMeasure)) {
             $type->setGroupMeasure(FHIRGroupMeasure::xmlUnserialize($children->groupMeasure));
         }
-        if (isset($attributes->participantEffectiveDateTime)) {
-            $type->setParticipantEffectiveDateTime((string)$attributes->participantEffectiveDateTime);
-        }
         if (isset($children->participantEffectiveDateTime)) {
             $type->setParticipantEffectiveDateTime(FHIRDateTime::xmlUnserialize($children->participantEffectiveDateTime));
+        }
+        if (isset($attributes->participantEffectiveDateTime)) {
+            $pt = $type->getParticipantEffectiveDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->participantEffectiveDateTime);
+            } else {
+                $type->setParticipantEffectiveDateTime((string)$attributes->participantEffectiveDateTime);
+            }
         }
         if (isset($children->participantEffectiveDuration)) {
             $type->setParticipantEffectiveDuration(FHIRDuration::xmlUnserialize($children->participantEffectiveDuration));
@@ -1233,7 +1253,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDefinitionCanonical())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL, null, $v->_getFHIRXMLNamespace()));
         }

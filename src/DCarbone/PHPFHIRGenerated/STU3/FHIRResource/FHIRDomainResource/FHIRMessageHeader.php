@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -966,11 +966,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->source)) {
             $type->setSource(FHIRMessageHeaderSource::xmlUnserialize($children->source));
         }
-        if (isset($attributes->timestamp)) {
-            $type->setTimestamp((string)$attributes->timestamp);
-        }
         if (isset($children->timestamp)) {
             $type->setTimestamp(FHIRInstant::xmlUnserialize($children->timestamp));
+        }
+        if (isset($attributes->timestamp)) {
+            $pt = $type->getTimestamp();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->timestamp);
+            } else {
+                $type->setTimestamp((string)$attributes->timestamp);
+            }
         }
         return $type;
     }
@@ -986,7 +991,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthor())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
         }

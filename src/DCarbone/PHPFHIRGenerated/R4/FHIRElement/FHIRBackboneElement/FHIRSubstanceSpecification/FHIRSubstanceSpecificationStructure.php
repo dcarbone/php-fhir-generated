@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -723,17 +723,27 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 $type->addIsotope(FHIRSubstanceSpecificationIsotope::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->molecularFormula)) {
-            $type->setMolecularFormula((string)$attributes->molecularFormula);
-        }
         if (isset($children->molecularFormula)) {
             $type->setMolecularFormula(FHIRString::xmlUnserialize($children->molecularFormula));
         }
-        if (isset($attributes->molecularFormulaByMoiety)) {
-            $type->setMolecularFormulaByMoiety((string)$attributes->molecularFormulaByMoiety);
+        if (isset($attributes->molecularFormula)) {
+            $pt = $type->getMolecularFormula();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->molecularFormula);
+            } else {
+                $type->setMolecularFormula((string)$attributes->molecularFormula);
+            }
         }
         if (isset($children->molecularFormulaByMoiety)) {
             $type->setMolecularFormulaByMoiety(FHIRString::xmlUnserialize($children->molecularFormulaByMoiety));
+        }
+        if (isset($attributes->molecularFormulaByMoiety)) {
+            $pt = $type->getMolecularFormulaByMoiety();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->molecularFormulaByMoiety);
+            } else {
+                $type->setMolecularFormulaByMoiety((string)$attributes->molecularFormulaByMoiety);
+            }
         }
         if (isset($children->molecularWeight)) {
             $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::xmlUnserialize($children->molecularWeight));
@@ -768,7 +778,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getIsotope())) {
             foreach($vs as $v) {
                 if (null === $v) {

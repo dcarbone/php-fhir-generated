@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -357,11 +357,16 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         if (isset($children->componentId)) {
             $type->setComponentId(FHIRIdentifier::xmlUnserialize($children->componentId));
         }
-        if (isset($attributes->productionSpec)) {
-            $type->setProductionSpec((string)$attributes->productionSpec);
-        }
         if (isset($children->productionSpec)) {
             $type->setProductionSpec(FHIRString::xmlUnserialize($children->productionSpec));
+        }
+        if (isset($attributes->productionSpec)) {
+            $pt = $type->getProductionSpec();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->productionSpec);
+            } else {
+                $type->setProductionSpec((string)$attributes->productionSpec);
+            }
         }
         if (isset($children->specType)) {
             $type->setSpecType(FHIRCodeableConcept::xmlUnserialize($children->specType));
@@ -380,7 +385,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getComponentId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COMPONENT_ID, null, $v->_getFHIRXMLNamespace()));
         }

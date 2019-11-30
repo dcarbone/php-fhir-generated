@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1866,17 +1866,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($children->abatementAge)) {
             $type->setAbatementAge(FHIRAge::xmlUnserialize($children->abatementAge));
         }
-        if (isset($attributes->abatementBoolean)) {
-            $type->setAbatementBoolean((string)$attributes->abatementBoolean);
-        }
         if (isset($children->abatementBoolean)) {
             $type->setAbatementBoolean(FHIRBoolean::xmlUnserialize($children->abatementBoolean));
         }
-        if (isset($attributes->abatementDateTime)) {
-            $type->setAbatementDateTime((string)$attributes->abatementDateTime);
+        if (isset($attributes->abatementBoolean)) {
+            $pt = $type->getAbatementBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->abatementBoolean);
+            } else {
+                $type->setAbatementBoolean((string)$attributes->abatementBoolean);
+            }
         }
         if (isset($children->abatementDateTime)) {
             $type->setAbatementDateTime(FHIRDateTime::xmlUnserialize($children->abatementDateTime));
+        }
+        if (isset($attributes->abatementDateTime)) {
+            $pt = $type->getAbatementDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->abatementDateTime);
+            } else {
+                $type->setAbatementDateTime((string)$attributes->abatementDateTime);
+            }
         }
         if (isset($children->abatementPeriod)) {
             $type->setAbatementPeriod(FHIRPeriod::xmlUnserialize($children->abatementPeriod));
@@ -1884,17 +1894,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($children->abatementRange)) {
             $type->setAbatementRange(FHIRRange::xmlUnserialize($children->abatementRange));
         }
-        if (isset($attributes->abatementString)) {
-            $type->setAbatementString((string)$attributes->abatementString);
-        }
         if (isset($children->abatementString)) {
             $type->setAbatementString(FHIRString::xmlUnserialize($children->abatementString));
         }
-        if (isset($attributes->assertedDate)) {
-            $type->setAssertedDate((string)$attributes->assertedDate);
+        if (isset($attributes->abatementString)) {
+            $pt = $type->getAbatementString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->abatementString);
+            } else {
+                $type->setAbatementString((string)$attributes->abatementString);
+            }
         }
         if (isset($children->assertedDate)) {
             $type->setAssertedDate(FHIRDateTime::xmlUnserialize($children->assertedDate));
+        }
+        if (isset($attributes->assertedDate)) {
+            $pt = $type->getAssertedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->assertedDate);
+            } else {
+                $type->setAssertedDate((string)$attributes->assertedDate);
+            }
         }
         if (isset($children->asserter)) {
             $type->setAsserter(FHIRReference::xmlUnserialize($children->asserter));
@@ -1936,11 +1956,16 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($children->onsetAge)) {
             $type->setOnsetAge(FHIRAge::xmlUnserialize($children->onsetAge));
         }
-        if (isset($attributes->onsetDateTime)) {
-            $type->setOnsetDateTime((string)$attributes->onsetDateTime);
-        }
         if (isset($children->onsetDateTime)) {
             $type->setOnsetDateTime(FHIRDateTime::xmlUnserialize($children->onsetDateTime));
+        }
+        if (isset($attributes->onsetDateTime)) {
+            $pt = $type->getOnsetDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onsetDateTime);
+            } else {
+                $type->setOnsetDateTime((string)$attributes->onsetDateTime);
+            }
         }
         if (isset($children->onsetPeriod)) {
             $type->setOnsetPeriod(FHIRPeriod::xmlUnserialize($children->onsetPeriod));
@@ -1948,11 +1973,16 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         if (isset($children->onsetRange)) {
             $type->setOnsetRange(FHIRRange::xmlUnserialize($children->onsetRange));
         }
-        if (isset($attributes->onsetString)) {
-            $type->setOnsetString((string)$attributes->onsetString);
-        }
         if (isset($children->onsetString)) {
             $type->setOnsetString(FHIRString::xmlUnserialize($children->onsetString));
+        }
+        if (isset($attributes->onsetString)) {
+            $pt = $type->getOnsetString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->onsetString);
+            } else {
+                $type->setOnsetString((string)$attributes->onsetString);
+            }
         }
         if (isset($children->severity)) {
             $type->setSeverity(FHIRCodeableConcept::xmlUnserialize($children->severity));
@@ -1980,7 +2010,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAbatementAge())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ABATEMENT_AGE, null, $v->_getFHIRXMLNamespace()));
         }

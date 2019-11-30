@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -751,11 +751,16 @@ class FHIRCompositionSection extends FHIRBackboneElement
                 $type->addEntry(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->mode)) {
-            $type->setMode((string)$attributes->mode);
-        }
         if (isset($children->mode)) {
             $type->setMode(FHIRCode::xmlUnserialize($children->mode));
+        }
+        if (isset($attributes->mode)) {
+            $pt = $type->getMode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->mode);
+            } else {
+                $type->setMode((string)$attributes->mode);
+            }
         }
         if (isset($children->orderedBy)) {
             $type->setOrderedBy(FHIRCodeableConcept::xmlUnserialize($children->orderedBy));
@@ -768,11 +773,16 @@ class FHIRCompositionSection extends FHIRBackboneElement
         if (isset($children->text)) {
             $type->setText(FHIRNarrative::xmlUnserialize($children->text));
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         return $type;
     }
@@ -788,7 +798,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCode())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
         }

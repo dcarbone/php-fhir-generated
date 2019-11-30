@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -557,32 +557,52 @@ class FHIRProfileBinding extends FHIRBackboneElement
         if (isset($children->conformance)) {
             $type->setConformance(FHIRBindingConformance::xmlUnserialize($children->conformance));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
-        if (isset($attributes->isExtensible)) {
-            $type->setIsExtensible((string)$attributes->isExtensible);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->isExtensible)) {
             $type->setIsExtensible(FHIRBoolean::xmlUnserialize($children->isExtensible));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->isExtensible)) {
+            $pt = $type->getIsExtensible();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isExtensible);
+            } else {
+                $type->setIsExtensible((string)$attributes->isExtensible);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
+        }
         if (isset($children->referenceResource)) {
             $type->setReferenceResource(FHIRResourceReference::xmlUnserialize($children->referenceResource));
         }
-        if (isset($attributes->referenceUri)) {
-            $type->setReferenceUri((string)$attributes->referenceUri);
-        }
         if (isset($children->referenceUri)) {
             $type->setReferenceUri(FHIRUri::xmlUnserialize($children->referenceUri));
+        }
+        if (isset($attributes->referenceUri)) {
+            $pt = $type->getReferenceUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->referenceUri);
+            } else {
+                $type->setReferenceUri((string)$attributes->referenceUri);
+            }
         }
         return $type;
     }
@@ -598,7 +618,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getConformance())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONFORMANCE, null, $v->_getFHIRXMLNamespace()));
         }

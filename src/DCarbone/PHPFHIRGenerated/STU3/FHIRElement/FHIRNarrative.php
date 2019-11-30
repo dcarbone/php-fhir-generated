@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -280,11 +280,16 @@ class FHIRNarrative extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->div)) {
-            $type->setDiv((string)$attributes->div);
-        }
         if (isset($children->div)) {
             $type->setDiv(FHIRStringPrimitive::xmlUnserialize($children->div));
+        }
+        if (isset($attributes->div)) {
+            $pt = $type->getDiv();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->div);
+            } else {
+                $type->setDiv((string)$attributes->div);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRNarrativeStatus::xmlUnserialize($children->status));

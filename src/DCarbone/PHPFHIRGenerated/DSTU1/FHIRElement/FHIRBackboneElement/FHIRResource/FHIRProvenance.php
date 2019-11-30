@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -898,20 +898,22 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
                 $type->addEntity(FHIRProvenanceEntity::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->integritySignature)) {
-            $type->setIntegritySignature((string)$attributes->integritySignature);
-        }
         if (isset($children->integritySignature)) {
             $type->setIntegritySignature(FHIRString::xmlUnserialize($children->integritySignature));
+        }
+        if (isset($attributes->integritySignature)) {
+            $pt = $type->getIntegritySignature();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->integritySignature);
+            } else {
+                $type->setIntegritySignature((string)$attributes->integritySignature);
+            }
         }
         if (isset($children->location)) {
             $type->setLocation(FHIRResourceReference::xmlUnserialize($children->location));
         }
         if (isset($children->period)) {
             $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($attributes->policy)) {
-            $type->addPolicy((string)$attributes->policy);
         }
         if (isset($children->policy)) {
             foreach($children->policy as $child) {
@@ -921,11 +923,16 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
         if (isset($children->reason)) {
             $type->setReason(FHIRCodeableConcept::xmlUnserialize($children->reason));
         }
-        if (isset($attributes->recorded)) {
-            $type->setRecorded((string)$attributes->recorded);
-        }
         if (isset($children->recorded)) {
             $type->setRecorded(FHIRInstant::xmlUnserialize($children->recorded));
+        }
+        if (isset($attributes->recorded)) {
+            $pt = $type->getRecorded();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recorded);
+            } else {
+                $type->setRecorded((string)$attributes->recorded);
+            }
         }
         if (isset($children->target)) {
             foreach($children->target as $child) {
@@ -946,7 +953,6 @@ class FHIRProvenance extends FHIRResource implements PHPFHIRContainedTypeInterfa
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAgent())) {
             foreach($vs as $v) {
                 if (null === $v) {

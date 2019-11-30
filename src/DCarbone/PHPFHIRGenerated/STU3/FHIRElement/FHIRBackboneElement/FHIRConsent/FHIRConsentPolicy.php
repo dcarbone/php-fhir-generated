@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -316,17 +316,27 @@ class FHIRConsentPolicy extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->authority)) {
-            $type->setAuthority((string)$attributes->authority);
-        }
         if (isset($children->authority)) {
             $type->setAuthority(FHIRUri::xmlUnserialize($children->authority));
         }
-        if (isset($attributes->uri)) {
-            $type->setUri((string)$attributes->uri);
+        if (isset($attributes->authority)) {
+            $pt = $type->getAuthority();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->authority);
+            } else {
+                $type->setAuthority((string)$attributes->authority);
+            }
         }
         if (isset($children->uri)) {
             $type->setUri(FHIRUri::xmlUnserialize($children->uri));
+        }
+        if (isset($attributes->uri)) {
+            $pt = $type->getUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->uri);
+            } else {
+                $type->setUri((string)$attributes->uri);
+            }
         }
         return $type;
     }
@@ -342,7 +352,6 @@ class FHIRConsentPolicy extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORITY, null, $v->_getFHIRXMLNamespace()));
         }

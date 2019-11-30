@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1215,11 +1215,16 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
-        }
         if (isset($children->occurrenceDateTime)) {
             $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
+        }
+        if (isset($attributes->occurrenceDateTime)) {
+            $pt = $type->getOccurrenceDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceDateTime);
+            } else {
+                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+            }
         }
         if (isset($children->outputParameters)) {
             $type->setOutputParameters(FHIRReference::xmlUnserialize($children->outputParameters));
@@ -1233,11 +1238,16 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($children->reasonReference)) {
             $type->setReasonReference(FHIRReference::xmlUnserialize($children->reasonReference));
         }
-        if (isset($attributes->requestId)) {
-            $type->setRequestId((string)$attributes->requestId);
-        }
         if (isset($children->requestId)) {
             $type->setRequestId(FHIRId::xmlUnserialize($children->requestId));
+        }
+        if (isset($attributes->requestId)) {
+            $pt = $type->getRequestId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requestId);
+            } else {
+                $type->setRequestId((string)$attributes->requestId);
+            }
         }
         if (isset($children->result)) {
             $type->setResult(FHIRReference::xmlUnserialize($children->result));
@@ -1262,7 +1272,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getContext())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CONTEXT, null, $v->_getFHIRXMLNamespace()));
         }

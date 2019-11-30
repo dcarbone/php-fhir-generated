@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -526,11 +526,16 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         if (isset($children->orientationOfPolymerisation)) {
             $type->setOrientationOfPolymerisation(FHIRCodeableConcept::xmlUnserialize($children->orientationOfPolymerisation));
         }
-        if (isset($attributes->repeatUnit)) {
-            $type->setRepeatUnit((string)$attributes->repeatUnit);
-        }
         if (isset($children->repeatUnit)) {
             $type->setRepeatUnit(FHIRString::xmlUnserialize($children->repeatUnit));
+        }
+        if (isset($attributes->repeatUnit)) {
+            $pt = $type->getRepeatUnit();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->repeatUnit);
+            } else {
+                $type->setRepeatUnit((string)$attributes->repeatUnit);
+            }
         }
         if (isset($children->structuralRepresentation)) {
             foreach($children->structuralRepresentation as $child) {
@@ -551,7 +556,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAmount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2229,11 +2229,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         if (isset($children->encounter)) {
             $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
         }
-        if (isset($attributes->expirationDate)) {
-            $type->setExpirationDate((string)$attributes->expirationDate);
-        }
         if (isset($children->expirationDate)) {
             $type->setExpirationDate(FHIRDate::xmlUnserialize($children->expirationDate));
+        }
+        if (isset($attributes->expirationDate)) {
+            $pt = $type->getExpirationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->expirationDate);
+            } else {
+                $type->setExpirationDate((string)$attributes->expirationDate);
+            }
         }
         if (isset($children->fundingSource)) {
             $type->setFundingSource(FHIRCodeableConcept::xmlUnserialize($children->fundingSource));
@@ -2243,20 +2248,30 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->isSubpotent)) {
-            $type->setIsSubpotent((string)$attributes->isSubpotent);
-        }
         if (isset($children->isSubpotent)) {
             $type->setIsSubpotent(FHIRBoolean::xmlUnserialize($children->isSubpotent));
+        }
+        if (isset($attributes->isSubpotent)) {
+            $pt = $type->getIsSubpotent();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->isSubpotent);
+            } else {
+                $type->setIsSubpotent((string)$attributes->isSubpotent);
+            }
         }
         if (isset($children->location)) {
             $type->setLocation(FHIRReference::xmlUnserialize($children->location));
         }
-        if (isset($attributes->lotNumber)) {
-            $type->setLotNumber((string)$attributes->lotNumber);
-        }
         if (isset($children->lotNumber)) {
             $type->setLotNumber(FHIRString::xmlUnserialize($children->lotNumber));
+        }
+        if (isset($attributes->lotNumber)) {
+            $pt = $type->getLotNumber();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lotNumber);
+            } else {
+                $type->setLotNumber((string)$attributes->lotNumber);
+            }
         }
         if (isset($children->manufacturer)) {
             $type->setManufacturer(FHIRReference::xmlUnserialize($children->manufacturer));
@@ -2266,17 +2281,27 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addNote(FHIRAnnotation::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
-        }
         if (isset($children->occurrenceDateTime)) {
             $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
         }
-        if (isset($attributes->occurrenceString)) {
-            $type->setOccurrenceString((string)$attributes->occurrenceString);
+        if (isset($attributes->occurrenceDateTime)) {
+            $pt = $type->getOccurrenceDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceDateTime);
+            } else {
+                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+            }
         }
         if (isset($children->occurrenceString)) {
             $type->setOccurrenceString(FHIRString::xmlUnserialize($children->occurrenceString));
+        }
+        if (isset($attributes->occurrenceString)) {
+            $pt = $type->getOccurrenceString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->occurrenceString);
+            } else {
+                $type->setOccurrenceString((string)$attributes->occurrenceString);
+            }
         }
         if (isset($children->patient)) {
             $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
@@ -2286,11 +2311,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addPerformer(FHIRImmunizationPerformer::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->primarySource)) {
-            $type->setPrimarySource((string)$attributes->primarySource);
-        }
         if (isset($children->primarySource)) {
             $type->setPrimarySource(FHIRBoolean::xmlUnserialize($children->primarySource));
+        }
+        if (isset($attributes->primarySource)) {
+            $pt = $type->getPrimarySource();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->primarySource);
+            } else {
+                $type->setPrimarySource((string)$attributes->primarySource);
+            }
         }
         if (isset($children->programEligibility)) {
             foreach($children->programEligibility as $child) {
@@ -2317,11 +2347,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $type->addReasonReference(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->recorded)) {
-            $type->setRecorded((string)$attributes->recorded);
-        }
         if (isset($children->recorded)) {
             $type->setRecorded(FHIRDateTime::xmlUnserialize($children->recorded));
+        }
+        if (isset($attributes->recorded)) {
+            $pt = $type->getRecorded();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->recorded);
+            } else {
+                $type->setRecorded((string)$attributes->recorded);
+            }
         }
         if (isset($children->reportOrigin)) {
             $type->setReportOrigin(FHIRCodeableConcept::xmlUnserialize($children->reportOrigin));
@@ -2360,7 +2395,6 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDoseQuantity())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
         }

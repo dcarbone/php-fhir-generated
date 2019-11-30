@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -416,11 +416,16 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->actionId)) {
-            $type->setActionId((string)$attributes->actionId);
-        }
         if (isset($children->actionId)) {
             $type->setActionId(FHIRId::xmlUnserialize($children->actionId));
+        }
+        if (isset($attributes->actionId)) {
+            $pt = $type->getActionId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->actionId);
+            } else {
+                $type->setActionId((string)$attributes->actionId);
+            }
         }
         if (isset($children->offsetDuration)) {
             $type->setOffsetDuration(FHIRDuration::xmlUnserialize($children->offsetDuration));
@@ -445,7 +450,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActionId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_ID, null, $v->_getFHIRXMLNamespace()));
         }

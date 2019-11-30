@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -537,20 +537,27 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->documentation)) {
-            $type->setDocumentation((string)$attributes->documentation);
-        }
         if (isset($children->documentation)) {
             $type->setDocumentation(FHIRString::xmlUnserialize($children->documentation));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->documentation)) {
+            $pt = $type->getDocumentation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->documentation);
+            } else {
+                $type->setDocumentation((string)$attributes->documentation);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->target)) {
-            $type->addTarget((string)$attributes->target);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->target)) {
             foreach($children->target as $child) {
@@ -560,11 +567,16 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
         if (isset($children->type)) {
             $type->setType(FHIRSearchParamType::xmlUnserialize($children->type));
         }
-        if (isset($attributes->xpath)) {
-            $type->setXpath((string)$attributes->xpath);
-        }
         if (isset($children->xpath)) {
             $type->setXpath(FHIRString::xmlUnserialize($children->xpath));
+        }
+        if (isset($attributes->xpath)) {
+            $pt = $type->getXpath();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->xpath);
+            } else {
+                $type->setXpath((string)$attributes->xpath);
+            }
         }
         return $type;
     }
@@ -580,7 +592,6 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getDocumentation())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -274,17 +274,27 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->contentType)) {
-            $type->setContentType((string)$attributes->contentType);
-        }
         if (isset($children->contentType)) {
             $type->setContentType(FHIRStringPrimitive::xmlUnserialize($children->contentType));
         }
-        if (isset($attributes->id)) {
-            $type->setId((string)$attributes->id);
+        if (isset($attributes->contentType)) {
+            $pt = $type->getContentType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->contentType);
+            } else {
+                $type->setContentType((string)$attributes->contentType);
+            }
         }
         if (isset($children->id)) {
             $type->setId(FHIRIdPrimitive::xmlUnserialize($children->id));
+        }
+        if (isset($attributes->id)) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->id);
+            } else {
+                $type->setId((string)$attributes->id);
+            }
         }
         return $type;
     }
@@ -301,7 +311,8 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
         }
         if (null !== ($v = $this->getContentType())) {
             $sxe->addAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
-        }        if (null !== ($v = $this->getId())) {
+        }
+        if (null !== ($v = $this->getId())) {
             $sxe->addAttribute(self::FIELD_ID, (string)$v);
         }
         return $sxe;

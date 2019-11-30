@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1725,17 +1725,27 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 $type->addCoverage(FHIRClaimResponseCoverage::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->created)) {
-            $type->setCreated((string)$attributes->created);
-        }
         if (isset($children->created)) {
             $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
         }
-        if (isset($attributes->disposition)) {
-            $type->setDisposition((string)$attributes->disposition);
+        if (isset($attributes->created)) {
+            $pt = $type->getCreated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->created);
+            } else {
+                $type->setCreated((string)$attributes->created);
+            }
         }
         if (isset($children->disposition)) {
             $type->setDisposition(FHIRString::xmlUnserialize($children->disposition));
+        }
+        if (isset($attributes->disposition)) {
+            $pt = $type->getDisposition();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->disposition);
+            } else {
+                $type->setDisposition((string)$attributes->disposition);
+            }
         }
         if (isset($children->error)) {
             foreach($children->error as $child) {
@@ -1766,11 +1776,16 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->originalRuleset)) {
             $type->setOriginalRuleset(FHIRCoding::xmlUnserialize($children->originalRuleset));
         }
-        if (isset($attributes->outcome)) {
-            $type->setOutcome((string)$attributes->outcome);
-        }
         if (isset($children->outcome)) {
             $type->setOutcome(FHIRCode::xmlUnserialize($children->outcome));
+        }
+        if (isset($attributes->outcome)) {
+            $pt = $type->getOutcome();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->outcome);
+            } else {
+                $type->setOutcome((string)$attributes->outcome);
+            }
         }
         if (isset($children->payeeType)) {
             $type->setPayeeType(FHIRCoding::xmlUnserialize($children->payeeType));
@@ -1784,11 +1799,16 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->paymentAmount)) {
             $type->setPaymentAmount(FHIRMoney::xmlUnserialize($children->paymentAmount));
         }
-        if (isset($attributes->paymentDate)) {
-            $type->setPaymentDate((string)$attributes->paymentDate);
-        }
         if (isset($children->paymentDate)) {
             $type->setPaymentDate(FHIRDate::xmlUnserialize($children->paymentDate));
+        }
+        if (isset($attributes->paymentDate)) {
+            $pt = $type->getPaymentDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->paymentDate);
+            } else {
+                $type->setPaymentDate((string)$attributes->paymentDate);
+            }
         }
         if (isset($children->paymentRef)) {
             $type->setPaymentRef(FHIRIdentifier::xmlUnserialize($children->paymentRef));
@@ -1831,7 +1851,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getAddItem())) {
             foreach($vs as $v) {
                 if (null === $v) {

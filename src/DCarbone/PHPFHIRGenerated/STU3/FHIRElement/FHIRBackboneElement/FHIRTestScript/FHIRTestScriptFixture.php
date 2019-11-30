@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -374,17 +374,27 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->autocreate)) {
-            $type->setAutocreate((string)$attributes->autocreate);
-        }
         if (isset($children->autocreate)) {
             $type->setAutocreate(FHIRBoolean::xmlUnserialize($children->autocreate));
         }
-        if (isset($attributes->autodelete)) {
-            $type->setAutodelete((string)$attributes->autodelete);
+        if (isset($attributes->autocreate)) {
+            $pt = $type->getAutocreate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->autocreate);
+            } else {
+                $type->setAutocreate((string)$attributes->autocreate);
+            }
         }
         if (isset($children->autodelete)) {
             $type->setAutodelete(FHIRBoolean::xmlUnserialize($children->autodelete));
+        }
+        if (isset($attributes->autodelete)) {
+            $pt = $type->getAutodelete();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->autodelete);
+            } else {
+                $type->setAutodelete((string)$attributes->autodelete);
+            }
         }
         if (isset($children->resource)) {
             $type->setResource(FHIRReference::xmlUnserialize($children->resource));
@@ -403,7 +413,6 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAutocreate())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTOCREATE, null, $v->_getFHIRXMLNamespace()));
         }

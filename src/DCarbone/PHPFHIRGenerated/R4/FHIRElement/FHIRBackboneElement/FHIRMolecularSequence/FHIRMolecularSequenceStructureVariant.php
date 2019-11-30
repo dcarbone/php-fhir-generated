@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -445,20 +445,30 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->exact)) {
-            $type->setExact((string)$attributes->exact);
-        }
         if (isset($children->exact)) {
             $type->setExact(FHIRBoolean::xmlUnserialize($children->exact));
+        }
+        if (isset($attributes->exact)) {
+            $pt = $type->getExact();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->exact);
+            } else {
+                $type->setExact((string)$attributes->exact);
+            }
         }
         if (isset($children->inner)) {
             $type->setInner(FHIRMolecularSequenceInner::xmlUnserialize($children->inner));
         }
-        if (isset($attributes->length)) {
-            $type->setLength((string)$attributes->length);
-        }
         if (isset($children->length)) {
             $type->setLength(FHIRInteger::xmlUnserialize($children->length));
+        }
+        if (isset($attributes->length)) {
+            $pt = $type->getLength();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->length);
+            } else {
+                $type->setLength((string)$attributes->length);
+            }
         }
         if (isset($children->outer)) {
             $type->setOuter(FHIRMolecularSequenceOuter::xmlUnserialize($children->outer));
@@ -480,7 +490,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getExact())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_EXACT, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1588,11 +1588,16 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->active)) {
-            $type->setActive((string)$attributes->active);
-        }
         if (isset($children->active)) {
             $type->setActive(FHIRBoolean::xmlUnserialize($children->active));
+        }
+        if (isset($attributes->active)) {
+            $pt = $type->getActive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->active);
+            } else {
+                $type->setActive((string)$attributes->active);
+            }
         }
         if (isset($children->address)) {
             foreach($children->address as $child) {
@@ -1602,11 +1607,16 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (isset($children->animal)) {
             $type->setAnimal(FHIRPatientAnimal::xmlUnserialize($children->animal));
         }
-        if (isset($attributes->birthDate)) {
-            $type->setBirthDate((string)$attributes->birthDate);
-        }
         if (isset($children->birthDate)) {
             $type->setBirthDate(FHIRDateTime::xmlUnserialize($children->birthDate));
+        }
+        if (isset($attributes->birthDate)) {
+            $pt = $type->getBirthDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->birthDate);
+            } else {
+                $type->setBirthDate((string)$attributes->birthDate);
+            }
         }
         if (isset($children->careProvider)) {
             foreach($children->careProvider as $child) {
@@ -1623,17 +1633,27 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
                 $type->addContact(FHIRPatientContact::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->deceasedBoolean)) {
-            $type->setDeceasedBoolean((string)$attributes->deceasedBoolean);
-        }
         if (isset($children->deceasedBoolean)) {
             $type->setDeceasedBoolean(FHIRBoolean::xmlUnserialize($children->deceasedBoolean));
         }
-        if (isset($attributes->deceasedDateTime)) {
-            $type->setDeceasedDateTime((string)$attributes->deceasedDateTime);
+        if (isset($attributes->deceasedBoolean)) {
+            $pt = $type->getDeceasedBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->deceasedBoolean);
+            } else {
+                $type->setDeceasedBoolean((string)$attributes->deceasedBoolean);
+            }
         }
         if (isset($children->deceasedDateTime)) {
             $type->setDeceasedDateTime(FHIRDateTime::xmlUnserialize($children->deceasedDateTime));
+        }
+        if (isset($attributes->deceasedDateTime)) {
+            $pt = $type->getDeceasedDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->deceasedDateTime);
+            } else {
+                $type->setDeceasedDateTime((string)$attributes->deceasedDateTime);
+            }
         }
         if (isset($children->gender)) {
             $type->setGender(FHIRCodeableConcept::xmlUnserialize($children->gender));
@@ -1654,17 +1674,27 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         if (isset($children->maritalStatus)) {
             $type->setMaritalStatus(FHIRCodeableConcept::xmlUnserialize($children->maritalStatus));
         }
-        if (isset($attributes->multipleBirthBoolean)) {
-            $type->setMultipleBirthBoolean((string)$attributes->multipleBirthBoolean);
-        }
         if (isset($children->multipleBirthBoolean)) {
             $type->setMultipleBirthBoolean(FHIRBoolean::xmlUnserialize($children->multipleBirthBoolean));
         }
-        if (isset($attributes->multipleBirthInteger)) {
-            $type->setMultipleBirthInteger((string)$attributes->multipleBirthInteger);
+        if (isset($attributes->multipleBirthBoolean)) {
+            $pt = $type->getMultipleBirthBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->multipleBirthBoolean);
+            } else {
+                $type->setMultipleBirthBoolean((string)$attributes->multipleBirthBoolean);
+            }
         }
         if (isset($children->multipleBirthInteger)) {
             $type->setMultipleBirthInteger(FHIRInteger::xmlUnserialize($children->multipleBirthInteger));
+        }
+        if (isset($attributes->multipleBirthInteger)) {
+            $pt = $type->getMultipleBirthInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->multipleBirthInteger);
+            } else {
+                $type->setMultipleBirthInteger((string)$attributes->multipleBirthInteger);
+            }
         }
         if (isset($children->name)) {
             foreach($children->name as $child) {
@@ -1695,7 +1725,6 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActive())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE, null, $v->_getFHIRXMLNamespace()));
         }

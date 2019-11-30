@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAcc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -304,11 +304,16 @@ class FHIRAccountCoverage extends FHIRBackboneElement
         if (isset($children->coverage)) {
             $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
         }
-        if (isset($attributes->priority)) {
-            $type->setPriority((string)$attributes->priority);
-        }
         if (isset($children->priority)) {
             $type->setPriority(FHIRPositiveInt::xmlUnserialize($children->priority));
+        }
+        if (isset($attributes->priority)) {
+            $pt = $type->getPriority();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->priority);
+            } else {
+                $type->setPriority((string)$attributes->priority);
+            }
         }
         return $type;
     }
@@ -324,7 +329,6 @@ class FHIRAccountCoverage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCoverage())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -467,11 +467,16 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->measureScore)) {
-            $type->setMeasureScore((string)$attributes->measureScore);
-        }
         if (isset($children->measureScore)) {
             $type->setMeasureScore(FHIRDecimal::xmlUnserialize($children->measureScore));
+        }
+        if (isset($attributes->measureScore)) {
+            $pt = $type->getMeasureScore();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->measureScore);
+            } else {
+                $type->setMeasureScore((string)$attributes->measureScore);
+            }
         }
         if (isset($children->population)) {
             foreach($children->population as $child) {
@@ -497,7 +502,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getIdentifier())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
         }

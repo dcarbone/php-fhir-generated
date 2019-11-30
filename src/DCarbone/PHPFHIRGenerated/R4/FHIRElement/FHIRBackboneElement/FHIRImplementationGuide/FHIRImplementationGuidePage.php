@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -518,22 +518,32 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         if (isset($children->nameReference)) {
             $type->setNameReference(FHIRReference::xmlUnserialize($children->nameReference));
         }
-        if (isset($attributes->nameUrl)) {
-            $type->setNameUrl((string)$attributes->nameUrl);
-        }
         if (isset($children->nameUrl)) {
             $type->setNameUrl(FHIRUrl::xmlUnserialize($children->nameUrl));
+        }
+        if (isset($attributes->nameUrl)) {
+            $pt = $type->getNameUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->nameUrl);
+            } else {
+                $type->setNameUrl((string)$attributes->nameUrl);
+            }
         }
         if (isset($children->page)) {
             foreach($children->page as $child) {
                 $type->addPage(FHIRImplementationGuidePage::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->title)) {
-            $type->setTitle((string)$attributes->title);
-        }
         if (isset($children->title)) {
             $type->setTitle(FHIRString::xmlUnserialize($children->title));
+        }
+        if (isset($attributes->title)) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->title);
+            } else {
+                $type->setTitle((string)$attributes->title);
+            }
         }
         return $type;
     }
@@ -549,7 +559,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getGeneration())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_GENERATION, null, $v->_getFHIRXMLNamespace()));
         }

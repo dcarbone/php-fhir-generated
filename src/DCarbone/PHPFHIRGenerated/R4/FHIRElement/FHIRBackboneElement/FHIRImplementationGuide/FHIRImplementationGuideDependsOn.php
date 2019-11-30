@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -395,23 +395,38 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->packageId)) {
-            $type->setPackageId((string)$attributes->packageId);
-        }
         if (isset($children->packageId)) {
             $type->setPackageId(FHIRId::xmlUnserialize($children->packageId));
         }
-        if (isset($attributes->uri)) {
-            $type->setUri((string)$attributes->uri);
+        if (isset($attributes->packageId)) {
+            $pt = $type->getPackageId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->packageId);
+            } else {
+                $type->setPackageId((string)$attributes->packageId);
+            }
         }
         if (isset($children->uri)) {
             $type->setUri(FHIRCanonical::xmlUnserialize($children->uri));
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
+        if (isset($attributes->uri)) {
+            $pt = $type->getUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->uri);
+            } else {
+                $type->setUri((string)$attributes->uri);
+            }
         }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -427,7 +442,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getPackageId())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGE_ID, null, $v->_getFHIRXMLNamespace()));
         }

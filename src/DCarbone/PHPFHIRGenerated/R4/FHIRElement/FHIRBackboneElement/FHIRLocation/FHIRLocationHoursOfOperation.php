@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -464,28 +464,43 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->allDay)) {
-            $type->setAllDay((string)$attributes->allDay);
-        }
         if (isset($children->allDay)) {
             $type->setAllDay(FHIRBoolean::xmlUnserialize($children->allDay));
         }
-        if (isset($attributes->closingTime)) {
-            $type->setClosingTime((string)$attributes->closingTime);
+        if (isset($attributes->allDay)) {
+            $pt = $type->getAllDay();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->allDay);
+            } else {
+                $type->setAllDay((string)$attributes->allDay);
+            }
         }
         if (isset($children->closingTime)) {
             $type->setClosingTime(FHIRTime::xmlUnserialize($children->closingTime));
+        }
+        if (isset($attributes->closingTime)) {
+            $pt = $type->getClosingTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->closingTime);
+            } else {
+                $type->setClosingTime((string)$attributes->closingTime);
+            }
         }
         if (isset($children->daysOfWeek)) {
             foreach($children->daysOfWeek as $child) {
                 $type->addDaysOfWeek(FHIRDaysOfWeek::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->openingTime)) {
-            $type->setOpeningTime((string)$attributes->openingTime);
-        }
         if (isset($children->openingTime)) {
             $type->setOpeningTime(FHIRTime::xmlUnserialize($children->openingTime));
+        }
+        if (isset($attributes->openingTime)) {
+            $pt = $type->getOpeningTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->openingTime);
+            } else {
+                $type->setOpeningTime((string)$attributes->openingTime);
+            }
         }
         return $type;
     }
@@ -501,7 +516,6 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAllDay())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ALL_DAY, null, $v->_getFHIRXMLNamespace()));
         }

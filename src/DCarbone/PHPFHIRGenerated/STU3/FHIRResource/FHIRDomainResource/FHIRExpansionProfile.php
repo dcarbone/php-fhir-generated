@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1860,64 +1860,104 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->activeOnly)) {
-            $type->setActiveOnly((string)$attributes->activeOnly);
-        }
         if (isset($children->activeOnly)) {
             $type->setActiveOnly(FHIRBoolean::xmlUnserialize($children->activeOnly));
+        }
+        if (isset($attributes->activeOnly)) {
+            $pt = $type->getActiveOnly();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->activeOnly);
+            } else {
+                $type->setActiveOnly((string)$attributes->activeOnly);
+            }
         }
         if (isset($children->contact)) {
             foreach($children->contact as $child) {
                 $type->addContact(FHIRContactDetail::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
-        }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->description)) {
             $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
         }
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
+        }
         if (isset($children->designation)) {
             $type->setDesignation(FHIRExpansionProfileDesignation::xmlUnserialize($children->designation));
-        }
-        if (isset($attributes->displayLanguage)) {
-            $type->setDisplayLanguage((string)$attributes->displayLanguage);
         }
         if (isset($children->displayLanguage)) {
             $type->setDisplayLanguage(FHIRCode::xmlUnserialize($children->displayLanguage));
         }
-        if (isset($attributes->excludeNested)) {
-            $type->setExcludeNested((string)$attributes->excludeNested);
+        if (isset($attributes->displayLanguage)) {
+            $pt = $type->getDisplayLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->displayLanguage);
+            } else {
+                $type->setDisplayLanguage((string)$attributes->displayLanguage);
+            }
         }
         if (isset($children->excludeNested)) {
             $type->setExcludeNested(FHIRBoolean::xmlUnserialize($children->excludeNested));
         }
-        if (isset($attributes->excludeNotForUI)) {
-            $type->setExcludeNotForUI((string)$attributes->excludeNotForUI);
+        if (isset($attributes->excludeNested)) {
+            $pt = $type->getExcludeNested();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->excludeNested);
+            } else {
+                $type->setExcludeNested((string)$attributes->excludeNested);
+            }
         }
         if (isset($children->excludeNotForUI)) {
             $type->setExcludeNotForUI(FHIRBoolean::xmlUnserialize($children->excludeNotForUI));
         }
-        if (isset($attributes->excludePostCoordinated)) {
-            $type->setExcludePostCoordinated((string)$attributes->excludePostCoordinated);
+        if (isset($attributes->excludeNotForUI)) {
+            $pt = $type->getExcludeNotForUI();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->excludeNotForUI);
+            } else {
+                $type->setExcludeNotForUI((string)$attributes->excludeNotForUI);
+            }
         }
         if (isset($children->excludePostCoordinated)) {
             $type->setExcludePostCoordinated(FHIRBoolean::xmlUnserialize($children->excludePostCoordinated));
         }
+        if (isset($attributes->excludePostCoordinated)) {
+            $pt = $type->getExcludePostCoordinated();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->excludePostCoordinated);
+            } else {
+                $type->setExcludePostCoordinated((string)$attributes->excludePostCoordinated);
+            }
+        }
         if (isset($children->excludedSystem)) {
             $type->setExcludedSystem(FHIRExpansionProfileExcludedSystem::xmlUnserialize($children->excludedSystem));
         }
-        if (isset($attributes->experimental)) {
-            $type->setExperimental((string)$attributes->experimental);
-        }
         if (isset($children->experimental)) {
             $type->setExperimental(FHIRBoolean::xmlUnserialize($children->experimental));
+        }
+        if (isset($attributes->experimental)) {
+            $pt = $type->getExperimental();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->experimental);
+            } else {
+                $type->setExperimental((string)$attributes->experimental);
+            }
         }
         if (isset($children->fixedVersion)) {
             foreach($children->fixedVersion as $child) {
@@ -1927,60 +1967,95 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
         if (isset($children->identifier)) {
             $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
         }
-        if (isset($attributes->includeDefinition)) {
-            $type->setIncludeDefinition((string)$attributes->includeDefinition);
-        }
         if (isset($children->includeDefinition)) {
             $type->setIncludeDefinition(FHIRBoolean::xmlUnserialize($children->includeDefinition));
         }
-        if (isset($attributes->includeDesignations)) {
-            $type->setIncludeDesignations((string)$attributes->includeDesignations);
+        if (isset($attributes->includeDefinition)) {
+            $pt = $type->getIncludeDefinition();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->includeDefinition);
+            } else {
+                $type->setIncludeDefinition((string)$attributes->includeDefinition);
+            }
         }
         if (isset($children->includeDesignations)) {
             $type->setIncludeDesignations(FHIRBoolean::xmlUnserialize($children->includeDesignations));
+        }
+        if (isset($attributes->includeDesignations)) {
+            $pt = $type->getIncludeDesignations();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->includeDesignations);
+            } else {
+                $type->setIncludeDesignations((string)$attributes->includeDesignations);
+            }
         }
         if (isset($children->jurisdiction)) {
             foreach($children->jurisdiction as $child) {
                 $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->limitedExpansion)) {
-            $type->setLimitedExpansion((string)$attributes->limitedExpansion);
-        }
         if (isset($children->limitedExpansion)) {
             $type->setLimitedExpansion(FHIRBoolean::xmlUnserialize($children->limitedExpansion));
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
+        if (isset($attributes->limitedExpansion)) {
+            $pt = $type->getLimitedExpansion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->limitedExpansion);
+            } else {
+                $type->setLimitedExpansion((string)$attributes->limitedExpansion);
+            }
         }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
         }
-        if (isset($attributes->publisher)) {
-            $type->setPublisher((string)$attributes->publisher);
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->publisher)) {
             $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
         }
+        if (isset($attributes->publisher)) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->publisher);
+            } else {
+                $type->setPublisher((string)$attributes->publisher);
+            }
+        }
         if (isset($children->status)) {
             $type->setStatus(FHIRPublicationStatus::xmlUnserialize($children->status));
         }
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUri::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->useContext)) {
             foreach($children->useContext as $child) {
                 $type->addUseContext(FHIRUsageContext::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->version)) {
-            $type->setVersion((string)$attributes->version);
-        }
         if (isset($children->version)) {
             $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        }
+        if (isset($attributes->version)) {
+            $pt = $type->getVersion();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->version);
+            } else {
+                $type->setVersion((string)$attributes->version);
+            }
         }
         return $type;
     }
@@ -1996,7 +2071,6 @@ class FHIRExpansionProfile extends FHIRDomainResource implements PHPFHIRContaine
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getActiveOnly())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACTIVE_ONLY, null, $v->_getFHIRXMLNamespace()));
         }

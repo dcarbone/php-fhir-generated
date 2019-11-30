@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIROpera
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -314,11 +314,16 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         if (isset($children->strength)) {
             $type->setStrength(FHIRBindingStrength::xmlUnserialize($children->strength));
         }
-        if (isset($attributes->valueSet)) {
-            $type->setValueSet((string)$attributes->valueSet);
-        }
         if (isset($children->valueSet)) {
             $type->setValueSet(FHIRCanonical::xmlUnserialize($children->valueSet));
+        }
+        if (isset($attributes->valueSet)) {
+            $pt = $type->getValueSet();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueSet);
+            } else {
+                $type->setValueSet((string)$attributes->valueSet);
+            }
         }
         return $type;
     }
@@ -334,7 +339,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getStrength())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->_getFHIRXMLNamespace()));
         }

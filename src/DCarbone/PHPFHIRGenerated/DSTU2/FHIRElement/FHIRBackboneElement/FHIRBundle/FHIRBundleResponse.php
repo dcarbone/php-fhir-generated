@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -453,29 +453,49 @@ class FHIRBundleResponse extends FHIRBackboneElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->etag)) {
-            $type->setEtag((string)$attributes->etag);
-        }
         if (isset($children->etag)) {
             $type->setEtag(FHIRString::xmlUnserialize($children->etag));
         }
-        if (isset($attributes->lastModified)) {
-            $type->setLastModified((string)$attributes->lastModified);
+        if (isset($attributes->etag)) {
+            $pt = $type->getEtag();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->etag);
+            } else {
+                $type->setEtag((string)$attributes->etag);
+            }
         }
         if (isset($children->lastModified)) {
             $type->setLastModified(FHIRInstant::xmlUnserialize($children->lastModified));
         }
-        if (isset($attributes->location)) {
-            $type->setLocation((string)$attributes->location);
+        if (isset($attributes->lastModified)) {
+            $pt = $type->getLastModified();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->lastModified);
+            } else {
+                $type->setLastModified((string)$attributes->lastModified);
+            }
         }
         if (isset($children->location)) {
             $type->setLocation(FHIRUri::xmlUnserialize($children->location));
         }
-        if (isset($attributes->status)) {
-            $type->setStatus((string)$attributes->status);
+        if (isset($attributes->location)) {
+            $pt = $type->getLocation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->location);
+            } else {
+                $type->setLocation((string)$attributes->location);
+            }
         }
         if (isset($children->status)) {
             $type->setStatus(FHIRString::xmlUnserialize($children->status));
+        }
+        if (isset($attributes->status)) {
+            $pt = $type->getStatus();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->status);
+            } else {
+                $type->setStatus((string)$attributes->status);
+            }
         }
         return $type;
     }
@@ -491,7 +511,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getEtag())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ETAG, null, $v->_getFHIRXMLNamespace()));
         }

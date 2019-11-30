@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1281,17 +1281,27 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         if (isset($children->account)) {
             $type->setAccount(FHIRReference::xmlUnserialize($children->account));
         }
-        if (isset($attributes->cancelledReason)) {
-            $type->setCancelledReason((string)$attributes->cancelledReason);
-        }
         if (isset($children->cancelledReason)) {
             $type->setCancelledReason(FHIRString::xmlUnserialize($children->cancelledReason));
         }
-        if (isset($attributes->date)) {
-            $type->setDate((string)$attributes->date);
+        if (isset($attributes->cancelledReason)) {
+            $pt = $type->getCancelledReason();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->cancelledReason);
+            } else {
+                $type->setCancelledReason((string)$attributes->cancelledReason);
+            }
         }
         if (isset($children->date)) {
             $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
+        }
+        if (isset($attributes->date)) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->date);
+            } else {
+                $type->setDate((string)$attributes->date);
+            }
         }
         if (isset($children->identifier)) {
             foreach($children->identifier as $child) {
@@ -1316,11 +1326,16 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $type->addParticipant(FHIRInvoiceParticipant::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->paymentTerms)) {
-            $type->setPaymentTerms((string)$attributes->paymentTerms);
-        }
         if (isset($children->paymentTerms)) {
             $type->setPaymentTerms(FHIRMarkdown::xmlUnserialize($children->paymentTerms));
+        }
+        if (isset($attributes->paymentTerms)) {
+            $pt = $type->getPaymentTerms();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->paymentTerms);
+            } else {
+                $type->setPaymentTerms((string)$attributes->paymentTerms);
+            }
         }
         if (isset($children->recipient)) {
             $type->setRecipient(FHIRReference::xmlUnserialize($children->recipient));
@@ -1359,7 +1374,6 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAccount())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ACCOUNT, null, $v->_getFHIRXMLNamespace()));
         }

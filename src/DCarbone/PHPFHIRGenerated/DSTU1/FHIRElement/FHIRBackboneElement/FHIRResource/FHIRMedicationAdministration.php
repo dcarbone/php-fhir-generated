@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1047,11 +1047,16 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
         if (isset($children->status)) {
             $type->setStatus(FHIRMedicationAdministrationStatus::xmlUnserialize($children->status));
         }
-        if (isset($attributes->wasNotGiven)) {
-            $type->setWasNotGiven((string)$attributes->wasNotGiven);
-        }
         if (isset($children->wasNotGiven)) {
             $type->setWasNotGiven(FHIRBoolean::xmlUnserialize($children->wasNotGiven));
+        }
+        if (isset($attributes->wasNotGiven)) {
+            $pt = $type->getWasNotGiven();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->wasNotGiven);
+            } else {
+                $type->setWasNotGiven((string)$attributes->wasNotGiven);
+            }
         }
         if (isset($children->whenGiven)) {
             $type->setWhenGiven(FHIRPeriod::xmlUnserialize($children->whenGiven));
@@ -1070,7 +1075,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getDevice())) {
             foreach($vs as $v) {
                 if (null === $v) {

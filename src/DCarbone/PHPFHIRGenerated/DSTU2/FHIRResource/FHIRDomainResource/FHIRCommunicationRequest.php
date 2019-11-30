@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1248,20 +1248,30 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
                 $type->addRecipient(FHIRReference::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->requestedOn)) {
-            $type->setRequestedOn((string)$attributes->requestedOn);
-        }
         if (isset($children->requestedOn)) {
             $type->setRequestedOn(FHIRDateTime::xmlUnserialize($children->requestedOn));
+        }
+        if (isset($attributes->requestedOn)) {
+            $pt = $type->getRequestedOn();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->requestedOn);
+            } else {
+                $type->setRequestedOn((string)$attributes->requestedOn);
+            }
         }
         if (isset($children->requester)) {
             $type->setRequester(FHIRReference::xmlUnserialize($children->requester));
         }
-        if (isset($attributes->scheduledDateTime)) {
-            $type->setScheduledDateTime((string)$attributes->scheduledDateTime);
-        }
         if (isset($children->scheduledDateTime)) {
             $type->setScheduledDateTime(FHIRDateTime::xmlUnserialize($children->scheduledDateTime));
+        }
+        if (isset($attributes->scheduledDateTime)) {
+            $pt = $type->getScheduledDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->scheduledDateTime);
+            } else {
+                $type->setScheduledDateTime((string)$attributes->scheduledDateTime);
+            }
         }
         if (isset($children->scheduledPeriod)) {
             $type->setScheduledPeriod(FHIRPeriod::xmlUnserialize($children->scheduledPeriod));
@@ -1289,7 +1299,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getCategory())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
         }

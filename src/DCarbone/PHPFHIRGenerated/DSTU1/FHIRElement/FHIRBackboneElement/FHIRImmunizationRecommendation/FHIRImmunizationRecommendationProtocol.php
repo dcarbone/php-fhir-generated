@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -425,23 +425,38 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
         if (isset($children->authority)) {
             $type->setAuthority(FHIRResourceReference::xmlUnserialize($children->authority));
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
-        if (isset($attributes->doseSequence)) {
-            $type->setDoseSequence((string)$attributes->doseSequence);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->doseSequence)) {
             $type->setDoseSequence(FHIRInteger::xmlUnserialize($children->doseSequence));
         }
-        if (isset($attributes->series)) {
-            $type->setSeries((string)$attributes->series);
+        if (isset($attributes->doseSequence)) {
+            $pt = $type->getDoseSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->doseSequence);
+            } else {
+                $type->setDoseSequence((string)$attributes->doseSequence);
+            }
         }
         if (isset($children->series)) {
             $type->setSeries(FHIRString::xmlUnserialize($children->series));
+        }
+        if (isset($attributes->series)) {
+            $pt = $type->getSeries();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->series);
+            } else {
+                $type->setSeries((string)$attributes->series);
+            }
         }
         return $type;
     }
@@ -457,7 +472,6 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAuthority())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORITY, null, $v->_getFHIRXMLNamespace()));
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,13 +76,19 @@ class FHIRUri extends FHIRElement
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
 
+    /** @var string */
+    protected $_xmlns = 'http://hl7.org/fhir';
+
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRUriPrimitive
      */
     protected $value = null;
 
-    /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    /**
+     * Validation map for fields in type uri
+     * @var array
+     */
+    private static $_fieldValidation = [    ];
 
     /**
      * FHIRUri Constructor
@@ -112,6 +118,7 @@ class FHIRUri extends FHIRElement
             $this->setValue($data[self::FIELD_VALUE]);
         }
     }
+
     /**
      * @return string
      */
@@ -131,6 +138,7 @@ class FHIRUri extends FHIRElement
         }
         return "<uri{$xmlns}></uri>";
     }
+
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRUriPrimitive
      */
@@ -155,6 +163,15 @@ class FHIRUri extends FHIRElement
         }
         $this->value = new FHIRUriPrimitive($value);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function _validationErrors()
+    {
+        // TODO: implement validation
+        return [];
     }
 
     /**
@@ -197,10 +214,16 @@ class FHIRUri extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
+        if (isset($children->value)) {
+            $type->setValue(FHIRUriPrimitive::xmlUnserialize($children->value));
+        }
         if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        } elseif (isset($children->value)) {
-            $type->setValue((string)$children->value);
+            $pt = $type->getValue();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->value);
+            } else {
+                $type->setValue((string)$attributes->value);
+            }
         }
         return $type;
     }

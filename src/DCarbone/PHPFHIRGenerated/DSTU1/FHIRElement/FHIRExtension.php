@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:10+0000
+ * Class creation date: November 30th, 2019 21:21+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1650,11 +1650,16 @@ class FHIRExtension extends FHIRElement
         }
         $attributes = $sxe->attributes();
         $children = $sxe->children();
-        if (isset($attributes->url)) {
-            $type->setUrl((string)$attributes->url);
-        }
         if (isset($children->url)) {
             $type->setUrl(FHIRUriPrimitive::xmlUnserialize($children->url));
+        }
+        if (isset($attributes->url)) {
+            $pt = $type->getUrl();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->url);
+            } else {
+                $type->setUrl((string)$attributes->url);
+            }
         }
         if (isset($children->valueAddress)) {
             $type->setValueAddress(FHIRAddress::xmlUnserialize($children->valueAddress));
@@ -1662,23 +1667,38 @@ class FHIRExtension extends FHIRElement
         if (isset($children->valueAttachment)) {
             $type->setValueAttachment(FHIRAttachment::xmlUnserialize($children->valueAttachment));
         }
-        if (isset($attributes->valueBase64Binary)) {
-            $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
-        }
         if (isset($children->valueBase64Binary)) {
             $type->setValueBase64Binary(FHIRBase64Binary::xmlUnserialize($children->valueBase64Binary));
         }
-        if (isset($attributes->valueBoolean)) {
-            $type->setValueBoolean((string)$attributes->valueBoolean);
+        if (isset($attributes->valueBase64Binary)) {
+            $pt = $type->getValueBase64Binary();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBase64Binary);
+            } else {
+                $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
+            }
         }
         if (isset($children->valueBoolean)) {
             $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
         }
-        if (isset($attributes->valueCode)) {
-            $type->setValueCode((string)$attributes->valueCode);
+        if (isset($attributes->valueBoolean)) {
+            $pt = $type->getValueBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueBoolean);
+            } else {
+                $type->setValueBoolean((string)$attributes->valueBoolean);
+            }
         }
         if (isset($children->valueCode)) {
             $type->setValueCode(FHIRCode::xmlUnserialize($children->valueCode));
+        }
+        if (isset($attributes->valueCode)) {
+            $pt = $type->getValueCode();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueCode);
+            } else {
+                $type->setValueCode((string)$attributes->valueCode);
+            }
         }
         if (isset($children->valueCodeableConcept)) {
             $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->valueCodeableConcept));
@@ -1689,23 +1709,38 @@ class FHIRExtension extends FHIRElement
         if (isset($children->valueContact)) {
             $type->setValueContact(FHIRContact::xmlUnserialize($children->valueContact));
         }
-        if (isset($attributes->valueDate)) {
-            $type->setValueDate((string)$attributes->valueDate);
-        }
         if (isset($children->valueDate)) {
             $type->setValueDate(FHIRDate::xmlUnserialize($children->valueDate));
         }
-        if (isset($attributes->valueDateTime)) {
-            $type->setValueDateTime((string)$attributes->valueDateTime);
+        if (isset($attributes->valueDate)) {
+            $pt = $type->getValueDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDate);
+            } else {
+                $type->setValueDate((string)$attributes->valueDate);
+            }
         }
         if (isset($children->valueDateTime)) {
             $type->setValueDateTime(FHIRDateTime::xmlUnserialize($children->valueDateTime));
         }
-        if (isset($attributes->valueDecimal)) {
-            $type->setValueDecimal((string)$attributes->valueDecimal);
+        if (isset($attributes->valueDateTime)) {
+            $pt = $type->getValueDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDateTime);
+            } else {
+                $type->setValueDateTime((string)$attributes->valueDateTime);
+            }
         }
         if (isset($children->valueDecimal)) {
             $type->setValueDecimal(FHIRDecimal::xmlUnserialize($children->valueDecimal));
+        }
+        if (isset($attributes->valueDecimal)) {
+            $pt = $type->getValueDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueDecimal);
+            } else {
+                $type->setValueDecimal((string)$attributes->valueDecimal);
+            }
         }
         if (isset($children->valueHumanName)) {
             $type->setValueHumanName(FHIRHumanName::xmlUnserialize($children->valueHumanName));
@@ -1713,17 +1748,27 @@ class FHIRExtension extends FHIRElement
         if (isset($children->valueIdentifier)) {
             $type->setValueIdentifier(FHIRIdentifier::xmlUnserialize($children->valueIdentifier));
         }
-        if (isset($attributes->valueInstant)) {
-            $type->setValueInstant((string)$attributes->valueInstant);
-        }
         if (isset($children->valueInstant)) {
             $type->setValueInstant(FHIRInstant::xmlUnserialize($children->valueInstant));
         }
-        if (isset($attributes->valueInteger)) {
-            $type->setValueInteger((string)$attributes->valueInteger);
+        if (isset($attributes->valueInstant)) {
+            $pt = $type->getValueInstant();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueInstant);
+            } else {
+                $type->setValueInstant((string)$attributes->valueInstant);
+            }
         }
         if (isset($children->valueInteger)) {
             $type->setValueInteger(FHIRInteger::xmlUnserialize($children->valueInteger));
+        }
+        if (isset($attributes->valueInteger)) {
+            $pt = $type->getValueInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueInteger);
+            } else {
+                $type->setValueInteger((string)$attributes->valueInteger);
+            }
         }
         if (isset($children->valuePeriod)) {
             $type->setValuePeriod(FHIRPeriod::xmlUnserialize($children->valuePeriod));
@@ -1746,17 +1791,27 @@ class FHIRExtension extends FHIRElement
         if (isset($children->valueSchedule)) {
             $type->setValueSchedule(FHIRSchedule::xmlUnserialize($children->valueSchedule));
         }
-        if (isset($attributes->valueString)) {
-            $type->setValueString((string)$attributes->valueString);
-        }
         if (isset($children->valueString)) {
             $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
         }
-        if (isset($attributes->valueUri)) {
-            $type->setValueUri((string)$attributes->valueUri);
+        if (isset($attributes->valueString)) {
+            $pt = $type->getValueString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueString);
+            } else {
+                $type->setValueString((string)$attributes->valueString);
+            }
         }
         if (isset($children->valueUri)) {
             $type->setValueUri(FHIRUri::xmlUnserialize($children->valueUri));
+        }
+        if (isset($attributes->valueUri)) {
+            $pt = $type->getValueUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->valueUri);
+            } else {
+                $type->setValueUri((string)$attributes->valueUri);
+            }
         }
         return $type;
     }

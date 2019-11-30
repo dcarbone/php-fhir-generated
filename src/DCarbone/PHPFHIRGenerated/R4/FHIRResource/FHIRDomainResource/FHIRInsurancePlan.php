@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1264,9 +1264,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
         if (isset($children->administeredBy)) {
             $type->setAdministeredBy(FHIRReference::xmlUnserialize($children->administeredBy));
         }
-        if (isset($attributes->alias)) {
-            $type->addAlias((string)$attributes->alias);
-        }
         if (isset($children->alias)) {
             foreach($children->alias as $child) {
                 $type->addAlias(FHIRString::xmlUnserialize($child));
@@ -1297,11 +1294,16 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->name)) {
-            $type->setName((string)$attributes->name);
-        }
         if (isset($children->name)) {
             $type->setName(FHIRString::xmlUnserialize($children->name));
+        }
+        if (isset($attributes->name)) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->name);
+            } else {
+                $type->setName((string)$attributes->name);
+            }
         }
         if (isset($children->network)) {
             foreach($children->network as $child) {
@@ -1341,7 +1343,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if (null !== ($v = $this->getAdministeredBy())) {
             $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTERED_BY, null, $v->_getFHIRXMLNamespace()));
         }

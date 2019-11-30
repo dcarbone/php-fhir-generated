@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 29th, 2019 23:11+0000
+ * Class creation date: November 30th, 2019 21:22+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1251,23 +1251,38 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::xmlUnserialize($child));
             }
         }
-        if (isset($attributes->description)) {
-            $type->setDescription((string)$attributes->description);
-        }
         if (isset($children->description)) {
             $type->setDescription(FHIRString::xmlUnserialize($children->description));
         }
-        if (isset($attributes->doseNumberPositiveInt)) {
-            $type->setDoseNumberPositiveInt((string)$attributes->doseNumberPositiveInt);
+        if (isset($attributes->description)) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->description);
+            } else {
+                $type->setDescription((string)$attributes->description);
+            }
         }
         if (isset($children->doseNumberPositiveInt)) {
             $type->setDoseNumberPositiveInt(FHIRPositiveInt::xmlUnserialize($children->doseNumberPositiveInt));
         }
-        if (isset($attributes->doseNumberString)) {
-            $type->setDoseNumberString((string)$attributes->doseNumberString);
+        if (isset($attributes->doseNumberPositiveInt)) {
+            $pt = $type->getDoseNumberPositiveInt();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->doseNumberPositiveInt);
+            } else {
+                $type->setDoseNumberPositiveInt((string)$attributes->doseNumberPositiveInt);
+            }
         }
         if (isset($children->doseNumberString)) {
             $type->setDoseNumberString(FHIRString::xmlUnserialize($children->doseNumberString));
+        }
+        if (isset($attributes->doseNumberString)) {
+            $pt = $type->getDoseNumberString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->doseNumberString);
+            } else {
+                $type->setDoseNumberString((string)$attributes->doseNumberString);
+            }
         }
         if (isset($children->forecastReason)) {
             foreach($children->forecastReason as $child) {
@@ -1277,23 +1292,38 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (isset($children->forecastStatus)) {
             $type->setForecastStatus(FHIRCodeableConcept::xmlUnserialize($children->forecastStatus));
         }
-        if (isset($attributes->series)) {
-            $type->setSeries((string)$attributes->series);
-        }
         if (isset($children->series)) {
             $type->setSeries(FHIRString::xmlUnserialize($children->series));
         }
-        if (isset($attributes->seriesDosesPositiveInt)) {
-            $type->setSeriesDosesPositiveInt((string)$attributes->seriesDosesPositiveInt);
+        if (isset($attributes->series)) {
+            $pt = $type->getSeries();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->series);
+            } else {
+                $type->setSeries((string)$attributes->series);
+            }
         }
         if (isset($children->seriesDosesPositiveInt)) {
             $type->setSeriesDosesPositiveInt(FHIRPositiveInt::xmlUnserialize($children->seriesDosesPositiveInt));
         }
-        if (isset($attributes->seriesDosesString)) {
-            $type->setSeriesDosesString((string)$attributes->seriesDosesString);
+        if (isset($attributes->seriesDosesPositiveInt)) {
+            $pt = $type->getSeriesDosesPositiveInt();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->seriesDosesPositiveInt);
+            } else {
+                $type->setSeriesDosesPositiveInt((string)$attributes->seriesDosesPositiveInt);
+            }
         }
         if (isset($children->seriesDosesString)) {
             $type->setSeriesDosesString(FHIRString::xmlUnserialize($children->seriesDosesString));
+        }
+        if (isset($attributes->seriesDosesString)) {
+            $pt = $type->getSeriesDosesString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes->seriesDosesString);
+            } else {
+                $type->setSeriesDosesString((string)$attributes->seriesDosesString);
+            }
         }
         if (isset($children->supportingImmunization)) {
             foreach($children->supportingImmunization as $child) {
@@ -1327,7 +1357,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
         }
         parent::xmlSerialize($sxe);
-
         if ([] !== ($vs = $this->getContraindicatedVaccineCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
